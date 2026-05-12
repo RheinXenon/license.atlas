@@ -6,7 +6,7 @@ import { useSearchParams } from "next/navigation";
 import { LicenseCard } from "@/components/license-card";
 import { themes } from "@/components/badge";
 import { useLang } from "@/lib/i18n";
-import licenses from "@/data/licenses.json";
+import licenses from "@/data/licenses-index.json";
 import stats from "@/data/stats.json";
 import type { License } from "@/lib/types";
 

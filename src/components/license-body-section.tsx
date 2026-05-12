@@ -1,0 +1,62 @@
+"use client";
+
+import { useState, useCallback } from "react";
+import { CcLangNav } from "@/components/cc-family-nav";
+import { LicenseBody } from "./license-body-renderer";
+
+interface LicenseBodySectionProps {
+  body: string;
+  bodies?: { lang: string; body: string }[];
+}
+
+function CopyButton({ text }: { text: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const copy = useCallback(() => {
+    navigator.clipboard.writeText(text).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  }, [text]);
+
+  return (
+    <button
+      onClick={copy}
+      className="rounded-lg px-2.5 py-1.5 text-xs font-medium text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-200"
+      title="Copy license text"
+    >
+      {copied ? (
+        <span className="inline-flex items-center gap-1 text-emerald-600 dark:text-emerald-400">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Copied
+        </span>
+      ) : (
+        <span className="inline-flex items-center gap-1">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy
+        </span>
+      )}
+    </button>
+  );
+}
+
+export function LicenseBodySection({ body, bodies }: LicenseBodySectionProps) {
+  const [activeBody, setActiveBody] = useState(body);
+
+  return (
+    <div className="mb-8">
+      <div className="mb-4 flex items-center justify-between">
+        <h2 className="text-lg font-semibold text-zinc-950 dark:text-zinc-50">
+          License Text
+        </h2>
+        <CopyButton text={activeBody} />
+      </div>
+      {bodies && bodies.length > 1 && (
+        <CcLangNav bodies={bodies} onSelect={setActiveBody} />
+      )}
+      <div className="overflow-x-auto rounded-2xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900">
+        <LicenseBody text={activeBody} />
+      </div>
+    </div>
+  );
+}

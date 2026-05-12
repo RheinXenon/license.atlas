@@ -1,0 +1,174 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-accent: #7c3aed;
+  --color-accent-light: rgba(124, 58, 237, 0.08);
+}
+
+:root {
+  --background: #fafafa;
+  --foreground: #18181b;
+}
+
+.dark {
+  --background: #09090b;
+  --foreground: #fafafa;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* Shimmer animation (from modelgo-licenses) */
+@keyframes shimmer {
+  0% { background-position: 0% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Pulse dot animation */
+@keyframes pulse-dot {
+  0% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.4); }
+  70% { box-shadow: 0 0 0 6px rgba(124, 58, 237, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0); }
+}
+
+/* License card — frosted glass + top accent (modelgo-licenses style) */
+.license-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04),
+              inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.3s ease,
+              border-color 0.3s ease,
+              background 0.3s ease;
+}
+
+/* Subtle top accent line */
+.license-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  border-radius: 0 0 2px 2px;
+  background: linear-gradient(90deg, transparent, #7c3aed, transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover pad zone */
+.license-card::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 8px;
+}
+
+.license-card:hover {
+  z-index: 50;
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(124, 58, 237, 0.3);
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.08),
+              0 12px 40px rgba(0, 0, 0, 0.06),
+              inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.license-card:hover::before {
+  opacity: 1;
+}
+
+/* Dark mode */
+.dark .license-card {
+  background: rgba(30, 30, 40, 0.5);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2),
+              inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.dark .license-card:hover {
+  background: rgba(40, 38, 55, 0.65);
+  border-color: rgba(124, 58, 237, 0.4);
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.12),
+              0 12px 40px rgba(0, 0, 0, 0.15),
+              inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* tl;drLegal Verified badge — gradient matching their brand */
+.verified-badge {
+  position: relative;
+  background: linear-gradient(102deg, rgba(40, 158, 109, 0.08), rgba(0, 150, 226, 0.08));
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+
+.verified-badge::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(102deg, #289e6d, #0096e2);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.verified-badge span {
+  background: linear-gradient(102deg, #289e6d, #0096e2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .verified-badge {
+  background: linear-gradient(102deg, rgba(40, 158, 109, 0.15), rgba(0, 150, 226, 0.15));
+}
+
+/* ModelGo badge — animated gradient breathing (purple → blue → teal) */
+@keyframes modelgo-gradient {
+  0% { background-position: 0% center; }
+  100% { background-position: 100% center; }
+}
+
+.modelgo-badge {
+  background: linear-gradient(90deg, #ede9fe, #dbeafe, #ccfbf1, #ede9fe);
+  background-size: 300% 100%;
+  animation: modelgo-gradient 4s ease-in-out infinite alternate;
+}
+
+.dark .modelgo-badge {
+  background: linear-gradient(90deg, rgba(124,58,237,0.25), rgba(37,99,235,0.25), rgba(20,184,166,0.25), rgba(124,58,237,0.25));
+  background-size: 300% 100%;
+  animation: modelgo-gradient 4s ease-in-out infinite alternate;
+}
+
+/* Fade-in entrance animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in { animation: fadeIn 0.4s ease-out both; }
+.fade-in-1 { animation: fadeIn 0.4s ease-out 0.05s both; }
+.fade-in-2 { animation: fadeIn 0.4s ease-out 0.1s both; }
+.fade-in-3 { animation: fadeIn 0.4s ease-out 0.15s both; }
+.fade-in-4 { animation: fadeIn 0.4s ease-out 0.2s both; }
+.fade-in-5 { animation: fadeIn 0.4s ease-out 0.25s both; }

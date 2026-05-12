@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { LangProvider } from "@/lib/i18n";
+import { NavProgress } from "@/components/nav-progress";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -15,7 +16,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})()`;
+const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme:dark)').matches')){document.documentElement.classList.add('dark')}}catch(e){}})()`;
 
 export const metadata: Metadata = {
   title: "LicenseAtlas — The Comprehensive License Collection",
@@ -39,6 +40,7 @@ export default function RootLayout({
           <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         </head>
         <body className="flex min-h-full flex-col bg-[var(--background)] text-[var(--foreground)]">
+          <NavProgress />
           <LangProvider>
             <Navbar />
             <main className="flex-1">{children}</main>

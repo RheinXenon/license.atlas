@@ -63,6 +63,12 @@ export function LicenseCard({ license }: LicenseCardProps) {
     <Link
       href={`/licenses/${license.slug}`}
       prefetch={false}
+      onMouseEnter={() => {
+        const link = document.createElement("link");
+        link.rel = "prefetch";
+        link.href = `/license.atlas/licenses/${license.slug}`;
+        document.head.appendChild(link);
+      }}
       className="license-card group relative flex flex-col gap-3 overflow-visible rounded-2xl p-5"
     >
       <div>

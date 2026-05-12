@@ -1,9 +1,19 @@
 "use client";
 
+import { useEffect } from "react";
 import { useLang } from "@/lib/i18n";
 
 export function Footer() {
   const { t } = useLang();
+
+  useEffect(() => {
+    if (document.getElementById("busuanzi_script")) return;
+    const s = document.createElement("script");
+    s.id = "busuanzi_script";
+    s.async = true;
+    s.src = "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js";
+    document.body.appendChild(s);
+  }, []);
 
   return (
     <footer className="mt-auto border-t border-zinc-200 py-8 dark:border-zinc-800">
@@ -23,7 +33,6 @@ export function Footer() {
           </p>
         </div>
       </div>
-      <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" />
     </footer>
   );
 }

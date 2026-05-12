@@ -1,12 +1,13 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { CcLangNav } from "@/components/cc-family-nav";
 import { LicenseBody } from "./license-body-renderer";
 
 interface LicenseBodySectionProps {
+  slug: string;
   body: string;
-  bodies?: { lang: string; body: string }[];
+  hasBodies?: boolean;
 }
 
 function CopyButton({ text }: { text: string }) {
@@ -40,8 +41,24 @@ function CopyButton({ text }: { text: string }) {
   );
 }
 
-export function LicenseBodySection({ body, bodies }: LicenseBodySectionProps) {
+const bodyCache = new Map<string, { lang: string; body: string }[]>();
+
+export function LicenseBodySection({ slug, body, hasBodies }: LicenseBodySectionProps) {
   const [activeBody, setActiveBody] = useState(body);
+  const [bodies, setBodies] = useState<{ lang: string; body: string }[] | null>(null);
+
+  useEffect(() => {
+    if (!hasBodies) return;
+    const cached = bodyCache.get(slug);
+    if (cached) { setBodies(cached); return; }
+    fetch(`${window.location.origin}/license.atlas/data/cc-bodies/${slug}.json`)
+      .then((r) => r.json())
+      .then((data) => {
+        bodyCache.set(slug, data);
+        setBodies(data);
+      })
+      .catch(() => {});
+  }, [slug, hasBodies]);
 
   return (
     <div className="mb-8">

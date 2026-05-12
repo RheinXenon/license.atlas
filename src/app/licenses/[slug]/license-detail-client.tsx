@@ -122,7 +122,7 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
       {/* License Text */}
       {license.body && (
         <div className="fade-in-3">
-          <LicenseBodySection body={license.body} bodies={license.bodies} />
+          <LicenseBodySection slug={license.slug} body={license.body} hasBodies={!!license.languages && license.languages.length > 1} />
         </div>
       )}
 

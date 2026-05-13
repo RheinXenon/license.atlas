@@ -22,10 +22,10 @@ const dict: Record<Lang, Record<string, string>> = {
     "home.aboutLink": "About",
 
     // Type pills
-    "type.software": "software",
-    "type.model": "model",
-    "type.data": "data",
-    "type.agent": "agent",
+    "type.software": "Software",
+    "type.model": "Model",
+    "type.data": "Data",
+    "type.agent": "Agent",
 
     // Filters
     "filter.proprietary": "Proprietary",

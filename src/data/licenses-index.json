@@ -5040,33 +5040,6 @@
     "proprietary": false
   },
   {
-    "slug": "attribution-license-odc-by",
-    "title": "Attribution License (ODC-By)",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "deprecated": false,
-    "type": "data",
-    "version": "",
-    "description": "",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [
-      "Custom",
-      "HuggingFace"
-    ],
-    "sources": [
-      {
-        "name": "allenai/coconot",
-        "url": "https://huggingface.co/datasets/allenai/coconot"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-05-08",
-    "proprietary": false
-  },
-  {
     "slug": "baekmuk",
     "title": "Baekmuk License",
     "spdx_id": "Baekmuk",
@@ -14463,44 +14436,22 @@
     "conditions": [],
     "limitations": [],
     "tags": [
-      "Proprietary"
-    ],
-    "sources": [
-      {
-        "name": "huggingface.co",
-        "url": "https://huggingface.co/OpenVINO/Phi-4-mini-FastDraft-120M-int8-ov/raw/main/LICENSE.md"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-04-20",
-    "proprietary": true
-  },
-  {
-    "slug": "intel-research-use-license-agreement-v6",
-    "title": "Intel Research Use License Agreement v6",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "deprecated": false,
-    "type": "data",
-    "version": "",
-    "description": "",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [
       "Custom",
       "HuggingFace",
       "Proprietary"
     ],
     "sources": [
       {
+        "name": "huggingface.co",
+        "url": "https://huggingface.co/OpenVINO/Phi-4-mini-FastDraft-120M-int8-ov/raw/main/LICENSE.md"
+      },
+      {
         "name": "SPRIGHT-T2I/spright",
         "url": "https://huggingface.co/datasets/SPRIGHT-T2I/spright"
       }
     ],
     "featured": false,
-    "created_at": "2026-05-08",
+    "created_at": "2026-04-20",
     "proprietary": true
   },
   {
@@ -15864,6 +15815,14 @@
       {
         "name": "ai.meta.com",
         "url": "https://ai.meta.com/resources/models-and-libraries/llama-downloads/"
+      },
+      {
+        "name": "huggingface.co",
+        "url": "https://huggingface.co/KoboldAI/LLAMA2-13B-Holodeck-1"
+      },
+      {
+        "name": "huggingface.co",
+        "url": "https://huggingface.co/beomi/llama-2-ko-7b"
       }
     ],
     "featured": false,
@@ -18260,33 +18219,6 @@
     "proprietary": false
   },
   {
-    "slug": "myshell-ai-custom-license",
-    "title": "MyShell AI Custom License",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "deprecated": false,
-    "type": "model",
-    "version": "",
-    "description": "",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [
-      "Custom",
-      "HuggingFace"
-    ],
-    "sources": [
-      {
-        "name": "myshell-ai/DreamVoice",
-        "url": "https://huggingface.co/myshell-ai/DreamVoice"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-04-27",
-    "proprietary": false
-  },
-  {
     "slug": "naist-2003",
     "title": "Nara Institute of Science and Technology License (2003)",
     "spdx_id": "NAIST-2003",
@@ -19684,33 +19616,6 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
-  },
-  {
-    "slug": "open-data-commons-attribution-license",
-    "title": "Open Data Commons Attribution License",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "deprecated": false,
-    "type": "data",
-    "version": "",
-    "description": "",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [
-      "Custom",
-      "HuggingFace"
-    ],
-    "sources": [
-      {
-        "name": "jungjee/asvspoof5",
-        "url": "https://huggingface.co/datasets/jungjee/asvspoof5"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-05-08",
     "proprietary": false
   },
   {
@@ -25700,34 +25605,6 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false
-  },
-  {
-    "slug": "unitreerobotics-custom-license",
-    "title": "Unitree Robotics CC BY-NC-SA 4.0",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "deprecated": false,
-    "type": "model",
-    "version": "",
-    "description": "",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [
-      "Custom",
-      "HuggingFace",
-      "Proprietary"
-    ],
-    "sources": [
-      {
-        "name": "unitreerobotics/UnifoLM-VLA-Base",
-        "url": "https://huggingface.co/unitreerobotics/UnifoLM-VLA-Base"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-04-27",
-    "proprietary": true
   },
   {
     "slug": "unixcrypt",

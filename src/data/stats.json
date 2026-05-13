@@ -1,13 +1,13 @@
 {
-  "total": 929,
+  "total": 924,
   "osi_approved": 122,
   "fsf_libre": 123,
-  "proprietary": 251,
+  "proprietary": 249,
   "by_type": {
     "software": 665,
-    "data": 103,
+    "data": 100,
     "agent": 20,
-    "model": 141
+    "model": 139
   },
   "by_source": {
     "opensource.org": 122,
@@ -31,12 +31,11 @@
     "anthropics/skills/skills/pdf": 1,
     "anthropics/skills/skills/pptx": 1,
     "anthropics/skills/skills/xlsx": 1,
-    "huggingface.co": 4,
+    "huggingface.co": 6,
     "apple/OpenELM": 1,
     "EPFL-VILAB/4M-21_B": 1,
     "argmaxinc/speakerkit-pro": 1,
     "ArmGPT/ArmenianGPT-1.0-3B": 1,
-    "allenai/coconot": 1,
     "bharatgenai/Param2-17B-A2.4B-Thinking": 1,
     "AdaptLLM/Adapt-MLLM-to-Domains": 1,
     "IndexTeam/IndexTTS-2": 1,
@@ -132,7 +131,6 @@
     "UsefulSensors/moonshine-tiny-ja": 1,
     "facebook/multi-token-prediction": 1,
     "multica-ai/multica": 1,
-    "myshell-ai/DreamVoice": 1,
     "ncbi/MedCPT-Query-Encoder": 1,
     "Nechintosh/ghibli": 1,
     "nexar-ai/nexar_collision_prediction": 1,
@@ -162,7 +160,6 @@
     "facebook/OMAT24": 1,
     "Aleph-Alpha/tfree-hat-pretrained-7b-base": 1,
     "Aleph-Alpha/Pharia-1-LLM-7B-control-hf": 1,
-    "jungjee/asvspoof5": 1,
     "TEN-framework/ten-vad": 1,
     "open-webui/open-webui": 1,
     "OpenSQZ/AutoMathText-V2": 1,
@@ -251,7 +248,6 @@
     "Qwen/Qwen2.5-VL-72B-Instruct": 1,
     "trillionlabs/Tri-21B": 1,
     "Ubisoft/ubisoft-laforge-chord": 1,
-    "unitreerobotics/UnifoLM-VLA-Base": 1,
     "bwittmann/vesselFM": 1,
     "Vezora/Code-Preference-Pairs": 1,
     "facebook/VGGT-1B-Commercial": 1,
@@ -267,14 +263,14 @@
     "tl;drLegal Verified": 68,
     "Copyleft": 40,
     "GNU": 8,
-    "Proprietary": 251,
+    "Proprietary": 249,
     "GNU Nonfree": 11,
     "Public Domain": 6,
     "Creative Commons": 65,
     "Weak Copyleft": 10,
-    "Custom": 167,
+    "Custom": 163,
     "MCP Server": 10,
-    "HuggingFace": 147,
+    "HuggingFace": 143,
     "Agent Skill": 3,
     "LLM Tool": 3,
     "ModelGo": 8,
@@ -282,9 +278,9 @@
   },
   "cleaning": {
     "tagsFixed": 118,
-    "duplicatesFound": 12,
+    "duplicatesFound": 13,
     "linesFixed": 0,
     "osiFixed": 12
   },
-  "updated": "2026-05-12"
+  "updated": "2026-05-13"
 }

@@ -19920,10 +19920,6 @@
         "url": "https://huggingface.co/moonshotai/Kimi-K2-Instruct-0905"
       },
       {
-        "name": "MiniMaxAI/MiniMax-M2.5",
-        "url": "https://huggingface.co/MiniMaxAI/MiniMax-M2.5"
-      },
-      {
         "name": "moonshotai/Kimi-K2-Instruct",
         "url": "https://huggingface.co/moonshotai/Kimi-K2-Instruct"
       },
@@ -19932,32 +19928,8 @@
         "url": "https://huggingface.co/moonshotai/Kimi-K2-Thinking"
       },
       {
-        "name": "MiniMaxAI/MiniMax-M2",
-        "url": "https://huggingface.co/MiniMaxAI/MiniMax-M2"
-      },
-      {
-        "name": "MiniMaxAI/MiniMax-M2.1",
-        "url": "https://huggingface.co/MiniMaxAI/MiniMax-M2.1"
-      },
-      {
         "name": "moonshotai/Kimi-K2-Base",
         "url": "https://huggingface.co/moonshotai/Kimi-K2-Base"
-      },
-      {
-        "name": "AiArtLab/sdxs-1b",
-        "url": "https://huggingface.co/AiArtLab/sdxs-1b"
-      },
-      {
-        "name": "MiniMaxAI/VTP-Large-f16d64",
-        "url": "https://huggingface.co/MiniMaxAI/VTP-Large-f16d64"
-      },
-      {
-        "name": "MiniMaxAI/VTP-Small-f16d64",
-        "url": "https://huggingface.co/MiniMaxAI/VTP-Small-f16d64"
-      },
-      {
-        "name": "MiniMaxAI/VTP-Base-f16d64",
-        "url": "https://huggingface.co/MiniMaxAI/VTP-Base-f16d64"
       }
     ],
     "featured": false,

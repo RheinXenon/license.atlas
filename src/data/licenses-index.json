@@ -4156,6 +4156,34 @@
     "proprietary": false
   },
   {
+    "slug": "aiartlab-nc-mit",
+    "title": "AiArtLab Non-Commercial MIT License",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "model",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace",
+      "Proprietary"
+    ],
+    "sources": [
+      {
+        "name": "AiArtLab/sdxs-1b",
+        "url": "https://huggingface.co/AiArtLab/sdxs-1b"
+      }
+    ],
+    "featured": false,
+    "proprietary": true,
+    "created_at": "2026-05-14"
+  },
+  {
     "slug": "aladdin",
     "title": "Aladdin Free Public License",
     "spdx_id": "Aladdin",
@@ -4214,7 +4242,8 @@
       }
     ],
     "featured": false,
-    "proprietary": true
+    "proprietary": true,
+    "created_at": "2026-05-14"
   },
   {
     "slug": "alglib-documentation",
@@ -4893,7 +4922,8 @@
       }
     ],
     "featured": false,
-    "proprietary": false
+    "proprietary": false,
+    "created_at": "2026-05-14"
   },
   {
     "slug": "argmaxinc-license-notice",
@@ -10983,6 +11013,33 @@
     "proprietary": false
   },
   {
+    "slug": "evolutionaryscale-cambrian-nc",
+    "title": "evolutionaryscale-cambrian-nc",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "model",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace",
+      "Proprietary"
+    ],
+    "sources": [
+      {
+        "url": "https://huggingface.co/undefined"
+      }
+    ],
+    "featured": false,
+    "proprietary": true,
+    "created_at": "2026-05-14"
+  },
+  {
     "slug": "exaone-ai-model-license-agreement",
     "title": "EXAONE AI Model License Agreement",
     "spdx_id": "",
@@ -11007,7 +11064,8 @@
       }
     ],
     "featured": false,
-    "proprietary": true
+    "proprietary": true,
+    "created_at": "2026-05-14"
   },
   {
     "slug": "exaone-ai-model-license-1-1-nc",
@@ -15504,7 +15562,8 @@
       }
     ],
     "featured": false,
-    "proprietary": true
+    "proprietary": true,
+    "created_at": "2026-05-14"
   },
   {
     "slug": "kanana-license-agreement",
@@ -16873,7 +16932,8 @@
       }
     ],
     "featured": false,
-    "proprietary": true
+    "proprietary": true,
+    "created_at": "2026-05-14"
   },
   {
     "slug": "ltx-2-community-license-agreement",
@@ -16900,7 +16960,8 @@
       }
     ],
     "featured": false,
-    "proprietary": true
+    "proprietary": true,
+    "created_at": "2026-05-14"
   },
   {
     "slug": "lpl-1.02",
@@ -17405,7 +17466,8 @@
       }
     ],
     "featured": false,
-    "proprietary": true
+    "proprietary": true,
+    "created_at": "2026-05-14"
   },
   {
     "slug": "metamail",
@@ -18672,7 +18734,8 @@
       }
     ],
     "featured": false,
-    "proprietary": true
+    "proprietary": true,
+    "created_at": "2026-05-14"
   },
   {
     "slug": "motosoto",
@@ -19906,7 +19969,8 @@
       }
     ],
     "featured": false,
-    "proprietary": false
+    "proprietary": false,
+    "created_at": "2026-05-14"
   },
   {
     "slug": "nlod-1.0",
@@ -22395,6 +22459,33 @@
     "proprietary": true
   },
   {
+    "slug": "prior-labs-tabpfn-3",
+    "title": "prior-labs-tabpfn-3",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "model",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace",
+      "Proprietary"
+    ],
+    "sources": [
+      {
+        "url": "https://huggingface.co/undefined"
+      }
+    ],
+    "featured": false,
+    "proprietary": true,
+    "created_at": "2026-05-14"
+  },
+  {
     "slug": "protonx-text-correction-model-license-agreement-v1-3-nc",
     "title": "ProtonX Text Correction Model LICENSE AGREEMENT (v1.3-NC)",
     "spdx_id": "",
@@ -24717,7 +24808,8 @@
       }
     ],
     "featured": false,
-    "proprietary": true
+    "proprietary": true,
+    "created_at": "2026-05-14"
   },
   {
     "slug": "stable-video-diffusion-non-commercial-community-license",
@@ -25522,7 +25614,8 @@
       }
     ],
     "featured": false,
-    "proprietary": true
+    "proprietary": true,
+    "created_at": "2026-05-14"
   },
   {
     "slug": "tencent-songbloom-license",
@@ -25587,6 +25680,33 @@
     "featured": false,
     "created_at": "2026-04-27",
     "proprietary": true
+  },
+  {
+    "slug": "tencent-pixal3d",
+    "title": "tencent-pixal3d",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "model",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace",
+      "Proprietary"
+    ],
+    "sources": [
+      {
+        "url": "https://huggingface.co/undefined"
+      }
+    ],
+    "featured": false,
+    "proprietary": true,
+    "created_at": "2026-05-14"
   },
   {
     "slug": "termreadkey",

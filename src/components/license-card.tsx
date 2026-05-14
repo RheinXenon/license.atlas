@@ -6,7 +6,7 @@ import { useLang } from "@/lib/i18n";
 import type { License } from "@/lib/types";
 
 interface LicenseCardProps {
-  license: Pick<License, "slug" | "title" | "spdx_id" | "type" | "osi_approved" | "fsf_libre" | "tags" | "description" | "trend">;
+  license: Pick<License, "slug" | "title" | "spdx_id" | "type" | "osi_approved" | "fsf_libre" | "fsf_tags" | "tags" | "description" | "trend">;
 }
 
 function Sparkline({ data }: { data: number[] }) {
@@ -90,6 +90,9 @@ export function LicenseCard({ license }: LicenseCardProps) {
         <Badge variant="type">{license.type}</Badge>
         {license.osi_approved && <Badge variant="osi">{t("badge.osiApproved")}</Badge>}
         {license.fsf_libre && <Badge variant="fsf">{t("badge.fsfLibre")}</Badge>}
+        {(license.fsf_tags || []).filter((t) => t !== "libre" && t !== "non-free").map((tag) => (
+          <Badge key={tag} variant="fsf-tag">{tag}</Badge>
+        ))}
         {license.tags.map((tag) => (
           <Badge key={tag} variant={tag === "tl;drLegal Verified" ? "verified" : "tag"}>{tag}</Badge>
         ))}

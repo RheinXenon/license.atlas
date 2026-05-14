@@ -4,6 +4,7 @@ export interface License {
   spdx_id: string;
   osi_approved: boolean;
   fsf_libre: boolean;
+  fsf_tags: string[];
   deprecated: boolean;
   type: "software" | "model" | "data" | "agent";
   proprietary: boolean;

@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-type BadgeVariant = "osi" | "fsf" | "type" | "tag" | "permission" | "condition" | "limitation" | "verified" | "language";
+type BadgeVariant = "osi" | "fsf" | "type" | "tag" | "permission" | "condition" | "limitation" | "verified" | "language" | "fsf-tag";
 
 interface BadgeTheme {
   desc: string;
@@ -49,6 +49,36 @@ export const themes: Record<string, BadgeTheme> = {
     badge: "bg-[#b11107]/10 text-[#8c0d05] dark:bg-[#b11107]/15 dark:text-[#e84940]",
     tooltip: "bg-red-50 border-red-300 dark:bg-red-950 dark:border-red-700",
     glow: "shadow-[0_0_8px_rgba(177,17,7,0.3)]",
+  },
+  "gpl-2-compatible": {
+    desc: "Compatible with GPLv2 per the Free Software Foundation",
+    badge: "bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300",
+    tooltip: "bg-rose-50 border-rose-300 dark:bg-rose-950 dark:border-rose-700",
+    glow: "shadow-[0_0_8px_rgba(244,63,94,0.2)]",
+  },
+  "gpl-3-compatible": {
+    desc: "Compatible with GPLv3 per the Free Software Foundation",
+    badge: "bg-pink-50 text-pink-700 dark:bg-pink-900/30 dark:text-pink-300",
+    tooltip: "bg-pink-50 border-pink-300 dark:bg-pink-950 dark:border-pink-700",
+    glow: "shadow-[0_0_8px_rgba(236,72,153,0.2)]",
+  },
+  "fdl-compatible": {
+    desc: "Compatible with the GNU Free Documentation License per the FSF",
+    badge: "bg-amber-50 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300",
+    tooltip: "bg-amber-50 border-amber-300 dark:bg-amber-950 dark:border-amber-700",
+    glow: "shadow-[0_0_8px_rgba(245,158,11,0.2)]",
+  },
+  "non-free": {
+    desc: "Classified as non-free by the Free Software Foundation",
+    badge: "bg-red-100 text-red-800 dark:bg-red-900/40 dark:text-red-300",
+    tooltip: "bg-red-50 border-red-300 dark:bg-red-950 dark:border-red-700",
+    glow: "shadow-[0_0_8px_rgba(239,68,68,0.3)]",
+  },
+  viewpoint: {
+    desc: "The FSF has a specific viewpoint on this license's freedom status",
+    badge: "bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300",
+    tooltip: "bg-gray-50 border-gray-300 dark:bg-gray-800 dark:border-gray-600",
+    glow: "",
   },
   verified: {
     desc: "Verified by tl;drLegal — license summary reviewed for accuracy",
@@ -159,7 +189,7 @@ const variantFallbacks: Record<BadgeVariant, string> = {
   type: "bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-200",
   tag: "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300",
   language: "bg-teal-100 text-teal-800 dark:bg-teal-900/40 dark:text-teal-300",
-  osi: "", fsf: "", permission: "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300",
+  osi: "", fsf: "", "fsf-tag": "bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300", permission: "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300",
   condition: "bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300",
   limitation: "bg-red-100 text-red-800 dark:bg-red-900/40 dark:text-red-300",
   verified: "",
@@ -178,6 +208,7 @@ function normalizeKey(text: string): string {
 // Variant determines the lookup key: use variant name for special badges, text content for types/tags
 function resolveKey(variant: BadgeVariant, text: string): string {
   if (["osi", "fsf", "verified", "language"].includes(variant)) return variant;
+  if (variant === "fsf-tag") return normalizeKey(text);
   return normalizeKey(text);
 }
 

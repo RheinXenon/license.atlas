@@ -1,13 +1,13 @@
 {
-  "total": 931,
+  "total": 933,
   "osi_approved": 122,
   "fsf_libre": 175,
-  "proprietary": 254,
+  "proprietary": 256,
   "by_type": {
     "software": 665,
-    "data": 100,
+    "data": 101,
     "agent": 20,
-    "model": 146
+    "model": 147
   },
   "by_source": {
     "opensource.org": 122,
@@ -26,6 +26,7 @@
     "allenai/tulu-65b": 1,
     "licenses.ai": 7,
     "AI-Sweden-Models/gpt-sw3-40b": 1,
+    "ai4privacy/pii-masking-300k": 1,
     "ai4privacy/pii-masking-200k": 1,
     "Aleph-Alpha/Pharia-1-LLM-7B-control-hf": 2,
     "anthropics/skills/skills/docx": 1,
@@ -57,6 +58,7 @@
     "langgenius/dify": 1,
     "facebook/dinov3-vit7b16-pretrain-lvd1689m": 1,
     "engineering-group/EngGPT2-16B-A3B": 1,
+    "LGAI-EXAONE/EXAONE-4.5-33B": 1,
     "LGAI-EXAONE/EXAONE-3.5-7.8B-Instruct": 1,
     "LGAI-EXAONE/EXAONE-Path-2.5": 1,
     "KBlueLeaf/Kohaku-XL-gamma": 1,
@@ -271,14 +273,14 @@
     "tl;drLegal Verified": 68,
     "Copyleft": 40,
     "GNU": 8,
-    "Proprietary": 254,
+    "Proprietary": 256,
     "GNU Nonfree": 11,
     "Public Domain": 6,
     "Creative Commons": 65,
     "Weak Copyleft": 10,
-    "Custom": 171,
+    "Custom": 173,
     "MCP Server": 10,
-    "HuggingFace": 151,
+    "HuggingFace": 153,
     "Agent Skill": 3,
     "LLM Tool": 3,
     "ModelGo": 8,
@@ -288,7 +290,7 @@
     "tagsFixed": 118,
     "duplicatesFound": 14,
     "linesFixed": 0,
-    "osiFixed": 12
+    "osiFixed": 4
   },
   "updated": "2026-05-14"
 }

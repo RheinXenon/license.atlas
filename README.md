@@ -2,7 +2,7 @@
 
 English | [中文](README.zh-CN.md)
 
-A comprehensive collection of **938** software, AI model, data, and agent licenses — searchable, filterable, and available in English and Chinese.
+A comprehensive collection of **940** software, AI model, data, and agent licenses — searchable, filterable, and available in English and Chinese.
 
 **Live site**: [LicenseAtlas](https://morningd.github.io/license.atlas)
 
@@ -10,11 +10,11 @@ A comprehensive collection of **938** software, AI model, data, and agent licens
 
 - **Full-text search** — search license name, source, body text, with fuzzy matching (powered by MiniSearch)
 - **Category filters** — software, model, data, agent
-- **Tag filters** — Permissive, Copyleft, Creative Commons, etc.
+- **Tag filters** — Permissive, Copyleft, Creative Commons, Hardware, etc.
 - **Popularity & trends** — sparkline charts from HuggingFace, GitHub, and Kaggle data
 - **Bilingual UI** — English/Chinese with automatic browser language detection
 - **Dark mode** — system preference + manual toggle
-- **Static export** — 938 pre-rendered pages, fast loading
+- **Static export** — 940 pre-rendered pages, fast loading
 
 ## Tech Stack
 
@@ -47,6 +47,7 @@ License texts are aggregated from:
 | GitHub | Agent skill, MCP server, and tool licenses |
 | Open Data Commons | 3 data licenses |
 | RAIL | Responsible AI licenses |
+| OpenAtom Foundation | Model and hardware licenses (bilingual CN/EN) |
 
 Popularity data comes from HuggingFace Hub (2.8M+ models), GitHub (28 license types), and Kaggle (714K+ datasets via Meta-Kaggle).
 

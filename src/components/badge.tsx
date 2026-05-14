@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { useLang } from "@/lib/i18n";
 
 type BadgeVariant = "osi" | "fsf" | "type" | "tag" | "permission" | "condition" | "limitation" | "verified" | "language" | "fsf-tag";
 
@@ -183,6 +184,12 @@ export const themes: Record<string, BadgeTheme> = {
     tooltip: "bg-orange-50 border-orange-300 dark:bg-orange-950 dark:border-orange-700",
     glow: "shadow-[0_0_8px_rgba(249,115,22,0.3)]",
   },
+  hardware: {
+    desc: "License for open hardware designs, circuits, and physical artifacts",
+    badge: "bg-lime-100 text-lime-800 dark:bg-lime-900/40 dark:text-lime-300",
+    tooltip: "bg-lime-50 border-lime-300 dark:bg-lime-950 dark:border-lime-700",
+    glow: "shadow-[0_0_8px_rgba(132,204,22,0.3)]",
+  },
 };
 
 const variantFallbacks: Record<BadgeVariant, string> = {
@@ -213,8 +220,10 @@ function resolveKey(variant: BadgeVariant, text: string): string {
 }
 
 export function Badge({ children, variant = "tag", className }: BadgeProps) {
+  const { t } = useLang();
   const text = typeof children === "string" ? children : "";
-  const theme = themes[resolveKey(variant, text)];
+  const key = resolveKey(variant, text);
+  const theme = themes[key];
 
   const badge = variant === "verified" ? (
     <span
@@ -239,7 +248,8 @@ export function Badge({ children, variant = "tag", className }: BadgeProps) {
     </span>
   );
 
-  const desc = theme?.desc || "";
+  const i18nKey = `tagdesc.${key}`;
+  const desc = t(i18nKey) !== i18nKey ? t(i18nKey) : (theme?.desc || "");
   if (!desc) return badge;
 
   const tipStyle = theme?.tooltip || "bg-zinc-100 border-zinc-300 dark:bg-zinc-800 dark:border-zinc-600";

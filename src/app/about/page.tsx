@@ -14,6 +14,7 @@ const sources = [
   ["FSF / GNU", "about.src.fsf"],
   ["Creative Commons", "about.src.cc"],
   ["RAIL", "about.src.rail"],
+  ["OpenAtom Foundation", "about.src.openatom"],
 ] as const;
 
 const popSources = [

@@ -18,7 +18,7 @@ const allTags = Array.from(
   new Set(allLicenses.flatMap((l) => l.tags))
 ).filter((t) => !["MCP Server", "Agent Framework", "Agent Skill", "LLM Tool", "Proprietary"].includes(t));
 
-const tagOrder = ["Public Domain", "Permissive", "Weak Copyleft", "Copyleft", "Creative Commons", "GNU", "ModelGo", "GNU Nonfree", "Custom", "HuggingFace", "tl;drLegal Verified"];
+const tagOrder = ["Public Domain", "Permissive", "Weak Copyleft", "Copyleft", "Creative Commons", "GNU", "ModelGo", "GNU Nonfree", "Hardware", "Custom", "HuggingFace", "MCP Server", "Agent Framework", "Agent Skill", "LLM Tool", "tl;drLegal Verified"];
 allTags.sort((a, b) => {
   const ai = tagOrder.indexOf(a), bi = tagOrder.indexOf(b);
   if (ai !== -1 && bi !== -1) return ai - bi;
@@ -331,7 +331,7 @@ function HomeContent() {
                   : "border border-zinc-200 bg-zinc-100 text-zinc-500 hover:bg-zinc-200 dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
               }`}
             >
-              {isVerified ? <span>{tg}</span> : tg} <span className="opacity-60">({(stats.by_tag as Record<string, number>)[tg] ?? 0})</span>
+              {isVerified ? <span>{t(`tag.${tagKey}`) !== `tag.${tagKey}` ? t(`tag.${tagKey}`) : tg}</span> : (t(`tag.${tagKey}`) !== `tag.${tagKey}` ? t(`tag.${tagKey}`) : tg)} <span className="opacity-60">({(stats.by_tag as Record<string, number>)[tg] ?? 0})</span>
             </button>
           );
         })}

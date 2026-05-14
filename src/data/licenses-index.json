@@ -8,20 +8,10 @@
     "deprecated": false,
     "type": "software",
     "version": "N/A",
-    "description": "A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "private-use"
-    ],
-    "conditions": [
-      "include-copyright"
-    ],
-    "limitations": [
-      "liability",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [
       "Permissive",
       "tl;drLegal Verified"
@@ -36,20 +26,20 @@
         "url": "https://www.tldrlegal.com/license/mit-license"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/MIT.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/mit/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/MIT.html"
       },
       {
         "name": "GNU License List",
         "url": "https://www.gnu.org/licenses/license-list.en.html#Expat"
       }
     ],
-    "featured": true,
-    "created_at": "2026-04-20",
+    "featured": false,
+    "created_at": "2026-05-14",
     "proprietary": false,
     "popularity": 19373961,
     "github_repos": 19090657,
@@ -78,23 +68,10 @@
     "deprecated": false,
     "type": "software",
     "version": "2.0",
-    "description": "A permissive license whose main conditions require preservation of copyright and license notices. Contributors provide an express grant of patent rights. Licensed works, modifications, and larger works may be distributed under different terms and without source code.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "patent-use",
-      "private-use"
-    ],
-    "conditions": [
-      "include-copyright",
-      "document-changes"
-    ],
-    "limitations": [
-      "trademark-use",
-      "liability",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [
       "Permissive",
       "tl;drLegal Verified"
@@ -109,20 +86,20 @@
         "url": "https://www.tldrlegal.com/license/apache-license-2-0-apache-2-0"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/Apache-2.0.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/apache-2.0/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/Apache-2.0.html"
       },
       {
         "name": "GNU License List",
         "url": "https://www.gnu.org/licenses/license-list.en.html#apache2"
       }
     ],
-    "featured": true,
-    "created_at": "2026-04-20",
+    "featured": false,
+    "created_at": "2026-05-14",
     "proprietary": false,
     "popularity": 4567625,
     "github_repos": 3913687,
@@ -285,31 +262,21 @@
     "deprecated": false,
     "type": "data",
     "version": "",
-    "description": "The <a href=\"https://creativecommons.org/publicdomain/zero/1.0/\">Creative Commons CC0 Public Domain Dedication</a> waives copyright interest in a work you've created and dedicates it to the world-wide public domain. Use CC0 to opt out of copyright entirely and ensure your work has the widest reach. As with the Unlicense and typical software licenses, CC0 disclaims warranties. CC0 is very similar to the Unlicense.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "private-use"
-    ],
+    "description": "",
+    "permissions": [],
     "conditions": [],
-    "limitations": [
-      "liability",
-      "trademark-use",
-      "patent-use",
-      "warranty"
-    ],
+    "limitations": [],
     "tags": [
       "GNU Nonfree"
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC0-1.0.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/cc0-1.0/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC0-1.0.html"
       },
       {
         "name": "GNU License List",
@@ -317,7 +284,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-05-14",
     "proprietary": false,
     "popularity": 541035,
     "github_repos": 375540,
@@ -415,18 +382,10 @@
     "deprecated": false,
     "type": "software",
     "version": "N/A",
-    "description": "A license with no conditions whatsoever which dedicates works to the public domain. Unlicensed works, modifications, and larger works may be distributed under different terms and without source code.",
-    "permissions": [
-      "private-use",
-      "commercial-use",
-      "modifications",
-      "distribution"
-    ],
+    "description": "",
+    "permissions": [],
     "conditions": [],
-    "limitations": [
-      "liability",
-      "warranty"
-    ],
+    "limitations": [],
     "tags": [
       "Public Domain",
       "tl;drLegal Verified"
@@ -441,12 +400,12 @@
         "url": "https://www.tldrlegal.com/license/unlicense"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/Unlicense.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/unlicense/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/Unlicense.html"
       },
       {
         "name": "GNU License List",
@@ -454,7 +413,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-05-14",
     "proprietary": false,
     "popularity": 423992,
     "github_repos": 422624,
@@ -863,7 +822,7 @@
     "title": "Zero-Clause BSD",
     "spdx_id": "0BSD",
     "osi_approved": true,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "N/A",
@@ -985,33 +944,15 @@
     "deprecated": false,
     "type": "data",
     "version": "",
-    "description": "Similar to <a href='/licenses/cc-by-4.0/'>CC-BY-4.0</a> but requires derivatives be distributed under the same or a similar, <a href=\"https://creativecommons.org/compatiblelicenses\">compatible</a> license. Frequently used for media assets and educational materials. A previous version is the default license for Wikipedia and other Wikimedia projects. Not recommended for software.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "private-use"
-    ],
-    "conditions": [
-      "include-copyright",
-      "document-changes",
-      "same-license"
-    ],
-    "limitations": [
-      "liability",
-      "trademark-use",
-      "patent-use",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [
       "Creative Commons",
       "Copyleft"
     ],
     "sources": [
-      {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-SA-4.0.html"
-      },
       {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/cc-by-sa-4.0/"
@@ -1019,47 +960,16 @@
       {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-SA-4.0.html"
       }
     ],
     "featured": false,
     "family": "by-sa",
-    "created_at": "2026-04-20",
+    "created_at": "2026-05-14",
     "proprietary": false,
-    "languages": [
-      "en",
-      "id",
-      "eu",
-      "da",
-      "de",
-      "et",
-      "es",
-      "fr",
-      "fy",
-      "hr",
-      "it",
-      "lv",
-      "lt",
-      "mi",
-      "nl",
-      "no",
-      "pl",
-      "pt",
-      "ro",
-      "sk",
-      "sl",
-      "fi",
-      "sv",
-      "tr",
-      "cs",
-      "el",
-      "ru",
-      "uk",
-      "ar",
-      "ja",
-      "zh-hans",
-      "zh-hant",
-      "ko"
-    ],
     "popularity": 47629,
     "github_repos": 32502,
     "kaggle_datasets": 6990,
@@ -1207,23 +1117,10 @@
     "deprecated": false,
     "type": "software",
     "version": "1.0",
-    "description": "This commercially-friendly copyleft license provides the ability to commercially license binaries; a modern royalty-free patent license grant; and the ability for linked works to use other licenses, including commercial ones.",
-    "permissions": [
-      "commercial-use",
-      "distribution",
-      "modifications",
-      "patent-use",
-      "private-use"
-    ],
-    "conditions": [
-      "disclose-source",
-      "include-copyright",
-      "same-license"
-    ],
-    "limitations": [
-      "liability",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [
       "Copyleft",
       "tl;drLegal Verified"
@@ -1238,12 +1135,12 @@
         "url": "https://www.tldrlegal.com/license/eclipse-public-license-1-0-epl-1-0"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/EPL-1.0.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/epl-1.0/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/EPL-1.0.html"
       },
       {
         "name": "GNU License List",
@@ -1251,7 +1148,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-05-14",
     "proprietary": false,
     "popularity": 38656,
     "github_repos": 38536,
@@ -1760,26 +1657,10 @@
     "deprecated": false,
     "type": "software",
     "version": "1.2",
-    "description": "The European Union Public Licence (EUPL) is a copyleft free/open source software license created on the initiative of and approved by the European Commission in <a href=\"https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12\">23 official languages</a> of the European Union.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "patent-use",
-      "private-use"
-    ],
-    "conditions": [
-      "include-copyright",
-      "disclose-source",
-      "document-changes",
-      "network-use-disclose",
-      "same-license"
-    ],
-    "limitations": [
-      "liability",
-      "trademark-use",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [],
     "sources": [
       {
@@ -1787,16 +1668,16 @@
         "url": "https://opensource.org/license/eupl-1-2"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/EUPL-1.2.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/eupl-1.2/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/EUPL-1.2.html"
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-05-14",
     "proprietary": false,
     "popularity": 8000,
     "github_repos": 7853,
@@ -1955,21 +1836,10 @@
     "deprecated": false,
     "type": "software",
     "version": "N/A",
-    "description": "An open source license with a patent grant.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "patent-use",
-      "private-use"
-    ],
-    "conditions": [
-      "include-copyright"
-    ],
-    "limitations": [
-      "warranty",
-      "trademark-use"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [
       "tl;drLegal Verified"
     ],
@@ -1983,16 +1853,16 @@
         "url": "https://www.tldrlegal.com/license/microsoft-public-license-ms-pl"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/MS-PL.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/ms-pl/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/MS-PL.html"
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-05-14",
     "proprietary": false,
     "popularity": 2430,
     "github_repos": 2231,
@@ -2072,7 +1942,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false,
     "popularity": 949,
     "kaggle_datasets": 798,
@@ -2197,17 +2067,17 @@
         "url": "https://www.tldrlegal.com/license/creative-commons-attribution-cc"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-3.0.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by/3.0/legalcode.txt"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-3.0.html"
       }
     ],
     "featured": false,
     "family": "by",
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false,
     "popularity": 870,
     "kaggle_datasets": 154,
@@ -2282,20 +2152,10 @@
     "deprecated": false,
     "type": "software",
     "version": "",
-    "description": "The University of Illinois/NCSA Open Source License, or UIUC license, is a permissive free software license, based on the <a href=\"/licenses/mit/\">MIT/X11 license</a>  and the <a href=\"/licenses/bsd-3-clause/\">BSD 3-clause License</a>. Its conditions include requiring the preservation of copyright and license notices both in source and in binary distributions and the prohibition of using the names of the authors or the project organization to promote or endorse derived products.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "private-use"
-    ],
-    "conditions": [
-      "include-copyright"
-    ],
-    "limitations": [
-      "liability",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [
       "Permissive",
       "tl;drLegal Verified"
@@ -2310,12 +2170,12 @@
         "url": "https://www.tldrlegal.com/license/university-of-illinois-ncsa-open-source-license-ncsa"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/NCSA.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/ncsa/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/NCSA.html"
       },
       {
         "name": "GNU License List",
@@ -2323,7 +2183,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-05-14",
     "proprietary": false,
     "popularity": 700,
     "github_repos": 607,
@@ -2419,17 +2279,17 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-NC-2.0.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by-nc/2.0/legalcode.en"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-NC-2.0.html"
       }
     ],
     "featured": false,
     "family": "by-nc",
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": true,
     "popularity": 692,
     "trend": [
@@ -2646,17 +2506,17 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-2.5.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by/2.5/legalcode.en"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-2.5.html"
       }
     ],
     "featured": false,
     "family": "by",
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false,
     "popularity": 387,
     "trend": [
@@ -2694,18 +2554,18 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-NC-SA-3.0-IGO.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by-nc-sa/3.0/igo/legalcode.en"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-NC-SA-3.0-IGO.html"
       }
     ],
     "featured": false,
     "family": "by-nc-sa",
     "variant": "igo",
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": true,
     "popularity": 356,
     "kaggle_datasets": 356
@@ -2874,7 +2734,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false,
     "popularity": 240,
     "trend": [
@@ -2901,23 +2761,10 @@
     "deprecated": false,
     "type": "software",
     "version": "2.0",
-    "description": "The Educational Community License version 2.0 (\"ECL\") consists of the Apache 2.0 license, modified to change the scope of the patent grant in section 3 to be specific to the needs of the education communities using this license.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "patent-use",
-      "private-use"
-    ],
-    "conditions": [
-      "include-copyright",
-      "document-changes"
-    ],
-    "limitations": [
-      "trademark-use",
-      "liability",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [
       "tl;drLegal Verified"
     ],
@@ -2931,16 +2778,16 @@
         "url": "https://www.tldrlegal.com/license/educational-community-license-version-2-0-ecl-2-0"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/ECL-2.0.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/ecl-2.0/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/ECL-2.0.html"
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-05-14",
     "proprietary": false,
     "popularity": 238,
     "trend": [
@@ -3223,18 +3070,18 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-3.0-IGO.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by/3.0/igo/legalcode.en"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-3.0-IGO.html"
       }
     ],
     "featured": false,
     "family": "by",
     "variant": "igo",
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false,
     "popularity": 73,
     "kaggle_datasets": 73
@@ -3316,7 +3163,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": true
   },
   {
@@ -3426,7 +3273,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -3450,7 +3297,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -3610,7 +3457,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": true
   },
   {
@@ -3634,7 +3481,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -3682,7 +3529,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -3762,7 +3609,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -3794,7 +3641,7 @@
     "title": "Affero General Public License v1.0 only",
     "spdx_id": "AGPL-1.0-only",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -3820,7 +3667,7 @@
     "title": "Affero General Public License v1.0 or later",
     "spdx_id": "AGPL-1.0-or-later",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -3838,7 +3685,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": true
   },
   {
@@ -4116,6 +3963,33 @@
     "proprietary": true
   },
   {
+    "slug": "aleph-alpha-open-aleph-license",
+    "title": "Aleph Alpha Open Aleph License",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "model",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace",
+      "Proprietary"
+    ],
+    "sources": [
+      {
+        "name": "Aleph-Alpha/Pharia-1-LLM-7B-control-hf",
+        "url": "https://huggingface.co/Aleph-Alpha/Pharia-1-LLM-7B-control-hf"
+      }
+    ],
+    "featured": false,
+    "proprietary": true
+  },
+  {
     "slug": "alglib-documentation",
     "title": "ALGLIB Documentation License",
     "spdx_id": "ALGLIB-Documentation",
@@ -4136,7 +4010,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -4164,7 +4038,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -4236,7 +4110,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -4350,7 +4224,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -4462,7 +4336,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -4607,7 +4481,7 @@
     "title": "Apple Public Source License 1.1",
     "spdx_id": "APSL-1.1",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": false,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -4631,7 +4505,7 @@
     "title": "Apple Public Source License 1.2",
     "spdx_id": "APSL-1.2",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": false,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -4735,6 +4609,32 @@
     "featured": false,
     "created_at": "2026-04-27",
     "proprietary": true
+  },
+  {
+    "slug": "aubmindlab-aragpt2-license",
+    "title": "AraGPT2 Software License",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "model",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace"
+    ],
+    "sources": [
+      {
+        "name": "aubmindlab/aragpt2-medium",
+        "url": "https://huggingface.co/aubmindlab/aragpt2-medium"
+      }
+    ],
+    "featured": false,
+    "proprietary": false
   },
   {
     "slug": "argmaxinc-license-notice",
@@ -4886,7 +4786,7 @@
     "title": "Artistic License 1.0 (dist)",
     "spdx_id": "Artistic-dist",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": false,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -4910,7 +4810,7 @@
     "title": "Artistic License 1.0 w/clause 8",
     "spdx_id": "Artistic-1.0-cl8",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": false,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -5002,7 +4902,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": true
   },
   {
@@ -5036,7 +4936,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -5292,7 +5192,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -5344,7 +5244,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -5539,7 +5439,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -5635,7 +5535,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -5659,7 +5559,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -5707,7 +5607,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -5779,7 +5679,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -5923,7 +5823,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -5973,7 +5873,7 @@
     "title": "BSD 4.3 RENO License",
     "spdx_id": "BSD-4.3RENO",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": false,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -5989,7 +5889,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -6037,7 +5937,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -6061,7 +5961,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -6109,7 +6009,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -6426,7 +6326,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -6474,7 +6374,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -6482,28 +6382,14 @@
     "title": "Cea Cnrs Inria Logiciel Libre License, version 2.1",
     "spdx_id": "CECILL-2.1",
     "osi_approved": true,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "2.1",
-    "description": "Strong copyleft license made by three French public research organisations, CEA, CNRS, and Inria, compatible with AGPL-3.0, EUPL-1.1, and GPL-2.0, or later versions of those licenses.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "private-use",
-      "patent-use"
-    ],
-    "conditions": [
-      "include-copyright",
-      "network-use-disclose",
-      "disclose-source",
-      "same-license"
-    ],
-    "limitations": [
-      "liability",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [],
     "sources": [
       {
@@ -6511,16 +6397,16 @@
         "url": "https://opensource.org/license/cecill-2-1"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CECILL-2.1.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/cecill-2.1/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CECILL-2.1.html"
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -6548,7 +6434,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -6636,7 +6522,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -6664,7 +6550,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -6688,7 +6574,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -6924,7 +6810,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -7028,7 +6914,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -7052,7 +6938,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -7104,7 +6990,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -7152,7 +7038,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -7296,7 +7182,7 @@
     "title": "COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL)",
     "spdx_id": "CDDL-1.1",
     "osi_approved": true,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "1.1",
@@ -7355,7 +7241,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -7379,7 +7265,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -7583,7 +7469,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -7707,7 +7593,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -7767,7 +7653,7 @@
     "title": "Creative    Commons Public Domain Mark 1.0 Universal",
     "spdx_id": "CC-PDM-1.0",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "data",
     "version": "",
@@ -7786,7 +7672,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -7840,18 +7726,18 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-2.5-AU.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by/2.5/au/legalcode.en"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-2.5-AU.html"
       }
     ],
     "featured": false,
     "family": "by",
     "variant": "au",
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -7942,7 +7828,7 @@
     "featured": false,
     "family": "by",
     "variant": "de",
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -7971,7 +7857,7 @@
     "featured": false,
     "family": "by",
     "variant": "nl",
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -8026,17 +7912,17 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-ND-1.0.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by-nd/1.0/legalcode.en"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-ND-1.0.html"
       }
     ],
     "featured": false,
     "family": "by-nd",
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": true
   },
   {
@@ -8058,17 +7944,17 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-ND-2.0.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by-nd/2.0/legalcode.en"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-ND-2.0.html"
       }
     ],
     "featured": false,
     "family": "by-nd",
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": true
   },
   {
@@ -8151,17 +8037,17 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-ND-3.0.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by-nd/3.0/legalcode.txt"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-ND-3.0.html"
       }
     ],
     "featured": false,
     "family": "by-nd",
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": true
   },
   {
@@ -8458,17 +8344,17 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-NC-SA-1.0.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by-nc-sa/1.0/legalcode.en"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-NC-SA-1.0.html"
       }
     ],
     "featured": false,
     "family": "by-nc-sa",
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": true
   },
   {
@@ -8498,7 +8384,7 @@
     "featured": false,
     "family": "by-nc-sa",
     "variant": "uk",
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": true
   },
   {
@@ -8528,7 +8414,7 @@
     "featured": false,
     "family": "by-nc-sa",
     "variant": "de",
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": true
   },
   {
@@ -8551,17 +8437,17 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-NC-SA-2.5.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by-nc-sa/2.5/legalcode.en"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-NC-SA-2.5.html"
       }
     ],
     "featured": false,
     "family": "by-nc-sa",
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": true
   },
   {
@@ -8591,7 +8477,7 @@
     "featured": false,
     "family": "by-nc-sa",
     "variant": "de",
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": true
   },
   {
@@ -8761,7 +8647,7 @@
     "featured": false,
     "family": "by-sa",
     "variant": "uk",
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -8822,7 +8708,7 @@
     "featured": false,
     "family": "by-sa",
     "variant": "jp",
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false,
     "languages": [
       "ja"
@@ -8847,17 +8733,17 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-SA-2.5.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by-sa/2.5/legalcode.en"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-SA-2.5.html"
       }
     ],
     "featured": false,
     "family": "by-sa",
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -8886,7 +8772,7 @@
     "featured": false,
     "family": "by-sa",
     "variant": "at",
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -8915,7 +8801,7 @@
     "featured": false,
     "family": "by-sa",
     "variant": "de",
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -9148,7 +9034,7 @@
     "title": "Creative Commons Public Domain Dedication and Certification",
     "spdx_id": "CC-PDDC",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "data",
     "version": "",
@@ -9222,7 +9108,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -9274,7 +9160,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -9436,7 +9322,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -9511,7 +9397,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -9618,7 +9504,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -9720,7 +9606,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": true
   },
   {
@@ -9900,7 +9786,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -10152,7 +10038,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -10204,7 +10090,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -10268,7 +10154,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": true
   },
   {
@@ -10378,7 +10264,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -10584,7 +10470,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -10776,7 +10662,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -11232,7 +11118,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -11256,7 +11142,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -11280,7 +11166,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -11352,7 +11238,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -11458,7 +11344,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": true
   },
   {
@@ -11530,7 +11416,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -11685,7 +11571,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -11785,7 +11671,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -11809,7 +11695,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -11924,7 +11810,7 @@
     "title": "GNU Free Documentation License v1.1 only - invariants",
     "spdx_id": "GFDL-1.1-invariants-only",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -11948,7 +11834,7 @@
     "title": "GNU Free Documentation License v1.1 only - no invariants",
     "spdx_id": "GFDL-1.1-no-invariants-only",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -11996,7 +11882,7 @@
     "title": "GNU Free Documentation License v1.1 or later - invariants",
     "spdx_id": "GFDL-1.1-invariants-or-later",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -12020,7 +11906,7 @@
     "title": "GNU Free Documentation License v1.1 or later - no invariants",
     "spdx_id": "GFDL-1.1-no-invariants-or-later",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -12060,7 +11946,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -12068,7 +11954,7 @@
     "title": "GNU Free Documentation License v1.2 only - invariants",
     "spdx_id": "GFDL-1.2-invariants-only",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -12084,7 +11970,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -12092,7 +11978,7 @@
     "title": "GNU Free Documentation License v1.2 only - no invariants",
     "spdx_id": "GFDL-1.2-no-invariants-only",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -12108,7 +11994,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -12140,7 +12026,7 @@
     "title": "GNU Free Documentation License v1.2 or later - invariants",
     "spdx_id": "GFDL-1.2-invariants-or-later",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -12164,7 +12050,7 @@
     "title": "GNU Free Documentation License v1.2 or later - no invariants",
     "spdx_id": "GFDL-1.2-no-invariants-or-later",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -12180,7 +12066,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -12204,7 +12090,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -12255,7 +12141,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -12263,7 +12149,7 @@
     "title": "GNU Free Documentation License v1.3 only - no invariants",
     "spdx_id": "GFDL-1.3-no-invariants-only",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -12303,7 +12189,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -12311,7 +12197,7 @@
     "title": "GNU Free Documentation License v1.3 or later - invariants",
     "spdx_id": "GFDL-1.3-invariants-or-later",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -12327,7 +12213,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -12335,7 +12221,7 @@
     "title": "GNU Free Documentation License v1.3 or later - no invariants",
     "spdx_id": "GFDL-1.3-no-invariants-or-later",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -12538,7 +12424,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -12902,7 +12788,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -13001,7 +12887,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -13148,7 +13034,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -13174,7 +13060,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": true
   },
   {
@@ -13220,7 +13106,7 @@
     "title": "Historical Permission Notice and Disclaimer    - INRIA-IMAG variant",
     "spdx_id": "HPND-INRIA-IMAG",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -13236,7 +13122,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -13244,7 +13130,7 @@
     "title": "Historical Permission Notice and Disclaimer - DEC variant",
     "spdx_id": "HPND-DEC",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -13260,7 +13146,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -13268,7 +13154,7 @@
     "title": "Historical Permission Notice and Disclaimer - documentation sell variant",
     "spdx_id": "HPND-doc-sell",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -13284,7 +13170,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -13292,7 +13178,7 @@
     "title": "Historical Permission Notice and Disclaimer - documentation variant",
     "spdx_id": "HPND-doc",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -13308,7 +13194,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -13316,7 +13202,7 @@
     "title": "Historical Permission Notice and Disclaimer - Fenneberg-Livingston variant",
     "spdx_id": "HPND-Fenneberg-Livingston",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -13340,7 +13226,7 @@
     "title": "Historical Permission Notice and Disclaimer - Intel variant",
     "spdx_id": "HPND-Intel",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -13364,7 +13250,7 @@
     "title": "Historical Permission Notice and Disclaimer - Kevlin Henney variant",
     "spdx_id": "HPND-Kevlin-Henney",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -13380,7 +13266,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -13388,7 +13274,7 @@
     "title": "Historical Permission Notice and Disclaimer - Markus Kuhn variant",
     "spdx_id": "HPND-Markus-Kuhn",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -13412,7 +13298,7 @@
     "title": "Historical Permission Notice and Disclaimer - merchantability variant",
     "spdx_id": "HPND-merchantability-variant",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -13436,7 +13322,7 @@
     "title": "Historical Permission Notice and Disclaimer - Netrek variant",
     "spdx_id": "HPND-Netrek",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -13452,7 +13338,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -13460,7 +13346,7 @@
     "title": "Historical Permission Notice and Disclaimer - Pbmplus variant",
     "spdx_id": "HPND-Pbmplus",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -13484,7 +13370,7 @@
     "title": "Historical Permission Notice and Disclaimer - sell regexpr variant",
     "spdx_id": "HPND-sell-regexpr",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -13508,7 +13394,7 @@
     "title": "Historical Permission Notice and Disclaimer - sell variant",
     "spdx_id": "HPND-sell-variant",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -13524,7 +13410,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -13532,7 +13418,7 @@
     "title": "Historical Permission Notice and Disclaimer - sell xserver variant with MIT disclaimer",
     "spdx_id": "HPND-sell-MIT-disclaimer-xserver",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -13556,7 +13442,7 @@
     "title": "Historical Permission Notice and Disclaimer - SMC variant",
     "spdx_id": "HPND-SMC",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -13580,7 +13466,7 @@
     "title": "Historical Permission Notice and Disclaimer - University of California variant",
     "spdx_id": "HPND-UC",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -13604,7 +13490,7 @@
     "title": "Historical Permission Notice and Disclaimer - University of California, US export warning",
     "spdx_id": "HPND-UC-export-US",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -13628,7 +13514,7 @@
     "title": "Historical Permission Notice and Disclaimer with MIT disclaimer",
     "spdx_id": "HPND-MIT-disclaimer",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -13740,7 +13626,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -13836,7 +13722,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -13974,7 +13860,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -14108,7 +13994,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": true
   },
   {
@@ -14188,7 +14074,7 @@
     "title": "Independent JPEG Group License - short",
     "spdx_id": "IJG-short",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -14232,7 +14118,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -14335,7 +14221,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -14611,7 +14497,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -14739,7 +14625,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -14763,7 +14649,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -14902,7 +14788,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -15006,7 +14892,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -15102,7 +14988,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -15126,7 +15012,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -15154,7 +15040,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -15204,7 +15090,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -15228,7 +15114,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -15292,7 +15178,7 @@
     "title": "libselinux public domain notice",
     "spdx_id": "libselinux-1.0",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -15332,7 +15218,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -15432,7 +15318,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -15809,6 +15695,8 @@
     "conditions": [],
     "limitations": [],
     "tags": [
+      "Custom",
+      "HuggingFace",
       "Proprietary"
     ],
     "sources": [
@@ -15823,6 +15711,10 @@
       {
         "name": "huggingface.co",
         "url": "https://huggingface.co/beomi/llama-2-ko-7b"
+      },
+      {
+        "name": "jondurbin/airoboros-l2-7b-gpt4-1.4.1",
+        "url": "https://huggingface.co/jondurbin/airoboros-l2-7b-gpt4-1.4.1"
       }
     ],
     "featured": false,
@@ -16098,7 +15990,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -16124,6 +16016,33 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false
+  },
+  {
+    "slug": "lightricks-ltx-2-community-license",
+    "title": "LTX-2 Community License",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "model",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace",
+      "Proprietary"
+    ],
+    "sources": [
+      {
+        "name": "SulphurAI/Sulphur-2-base",
+        "url": "https://huggingface.co/SulphurAI/Sulphur-2-base"
+      }
+    ],
+    "featured": false,
+    "proprietary": true
   },
   {
     "slug": "ltx-2-community-license-agreement",
@@ -16211,7 +16130,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -16287,7 +16206,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -16359,7 +16278,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -16383,7 +16302,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -16407,7 +16326,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -16431,7 +16350,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -16583,7 +16502,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -16615,6 +16534,33 @@
     "proprietary": true
   },
   {
+    "slug": "meta-llama-3-community-hf",
+    "title": "Meta Llama 3 Community License (HF)",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "model",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace",
+      "Proprietary"
+    ],
+    "sources": [
+      {
+        "name": "failspy/llama-3-70B-Instruct-abliterated-GGUF",
+        "url": "https://huggingface.co/failspy/llama-3-70B-Instruct-abliterated-GGUF"
+      }
+    ],
+    "featured": false,
+    "proprietary": true
+  },
+  {
     "slug": "metamail",
     "title": "metamail License",
     "spdx_id": "metamail",
@@ -16635,7 +16581,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -16712,7 +16658,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": true
   },
   {
@@ -16724,23 +16670,10 @@
     "deprecated": false,
     "type": "software",
     "version": "N/A",
-    "description": "An open source license with a patent grant similar to the <a href=\"/licenses/ms-pl/\">Microsoft Public License</a>, with the additional condition that any source code for any derived file be provided under this license.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "patent-use",
-      "private-use"
-    ],
-    "conditions": [
-      "disclose-source",
-      "include-copyright",
-      "same-license--file"
-    ],
-    "limitations": [
-      "warranty",
-      "trademark-use"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [
       "Copyleft",
       "tl;drLegal Verified"
@@ -16755,16 +16688,16 @@
         "url": "https://www.tldrlegal.com/license/microsoft-reciprocal-license-ms-rl"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/MS-RL.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/ms-rl/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/MS-RL.html"
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -16984,7 +16917,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -17018,7 +16951,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -17146,7 +17079,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -17194,7 +17127,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -17202,7 +17135,7 @@
     "title": "MIT No Attribution License",
     "spdx_id": "MIT-0",
     "osi_approved": true,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "N/A",
@@ -17812,6 +17745,33 @@
     "proprietary": true
   },
   {
+    "slug": "moonshotai-modified-mit",
+    "title": "Moonshot AI Modified MIT License",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "model",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace",
+      "Proprietary"
+    ],
+    "sources": [
+      {
+        "name": "moonshotai/Kimi-K2.5",
+        "url": "https://huggingface.co/moonshotai/Kimi-K2.5"
+      }
+    ],
+    "featured": false,
+    "proprietary": true
+  },
+  {
     "slug": "motosoto",
     "title": "Motosoto Open Source License",
     "spdx_id": "Motosoto",
@@ -17836,7 +17796,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -17977,7 +17937,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -18001,7 +17961,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -18320,7 +18280,7 @@
     "title": "NCBI Public Domain Notice",
     "spdx_id": "NCBI-PD",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -18510,7 +18470,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -18617,7 +18577,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -18705,7 +18665,7 @@
     "title": "NIST    Public Domain Notice TNT variant",
     "spdx_id": "NIST-PD-TNT",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -18721,7 +18681,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -18729,7 +18689,7 @@
     "title": "NIST Public Domain Notice",
     "spdx_id": "NIST-PD",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -18753,7 +18713,7 @@
     "title": "NIST Public Domain Notice with license fallback",
     "spdx_id": "NIST-PD-fallback",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -18769,7 +18729,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -18793,7 +18753,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -18855,7 +18815,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -18975,6 +18935,32 @@
     "proprietary": false
   },
   {
+    "slug": "norwai-norllm-license",
+    "title": "NorLLM License",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "model",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace"
+    ],
+    "sources": [
+      {
+        "name": "NorwAI/NorwAI-Magistral-24B-reasoning",
+        "url": "https://huggingface.co/NorwAI/NorwAI-Magistral-24B-reasoning"
+      }
+    ],
+    "featured": false,
+    "proprietary": false
+  },
+  {
     "slug": "nlod-1.0",
     "title": "Norwegian Licence for Open Government Data (NLOD) 1.0",
     "spdx_id": "NLOD-1.0",
@@ -19043,7 +19029,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -19067,7 +19053,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -19075,7 +19061,7 @@
     "title": "NTIA Public Domain Notice",
     "spdx_id": "NTIA-PD",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -19091,7 +19077,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -19125,7 +19111,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -19364,7 +19350,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -19399,7 +19385,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -19407,7 +19393,7 @@
     "title": "ODC Public Domain Dedication & License 1.0 (PDDL-1.0)",
     "spdx_id": "PDDL-1.0",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "data",
     "version": "",
@@ -19479,7 +19465,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -19663,7 +19649,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -19687,7 +19673,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -19711,7 +19697,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -19769,7 +19755,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -19817,7 +19803,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -19865,7 +19851,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -19913,7 +19899,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -20033,7 +20019,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -20057,7 +20043,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -20109,7 +20095,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -20137,7 +20123,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -20543,7 +20529,7 @@
     "title": "OpenSSL License - standalone",
     "spdx_id": "OpenSSL-standalone",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -20593,7 +20579,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -21057,7 +21043,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -21137,7 +21123,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -21209,7 +21195,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -21423,7 +21409,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -21526,7 +21512,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -21562,7 +21548,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -21634,7 +21620,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -21733,7 +21719,7 @@
     "title": "Rdisc License",
     "spdx_id": "Rdisc",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -21749,7 +21735,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -21784,7 +21770,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -21792,7 +21778,7 @@
     "title": "Reciprocal Public License 1.5",
     "spdx_id": "RPL-1.5",
     "osi_approved": true,
-    "fsf_libre": null,
+    "fsf_libre": false,
     "deprecated": false,
     "type": "software",
     "version": "1.5",
@@ -21827,7 +21813,7 @@
     "title": "Reciprocal Public License, version 1.1",
     "spdx_id": "RPL-1.1",
     "osi_approved": true,
-    "fsf_libre": null,
+    "fsf_libre": false,
     "deprecated": false,
     "type": "software",
     "version": "1.1",
@@ -21847,7 +21833,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -22275,7 +22261,7 @@
     "title": "Sax Public Domain Notice (SAX-PD)",
     "spdx_id": "SAX-PD",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -22297,7 +22283,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -22305,7 +22291,7 @@
     "title": "Sax Public Domain Notice 2.0",
     "spdx_id": "SAX-PD-2.0",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -22345,7 +22331,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -22419,7 +22405,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -22691,7 +22677,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -22715,7 +22701,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -22739,7 +22725,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -22787,7 +22773,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -22871,7 +22857,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -22910,7 +22896,7 @@
     "title": "SL License",
     "spdx_id": "SL",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -22952,7 +22938,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": true
   },
   {
@@ -23054,7 +23040,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -23185,7 +23171,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -23313,7 +23299,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -23361,7 +23347,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -23433,7 +23419,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -23597,6 +23583,33 @@
     "proprietary": true
   },
   {
+    "slug": "stabilityai-stable-beluga-nc",
+    "title": "Stable Beluga Non-Commercial License",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "model",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace",
+      "Proprietary"
+    ],
+    "sources": [
+      {
+        "name": "stabilityai/StableBeluga-13B",
+        "url": "https://huggingface.co/stabilityai/StableBeluga-13B"
+      }
+    ],
+    "featured": false,
+    "proprietary": true
+  },
+  {
     "slug": "stable-video-diffusion-non-commercial-community-license",
     "title": "Stable Video Diffusion Non-Commercial Community License",
     "spdx_id": "",
@@ -23649,7 +23662,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -23673,7 +23686,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -23701,7 +23714,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -23749,7 +23762,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -23773,7 +23786,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -23896,7 +23909,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": true
   },
   {
@@ -23920,7 +23933,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -24100,7 +24113,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -24124,7 +24137,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -24196,7 +24209,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -24366,6 +24379,10 @@
       {
         "name": "tencent/HY-Embodied-0.5",
         "url": "https://huggingface.co/tencent/HY-Embodied-0.5"
+      },
+      {
+        "name": "tencent/Hy3-preview",
+        "url": "https://huggingface.co/tencent/Hy3-preview"
       }
     ],
     "featured": false,
@@ -24456,7 +24473,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -24508,7 +24525,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -24642,7 +24659,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -24820,21 +24837,10 @@
     "deprecated": false,
     "type": "software",
     "version": "1.0",
-    "description": "A permissive, OSI- and FSF-approved, GPL-compatible license, expressly allowing attribution with just a copyright notice and a short form link rather than the full text of the license.  Includes an express grant of patent rights.  Licensed works and modifications may be distributed under different terms and without source code, and the patent grant may also optionally be expanded to larger works to permit use as a contributor license agreement.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "patent-use",
-      "private-use"
-    ],
-    "conditions": [
-      "include-copyright"
-    ],
-    "limitations": [
-      "liability",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [
       "Permissive",
       "tl;drLegal Verified"
@@ -24849,12 +24855,12 @@
         "url": "https://www.tldrlegal.com/license/universal-permissive-license-1-0-upl-1-0"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/UPL-1.0.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/upl-1.0/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/UPL-1.0.html"
       },
       {
         "name": "GNU License List",
@@ -24862,7 +24868,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -24896,7 +24902,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -25031,7 +25037,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -25317,7 +25323,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -25365,7 +25371,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -25527,7 +25533,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -25603,7 +25609,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -25675,7 +25681,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -25755,7 +25761,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -25779,7 +25785,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -25948,7 +25954,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -25956,7 +25962,7 @@
     "title": "W3C Software Notice and License (1998-07-20)",
     "spdx_id": "W3C-19980720",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -25972,7 +25978,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -26024,7 +26030,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -26126,7 +26132,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": true
   },
   {
@@ -26162,7 +26168,7 @@
     "title": "X11 License Distribution Modification Variant",
     "spdx_id": "X11-distribute-modifications-variant",
     "osi_approved": false,
-    "fsf_libre": null,
+    "fsf_libre": true,
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -26464,7 +26470,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -26488,7 +26494,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -26588,7 +26594,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -26720,7 +26726,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {
@@ -26899,7 +26905,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-19",
+    "created_at": "2026-05-14",
     "proprietary": false
   },
   {

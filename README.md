@@ -2,23 +2,24 @@
 
 English | [中文](README.zh-CN.md)
 
-A comprehensive collection of **929** software, AI model, data, and agent licenses — searchable, filterable, and available in English and Chinese.
+A comprehensive collection of **938** software, AI model, data, and agent licenses — searchable, filterable, and available in English and Chinese.
 
 **Live site**: [LicenseAtlas](https://morningd.github.io/license.atlas)
 
 ## Features
 
-- **Full-text search** by license name or SPDX ID
+- **Full-text search** — search license name, source, body text, with fuzzy matching (powered by MiniSearch)
 - **Category filters** — software, model, data, agent
 - **Tag filters** — Permissive, Copyleft, Creative Commons, etc.
 - **Popularity & trends** — sparkline charts from HuggingFace, GitHub, and Kaggle data
 - **Bilingual UI** — English/Chinese with automatic browser language detection
 - **Dark mode** — system preference + manual toggle
-- **Static export** — 936 pre-rendered pages, fast loading
+- **Static export** — 938 pre-rendered pages, fast loading
 
 ## Tech Stack
 
 - [Next.js 16](https://nextjs.org) (App Router, static export)
+- [MiniSearch](https://github.com/lucaong/minisearch) (client-side full-text search)
 - [Tailwind CSS v4](https://tailwindcss.com)
 - TypeScript
 

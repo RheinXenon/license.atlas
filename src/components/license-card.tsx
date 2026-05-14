@@ -91,7 +91,7 @@ export function LicenseCard({ license }: LicenseCardProps) {
         {license.osi_approved && <Badge variant="osi">{t("badge.osiApproved")}</Badge>}
         {license.fsf_libre && <Badge variant="fsf">{t("badge.fsfLibre")}</Badge>}
         {(license.fsf_tags || []).filter((t) => t !== "libre" && t !== "non-free").map((tag) => (
-          <Badge key={tag} variant="fsf-tag">{tag}</Badge>
+          <Badge key={tag} variant="fsf-tag">{tag.replace(/gpl|fdl/g, (m) => m.toUpperCase())}</Badge>
         ))}
         {license.tags.map((tag) => (
           <Badge key={tag} variant={tag === "tl;drLegal Verified" ? "verified" : "tag"}>{tag}</Badge>

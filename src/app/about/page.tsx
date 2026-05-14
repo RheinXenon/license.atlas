@@ -111,6 +111,18 @@ export default function AboutPage() {
             </svg>
             {t("about.scholarAlt")}
           </a>
+          <div className="flex items-center gap-1.5 text-sm text-zinc-400">
+            <span>{t("about.poweredBy")}</span>
+            <a
+              href="https://z.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 transition-colors hover:text-zinc-600 dark:hover:text-zinc-300"
+            >
+              <img src="/license.atlas/zai-logo.webp" alt="Z.ai" className="h-4 w-4 rounded-sm" />
+              <span className="font-medium text-zinc-500 dark:text-zinc-400">GLM 5.1</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 # LicenseAtlas
 
-涵盖 **929** 个软件、AI 模型、数据和智能体许可证的全面集合——支持搜索、筛选，提供中英文双语界面。
+涵盖 **938** 个软件、AI 模型、数据和智能体许可证的全面集合——支持搜索、筛选，提供中英文双语界面。
 
 **在线访问**：[LicenseAtlas](https://morningd.github.io/license.atlas)
 
@@ -8,17 +8,18 @@
 
 ## 功能特性
 
-- **全文搜索** — 按许可证名称或 SPDX ID 检索
+- **全文搜索** — 搜索许可证名称、来源、正文，支持模糊匹配（基于 MiniSearch）
 - **分类筛选** — 软件、模型、数据、智能体
 - **标签筛选** — 宽松许可、Copyleft、知识共享等
 - **热度与趋势** — 基于 HuggingFace、GitHub、Kaggle 数据的迷你趋势图
 - **双语界面** — 中英文切换，自动检测浏览器语言
 - **暗色模式** — 跟随系统偏好 + 手动切换
-- **静态导出** — 936 个预渲染页面，加载极速
+- **静态导出** — 938 个预渲染页面，加载极速
 
 ## 技术栈
 
 - [Next.js 16](https://nextjs.org)（App Router，静态导出）
+- [MiniSearch](https://github.com/lucaong/minisearch)（客户端全文搜索引擎）
 - [Tailwind CSS v4](https://tailwindcss.com)
 - TypeScript
 

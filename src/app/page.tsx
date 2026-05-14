@@ -1,11 +1,13 @@
 "use client";
 
-import { Suspense, useState, useMemo, useEffect } from "react";
+import { Suspense, useState, useMemo, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { LicenseCard } from "@/components/license-card";
 import { themes } from "@/components/badge";
 import { useLang } from "@/lib/i18n";
+import { searchLicenses, preloadIndex } from "@/lib/search";
+import type { SearchGroup } from "@/lib/search";
 import licenses from "@/data/licenses-index.json";
 import stats from "@/data/stats.json";
 import type { License } from "@/lib/types";
@@ -46,6 +48,11 @@ function HomeContent() {
   });
   const [page, setPage] = useState(0);
 
+  // Full-text search state
+  const [searchGroups, setSearchGroups] = useState<SearchGroup[] | null>(null);
+  const [searchLoading, setSearchLoading] = useState(false);
+  const debounceRef = useRef<ReturnType<typeof setTimeout>>(undefined);
+
   useEffect(() => {
     const p = new URLSearchParams();
     if (query) p.set("q", query);
@@ -61,7 +68,76 @@ function HomeContent() {
     window.history.replaceState(null, "", url);
   }, [query, typeFilter, osionly, fsfOnly, propOnly, langFilter, tagFilter, sort]);
 
+  // Debounced full-text search
+  useEffect(() => {
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+
+    if (!query.trim()) {
+      setSearchGroups(null);
+      setSearchLoading(false);
+      return;
+    }
+
+    setSearchLoading(true);
+    debounceRef.current = setTimeout(() => {
+      searchLicenses(query).then((groups) => {
+        setSearchGroups(groups);
+        setSearchLoading(false);
+      }).catch(() => {
+        setSearchGroups([]);
+        setSearchLoading(false);
+      });
+    }, 300);
+
+    return () => { if (debounceRef.current) clearTimeout(debounceRef.current); };
+  }, [query]);
+
+  // slug → popularity lookup
+  const popularityMap = useMemo(() => {
+    const m = new Map<string, number>();
+    for (const l of allLicenses) {
+      if (l.popularity != null) m.set(l.slug, l.popularity);
+    }
+    return m;
+  }, []);
+
+  // Apply filters + sort by popularity to search results
+  const filteredGroups = useMemo(() => {
+    if (!searchGroups) return null;
+    return searchGroups.map((g) => {
+      let results = g.results;
+      if (typeFilter) results = results.filter((r) => r.type === typeFilter);
+      if (propOnly) {
+        results = results.filter((r) => {
+          const l = allLicenses.find((lic) => lic.slug === r.slug);
+          return l?.proprietary;
+        });
+      } else {
+        if (osionly) results = results.filter((r) => {
+          const l = allLicenses.find((lic) => lic.slug === r.slug);
+          return l?.osi_approved;
+        });
+        if (fsfOnly) results = results.filter((r) => {
+          const l = allLicenses.find((lic) => lic.slug === r.slug);
+          return l?.fsf_libre;
+        });
+      }
+      if (tagFilter.size > 0) results = results.filter((r) => {
+        const l = allLicenses.find((lic) => lic.slug === r.slug);
+        return l && [...tagFilter].every((tag) => l.tags.includes(tag));
+      });
+      if (langFilter) results = results.filter((r) => {
+        const l = allLicenses.find((lic) => lic.slug === r.slug);
+        return l?.languages?.some((lang) => lang === langFilter || lang.startsWith(langFilter));
+      });
+      results.sort((a, b) => (popularityMap.get(b.slug) ?? 0) - (popularityMap.get(a.slug) ?? 0));
+      return { ...g, results };
+    }).filter((g) => g.results.length > 0);
+  }, [searchGroups, typeFilter, osionly, fsfOnly, propOnly, tagFilter, langFilter]);
+
+  // Original filter logic (non-search mode)
   const filtered = useMemo(() => {
+    if (searchGroups !== null) return []; // search mode handles its own results
     let result = allLicenses;
     if (query.trim()) {
       const q = query.toLowerCase();
@@ -82,10 +158,13 @@ function HomeContent() {
     if (langFilter) result = result.filter((l) => l.languages?.some((lang) => lang === langFilter || lang.startsWith(langFilter)));
     if (sort === "newest") result = [...result].sort((a, b) => (b.created_at || "").localeCompare(a.created_at || ""));
     return result;
-  }, [query, typeFilter, osionly, fsfOnly, propOnly, langFilter, tagFilter, sort]);
+  }, [query, typeFilter, osionly, fsfOnly, propOnly, langFilter, tagFilter, sort, searchGroups]);
 
   const paged = filtered.slice(0, (page + 1) * PAGE_SIZE);
   const hasMore = paged.length < filtered.length;
+
+  // Search result count
+  const searchTotal = filteredGroups?.reduce((sum, g) => sum + g.results.length, 0) ?? 0;
 
   function resetPage() {
     setPage(0);
@@ -133,6 +212,10 @@ function HomeContent() {
     resetPage();
   }
 
+  const handleSearchFocus = useCallback(() => {
+    preloadIndex();
+  }, []);
+
   const typeLabels: Record<string, string> = {
     software: t("type.software"),
     model: t("type.model"),
@@ -157,10 +240,11 @@ function HomeContent() {
       <div className="mb-6 flex flex-wrap items-center gap-2">
         <input
           type="text"
-          placeholder={t("home.search")}
+          placeholder={t("search.placeholder")}
           value={query}
           onChange={(e) => handleQuery(e.target.value)}
-          className="w-full rounded-xl border border-zinc-200 bg-white/70 px-4 py-2 text-sm outline-none backdrop-blur-sm transition-colors focus:border-[#7c3aed] dark:border-zinc-700 dark:bg-zinc-900/70 dark:text-zinc-100 sm:w-64"
+          onFocus={handleSearchFocus}
+          className="w-full rounded-xl border border-zinc-200 bg-white/70 px-4 py-2 text-sm outline-none backdrop-blur-sm transition-colors focus:border-[#7c3aed] dark:border-zinc-700 dark:bg-zinc-900/70 dark:text-zinc-100 sm:w-72"
         />
 
         {/* Type pills */}
@@ -259,32 +343,61 @@ function HomeContent() {
         </button>
       </div>
 
-      {/* Result count */}
-      <p className="mb-4 text-xs text-zinc-400">
-        {t("home.showing", { shown: String(paged.length), total: String(filtered.length) })}
-      </p>
-
-      {/* License Grid */}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {paged.map((l) => (
-          <LicenseCard key={l.slug} license={l} />
-        ))}
-      </div>
-
-      {paged.length === 0 && (
-        <p className="py-20 text-center text-zinc-400">{t("home.noResults")}</p>
+      {/* Search Results (grouped) */}
+      {searchLoading && (
+        <p className="mb-4 text-xs text-zinc-400">{t("search.loading")}</p>
       )}
 
-      {/* Load More */}
-      {hasMore && (
-        <div className="mt-8 flex justify-center">
-          <button
-            onClick={() => setPage((p) => p + 1)}
-            className="rounded-xl border border-zinc-200 bg-white px-6 py-2.5 text-sm font-medium text-zinc-700 transition-all duration-300 hover:border-zinc-300 active:scale-[0.98] dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300"
-          >
-            {t("home.loadMore", { remaining: String(filtered.length - paged.length) })}
-          </button>
-        </div>
+      {filteredGroups && !searchLoading && (
+        <>
+          <p className="mb-4 text-xs text-zinc-400">
+            {t("home.showing", { shown: String(searchTotal), total: String(searchTotal) })}
+          </p>
+          {filteredGroups.map((group) => (
+            <div key={group.key} className="mb-6">
+              <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+                {t(`search.group.${group.key}`)} ({group.results.length})
+              </h3>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {group.results.map((r) => {
+                  const lic = allLicenses.find((l) => l.slug === r.slug);
+                  if (!lic) return null;
+                  return <LicenseCard key={r.slug} license={lic} />;
+                })}
+              </div>
+            </div>
+          ))}
+          {searchTotal === 0 && !searchLoading && (
+            <p className="py-20 text-center text-zinc-400">{t("home.noResults")}</p>
+          )}
+        </>
+      )}
+
+      {/* Normal Grid (non-search mode) */}
+      {filteredGroups === null && !searchLoading && (
+        <>
+          <p className="mb-4 text-xs text-zinc-400">
+            {t("home.showing", { shown: String(paged.length), total: String(filtered.length) })}
+          </p>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {paged.map((l) => (
+              <LicenseCard key={l.slug} license={l} />
+            ))}
+          </div>
+          {paged.length === 0 && (
+            <p className="py-20 text-center text-zinc-400">{t("home.noResults")}</p>
+          )}
+          {hasMore && (
+            <div className="mt-8 flex justify-center">
+              <button
+                onClick={() => setPage((p) => p + 1)}
+                className="rounded-xl border border-zinc-200 bg-white px-6 py-2.5 text-sm font-medium text-zinc-700 transition-all duration-300 hover:border-zinc-300 active:scale-[0.98] dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300"
+              >
+                {t("home.loadMore", { remaining: String(filtered.length - paged.length) })}
+              </button>
+            </div>
+          )}
+        </>
       )}
     </div>
   );

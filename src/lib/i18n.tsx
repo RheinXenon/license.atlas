@@ -92,6 +92,15 @@ const dict: Record<Lang, Record<string, string>> = {
     "about.roadmap.guides": "License interpretation guides",
     "about.createdBy": "A project by",
     "about.scholarAlt": "Google Scholar",
+    "about.poweredBy": "Powered by",
+
+    // Search groups
+    "search.group.name": "Name Match",
+    "search.group.source": "Source Match",
+    "search.group.fulltext": "Full-text Match",
+    "search.group.fuzzy": "Fuzzy Match",
+    "search.loading": "Loading search index…",
+    "search.placeholder": "Search name, source, or full text…",
 
     // Lang toggle
     "lang.switchTo": "中文",
@@ -183,6 +192,15 @@ const dict: Record<Lang, Record<string, string>> = {
     "about.roadmap.guides": "许可证解读指南",
     "about.createdBy": "项目来自",
     "about.scholarAlt": "Google Scholar",
+    "about.poweredBy": "Powered by",
+
+    // Search groups
+    "search.group.name": "名称匹配",
+    "search.group.source": "来源匹配",
+    "search.group.fulltext": "全文匹配",
+    "search.group.fuzzy": "模糊匹配",
+    "search.loading": "正在加载搜索索引…",
+    "search.placeholder": "搜索名称、来源或全文…",
 
     // Lang toggle
     "lang.switchTo": "English",

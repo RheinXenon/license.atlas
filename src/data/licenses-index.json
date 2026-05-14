@@ -340,20 +340,10 @@
     "deprecated": false,
     "type": "software",
     "version": "",
-    "description": "A permissive license similar to the <a href=\"/licenses/bsd-2-clause/\">BSD 2-Clause License</a>, but with a 3rd clause that prohibits others from using the name of the copyright holder or its contributors to promote derived products without written consent.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "private-use"
-    ],
-    "conditions": [
-      "include-copyright"
-    ],
-    "limitations": [
-      "liability",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [
       "Permissive",
       "tl;drLegal Verified"
@@ -364,12 +354,12 @@
         "url": "https://opensource.org/license/bsd-3-clause"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/BSD-3-Clause.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/bsd-3-clause/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/BSD-3-Clause.html"
       },
       {
         "name": "GNU License List",
@@ -479,20 +469,10 @@
     "deprecated": false,
     "type": "software",
     "version": "",
-    "description": "A permissive license that comes in two variants, the <a href=\"/licenses/bsd-2-clause/\">BSD 2-Clause</a> and <a href=\"/licenses/bsd-3-clause/\">BSD 3-Clause</a>. Both have very minute differences to the MIT license.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "private-use"
-    ],
-    "conditions": [
-      "include-copyright"
-    ],
-    "limitations": [
-      "liability",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [
       "Permissive",
       "tl;drLegal Verified"
@@ -503,12 +483,12 @@
         "url": "https://opensource.org/license/bsd-2-clause"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/BSD-2-Clause.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/bsd-2-clause/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/BSD-2-Clause.html"
       },
       {
         "name": "GNU License List",
@@ -553,24 +533,10 @@
     "deprecated": false,
     "type": "software",
     "version": "2.0",
-    "description": "Permissions of this weak copyleft license are conditioned on making available source code of licensed files and modifications of those files under the same license (or in certain cases, one of the GNU licenses). Copyright and license notices must be preserved. Contributors provide an express grant of patent rights. However, a larger work using the licensed work may be distributed under different terms and without source code for files added in the larger work.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "patent-use",
-      "private-use"
-    ],
-    "conditions": [
-      "disclose-source",
-      "include-copyright",
-      "same-license--file"
-    ],
-    "limitations": [
-      "liability",
-      "trademark-use",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [
       "Copyleft",
       "tl;drLegal Verified"
@@ -585,12 +551,12 @@
         "url": "https://www.tldrlegal.com/license/mozilla-public-license-2-0-mpl-2"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/MPL-2.0.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/mpl-2.0/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/MPL-2.0.html"
       },
       {
         "name": "GNU License List",
@@ -631,23 +597,10 @@
     "deprecated": false,
     "type": "data",
     "version": "",
-    "description": "Permits almost any use subject to providing credit and license notice. Frequently used for media assets and educational materials. The most common license for Open Access scientific publications. Not recommended for software.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "private-use"
-    ],
-    "conditions": [
-      "include-copyright",
-      "document-changes"
-    ],
-    "limitations": [
-      "liability",
-      "trademark-use",
-      "patent-use",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [
       "Creative Commons",
       "Permissive"
@@ -658,16 +611,16 @@
         "url": "https://www.tldrlegal.com/license/creative-commons-attribution-4-0-international-cc-by-4"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-4.0.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/cc-by-4.0/"
       },
       {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by/4.0/legalcode.txt"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-4.0.html"
       }
     ],
     "featured": false,
@@ -815,20 +768,10 @@
     "deprecated": false,
     "type": "software",
     "version": "",
-    "description": "A permissive license lets people do anything with your code with proper attribution and without warranty. The ISC license is functionally equivalent to the <a href=\"/licenses/bsd-2-clause/\">BSD 2-Clause</a> and <a href=\"/licenses/mit/\">MIT</a> licenses, removing some language that is no longer necessary.",
-    "permissions": [
-      "commercial-use",
-      "distribution",
-      "modifications",
-      "private-use"
-    ],
-    "conditions": [
-      "include-copyright"
-    ],
-    "limitations": [
-      "liability",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [
       "Permissive",
       "tl;drLegal Verified"
@@ -843,12 +786,12 @@
         "url": "https://www.tldrlegal.com/license/isc-license"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/ISC.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/isc/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/ISC.html"
       },
       {
         "name": "GNU License List",
@@ -889,18 +832,10 @@
     "deprecated": false,
     "type": "software",
     "version": "N/A",
-    "description": "The BSD Zero Clause license goes further than the BSD 2-Clause license to allow you unlimited freedom with the software without requirements to include the copyright notice, license text, or disclaimer in either source or binary forms.",
-    "permissions": [
-      "commercial-use",
-      "distribution",
-      "modifications",
-      "private-use"
-    ],
+    "description": "",
+    "permissions": [],
     "conditions": [],
-    "limitations": [
-      "liability",
-      "warranty"
-    ],
+    "limitations": [],
     "tags": [
       "Permissive",
       "tl;drLegal Verified"
@@ -915,12 +850,12 @@
         "url": "https://www.tldrlegal.com/license/bsd-0-clause-license"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/0BSD.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/0bsd/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/0BSD.html"
       }
     ],
     "featured": false,
@@ -943,20 +878,10 @@
     "deprecated": false,
     "type": "software",
     "version": "1.0",
-    "description": "A simple permissive license only requiring preservation of copyright and license notices for source (and not binary) distribution. Licensed works, modifications, and larger works may be distributed under different terms and without source code.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "private-use"
-    ],
-    "conditions": [
-      "include-copyright--source"
-    ],
-    "limitations": [
-      "liability",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [
       "Permissive",
       "tl;drLegal Verified"
@@ -971,12 +896,12 @@
         "url": "https://www.tldrlegal.com/license/boost-software-license-1-0-explained"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/BSL-1.0.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/bsl-1.0/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/BSL-1.0.html"
       },
       {
         "name": "GNU License List",
@@ -1041,6 +966,41 @@
     "family": "by-sa",
     "created_at": "2026-04-20",
     "proprietary": false,
+    "languages": [
+      "en",
+      "id",
+      "eu",
+      "da",
+      "de",
+      "et",
+      "es",
+      "fr",
+      "fy",
+      "hr",
+      "it",
+      "lv",
+      "lt",
+      "mi",
+      "nl",
+      "no",
+      "pl",
+      "pt",
+      "ro",
+      "sk",
+      "sl",
+      "fi",
+      "sv",
+      "tr",
+      "cs",
+      "el",
+      "ru",
+      "uk",
+      "ar",
+      "ja",
+      "zh-hans",
+      "zh-hant",
+      "ko"
+    ],
     "popularity": 47649,
     "github_repos": 32502,
     "kaggle_datasets": 6990,
@@ -1071,23 +1031,10 @@
     "deprecated": false,
     "type": "software",
     "version": "2.0",
-    "description": "This commercially-friendly copyleft license provides the ability to commercially license binaries; a modern royalty-free patent license grant; and the ability for linked works to use other licenses, including commercial ones.",
-    "permissions": [
-      "commercial-use",
-      "distribution",
-      "modifications",
-      "patent-use",
-      "private-use"
-    ],
-    "conditions": [
-      "disclose-source",
-      "include-copyright",
-      "same-license"
-    ],
-    "limitations": [
-      "liability",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [],
     "sources": [
       {
@@ -1095,12 +1042,12 @@
         "url": "https://opensource.org/license/epl-2-0"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/EPL-2.0.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/epl-2.0/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/EPL-2.0.html"
       },
       {
         "name": "GNU License List",
@@ -1141,13 +1088,8 @@
     "deprecated": false,
     "type": "software",
     "version": "",
-    "description": "The easiest license out there. It gives the user permissions to do whatever they want with your code.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "private-use"
-    ],
+    "description": "",
+    "permissions": [],
     "conditions": [],
     "limitations": [],
     "tags": [
@@ -1155,12 +1097,12 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/WTFPL.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/wtfpl/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/WTFPL.html"
       },
       {
         "name": "tldrlegal.com",
@@ -1271,12 +1213,12 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-NC-4.0.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by-nc/4.0/legalcode.txt"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-NC-4.0.html"
       }
     ],
     "featured": false,
@@ -1356,12 +1298,12 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-NC-SA-4.0.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-NC-SA-4.0.html"
       }
     ],
     "featured": false,
@@ -1391,6 +1333,7 @@
       "sk",
       "sl",
       "fi",
+      "sv",
       "tr",
       "cs",
       "el",
@@ -1433,23 +1376,10 @@
     "deprecated": false,
     "type": "software",
     "version": "2.0",
-    "description": "Heavily favored by the Perl community, the Artistic license requires that modified versions of the software do not prevent users from running the standard version.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "patent-use",
-      "private-use"
-    ],
-    "conditions": [
-      "include-copyright",
-      "document-changes"
-    ],
-    "limitations": [
-      "liability",
-      "trademark-use",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [
       "tl;drLegal Verified"
     ],
@@ -1463,12 +1393,12 @@
         "url": "https://www.tldrlegal.com/license/artistic-license-2-0-artistic"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/Artistic-2.0.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/artistic-2.0/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/Artistic-2.0.html"
       },
       {
         "name": "GNU License List",
@@ -1507,21 +1437,10 @@
     "deprecated": false,
     "type": "software",
     "version": "1.1",
-    "description": "The Open Font License (OFL) is maintained by SIL International. It attempts to be a compromise between the values of the free software and typeface design communities. It is used for almost all open source font projects, including those by Adobe, Google and Mozilla.",
-    "permissions": [
-      "private-use",
-      "commercial-use",
-      "modifications",
-      "distribution"
-    ],
-    "conditions": [
-      "include-copyright",
-      "same-license"
-    ],
-    "limitations": [
-      "liability",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [
       "tl;drLegal Verified"
     ],
@@ -1535,12 +1454,12 @@
         "url": "https://www.tldrlegal.com/license/open-font-license-ofl-explained"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/OFL-1.1.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/ofl-1.1/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/OFL-1.1.html"
       }
     ],
     "featured": false,
@@ -1577,21 +1496,10 @@
     "deprecated": false,
     "type": "software",
     "version": "",
-    "description": "A short permissive license, compatible with GPL. Requires altered source versions to be documented as such.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "private-use"
-    ],
-    "conditions": [
-      "include-copyright--source",
-      "document-changes"
-    ],
-    "limitations": [
-      "liability",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [
       "tl;drLegal Verified"
     ],
@@ -1605,12 +1513,12 @@
         "url": "https://www.tldrlegal.com/license/zlib-libpng-license-zlib"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/Zlib.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/zlib/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/Zlib.html"
       }
     ],
     "featured": false,
@@ -1655,16 +1563,16 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/ODbL-1.0.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/odbl-1.0/"
       },
       {
         "name": "opendatacommons.org",
         "url": "https://opendatacommons.org/licenses/odbl/1-0/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/ODbL-1.0.html"
       },
       {
         "name": "GNU License List",
@@ -1693,23 +1601,10 @@
     "deprecated": false,
     "type": "software",
     "version": "3.0",
-    "description": "The Academic Free License is a variant of the Open Software License that does not require that the source code of derivative works be disclosed. It contains explicit copyright and patent grants and reserves trademark rights in the author.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "private-use",
-      "patent-use"
-    ],
-    "conditions": [
-      "include-copyright",
-      "document-changes"
-    ],
-    "limitations": [
-      "trademark-use",
-      "liability",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [],
     "sources": [
       {
@@ -1717,12 +1612,12 @@
         "url": "https://opensource.org/license/afl-3-0"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/AFL-3.0.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/afl-3.0/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/AFL-3.0.html"
       },
       {
         "name": "GNU License List",
@@ -1824,12 +1719,12 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-NC-ND-4.0.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.txt"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-NC-ND-4.0.html"
       }
     ],
     "featured": false,
@@ -1908,12 +1803,12 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-SA-3.0.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by-sa/3.0/legalcode.txt"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-SA-3.0.html"
       }
     ],
     "featured": false,
@@ -2099,12 +1994,12 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-ND-4.0.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by-nd/4.0/legalcode.txt"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-ND-4.0.html"
       }
     ],
     "featured": false,
@@ -2236,12 +2131,12 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-2.0.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by/2.0/legalcode.en"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-2.0.html"
       }
     ],
     "featured": false,
@@ -2342,30 +2237,19 @@
     "deprecated": false,
     "type": "software",
     "version": "",
-    "description": "A variant of the <a href=\"/licenses/bsd-3-clause/\">BSD 3-Clause License</a> that explicitly does not grant any patent rights.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "private-use"
-    ],
-    "conditions": [
-      "include-copyright"
-    ],
-    "limitations": [
-      "liability",
-      "patent-use",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/BSD-3-Clause-Clear.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/bsd-3-clause-clear/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/BSD-3-Clause-Clear.html"
       },
       {
         "name": "GNU License List",
@@ -2498,12 +2382,12 @@
     "tags": [],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/ODC-By-1.0.html"
-      },
-      {
         "name": "opendatacommons.org",
         "url": "https://opendatacommons.org/licenses/by/1-0/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/ODC-By-1.0.html"
       }
     ],
     "featured": false,
@@ -2534,12 +2418,12 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-NC-3.0.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by-nc/3.0/legalcode.txt"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-NC-3.0.html"
       }
     ],
     "featured": false,
@@ -2572,20 +2456,10 @@
     "deprecated": false,
     "type": "software",
     "version": "N/A",
-    "description": "A very short, BSD-style license, used specifically for PostgreSQL.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "private-use"
-    ],
-    "conditions": [
-      "include-copyright"
-    ],
-    "limitations": [
-      "liability",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [
       "tl;drLegal Verified"
     ],
@@ -2599,12 +2473,12 @@
         "url": "https://www.tldrlegal.com/license/postgresql-license-postgresql"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/PostgreSQL.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/postgresql/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/PostgreSQL.html"
       }
     ],
     "featured": false,
@@ -2733,12 +2607,12 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-NC-SA-3.0.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode.txt"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-NC-SA-3.0.html"
       }
     ],
     "featured": false,
@@ -2781,12 +2655,12 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-NC-ND-3.0.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by-nc-nd/3.0/legalcode.txt"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-NC-ND-3.0.html"
       }
     ],
     "featured": false,
@@ -2830,12 +2704,12 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-NC-SA-2.0.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by-nc-sa/2.0/legalcode.en"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-NC-SA-2.0.html"
       }
     ],
     "featured": false,
@@ -2967,26 +2841,10 @@
     "deprecated": false,
     "type": "software",
     "version": "3.0",
-    "description": "Permissions of this copyleft license are conditioned on distributing source code of licensed works and modifications under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights. Using the work or modifications to provide services to external users is treated as distribution and also requires making source code available. Works that merely link to a licensed work are considered collective works and are not subject to the license's reciprocity requirements.",
-    "permissions": [
-      "commercial-use",
-      "distribution",
-      "modifications",
-      "patent-use",
-      "private-use"
-    ],
-    "conditions": [
-      "include-copyright",
-      "disclose-source",
-      "document-changes",
-      "network-use-disclose",
-      "same-license"
-    ],
-    "limitations": [
-      "trademark-use",
-      "liability",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [
       "Copyleft"
     ],
@@ -2996,12 +2854,12 @@
         "url": "https://opensource.org/license/osl-3-0"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/OSL-3.0.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/osl-3.0/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/OSL-3.0.html"
       },
       {
         "name": "GNU License List",
@@ -3043,26 +2901,10 @@
     "deprecated": false,
     "type": "software",
     "version": "1.1",
-    "description": "The “European Union Public Licence” (EUPL) is a copyleft free/open source software license created on the initiative of and approved by the European Commission in 22 official languages of the European Union.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "patent-use",
-      "private-use"
-    ],
-    "conditions": [
-      "include-copyright",
-      "disclose-source",
-      "document-changes",
-      "network-use-disclose",
-      "same-license"
-    ],
-    "limitations": [
-      "liability",
-      "trademark-use",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [
       "tl;drLegal Verified"
     ],
@@ -3076,12 +2918,12 @@
         "url": "https://www.tldrlegal.com/license/european-union-public-licence"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/EUPL-1.1.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/eupl-1.1/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/EUPL-1.1.html"
       }
     ],
     "featured": false,
@@ -3113,22 +2955,10 @@
     "deprecated": false,
     "type": "software",
     "version": "1.3c",
-    "description": "The LaTeX Project Public License (LPPL) is the primary license under which the LaTeX kernel and the base LaTeX packages are distributed.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "private-use"
-    ],
-    "conditions": [
-      "include-copyright",
-      "document-changes",
-      "disclose-source"
-    ],
-    "limitations": [
-      "liability",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [
       "tl;drLegal Verified"
     ],
@@ -3142,12 +2972,12 @@
         "url": "https://www.tldrlegal.com/license/latex-project-public-license-v1-3c-lppl-1-3c"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/LPPL-1.3c.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/lppl-1.3c/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/LPPL-1.3c.html"
       }
     ],
     "featured": false,
@@ -4759,10 +4589,8 @@
     "title": "Apple Public Source License 1.1",
     "spdx_id": "APSL-1.1",
     "osi_approved": false,
-    "fsf_libre": false,
-    "fsf_tags": [
-      "non-free"
-    ],
+    "fsf_libre": null,
+    "fsf_tags": [],
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -4786,10 +4614,8 @@
     "title": "Apple Public Source License 1.2",
     "spdx_id": "APSL-1.2",
     "osi_approved": false,
-    "fsf_libre": false,
-    "fsf_tags": [
-      "non-free"
-    ],
+    "fsf_libre": null,
+    "fsf_tags": [],
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -5080,7 +4906,7 @@
     "title": "Artistic License 1.0 (dist)",
     "spdx_id": "Artistic-dist",
     "osi_approved": false,
-    "fsf_libre": false,
+    "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
     "type": "software",
@@ -5105,7 +4931,7 @@
     "title": "Artistic License 1.0 w/clause 8",
     "spdx_id": "Artistic-1.0-cl8",
     "osi_approved": false,
-    "fsf_libre": false,
+    "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
     "type": "software",
@@ -5625,21 +5451,10 @@
     "deprecated": false,
     "type": "software",
     "version": "1.0.0",
-    "description": "A permissive license whose main conditions require providing notice of the license. Contributors provide an express grant of patent rights. Licensed works, modifications, and larger works may be distributed under different terms and without source code.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "patent-use",
-      "private-use"
-    ],
-    "conditions": [
-      "include-copyright"
-    ],
-    "limitations": [
-      "liability",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [],
     "sources": [
       {
@@ -5647,12 +5462,12 @@
         "url": "https://opensource.org/license/blueoak-1-0-0"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/BlueOak-1.0.0.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/blueoak-1.0.0/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/BlueOak-1.0.0.html"
       }
     ],
     "featured": false,
@@ -6171,29 +5986,19 @@
     "deprecated": false,
     "type": "software",
     "version": "",
-    "description": "A permissive license similar to the <a href=\"/licenses/bsd-3-clause/\">BSD 3-Clause License</a>, but with an \"advertising clause\" that requires an acknowledgment of the original source in all advertising material.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "private-use"
-    ],
-    "conditions": [
-      "include-copyright"
-    ],
-    "limitations": [
-      "liability",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/BSD-4-Clause.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/bsd-4-clause/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/BSD-4-Clause.html"
       },
       {
         "name": "tldrlegal.com",
@@ -6518,21 +6323,10 @@
     "deprecated": false,
     "type": "software",
     "version": "N/A",
-    "description": "\"This license is designed to provide: a) a simple permissive license; b) that is compatible with the GNU GPL-2.0; and c) which also has an express patent grant included.\"",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "patent-use",
-      "private-use"
-    ],
-    "conditions": [
-      "include-copyright"
-    ],
-    "limitations": [
-      "liability",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [],
     "sources": [
       {
@@ -6540,12 +6334,12 @@
         "url": "https://opensource.org/license/bsd-2-clause-patent"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/BSD-2-Clause-Patent.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/bsd-2-clause-patent/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/BSD-2-Clause-Patent.html"
       }
     ],
     "featured": false,
@@ -6987,22 +6781,10 @@
     "deprecated": false,
     "type": "software",
     "version": "2",
-    "description": "A permissive license for hardware designs, with conditions only requiring preservation of notices. Contributors provide an express grant of patent rights. Licensed works, modifications, and larger works may be distributed under different terms and without sources.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "private-use",
-      "patent-use"
-    ],
-    "conditions": [
-      "include-copyright",
-      "document-changes"
-    ],
-    "limitations": [
-      "liability",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [],
     "sources": [
       {
@@ -7010,12 +6792,12 @@
         "url": "https://opensource.org/license/cern-ohl-p-2-0"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CERN-OHL-P-2.0.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/cern-ohl-p-2.0/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CERN-OHL-P-2.0.html"
       }
     ],
     "featured": false,
@@ -7032,24 +6814,10 @@
     "deprecated": false,
     "type": "software",
     "version": "2",
-    "description": "Permissions of this strongly reciprocal license for hardware designs are conditioned on making available complete sources of licensed works and modifications, which include larger works using a licensed work, under the same license. Notices must be preserved. Contributors provide an express grant of patent rights.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "private-use",
-      "patent-use"
-    ],
-    "conditions": [
-      "include-copyright",
-      "document-changes",
-      "disclose-source",
-      "same-license"
-    ],
-    "limitations": [
-      "liability",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [],
     "sources": [
       {
@@ -7057,12 +6825,12 @@
         "url": "https://opensource.org/license/cern-ohl-s-2-0"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CERN-OHL-S-2.0.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/cern-ohl-s-2.0/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CERN-OHL-S-2.0.html"
       }
     ],
     "featured": false,
@@ -7079,24 +6847,10 @@
     "deprecated": false,
     "type": "software",
     "version": "2",
-    "description": "Permissions of this weakly-reciprocal license are conditioned on making available complete sources of licensed works and modifications under the same license. Notices must be preserved. Contributors provide an express grant of patent rights. However, a larger work using the licensed work through interfaces provided by the licensed work may be distributed under different terms and without sources for the larger work.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "private-use",
-      "patent-use"
-    ],
-    "conditions": [
-      "include-copyright",
-      "document-changes",
-      "disclose-source",
-      "same-license--library"
-    ],
-    "limitations": [
-      "liability",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [],
     "sources": [
       {
@@ -7104,12 +6858,12 @@
         "url": "https://opensource.org/license/cern-ohl-w-2-0"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CERN-OHL-W-2.0.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/cern-ohl-w-2.0/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CERN-OHL-W-2.0.html"
       }
     ],
     "featured": false,
@@ -7579,10 +7333,8 @@
     "title": "COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL)",
     "spdx_id": "CDDL-1.1",
     "osi_approved": true,
-    "fsf_libre": true,
-    "fsf_tags": [
-      "libre"
-    ],
+    "fsf_libre": null,
+    "fsf_tags": [],
     "deprecated": false,
     "type": "software",
     "version": "1.1",
@@ -8118,12 +7870,12 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-1.0.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by/1.0/legalcode.en"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-1.0.html"
       }
     ],
     "featured": false,
@@ -8185,12 +7937,12 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-3.0-AU.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by/3.0/au/legalcode.en"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-3.0-AU.html"
       }
     ],
     "featured": false,
@@ -8309,12 +8061,12 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-3.0-US.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by/3.0/us/legalcode.en"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-3.0-US.html"
       }
     ],
     "featured": false,
@@ -8415,12 +8167,12 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-ND-2.5.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by-nd/2.5/legalcode.en"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-ND-2.5.html"
       }
     ],
     "featured": false,
@@ -8543,12 +8295,12 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-NC-1.0.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by-nc/1.0/legalcode.en"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-NC-1.0.html"
       }
     ],
     "featured": false,
@@ -8578,12 +8330,12 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-NC-2.5.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by-nc/2.5/legalcode.en"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-NC-2.5.html"
       }
     ],
     "featured": false,
@@ -8670,12 +8422,12 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-NC-ND-2.0.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode.en"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-NC-ND-2.0.html"
       }
     ],
     "featured": false,
@@ -8703,12 +8455,12 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-NC-ND-2.5.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by-nc-nd/2.5/legalcode.en"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-NC-ND-2.5.html"
       }
     ],
     "featured": false,
@@ -8766,12 +8518,12 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-NC-ND-3.0-IGO.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by-nc-nd/3.0/igo/legalcode.en"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-NC-ND-3.0-IGO.html"
       }
     ],
     "featured": false,
@@ -9074,12 +8826,12 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-SA-1.0.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by-sa/1.0/legalcode.en"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-SA-1.0.html"
       }
     ],
     "featured": false,
@@ -9137,12 +8889,12 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-SA-2.0.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by-sa/2.0/legalcode.en"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-SA-2.0.html"
       }
     ],
     "featured": false,
@@ -9439,12 +9191,12 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-SA-3.0-IGO.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/by-sa/3.0/igo/legalcode.en"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-SA-3.0-IGO.html"
       }
     ],
     "featured": false,
@@ -9514,7 +9266,7 @@
     "title": "Creative Commons Public Domain Dedication and Certification",
     "spdx_id": "CC-PDDC",
     "osi_approved": false,
-    "fsf_libre": true,
+    "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
     "type": "data",
@@ -9557,12 +9309,12 @@
     ],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-SA-1.0.html"
-      },
-      {
         "name": "creativecommons.org",
         "url": "https://creativecommons.org/licenses/sa/1.0/legalcode.en"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-SA-1.0.html"
       }
     ],
     "featured": false,
@@ -11032,7 +10784,8 @@
     ],
     "sources": [
       {
-        "url": "https://huggingface.co/undefined"
+        "name": "biohub/esm3-sm-open-v1",
+        "url": "https://huggingface.co/biohub/esm3-sm-open-v1"
       }
     ],
     "featured": false,
@@ -12453,11 +12206,8 @@
     "title": "GNU Free Documentation License v1.1 only - invariants",
     "spdx_id": "GFDL-1.1-invariants-only",
     "osi_approved": false,
-    "fsf_libre": true,
-    "fsf_tags": [
-      "fdl-compatible",
-      "libre"
-    ],
+    "fsf_libre": null,
+    "fsf_tags": [],
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -12481,11 +12231,8 @@
     "title": "GNU Free Documentation License v1.1 only - no invariants",
     "spdx_id": "GFDL-1.1-no-invariants-only",
     "osi_approved": false,
-    "fsf_libre": true,
-    "fsf_tags": [
-      "fdl-compatible",
-      "libre"
-    ],
+    "fsf_libre": null,
+    "fsf_tags": [],
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -12537,11 +12284,8 @@
     "title": "GNU Free Documentation License v1.1 or later - invariants",
     "spdx_id": "GFDL-1.1-invariants-or-later",
     "osi_approved": false,
-    "fsf_libre": true,
-    "fsf_tags": [
-      "fdl-compatible",
-      "libre"
-    ],
+    "fsf_libre": null,
+    "fsf_tags": [],
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -12565,11 +12309,8 @@
     "title": "GNU Free Documentation License v1.1 or later - no invariants",
     "spdx_id": "GFDL-1.1-no-invariants-or-later",
     "osi_approved": false,
-    "fsf_libre": true,
-    "fsf_tags": [
-      "fdl-compatible",
-      "libre"
-    ],
+    "fsf_libre": null,
+    "fsf_tags": [],
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -12705,11 +12446,8 @@
     "title": "GNU Free Documentation License v1.2 or later - invariants",
     "spdx_id": "GFDL-1.2-invariants-or-later",
     "osi_approved": false,
-    "fsf_libre": true,
-    "fsf_tags": [
-      "fdl-compatible",
-      "libre"
-    ],
+    "fsf_libre": null,
+    "fsf_tags": [],
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -12844,11 +12582,8 @@
     "title": "GNU Free Documentation License v1.3 only - no invariants",
     "spdx_id": "GFDL-1.3-no-invariants-only",
     "osi_approved": false,
-    "fsf_libre": true,
-    "fsf_tags": [
-      "fdl-compatible",
-      "libre"
-    ],
+    "fsf_libre": null,
+    "fsf_tags": [],
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -12928,11 +12663,8 @@
     "title": "GNU Free Documentation License v1.3 or later - no invariants",
     "spdx_id": "GFDL-1.3-no-invariants-or-later",
     "osi_approved": false,
-    "fsf_libre": true,
-    "fsf_tags": [
-      "fdl-compatible",
-      "libre"
-    ],
+    "fsf_libre": null,
+    "fsf_tags": [],
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -13979,7 +13711,7 @@
     "title": "Historical Permission Notice and Disclaimer - Fenneberg-Livingston variant",
     "spdx_id": "HPND-Fenneberg-Livingston",
     "osi_approved": false,
-    "fsf_libre": true,
+    "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
     "type": "software",
@@ -14004,7 +13736,7 @@
     "title": "Historical Permission Notice and Disclaimer - Intel variant",
     "spdx_id": "HPND-Intel",
     "osi_approved": false,
-    "fsf_libre": true,
+    "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
     "type": "software",
@@ -14054,7 +13786,7 @@
     "title": "Historical Permission Notice and Disclaimer - Markus Kuhn variant",
     "spdx_id": "HPND-Markus-Kuhn",
     "osi_approved": false,
-    "fsf_libre": true,
+    "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
     "type": "software",
@@ -14079,7 +13811,7 @@
     "title": "Historical Permission Notice and Disclaimer - merchantability variant",
     "spdx_id": "HPND-merchantability-variant",
     "osi_approved": false,
-    "fsf_libre": true,
+    "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
     "type": "software",
@@ -14129,7 +13861,7 @@
     "title": "Historical Permission Notice and Disclaimer - Pbmplus variant",
     "spdx_id": "HPND-Pbmplus",
     "osi_approved": false,
-    "fsf_libre": true,
+    "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
     "type": "software",
@@ -14154,7 +13886,7 @@
     "title": "Historical Permission Notice and Disclaimer - sell regexpr variant",
     "spdx_id": "HPND-sell-regexpr",
     "osi_approved": false,
-    "fsf_libre": true,
+    "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
     "type": "software",
@@ -14204,7 +13936,7 @@
     "title": "Historical Permission Notice and Disclaimer - sell xserver variant with MIT disclaimer",
     "spdx_id": "HPND-sell-MIT-disclaimer-xserver",
     "osi_approved": false,
-    "fsf_libre": true,
+    "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
     "type": "software",
@@ -14229,7 +13961,7 @@
     "title": "Historical Permission Notice and Disclaimer - SMC variant",
     "spdx_id": "HPND-SMC",
     "osi_approved": false,
-    "fsf_libre": true,
+    "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
     "type": "software",
@@ -14254,7 +13986,7 @@
     "title": "Historical Permission Notice and Disclaimer - University of California variant",
     "spdx_id": "HPND-UC",
     "osi_approved": false,
-    "fsf_libre": true,
+    "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
     "type": "software",
@@ -14279,7 +14011,7 @@
     "title": "Historical Permission Notice and Disclaimer - University of California, US export warning",
     "spdx_id": "HPND-UC-export-US",
     "osi_approved": false,
-    "fsf_libre": true,
+    "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
     "type": "software",
@@ -14304,7 +14036,7 @@
     "title": "Historical Permission Notice and Disclaimer with MIT disclaimer",
     "spdx_id": "HPND-MIT-disclaimer",
     "osi_approved": false,
-    "fsf_libre": true,
+    "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
     "type": "software",
@@ -14892,7 +14624,7 @@
     "title": "Independent JPEG Group License - short",
     "spdx_id": "IJG-short",
     "osi_approved": false,
-    "fsf_libre": true,
+    "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
     "type": "software",
@@ -16046,7 +15778,7 @@
     "title": "libselinux public domain notice",
     "spdx_id": "libselinux-1.0",
     "osi_approved": false,
-    "fsf_libre": true,
+    "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
     "type": "software",
@@ -18070,18 +17802,10 @@
     "deprecated": false,
     "type": "software",
     "version": "N/A",
-    "description": "A short and simple permissive license with no conditions, not even requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "private-use"
-    ],
+    "description": "",
+    "permissions": [],
     "conditions": [],
-    "limitations": [
-      "liability",
-      "warranty"
-    ],
+    "limitations": [],
     "tags": [],
     "sources": [
       {
@@ -18089,12 +17813,12 @@
         "url": "https://opensource.org/license/mit-0"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/MIT-0.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/mit-0/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/MIT-0.html"
       }
     ],
     "featured": false,
@@ -18974,22 +18698,10 @@
     "deprecated": false,
     "type": "software",
     "version": "2.0",
-    "description": "A permissive license similar to the <a href=\"/licenses/apache-2.0/\">Apache License</a>, but explicitly states that it does not grant trademark rights. Mulan Permissive Software License is the first open source license in both Chinese and English approved by OSI.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "patent-use",
-      "private-use"
-    ],
-    "conditions": [
-      "include-copyright"
-    ],
-    "limitations": [
-      "liability",
-      "trademark-use",
-      "warranty"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
     "tags": [],
     "sources": [
       {
@@ -18997,12 +18709,12 @@
         "url": "https://opensource.org/license/mulanpsl-2-0"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/MulanPSL-2.0.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/mulanpsl-2.0/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/MulanPSL-2.0.html"
       }
     ],
     "featured": false,
@@ -19265,7 +18977,7 @@
     "title": "NCBI Public Domain Notice",
     "spdx_id": "NCBI-PD",
     "osi_approved": false,
-    "fsf_libre": true,
+    "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
     "type": "software",
@@ -19691,7 +19403,7 @@
     "title": "NIST Public Domain Notice",
     "spdx_id": "NIST-PD",
     "osi_approved": false,
-    "fsf_libre": true,
+    "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
     "type": "software",
@@ -20414,7 +20126,7 @@
     "title": "ODC Public Domain Dedication & License 1.0 (PDDL-1.0)",
     "spdx_id": "PDDL-1.0",
     "osi_approved": false,
-    "fsf_libre": true,
+    "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
     "type": "data",
@@ -20430,12 +20142,12 @@
         "url": "https://www.tldrlegal.com/license/odc-public-domain-dedication-license-1-0-pddl-1-0"
       },
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/PDDL-1.0.html"
-      },
-      {
         "name": "opendatacommons.org",
         "url": "https://opendatacommons.org/licenses/pddl/1-0/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/PDDL-1.0.html"
       }
     ],
     "featured": false,
@@ -21602,7 +21314,7 @@
     "title": "OpenSSL License - standalone",
     "spdx_id": "OpenSSL-standalone",
     "osi_approved": false,
-    "fsf_libre": true,
+    "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
     "type": "software",
@@ -21910,7 +21622,9 @@
     "spdx_id": "PPL",
     "osi_approved": false,
     "fsf_libre": false,
-    "fsf_tags": [],
+    "fsf_tags": [
+      "non-free"
+    ],
     "deprecated": false,
     "type": "software",
     "version": "",
@@ -21934,6 +21648,34 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
+    "proprietary": true
+  },
+  {
+    "slug": "pepprclip-community-license-agreement",
+    "title": "PepPrCLIP Community License Agreement",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "model",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace",
+      "Proprietary"
+    ],
+    "sources": [
+      {
+        "name": "ubiquitx-pepprclip",
+        "url": "https://huggingface.co/ubiquitx-pepprclip"
+      }
+    ],
+    "featured": false,
+    "created_at": "2026-05-14",
     "proprietary": true
   },
   {
@@ -22478,7 +22220,8 @@
     ],
     "sources": [
       {
-        "url": "https://huggingface.co/undefined"
+        "name": "Prior-Labs/tabpfn_3",
+        "url": "https://huggingface.co/Prior-Labs/tabpfn_3"
       }
     ],
     "featured": false,
@@ -22918,7 +22661,7 @@
     "title": "Reciprocal Public License 1.5",
     "spdx_id": "RPL-1.5",
     "osi_approved": true,
-    "fsf_libre": false,
+    "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
     "type": "software",
@@ -23446,7 +23189,7 @@
     "title": "Sax Public Domain Notice 2.0",
     "spdx_id": "SAX-PD-2.0",
     "osi_approved": false,
-    "fsf_libre": true,
+    "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
     "type": "software",
@@ -24079,7 +23822,7 @@
     "title": "SL License",
     "spdx_id": "SL",
     "osi_approved": false,
-    "fsf_libre": true,
+    "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
     "type": "software",
@@ -25701,7 +25444,8 @@
     ],
     "sources": [
       {
-        "url": "https://huggingface.co/undefined"
+        "name": "TencentARC/Pixal3D",
+        "url": "https://huggingface.co/TencentARC/Pixal3D"
       }
     ],
     "featured": false,
@@ -27198,29 +26942,19 @@
     "deprecated": false,
     "type": "software",
     "version": "",
-    "description": "There are no restrictions on using or distributing an unmodified copy of the software. Parts of the software may also be distributed, but the license text must always be included. For modified versions a few restrictions apply. The license is GPL compatible, you may compile the software with GPL libraries and distribute it.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "private-use"
-    ],
-    "conditions": [
-      "include-copyright",
-      "document-changes",
-      "disclose-source",
-      "same-license"
-    ],
+    "description": "",
+    "permissions": [],
+    "conditions": [],
     "limitations": [],
     "tags": [],
     "sources": [
       {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/Vim.html"
-      },
-      {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/vim/"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/Vim.html"
       }
     ],
     "featured": false,
@@ -27504,7 +27238,7 @@
     "title": "X11 License Distribution Modification Variant",
     "spdx_id": "X11-distribute-modifications-variant",
     "osi_approved": false,
-    "fsf_libre": true,
+    "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
     "type": "software",

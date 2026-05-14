@@ -62,7 +62,7 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
           {license.osi_approved && <Badge variant="osi">{t("badge.osiApproved")}</Badge>}
           {license.fsf_libre && <Badge variant="fsf">{t("badge.fsfLibre")}</Badge>}
           {(license.fsf_tags || []).filter((t) => t !== "libre" && t !== "non-free").map((tag) => (
-            <Badge key={tag} variant="fsf-tag">{tag}</Badge>
+            <Badge key={tag} variant="fsf-tag">{tag.replace(/gpl|fdl/g, (m) => m.toUpperCase())}</Badge>
           ))}
           {formatLanguages(license.languages || []).map((lang) => (
             <Badge key={lang} variant="language">{lang}</Badge>

@@ -281,7 +281,7 @@
     "atomgit.com": 2
   },
   "by_tag": {
-    "Permissive": 29,
+    "Permissive": 27,
     "tl;drLegal Verified": 68,
     "Copyleft": 40,
     "GNU": 8,
@@ -290,16 +290,14 @@
     "Public Domain": 6,
     "Creative Commons": 65,
     "Weak Copyleft": 10,
-    "Custom": 178,
+    "Custom": 180,
     "MCP Server": 10,
     "HuggingFace": 158,
     "Agent Skill": 3,
+    "Hardware": 10,
     "LLM Tool": 3,
     "ModelGo": 8,
-    "Agent Framework": 4,
-    "OpenAtom": 2,
-    "Bilingual": 2,
-    "Hardware": 1
+    "Agent Framework": 4
   },
   "cleaning": {
     "tagsFixed": 118,

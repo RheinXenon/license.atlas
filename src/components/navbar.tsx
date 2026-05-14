@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLang } from "@/lib/i18n";
 
 function ThemeToggle() {
@@ -9,6 +9,14 @@ function ThemeToggle() {
     if (typeof document === "undefined") return false;
     return document.documentElement.classList.contains("dark");
   });
+
+  useEffect(() => {
+    const stored = localStorage.getItem("theme");
+    if (stored === "dark" || (!stored && matchMedia("(prefers-color-scheme: dark)").matches)) {
+      setDark(true);
+      document.documentElement.classList.add("dark");
+    }
+  }, []);
 
   function toggle() {
     const next = !dark;

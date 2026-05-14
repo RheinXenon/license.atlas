@@ -44,7 +44,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 19374385,
     "github_repos": 19090657,
@@ -108,7 +108,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 4569430,
     "github_repos": 3913687,
@@ -175,7 +175,7 @@
       }
     ],
     "featured": true,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 3475190,
     "github_repos": 3469773,
@@ -250,7 +250,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": true,
     "popularity": 630239,
     "github_repos": 628284,
@@ -306,7 +306,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-20",
     "proprietary": false,
     "popularity": 541040,
     "github_repos": 375540,
@@ -381,7 +381,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 491193,
     "github_repos": 488473,
@@ -445,7 +445,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 423992,
     "github_repos": 422624,
@@ -520,7 +520,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 162564,
     "github_repos": 161050,
@@ -598,7 +598,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 162260,
     "github_repos": 161993,
@@ -672,7 +672,7 @@
     ],
     "featured": false,
     "family": "by",
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "languages": [
       "en",
@@ -782,7 +782,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 74742,
     "github_repos": 74627,
@@ -856,7 +856,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 65580,
     "github_repos": 65480,
@@ -924,7 +924,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 65321,
     "github_repos": 65321
@@ -984,7 +984,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 48463,
     "github_repos": 47059,
@@ -1039,7 +1039,7 @@
     ],
     "featured": false,
     "family": "by-sa",
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-20",
     "proprietary": false,
     "popularity": 47649,
     "github_repos": 32502,
@@ -1108,7 +1108,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 47090,
     "github_repos": 46947,
@@ -1168,7 +1168,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 40256,
     "github_repos": 38815,
@@ -1230,7 +1230,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 38656,
     "github_repos": 38536,
@@ -1476,7 +1476,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 14871,
     "github_repos": 11281,
@@ -1544,7 +1544,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 10906,
     "github_repos": 10857,
@@ -1614,7 +1614,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 9934,
     "github_repos": 9820,
@@ -1676,7 +1676,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 8515,
     "kaggle_datasets": 8515
@@ -1734,7 +1734,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 8256,
     "github_repos": 2007,
@@ -1785,7 +1785,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 8000,
     "github_repos": 7853,
@@ -1975,7 +1975,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 2430,
     "github_repos": 2231,
@@ -2197,7 +2197,7 @@
     ],
     "featured": false,
     "family": "by",
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 870,
     "kaggle_datasets": 154,
@@ -2309,7 +2309,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 700,
     "github_repos": 607,
@@ -2373,7 +2373,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 695,
     "trend": [
@@ -2423,7 +2423,7 @@
     ],
     "featured": false,
     "family": "by-nc",
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-30",
     "proprietary": true,
     "popularity": 693,
     "trend": [
@@ -2507,7 +2507,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 511,
     "kaggle_datasets": 511
@@ -2608,7 +2608,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 421,
     "github_repos": 327,
@@ -2657,7 +2657,7 @@
     ],
     "featured": false,
     "family": "by",
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-30",
     "proprietary": false,
     "popularity": 387,
     "trend": [
@@ -2707,7 +2707,7 @@
     "featured": false,
     "family": "by-nc-sa",
     "variant": "igo",
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-30",
     "proprietary": true,
     "popularity": 356,
     "kaggle_datasets": 356
@@ -2937,7 +2937,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 238,
     "trend": [
@@ -3013,7 +3013,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 223,
     "trend": [
@@ -3085,7 +3085,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 148,
     "trend": [
@@ -3151,7 +3151,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 118,
     "trend": [
@@ -3240,7 +3240,7 @@
     "featured": false,
     "family": "by",
     "variant": "igo",
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-30",
     "proprietary": false,
     "popularity": 73,
     "kaggle_datasets": 73
@@ -3636,7 +3636,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": true
   },
   {
@@ -4267,7 +4267,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -4579,7 +4579,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -5206,7 +5206,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -5626,7 +5626,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -6171,7 +6171,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -6519,7 +6519,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -6737,7 +6737,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -6766,7 +6766,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -6989,7 +6989,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -7036,7 +7036,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -7083,7 +7083,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -7614,7 +7614,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -7854,7 +7854,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -8132,7 +8132,7 @@
     "featured": false,
     "family": "by",
     "variant": "au",
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-30",
     "proprietary": false
   },
   {
@@ -8325,7 +8325,7 @@
     ],
     "featured": false,
     "family": "by-nd",
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-30",
     "proprietary": true
   },
   {
@@ -8360,7 +8360,7 @@
     ],
     "featured": false,
     "family": "by-nd",
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-30",
     "proprietary": true
   },
   {
@@ -8460,7 +8460,7 @@
     ],
     "featured": false,
     "family": "by-nd",
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-30",
     "proprietary": true
   },
   {
@@ -8781,7 +8781,7 @@
     ],
     "featured": false,
     "family": "by-nc-sa",
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-30",
     "proprietary": true
   },
   {
@@ -8877,7 +8877,7 @@
     ],
     "featured": false,
     "family": "by-nc-sa",
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-30",
     "proprietary": true
   },
   {
@@ -9183,7 +9183,7 @@
     ],
     "featured": false,
     "family": "by-sa",
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-30",
     "proprietary": false
   },
   {
@@ -9615,7 +9615,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -9783,7 +9783,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -10524,7 +10524,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -10578,7 +10578,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -10761,7 +10761,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -11200,7 +11200,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -14603,7 +14603,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -14884,7 +14884,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -15282,7 +15282,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -15845,7 +15845,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -16133,7 +16133,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -16965,7 +16965,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -17550,7 +17550,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -17810,7 +17810,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -18036,7 +18036,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -18700,7 +18700,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -18943,7 +18943,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false,
     "languages": [
       "en",
@@ -19761,7 +19761,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -20065,7 +20065,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -20342,7 +20342,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -20375,7 +20375,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -21111,7 +21111,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -21592,7 +21592,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -22589,7 +22589,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -22819,7 +22819,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -22884,7 +22884,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -23347,7 +23347,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -23949,7 +23949,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -24831,7 +24831,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -25664,7 +25664,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -26027,7 +26027,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -26062,7 +26062,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -26716,7 +26716,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -26953,7 +26953,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -27104,7 +27104,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-20",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {
@@ -28156,7 +28156,7 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-14",
+    "created_at": "2026-04-19",
     "proprietary": false
   },
   {

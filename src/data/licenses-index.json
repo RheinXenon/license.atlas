@@ -6735,7 +6735,9 @@
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [],
+    "tags": [
+      "Hardware"
+    ],
     "sources": [
       {
         "name": "spdx.org",
@@ -6760,7 +6762,9 @@
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [],
+    "tags": [
+      "Hardware"
+    ],
     "sources": [
       {
         "name": "spdx.org",
@@ -6785,7 +6789,9 @@
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [],
+    "tags": [
+      "Hardware"
+    ],
     "sources": [
       {
         "name": "opensource.org",
@@ -6818,7 +6824,9 @@
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [],
+    "tags": [
+      "Hardware"
+    ],
     "sources": [
       {
         "name": "opensource.org",
@@ -6851,7 +6859,9 @@
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [],
+    "tags": [
+      "Hardware"
+    ],
     "sources": [
       {
         "name": "opensource.org",
@@ -23741,7 +23751,8 @@
     "tags": [
       "Custom",
       "HuggingFace",
-      "Proprietary"
+      "Proprietary",
+      "Hardware"
     ],
     "sources": [
       {
@@ -24097,7 +24108,9 @@
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [],
+    "tags": [
+      "Hardware"
+    ],
     "sources": [
       {
         "name": "spdx.org",
@@ -24122,7 +24135,9 @@
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [],
+    "tags": [
+      "Hardware"
+    ],
     "sources": [
       {
         "name": "spdx.org",
@@ -25071,7 +25086,9 @@
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [],
+    "tags": [
+      "Hardware"
+    ],
     "sources": [
       {
         "name": "spdx.org",
@@ -28088,5 +28105,99 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false
+  },
+  {
+    "slug": "openatom-model-license-v10",
+    "title": "OpenAtom Model License v1.0",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "model",
+    "version": "1.0",
+    "description": "开放原子模型许可证第一版 — 由开放原子开源基金会中立维护的 AI 大模型开源许可证，以参数和权重为主要许可客体，中英双语。",
+    "permissions": [
+      "Commercial Use",
+      "Modify",
+      "Distribute",
+      "Sublicense",
+      "Private Use"
+    ],
+    "conditions": [
+      "Include License",
+      "Include Copyright",
+      "State Changes"
+    ],
+    "limitations": [
+      "No Trademark",
+      "No Liability",
+      "No Warranty"
+    ],
+    "tags": [
+      "Custom"
+    ],
+    "sources": [
+      {
+        "name": "openatom.org",
+        "url": "https://www.openatom.org/law/licence"
+      },
+      {
+        "name": "atomgit.com",
+        "url": "https://atomgit.com/OpenAtomFoundation/ModelLicense"
+      }
+    ],
+    "featured": false,
+    "languages": [
+      "en",
+      "zh"
+    ]
+  },
+  {
+    "slug": "openatom-open-hardware-license-v10",
+    "title": "OpenAtom Open Hardware License v1.0",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "software",
+    "version": "1.0",
+    "description": "开放原子开放硬件许可证第一版 — 由开放原子开源基金会中立维护的开源硬件许可证，覆盖硬件源信息、集成电路布图设计、补充材料等，中英双语。",
+    "permissions": [
+      "Commercial Use",
+      "Modify",
+      "Distribute",
+      "Sublicense",
+      "Private Use",
+      "Manufacture"
+    ],
+    "conditions": [
+      "Include License",
+      "Include Copyright",
+      "State Changes"
+    ],
+    "limitations": [
+      "No Trademark",
+      "No Liability",
+      "No Warranty"
+    ],
+    "tags": [
+      "Custom",
+      "Hardware"
+    ],
+    "sources": [
+      {
+        "name": "openatom.org",
+        "url": "https://www.openatom.org/law/licence"
+      },
+      {
+        "name": "atomgit.com",
+        "url": "https://atomgit.com/OpenAtomFoundation/HardwareLicense"
+      }
+    ],
+    "featured": false,
+    "languages": [
+      "en",
+      "zh"
+    ]
   }
 ]

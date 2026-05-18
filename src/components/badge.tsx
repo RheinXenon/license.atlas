@@ -184,6 +184,12 @@ export const themes: Record<string, BadgeTheme> = {
     tooltip: "bg-orange-50 border-orange-300 dark:bg-orange-950 dark:border-orange-700",
     glow: "shadow-[0_0_8px_rgba(249,115,22,0.3)]",
   },
+  terms: {
+    desc: "Terms of Service referenced by a license — not a standalone license itself",
+    badge: "bg-teal-100 text-teal-800 dark:bg-teal-900/40 dark:text-teal-300",
+    tooltip: "bg-teal-50 border-teal-300 dark:bg-teal-950 dark:border-teal-700",
+    glow: "shadow-[0_0_8px_rgba(20,184,166,0.3)]",
+  },
   hardware: {
     desc: "License for open hardware designs, circuits, and physical artifacts",
     badge: "bg-lime-100 text-lime-800 dark:bg-lime-900/40 dark:text-lime-300",

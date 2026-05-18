@@ -2,7 +2,7 @@
 
 English | [中文](README.zh-CN.md)
 
-A comprehensive collection of **940** software, AI model, data, and agent licenses — searchable, filterable, and available in English and Chinese.
+A comprehensive collection of **956** software, AI model, data, and agent licenses — searchable, filterable, and available in English and Chinese.
 
 **Live site**: [LicenseAtlas](https://morningd.github.io/license.atlas)
 
@@ -14,7 +14,7 @@ A comprehensive collection of **940** software, AI model, data, and agent licens
 - **Popularity & trends** — sparkline charts from HuggingFace, GitHub, and Kaggle data
 - **Bilingual UI** — English/Chinese with automatic browser language detection
 - **Dark mode** — system preference + manual toggle
-- **Static export** — 940 pre-rendered pages, fast loading
+- **Static export** — 956 pre-rendered pages, fast loading
 
 ## Tech Stack
 

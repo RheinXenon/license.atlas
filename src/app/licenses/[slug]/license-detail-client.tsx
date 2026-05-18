@@ -58,23 +58,29 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
 
         {/* Badges */}
         <div className="mt-4 flex flex-wrap gap-2">
-          <Badge variant="type">{license.type}</Badge>
-          {license.osi_approved && <Badge variant="osi">{t("badge.osiApproved")}</Badge>}
-          {license.fsf_libre && <Badge variant="fsf">{t("badge.fsfLibre")}</Badge>}
-          {(license.fsf_tags || []).filter((t) => t !== "libre" && t !== "non-free").map((tag) => (
-            <Badge key={tag} variant="fsf-tag">{tag.replace(/gpl|fdl/g, (m) => m.toUpperCase())}</Badge>
-          ))}
-          {formatLanguages(license.languages || []).map((lang) => (
-            <Badge key={lang} variant="language">{lang}</Badge>
-          ))}
-          {license.tags.map((tag) => (
-            <Badge
-              key={tag}
-              variant={tag === "tl;drLegal Verified" ? "verified" : "tag"}
-            >
-              {tag}
-            </Badge>
-          ))}
+          {license.tags.includes("Terms") ? (
+            <Badge variant="tag">{t("tag.terms")}</Badge>
+          ) : (
+            <>
+              <Badge variant="type">{license.type}</Badge>
+              {license.osi_approved && <Badge variant="osi">{t("badge.osiApproved")}</Badge>}
+              {license.fsf_libre && <Badge variant="fsf">{t("badge.fsfLibre")}</Badge>}
+              {(license.fsf_tags || []).filter((t) => t !== "libre" && t !== "non-free").map((tag) => (
+                <Badge key={tag} variant="fsf-tag">{tag.replace(/gpl|fdl/g, (m) => m.toUpperCase())}</Badge>
+              ))}
+              {formatLanguages(license.languages || []).map((lang) => (
+                <Badge key={lang} variant="language">{lang}</Badge>
+              ))}
+              {license.tags.map((tag) => (
+                <Badge
+                  key={tag}
+                  variant={tag === "tl;drLegal Verified" ? "verified" : "tag"}
+                >
+                  {tag}
+                </Badge>
+              ))}
+            </>
+          )}
         </div>
       </div>
 
@@ -150,6 +156,38 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
               >
                 {s.name} ↗
               </a>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Terms */}
+      {license.terms && license.terms.length > 0 && (
+        <div className="fade-in-4 mb-8">
+          <h2 className="mb-4 text-lg font-semibold text-zinc-950 dark:text-zinc-50">
+            {t("detail.terms")}
+          </h2>
+          <div className="flex flex-wrap gap-2">
+            {license.terms.map((term, i) => (
+              term.slug ? (
+                <Link
+                  key={`${term.name}-${i}`}
+                  href={`/licenses/${term.slug}`}
+                  className="rounded-xl border border-zinc-200 px-3 py-1.5 text-sm text-zinc-600 transition-colors hover:border-violet-300 hover:text-[#7c3aed] dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-violet-700 dark:hover:text-[#a78bfa]"
+                >
+                  {term.name}
+                </Link>
+              ) : (
+                <a
+                  key={`${term.name}-${i}`}
+                  href={term.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-xl border border-zinc-200 px-3 py-1.5 text-sm text-zinc-600 transition-colors hover:border-violet-300 hover:text-[#7c3aed] dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-violet-700 dark:hover:text-[#a78bfa]"
+                >
+                  {term.name} ↗
+                </a>
+              )
             ))}
           </div>
         </div>

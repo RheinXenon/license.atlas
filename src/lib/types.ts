@@ -22,6 +22,7 @@ export interface License {
   bodies?: { lang: string; body: string }[];
   languages?: string[];
   created_at?: string;
+  terms?: { name: string; url: string; slug?: string }[];
   popularity?: number;
   github_repos?: number;
   kaggle_datasets?: number;

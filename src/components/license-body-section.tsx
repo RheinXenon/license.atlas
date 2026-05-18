@@ -64,7 +64,7 @@ export function LicenseBodySection({ slug, body, hasBodies }: LicenseBodySection
     <div className="mb-8">
       <div className="mb-4 flex items-center justify-between">
         <h2 className="text-lg font-semibold text-zinc-950 dark:text-zinc-50">
-          License Text
+          Full Text
         </h2>
         <CopyButton text={activeBody} />
       </div>

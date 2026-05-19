@@ -38,6 +38,12 @@ export const themes: Record<string, BadgeTheme> = {
     tooltip: "bg-purple-50 border-purple-300 dark:bg-purple-950 dark:border-purple-700",
     glow: "shadow-[0_0_8px_rgba(168,85,247,0.3)]",
   },
+  terms: {
+    desc: "Terms of Service referenced by a license — not a standalone license itself",
+    badge: "bg-teal-100 text-teal-800 dark:bg-teal-900/40 dark:text-teal-300",
+    tooltip: "bg-teal-50 border-teal-300 dark:bg-teal-950 dark:border-teal-700",
+    glow: "shadow-[0_0_8px_rgba(20,184,166,0.3)]",
+  },
   // Variants
   osi: {
     desc: "Approved by the Open Source Initiative as meeting the Open Source Definition",
@@ -183,12 +189,6 @@ export const themes: Record<string, BadgeTheme> = {
     badge: "bg-orange-100 text-orange-800 dark:bg-orange-900/40 dark:text-orange-300",
     tooltip: "bg-orange-50 border-orange-300 dark:bg-orange-950 dark:border-orange-700",
     glow: "shadow-[0_0_8px_rgba(249,115,22,0.3)]",
-  },
-  terms: {
-    desc: "Terms of Service referenced by a license — not a standalone license itself",
-    badge: "bg-teal-100 text-teal-800 dark:bg-teal-900/40 dark:text-teal-300",
-    tooltip: "bg-teal-50 border-teal-300 dark:bg-teal-950 dark:border-teal-700",
-    glow: "shadow-[0_0_8px_rgba(20,184,166,0.3)]",
   },
   hardware: {
     desc: "License for open hardware designs, circuits, and physical artifacts",

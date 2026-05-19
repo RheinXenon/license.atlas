@@ -26,6 +26,7 @@ const dict: Record<Lang, Record<string, string>> = {
     "type.model": "Model",
     "type.data": "Data",
     "type.agent": "Agent",
+    "type.terms": "Terms",
 
     // Tag pills
     "tag.proprietary": "Proprietary",
@@ -44,7 +45,6 @@ const dict: Record<Lang, Record<string, string>> = {
     "tag.agent-framework": "Agent Framework",
     "tag.agent-skill": "Agent Skill",
     "tag.llm-tool": "LLM Tool",
-    "tag.terms": "Terms",
     "tag.hardware": "Hardware",
 
     // Tag descriptions
@@ -70,7 +70,6 @@ const dict: Record<Lang, Record<string, string>> = {
     "tagdesc.agent-framework": "License from an AI agent framework project",
     "tagdesc.agent-skill": "License from an AI agent skill/plugin project",
     "tagdesc.llm-tool": "License from an LLM tool integration project",
-    "tagdesc.terms": "Terms of Service referenced by a license — not a standalone license itself",
     "tagdesc.hardware": "License for open hardware designs, circuits, and physical artifacts",
 
     // Filters
@@ -174,6 +173,7 @@ const dict: Record<Lang, Record<string, string>> = {
     "type.model": "模型",
     "type.data": "数据",
     "type.agent": "智能体",
+    "type.terms": "服务条款",
 
     // Tag pills
     "tag.proprietary": "专有",
@@ -192,7 +192,6 @@ const dict: Record<Lang, Record<string, string>> = {
     "tag.agent-framework": "智能体框架",
     "tag.agent-skill": "智能体技能",
     "tag.llm-tool": "LLM 工具",
-    "tag.terms": "服务条款",
     "tag.hardware": "硬件",
 
     // Tag descriptions
@@ -218,7 +217,6 @@ const dict: Record<Lang, Record<string, string>> = {
     "tagdesc.agent-framework": "来自 AI 智能体框架项目的许可证",
     "tagdesc.agent-skill": "来自 AI 智能体技能/插件项目的许可证",
     "tagdesc.llm-tool": "来自 LLM 工具集成项目的许可证",
-    "tagdesc.terms": "许可证引用的服务条款 — 本身不是独立的许可证",
     "tagdesc.hardware": "管理开源硬件设计、电路和物理制品的许可证",
 
     // Filters

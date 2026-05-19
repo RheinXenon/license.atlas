@@ -18,7 +18,7 @@ const allTags = Array.from(
   new Set(allLicenses.flatMap((l) => l.tags))
 ).filter((t) => !["MCP Server", "Agent Framework", "Agent Skill", "LLM Tool", "Proprietary"].includes(t));
 
-const tagOrder = ["Public Domain", "Permissive", "Weak Copyleft", "Copyleft", "Creative Commons", "GNU", "ModelGo", "GNU Nonfree", "Hardware", "Custom", "HuggingFace", "MCP Server", "Agent Framework", "Agent Skill", "LLM Tool", "Terms", "tl;drLegal Verified"];
+const tagOrder = ["Public Domain", "Permissive", "Weak Copyleft", "Copyleft", "Creative Commons", "GNU", "ModelGo", "GNU Nonfree", "Hardware", "Custom", "HuggingFace", "MCP Server", "Agent Framework", "Agent Skill", "LLM Tool", "tl;drLegal Verified"];
 allTags.sort((a, b) => {
   const ai = tagOrder.indexOf(a), bi = tagOrder.indexOf(b);
   if (ai !== -1 && bi !== -1) return ai - bi;
@@ -221,6 +221,7 @@ function HomeContent() {
     model: t("type.model"),
     data: t("type.data"),
     agent: t("type.agent"),
+    terms: t("type.terms"),
   };
 
   return (
@@ -248,7 +249,7 @@ function HomeContent() {
         />
 
         {/* Type pills */}
-        {["software", "model", "data", "agent"].map((tp) => (
+        {["software", "model", "data", "agent", "terms"].map((tp) => (
           <button
             key={tp}
             onClick={() => handleType(tp)}

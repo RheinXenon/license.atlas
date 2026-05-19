@@ -56,10 +56,10 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
           )}
         </div>
 
-        {/* Badges */}
+        {/* Badges — Terms entries (type=terms) only show type badge */}
         <div className="mt-4 flex flex-wrap gap-2">
-          {license.tags.includes("Terms") ? (
-            <Badge variant="tag">{t("tag.terms")}</Badge>
+          {license.type === "terms" ? (
+            <Badge variant="type">{t("type.terms")}</Badge>
           ) : (
             <>
               <Badge variant="type">{license.type}</Badge>

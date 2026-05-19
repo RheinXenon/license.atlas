@@ -5191,18 +5191,14 @@
     "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
-    "type": "agent",
+    "type": "terms",
     "proprietary": true,
     "version": "",
     "description": "Anthropic Consumer Terms of Service governing use of Claude.ai, Claude Pro, and other consumer-facing services.",
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [
-      "Terms",
-      "Custom",
-      "Proprietary"
-    ],
+    "tags": [],
     "sources": [
       {
         "name": "anthropic.com",
@@ -5221,18 +5217,14 @@
     "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
-    "type": "agent",
+    "type": "terms",
     "proprietary": true,
     "version": "",
     "description": "Anthropic Commercial Terms of Service governing use of Anthropic API keys, Console, and other commercial offerings.",
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [
-      "Terms",
-      "Custom",
-      "Proprietary"
-    ],
+    "tags": [],
     "sources": [
       {
         "name": "anthropic.com",
@@ -5251,18 +5243,14 @@
     "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
-    "type": "agent",
+    "type": "terms",
     "proprietary": true,
     "version": "",
     "description": "Meta's Acceptable Use Policy for Chameleon, governing safe and fair use of the multimodal model.",
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [
-      "Terms",
-      "Custom",
-      "Proprietary"
-    ],
+    "tags": [],
     "sources": [
       {
         "name": "ai.meta.com",
@@ -5281,18 +5269,14 @@
     "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
-    "type": "agent",
+    "type": "terms",
     "proprietary": true,
     "version": "",
     "description": "Meta's Acceptable Use Policy for Llama 2, governing safe and fair use.",
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [
-      "Terms",
-      "Custom",
-      "Proprietary"
-    ],
+    "tags": [],
     "sources": [
       {
         "name": "ai.meta.com",
@@ -5311,18 +5295,14 @@
     "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
-    "type": "agent",
+    "type": "terms",
     "proprietary": true,
     "version": "",
     "description": "Meta's Acceptable Use Policy for Llama 3, governing safe and fair use.",
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [
-      "Terms",
-      "Custom",
-      "Proprietary"
-    ],
+    "tags": [],
     "sources": [
       {
         "name": "llama.com",
@@ -5341,18 +5321,14 @@
     "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
-    "type": "agent",
+    "type": "terms",
     "proprietary": true,
     "version": "",
     "description": "Meta's Acceptable Use Policy for Llama 3.1, governing safe and fair use.",
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [
-      "Terms",
-      "Custom",
-      "Proprietary"
-    ],
+    "tags": [],
     "sources": [
       {
         "name": "llama.com",
@@ -5371,18 +5347,14 @@
     "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
-    "type": "agent",
+    "type": "terms",
     "proprietary": true,
     "version": "",
     "description": "Meta's Acceptable Use Policy for Llama 3.2, governing safe and fair use.",
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [
-      "Terms",
-      "Custom",
-      "Proprietary"
-    ],
+    "tags": [],
     "sources": [
       {
         "name": "llama.com",
@@ -5401,18 +5373,14 @@
     "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
-    "type": "agent",
+    "type": "terms",
     "proprietary": true,
     "version": "",
     "description": "Meta's Acceptable Use Policy for Llama 3.3, governing safe and fair use.",
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [
-      "Terms",
-      "Custom",
-      "Proprietary"
-    ],
+    "tags": [],
     "sources": [
       {
         "name": "llama.com",
@@ -5431,18 +5399,14 @@
     "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
-    "type": "agent",
+    "type": "terms",
     "proprietary": true,
     "version": "",
     "description": "Meta's Acceptable Use Policy for Llama 4, governing safe and fair use.",
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [
-      "Terms",
-      "Custom",
-      "Proprietary"
-    ],
+    "tags": [],
     "sources": [
       {
         "name": "llama.com",
@@ -5461,18 +5425,14 @@
     "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
-    "type": "agent",
+    "type": "terms",
     "proprietary": true,
     "version": "",
     "description": "NVIDIA's Trustworthy AI license terms governing ethical use of AI products and services.",
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [
-      "Terms",
-      "Custom",
-      "Proprietary"
-    ],
+    "tags": [],
     "sources": [
       {
         "name": "nvidia.com",
@@ -5491,18 +5451,14 @@
     "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
-    "type": "agent",
+    "type": "terms",
     "proprietary": true,
     "version": "",
     "description": "xAI's Acceptable Use Policy applying to all users of xAI services.",
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [
-      "Terms",
-      "Custom",
-      "Proprietary"
-    ],
+    "tags": [],
     "sources": [
       {
         "name": "x.ai",
@@ -5521,18 +5477,14 @@
     "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
-    "type": "agent",
+    "type": "terms",
     "proprietary": true,
     "version": "",
     "description": "Databricks' Acceptable Use Policy for open models including DBRX.",
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [
-      "Terms",
-      "Custom",
-      "Proprietary"
-    ],
+    "tags": [],
     "sources": [
       {
         "name": "databricks.com",
@@ -5551,18 +5503,14 @@
     "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
-    "type": "agent",
+    "type": "terms",
     "proprietary": true,
     "version": "",
     "description": "Stability AI's Acceptable Use Policy for safe and responsible use of models and services.",
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [
-      "Terms",
-      "Custom",
-      "Proprietary"
-    ],
+    "tags": [],
     "sources": [
       {
         "name": "stability.ai",
@@ -5581,18 +5529,14 @@
     "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
-    "type": "agent",
+    "type": "terms",
     "proprietary": true,
     "version": "",
     "description": "EvolutionaryScale's Acceptable Use Policy for access to and use of ESM models.",
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [
-      "Terms",
-      "Custom",
-      "Proprietary"
-    ],
+    "tags": [],
     "sources": [
       {
         "name": "evolutionaryscale.ai",
@@ -5611,18 +5555,14 @@
     "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
-    "type": "agent",
+    "type": "terms",
     "proprietary": true,
     "version": "",
     "description": "OpenAI's Terms of Use governing use of ChatGPT, DALL-E, and other consumer services.",
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [
-      "Terms",
-      "Custom",
-      "Proprietary"
-    ],
+    "tags": [],
     "sources": [
       {
         "name": "openai.com",
@@ -30549,18 +30489,14 @@
     "fsf_libre": null,
     "fsf_tags": [],
     "deprecated": false,
-    "type": "agent",
+    "type": "terms",
     "proprietary": true,
     "version": "",
     "description": "Moonshine AI's Use Policy governing acceptable use of the MOONSHINE model.",
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [
-      "Terms",
-      "Custom",
-      "Proprietary"
-    ],
+    "tags": [],
     "sources": [
       {
         "name": "moonshine.ai",

@@ -6,7 +6,7 @@ export interface License {
   fsf_libre: boolean;
   fsf_tags: string[];
   deprecated: boolean;
-  type: "software" | "model" | "data" | "agent";
+  type: "software" | "model" | "data" | "agent" | "terms";
   proprietary: boolean;
   version: string;
   description: string;

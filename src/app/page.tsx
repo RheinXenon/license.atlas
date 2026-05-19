@@ -249,7 +249,7 @@ function HomeContent() {
         />
 
         {/* Type pills */}
-        {["software", "model", "data", "agent", "terms"].map((tp) => (
+        {["software", "model", "data", "agent"].map((tp) => (
           <button
             key={tp}
             onClick={() => handleType(tp)}

@@ -22,14 +22,8 @@ export function Footer() {
           <p>
             <span className="font-medium text-[#7c3aed]">License</span>Atlas
           </p>
-          <p className="flex items-center gap-3 text-xs text-zinc-400">
-            <span>
-              <span id="busuanzi_value_site_pv" className="font-mono">-</span> {t("footer.views")}
-            </span>
-            <span className="h-3 w-px bg-zinc-300 dark:bg-zinc-700" />
-            <span>
-              <span id="busuanzi_value_site_uv" className="font-mono">-</span> {t("footer.visitors")}
-            </span>
+          <p className="flex items-center gap-1 text-xs text-zinc-400">
+            <span id="busuanzi_value_page_pv" className="font-mono">-</span> {t("footer.views")}
           </p>
         </div>
       </div>

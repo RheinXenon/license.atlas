@@ -102,6 +102,18 @@ print(f'By type: {json.dumps(d[\"by_type\"])}')
 
 If the command fails, stop and report the error.
 
+### Post-crawl: HF license trends extraction
+
+`update-all.sh` does NOT extract HF license trends. Run separately after Phase 1:
+
+```bash
+cd /Users/momo/Documents/workspace/KB && node crawlers/hf_hub_stats_crawl.js --source license-trends
+```
+
+This extracts monthly license usage trends from the HF models parquet. The data feeds into `clean-licenses.mjs` which injects `trend`, `popularity`, `github_repos`, and `kaggle_datasets` fields into each license entry.
+
+**Important**: This must run BEFORE `clean-licenses.mjs` so trends data is available during cleaning.
+
 ---
 
 ## Phase 2: Terms Entry Update (in KB)

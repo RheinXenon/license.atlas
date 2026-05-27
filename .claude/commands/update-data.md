@@ -126,11 +126,12 @@ Work in `/Users/momo/Documents/workspace/KB`.
 - `proprietary` → skipped for terms type (no proprietary detection)
 - `terms` frontmatter field on any license → passed through to cleaned output
 - `created_at` → falls back to frontmatter `created_at` when no `crawled_at` in sources
+- **CRITICAL**: `clean-licenses.mjs` freezes `created_at` from the previous `cleaned/licenses.json`. NEVER delete the `cleaned/` directory — if lost, ALL entries without a `crawled_at` or frontmatter `created_at` will get today's date, destroying historical sort order.
 
 **Terms display rules** (in license-atlas):
 - Terms detail pages show only one pill: "Terms" (teal). No type badge, OSI/FSF, language, or other tag pills.
 - Body section title: "Full Text" (not "License Text")
-- Only appears in "Latest" sort if created_at is recent — use correct historical dates in frontmatter
+- Latest sort is by first-added date (`created_at`) — only newly discovered licenses appear at top
 
 Terms entries live in `data/licenses/texts/{slug}.md` with `type: terms` and `tags: []` (auto-set to `["Terms"]`).
 Terms references are in HF/GH custom license files under `confirmed/` and standard license files under `texts/`.

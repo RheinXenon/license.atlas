@@ -46,7 +46,7 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 19374385,
+    "popularity": 19376524,
     "github_repos": 19090657,
     "kaggle_datasets": 64671,
     "trend": [
@@ -110,7 +110,7 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 4569430,
+    "popularity": 4577035,
     "github_repos": 3913687,
     "kaggle_datasets": 105065,
     "trend": [
@@ -177,7 +177,7 @@
     "featured": true,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 3475190,
+    "popularity": 3475214,
     "github_repos": 3469773,
     "kaggle_datasets": 713,
     "trend": [
@@ -252,7 +252,7 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": true,
-    "popularity": 630239,
+    "popularity": 630241,
     "github_repos": 628284,
     "kaggle_datasets": 1519,
     "trend": [
@@ -308,7 +308,7 @@
     "featured": false,
     "created_at": "2026-04-20",
     "proprietary": false,
-    "popularity": 541040,
+    "popularity": 541061,
     "github_repos": 375540,
     "kaggle_datasets": 160262,
     "trend": [
@@ -373,7 +373,7 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 491193,
+    "popularity": 491269,
     "github_repos": 488473,
     "trend": [
       93,
@@ -437,7 +437,7 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 423992,
+    "popularity": 423993,
     "github_repos": 422624,
     "trend": [
       26,
@@ -502,7 +502,7 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 162564,
+    "popularity": 162566,
     "github_repos": 161050,
     "trend": [
       85,
@@ -566,7 +566,7 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 162260,
+    "popularity": 162266,
     "github_repos": 161993,
     "trend": [
       5,
@@ -662,7 +662,7 @@
       "zh-hant",
       "ko"
     ],
-    "popularity": 144594,
+    "popularity": 146397,
     "github_repos": 106281,
     "kaggle_datasets": 8160,
     "trend": [
@@ -737,7 +737,7 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 74742,
+    "popularity": 74743,
     "github_repos": 74627,
     "trend": [
       1,
@@ -1001,7 +1001,7 @@
       "zh-hant",
       "ko"
     ],
-    "popularity": 47649,
+    "popularity": 47787,
     "github_repos": 32502,
     "kaggle_datasets": 6990,
     "trend": [
@@ -1112,7 +1112,7 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 40256,
+    "popularity": 40262,
     "github_repos": 38815,
     "trend": [
       19,
@@ -1260,7 +1260,7 @@
       "zh-hant",
       "ko"
     ],
-    "popularity": 24971,
+    "popularity": 25408,
     "kaggle_datasets": 2471,
     "trend": [
       470,
@@ -1345,7 +1345,7 @@
       "zh-hant",
       "ko"
     ],
-    "popularity": 17558,
+    "popularity": 17613,
     "kaggle_datasets": 8683,
     "trend": [
       118,
@@ -1408,7 +1408,7 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 14871,
+    "popularity": 14875,
     "github_repos": 11281,
     "trend": [
       234,
@@ -1465,7 +1465,7 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 10906,
+    "popularity": 10907,
     "github_repos": 10857,
     "trend": [
       2,
@@ -1631,7 +1631,7 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 8256,
+    "popularity": 8263,
     "github_repos": 2007,
     "trend": [
       337,
@@ -1682,7 +1682,7 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 8000,
+    "popularity": 8002,
     "github_repos": 7853,
     "trend": [
       0,
@@ -1766,7 +1766,7 @@
       "zh-hant",
       "ko"
     ],
-    "popularity": 4617,
+    "popularity": 4631,
     "kaggle_datasets": 1129,
     "trend": [
       64,
@@ -1913,7 +1913,7 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 1339,
+    "popularity": 1340,
     "kaggle_datasets": 1052,
     "trend": [
       5,
@@ -2094,7 +2094,7 @@
     "family": "by",
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 870,
+    "popularity": 873,
     "kaggle_datasets": 154,
     "trend": [
       14,
@@ -2143,7 +2143,7 @@
     "family": "by",
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 841,
+    "popularity": 843,
     "trend": [
       23,
       63,
@@ -2259,7 +2259,7 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 695,
+    "popularity": 696,
     "trend": [
       42,
       2,
@@ -2309,7 +2309,7 @@
     "family": "by-nc",
     "created_at": "2026-04-30",
     "proprietary": true,
-    "popularity": 693,
+    "popularity": 692,
     "trend": [
       13,
       14,
@@ -2349,7 +2349,7 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 572,
+    "popularity": 583,
     "trend": [
       17,
       3,
@@ -2430,7 +2430,7 @@
     "family": "by-nc",
     "created_at": "2026-04-19",
     "proprietary": true,
-    "popularity": 458,
+    "popularity": 462,
     "trend": [
       6,
       14,
@@ -2619,7 +2619,7 @@
     "family": "by-nc-sa",
     "created_at": "2026-04-19",
     "proprietary": true,
-    "popularity": 342,
+    "popularity": 343,
     "trend": [
       4,
       1,
@@ -2667,7 +2667,7 @@
     "family": "by-nc-nd",
     "created_at": "2026-04-19",
     "proprietary": true,
-    "popularity": 322,
+    "popularity": 321,
     "trend": [
       5,
       23,
@@ -2813,7 +2813,7 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 238,
+    "popularity": 239,
     "trend": [
       4,
       2,
@@ -4232,6 +4232,58 @@
     "proprietary": true
   },
   {
+    "slug": "anthropic-commercial-terms",
+    "title": "Anthropic Commercial Terms of Service",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "fsf_tags": [],
+    "deprecated": false,
+    "type": "terms",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Terms",
+      "Custom",
+      "Proprietary"
+    ],
+    "sources": [
+      {}
+    ],
+    "featured": false,
+    "proprietary": false,
+    "created_at": "2026-05-27"
+  },
+  {
+    "slug": "anthropic-consumer-terms",
+    "title": "Anthropic Consumer Terms of Service",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "fsf_tags": [],
+    "deprecated": false,
+    "type": "terms",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Terms",
+      "Custom",
+      "Proprietary"
+    ],
+    "sources": [
+      {}
+    ],
+    "featured": false,
+    "proprietary": true,
+    "created_at": "2026-05-27"
+  },
+  {
     "slug": "anthropic-skills-license",
     "title": "Anthropic Skills License",
     "spdx_id": "",
@@ -4267,6 +4319,7 @@
         "url": "https://github.com/anthropics/skills/tree/main/skills/xlsx"
       }
     ],
+    "featured": false,
     "terms": [
       {
         "name": "Anthropic Consumer Terms of Service",
@@ -4279,384 +4332,8 @@
         "slug": "anthropic-commercial-terms"
       }
     ],
-    "featured": false,
     "created_at": "2026-04-23",
     "proprietary": true
-  },
-  {
-    "slug": "anthropic-consumer-terms",
-    "title": "Anthropic Consumer Terms of Service",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "fsf_tags": [],
-    "deprecated": false,
-    "type": "terms",
-    "proprietary": true,
-    "version": "",
-    "description": "Anthropic Consumer Terms of Service governing use of Claude.ai, Claude Pro, and other consumer-facing services.",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [],
-    "sources": [
-      {
-        "name": "anthropic.com",
-        "url": "https://www.anthropic.com/legal/consumer-terms"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-05-17"
-  },
-  {
-    "slug": "anthropic-commercial-terms",
-    "title": "Anthropic Commercial Terms of Service",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "fsf_tags": [],
-    "deprecated": false,
-    "type": "terms",
-    "proprietary": true,
-    "version": "",
-    "description": "Anthropic Commercial Terms of Service governing use of Anthropic API keys, Console, and other commercial offerings.",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [],
-    "sources": [
-      {
-        "name": "anthropic.com",
-        "url": "https://www.anthropic.com/legal/commercial-terms"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-05-17"
-  },
-  {
-    "slug": "meta-chameleon-acceptable-use-policy",
-    "title": "Meta Chameleon Acceptable Use Policy",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "fsf_tags": [],
-    "deprecated": false,
-    "type": "terms",
-    "proprietary": true,
-    "version": "",
-    "description": "Meta's Acceptable Use Policy for Chameleon, governing safe and fair use of the multimodal model.",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [],
-    "sources": [
-      {
-        "name": "ai.meta.com",
-        "url": "https://ai.meta.com/resources/models-and-libraries/chameleon-use-policy/"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-05-18"
-  },
-  {
-    "slug": "meta-llama-2-acceptable-use-policy",
-    "title": "Meta Llama 2 Acceptable Use Policy",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "fsf_tags": [],
-    "deprecated": false,
-    "type": "terms",
-    "proprietary": true,
-    "version": "",
-    "description": "Meta's Acceptable Use Policy for Llama 2, governing safe and fair use.",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [],
-    "sources": [
-      {
-        "name": "ai.meta.com",
-        "url": "https://ai.meta.com/llama/use-policy"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-05-18"
-  },
-  {
-    "slug": "meta-llama-3-acceptable-use-policy",
-    "title": "Meta Llama 3 Acceptable Use Policy",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "fsf_tags": [],
-    "deprecated": false,
-    "type": "terms",
-    "proprietary": true,
-    "version": "",
-    "description": "Meta's Acceptable Use Policy for Llama 3, governing safe and fair use.",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [],
-    "sources": [
-      {
-        "name": "llama.com",
-        "url": "https://llama.com/llama3/use-policy"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-05-18"
-  },
-  {
-    "slug": "meta-llama-3-1-acceptable-use-policy",
-    "title": "Meta Llama 3.1 Acceptable Use Policy",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "fsf_tags": [],
-    "deprecated": false,
-    "type": "terms",
-    "proprietary": true,
-    "version": "",
-    "description": "Meta's Acceptable Use Policy for Llama 3.1, governing safe and fair use.",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [],
-    "sources": [
-      {
-        "name": "llama.com",
-        "url": "https://llama.com/llama3_1/use-policy"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-05-18"
-  },
-  {
-    "slug": "meta-llama-3-2-acceptable-use-policy",
-    "title": "Meta Llama 3.2 Acceptable Use Policy",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "fsf_tags": [],
-    "deprecated": false,
-    "type": "terms",
-    "proprietary": true,
-    "version": "",
-    "description": "Meta's Acceptable Use Policy for Llama 3.2, governing safe and fair use.",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [],
-    "sources": [
-      {
-        "name": "llama.com",
-        "url": "https://llama.com/llama3_2/use-policy"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-05-18"
-  },
-  {
-    "slug": "meta-llama-3-3-acceptable-use-policy",
-    "title": "Meta Llama 3.3 Acceptable Use Policy",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "fsf_tags": [],
-    "deprecated": false,
-    "type": "terms",
-    "proprietary": true,
-    "version": "",
-    "description": "Meta's Acceptable Use Policy for Llama 3.3, governing safe and fair use.",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [],
-    "sources": [
-      {
-        "name": "llama.com",
-        "url": "https://llama.com/llama3_3/use-policy"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-05-18"
-  },
-  {
-    "slug": "meta-llama-4-acceptable-use-policy",
-    "title": "Meta Llama 4 Acceptable Use Policy",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "fsf_tags": [],
-    "deprecated": false,
-    "type": "terms",
-    "proprietary": true,
-    "version": "",
-    "description": "Meta's Acceptable Use Policy for Llama 4, governing safe and fair use.",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [],
-    "sources": [
-      {
-        "name": "llama.com",
-        "url": "https://llama.com/llama4/use-policy"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-05-18"
-  },
-  {
-    "slug": "nvidia-trustworthy-ai-terms",
-    "title": "NVIDIA Trustworthy AI Terms",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "fsf_tags": [],
-    "deprecated": false,
-    "type": "terms",
-    "proprietary": true,
-    "version": "",
-    "description": "NVIDIA's Trustworthy AI license terms governing ethical use of AI products and services.",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [],
-    "sources": [
-      {
-        "name": "nvidia.com",
-        "url": "https://www.nvidia.com/en-us/agreements/trustworthy-ai/terms/"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-05-18"
-  },
-  {
-    "slug": "xai-acceptable-use-policy",
-    "title": "xAI Acceptable Use Policy",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "fsf_tags": [],
-    "deprecated": false,
-    "type": "terms",
-    "proprietary": true,
-    "version": "",
-    "description": "xAI's Acceptable Use Policy applying to all users of xAI services.",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [],
-    "sources": [
-      {
-        "name": "x.ai",
-        "url": "https://x.ai/legal/acceptable-use-policy"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-05-18"
-  },
-  {
-    "slug": "databricks-acceptable-use-policy-open-model",
-    "title": "Databricks Acceptable Use Policy for Open Models",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "fsf_tags": [],
-    "deprecated": false,
-    "type": "terms",
-    "proprietary": true,
-    "version": "",
-    "description": "Databricks' Acceptable Use Policy for open models including DBRX.",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [],
-    "sources": [
-      {
-        "name": "databricks.com",
-        "url": "https://www.databricks.com/legal/acceptable-use-policy-open-model"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-05-18"
-  },
-  {
-    "slug": "stability-ai-acceptable-use-policy",
-    "title": "Stability AI Acceptable Use Policy",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "fsf_tags": [],
-    "deprecated": false,
-    "type": "terms",
-    "proprietary": true,
-    "version": "",
-    "description": "Stability AI's Acceptable Use Policy for safe and responsible use of models and services.",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [],
-    "sources": [
-      {
-        "name": "stability.ai",
-        "url": "https://stability.ai/use-policy"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-05-18"
-  },
-  {
-    "slug": "evolutionaryscale-acceptable-use-policy",
-    "title": "EvolutionaryScale Acceptable Use Policy",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "fsf_tags": [],
-    "deprecated": false,
-    "type": "terms",
-    "proprietary": true,
-    "version": "",
-    "description": "EvolutionaryScale's Acceptable Use Policy for access to and use of ESM models.",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [],
-    "sources": [
-      {
-        "name": "evolutionaryscale.ai",
-        "url": "https://www.evolutionaryscale.ai/policies/acceptable-use-policy"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-05-18"
-  },
-  {
-    "slug": "openai-terms-of-use",
-    "title": "OpenAI Terms of Use",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "fsf_tags": [],
-    "deprecated": false,
-    "type": "terms",
-    "proprietary": true,
-    "version": "",
-    "description": "OpenAI's Terms of Use governing use of ChatGPT, DALL-E, and other consumer services.",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [],
-    "sources": [
-      {
-        "name": "openai.com",
-        "url": "https://openai.com/policies/terms-of-use"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-05-18"
   },
   {
     "slug": "antlr-pd",
@@ -7122,9 +6799,7 @@
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [
-      "Hardware"
-    ],
+    "tags": [],
     "sources": [
       {
         "name": "spdx.org",
@@ -7149,9 +6824,7 @@
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [
-      "Hardware"
-    ],
+    "tags": [],
     "sources": [
       {
         "name": "spdx.org",
@@ -7176,9 +6849,7 @@
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [
-      "Hardware"
-    ],
+    "tags": [],
     "sources": [
       {
         "name": "opensource.org",
@@ -7211,9 +6882,7 @@
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [
-      "Hardware"
-    ],
+    "tags": [],
     "sources": [
       {
         "name": "opensource.org",
@@ -7246,9 +6915,7 @@
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [
-      "Hardware"
-    ],
+    "tags": [],
     "sources": [
       {
         "name": "opensource.org",
@@ -7317,15 +6984,15 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-27",
-    "proprietary": true,
     "terms": [
       {
         "name": "Meta Chameleon Acceptable Use Policy",
         "url": "https://ai.meta.com/resources/models-and-libraries/chameleon-use-policy/",
         "slug": "meta-chameleon-acceptable-use-policy"
       }
-    ]
+    ],
+    "created_at": "2026-04-27",
+    "proprietary": true
   },
   {
     "slug": "check-cvs",
@@ -10050,6 +9717,32 @@
     "proprietary": false
   },
   {
+    "slug": "databricks-acceptable-use-policy-open-model",
+    "title": "Databricks Acceptable Use Policy for Open Models",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "fsf_tags": [],
+    "deprecated": false,
+    "type": "terms",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Terms",
+      "Custom",
+      "Proprietary"
+    ],
+    "sources": [
+      {}
+    ],
+    "featured": false,
+    "proprietary": false,
+    "created_at": "2026-05-27"
+  },
+  {
     "slug": "databricks-open-model-license",
     "title": "Databricks Open Model License",
     "spdx_id": "",
@@ -10074,15 +9767,15 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-27",
-    "proprietary": true,
     "terms": [
       {
         "name": "Databricks Acceptable Use Policy for Open Models",
         "url": "https://www.databricks.com/legal/acceptable-use-policy-open-model",
         "slug": "databricks-acceptable-use-policy-open-model"
       }
-    ]
+    ],
+    "created_at": "2026-04-27",
+    "proprietary": true
   },
   {
     "slug": "datayoo-huggingfists-eula",
@@ -11174,6 +10867,32 @@
     "featured": false,
     "created_at": "2026-05-14",
     "proprietary": false
+  },
+  {
+    "slug": "evolutionaryscale-acceptable-use-policy",
+    "title": "EvolutionaryScale Acceptable Use Policy",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "fsf_tags": [],
+    "deprecated": false,
+    "type": "terms",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Terms",
+      "Custom",
+      "Proprietary"
+    ],
+    "sources": [
+      {}
+    ],
+    "featured": false,
+    "proprietary": false,
+    "created_at": "2026-05-27"
   },
   {
     "slug": "evolutionaryscale-cambrian-nc",
@@ -16421,15 +16140,15 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-27",
-    "proprietary": true,
     "terms": [
       {
         "name": "EvolutionaryScale Acceptable Use Policy",
         "url": "https://www.evolutionaryscale.ai/policies/acceptable-use-policy",
         "slug": "evolutionaryscale-acceptable-use-policy"
       }
-    ]
+    ],
+    "created_at": "2026-04-27",
+    "proprietary": true
   },
   {
     "slug": "amd-instella-research-rail-ms-license",
@@ -16750,16 +16469,16 @@
       }
     ],
     "featured": false,
-    "family": "Llama",
-    "created_at": "2026-04-20",
-    "proprietary": true,
     "terms": [
       {
         "name": "Meta Llama 2 Acceptable Use Policy",
         "url": "https://ai.meta.com/llama/use-policy",
         "slug": "meta-llama-2-acceptable-use-policy"
       }
-    ]
+    ],
+    "family": "Llama",
+    "created_at": "2026-04-20",
+    "proprietary": true
   },
   {
     "slug": "llama-3-community-license-agreement",
@@ -16785,16 +16504,16 @@
       }
     ],
     "featured": false,
-    "family": "Llama",
-    "created_at": "2026-04-20",
-    "proprietary": true,
     "terms": [
       {
         "name": "Meta Llama 3 Acceptable Use Policy",
         "url": "https://llama.com/llama3/use-policy",
         "slug": "meta-llama-3-acceptable-use-policy"
       }
-    ]
+    ],
+    "family": "Llama",
+    "created_at": "2026-04-20",
+    "proprietary": true
   },
   {
     "slug": "llama-31-community-license-agreement",
@@ -16820,16 +16539,16 @@
       }
     ],
     "featured": false,
-    "family": "Llama",
-    "created_at": "2026-04-20",
-    "proprietary": true,
     "terms": [
       {
         "name": "Meta Llama 3.1 Acceptable Use Policy",
         "url": "https://llama.com/llama3_1/use-policy",
         "slug": "meta-llama-3-1-acceptable-use-policy"
       }
-    ]
+    ],
+    "family": "Llama",
+    "created_at": "2026-04-20",
+    "proprietary": true
   },
   {
     "slug": "llama-3.1-community-license-agreement",
@@ -16856,15 +16575,15 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-27",
-    "proprietary": true,
     "terms": [
       {
         "name": "Meta Llama 3.1 Acceptable Use Policy",
         "url": "https://llama.com/llama3_1/use-policy",
         "slug": "meta-llama-3-1-acceptable-use-policy"
       }
-    ]
+    ],
+    "created_at": "2026-04-27",
+    "proprietary": true
   },
   {
     "slug": "llama-32-community-license-agreement",
@@ -16894,16 +16613,16 @@
       }
     ],
     "featured": false,
-    "family": "Llama",
-    "created_at": "2026-04-20",
-    "proprietary": true,
     "terms": [
       {
         "name": "Meta Llama 3.2 Acceptable Use Policy",
         "url": "https://llama.com/llama3_2/use-policy",
         "slug": "meta-llama-3-2-acceptable-use-policy"
       }
-    ]
+    ],
+    "family": "Llama",
+    "created_at": "2026-04-20",
+    "proprietary": true
   },
   {
     "slug": "llama-33-community-license-agreement",
@@ -16929,16 +16648,16 @@
       }
     ],
     "featured": false,
-    "family": "Llama",
-    "created_at": "2026-04-20",
-    "proprietary": true,
     "terms": [
       {
         "name": "Meta Llama 3.3 Acceptable Use Policy",
         "url": "https://llama.com/llama3_3/use-policy",
         "slug": "meta-llama-3-3-acceptable-use-policy"
       }
-    ]
+    ],
+    "family": "Llama",
+    "created_at": "2026-04-20",
+    "proprietary": true
   },
   {
     "slug": "llama-4-community-license-agreement",
@@ -16964,16 +16683,16 @@
       }
     ],
     "featured": false,
-    "family": "Llama",
-    "created_at": "2026-04-20",
-    "proprietary": true,
     "terms": [
       {
         "name": "Meta Llama 4 Acceptable Use Policy",
         "url": "https://llama.com/llama4/use-policy",
         "slug": "meta-llama-4-acceptable-use-policy"
       }
-    ]
+    ],
+    "family": "Llama",
+    "created_at": "2026-04-20",
+    "proprietary": true
   },
   {
     "slug": "llama-community-license-agreement",
@@ -17641,6 +17360,84 @@
     "proprietary": true
   },
   {
+    "slug": "meta-chameleon-acceptable-use-policy",
+    "title": "Meta Chameleon Acceptable Use Policy",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "fsf_tags": [],
+    "deprecated": false,
+    "type": "terms",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Terms",
+      "Custom",
+      "Proprietary"
+    ],
+    "sources": [
+      {}
+    ],
+    "featured": false,
+    "proprietary": false,
+    "created_at": "2026-05-27"
+  },
+  {
+    "slug": "meta-llama-2-acceptable-use-policy",
+    "title": "Meta Llama 2 Acceptable Use Policy",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "fsf_tags": [],
+    "deprecated": false,
+    "type": "terms",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Terms",
+      "Custom",
+      "Proprietary"
+    ],
+    "sources": [
+      {}
+    ],
+    "featured": false,
+    "proprietary": false,
+    "created_at": "2026-05-27"
+  },
+  {
+    "slug": "meta-llama-3-acceptable-use-policy",
+    "title": "Meta Llama 3 Acceptable Use Policy",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "fsf_tags": [],
+    "deprecated": false,
+    "type": "terms",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Terms",
+      "Custom",
+      "Proprietary"
+    ],
+    "sources": [
+      {}
+    ],
+    "featured": false,
+    "proprietary": false,
+    "created_at": "2026-05-27"
+  },
+  {
     "slug": "meta-llama-3-community-hf",
     "title": "Meta Llama 3 Community License (HF)",
     "spdx_id": "",
@@ -17665,15 +17462,119 @@
       }
     ],
     "featured": false,
-    "proprietary": true,
-    "created_at": "2026-05-14",
     "terms": [
       {
         "name": "Meta Llama 3 Acceptable Use Policy",
         "url": "https://llama.com/llama3/use-policy",
         "slug": "meta-llama-3-acceptable-use-policy"
       }
-    ]
+    ],
+    "proprietary": true,
+    "created_at": "2026-05-14"
+  },
+  {
+    "slug": "meta-llama-3-1-acceptable-use-policy",
+    "title": "Meta Llama 3.1 Acceptable Use Policy",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "fsf_tags": [],
+    "deprecated": false,
+    "type": "terms",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Terms",
+      "Custom",
+      "Proprietary"
+    ],
+    "sources": [
+      {}
+    ],
+    "featured": false,
+    "proprietary": false,
+    "created_at": "2026-05-27"
+  },
+  {
+    "slug": "meta-llama-3-2-acceptable-use-policy",
+    "title": "Meta Llama 3.2 Acceptable Use Policy",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "fsf_tags": [],
+    "deprecated": false,
+    "type": "terms",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Terms",
+      "Custom",
+      "Proprietary"
+    ],
+    "sources": [
+      {}
+    ],
+    "featured": false,
+    "proprietary": false,
+    "created_at": "2026-05-27"
+  },
+  {
+    "slug": "meta-llama-3-3-acceptable-use-policy",
+    "title": "Meta Llama 3.3 Acceptable Use Policy",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "fsf_tags": [],
+    "deprecated": false,
+    "type": "terms",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Terms",
+      "Custom",
+      "Proprietary"
+    ],
+    "sources": [
+      {}
+    ],
+    "featured": false,
+    "proprietary": false,
+    "created_at": "2026-05-27"
+  },
+  {
+    "slug": "meta-llama-4-acceptable-use-policy",
+    "title": "Meta Llama 4 Acceptable Use Policy",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "fsf_tags": [],
+    "deprecated": false,
+    "type": "terms",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Terms",
+      "Custom",
+      "Proprietary"
+    ],
+    "sources": [
+      {}
+    ],
+    "featured": false,
+    "proprietary": false,
+    "created_at": "2026-05-27"
   },
   {
     "slug": "metamail",
@@ -18884,15 +18785,41 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-27",
-    "proprietary": true,
     "terms": [
       {
         "name": "Moonshine AI Use Policy",
         "url": "https://moonshine.ai/use-policy",
         "slug": "moonshine-ai-use-policy"
       }
-    ]
+    ],
+    "created_at": "2026-04-27",
+    "proprietary": true
+  },
+  {
+    "slug": "moonshine-ai-use-policy",
+    "title": "Moonshine AI Use Policy",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "fsf_tags": [],
+    "deprecated": false,
+    "type": "terms",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Terms",
+      "Custom",
+      "Proprietary"
+    ],
+    "sources": [
+      {}
+    ],
+    "featured": false,
+    "proprietary": true,
+    "created_at": "2026-05-27"
   },
   {
     "slug": "moonshotai-modified-mit",
@@ -20375,15 +20302,15 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-27",
-    "proprietary": true,
     "terms": [
       {
         "name": "NVIDIA Trustworthy AI Terms",
         "url": "https://www.nvidia.com/en-us/agreements/trustworthy-ai/terms/",
         "slug": "nvidia-trustworthy-ai-terms"
       }
-    ]
+    ],
+    "created_at": "2026-04-27",
+    "proprietary": true
   },
   {
     "slug": "nvidia-custom-license",
@@ -20409,15 +20336,15 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-05-08",
-    "proprietary": false,
     "terms": [
       {
         "name": "NVIDIA Trustworthy AI Terms",
         "url": "https://www.nvidia.com/en-us/agreements/trustworthy-ai/terms/",
         "slug": "nvidia-trustworthy-ai-terms"
       }
-    ]
+    ],
+    "created_at": "2026-05-08",
+    "proprietary": false
   },
   {
     "slug": "nvidia-license",
@@ -20520,15 +20447,41 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-27",
-    "proprietary": true,
     "terms": [
       {
         "name": "OpenAI Terms of Use",
         "url": "https://openai.com/policies/terms-of-use",
         "slug": "openai-terms-of-use"
       }
-    ]
+    ],
+    "created_at": "2026-04-27",
+    "proprietary": true
+  },
+  {
+    "slug": "nvidia-trustworthy-ai-terms",
+    "title": "NVIDIA Trustworthy AI Terms",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "fsf_tags": [],
+    "deprecated": false,
+    "type": "terms",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Terms",
+      "Custom",
+      "Proprietary"
+    ],
+    "sources": [
+      {}
+    ],
+    "featured": false,
+    "proprietary": false,
+    "created_at": "2026-05-27"
   },
   {
     "slug": "nxai-community-license-agreement",
@@ -21721,6 +21674,103 @@
     "featured": false,
     "created_at": "2026-04-23",
     "proprietary": true
+  },
+  {
+    "slug": "openai-terms-of-use",
+    "title": "OpenAI Terms of Use",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "fsf_tags": [],
+    "deprecated": false,
+    "type": "terms",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Terms",
+      "Custom",
+      "Proprietary"
+    ],
+    "sources": [
+      {}
+    ],
+    "featured": false,
+    "proprietary": true,
+    "created_at": "2026-05-27"
+  },
+  {
+    "slug": "openatom-model-1.0",
+    "title": "OpenAtom Model License v1.0",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "fsf_tags": [],
+    "deprecated": false,
+    "type": "software",
+    "version": "1.0",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom"
+    ],
+    "sources": [
+      {
+        "name": "openatom.org",
+        "url": "https://www.openatom.org/law/licence"
+      },
+      {
+        "name": "atomgit.com",
+        "url": "https://atomgit.com/OpenAtomFoundation/ModelLicense"
+      }
+    ],
+    "featured": false,
+    "created_at": "2026-05-15",
+    "proprietary": false,
+    "languages": [
+      "en",
+      "zh"
+    ]
+  },
+  {
+    "slug": "openatom-open-hardware-1.0",
+    "title": "OpenAtom Open Hardware License v1.0",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "fsf_tags": [],
+    "deprecated": false,
+    "type": "software",
+    "version": "1.0",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "Hardware"
+    ],
+    "sources": [
+      {
+        "name": "openatom.org",
+        "url": "https://www.openatom.org/law/licence"
+      },
+      {
+        "name": "atomgit.com",
+        "url": "https://atomgit.com/OpenAtomFoundation/HardwareLicense"
+      }
+    ],
+    "featured": false,
+    "created_at": "2026-05-15",
+    "proprietary": false,
+    "languages": [
+      "en",
+      "zh"
+    ]
   },
   {
     "slug": "oldap-2.8",
@@ -24243,8 +24293,7 @@
     "tags": [
       "Custom",
       "HuggingFace",
-      "Proprietary",
-      "Hardware"
+      "Proprietary"
     ],
     "sources": [
       {
@@ -24600,9 +24649,7 @@
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [
-      "Hardware"
-    ],
+    "tags": [],
     "sources": [
       {
         "name": "spdx.org",
@@ -24627,9 +24674,7 @@
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [
-      "Hardware"
-    ],
+    "tags": [],
     "sources": [
       {
         "name": "spdx.org",
@@ -24922,6 +24967,32 @@
     "proprietary": false
   },
   {
+    "slug": "stability-ai-acceptable-use-policy",
+    "title": "Stability AI Acceptable Use Policy",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "fsf_tags": [],
+    "deprecated": false,
+    "type": "terms",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Terms",
+      "Custom",
+      "Proprietary"
+    ],
+    "sources": [
+      {}
+    ],
+    "featured": false,
+    "proprietary": true,
+    "created_at": "2026-05-27"
+  },
+  {
     "slug": "stability-ai-community-license",
     "title": "Stability AI Community License",
     "spdx_id": "",
@@ -25002,15 +25073,15 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-27",
-    "proprietary": true,
     "terms": [
       {
         "name": "Stability AI Acceptable Use Policy",
         "url": "https://stability.ai/use-policy",
         "slug": "stability-ai-acceptable-use-policy"
       }
-    ]
+    ],
+    "created_at": "2026-04-27",
+    "proprietary": true
   },
   {
     "slug": "stability-ai-community-license-sd3",
@@ -25037,15 +25108,15 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-27",
-    "proprietary": true,
     "terms": [
       {
         "name": "Stability AI Acceptable Use Policy",
         "url": "https://stability.ai/use-policy",
         "slug": "stability-ai-acceptable-use-policy"
       }
-    ]
+    ],
+    "created_at": "2026-04-27",
+    "proprietary": true
   },
   {
     "slug": "stabilityai-stable-beluga-nc",
@@ -25104,15 +25175,15 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-27",
-    "proprietary": true,
     "terms": [
       {
         "name": "Stability AI Acceptable Use Policy",
         "url": "https://stability.ai/use-policy",
         "slug": "stability-ai-acceptable-use-policy"
       }
-    ]
+    ],
+    "created_at": "2026-04-27",
+    "proprietary": true
   },
   {
     "slug": "smlnj",
@@ -25599,9 +25670,7 @@
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [
-      "Hardware"
-    ],
+    "tags": [],
     "sources": [
       {
         "name": "spdx.org",
@@ -27839,6 +27908,32 @@
     "proprietary": false
   },
   {
+    "slug": "xai-acceptable-use-policy",
+    "title": "xAI Acceptable Use Policy",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "fsf_tags": [],
+    "deprecated": false,
+    "type": "terms",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Terms",
+      "Custom",
+      "Proprietary"
+    ],
+    "sources": [
+      {}
+    ],
+    "featured": false,
+    "proprietary": false,
+    "created_at": "2026-05-27"
+  },
+  {
     "slug": "xai-community-license-agreement",
     "title": "xAI Community License Agreement",
     "spdx_id": "",
@@ -27863,15 +27958,15 @@
       }
     ],
     "featured": false,
-    "created_at": "2026-04-27",
-    "proprietary": true,
     "terms": [
       {
         "name": "xAI Acceptable Use Policy",
         "url": "https://x.ai/legal/acceptable-use-policy",
         "slug": "xai-acceptable-use-policy"
       }
-    ]
+    ],
+    "created_at": "2026-04-27",
+    "proprietary": true
   },
   {
     "slug": "xdebug-1.03",
@@ -28625,126 +28720,5 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false
-  },
-  {
-    "slug": "openatom-model-license-v10",
-    "title": "OpenAtom Model License v1.0",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "deprecated": false,
-    "type": "model",
-    "version": "1.0",
-    "description": "开放原子模型许可证第一版 — 由开放原子开源基金会中立维护的 AI 大模型开源许可证，以参数和权重为主要许可客体，中英双语。",
-    "permissions": [
-      "Commercial Use",
-      "Modify",
-      "Distribute",
-      "Sublicense",
-      "Private Use"
-    ],
-    "conditions": [
-      "Include License",
-      "Include Copyright",
-      "State Changes"
-    ],
-    "limitations": [
-      "No Trademark",
-      "No Liability",
-      "No Warranty"
-    ],
-    "tags": [
-      "Custom"
-    ],
-    "sources": [
-      {
-        "name": "openatom.org",
-        "url": "https://www.openatom.org/law/licence"
-      },
-      {
-        "name": "atomgit.com",
-        "url": "https://atomgit.com/OpenAtomFoundation/ModelLicense"
-      }
-    ],
-    "featured": false,
-    "languages": [
-      "en",
-      "zh"
-    ],
-    "created_at": "2024-09-25"
-  },
-  {
-    "slug": "openatom-open-hardware-license-v10",
-    "title": "OpenAtom Open Hardware License v1.0",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "deprecated": false,
-    "type": "software",
-    "version": "1.0",
-    "description": "开放原子开放硬件许可证第一版 — 由开放原子开源基金会中立维护的开源硬件许可证，覆盖硬件源信息、集成电路布图设计、补充材料等，中英双语。",
-    "permissions": [
-      "Commercial Use",
-      "Modify",
-      "Distribute",
-      "Sublicense",
-      "Private Use",
-      "Manufacture"
-    ],
-    "conditions": [
-      "Include License",
-      "Include Copyright",
-      "State Changes"
-    ],
-    "limitations": [
-      "No Trademark",
-      "No Liability",
-      "No Warranty"
-    ],
-    "tags": [
-      "Custom",
-      "Hardware"
-    ],
-    "sources": [
-      {
-        "name": "openatom.org",
-        "url": "https://www.openatom.org/law/licence"
-      },
-      {
-        "name": "atomgit.com",
-        "url": "https://atomgit.com/OpenAtomFoundation/HardwareLicense"
-      }
-    ],
-    "featured": false,
-    "languages": [
-      "en",
-      "zh"
-    ],
-    "created_at": "2024-12-20"
-  },
-  {
-    "slug": "moonshine-ai-use-policy",
-    "title": "Moonshine AI Use Policy",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "fsf_tags": [],
-    "deprecated": false,
-    "type": "terms",
-    "proprietary": true,
-    "version": "",
-    "description": "Moonshine AI's Use Policy governing acceptable use of the MOONSHINE model.",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [],
-    "sources": [
-      {
-        "name": "moonshine.ai",
-        "url": "https://moonshine.ai/use-policy"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-05-18"
   }
 ]

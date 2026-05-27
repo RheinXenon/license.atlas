@@ -120,12 +120,19 @@ This extracts monthly license usage trends from the HF models parquet. The data 
 
 Work in `/Users/momo/Documents/workspace/KB`.
 
-`clean-licenses.mjs` now supports:
-- `terms` frontmatter field on any license entry → passed through to cleaned output
-- `type: terms` frontmatter → preserved (not overridden by `inferType`)
-- `tags` frontmatter → merged with `tldr_tags` into output tags
+`clean-licenses.mjs` handles Terms entries specially:
+- `type: terms` → preserved (not overridden by `inferType`)
+- `tags` → always set to `["Terms"]` for terms type (ignoring frontmatter tags)
+- `proprietary` → skipped for terms type (no proprietary detection)
+- `terms` frontmatter field on any license → passed through to cleaned output
+- `created_at` → falls back to frontmatter `created_at` when no `crawled_at` in sources
 
-Terms entries live in `data/licenses/texts/{slug}.md` with `type: terms` and `tags: [Terms, Custom, Proprietary]`.
+**Terms display rules** (in license-atlas):
+- Terms detail pages show only one pill: "Terms" (teal). No type badge, OSI/FSF, language, or other tag pills.
+- Body section title: "Full Text" (not "License Text")
+- Only appears in "Latest" sort if created_at is recent — use correct historical dates in frontmatter
+
+Terms entries live in `data/licenses/texts/{slug}.md` with `type: terms` and `tags: []` (auto-set to `["Terms"]`).
 Terms references are in HF/GH custom license files under `confirmed/` and standard license files under `texts/`.
 
 ### Check for missing Terms entries:
@@ -173,8 +180,7 @@ For each missing Terms slug:
    spdx_id: ""
    slug: "{slug}"
    type: terms
-   tags: [Terms, Custom, Proprietary]
-   proprietary: true
+   tags: []
    sources: ["{source-url}"]
    created_at: {today YYYY-MM-DD}
    ---
@@ -182,7 +188,11 @@ For each missing Terms slug:
    {cleaned body text}
    ```
 
-   Naming: `{Organization} {Type} Terms of Service` or `{Organization} {Product} Acceptable Use Policy`
+   Notes:
+   - `tags: []` — leave empty. `clean-licenses.mjs` will auto-set `["Terms"]` for type=terms entries
+   - No `proprietary` field — Terms entries skip proprietary detection
+   - `created_at` in frontmatter is used as fallback when no `crawled_at` exists
+   - Naming: `{Organization} {Type} Terms of Service` or `{Organization} {Product} Acceptable Use Policy`
 
 5. **Re-run clean** to include new Terms in output:
    ```bash

@@ -271,6 +271,24 @@ Or classify manually in-session using Claude as the LLM (see approach below).
 cd /Users/momo/Documents/workspace/KB && node scripts/clean-licenses.mjs
 ```
 
+### Blue Oak Council quality ratings
+
+`clean-licenses.mjs` automatically fetches `https://blueoakcouncil.org/list.json` (~20KB) during each run. It maps SPDX IDs to Blue Oak tiers (Model/Gold/Silver/Bronze/Lead) and adds `blueoak_tier` to matching licenses. No separate step needed.
+
+If the fetch fails (network error), the script prints a warning and continues without ratings. To verify:
+
+```bash
+cd /Users/momo/Documents/workspace/KB && node -e "
+const d = JSON.parse(require('fs').readFileSync('data/licenses/cleaned/licenses.json','utf8'));
+const withBo = d.filter(l => l.blueoak_tier);
+const tiers = {};
+withBo.forEach(l => { tiers[l.blueoak_tier] = (tiers[l.blueoak_tier] || 0) + 1; });
+console.log('Blue Oak rated:', withBo.length, 'by tier:', tiers);
+"
+```
+
+Expected: ~221 licenses rated (only SPDX permissive licenses).
+
 ---
 
 ## Phase 3: Sync to license-atlas

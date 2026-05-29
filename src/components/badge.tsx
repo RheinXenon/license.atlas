@@ -196,6 +196,37 @@ export const themes: Record<string, BadgeTheme> = {
     tooltip: "bg-lime-50 border-lime-300 dark:bg-lime-950 dark:border-lime-700",
     glow: "shadow-[0_0_8px_rgba(132,204,22,0.3)]",
   },
+  // Blue Oak tiers — metallic colors
+  model: {
+    desc: "Quality rating from Blue Oak Council",
+    badge: "bg-violet-100 text-violet-800 dark:bg-violet-900/40 dark:text-violet-300",
+    tooltip: "bg-violet-50 border-violet-300 dark:bg-violet-950 dark:border-violet-700",
+    glow: "shadow-[0_0_8px_rgba(139,92,246,0.3)]",
+  },
+  gold: {
+    desc: "Quality rating from Blue Oak Council",
+    badge: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-300",
+    tooltip: "bg-yellow-50 border-yellow-300 dark:bg-yellow-950 dark:border-yellow-700",
+    glow: "shadow-[0_0_8px_rgba(234,179,8,0.3)]",
+  },
+  silver: {
+    desc: "Quality rating from Blue Oak Council",
+    badge: "bg-zinc-100 text-zinc-700 dark:bg-zinc-700/40 dark:text-zinc-300",
+    tooltip: "bg-zinc-50 border-zinc-300 dark:bg-zinc-800 dark:border-zinc-600",
+    glow: "shadow-[0_0_8px_rgba(161,161,170,0.3)]",
+  },
+  bronze: {
+    desc: "Quality rating from Blue Oak Council",
+    badge: "bg-orange-100 text-orange-800 dark:bg-orange-900/40 dark:text-orange-300",
+    tooltip: "bg-orange-50 border-orange-300 dark:bg-orange-950 dark:border-orange-700",
+    glow: "shadow-[0_0_8px_rgba(234,88,12,0.3)]",
+  },
+  lead: {
+    desc: "Quality rating from Blue Oak Council",
+    badge: "bg-slate-200 text-slate-700 dark:bg-slate-700/40 dark:text-slate-400",
+    tooltip: "bg-slate-50 border-slate-300 dark:bg-slate-900 dark:border-slate-700",
+    glow: "shadow-[0_0_8px_rgba(100,116,139,0.3)]",
+  },
 };
 
 const variantFallbacks: Record<BadgeVariant, string> = {

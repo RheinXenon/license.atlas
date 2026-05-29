@@ -62,7 +62,8 @@
       6233,
       5905,
       6911
-    ]
+    ],
+    "blueoak_tier": "Silver"
   },
   {
     "slug": "apache-2.0",
@@ -126,7 +127,8 @@
       22037,
       20125,
       24051
-    ]
+    ],
+    "blueoak_tier": "Silver"
   },
   {
     "slug": "gpl-3.0",
@@ -326,7 +328,8 @@
       31,
       26,
       36
-    ]
+    ],
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "bsd-3-clause",
@@ -390,7 +393,8 @@
       60,
       66,
       131
-    ]
+    ],
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "unlicense",
@@ -454,7 +458,8 @@
       20,
       21,
       15
-    ]
+    ],
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "bsd-2-clause",
@@ -519,7 +524,8 @@
       39,
       8,
       2
-    ]
+    ],
+    "blueoak_tier": "Silver"
   },
   {
     "slug": "mpl-2.0",
@@ -818,7 +824,8 @@
       4,
       0,
       0
-    ]
+    ],
+    "blueoak_tier": "Silver"
   },
   {
     "slug": "0bsd",
@@ -864,7 +871,8 @@
     "created_at": "2026-04-19",
     "proprietary": false,
     "popularity": 65321,
-    "github_repos": 65321
+    "github_repos": 65321,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "bsl-1.0",
@@ -928,7 +936,8 @@
       61,
       11,
       2
-    ]
+    ],
+    "blueoak_tier": "Silver"
   },
   {
     "slug": "cc-by-sa-4.0",
@@ -1129,7 +1138,8 @@
       23,
       35,
       10
-    ]
+    ],
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "epl-1.0",
@@ -1425,7 +1435,8 @@
       103,
       20,
       20
-    ]
+    ],
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "ofl-1.1",
@@ -1541,7 +1552,8 @@
       2,
       1,
       0
-    ]
+    ],
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "odbl-1.0",
@@ -1648,7 +1660,8 @@
       102,
       45,
       27
-    ]
+    ],
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "eupl-1.2",
@@ -1894,7 +1907,8 @@
       1,
       2,
       2
-    ]
+    ],
+    "blueoak_tier": "Silver"
   },
   {
     "slug": "cdla-sharing-1.0",
@@ -2228,7 +2242,8 @@
       6,
       1,
       1
-    ]
+    ],
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "bsd-3-clause-clear",
@@ -2280,7 +2295,8 @@
       22,
       0,
       3
-    ]
+    ],
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "cc-by-nc-2.0",
@@ -2513,7 +2529,8 @@
       3,
       1,
       1
-    ]
+    ],
+    "blueoak_tier": "Silver"
   },
   {
     "slug": "cc-by-2.5",
@@ -2841,7 +2858,8 @@
       1,
       1,
       3
-    ]
+    ],
+    "blueoak_tier": "Silver"
   },
   {
     "slug": "osl-3.0",
@@ -3017,7 +3035,8 @@
       4,
       1,
       0
-    ]
+    ],
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "openmdw-1.0",
@@ -3149,7 +3168,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Silver"
   },
   {
     "slug": "3com-microcode",
@@ -3443,7 +3463,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "afl-1.2",
@@ -3470,7 +3491,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "afl-2.0",
@@ -3497,7 +3519,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "afl-2.1",
@@ -3524,7 +3547,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "apl-1.1",
@@ -3579,7 +3603,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "agtpl",
@@ -4541,7 +4566,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Silver"
   },
   {
     "slug": "adobe-postscript",
@@ -4676,7 +4702,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "adobe-utopia",
@@ -4892,7 +4919,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "ag-grid-enterprise",
@@ -5694,7 +5722,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Silver"
   },
   {
     "slug": "pml-2020",
@@ -5900,7 +5929,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "aml-glslang",
@@ -6510,7 +6540,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "antlr-pd-fallback",
@@ -6535,7 +6566,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "any-osi",
@@ -6698,7 +6730,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "apache-1.1",
@@ -6733,7 +6766,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "app-s2p",
@@ -7027,7 +7061,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "apple-ml-ferret-2023",
@@ -7715,7 +7750,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "artistic-1.0",
@@ -7752,7 +7788,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "artistic-dist",
@@ -7802,7 +7839,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "aslr",
@@ -8260,7 +8298,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "anu-license",
@@ -8627,7 +8666,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "bakoma-fonts-1995",
@@ -8679,7 +8719,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "baserow-ee-2019",
@@ -8758,7 +8799,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "bea-2.1",
@@ -8892,7 +8934,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "beri-hw-sw-1.0",
@@ -9731,7 +9774,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Model"
   },
   {
     "slug": "bodo-moeller-license",
@@ -9909,7 +9953,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "bosch-sensortec-2023",
@@ -10615,7 +10660,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "bsd-2-clause-pkgconf-disclaimer",
@@ -10665,7 +10711,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Silver"
   },
   {
     "slug": "bsd-3-clause-acpica",
@@ -10818,7 +10865,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "bsd-3-clause-no-change",
@@ -10925,7 +10973,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": true
+    "proprietary": true,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "bsd-3-clause-no-nuclear-warranty",
@@ -10950,7 +10999,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "bsd-3-clause-no-trademark",
@@ -11001,7 +11051,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "bsd-3-clause-tso",
@@ -11077,7 +11128,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "bsd-4-clause",
@@ -11112,7 +11164,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-20",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "bsd-4.3reno",
@@ -11522,7 +11575,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "bsd-source-beginning-file",
@@ -11572,7 +11626,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "bsd-attribution-hpnd-disclaimer",
@@ -11860,7 +11915,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "bsd-4-clause-uc",
@@ -11885,7 +11941,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "bsd-original-voices",
@@ -12255,7 +12312,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Gold"
   },
   {
     "slug": "buddy",
@@ -12440,7 +12498,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "bzip2-libbzip-1.0.5",
@@ -13235,7 +13294,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "cecill-c",
@@ -13509,7 +13569,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "cgic",
@@ -13701,7 +13762,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "checkmk",
@@ -14025,7 +14087,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "classic-vb",
@@ -14128,7 +14191,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "cloudera-express",
@@ -14209,7 +14273,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "cmu-mach",
@@ -14291,7 +14356,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "cnri-python-gpl-compatible",
@@ -14316,7 +14382,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "cockroach",
@@ -15431,7 +15498,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "confluent-community-1.0",
@@ -17842,7 +17910,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "crunchbase-data-2019-12-17",
@@ -18026,7 +18095,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "csla",
@@ -18143,7 +18213,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "cubiware-software-1.0",
@@ -18280,7 +18351,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "custom-research-evaluation-license",
@@ -19456,7 +19528,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "dify-open-source-license",
@@ -19828,7 +19901,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "docbook-dtd",
@@ -20292,7 +20366,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Silver"
   },
   {
     "slug": "dpl-1.1",
@@ -21255,7 +21330,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Silver"
   },
   {
     "slug": "egenix-1.0.0",
@@ -21306,7 +21382,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "egrappler",
@@ -21362,7 +21439,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "efl-2.0",
@@ -21405,7 +21483,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "ej-technologies-eula",
@@ -21880,7 +21959,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "mit-enna",
@@ -21905,7 +21985,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "scola-fr",
@@ -21966,7 +22047,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "epaperpress",
@@ -23018,7 +23100,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "fair-noncommercial-research-license",
@@ -23295,7 +23378,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "ferguson-twofish",
@@ -24240,7 +24324,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "fpl",
@@ -24352,7 +24437,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "fsfap-no-warranty-disclaimer",
@@ -24455,7 +24541,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "fsfullrsd",
@@ -24530,7 +24617,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "ftpbean",
@@ -24899,7 +24987,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "g10-permissive",
@@ -25609,7 +25698,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "github-codeql-terms-2020",
@@ -27295,7 +27385,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "google-analytics-tos",
@@ -28654,7 +28745,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Silver"
   },
   {
     "slug": "hacos-1.2",
@@ -28917,7 +29009,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "hidapi",
@@ -29171,7 +29264,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "hpnd-inria-imag",
@@ -29296,7 +29390,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "hpnd-intel",
@@ -29471,7 +29566,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "hpnd-sell-variant",
@@ -29983,7 +30079,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "hpnd-export-us-acknowledgement",
@@ -30084,7 +30181,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "httpget",
@@ -30723,7 +30821,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "ibm-public-license-10-ipl",
@@ -30923,7 +31022,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "unicode-icu-58",
@@ -31130,7 +31230,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Silver"
   },
   {
     "slug": "imagen",
@@ -31240,7 +31341,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "ijg",
@@ -31273,7 +31375,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "ijg-2020",
@@ -31414,7 +31517,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "info-zip-1997-10",
@@ -31882,7 +31986,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Silver"
   },
   {
     "slug": "intel-bcl",
@@ -32157,7 +32262,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "intel-osl-1989",
@@ -32946,7 +33052,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "jam-stapl",
@@ -33130,7 +33237,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "jasper-1.0",
@@ -34216,7 +34324,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "kde-accepted-gpl",
@@ -34928,7 +35037,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "lcs-telegraphics",
@@ -35086,7 +35196,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "lgpllr",
@@ -35327,7 +35438,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "librato-exception",
@@ -35456,7 +35568,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "libutil-david-nugent",
@@ -36442,7 +36555,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Silver"
   },
   {
     "slug": "linux-man-pages-1-para",
@@ -37458,7 +37572,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "lpl-1.0",
@@ -37487,7 +37602,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "lucida-bitmap-fonts",
@@ -37749,7 +37865,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "lzma-sdk-original",
@@ -38348,7 +38465,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "matt-gallagher-attribution",
@@ -38636,7 +38754,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "mcrae-pl-4-r53",
@@ -42696,7 +42815,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "mistral-ai-non-production-license",
@@ -42802,7 +42922,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "mit-click",
@@ -42954,7 +43075,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Silver"
   },
   {
     "slug": "mit-0",
@@ -42997,7 +43119,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "mit-no-trademarks",
@@ -43074,7 +43197,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "mit-proprietary",
@@ -43177,7 +43301,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Silver"
   },
   {
     "slug": "mit-wu",
@@ -43202,7 +43327,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Silver"
   },
   {
     "slug": "mit-kyle-restrictions",
@@ -44418,7 +44544,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "mplus",
@@ -44647,7 +44774,8 @@
     "languages": [
       "en",
       "zh"
-    ]
+    ],
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "mulanpsl-1.0",
@@ -44682,7 +44810,8 @@
     "languages": [
       "en",
       "zh"
-    ]
+    ],
+    "blueoak_tier": "Silver"
   },
   {
     "slug": "mulanpubl-1.0",
@@ -44906,7 +45035,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "mup",
@@ -44931,7 +45061,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Silver"
   },
   {
     "slug": "mut-license",
@@ -45061,7 +45192,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "nasa-1.3",
@@ -45103,7 +45235,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "naughter",
@@ -45164,7 +45297,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "ncbi-pd",
@@ -45373,7 +45507,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "net-snmp",
@@ -45477,7 +45612,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "netcomponents",
@@ -45830,7 +45966,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "nexar-ai-custom-license",
@@ -46013,7 +46150,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "niels-ferguson",
@@ -46273,7 +46411,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "nist-srd",
@@ -46324,7 +46463,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "node-js",
@@ -46873,7 +47013,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "ntia-pd",
@@ -46959,7 +47100,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "ntp-0",
@@ -46984,7 +47126,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "ntpl-origin",
@@ -48621,7 +48764,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "ofrak-community-1.0",
@@ -49312,7 +49456,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "can-ogl-alberta-2.1",
@@ -49579,7 +49724,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "ohdl-1.0",
@@ -49683,7 +49829,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "oldap-1.1",
@@ -49708,7 +49855,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "oldap-1.2",
@@ -49733,7 +49881,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "oldap-1.3",
@@ -49758,7 +49907,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "oldap-1.4",
@@ -49783,7 +49933,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "oldap-2.0",
@@ -49808,7 +49959,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "oldap-2.0.1",
@@ -49833,7 +49985,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "oldap-2.1",
@@ -49858,7 +50011,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "oldap-2.2",
@@ -49883,7 +50037,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "oldap-2.2.1",
@@ -49908,7 +50063,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "oldap-2.3",
@@ -49935,7 +50091,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "oldap-2.4",
@@ -49960,7 +50117,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "oldap-2.5",
@@ -49985,7 +50143,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "oldap-2.6",
@@ -50010,7 +50169,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "oldap-2.7",
@@ -50043,7 +50203,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "olfl-1.3",
@@ -50123,7 +50284,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "opl-1.0",
@@ -50853,7 +51015,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "openmap",
@@ -51075,7 +51238,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "openvision",
@@ -53322,7 +53486,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "php-3.01",
@@ -53357,7 +53522,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "physionet-credentialed-health-data-license",
@@ -53816,7 +53982,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "plural-20211124",
@@ -53892,7 +54059,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "pngsuite",
@@ -54726,7 +54894,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "psytec-freesoft",
@@ -54962,7 +55131,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "python-2.0.1",
@@ -55036,7 +55206,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "psf-2.0",
@@ -55061,7 +55232,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "qpl-1.0-inria-2004",
@@ -55165,7 +55337,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "qlogic-firmware",
@@ -55839,7 +56012,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "reading-godiva-2010",
@@ -57287,7 +57461,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "rsa-proprietary",
@@ -57377,7 +57552,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "ruby-pty",
@@ -58050,7 +58226,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "saxs-synthetic-commercial-1.0",
@@ -58257,7 +58434,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "scilab-en-2005",
@@ -58948,7 +59126,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "sgi-glx-1.0",
@@ -60040,7 +60219,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "socigy-nc-2026",
@@ -60387,7 +60567,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Silver"
   },
   {
     "slug": "shl-0.51",
@@ -60683,7 +60864,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "spencer-94",
@@ -60708,7 +60890,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "spencer-99",
@@ -60733,7 +60916,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Silver"
   },
   {
     "slug": "splunk-3pp-eula",
@@ -60838,7 +61022,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "srgb",
@@ -60914,7 +61099,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "ssh-keyscan",
@@ -61318,7 +61504,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "stanford-mrouted",
@@ -63168,7 +63355,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "sunsoft",
@@ -63377,7 +63565,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "symphonysoft",
@@ -64207,7 +64396,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "tcp-wrappers",
@@ -64232,7 +64422,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "teamdev-services",
@@ -64284,7 +64475,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "tu-berlin-2.0",
@@ -64309,7 +64501,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "tekhvc",
@@ -65002,7 +65195,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "cogvideox-2024",
@@ -65600,7 +65794,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Silver"
   },
   {
     "slug": "vsl-1.0",
@@ -65635,7 +65830,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "w3c-20150513",
@@ -65668,7 +65864,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "the-wave-ui-dataset-license",
@@ -65749,7 +65946,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "tso-license",
@@ -67122,7 +67320,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "ugui",
@@ -67332,7 +67531,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "unicode-3.0",
@@ -67369,7 +67569,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "unicode-mappings",
@@ -67449,7 +67650,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "opl-uk-3.0",
@@ -67709,7 +67911,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "unlicense-libtelnet",
@@ -68381,7 +68584,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-20",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "visual-idiot",
@@ -68934,7 +69138,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "w3c-software-20021231",
@@ -68993,7 +69198,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "w3c-test-suite",
@@ -69753,7 +69959,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "wtfpl-1.0",
@@ -69999,7 +70206,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "x11-distribute-modifications-variant",
@@ -70609,7 +70817,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Silver"
   },
   {
     "slug": "xfig",
@@ -70634,7 +70843,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Silver"
   },
   {
     "slug": "xfree86-1.0",
@@ -70693,7 +70903,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "xiaomi-miloco-license-agreement",
@@ -70778,7 +70989,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "xkeyboard-config-zinoviev",
@@ -70828,7 +71040,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "xming",
@@ -70959,7 +71172,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "xskat",
@@ -70984,7 +71198,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "xxd",
@@ -71438,7 +71653,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "zeebe-community-1.0",
@@ -71544,7 +71760,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "zendesk-appdev-api-2022",
@@ -71862,7 +72079,8 @@
     ],
     "featured": false,
     "created_at": "2026-05-14",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "zpl-1.0",
@@ -71917,7 +72135,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Lead"
   },
   {
     "slug": "zpl-2.0",
@@ -71960,7 +72179,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "zpl-2.1",
@@ -71993,7 +72213,8 @@
     ],
     "featured": false,
     "created_at": "2026-04-19",
-    "proprietary": false
+    "proprietary": false,
+    "blueoak_tier": "Bronze"
   },
   {
     "slug": "zugferd-datenformat-2.2.0",

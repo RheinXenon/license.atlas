@@ -94,6 +94,12 @@ const dict: Record<Lang, Record<string, string>> = {
     "detail.conditions": "Conditions",
     "detail.limitations": "Limitations",
     "detail.added": "Added {date}",
+    "detail.blueOakRating": "Blue Oak Rating",
+    "detail.blueOak.model": "Demonstrates all characteristics of an ideal permissive license",
+    "detail.blueOak.gold": "Addresses patents explicitly, robust language, simple requirements",
+    "detail.blueOak.silver": "Robust language, may lack explicit patent terms or require more than simple notice",
+    "detail.blueOak.bronze": "Lacks some nonessential elements or imposes additional restrictions",
+    "detail.blueOak.lead": "Lacks essential elements or imposes unusually burdensome requirements",
 
     // Browse page
     "browse.title": "Browse Licenses",
@@ -129,6 +135,7 @@ const dict: Record<Lang, Record<string, string>> = {
     "about.src.rail": "Responsible AI licenses",
     "about.src.openatom": "Model and hardware licenses maintained by OpenAtom Foundation (bilingual CN/EN)",
     "about.src.scancode": "1,800+ custom license texts from ScanCode LicenseDB (CC-BY-4.0). Permissive, copyleft, proprietary-free, and source-available licenses.",
+    "about.src.blueoak": "Quality ratings for 225+ permissive licenses (Model/Gold/Silver/Bronze/Lead)",
     "about.popTitle": "Popularity & Trends",
     "about.popIntro": "Popularity scores and trend charts are generated from real-world usage data across three major platforms:",
     "about.pop.hf": "2.8M+ models and 927K+ datasets",
@@ -242,6 +249,12 @@ const dict: Record<Lang, Record<string, string>> = {
     "detail.conditions": "条件",
     "detail.limitations": "限制",
     "detail.added": "添加于 {date}",
+    "detail.blueOakRating": "Blue Oak 评级",
+    "detail.blueOak.model": "展示理想宽松许可证的所有特征",
+    "detail.blueOak.gold": "明确处理专利问题，语言严谨，要求简单",
+    "detail.blueOak.silver": "语言严谨，但可能缺少明确的专利条款或有额外要求",
+    "detail.blueOak.bronze": "缺少部分非必要元素或有额外限制",
+    "detail.blueOak.lead": "缺少必要元素或有异常繁重要求",
 
     // Browse page
     "browse.title": "浏览许可证",
@@ -277,6 +290,7 @@ const dict: Record<Lang, Record<string, string>> = {
     "about.src.rail": "负责任 AI 许可证",
     "about.src.openatom": "开放原子开源基金会维护的模型与硬件许可证（中英双语）",
     "about.src.scancode": "来自 ScanCode LicenseDB 的 1800+ 自定义许可证全文 (CC-BY-4.0)。包括宽松、Copyleft、专有免费和源码可用许可证。",
+    "about.src.blueoak": "225+ 宽松许可证的质量评级（Model/Gold/Silver/Bronze/Lead）",
     "about.popTitle": "热度与趋势",
     "about.popIntro": "热度评分和趋势图表基于以下三大平台的真实使用数据生成：",
     "about.pop.hf": "280 万+ 模型和 92.7 万+ 数据集",

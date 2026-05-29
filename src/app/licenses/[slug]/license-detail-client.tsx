@@ -128,6 +128,21 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
         </div>
       )}
 
+      {/* Blue Oak Rating */}
+      {license.blueoak_tier && (
+        <div className="fade-in-2 mb-8">
+          <p className="mb-2 text-xs font-medium uppercase tracking-wider text-zinc-400">
+            {t("detail.blueOakRating")}
+          </p>
+          <div className="flex items-center gap-3">
+            <Badge variant="tag">{license.blueoak_tier}</Badge>
+            <span className="text-sm text-zinc-500 dark:text-zinc-400">
+              {t(`detail.blueOak.${license.blueoak_tier.toLowerCase()}`)}
+            </span>
+          </div>
+        </div>
+      )}
+
       {/* License Text */}
       {license.body && (
         <div className="fade-in-3">

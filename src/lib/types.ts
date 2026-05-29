@@ -27,6 +27,7 @@ export interface License {
   github_repos?: number;
   kaggle_datasets?: number;
   trend?: number[];
+  blueoak_tier?: string;
 }
 
 export interface Stats {

@@ -5,3 +5,4 @@ out/
 tsconfig.tsbuildinfo
 .env*.local
 CLAUDE.md
+.claude/

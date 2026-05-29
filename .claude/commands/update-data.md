@@ -211,6 +211,53 @@ For each missing Terms slug:
 
 ---
 
+## Phase 2.5: Proprietary Classification (LLM)
+
+Work in `/Users/momo/Documents/workspace/KB`.
+
+`clean-licenses.mjs` uses a two-tier proprietary detection system:
+- **Tier 1**: Regex rules on slug/title (CC-NC, EULA, Commons Clause, etc.) — automatic, no LLM needed
+- **Tier 2**: `proprietary-manifest.json` — LLM-classified results, read by `clean-licenses.mjs`
+
+After Phase 1 crawl + clean, check if new licenses need LLM classification:
+
+```bash
+cd /Users/momo/Documents/workspace/KB && node scripts/classify-proprietary.mjs --dry-run
+```
+
+This shows licenses not yet in the manifest. If there are new unclassified licenses:
+
+```bash
+export ANTHROPIC_API_KEY=sk-ant-...  # if using API
+node scripts/classify-proprietary.mjs --all
+```
+
+Or classify manually in-session using Claude as the LLM (see approach below).
+
+**Manifest**: `data/licenses/cleaned/proprietary-manifest.json` — slug → boolean mapping. This file is version-controlled in KB and rarely changes.
+
+**If classifying in-session** (no API key needed):
+1. Export unclassified licenses to JSON chunks
+2. Use sub-agents to classify each chunk (classify as proprietary=true or free=false)
+3. Merge results into manifest
+4. Re-run `clean-licenses.mjs`
+
+**Key rules for LLM classification**:
+- OSI approved / FSF libre / GNU tagged → always false (not proprietary)
+- Permissive (MIT, BSD, Apache, ISC) → false
+- Copyleft (GPL, AGPL, MPL) → false
+- CC-BY, CC0 → false
+- Non-commercial, revenue/MAU thresholds, research-only → true
+- EULA, ToS, SDK license → true
+- Source-available with restrictions (BSL, FSL, Commons Clause) → true
+
+**After classification**, re-run clean:
+```bash
+cd /Users/momo/Documents/workspace/KB && node scripts/clean-licenses.mjs
+```
+
+---
+
 ## Phase 3: Sync to license-atlas
 
 Work in `/Users/momo/Documents/workspace/license-atlas`.

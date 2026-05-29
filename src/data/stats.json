@@ -1,10 +1,10 @@
 {
-  "total": 956,
+  "total": 957,
   "osi_approved": 122,
   "fsf_libre": 146,
-  "proprietary": 261,
+  "proprietary": 218,
   "by_type": {
-    "software": 667,
+    "software": 668,
     "data": 101,
     "agent": 20,
     "model": 152,
@@ -31,7 +31,7 @@
     "ai4privacy/pii-masking-200k": 1,
     "AiArtLab/sdxs-1b": 1,
     "Aleph-Alpha/Pharia-1-LLM-7B-control-hf": 2,
-    "undefined": 16,
+    "undefined": 17,
     "anthropics/skills/skills/docx": 1,
     "anthropics/skills/skills/pdf": 1,
     "anthropics/skills/skills/pptx": 1,
@@ -285,28 +285,28 @@
   "by_tag": {
     "Permissive": 27,
     "tl;drLegal Verified": 68,
-    "Copyleft": 40,
-    "GNU": 8,
-    "Proprietary": 261,
+    "GNU": 41,
+    "Copyleft": 50,
     "GNU Nonfree": 11,
     "Public Domain": 6,
     "Creative Commons": 65,
-    "Weak Copyleft": 10,
+    "Weak Copyleft": 16,
+    "Proprietary": 219,
     "Custom": 180,
     "MCP Server": 10,
     "HuggingFace": 158,
     "Terms": 16,
     "Agent Skill": 3,
+    "Hardware": 9,
     "LLM Tool": 3,
     "ModelGo": 8,
-    "Agent Framework": 4,
-    "Hardware": 1
+    "Agent Framework": 4
   },
   "cleaning": {
-    "tagsFixed": 118,
+    "tagsFixed": 152,
     "duplicatesFound": 14,
     "linesFixed": 0,
     "osiFixed": 4
   },
-  "updated": "2026-05-27"
+  "updated": "2026-05-29"
 }

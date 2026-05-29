@@ -38,6 +38,7 @@ cd /Users/momo/Documents/workspace/KB && bash scripts/update-all.sh --skip-atlas
 
 This script handles:
 - License text crawling (SPDX, OSI, tldrlegal, choosealicense, HuggingFace, OpenDataCommons, Creative Commons)
+- ScanCode LicenseDB incremental fetch (~1,800 non-SPDX licenses, CC-BY-4.0)
 - HF Hub stats (models, datasets, license-tags, other-licenses, other-license-datasets, gated-licenses) — parallel
 - GitHub stats (license-trends, license-counts, agent-skills) — parallel
 - Kaggle meta-license-tags
@@ -87,6 +88,20 @@ The `update-all.sh` runs 6 HF sources in parallel, which can cause large parquet
    ```bash
    node crawlers/licenses_crawl.js --source huggingface
    ```
+
+### ScanCode LicenseDB incremental fetch:
+
+`update-all.sh` runs `scancode_crawl.js` as step 2/5. It can also be run standalone:
+
+```bash
+cd /Users/momo/Documents/workspace/KB && node crawlers/scancode_crawl.js          # Incremental
+cd /Users/momo/Documents/workspace/KB && node crawlers/scancode_crawl.js --full    # Full re-fetch
+cd /Users/momo/Documents/workspace/KB && node crawlers/scancode_crawl.js --dry-run # Preview only
+```
+
+This fetches non-SPDX licenses from `https://scancode-licensedb.aboutcode.org/`, writes to `data/licenses/scancode-licenses/confirmed/`. First run takes ~6 min (200ms rate limit × 1,868 entries). Subsequent runs only fetch new entries.
+
+No authentication required. CC-BY-4.0 — attribution in About page.
 
 ### Verify Phase 1:
 

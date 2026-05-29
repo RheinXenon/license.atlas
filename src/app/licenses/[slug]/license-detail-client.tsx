@@ -74,7 +74,7 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
                 <Badge key={lang} variant="language">{lang}</Badge>
               ))}
               {license.tags.map((tag) => {
-                const tagKey = `tag.${tag.toLowerCase().replace(/ /g, "-")}`;
+                const tagKey = `tag.${tag.toLowerCase().replace(/ /g, "-").replace(/[^a-z0-9-]/g, "")}`;
                 const translated = t(tagKey) !== tagKey ? t(tagKey) : tag;
                 return (
                   <Badge

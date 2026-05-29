@@ -327,7 +327,7 @@ function HomeContent() {
           const tagKey = tg.toLowerCase().replace(/ /g, "-").replace(/[^a-z0-9-]/g, "");
           const activeClass = themes[tagKey]?.badge || "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300";
           const isActive = tagFilter.has(tg);
-          const isVerified = tagKey === "tl;drlegal-verified";
+          const isVerified = tagKey === "tldrlegal-verified";
           return (
             <button
               key={tg}

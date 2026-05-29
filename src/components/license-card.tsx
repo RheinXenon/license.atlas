@@ -96,7 +96,7 @@ export function LicenseCard({ license }: LicenseCardProps) {
           return <Badge key={tag} variant="fsf-tag" themeKey={tag}>{translated}</Badge>;
         })}
         {license.tags.filter((tag) => license.type === "terms" || tag !== "Terms").map((tag) => {
-          const tagKey = `tag.${tag.toLowerCase().replace(/ /g, "-")}`;
+          const tagKey = `tag.${tag.toLowerCase().replace(/ /g, "-").replace(/[^a-z0-9-]/g, "")}`;
           const translated = t(tagKey) !== tagKey ? t(tagKey) : tag;
           return <Badge key={tag} variant={tag === "tl;drLegal Verified" ? "verified" : "tag"} themeKey={tag}>{translated}</Badge>;
         })}

@@ -87,15 +87,19 @@ export function LicenseCard({ license }: LicenseCardProps) {
         </div>
       </div>
       <div className="flex flex-wrap gap-1.5">
-        {license.type !== "terms" && <Badge variant="type">{license.type}</Badge>}
+        {license.type !== "terms" && <Badge variant="type" themeKey={license.type}>{t(`type.${license.type}`)}</Badge>}
         {license.osi_approved && <Badge variant="osi">{t("badge.osiApproved")}</Badge>}
         {license.fsf_libre && <Badge variant="fsf">{t("badge.fsfLibre")}</Badge>}
-        {(license.fsf_tags || []).filter((t) => t !== "libre" && t !== "non-free").map((tag) => (
-          <Badge key={tag} variant="fsf-tag">{tag.replace(/gpl|fdl/g, (m) => m.toUpperCase())}</Badge>
-        ))}
-        {license.tags.filter((tag) => license.type === "terms" || tag !== "Terms").map((tag) => (
-          <Badge key={tag} variant={tag === "tl;drLegal Verified" ? "verified" : "tag"}>{tag}</Badge>
-        ))}
+        {(license.fsf_tags || []).filter((ft) => ft !== "libre" && ft !== "non-free").map((tag) => {
+          const tagKey = `tag.${tag}`;
+          const translated = t(tagKey) !== tagKey ? t(tagKey) : tag.replace(/gpl|fdl/g, (m) => m.toUpperCase());
+          return <Badge key={tag} variant="fsf-tag" themeKey={tag}>{translated}</Badge>;
+        })}
+        {license.tags.filter((tag) => license.type === "terms" || tag !== "Terms").map((tag) => {
+          const tagKey = `tag.${tag.toLowerCase().replace(/ /g, "-")}`;
+          const translated = t(tagKey) !== tagKey ? t(tagKey) : tag;
+          return <Badge key={tag} variant={tag === "tl;drLegal Verified" ? "verified" : "tag"} themeKey={tag}>{translated}</Badge>;
+        })}
       </div>
     </Link>
   );

@@ -33,7 +33,9 @@ export default function HomePage() {
 
 function HomeContent() {
   const sp = useSearchParams();
-  const { t } = useLang();
+  const { t, lang } = useLang();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   const [query, setQuery] = useState(sp.get("q") ?? "");
   const [typeFilter, setTypeFilter] = useState(sp.get("type") ?? "");
@@ -229,7 +231,11 @@ function HomeContent() {
       {/* Compact Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight text-zinc-950 sm:text-4xl dark:text-zinc-50">
-          <span className="text-[#7c3aed]">License</span>Atlas
+          {mounted && lang === "zh" ? (
+            <span className="font-serif tracking-wide"><span className="text-[#7c3aed]">许可</span>图鉴</span>
+          ) : (
+            <><span className="text-[#7c3aed]">License</span>Atlas</>
+          )}
         </h1>
         <p className="mt-1 text-sm text-zinc-500">
           {t("home.subtitle", { total: String(stats.total) })}
@@ -318,7 +324,7 @@ function HomeContent() {
       {/* Tag Pills */}
       <div className="mb-6 flex flex-wrap gap-1.5">
         {allTags.map((tg) => {
-          const tagKey = tg.toLowerCase().replace(/ /g, "-");
+          const tagKey = tg.toLowerCase().replace(/ /g, "-").replace(/[^a-z0-9-]/g, "");
           const activeClass = themes[tagKey]?.badge || "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300";
           const isActive = tagFilter.has(tg);
           const isVerified = tagKey === "tl;drlegal-verified";

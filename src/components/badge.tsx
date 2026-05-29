@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { useLang } from "@/lib/i18n";
 
-type BadgeVariant = "osi" | "fsf" | "type" | "tag" | "permission" | "condition" | "limitation" | "verified" | "language" | "fsf-tag";
+type BadgeVariant = "osi" | "fsf" | "type" | "tag" | "permission" | "condition" | "limitation" | "verified" | "language" | "fsf-tag" | "blue-oak";
 
 interface BadgeTheme {
   desc: string;
@@ -196,32 +196,32 @@ export const themes: Record<string, BadgeTheme> = {
     tooltip: "bg-lime-50 border-lime-300 dark:bg-lime-950 dark:border-lime-700",
     glow: "shadow-[0_0_8px_rgba(132,204,22,0.3)]",
   },
-  // Blue Oak tiers — metallic colors
-  model: {
+  // Blue Oak tiers — metallic colors (bo- prefix to avoid key collision with type badge "model")
+  "bo-model": {
     desc: "Quality rating from Blue Oak Council",
     badge: "bg-violet-100 text-violet-800 dark:bg-violet-900/40 dark:text-violet-300",
     tooltip: "bg-violet-50 border-violet-300 dark:bg-violet-950 dark:border-violet-700",
     glow: "shadow-[0_0_8px_rgba(139,92,246,0.3)]",
   },
-  gold: {
+  "bo-gold": {
     desc: "Quality rating from Blue Oak Council",
     badge: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-300",
     tooltip: "bg-yellow-50 border-yellow-300 dark:bg-yellow-950 dark:border-yellow-700",
     glow: "shadow-[0_0_8px_rgba(234,179,8,0.3)]",
   },
-  silver: {
+  "bo-silver": {
     desc: "Quality rating from Blue Oak Council",
     badge: "bg-zinc-100 text-zinc-700 dark:bg-zinc-700/40 dark:text-zinc-300",
     tooltip: "bg-zinc-50 border-zinc-300 dark:bg-zinc-800 dark:border-zinc-600",
     glow: "shadow-[0_0_8px_rgba(161,161,170,0.3)]",
   },
-  bronze: {
+  "bo-bronze": {
     desc: "Quality rating from Blue Oak Council",
     badge: "bg-orange-100 text-orange-800 dark:bg-orange-900/40 dark:text-orange-300",
     tooltip: "bg-orange-50 border-orange-300 dark:bg-orange-950 dark:border-orange-700",
     glow: "shadow-[0_0_8px_rgba(234,88,12,0.3)]",
   },
-  lead: {
+  "bo-lead": {
     desc: "Quality rating from Blue Oak Council",
     badge: "bg-slate-200 text-slate-700 dark:bg-slate-700/40 dark:text-slate-400",
     tooltip: "bg-slate-50 border-slate-300 dark:bg-slate-900 dark:border-slate-700",
@@ -237,28 +237,31 @@ const variantFallbacks: Record<BadgeVariant, string> = {
   condition: "bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300",
   limitation: "bg-red-100 text-red-800 dark:bg-red-900/40 dark:text-red-300",
   verified: "",
+  "blue-oak": "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300",
 };
 
 interface BadgeProps {
   children: React.ReactNode;
   variant?: BadgeVariant;
   className?: string;
+  themeKey?: string;
 }
 
 function normalizeKey(text: string): string {
-  return text.toLowerCase().replace(/ /g, "-");
+  return text.toLowerCase().replace(/ /g, "-").replace(/[^a-z0-9-]/g, "");
 }
 
 // Variant determines the lookup key: use variant name for special badges, text content for types/tags
 function resolveKey(variant: BadgeVariant, text: string): string {
   if (["osi", "fsf", "verified", "language"].includes(variant)) return variant;
   if (variant === "fsf-tag") return normalizeKey(text);
+  if (variant === "blue-oak") return "bo-" + normalizeKey(text);
   return normalizeKey(text);
 }
 
-export function Badge({ children, variant = "tag", className }: BadgeProps) {
+export function Badge({ children, variant = "tag", className, themeKey }: BadgeProps) {
   const { t } = useLang();
-  const text = typeof children === "string" ? children : "";
+  const text = themeKey || (typeof children === "string" ? children : "");
   const key = resolveKey(variant, text);
   const theme = themes[key];
 
@@ -285,7 +288,7 @@ export function Badge({ children, variant = "tag", className }: BadgeProps) {
     </span>
   );
 
-  const i18nKey = `tagdesc.${key}`;
+  const i18nKey = `tagdesc.${themeKey ? normalizeKey(themeKey) : key}`;
   const desc = t(i18nKey) !== i18nKey ? t(i18nKey) : (theme?.desc || "");
   if (!desc) return badge;
 

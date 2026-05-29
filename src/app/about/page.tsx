@@ -35,7 +35,7 @@ const statItems = [
 ];
 
 export default function AboutPage() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
@@ -45,7 +45,6 @@ export default function AboutPage() {
 
       <div className="space-y-6 text-zinc-600 dark:text-zinc-400">
         <p>
-          <strong className="text-zinc-950 dark:text-zinc-50">LicenseAtlas</strong>{" "}
           {t("about.intro", { total: String(stats.total) })}
         </p>
 

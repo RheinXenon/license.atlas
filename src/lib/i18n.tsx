@@ -42,10 +42,14 @@ const dict: Record<Lang, Record<string, string>> = {
     "tag.gnu": "GNU",
     "tag.modelgo": "ModelGo",
     "tag.public-domain": "Public Domain",
+    "tag.terms": "Terms",
     "tag.agent-framework": "Agent Framework",
     "tag.agent-skill": "Agent Skill",
     "tag.llm-tool": "LLM Tool",
     "tag.hardware": "Hardware",
+    "tag.gpl-2-compatible": "GPLv2 Compatible",
+    "tag.gpl-3-compatible": "GPLv3 Compatible",
+    "tag.fdl-compatible": "GFDL Compatible",
 
     // Tag descriptions
     "tagdesc.software": "Software license governing source code usage, modification, and distribution",
@@ -187,7 +191,7 @@ const dict: Record<Lang, Record<string, string>> = {
     "tag.proprietary": "专有",
     "tag.custom": "自定义",
     "tag.huggingface": "HuggingFace",
-    "tag.tldrlegal-verified": "tl;drLegal 已验证",
+    "tag.tldrlegal-verified": "tl;drLegal 验证",
     "tag.creative-commons": "知识共享",
     "tag.copyleft": "Copyleft",
     "tag.permissive": "宽松许可",
@@ -197,10 +201,14 @@ const dict: Record<Lang, Record<string, string>> = {
     "tag.gnu": "GNU",
     "tag.modelgo": "ModelGo",
     "tag.public-domain": "公共领域",
+    "tag.terms": "服务条款",
     "tag.agent-framework": "智能体框架",
     "tag.agent-skill": "智能体技能",
     "tag.llm-tool": "LLM 工具",
     "tag.hardware": "硬件",
+    "tag.gpl-2-compatible": "GPLv2 兼容",
+    "tag.gpl-3-compatible": "GPLv3 兼容",
+    "tag.fdl-compatible": "GFDL 兼容",
 
     // Tag descriptions
     "tagdesc.software": "管理源代码使用、修改和分发的软件许可证",
@@ -226,6 +234,10 @@ const dict: Record<Lang, Record<string, string>> = {
     "tagdesc.agent-skill": "来自 AI 智能体技能/插件项目的许可证",
     "tagdesc.llm-tool": "来自 LLM 工具集成项目的许可证",
     "tagdesc.hardware": "管理开源硬件设计、电路和物理制品的许可证",
+    "tagdesc.terms": "被许可证正文引用的服务条款文档",
+    "tagdesc.gpl-2-compatible": "经自由软件基金会认定与 GPLv2 兼容",
+    "tagdesc.gpl-3-compatible": "经自由软件基金会认定与 GPLv3 兼容",
+    "tagdesc.fdl-compatible": "经自由软件基金会认定与 GFDL 兼容",
 
     // Filters
     "filter.proprietary": "专有",
@@ -270,8 +282,8 @@ const dict: Record<Lang, Record<string, string>> = {
     "footer.visitors": "位访客",
 
     // About
-    "about.title": "关于 LicenseAtlas",
-    "about.intro": "LicenseAtlas 是最全面的软件、AI 模型、数据和智能体许可证集合——涵盖 {total} 个许可证，分为四大类别。我们的目标是为现代软件和 AI 开发中可能遇到的每一个许可证提供统一的可搜索参考。",
+    "about.title": "关于许可图鉴（LicenseAtlas）",
+    "about.intro": "许可图鉴（LicenseAtlas）是最全面的软件、AI 模型、数据和智能体许可证集合——涵盖 {total} 个许可证，分为四大类别。我们的目标是为现代软件和 AI 开发中可能遇到的每一个许可证提供统一的可搜索参考。",
     "about.stats.software": "软件",
     "about.stats.model": "AI 模型",
     "about.stats.data": "数据",

@@ -54,6 +54,12 @@ function ThemeToggle() {
 
 export function Navbar() {
   const { lang, setLang, t } = useLang();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  const brandName = mounted && lang === "zh"
+    ? <span className="font-serif tracking-widest">许可图鉴</span>
+    : "LicenseAtlas";
 
   return (
     <header className="sticky top-0 z-[100] border-b border-zinc-200/60 bg-white/70 backdrop-blur-lg dark:border-zinc-800/60 dark:bg-zinc-950/70">
@@ -64,7 +70,9 @@ export function Navbar() {
             <rect width="32" height="32" rx="8" fill="url(#logo-bg)"/>
             <text x="16" y="21.5" textAnchor="middle" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="800" fontSize="14" fill="white" letterSpacing="-0.5">LA</text>
           </svg>
-          <span className="bg-gradient-to-r from-[#7c3aed] to-zinc-950 bg-clip-text text-transparent dark:to-zinc-50">LicenseAtlas</span>
+          <span className="bg-gradient-to-r from-[#7c3aed] to-zinc-950 bg-clip-text text-transparent dark:to-zinc-50">
+            {brandName}
+          </span>
         </Link>
         <div className="flex items-center gap-4 text-sm">
           <Link

@@ -59,26 +59,33 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
         {/* Badges — Terms entries (type=terms) only show type badge */}
         <div className="mt-4 flex flex-wrap gap-2">
           {license.type === "terms" ? (
-            <Badge variant="type">{t("type.terms")}</Badge>
+            <Badge variant="type" themeKey="terms">{t("type.terms")}</Badge>
           ) : (
             <>
-              <Badge variant="type">{license.type}</Badge>
+              <Badge variant="type" themeKey={license.type}>{t(`type.${license.type}`)}</Badge>
               {license.osi_approved && <Badge variant="osi">{t("badge.osiApproved")}</Badge>}
               {license.fsf_libre && <Badge variant="fsf">{t("badge.fsfLibre")}</Badge>}
-              {(license.fsf_tags || []).filter((t) => t !== "libre" && t !== "non-free").map((tag) => (
-                <Badge key={tag} variant="fsf-tag">{tag.replace(/gpl|fdl/g, (m) => m.toUpperCase())}</Badge>
-              ))}
+              {(license.fsf_tags || []).filter((ft) => ft !== "libre" && ft !== "non-free").map((tag) => {
+                const tagKey = `tag.${tag}`;
+                const translated = t(tagKey) !== tagKey ? t(tagKey) : tag.replace(/gpl|fdl/g, (m) => m.toUpperCase());
+                return <Badge key={tag} variant="fsf-tag" themeKey={tag}>{translated}</Badge>;
+              })}
               {formatLanguages(license.languages || []).map((lang) => (
                 <Badge key={lang} variant="language">{lang}</Badge>
               ))}
-              {license.tags.map((tag) => (
-                <Badge
-                  key={tag}
-                  variant={tag === "tl;drLegal Verified" ? "verified" : "tag"}
-                >
-                  {tag}
-                </Badge>
-              ))}
+              {license.tags.map((tag) => {
+                const tagKey = `tag.${tag.toLowerCase().replace(/ /g, "-")}`;
+                const translated = t(tagKey) !== tagKey ? t(tagKey) : tag;
+                return (
+                  <Badge
+                    key={tag}
+                    variant={tag === "tl;drLegal Verified" ? "verified" : "tag"}
+                    themeKey={tag}
+                  >
+                    {translated}
+                  </Badge>
+                );
+              })}
             </>
           )}
         </div>
@@ -135,7 +142,7 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
             {t("detail.blueOakRating")}
           </p>
           <div className="flex items-center gap-3">
-            <Badge variant="tag">{license.blueoak_tier}</Badge>
+            <Badge variant="blue-oak">{license.blueoak_tier}</Badge>
             <span className="text-sm text-zinc-500 dark:text-zinc-400">
               {t(`detail.blueOak.${license.blueoak_tier.toLowerCase()}`)}
             </span>

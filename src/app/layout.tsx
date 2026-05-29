@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
@@ -36,10 +37,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
         suppressHydrationWarning
       >
-        <head>
-          <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-        </head>
+        <head />
         <body className="flex min-h-full flex-col bg-[var(--background)] text-[var(--foreground)]">
+          <Script id="theme-init" strategy="beforeInteractive">{themeScript}</Script>
           <NavProgress />
           <LangProvider>
             <Navbar />

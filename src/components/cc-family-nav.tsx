@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useLang } from "@/lib/i18n";
 
 const LANG_NAMES: Record<string, string> = {
   en: "English",
@@ -51,6 +52,7 @@ interface CcLangNavProps {
 }
 
 export function CcLangNav({ bodies, onSelect }: CcLangNavProps) {
+  const { t } = useLang();
   const langs = bodies.map((b) => b.lang);
   const [active, setActive] = useState("en");
 
@@ -58,7 +60,7 @@ export function CcLangNav({ bodies, onSelect }: CcLangNavProps) {
 
   return (
     <div className="mb-4 flex flex-wrap items-center gap-1.5">
-      <span className="mr-1 text-xs text-zinc-400">Language:</span>
+      <span className="mr-1 text-xs text-zinc-400">{t("body.language")}:</span>
       {langs.map((lang) => (
         <button
           key={lang}

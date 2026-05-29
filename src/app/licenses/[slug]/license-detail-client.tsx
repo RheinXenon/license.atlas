@@ -6,7 +6,7 @@ import { LicenseBodySection } from "@/components/license-body-section";
 import { useLang } from "@/lib/i18n";
 import type { License } from "@/lib/types";
 
-const LANG_NAMES: Record<string, string> = {
+const LANG_NAMES_EN: Record<string, string> = {
   en: "English", zh: "Chinese", "zh-hans": "Chinese (Simplified)", "zh-hant": "Chinese (Traditional)",
   ja: "Japanese", ko: "Korean", ar: "Arabic", de: "German", es: "Spanish", fr: "French",
   it: "Italian", pt: "Portuguese", ru: "Russian", nl: "Dutch", pl: "Polish",
@@ -16,11 +16,22 @@ const LANG_NAMES: Record<string, string> = {
   lt: "Lithuanian", id: "Indonesian", eu: "Basque", fy: "Frisian", mi: "Maori",
 };
 
-function formatLanguages(languages: string[]): string[] {
+const LANG_NAMES_ZH: Record<string, string> = {
+  en: "英语", zh: "中文", "zh-hans": "简体中文", "zh-hant": "繁体中文",
+  ja: "日语", ko: "韩语", ar: "阿拉伯语", de: "德语", es: "西班牙语", fr: "法语",
+  it: "意大利语", pt: "葡萄牙语", ru: "俄语", nl: "荷兰语", pl: "波兰语",
+  tr: "土耳其语", sv: "瑞典语", da: "丹麦语", no: "挪威语", fi: "芬兰语",
+  el: "希腊语", cs: "捷克语", sk: "斯洛伐克语", sl: "斯洛文尼亚语", hr: "克罗地亚语",
+  ro: "罗马尼亚语", hu: "匈牙利语", uk: "乌克兰语", et: "爱沙尼亚语", lv: "拉脱维亚语",
+  lt: "立陶宛语", id: "印尼语", eu: "巴斯克语", fy: "弗里斯兰语", mi: "毛利语",
+};
+
+function formatLanguages(languages: string[], lang: string): string[] {
   if (!languages || languages.length === 0) return [];
   if (languages.length === 1 && languages[0] === "en") return [];
-  if (languages.length > 2) return ["Multilingual"];
-  return languages.map((l) => LANG_NAMES[l] || l);
+  if (languages.length > 2) return [lang === "zh" ? "多语言" : "Multilingual"];
+  const names = lang === "zh" ? LANG_NAMES_ZH : LANG_NAMES_EN;
+  return languages.map((l) => names[l] || l);
 }
 
 interface Props {
@@ -30,7 +41,7 @@ interface Props {
 }
 
 export function LicenseDetailClient({ license, prev, next }: Props) {
-  const { t } = useLang();
+  const { t, lang } = useLang();
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6">
@@ -70,8 +81,8 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
                 const translated = t(tagKey) !== tagKey ? t(tagKey) : tag.replace(/gpl|fdl/g, (m) => m.toUpperCase());
                 return <Badge key={tag} variant="fsf-tag" themeKey={tag}>{translated}</Badge>;
               })}
-              {formatLanguages(license.languages || []).map((lang) => (
-                <Badge key={lang} variant="language">{lang}</Badge>
+              {formatLanguages(license.languages || [], lang).map((l) => (
+                <Badge key={l} variant="language">{l}</Badge>
               ))}
               {license.tags.map((tag) => {
                 const tagKey = `tag.${tag.toLowerCase().replace(/ /g, "-").replace(/[^a-z0-9-]/g, "")}`;
@@ -142,7 +153,7 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
             {t("detail.blueOakRating")}
           </p>
           <div className="flex items-center gap-3">
-            <Badge variant="blue-oak">{license.blueoak_tier}</Badge>
+            <Badge variant="blue-oak">{t(`bo.${license.blueoak_tier.toLowerCase()}`) !== `bo.${license.blueoak_tier.toLowerCase()}` ? t(`bo.${license.blueoak_tier.toLowerCase()}`) : license.blueoak_tier}</Badge>
             <span className="text-sm text-zinc-500 dark:text-zinc-400">
               {t(`detail.blueOak.${license.blueoak_tier.toLowerCase()}`)}
             </span>

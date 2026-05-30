@@ -148,7 +148,7 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
 
       {/* Blue Oak Rating */}
       {license.blueoak_tier && (
-        <div className="fade-in-2 mb-8">
+        <div className="fade-in-2 relative z-10 mb-8">
           <p className="mb-2 text-xs font-medium uppercase tracking-wider text-zinc-400">
             {t("detail.blueOakRating")}
           </p>

@@ -6926,34 +6926,6 @@
     "created_at": "2026-05-29"
   },
   {
-    "slug": "apple-custom-license",
-    "title": "Apple Custom License",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "deprecated": false,
-    "type": "model",
-    "version": "",
-    "description": "",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [
-      "Custom",
-      "HuggingFace",
-      "Proprietary"
-    ],
-    "sources": [
-      {
-        "name": "apple/OpenELM",
-        "url": "https://huggingface.co/apple/OpenELM"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-04-27",
-    "proprietary": true
-  },
-  {
     "slug": "apple-excl",
     "title": "Apple Example Code License",
     "spdx_id": "",
@@ -7265,6 +7237,34 @@
     "featured": false,
     "proprietary": true,
     "created_at": "2026-05-29"
+  },
+  {
+    "slug": "apple-custom-license",
+    "title": "Apple Sample Code License",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "model",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace",
+      "Proprietary"
+    ],
+    "sources": [
+      {
+        "name": "apple/OpenELM",
+        "url": "https://huggingface.co/apple/OpenELM"
+      }
+    ],
+    "featured": false,
+    "created_at": "2026-04-27",
+    "proprietary": true
   },
   {
     "slug": "apple-sscl",
@@ -8458,6 +8458,34 @@
     "featured": false,
     "proprietary": false,
     "created_at": "2026-05-29"
+  },
+  {
+    "slug": "opensqz-custom-license",
+    "title": "AutoMathText Data Agreement for Model Training",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "data",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace",
+      "Proprietary"
+    ],
+    "sources": [
+      {
+        "name": "OpenSQZ/AutoMathText-V2",
+        "url": "https://huggingface.co/datasets/OpenSQZ/AutoMathText-V2"
+      }
+    ],
+    "featured": false,
+    "created_at": "2026-05-08",
+    "proprietary": true
   },
   {
     "slug": "autosar-proprietary",
@@ -23835,34 +23863,6 @@
     "created_at": "2026-05-29"
   },
   {
-    "slug": "flwrlabs-custom-license",
-    "title": "Flwrlabs Custom License",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "deprecated": false,
-    "type": "data",
-    "version": "",
-    "description": "",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [
-      "Custom",
-      "HuggingFace",
-      "Proprietary"
-    ],
-    "sources": [
-      {
-        "name": "flwrlabs/celeba",
-        "url": "https://huggingface.co/datasets/flwrlabs/celeba"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-05-08",
-    "proprietary": true
-  },
-  {
     "slug": "font-alias",
     "title": "font-alias License",
     "spdx_id": "",
@@ -31455,7 +31455,7 @@
   },
   {
     "slug": "infly-custom-license",
-    "title": "Infly Custom License",
+    "title": "Infly Model License Agreement",
     "spdx_id": "",
     "osi_approved": false,
     "fsf_libre": null,
@@ -32478,6 +32478,34 @@
     "featured": false,
     "created_at": "2026-05-14",
     "proprietary": false
+  },
+  {
+    "slug": "spatialverse-custom-license",
+    "title": "InteriorGS Terms of Use",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "data",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace",
+      "Proprietary"
+    ],
+    "sources": [
+      {
+        "name": "spatialverse/InteriorGS",
+        "url": "https://huggingface.co/datasets/spatialverse/InteriorGS"
+      }
+    ],
+    "featured": false,
+    "created_at": "2026-05-08",
+    "proprietary": true
   },
   {
     "slug": "ic-1.0",
@@ -36012,6 +36040,34 @@
     "proprietary": true
   },
   {
+    "slug": "flwrlabs-custom-license",
+    "title": "License of CelebA",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "data",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace",
+      "Proprietary"
+    ],
+    "sources": [
+      {
+        "name": "flwrlabs/celeba",
+        "url": "https://huggingface.co/datasets/flwrlabs/celeba"
+      }
+    ],
+    "featured": false,
+    "created_at": "2026-05-08",
+    "proprietary": true
+  },
+  {
     "slug": "covo-audio-is-licensed-under-the-license-terms-of-covo-audio",
     "title": "License of Covo-Audio",
     "spdx_id": "",
@@ -39128,7 +39184,7 @@
   },
   {
     "slug": "facebook-custom-license",
-    "title": "Meta AI Custom License",
+    "title": "Meta AI Non-Commercial Research License",
     "spdx_id": "",
     "osi_approved": false,
     "fsf_libre": null,
@@ -45427,34 +45483,6 @@
     "created_at": "2026-05-29"
   },
   {
-    "slug": "nechintosh-custom-license",
-    "title": "Nechintosh Custom License",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "deprecated": false,
-    "type": "data",
-    "version": "",
-    "description": "",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [
-      "Custom",
-      "HuggingFace",
-      "Proprietary"
-    ],
-    "sources": [
-      {
-        "name": "Nechintosh/ghibli",
-        "url": "https://huggingface.co/datasets/Nechintosh/ghibli"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-05-08",
-    "proprietary": true
-  },
-  {
     "slug": "nero-eula",
     "title": "Nero EULA",
     "spdx_id": "",
@@ -45968,7 +45996,7 @@
   },
   {
     "slug": "nexar-ai-custom-license",
-    "title": "Nexar Ai Custom License",
+    "title": "Nexar Dataset License",
     "spdx_id": "",
     "osi_approved": false,
     "fsf_libre": null,
@@ -47321,7 +47349,7 @@
   },
   {
     "slug": "nvidia-custom-license",
-    "title": "Nvidia Custom License",
+    "title": "NVIDIA Data Agreement for Model Training",
     "spdx_id": "",
     "osi_approved": false,
     "fsf_libre": null,
@@ -51148,34 +51176,6 @@
     "created_at": "2026-05-29"
   },
   {
-    "slug": "opensqz-custom-license",
-    "title": "Opensqz Custom License",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "deprecated": false,
-    "type": "data",
-    "version": "",
-    "description": "",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [
-      "Custom",
-      "HuggingFace",
-      "Proprietary"
-    ],
-    "sources": [
-      {
-        "name": "OpenSQZ/AutoMathText-V2",
-        "url": "https://huggingface.co/datasets/OpenSQZ/AutoMathText-V2"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-05-08",
-    "proprietary": true
-  },
-  {
     "slug": "openssl-standalone",
     "title": "OpenSSL License - standalone",
     "spdx_id": "OpenSSL-standalone",
@@ -54111,34 +54111,6 @@
     "proprietary": false
   },
   {
-    "slug": "pointcept-custom-license",
-    "title": "Pointcept Custom License",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "deprecated": false,
-    "type": "data",
-    "version": "",
-    "description": "",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [
-      "Custom",
-      "HuggingFace",
-      "Proprietary"
-    ],
-    "sources": [
-      {
-        "name": "Pointcept/scannet-compressed",
-        "url": "https://huggingface.co/datasets/Pointcept/scannet-compressed"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-05-08",
-    "proprietary": true
-  },
-  {
     "slug": "poke-wiggle-proprietary-2026",
     "title": "Poke & Wiggle Proprietary License 2026",
     "spdx_id": "",
@@ -56685,34 +56657,6 @@
     "created_at": "2026-05-29"
   },
   {
-    "slug": "renzka-custom-license",
-    "title": "Renzka Custom License",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "deprecated": false,
-    "type": "data",
-    "version": "",
-    "description": "",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [
-      "Custom",
-      "HuggingFace",
-      "Proprietary"
-    ],
-    "sources": [
-      {
-        "name": "RenzKa/simlingo",
-        "url": "https://huggingface.co/datasets/RenzKa/simlingo"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-05-08",
-    "proprietary": true
-  },
-  {
     "slug": "responsible-ai-source-1.0",
     "title": "Reponsible AI Source Code License v1.0",
     "spdx_id": "",
@@ -58333,6 +58277,34 @@
     "created_at": "2026-05-29"
   },
   {
+    "slug": "pointcept-custom-license",
+    "title": "ScanNet Terms of Use",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "data",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace",
+      "Proprietary"
+    ],
+    "sources": [
+      {
+        "name": "Pointcept/scannet-compressed",
+        "url": "https://huggingface.co/datasets/Pointcept/scannet-compressed"
+      }
+    ],
+    "featured": false,
+    "created_at": "2026-05-08",
+    "proprietary": true
+  },
+  {
     "slug": "scansoft-1.2",
     "title": "ScanSoft Public License v1.2",
     "spdx_id": "",
@@ -59572,6 +59544,34 @@
     "proprietary": false
   },
   {
+    "slug": "renzka-custom-license",
+    "title": "SimLingo Dataset Licence Agreement for Non-Commercial Use (January 2025)",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "data",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace",
+      "Proprietary"
+    ],
+    "sources": [
+      {
+        "name": "RenzKa/simlingo",
+        "url": "https://huggingface.co/datasets/RenzKa/simlingo"
+      }
+    ],
+    "featured": false,
+    "created_at": "2026-05-08",
+    "proprietary": true
+  },
+  {
     "slug": "simpl-2.0",
     "title": "Simple Public License",
     "spdx_id": "SimPL-2.0",
@@ -59926,6 +59926,34 @@
     "created_at": "2026-05-29"
   },
   {
+    "slug": "snap-research-custom-license",
+    "title": "Snap Inc. Academic Research License",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "model",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace",
+      "Proprietary"
+    ],
+    "sources": [
+      {
+        "name": "snap-research/weights2weights",
+        "url": "https://huggingface.co/snap-research/weights2weights"
+      }
+    ],
+    "featured": false,
+    "created_at": "2026-04-27",
+    "proprietary": true
+  },
+  {
     "slug": "snap-nc-2025",
     "title": "Snap Non-Commercial License 2025",
     "spdx_id": "",
@@ -59951,34 +59979,6 @@
     "featured": false,
     "proprietary": true,
     "created_at": "2026-05-29"
-  },
-  {
-    "slug": "snap-research-custom-license",
-    "title": "Snap Research Custom License",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "deprecated": false,
-    "type": "model",
-    "version": "",
-    "description": "",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [
-      "Custom",
-      "HuggingFace",
-      "Proprietary"
-    ],
-    "sources": [
-      {
-        "name": "snap-research/weights2weights",
-        "url": "https://huggingface.co/snap-research/weights2weights"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-04-27",
-    "proprietary": true
   },
   {
     "slug": "snapchat-terms-of-service",
@@ -60777,34 +60777,6 @@
     "featured": false,
     "proprietary": false,
     "created_at": "2026-05-29"
-  },
-  {
-    "slug": "spatialverse-custom-license",
-    "title": "Spatialverse Custom License",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "deprecated": false,
-    "type": "data",
-    "version": "",
-    "description": "",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [
-      "Custom",
-      "HuggingFace",
-      "Proprietary"
-    ],
-    "sources": [
-      {
-        "name": "spatialverse/InteriorGS",
-        "url": "https://huggingface.co/datasets/spatialverse/InteriorGS"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-05-08",
-    "proprietary": true
   },
   {
     "slug": "speechworks-1.1",
@@ -61897,6 +61869,34 @@
     "featured": false,
     "proprietary": false,
     "created_at": "2026-05-29"
+  },
+  {
+    "slug": "nechintosh-custom-license",
+    "title": "Studio Ghibli Personal Use License",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "data",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace",
+      "Proprietary"
+    ],
+    "sources": [
+      {
+        "name": "Nechintosh/ghibli",
+        "url": "https://huggingface.co/datasets/Nechintosh/ghibli"
+      }
+    ],
+    "featured": false,
+    "created_at": "2026-05-08",
+    "proprietary": true
   },
   {
     "slug": "sudo",
@@ -64608,8 +64608,8 @@
     "created_at": "2026-05-29"
   },
   {
-    "slug": "tencent-custom-license",
-    "title": "Tencent Custom License",
+    "slug": "xywang1-custom-license",
+    "title": "Tencent AI Lab NaturalConv Dataset Terms and Conditions",
     "spdx_id": "",
     "osi_approved": false,
     "fsf_libre": null,
@@ -64622,17 +64622,18 @@
     "limitations": [],
     "tags": [
       "Custom",
-      "HuggingFace"
+      "HuggingFace",
+      "Proprietary"
     ],
     "sources": [
       {
-        "name": "tencent/MegaStyle-1.4M",
-        "url": "https://huggingface.co/datasets/tencent/MegaStyle-1.4M"
+        "name": "xywang1/NaturalConv",
+        "url": "https://huggingface.co/datasets/xywang1/NaturalConv"
       }
     ],
     "featured": false,
     "created_at": "2026-05-08",
-    "proprietary": false
+    "proprietary": true
   },
   {
     "slug": "tencent-hunyuan-3d-2.0-cla",
@@ -64812,6 +64813,33 @@
     "featured": false,
     "proprietary": true,
     "created_at": "2026-05-27"
+  },
+  {
+    "slug": "tencent-custom-license",
+    "title": "Tencent MegaStyle License",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "data",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace"
+    ],
+    "sources": [
+      {
+        "name": "tencent/MegaStyle-1.4M",
+        "url": "https://huggingface.co/datasets/tencent/MegaStyle-1.4M"
+      }
+    ],
+    "featured": false,
+    "created_at": "2026-05-08",
+    "proprietary": false
   },
   {
     "slug": "tencent-songbloom-license",
@@ -66051,7 +66079,7 @@
   },
   {
     "slug": "thomsonreuters-custom-license",
-    "title": "Thomson Reuters Custom License",
+    "title": "Thomson Reuters User Agreement",
     "spdx_id": "",
     "osi_approved": false,
     "fsf_libre": null,
@@ -71225,34 +71253,6 @@
     "created_at": "2026-05-29"
   },
   {
-    "slug": "xywang1-custom-license",
-    "title": "Xywang1 Custom License",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "deprecated": false,
-    "type": "data",
-    "version": "",
-    "description": "",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [
-      "Custom",
-      "HuggingFace",
-      "Proprietary"
-    ],
-    "sources": [
-      {
-        "name": "xywang1/NaturalConv",
-        "url": "https://huggingface.co/datasets/xywang1/NaturalConv"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-05-08",
-    "proprietary": true
-  },
-  {
     "slug": "xzoom",
     "title": "xzoom License",
     "spdx_id": "xzoom",
@@ -71414,34 +71414,6 @@
     "created_at": "2026-05-29"
   },
   {
-    "slug": "yandex-custom-license",
-    "title": "Yandex Custom License",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "deprecated": false,
-    "type": "model",
-    "version": "",
-    "description": "",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [
-      "Custom",
-      "HuggingFace",
-      "Proprietary"
-    ],
-    "sources": [
-      {
-        "name": "yandex/YandexGPT-5-Lite-8B-pretrain",
-        "url": "https://huggingface.co/yandex/YandexGPT-5-Lite-8B-pretrain"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-04-27",
-    "proprietary": true
-  },
-  {
     "slug": "yandexgpt-5-lite-8b-2025",
     "title": "YandexGPT-5-Lite-8B License 2025",
     "spdx_id": "",
@@ -71467,6 +71439,34 @@
     "featured": false,
     "proprietary": true,
     "created_at": "2026-05-29"
+  },
+  {
+    "slug": "yandex-custom-license",
+    "title": "YandexGPT-5-Lite-8B License Agreement",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "model",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace",
+      "Proprietary"
+    ],
+    "sources": [
+      {
+        "name": "yandex/YandexGPT-5-Lite-8B-pretrain",
+        "url": "https://huggingface.co/yandex/YandexGPT-5-Lite-8B-pretrain"
+      }
+    ],
+    "featured": false,
+    "created_at": "2026-04-27",
+    "proprietary": true
   },
   {
     "slug": "yolo-1.0",

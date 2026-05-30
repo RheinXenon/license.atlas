@@ -295,7 +295,7 @@
     "Permissive": 28,
     "tl;drLegal Verified": 68,
     "GNU": 41,
-    "Copyleft": 190,
+    "Copyleft": 187,
     "GNU Nonfree": 11,
     "Public Domain": 22,
     "Creative Commons": 77,
@@ -317,5 +317,5 @@
     "linesFixed": 0,
     "osiFixed": 4
   },
-  "updated": "2026-05-29"
+  "updated": "2026-05-30"
 }

@@ -41,6 +41,7 @@ Lightweight client-side i18n via `src/lib/i18n.tsx`:
 - `t(key, params)` for string interpolation with `{param}` placeholders
 - Auto-detects language: `localStorage("lang")` → `navigator.language.startsWith("zh")` → fallback "en"
 - Language toggle in navbar shows "中"/"EN"
+- 已翻译范围：navbar/footer 品牌、type/tag/FSF-tag pills、P/C/L 徽章、Blue Oak 评级、语言标签、正文区（Full Text/Copy/Copied/Language）、About 页面、搜索分组
 
 Server components (`licenses/[slug]/page.tsx`) are split into:
 - `page.tsx` (server) — data fetching + `generateStaticParams`
@@ -68,11 +69,13 @@ Server components (`licenses/[slug]/page.tsx`) are split into:
 - Filter state persisted to URL via `history.replaceState` (no `router.replace` — causes infinite refresh in static export)
 - Badge tooltips use opaque Tailwind colors (e.g. `bg-green-50` for OSI, `bg-red-50` for FSF)
 - Detail page header has `z-20` so badge tooltips render above Permissions section
+- Blue Oak rating section has `relative z-10` so tooltip renders above License Text section
+- Homepage tag pills use `border border-transparent` when active (same border width as inactive) to prevent flex-wrap reflow
 
 ## Key Components
 
 - `src/lib/i18n.tsx` — LangProvider, useLang hook, en/zh translation dictionary
-- `src/components/badge.tsx` — Badge with variants: osi, fsf, type, tag, permission, condition, limitation, verified, language
+- `src/components/badge.tsx` — Badge with variants: osi, fsf, type, tag, permission, condition, limitation, verified, language, fsf-tag, blue-oak. `themeKey` prop separates style lookup from display text
 - `src/components/license-card.tsx` — Frosted glass card with hover prefetch + sparkline
 - `src/components/navbar.tsx` — Nav with language toggle + dark mode toggle + GitHub link
 - `src/components/footer.tsx` — Footer with busuanzi counter (dynamic script injection)
@@ -103,7 +106,7 @@ Server components (`licenses/[slug]/page.tsx`) are split into:
 - Tag 定义：`src/components/badge.tsx` 的 `themes` 对象（颜色、desc、tooltip 样式）
 - Tag 排序：`src/app/page.tsx` 的 `tagOrder` 数组
 - Tag 翻译：`src/lib/i18n.tsx` 的 `tag.*`（标签名）和 `tagdesc.*`（悬浮描述）
-- Badge 组件优先查 i18n key `tagdesc.{normalizedKey}`，回退到 themes 里的英文 desc
+- Badge 组件优先查 i18n key `tagdesc.{key}`（key 为 resolveKey 结果），回退到 themes 里的英文 desc
 - 新增 tag 需同时更新：themes（badge.tsx）、tagOrder（page.tsx）、i18n 翻译（zh/en）
 - 不随意新增 tag，只有数量足够多（建议 ≥3）才有筛选意义
 - `languages` 字段是独立的语言筛选，与 tags 无关
@@ -119,8 +122,9 @@ Server components (`licenses/[slug]/page.tsx`) are split into:
 - **静态导出 + CDN 缓存**：GitHub Pages 有 `max-age=600`（10分钟），部署后需等待缓存过期或强制刷新
 - **Safari favicon 缓存**：独立于浏览器缓存，存储在 `~/Library/Safari/Favicon Cache/*`，需要完全磁盘访问权限才能清除
 - **ICO 格式**：必须是 proper multi-size ICO，不能是重命名的 PNG
-- **Badge 翻译 vs 样式分离**：Badge 的 `themeKey` prop 用于查找样式和 tooltip，`children` 用于显示文本。翻译后的中文文本（如 "软件"）在 themes 里没有对应样式，必须传原始英文值（如 "software"）作为 `themeKey`
-- **i18n key normalize**：tag 名转 i18n key 时需去掉特殊字符（分号等），用 `tag.toLowerCase().replace(/ /g, "-").replace(/[^a-z0-9-]/g, "")`，否则 `"tl;drLegal Verified"` 会查不到 `"tag.tldrlegal-verified"`
+- **Badge 翻译 vs 样式分离**：Badge 的 `themeKey` prop 用于查找样式和 tooltip，`children` 用于显示文本。翻译后的中文文本（如 "软件"）在 themes 里没有对应样式，必须传原始英文值（如 "software"）作为 `themeKey`。Blue Oak badge 传 `themeKey={license.blueoak_tier}`（如 "Silver"），children 传翻译文本（如 "银级"）
+- **i18n key normalize**：tag 名转 i18n key 时需去掉特殊字符（分号等），用 `tag.toLowerCase().replace(/ /g, "-").replace(/[^a-z0-9-]/g, "")`。themes 字典的 key 也必须与 normalize 结果一致（如 `"tldrlegal-verified"` 无分号）
+- **Badge tooltip i18n 查找**：使用 `tagdesc.${key}`（key 为 resolveKey 结果），不再用 normalizeKey(themeKey)。Blue Oak 的 tooltip key 为 `tagdesc.bo-silver` 等
 - **Hydration mismatch**：客户端语言检测会导致 SSR 内容（英文）与客户端渲染（中文）不匹配。品牌名用 `mounted` state 守卫，其余 `t()` 文本接受 mismatch（不影响功能）
 
 ## Blue Oak 评级
@@ -140,10 +144,12 @@ Blue Oak Council 对 225+ SPDX 宽松许可证提供质量评级（Model/Gold/Si
 
 ### 详情页展示
 
-- 评级区域在 P/C/L 之后、License Text 之前
-- Badge 用 `variant="blue-oak"`，`resolveKey` 会映射到 `bo-{tier}` 的 theme key
+- 评级区域在 P/C/L 之后、License Text 之前，父容器有 `relative z-10` 确保 tooltip 不被遮挡
+- Badge 用 `variant="blue-oak" themeKey={tier}`，`resolveKey` 映射到 `bo-{tier}` 的 theme key
 - 每个等级有独立的金属质感配色：Model=紫、Gold=金、Silver=银、Bronze=铜、Lead=铅灰
-- 描述文字通过 `detail.blueOak.{tier}` i18n key 翻译
+- Badge 文本通过 `bo.{tier}` i18n key 翻译（Model→模板, Gold→金级, Silver→银级 等）
+- Pill 后描述文字通过 `detail.blueOak.{tier}` i18n key 翻译（简练概括版）
+- Pill 悬浮窗通过 `tagdesc.bo-{tier}` i18n key 翻译（Blue Oak Council 官方完整描述）
 
 ## 中文品牌名
 

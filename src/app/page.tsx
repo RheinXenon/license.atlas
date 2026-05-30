@@ -332,10 +332,10 @@ function HomeContent() {
             <button
               key={tg}
               onClick={() => toggleTag(tg)}
-              className={`rounded-full px-2.5 py-1 text-xs font-medium transition-all duration-200 active:scale-[0.97] ${
+              className={`rounded-full border px-2.5 py-1 text-xs font-medium transition-all duration-200 active:scale-[0.97] ${
                 isActive
-                  ? activeClass
-                  : "border border-zinc-200 bg-zinc-100 text-zinc-500 hover:bg-zinc-200 dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
+                  ? `border-transparent ${activeClass}`
+                  : "border-zinc-200 bg-zinc-100 text-zinc-500 hover:bg-zinc-200 dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
               }`}
             >
               {isVerified ? <span>{t(`tag.${tagKey}`) !== `tag.${tagKey}` ? t(`tag.${tagKey}`) : tg}</span> : (t(`tag.${tagKey}`) !== `tag.${tagKey}` ? t(`tag.${tagKey}`) : tg)} <span className="opacity-60">({(stats.by_tag as Record<string, number>)[tg] ?? 0})</span>

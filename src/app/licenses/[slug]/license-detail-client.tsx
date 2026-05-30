@@ -113,9 +113,10 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
                 {t("detail.permissions")}
               </p>
               <div className="flex flex-wrap gap-1.5">
-                {license.permissions.map((p) => (
-                  <Badge key={p} variant="permission">{p}</Badge>
-                ))}
+                {license.permissions.map((p) => {
+                  const pKey = `perm.${p}`;
+                  return <Badge key={p} variant="permission">{t(pKey) !== pKey ? t(pKey) : p}</Badge>;
+                })}
               </div>
             </div>
           )}
@@ -125,9 +126,10 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
                 {t("detail.conditions")}
               </p>
               <div className="flex flex-wrap gap-1.5">
-                {license.conditions.map((c) => (
-                  <Badge key={c} variant="condition">{c}</Badge>
-                ))}
+                {license.conditions.map((c) => {
+                  const cKey = `cond.${c}`;
+                  return <Badge key={c} variant="condition">{t(cKey) !== cKey ? t(cKey) : c}</Badge>;
+                })}
               </div>
             </div>
           )}
@@ -137,9 +139,10 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
                 {t("detail.limitations")}
               </p>
               <div className="flex flex-wrap gap-1.5">
-                {license.limitations.map((l) => (
-                  <Badge key={l} variant="limitation">{l}</Badge>
-                ))}
+                {license.limitations.map((l) => {
+                  const lKey = `limit.${l}`;
+                  return <Badge key={l} variant="limitation">{t(lKey) !== lKey ? t(lKey) : l}</Badge>;
+                })}
               </div>
             </div>
           )}

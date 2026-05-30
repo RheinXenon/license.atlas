@@ -93,7 +93,7 @@ export const themes: Record<string, BadgeTheme> = {
     tooltip: "bg-gradient-to-r from-[#eaf5f0] to-[#e6f4fc] border-[#8dd4b5] dark:from-teal-950 dark:to-sky-950 dark:border-teal-700",
     glow: "shadow-[0_0_8px_rgba(0,150,226,0.3)]",
   },
-  "tl;drlegal-verified": {
+  "tldrlegal-verified": {
     desc: "Verified by tl;drLegal — license summary reviewed for accuracy",
     badge: "verified-badge",
     tooltip: "bg-gradient-to-r from-[#eaf5f0] to-[#e6f4fc] border-[#8dd4b5] dark:from-teal-950 dark:to-sky-950 dark:border-teal-700",

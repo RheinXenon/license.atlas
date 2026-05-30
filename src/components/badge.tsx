@@ -288,7 +288,7 @@ export function Badge({ children, variant = "tag", className, themeKey }: BadgeP
     </span>
   );
 
-  const i18nKey = `tagdesc.${themeKey ? normalizeKey(themeKey) : key}`;
+  const i18nKey = `tagdesc.${key}`;
   const desc = t(i18nKey) !== i18nKey ? t(i18nKey) : (theme?.desc || "");
   if (!desc) return badge;
 

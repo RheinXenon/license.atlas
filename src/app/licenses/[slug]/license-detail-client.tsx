@@ -153,7 +153,7 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
             {t("detail.blueOakRating")}
           </p>
           <div className="flex items-center gap-3">
-            <Badge variant="blue-oak">{t(`bo.${license.blueoak_tier.toLowerCase()}`) !== `bo.${license.blueoak_tier.toLowerCase()}` ? t(`bo.${license.blueoak_tier.toLowerCase()}`) : license.blueoak_tier}</Badge>
+            <Badge variant="blue-oak" themeKey={license.blueoak_tier}>{t(`bo.${license.blueoak_tier.toLowerCase()}`) !== `bo.${license.blueoak_tier.toLowerCase()}` ? t(`bo.${license.blueoak_tier.toLowerCase()}`) : license.blueoak_tier}</Badge>
             <span className="text-sm text-zinc-500 dark:text-zinc-400">
               {t(`detail.blueOak.${license.blueoak_tier.toLowerCase()}`)}
             </span>

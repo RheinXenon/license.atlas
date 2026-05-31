@@ -232,11 +232,12 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
       {/* Report Issue */}
       <div className="fade-in-4 mb-8">
         <a
-          href={`https://github.com/morningD/license.atlas/issues/new?template=license-feedback&labels=license-feedback&license=${encodeURIComponent(license.title)}&body=${encodeURIComponent(`**License:** ${license.title}\n**Slug:** ${license.slug}${license.spdx_id ? `\n**SPDX ID:** ${license.spdx_id}` : ''}\n\n`)}`}
+          href={`https://github.com/morningD/license.atlas/issues/new?template=license-feedback.yml&labels=license-feedback&title=${encodeURIComponent(`[Feedback] ${license.title}`)}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-sm text-zinc-400 transition-colors hover:text-[#7c3aed] dark:text-zinc-500 dark:hover:text-[#a78bfa]"
+          className="inline-flex items-center gap-2 rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-2 text-sm font-medium text-zinc-600 transition-colors hover:border-violet-300 hover:text-[#7c3aed] dark:border-zinc-700 dark:bg-zinc-800/50 dark:text-zinc-400 dark:hover:border-violet-700 dark:hover:text-[#a78bfa]"
         >
+          <span className="text-[1.5em] leading-none">🙌</span>
           {t("detail.reportIssue")}
         </a>
       </div>

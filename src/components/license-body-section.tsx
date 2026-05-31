@@ -57,8 +57,10 @@ export function LicenseBodySection({ slug, body, hasBodies }: LicenseBodySection
     fetch(`${window.location.origin}/license.atlas/data/cc-bodies/${slug}.json`)
       .then((r) => r.json())
       .then((data) => {
-        bodyCache.set(slug, data);
-        setBodies(data);
+        // Prepend English (the page's default body) so language switcher includes it
+        const allBodies = [{ lang: "en", body }, ...data];
+        bodyCache.set(slug, allBodies);
+        setBodies(allBodies);
       })
       .catch(() => {});
   }, [slug, hasBodies]);

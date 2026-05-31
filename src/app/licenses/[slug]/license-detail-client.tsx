@@ -229,6 +229,18 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
         </div>
       )}
 
+      {/* Report Issue */}
+      <div className="fade-in-4 mb-8">
+        <a
+          href={`https://github.com/morningD/license.atlas/issues/new?template=license-feedback&labels=license-feedback&license=${encodeURIComponent(license.title)}&body=${encodeURIComponent(`**License:** ${license.title}\n**Slug:** ${license.slug}${license.spdx_id ? `\n**SPDX ID:** ${license.spdx_id}` : ''}\n\n`)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 text-sm text-zinc-400 transition-colors hover:text-[#7c3aed] dark:text-zinc-500 dark:hover:text-[#a78bfa]"
+        >
+          {t("detail.reportIssue")}
+        </a>
+      </div>
+
       {/* Prev/Next */}
       <div className="fade-in-5 flex items-center justify-between border-t border-zinc-200 pt-6 dark:border-zinc-800">
         {prev ? (

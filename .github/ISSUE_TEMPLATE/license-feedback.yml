@@ -1,0 +1,39 @@
+name: License Feedback
+description: Report an issue with license content, metadata, or tags
+labels: ["license-feedback"]
+body:
+  - type: input
+    id: license
+    attributes:
+      label: License
+      description: Which license has the issue?
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Issue Category
+      options:
+        - License text is incorrect or incomplete
+        - Tags are wrong or missing
+        - Permissions/Conditions/Limitations are inaccurate
+        - SPDX ID or metadata is wrong
+        - Blue Oak rating seems incorrect
+        - Translation issue
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What's wrong and what should it be?
+    validations:
+      required: true
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Links, screenshots, or references (optional)
+    validations:
+      required: false

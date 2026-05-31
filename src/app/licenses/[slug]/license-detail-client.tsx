@@ -230,7 +230,7 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
       )}
 
       {/* Report Issue */}
-      <div className="fade-in-4 mb-8">
+      <div className="fade-in-4 mb-8 flex justify-end">
         <a
           href={`https://github.com/morningD/license.atlas/issues/new?template=license-feedback.yml&labels=license-feedback&title=${encodeURIComponent(`[Feedback] ${license.title}`)}`}
           target="_blank"

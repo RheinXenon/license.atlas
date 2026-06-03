@@ -12,14 +12,18 @@ export function generateStaticParams() {
   return allLicenses.map((l) => ({ slug: l.slug }));
 }
 
-export function generateMetadata({
-  params: _params,
+export async function generateMetadata({
+  params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
+  const { slug } = await params;
+  const entry = slugMap.get(slug);
+  if (!entry) return { title: "LicenseAtlas" };
+  const { license } = entry;
   return {
-    title: "LicenseAtlas",
-    description: "License details",
+    title: `${license.title} — LicenseAtlas`,
+    description: `${license.title}${license.spdx_id ? ` (${license.spdx_id})` : ""} — a ${license.type} license. View full text, permissions, conditions, and limitations.`,
   };
 }
 

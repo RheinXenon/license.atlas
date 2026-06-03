@@ -22,7 +22,26 @@ const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t===
 export const metadata: Metadata = {
   title: "LicenseAtlas — The Comprehensive License Collection",
   description:
-    "Browse and explore 769+ software, AI model, and data licenses.",
+    "Browse and explore 2,587+ software, AI model, data, and agent licenses. Including SPDX, OSI, Creative Commons, and more.",
+  metadataBase: new URL("https://morningd.github.io/license.atlas"),
+  openGraph: {
+    title: "LicenseAtlas — The Comprehensive License Collection",
+    description:
+      "Browse and explore 2,587+ software, AI model, data, and agent licenses.",
+    url: "https://morningd.github.io/license.atlas",
+    siteName: "LicenseAtlas",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "LicenseAtlas",
+    description:
+      "Browse and explore 2,587+ software, AI model, data, and agent licenses.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

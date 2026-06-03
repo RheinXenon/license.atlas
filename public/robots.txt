@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /license.atlas/
+
+Sitemap: https://morningd.github.io/license.atlas/sitemap.xml

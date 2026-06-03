@@ -22,6 +22,15 @@ A comprehensive license collection website — software, AI model, and data lice
 - `basePath: "/license.atlas"` configured in `next.config.ts`
 - GitHub Actions auto-deploys on push to main (`.github/workflows/deploy.yml`)
 
+## SEO
+
+- `public/robots.txt` — 允许所有爬虫，指向 sitemap.xml
+- `public/sitemap.xml` — 由 `scripts/build-sitemap.mjs` 从 `licenses-index.json` 生成（2,589 URLs）
+- **数据更新后必须重跑**：`node scripts/build-sitemap.mjs`
+- `src/app/layout.tsx` — metadata 含中英 keywords、Open Graph、Twitter Card、JSON-LD 结构化数据
+- `src/app/licenses/[slug]/page.tsx` — `generateMetadata` 为每个许可证生成独立 title/description
+- Google Search Console 已验证（`public/googlef98d0f412dcfb895.html`），sitemap 已提交
+
 ## Data Pipeline
 
 1. KB `scripts/clean-licenses.mjs` reads crawled data → outputs `data/licenses/cleaned/`
@@ -86,6 +95,7 @@ Server components (`licenses/[slug]/page.tsx`) are split into:
 - `src/app/about/page.tsx` — About page with sources, stats, links
 - `src/app/licenses/[slug]/page.tsx` — Server wrapper (SSG, uses full licenses.json)
 - `src/app/licenses/[slug]/license-detail-client.tsx` — Client detail view with i18n
+- `.github/ISSUE_TEMPLATE/license-feedback.yml` — GitHub issue 模板（Report Issue 按钮链接到此模板）
 
 ## 添加许可证 Checklist
 
@@ -95,9 +105,10 @@ Server components (`licenses/[slug]/page.tsx`) are split into:
 2. `src/data/licenses-index.json` — 轻量版（无 body），**主页直接 import**，tag pills 从此文件读取
 3. `src/data/stats.json` — 重新计算 by_type、by_tag、by_source 等统计
 4. `public/search-index.json` — 运行 `node scripts/build-search-index.mjs` 重建
-5. `README.md` / `README.zh-CN.md` — 更新总数、数据源表
-6. `src/app/about/page.tsx` — 如有新数据源，添加到 sources 列表 + i18n
-7. `src/lib/i18n.tsx` — 如有新 tag/描述，添加翻译
+5. `public/sitemap.xml` — 运行 `node scripts/build-sitemap.mjs` 重建
+6. `README.md` / `README.zh-CN.md` — 更新总数、数据源表
+7. `src/app/about/page.tsx` — 如有新数据源，添加到 sources 列表 + i18n
+8. `src/lib/i18n.tsx` — 如有新 tag/描述，添加翻译
 
 **最容易遗漏的是 `licenses-index.json`**：主页 filter pills 的 tags 来自这个文件，而非 `licenses.json`。如果只改后者，线上 pills 不会更新。
 

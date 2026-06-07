@@ -1,13 +1,13 @@
 {
-  "total": 2587,
+  "total": 2588,
   "osi_approved": 122,
   "fsf_libre": 146,
   "proprietary": 766,
   "by_type": {
-    "software": 2298,
+    "software": 2297,
     "data": 101,
     "agent": 20,
-    "model": 152,
+    "model": 154,
     "terms": 16
   },
   "by_source": {
@@ -289,10 +289,11 @@
     "xiaomi-open-source/Xiaomi-MiMo-VL-Miloco-7B": 1,
     "yandex/YandexGPT-5-Lite-8B-pretrain": 1,
     "ZERO-POINT-AI/Miss-MARTHA-hot-POCKET-4B-OMNI-ed": 1,
-    "ZERO-POINT-AI/Miss_MARTHA-9B-Qwen3.5-Omni": 1
+    "ZERO-POINT-AI/Miss_MARTHA-9B-Qwen3.5-Omni": 1,
+    "openmdw.ai": 2
   },
   "by_tag": {
-    "Permissive": 28,
+    "Permissive": 30,
     "tl;drLegal Verified": 68,
     "GNU": 41,
     "Copyleft": 187,
@@ -317,5 +318,5 @@
     "linesFixed": 0,
     "osiFixed": 4
   },
-  "updated": "2026-06-01"
+  "updated": "2026-06-07"
 }

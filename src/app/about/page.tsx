@@ -17,6 +17,7 @@ const sources = [
   ["OpenAtom Foundation", "about.src.openatom"],
   ["ScanCode LicenseDB", "about.src.scancode"],
   ["Blue Oak Council", "about.src.blueoak"],
+  ["OpenMDW", "about.src.openmdw"],
 ] as const;
 
 const popSources = [

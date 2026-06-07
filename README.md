@@ -48,6 +48,7 @@ License texts are aggregated from:
 | Open Data Commons | 3 data licenses |
 | RAIL | Responsible AI licenses |
 | OpenAtom Foundation | Model and hardware licenses (bilingual CN/EN) |
+| OpenMDW | Permissive license for ML models and related artifacts (Linux Foundation) |
 
 Popularity data comes from HuggingFace Hub (2.8M+ models), GitHub (28 license types), and Kaggle (714K+ datasets via Meta-Kaggle).
 

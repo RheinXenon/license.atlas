@@ -48,6 +48,7 @@ npm run build     # 静态导出到 out/
 | Open Data Commons | 3 个数据许可证 |
 | RAIL | 负责任 AI 许可证 |
 | 开放原子开源基金会 | 模型与硬件许可证（中英双语） |
+| OpenMDW | AI 模型及关联制品的宽松开源许可证（Linux Foundation） |
 
 热度数据来自 HuggingFace Hub（280 万+ 模型）、GitHub（28 种许可证类型）和 Kaggle（通过 Meta-Kaggle 覆盖 71.4 万+ 数据集）。
 

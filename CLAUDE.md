@@ -42,6 +42,21 @@ A comprehensive license collection website — software, AI model, and data lice
 
 No data processing scripts in this project — KB is the single source of truth.
 
+### KB 爬取来源（8 个）
+
+| 来源 | 数据类型 | 说明 |
+|------|----------|------|
+| SPDX | 许可证正文 + 元数据 | 695+ 许可证 |
+| OSI | OSI 批准标记 | 122 个 |
+| TLDRLegal | P/C/L 徽章数据 | 145 个 |
+| choosealicense.com | 描述 + P/C/L | 47 个 |
+| HuggingFace Hub | 模型/数据集许可证 | 自定义 + gated |
+| Open Data Commons | 数据许可证 | 3 个 |
+| Creative Commons | CC 许可证正文 | 37 个 |
+| **OpenMDW** | AI 模型许可证 | GitHub API 版本发现 + openmdw.ai 页面爬取 |
+
+**OpenMDW 特殊处理**：KB `crawlers/licenses_crawl.js` 的 `crawlOpenMDW` 函数通过 GitHub API 监控 `OpenMDW/OpenMDW` repo 的版本目录，自动发现新版本并爬取许可证正文。P/C/L 元数据通过静态映射维护（`OPENMDW_METADATA` 对象）。FAQ 和 About 等参考资料保存在 `KB/data/licenses/openmdw/`。
+
 ## i18n
 
 Lightweight client-side i18n via `src/lib/i18n.tsx`:

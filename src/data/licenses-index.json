@@ -3074,6 +3074,10 @@
       {
         "name": "openmdw.ai",
         "url": "https://openmdw.ai/license/1-0"
+      },
+      {
+        "name": "github.com",
+        "url": "https://github.com/OpenMDW/OpenMDW/blob/main/1.0/LICENSE.openmdw"
       }
     ],
     "featured": false,
@@ -3094,47 +3098,6 @@
       2,
       5
     ]
-  },
-  {
-    "slug": "openmdw-1.1",
-    "title": "OpenMDW License Agreement v1.1",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "fsf_tags": [],
-    "deprecated": false,
-    "type": "model",
-    "version": "1.1",
-    "description": "A permissive open-source license crafted specifically for machine-learning models and their associated artifacts (Model Materials). v1.1 extends the litigation termination clause from patent-only to cover both patent and copyright infringement claims.",
-    "permissions": [
-      "commercial-use",
-      "modifications",
-      "distribution",
-      "private-use"
-    ],
-    "conditions": [
-      "include-copyright",
-      "include-license"
-    ],
-    "limitations": [
-      "liability",
-      "warranty"
-    ],
-    "tags": [
-      "Permissive"
-    ],
-    "sources": [
-      {
-        "name": "openmdw.ai",
-        "url": "https://openmdw.ai/license/1-1"
-      },
-      {
-        "name": "github.com",
-        "url": "https://github.com/OpenMDW/OpenMDW/blob/main/1.1/LICENSE.OpenMDW-1.1"
-      }
-    ],
-    "featured": false,
-    "proprietary": false
   },
   {
     "slug": "cc-by-3.0-igo",
@@ -51127,6 +51090,48 @@
     "featured": false,
     "proprietary": false,
     "created_at": "2026-05-29"
+  },
+  {
+    "slug": "openmdw-1.1",
+    "title": "OpenMDW License Agreement v1.1",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "fsf_tags": [],
+    "deprecated": false,
+    "type": "model",
+    "version": "1.1",
+    "description": "A permissive open-source license crafted specifically for machine-learning models and their associated artifacts (Model Materials). v1.1 extends the litigation termination clause from patent-only to cover both patent and copyright infringement claims.",
+    "permissions": [
+      "commercial-use",
+      "modifications",
+      "distribution",
+      "private-use"
+    ],
+    "conditions": [
+      "include-copyright",
+      "include-license"
+    ],
+    "limitations": [
+      "liability",
+      "warranty"
+    ],
+    "tags": [
+      "Permissive"
+    ],
+    "sources": [
+      {
+        "name": "openmdw.ai",
+        "url": "https://openmdw.ai/license/1-1"
+      },
+      {
+        "name": "github.com",
+        "url": "https://github.com/OpenMDW/OpenMDW/blob/main/1.1/LICENSE.OpenMDW-1.1"
+      }
+    ],
+    "featured": false,
+    "created_at": "2026-06-07",
+    "proprietary": false
   },
   {
     "slug": "opennetcf-shared-source",

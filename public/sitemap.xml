@@ -325,12 +325,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://morningd.github.io/license.atlas/licenses/openmdw-1.1</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://morningd.github.io/license.atlas/licenses/cc-by-3.0-igo</loc>
     <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
@@ -10851,6 +10845,12 @@
   <url>
     <loc>https://morningd.github.io/license.atlas/licenses/openmap</loc>
     <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morningd.github.io/license.atlas/licenses/openmdw-1.1</loc>
+    <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

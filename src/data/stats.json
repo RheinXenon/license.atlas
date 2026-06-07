@@ -6,8 +6,8 @@
   "by_type": {
     "software": 2297,
     "data": 101,
-    "agent": 20,
     "model": 154,
+    "agent": 20,
     "terms": 16
   },
   "by_source": {
@@ -19,6 +19,8 @@
     "creativecommons.org": 37,
     "opendatacommons.org": 3,
     "scancode-licensedb.aboutcode.org": 1659,
+    "openmdw.ai": 2,
+    "github.com": 11,
     "53AI/53AIHub": 1,
     "nanbingxyz/5ire": 1,
     "zheng95z/rgb-to-x": 1,
@@ -142,7 +144,6 @@
     "mistralai/Codestral-22B-v0.1": 1,
     "mistralai/Ministral-8B-Instruct-2410": 1,
     "Mitsua/mitsua-likes": 1,
-    "github.com": 9,
     "modelgo.li": 8,
     "Locutusque/Hercules-v3.0": 1,
     "UsefulSensors/moonshine-tiny-ja": 1,
@@ -289,8 +290,7 @@
     "xiaomi-open-source/Xiaomi-MiMo-VL-Miloco-7B": 1,
     "yandex/YandexGPT-5-Lite-8B-pretrain": 1,
     "ZERO-POINT-AI/Miss-MARTHA-hot-POCKET-4B-OMNI-ed": 1,
-    "ZERO-POINT-AI/Miss_MARTHA-9B-Qwen3.5-Omni": 1,
-    "openmdw.ai": 2
+    "ZERO-POINT-AI/Miss_MARTHA-9B-Qwen3.5-Omni": 1
   },
   "by_tag": {
     "Permissive": 30,

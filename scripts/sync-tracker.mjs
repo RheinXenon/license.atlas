@@ -12,7 +12,15 @@ const ROOT = resolve(__dirname, "..");
 // Resolve KB path: --kb-path flag, else env, else ../KB relative to atlas.
 function resolveKbPath() {
   const flagIdx = process.argv.indexOf("--kb-path");
-  if (flagIdx !== -1 && process.argv[flagIdx + 1]) return resolve(process.argv[flagIdx + 1]);
+  if (flagIdx !== -1) {
+    const kbPathArg = process.argv[flagIdx + 1];
+    if (!kbPathArg || kbPathArg.startsWith("-")) {
+      console.error("✗ Missing value for --kb-path");
+      console.error("  Usage: node scripts/sync-tracker.mjs [--kb-path <path>]");
+      process.exit(1);
+    }
+    return resolve(kbPathArg);
+  }
   if (process.env.KB_PATH) return resolve(process.env.KB_PATH);
   return resolve(ROOT, "..", "KB");
 }
@@ -31,14 +39,7 @@ const ATLAS_INDEX = resolve(ROOT, "src", "data", "tracker-index.json");
 // ── Compute source hash from KB v2.json ──
 const kbRaw = readFileSync(KB_V2, "utf8");
 const kbData = JSON.parse(kbRaw);
-const hashInput = JSON.stringify({
-  n: kbData.submissions.length,
-  enriched_at: kbData.meta?.enriched_at || "",
-  sig: kbData.submissions
-    .map((s) => `${s.id}:${s.status}:${(s.timeline || []).length}`)
-    .join("|"),
-});
-const sourceHash = createHash("sha1").update(hashInput).digest("hex").slice(0, 16);
+const sourceHash = createHash("sha1").update(kbRaw).digest("hex").slice(0, 16);
 
 // ── Idempotency check ──
 if (existsSync(ATLAS_INDEX)) {

@@ -87,6 +87,12 @@ export function Navbar() {
           >
             {t("nav.about")}
           </Link>
+          <Link
+            href="/tracker"
+            className="text-zinc-600 transition-colors hover:text-[#7c3aed] dark:text-zinc-400 dark:hover:text-[#a78bfa]"
+          >
+            {t("nav.tracker")}
+          </Link>
           <a
             href="https://github.com/morningD/license.atlas"
             target="_blank"

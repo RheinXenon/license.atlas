@@ -17,6 +17,7 @@ const licenses = JSON.parse(
 const urls = [
   { loc: `${BASE}/`, changefreq: "weekly", priority: "1.0", lastmod: today },
   { loc: `${BASE}/about`, changefreq: "monthly", priority: "0.8", lastmod: today },
+  { loc: `${BASE}/tracker`, changefreq: "weekly", priority: "0.8", lastmod: today },
   ...licenses.map((lic) => ({
     loc: `${BASE}/licenses/${lic.slug}`,
     changefreq: "monthly",

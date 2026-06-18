@@ -1,0 +1,5375 @@
+{
+  "_meta": {
+    "source_hash": "031a81d72a7cde16",
+    "generated_at": "2026-06-18T14:41:50.128Z",
+    "total_submissions": 172,
+    "by_status": {
+      "approved": 102,
+      "rejected": 37,
+      "withdrawn": 4,
+      "pending": 6,
+      "superseded": 3,
+      "legacy": 20
+    }
+  },
+  "ai-mit-license": {
+    "id": "ai-mit-license",
+    "name": "AI-MIT License 1.0",
+    "spdx_id": "",
+    "status": "pending",
+    "submitter": "Nik",
+    "stats": {
+      "total_messages": 35,
+      "duration_days": 7,
+      "date_range": [
+        "2026-03-12",
+        "2026-03-19"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 35,
+      "first": "2026-03-12",
+      "last": "2026-03-19"
+    }
+  },
+  "modelgo-attribution-v2": {
+    "id": "modelgo-attribution-v2",
+    "name": "ModelGo Attribution License v2.0",
+    "spdx_id": "",
+    "status": "pending",
+    "submitter": "Moming Duan",
+    "stats": {
+      "total_messages": 113,
+      "duration_days": 470,
+      "date_range": [
+        "2025-02-10",
+        "2026-05-26"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 113,
+      "first": "2025-02-10",
+      "last": "2026-05-26"
+    }
+  },
+  "public-benefit-zero-copyright": {
+    "id": "public-benefit-zero-copyright",
+    "name": "Public Benefit Zero Copyright License v2.0",
+    "spdx_id": "",
+    "status": "pending",
+    "submitter": "Wayne Thornton",
+    "stats": {
+      "total_messages": 20,
+      "duration_days": 36,
+      "date_range": [
+        "2024-12-17",
+        "2025-01-22"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 20,
+      "first": "2024-12-17",
+      "last": "2025-01-22"
+    }
+  },
+  "mulan-public-license-v2-resubmission": {
+    "id": "mulan-public-license-v2-resubmission",
+    "name": "Mulan Public License Version 2 (2024 resubmission)",
+    "spdx_id": "",
+    "status": "pending",
+    "submitter": "江波",
+    "stats": {
+      "total_messages": 21,
+      "duration_days": 113,
+      "date_range": [
+        "2024-10-25",
+        "2025-02-15"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 21,
+      "first": "2024-10-25",
+      "last": "2025-02-15"
+    }
+  },
+  "oin-license": {
+    "id": "oin-license",
+    "name": "Open Innovation License (OIN)",
+    "spdx_id": "",
+    "status": "pending",
+    "submitter": "Andrew Nassief",
+    "stats": {
+      "total_messages": 40,
+      "duration_days": 2,
+      "date_range": [
+        "2020-12-26",
+        "2020-12-28"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 40,
+      "first": "2020-12-26",
+      "last": "2020-12-28"
+    }
+  },
+  "toppers-license": {
+    "id": "toppers-license",
+    "name": "TOPPERS License",
+    "spdx_id": "",
+    "status": "pending",
+    "submitter": "Yutaka MATSUBARA",
+    "stats": {
+      "total_messages": 49,
+      "duration_days": 147,
+      "date_range": [
+        "2015-06-10",
+        "2015-11-04"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 49,
+      "first": "2015-06-10",
+      "last": "2015-11-04"
+    }
+  },
+  "3d-slicer-license": {
+    "id": "3d-slicer-license",
+    "name": "3D Slicer License",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Steve Pieper",
+    "stats": {
+      "total_messages": 41,
+      "duration_days": 19,
+      "date_range": [
+        "2021-05-27",
+        "2021-06-15"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 41,
+      "first": "2021-05-27",
+      "last": "2021-06-15"
+    }
+  },
+  "ritchey-permissive-license": {
+    "id": "ritchey-permissive-license",
+    "name": "Ritchey Permissive License v11",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Ritchey",
+    "stats": {
+      "total_messages": 41,
+      "duration_days": 142,
+      "date_range": [
+        "2021-02-14",
+        "2021-07-06"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 41,
+      "first": "2021-02-14",
+      "last": "2021-07-06"
+    }
+  },
+  "open-source-social-network": {
+    "id": "open-source-social-network",
+    "name": "Open Source Social Network License 1.0",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Informatikon Technologies",
+    "stats": {
+      "total_messages": 35,
+      "duration_days": 4,
+      "date_range": [
+        "2020-03-25",
+        "2020-03-29"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 35,
+      "first": "2020-03-25",
+      "last": "2020-03-29"
+    }
+  },
+  "vaccine-license": {
+    "id": "vaccine-license",
+    "name": "The Vaccine License",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Travis Hance",
+    "stats": {
+      "total_messages": 28,
+      "duration_days": 90,
+      "date_range": [
+        "2019-10-29",
+        "2020-01-27"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 28,
+      "first": "2019-10-29",
+      "last": "2020-01-27"
+    }
+  },
+  "whonix-gpl-additional-terms": {
+    "id": "whonix-gpl-additional-terms",
+    "name": "GPL-3+-with-whonix-additional-terms",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Patrick Schleizer",
+    "stats": {
+      "total_messages": 21,
+      "duration_days": 3,
+      "date_range": [
+        "2019-03-15",
+        "2019-03-18"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 21,
+      "first": "2019-03-15",
+      "last": "2019-03-18"
+    }
+  },
+  "twente-license": {
+    "id": "twente-license",
+    "name": "Twente License",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Anand Chowdhary",
+    "stats": {
+      "total_messages": 19,
+      "duration_days": 1,
+      "date_range": [
+        "2019-02-05",
+        "2019-02-06"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 19,
+      "first": "2019-02-05",
+      "last": "2019-02-06"
+    }
+  },
+  "c-fsl-v1-3": {
+    "id": "c-fsl-v1-3",
+    "name": "Convertible Free Software License v1.3 (C-FSL v1.3)",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Elmar Stellnberger",
+    "stats": {
+      "total_messages": 33,
+      "duration_days": 6,
+      "date_range": [
+        "2019-01-08",
+        "2019-01-14"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 33,
+      "first": "2019-01-08",
+      "last": "2019-01-14"
+    }
+  },
+  "libpng-v2": {
+    "id": "libpng-v2",
+    "name": "PNG Reference Library License v2.0 (libpng v2)",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Cosmin Truta",
+    "stats": {
+      "total_messages": 14,
+      "duration_days": 42,
+      "date_range": [
+        "2018-11-05",
+        "2018-12-17"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 14,
+      "first": "2018-11-05",
+      "last": "2018-12-17"
+    }
+  },
+  "c-fsl-v1-1": {
+    "id": "c-fsl-v1-1",
+    "name": "Convertible Free Software License v1.1 (C-FSL v1.1)",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Elmar Stellnberger",
+    "stats": {
+      "total_messages": 88,
+      "duration_days": 75,
+      "date_range": [
+        "2018-09-26",
+        "2018-12-10"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 88,
+      "first": "2018-09-26",
+      "last": "2018-12-10"
+    }
+  },
+  "yetiforce-public-license-v3": {
+    "id": "yetiforce-public-license-v3",
+    "name": "YetiForce Public License v3",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Paulina Walenczak",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 176,
+      "date_range": [
+        "2018-06-14",
+        "2018-12-07"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2018-06-14",
+      "last": "2018-12-07"
+    }
+  },
+  "zentao-public-license": {
+    "id": "zentao-public-license",
+    "name": "ZENTAO PUBLIC LICENSE",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Chunsheng Wang",
+    "stats": {
+      "total_messages": 54,
+      "duration_days": 11,
+      "date_range": [
+        "2016-06-16",
+        "2016-06-27"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 54,
+      "first": "2016-06-16",
+      "last": "2016-06-27"
+    }
+  },
+  "moritz30-license": {
+    "id": "moritz30-license",
+    "name": "Moritz30-Projects Open Source License v1",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Matthias Merkel",
+    "stats": {
+      "total_messages": 21,
+      "duration_days": 3,
+      "date_range": [
+        "2016-06-06",
+        "2016-06-09"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 21,
+      "first": "2016-06-06",
+      "last": "2016-06-09"
+    }
+  },
+  "nccl": {
+    "id": "nccl",
+    "name": "Non-Coercive Copyleft Licence (NCCL) 1.0",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Sam Tuke",
+    "stats": {
+      "total_messages": 38,
+      "duration_days": 28,
+      "date_range": [
+        "2015-07-20",
+        "2015-08-17"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 38,
+      "first": "2015-07-20",
+      "last": "2015-08-17"
+    }
+  },
+  "scripting-fsl-v1-3-6": {
+    "id": "scripting-fsl-v1-3-6",
+    "name": "Scripting Free Software License v1.3.6 (S-FSL)",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Elmar Stellnberger",
+    "stats": {
+      "total_messages": 30,
+      "duration_days": 12,
+      "date_range": [
+        "2013-11-08",
+        "2013-11-20"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 30,
+      "first": "2013-11-08",
+      "last": "2013-11-20"
+    }
+  },
+  "scripting-fsl-v1-3-5": {
+    "id": "scripting-fsl-v1-3-5",
+    "name": "Scripting Free Software License v1.3.5 (S-FSL)",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Elmar Stellnberger",
+    "stats": {
+      "total_messages": 27,
+      "duration_days": 11,
+      "date_range": [
+        "2013-11-05",
+        "2013-11-16"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 27,
+      "first": "2013-11-05",
+      "last": "2013-11-16"
+    }
+  },
+  "tidepool-open-access": {
+    "id": "tidepool-open-access",
+    "name": "Tidepool Open Access to Health Data Software License",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Howard Look",
+    "stats": {
+      "total_messages": 29,
+      "duration_days": 21,
+      "date_range": [
+        "2013-10-05",
+        "2013-10-26"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 29,
+      "first": "2013-10-05",
+      "last": "2013-10-26"
+    }
+  },
+  "mosl": {
+    "id": "mosl",
+    "name": "Modular Open-source Software License (MOSL)",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Niklas Saers",
+    "stats": {
+      "total_messages": 22,
+      "duration_days": 6,
+      "date_range": [
+        "2012-09-23",
+        "2012-09-29"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 22,
+      "first": "2012-09-23",
+      "last": "2012-09-29"
+    }
+  },
+  "svoboda": {
+    "id": "svoboda",
+    "name": "Svoboda License",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Daniel Pono Takamori",
+    "stats": {
+      "total_messages": 24,
+      "duration_days": 2,
+      "date_range": [
+        "2012-05-20",
+        "2012-05-22"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 24,
+      "first": "2012-05-20",
+      "last": "2012-05-22"
+    }
+  },
+  "python-license-changes": {
+    "id": "python-license-changes",
+    "name": "Python License Changes",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "VanL",
+    "stats": {
+      "total_messages": 27,
+      "duration_days": 101,
+      "date_range": [
+        "2011-05-24",
+        "2011-09-02"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 27,
+      "first": "2011-05-24",
+      "last": "2011-09-02"
+    }
+  },
+  "netx-public-license": {
+    "id": "netx-public-license",
+    "name": "netX Public License",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Christian Solmecke",
+    "stats": {
+      "total_messages": 20,
+      "duration_days": 1,
+      "date_range": [
+        "2010-10-06",
+        "2010-10-07"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 20,
+      "first": "2010-10-06",
+      "last": "2010-10-07"
+    }
+  },
+  "webm-license": {
+    "id": "webm-license",
+    "name": "WebM License (third-party submission)",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "third-party submitter",
+    "stats": {
+      "total_messages": 28,
+      "duration_days": 3,
+      "date_range": [
+        "2010-05-25",
+        "2010-05-28"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 28,
+      "first": "2010-05-25",
+      "last": "2010-05-28"
+    }
+  },
+  "mxm-public-license": {
+    "id": "mxm-public-license",
+    "name": "MXM Public License",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Maximiliano Pin",
+    "stats": {
+      "total_messages": 41,
+      "duration_days": 5,
+      "date_range": [
+        "2009-04-08",
+        "2009-04-13"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 41,
+      "first": "2009-04-08",
+      "last": "2009-04-13"
+    }
+  },
+  "transitive-grace-period": {
+    "id": "transitive-grace-period",
+    "name": "Transitive Grace Period Public Licence v1.0",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Michael Rogers",
+    "stats": {
+      "total_messages": 126,
+      "duration_days": 74,
+      "date_range": [
+        "2008-12-15",
+        "2009-02-27"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 126,
+      "first": "2008-12-15",
+      "last": "2009-02-27"
+    }
+  },
+  "beer-ware-license": {
+    "id": "beer-ware-license",
+    "name": "The Beer-Ware License",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "third-party submitter",
+    "stats": {
+      "total_messages": 27,
+      "duration_days": 13,
+      "date_range": [
+        "2008-01-11",
+        "2008-01-24"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 27,
+      "first": "2008-01-11",
+      "last": "2008-01-24"
+    }
+  },
+  "open-source-hardware-license": {
+    "id": "open-source-hardware-license",
+    "name": "Open Source Hardware License",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Jamey Hicks",
+    "stats": {
+      "total_messages": 34,
+      "duration_days": 70,
+      "date_range": [
+        "2007-07-05",
+        "2007-09-13"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 34,
+      "first": "2007-07-05",
+      "last": "2007-09-13"
+    }
+  },
+  "educational-community-license-1": {
+    "id": "educational-community-license-1",
+    "name": "Educational Community License 1.0",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Christopher D. Coppola",
+    "stats": {
+      "total_messages": 21,
+      "duration_days": 20,
+      "date_range": [
+        "2007-04-18",
+        "2007-05-08"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 21,
+      "first": "2007-04-18",
+      "last": "2007-05-08"
+    }
+  },
+  "socialtext-public-license": {
+    "id": "socialtext-public-license",
+    "name": "Socialtext Public License (STPL)",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Ross Mayfield",
+    "stats": {
+      "total_messages": 24,
+      "duration_days": 20,
+      "date_range": [
+        "2007-03-08",
+        "2007-03-28"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 24,
+      "first": "2007-03-08",
+      "last": "2007-03-28"
+    }
+  },
+  "generic-attribution-provision": {
+    "id": "generic-attribution-provision",
+    "name": "Generic Attribution Provision",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Danese Cooper",
+    "stats": {
+      "total_messages": 181,
+      "duration_days": 51,
+      "date_range": [
+        "2006-12-04",
+        "2007-01-24"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 181,
+      "first": "2006-12-04",
+      "last": "2007-01-24"
+    }
+  },
+  "broad-institute-public-license": {
+    "id": "broad-institute-public-license",
+    "name": "Broad Institute Public License (BIPL)",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Rory Pheiffer",
+    "stats": {
+      "total_messages": 32,
+      "duration_days": 99,
+      "date_range": [
+        "2006-07-11",
+        "2006-10-18"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 32,
+      "first": "2006-07-11",
+      "last": "2006-10-18"
+    }
+  },
+  "truecrypt-collective-license": {
+    "id": "truecrypt-collective-license",
+    "name": "TrueCrypt Collective License v2.0",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "TrueCrypt developers",
+    "stats": {
+      "total_messages": 23,
+      "duration_days": 122,
+      "date_range": [
+        "2006-07-10",
+        "2006-11-09"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 23,
+      "first": "2006-07-10",
+      "last": "2006-11-09"
+    }
+  },
+  "mindtree-public-license": {
+    "id": "mindtree-public-license",
+    "name": "MindTree Public License",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Shahnawaz Khan",
+    "stats": {
+      "total_messages": 21,
+      "duration_days": 131,
+      "date_range": [
+        "2005-10-06",
+        "2006-02-14"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 21,
+      "first": "2005-10-06",
+      "last": "2006-02-14"
+    }
+  },
+  "academic-citing-license": {
+    "id": "academic-citing-license",
+    "name": "Academic Citing License",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Johannes Kaiser",
+    "stats": {
+      "total_messages": 35,
+      "duration_days": 3,
+      "date_range": [
+        "2004-09-26",
+        "2004-09-29"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 35,
+      "first": "2004-09-26",
+      "last": "2004-09-29"
+    }
+  },
+  "nasa-osa-1-1": {
+    "id": "nasa-osa-1-1",
+    "name": "NASA Open Source Agreement Version 1.1",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "NASA",
+    "stats": {
+      "total_messages": 42,
+      "duration_days": 5,
+      "date_range": [
+        "2004-02-12",
+        "2004-02-17"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 42,
+      "first": "2004-02-12",
+      "last": "2004-02-17"
+    }
+  },
+  "open-source-software-alliance": {
+    "id": "open-source-software-alliance",
+    "name": "Open Source Software Alliance License (OSSAL)",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "Sean Eric Fagan",
+    "stats": {
+      "total_messages": 119,
+      "duration_days": 6,
+      "date_range": [
+        "2003-09-24",
+        "2003-09-30"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 119,
+      "first": "2003-09-24",
+      "last": "2003-09-30"
+    }
+  },
+  "bxapl": {
+    "id": "bxapl",
+    "name": "BXAPL",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "unknown",
+    "stats": {
+      "total_messages": 21,
+      "duration_days": 7,
+      "date_range": [
+        "2002-07-02",
+        "2002-07-09"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 21,
+      "first": "2002-07-02",
+      "last": "2002-07-09"
+    }
+  },
+  "apossl": {
+    "id": "apossl",
+    "name": "APOSSL (Anti-Piracy Open Source Software License)",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "dave sag",
+    "stats": {
+      "total_messages": 34,
+      "duration_days": 1,
+      "date_range": [
+        "2002-03-05",
+        "2002-03-06"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 34,
+      "first": "2002-03-05",
+      "last": "2002-03-06"
+    }
+  },
+  "qmail-license": {
+    "id": "qmail-license",
+    "name": "qmail License",
+    "spdx_id": "",
+    "status": "rejected",
+    "submitter": "third-party submitter",
+    "stats": {
+      "total_messages": 21,
+      "duration_days": 1,
+      "date_range": [
+        "2001-06-07",
+        "2001-06-08"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 21,
+      "first": "2001-06-07",
+      "last": "2001-06-08"
+    }
+  },
+  "sspl-v2": {
+    "id": "sspl-v2",
+    "name": "Server Side Public License, Version 2 (SSPL v2)",
+    "spdx_id": "",
+    "status": "withdrawn",
+    "submitter": "Eliot Horowitz",
+    "stats": {
+      "total_messages": 52,
+      "duration_days": 111,
+      "date_range": [
+        "2018-11-21",
+        "2019-03-12"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 52,
+      "first": "2018-11-21",
+      "last": "2019-03-12"
+    }
+  },
+  "sspl-v1": {
+    "id": "sspl-v1",
+    "name": "Server Side Public License, Version 1 (SSPL v1)",
+    "spdx_id": "",
+    "status": "withdrawn",
+    "submitter": "Eliot Horowitz",
+    "stats": {
+      "total_messages": 107,
+      "duration_days": 72,
+      "date_range": [
+        "2018-10-16",
+        "2018-12-27"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 107,
+      "first": "2018-10-16",
+      "last": "2018-12-27"
+    }
+  },
+  "license-zero-reciprocal-rewrite": {
+    "id": "license-zero-reciprocal-rewrite",
+    "name": "License Zero Reciprocal Public License (Rewrite)",
+    "spdx_id": "",
+    "status": "withdrawn",
+    "submitter": "Kyle Mitchell",
+    "stats": {
+      "total_messages": 46,
+      "duration_days": 19,
+      "date_range": [
+        "2017-10-27",
+        "2017-11-15"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 46,
+      "first": "2017-10-27",
+      "last": "2017-11-15"
+    }
+  },
+  "license-zero-reciprocal": {
+    "id": "license-zero-reciprocal",
+    "name": "License Zero Reciprocal Public License (L0-R)",
+    "spdx_id": "",
+    "status": "withdrawn",
+    "submitter": "Kyle Mitchell",
+    "stats": {
+      "total_messages": 129,
+      "duration_days": 33,
+      "date_range": [
+        "2017-09-23",
+        "2017-10-26"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 129,
+      "first": "2017-09-23",
+      "last": "2017-10-26"
+    }
+  },
+  "open-logistics-v1-2": {
+    "id": "open-logistics-v1-2",
+    "name": "Open Logistics License v1.2",
+    "spdx_id": "",
+    "status": "superseded",
+    "submitter": "Open Logistics Foundation",
+    "stats": {
+      "total_messages": 34,
+      "duration_days": 39,
+      "date_range": [
+        "2022-12-05",
+        "2023-01-13"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 34,
+      "first": "2022-12-05",
+      "last": "2023-01-13"
+    }
+  },
+  "cal-beta-2": {
+    "id": "cal-beta-2",
+    "name": "Cryptographic Autonomy License (CAL) Beta 2",
+    "spdx_id": "",
+    "status": "superseded",
+    "submitter": "Van Lindsay",
+    "stats": {
+      "total_messages": 110,
+      "duration_days": 215,
+      "date_range": [
+        "2019-08-19",
+        "2020-03-21"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 110,
+      "first": "2019-08-19",
+      "last": "2020-03-21"
+    }
+  },
+  "cal-original": {
+    "id": "cal-original",
+    "name": "Cryptographic Autonomy License (CAL) - Original Draft",
+    "spdx_id": "",
+    "status": "superseded",
+    "submitter": "Van Lindsay",
+    "stats": {
+      "total_messages": 153,
+      "duration_days": 116,
+      "date_range": [
+        "2019-04-22",
+        "2019-08-16"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 153,
+      "first": "2019-04-22",
+      "last": "2019-08-16"
+    }
+  },
+  "python-2.0": {
+    "id": "python-2-0",
+    "name": "Python License, Version 2",
+    "spdx_id": "Python-2.0",
+    "status": "approved",
+    "submitter": "Max Mehl",
+    "stats": {
+      "total_messages": 4,
+      "duration_days": 60,
+      "date_range": [
+        "2026-03-20",
+        "2026-05-19"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 4,
+      "first": "2026-03-20",
+      "last": "2026-05-19"
+    }
+  },
+  "python-2-0": {
+    "id": "python-2-0",
+    "name": "Python License, Version 2",
+    "spdx_id": "Python-2.0",
+    "status": "approved",
+    "submitter": "Max Mehl",
+    "stats": {
+      "total_messages": 4,
+      "duration_days": 60,
+      "date_range": [
+        "2026-03-20",
+        "2026-05-19"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 4,
+      "first": "2026-03-20",
+      "last": "2026-05-19"
+    }
+  },
+  "cnri-python": {
+    "id": "cnri-python",
+    "name": "The CNRI portion of the multi-part Python License",
+    "spdx_id": "CNRI-Python",
+    "status": "approved",
+    "submitter": "Van Lindberg",
+    "stats": {
+      "total_messages": 5,
+      "duration_days": 0,
+      "date_range": [
+        "2026-03-20",
+        "2026-03-20"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 5,
+      "first": "2026-03-20",
+      "last": "2026-03-20"
+    }
+  },
+  "bsd-3-clause-open-mpi": {
+    "id": "bsd-3-clause-open-mpi",
+    "name": "BSD-3-Clause-Open-MPI",
+    "spdx_id": "BSD-3-Clause-Open-MPI",
+    "status": "approved",
+    "submitter": "McCoy Smith",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 59,
+      "date_range": [
+        "2025-05-20",
+        "2025-07-18"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2025-05-20",
+      "last": "2025-07-18"
+    }
+  },
+  "bsd-3-clause": {
+    "id": "bsd-3-clause",
+    "name": "The 3-Clause BSD License",
+    "spdx_id": "BSD-3-Clause",
+    "status": "approved",
+    "submitter": "McCoy Smith",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 59,
+      "date_range": [
+        "2025-05-20",
+        "2025-07-18"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2025-05-20",
+      "last": "2025-07-18"
+    }
+  },
+  "cddl-1.1": {
+    "id": "cddl-1-1",
+    "name": "COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL)",
+    "spdx_id": "CDDL-1.1",
+    "status": "approved",
+    "submitter": "Brian Warner",
+    "stats": {
+      "total_messages": 4,
+      "duration_days": 13,
+      "date_range": [
+        "2025-05-02",
+        "2025-05-15"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 4,
+      "first": "2025-05-02",
+      "last": "2025-05-15"
+    }
+  },
+  "cddl-1-1": {
+    "id": "cddl-1-1",
+    "name": "COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL)",
+    "spdx_id": "CDDL-1.1",
+    "status": "approved",
+    "submitter": "Brian Warner",
+    "stats": {
+      "total_messages": 4,
+      "duration_days": 13,
+      "date_range": [
+        "2025-05-02",
+        "2025-05-15"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 4,
+      "first": "2025-05-02",
+      "last": "2025-05-15"
+    }
+  },
+  "wordnet": {
+    "id": "wordnet",
+    "name": "WordNet",
+    "spdx_id": "WordNet",
+    "status": "approved",
+    "submitter": "Brian Warner",
+    "stats": {
+      "total_messages": 4,
+      "duration_days": 77,
+      "date_range": [
+        "2025-05-02",
+        "2025-07-18"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 4,
+      "first": "2025-05-02",
+      "last": "2025-07-18"
+    }
+  },
+  "osc-1.0": {
+    "id": "osc-1-0",
+    "name": "OSC License 1.0",
+    "spdx_id": "OSC-1.0",
+    "status": "approved",
+    "submitter": "Langenheim, Niccolo",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 82,
+      "date_range": [
+        "2024-12-23",
+        "2025-03-15"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2024-12-23",
+      "last": "2025-03-15"
+    }
+  },
+  "osc-1-0": {
+    "id": "osc-1-0",
+    "name": "OSC License 1.0",
+    "spdx_id": "OSC-1.0",
+    "status": "approved",
+    "submitter": "Langenheim, Niccolo",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 82,
+      "date_range": [
+        "2024-12-23",
+        "2025-03-15"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2024-12-23",
+      "last": "2025-03-15"
+    }
+  },
+  "los-alamos-national-labs-bsd-3-variant": {
+    "id": "los-alamos-national-labs-bsd-3-variant",
+    "name": "Los Alamos National Labs BSD-3 Variant",
+    "spdx_id": "",
+    "status": "approved",
+    "submitter": "Pettinger, Adam L",
+    "stats": {
+      "total_messages": 9,
+      "duration_days": 103,
+      "date_range": [
+        "2024-06-26",
+        "2024-10-07"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 9,
+      "first": "2024-06-26",
+      "last": "2024-10-07"
+    }
+  },
+  "mit-cmu": {
+    "id": "mit-cmu",
+    "name": "CMU License",
+    "spdx_id": "MIT-CMU",
+    "status": "approved",
+    "submitter": "Jeffrey Clark",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 118,
+      "date_range": [
+        "2024-06-12",
+        "2024-10-08"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2024-06-12",
+      "last": "2024-10-08"
+    }
+  },
+  "blueoak-1.0.0": {
+    "id": "blueoak-1-0-0",
+    "name": "Blue Oak Model License",
+    "spdx_id": "BlueOak-1.0.0",
+    "status": "approved",
+    "submitter": "Luis Villa",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 82,
+      "date_range": [
+        "2023-11-08",
+        "2024-01-29"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2023-11-08",
+      "last": "2024-01-29"
+    }
+  },
+  "blueoak-1-0-0": {
+    "id": "blueoak-1-0-0",
+    "name": "Blue Oak Model License",
+    "spdx_id": "BlueOak-1.0.0",
+    "status": "approved",
+    "submitter": "Luis Villa",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 82,
+      "date_range": [
+        "2023-11-08",
+        "2024-01-29"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2023-11-08",
+      "last": "2024-01-29"
+    }
+  },
+  "unicode-3.0": {
+    "id": "unicode-3-0",
+    "name": "UNICODE LICENSE V3",
+    "spdx_id": "Unicode-3.0",
+    "status": "approved",
+    "submitter": "McCoy Smith",
+    "stats": {
+      "total_messages": 8,
+      "duration_days": 98,
+      "date_range": [
+        "2023-08-23",
+        "2023-11-29"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 8,
+      "first": "2023-08-23",
+      "last": "2023-11-29"
+    }
+  },
+  "unicode-3-0": {
+    "id": "unicode-3-0",
+    "name": "UNICODE LICENSE V3",
+    "spdx_id": "Unicode-3.0",
+    "status": "approved",
+    "submitter": "McCoy Smith",
+    "stats": {
+      "total_messages": 8,
+      "duration_days": 98,
+      "date_range": [
+        "2023-08-23",
+        "2023-11-29"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 8,
+      "first": "2023-08-23",
+      "last": "2023-11-29"
+    }
+  },
+  "olfl-1.3": {
+    "id": "olfl-1-3",
+    "name": "Open Logistics Foundation License v1.3",
+    "spdx_id": "OLFL-1.3",
+    "status": "approved",
+    "submitter": "Andreas Nettsträter",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 64,
+      "date_range": [
+        "2023-01-17",
+        "2023-03-22"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2023-01-17",
+      "last": "2023-03-22"
+    }
+  },
+  "olfl-1-3": {
+    "id": "olfl-1-3",
+    "name": "Open Logistics Foundation License v1.3",
+    "spdx_id": "OLFL-1.3",
+    "status": "approved",
+    "submitter": "Andreas Nettsträter",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 64,
+      "date_range": [
+        "2023-01-17",
+        "2023-03-22"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2023-01-17",
+      "last": "2023-03-22"
+    }
+  },
+  "jam": {
+    "id": "jam",
+    "name": "JAM License",
+    "spdx_id": "Jam",
+    "status": "approved",
+    "submitter": "Jack Hill",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 141,
+      "date_range": [
+        "2021-04-25",
+        "2021-09-13"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2021-04-25",
+      "last": "2021-09-13"
+    }
+  },
+  "zpl-2.1": {
+    "id": "zpl-2-1",
+    "name": "Zope Public License 2.1",
+    "spdx_id": "ZPL-2.1",
+    "status": "approved",
+    "submitter": "Jens Vagelpohl",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 143,
+      "date_range": [
+        "2021-04-06",
+        "2021-08-27"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2021-04-06",
+      "last": "2021-08-27"
+    }
+  },
+  "zpl-2-1": {
+    "id": "zpl-2-1",
+    "name": "Zope Public License 2.1",
+    "spdx_id": "ZPL-2.1",
+    "status": "approved",
+    "submitter": "Jens Vagelpohl",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 143,
+      "date_range": [
+        "2021-04-06",
+        "2021-08-27"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2021-04-06",
+      "last": "2021-08-27"
+    }
+  },
+  "cern-ohl-s-2.0": {
+    "id": "cern-ohl-s-2-0",
+    "name": "CERN Open Hardware Licence Version 2 - Strongly Reciprocal",
+    "spdx_id": "CERN-OHL-S-2.0 ",
+    "status": "approved",
+    "submitter": "Andrew Katz",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 202,
+      "date_range": [
+        "2020-06-29",
+        "2021-01-17"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2020-06-29",
+      "last": "2021-01-17"
+    }
+  },
+  "cern-ohl-s-2-0": {
+    "id": "cern-ohl-s-2-0",
+    "name": "CERN Open Hardware Licence Version 2 - Strongly Reciprocal",
+    "spdx_id": "CERN-OHL-S-2.0 ",
+    "status": "approved",
+    "submitter": "Andrew Katz",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 202,
+      "date_range": [
+        "2020-06-29",
+        "2021-01-17"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2020-06-29",
+      "last": "2021-01-17"
+    }
+  },
+  "cern-ohl-w-2.0": {
+    "id": "cern-ohl-w-2-0",
+    "name": "CERN Open Hardware Licence Version 2 - Weakly Reciprocal",
+    "spdx_id": "CERN-OHL-W-2.0",
+    "status": "approved",
+    "submitter": "Andrew Katz",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 202,
+      "date_range": [
+        "2020-06-29",
+        "2021-01-17"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2020-06-29",
+      "last": "2021-01-17"
+    }
+  },
+  "cern-ohl-w-2-0": {
+    "id": "cern-ohl-w-2-0",
+    "name": "CERN Open Hardware Licence Version 2 - Weakly Reciprocal",
+    "spdx_id": "CERN-OHL-W-2.0",
+    "status": "approved",
+    "submitter": "Andrew Katz",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 202,
+      "date_range": [
+        "2020-06-29",
+        "2021-01-17"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2020-06-29",
+      "last": "2021-01-17"
+    }
+  },
+  "cern-ohl-p-2.0": {
+    "id": "cern-ohl-p-2-0",
+    "name": "CERN Open Hardware Licence Version 2 - Permissive",
+    "spdx_id": "CERN-OHL-P-2.0",
+    "status": "approved",
+    "submitter": "Andrew Katz",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 202,
+      "date_range": [
+        "2020-06-29",
+        "2021-01-17"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2020-06-29",
+      "last": "2021-01-17"
+    }
+  },
+  "cern-ohl-p-2-0": {
+    "id": "cern-ohl-p-2-0",
+    "name": "CERN Open Hardware Licence Version 2 - Permissive",
+    "spdx_id": "CERN-OHL-P-2.0",
+    "status": "approved",
+    "submitter": "Andrew Katz",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 202,
+      "date_range": [
+        "2020-06-29",
+        "2021-01-17"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2020-06-29",
+      "last": "2021-01-17"
+    }
+  },
+  "mit-0": {
+    "id": "mit-0",
+    "name": "MIT No Attribution License",
+    "spdx_id": "MIT-0",
+    "status": "approved",
+    "submitter": "Tobie Langel",
+    "stats": {
+      "total_messages": 5,
+      "duration_days": 108,
+      "date_range": [
+        "2020-05-15",
+        "2020-08-31"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 5,
+      "first": "2020-05-15",
+      "last": "2020-08-31"
+    }
+  },
+  "unlicense": {
+    "id": "unlicense",
+    "name": "The Unlicense",
+    "spdx_id": "Unlicense",
+    "status": "approved",
+    "submitter": "Steffen Jaeckel",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 80,
+      "date_range": [
+        "2020-03-28",
+        "2020-06-16"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2020-03-28",
+      "last": "2020-06-16"
+    }
+  },
+  "php-3.01": {
+    "id": "php-3-01",
+    "name": "PHP License 3.01",
+    "spdx_id": "PHP-3.01",
+    "status": "approved",
+    "submitter": "Ben Ramsey",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 72,
+      "date_range": [
+        "2020-03-04",
+        "2020-05-15"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2020-03-04",
+      "last": "2020-05-15"
+    }
+  },
+  "php-3-01": {
+    "id": "php-3-01",
+    "name": "PHP License 3.01",
+    "spdx_id": "PHP-3.01",
+    "status": "approved",
+    "submitter": "Ben Ramsey",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 72,
+      "date_range": [
+        "2020-03-04",
+        "2020-05-15"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2020-03-04",
+      "last": "2020-05-15"
+    }
+  },
+  "bsd-1-clause": {
+    "id": "bsd-1-clause",
+    "name": "1-clause BSD License",
+    "spdx_id": "BSD-1-Clause",
+    "status": "approved",
+    "submitter": "Pedro Giffuni",
+    "stats": {
+      "total_messages": 9,
+      "duration_days": 119,
+      "date_range": [
+        "2019-12-10",
+        "2020-04-07"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 9,
+      "first": "2019-12-10",
+      "last": "2020-04-07"
+    }
+  },
+  "cal-1.0": {
+    "id": "cal-1-0",
+    "name": "Cryptographic Autonomy License",
+    "spdx_id": "CAL-1.0",
+    "status": "approved",
+    "submitter": "Van Lindberg",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 100,
+      "date_range": [
+        "2019-12-04",
+        "2020-03-13"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2019-12-04",
+      "last": "2020-03-13"
+    }
+  },
+  "cal-1-0": {
+    "id": "cal-1-0",
+    "name": "Cryptographic Autonomy License",
+    "spdx_id": "CAL-1.0",
+    "status": "approved",
+    "submitter": "Van Lindberg",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 100,
+      "date_range": [
+        "2019-12-04",
+        "2020-03-13"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2019-12-04",
+      "last": "2020-03-13"
+    }
+  },
+  "mulanpsl-2.0": {
+    "id": "mulanpsl-2-0",
+    "name": "Mulan Permissive Software License v2",
+    "spdx_id": "MulanPSL-2.0",
+    "status": "approved",
+    "submitter": "Zhou Minghui",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 93,
+      "date_range": [
+        "2019-12-03",
+        "2020-03-05"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2019-12-03",
+      "last": "2020-03-05"
+    }
+  },
+  "mulanpsl-2-0": {
+    "id": "mulanpsl-2-0",
+    "name": "Mulan Permissive Software License v2",
+    "spdx_id": "MulanPSL-2.0",
+    "status": "approved",
+    "submitter": "Zhou Minghui",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 93,
+      "date_range": [
+        "2019-12-03",
+        "2020-03-05"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2019-12-03",
+      "last": "2020-03-05"
+    }
+  },
+  "oldap-2.8": {
+    "id": "oldap-2-8",
+    "name": "OpenLDAP Public License Version 2.8",
+    "spdx_id": "OLDAP-2.8",
+    "status": "approved",
+    "submitter": "Howard Chu",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 41,
+      "date_range": [
+        "2019-08-13",
+        "2019-09-23"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2019-08-13",
+      "last": "2019-09-23"
+    }
+  },
+  "oldap-2-8": {
+    "id": "oldap-2-8",
+    "name": "OpenLDAP Public License Version 2.8",
+    "spdx_id": "OLDAP-2.8",
+    "status": "approved",
+    "submitter": "Howard Chu",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 41,
+      "date_range": [
+        "2019-08-13",
+        "2019-09-23"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2019-08-13",
+      "last": "2019-09-23"
+    }
+  },
+  "bsd-3-clause-lbnl": {
+    "id": "bsd-3-clause-lbnl",
+    "name": "Lawrence Berkeley National Labs BSD Variant License",
+    "spdx_id": "BSD-3-Clause-LBNL",
+    "status": "approved",
+    "submitter": "Sebastian Ainslie",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 33,
+      "date_range": [
+        "2019-05-16",
+        "2019-06-18"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2019-05-16",
+      "last": "2019-06-18"
+    }
+  },
+  "spl-1.0": {
+    "id": "spl-1-0",
+    "name": "Sun Public License, Version 1.0",
+    "spdx_id": "SPL-1.0",
+    "status": "approved",
+    "submitter": "Eliot Horowitz",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 72,
+      "date_range": [
+        "2018-10-16",
+        "2018-12-27"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2018-10-16",
+      "last": "2018-12-27"
+    }
+  },
+  "spl-1-0": {
+    "id": "spl-1-0",
+    "name": "Sun Public License, Version 1.0",
+    "spdx_id": "SPL-1.0",
+    "status": "approved",
+    "submitter": "Eliot Horowitz",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 72,
+      "date_range": [
+        "2018-10-16",
+        "2018-12-27"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2018-10-16",
+      "last": "2018-12-27"
+    }
+  },
+  "unicode-dfs-2016": {
+    "id": "unicode-dfs-2016",
+    "name": "Unicode, Inc. License Agreement - Data Files and Software",
+    "spdx_id": "Unicode-DFS-2016",
+    "status": "approved",
+    "submitter": "Sascha Brawer",
+    "stats": {
+      "total_messages": 8,
+      "duration_days": 279,
+      "date_range": [
+        "2017-11-29",
+        "2018-09-04"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 8,
+      "first": "2017-11-29",
+      "last": "2018-09-04"
+    }
+  },
+  "w3c-20150513": {
+    "id": "w3c-20150513",
+    "name": "The W3C® Software and Document license",
+    "spdx_id": "W3C-20150513",
+    "status": "approved",
+    "submitter": "Wendy Seltzer",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 7,
+      "date_range": [
+        "2017-08-09",
+        "2017-08-16"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2017-08-09",
+      "last": "2017-08-16"
+    }
+  },
+  "epl-2.0": {
+    "id": "epl-2-0",
+    "name": "Eclipse Public License version 2.0",
+    "spdx_id": "EPL-2.0",
+    "status": "approved",
+    "submitter": "Mike Milinkovich",
+    "stats": {
+      "total_messages": 8,
+      "duration_days": 56,
+      "date_range": [
+        "2017-06-15",
+        "2017-08-10"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 8,
+      "first": "2017-06-15",
+      "last": "2017-08-10"
+    }
+  },
+  "epl-2-0": {
+    "id": "epl-2-0",
+    "name": "Eclipse Public License version 2.0",
+    "spdx_id": "EPL-2.0",
+    "status": "approved",
+    "submitter": "Mike Milinkovich",
+    "stats": {
+      "total_messages": 8,
+      "duration_days": 56,
+      "date_range": [
+        "2017-06-15",
+        "2017-08-10"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 8,
+      "first": "2017-06-15",
+      "last": "2017-08-10"
+    }
+  },
+  "qpl-1.0": {
+    "id": "qpl-1-0",
+    "name": "The Q Public License Version",
+    "spdx_id": "QPL-1.0",
+    "status": "approved",
+    "submitter": "Mike Milinkovich",
+    "stats": {
+      "total_messages": 8,
+      "duration_days": 56,
+      "date_range": [
+        "2017-06-15",
+        "2017-08-10"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 8,
+      "first": "2017-06-15",
+      "last": "2017-08-10"
+    }
+  },
+  "qpl-1-0": {
+    "id": "qpl-1-0",
+    "name": "The Q Public License Version",
+    "spdx_id": "QPL-1.0",
+    "status": "approved",
+    "submitter": "Mike Milinkovich",
+    "stats": {
+      "total_messages": 8,
+      "duration_days": 56,
+      "date_range": [
+        "2017-06-15",
+        "2017-08-10"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 8,
+      "first": "2017-06-15",
+      "last": "2017-08-10"
+    }
+  },
+  "eupl-1.2": {
+    "id": "eupl-1-2",
+    "name": "European Union Public Licence, version 1.2",
+    "spdx_id": "EUPL-1.2",
+    "status": "approved",
+    "submitter": "Patrice-Emmanuel Schmitz",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 44,
+      "date_range": [
+        "2017-05-30",
+        "2017-07-13"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2017-05-30",
+      "last": "2017-07-13"
+    }
+  },
+  "eupl-1-2": {
+    "id": "eupl-1-2",
+    "name": "European Union Public Licence, version 1.2",
+    "spdx_id": "EUPL-1.2",
+    "status": "approved",
+    "submitter": "Patrice-Emmanuel Schmitz",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 44,
+      "date_range": [
+        "2017-05-30",
+        "2017-07-13"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2017-05-30",
+      "last": "2017-07-13"
+    }
+  },
+  "ucl-1.0": {
+    "id": "ucl-1-0",
+    "name": "Upstream Compatibility License v1.0",
+    "spdx_id": "UCL-1.0",
+    "status": "approved",
+    "submitter": "Nigel T",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 161,
+      "date_range": [
+        "2016-10-24",
+        "2017-04-03"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2016-10-24",
+      "last": "2017-04-03"
+    }
+  },
+  "ucl-1-0": {
+    "id": "ucl-1-0",
+    "name": "Upstream Compatibility License v1.0",
+    "spdx_id": "UCL-1.0",
+    "status": "approved",
+    "submitter": "Nigel T",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 161,
+      "date_range": [
+        "2016-10-24",
+        "2017-04-03"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2016-10-24",
+      "last": "2017-04-03"
+    }
+  },
+  "bsd-2-clause-patent": {
+    "id": "bsd-2-clause-patent",
+    "name": "BSD+Patent",
+    "spdx_id": "BSD-2-Clause-Patent",
+    "status": "approved",
+    "submitter": "McCoy Smith",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 443,
+      "date_range": [
+        "2016-01-13",
+        "2017-03-31"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2016-01-13",
+      "last": "2017-03-31"
+    }
+  },
+  "liliq-rplus-1.1": {
+    "id": "liliq-rplus-1-1",
+    "name": "Licence Libre du Québec – Réciprocité forte version 1.1",
+    "spdx_id": "LiLiQ-Rplus-1.1",
+    "status": "approved",
+    "submitter": "Simon Johnson-Bégin",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 125,
+      "date_range": [
+        "2015-09-15",
+        "2016-01-18"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2015-09-15",
+      "last": "2016-01-18"
+    }
+  },
+  "liliq-rplus-1-1": {
+    "id": "liliq-rplus-1-1",
+    "name": "Licence Libre du Québec – Réciprocité forte version 1.1",
+    "spdx_id": "LiLiQ-Rplus-1.1",
+    "status": "approved",
+    "submitter": "Simon Johnson-Bégin",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 125,
+      "date_range": [
+        "2015-09-15",
+        "2016-01-18"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2015-09-15",
+      "last": "2016-01-18"
+    }
+  },
+  "liliq-r-1.1": {
+    "id": "liliq-r-1-1",
+    "name": "Licence Libre du Québec – Réciprocité version 1.1",
+    "spdx_id": "LiLiQ-R-1.1",
+    "status": "approved",
+    "submitter": "Simon Johnson-Bégin",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 125,
+      "date_range": [
+        "2015-09-15",
+        "2016-01-18"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2015-09-15",
+      "last": "2016-01-18"
+    }
+  },
+  "liliq-r-1-1": {
+    "id": "liliq-r-1-1",
+    "name": "Licence Libre du Québec – Réciprocité version 1.1",
+    "spdx_id": "LiLiQ-R-1.1",
+    "status": "approved",
+    "submitter": "Simon Johnson-Bégin",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 125,
+      "date_range": [
+        "2015-09-15",
+        "2016-01-18"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2015-09-15",
+      "last": "2016-01-18"
+    }
+  },
+  "liliq-p-1.1": {
+    "id": "liliq-p-1-1",
+    "name": "Licence Libre du Québec – Permissive  version 1.1",
+    "spdx_id": "LiLiQ-P-1.1",
+    "status": "approved",
+    "submitter": "Simon Johnson-Bégin",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 125,
+      "date_range": [
+        "2015-09-15",
+        "2016-01-18"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2015-09-15",
+      "last": "2016-01-18"
+    }
+  },
+  "liliq-p-1-1": {
+    "id": "liliq-p-1-1",
+    "name": "Licence Libre du Québec – Permissive  version 1.1",
+    "spdx_id": "LiLiQ-P-1.1",
+    "status": "approved",
+    "submitter": "Simon Johnson-Bégin",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 125,
+      "date_range": [
+        "2015-09-15",
+        "2016-01-18"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2015-09-15",
+      "last": "2016-01-18"
+    }
+  },
+  "oset-pl-2.1": {
+    "id": "oset-pl-2-1",
+    "name": "OSET Public License version 2.1",
+    "spdx_id": "OSET-PL-2.1",
+    "status": "approved",
+    "submitter": "Heather Meeker",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 11,
+      "date_range": [
+        "2015-09-01",
+        "2015-09-12"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2015-09-01",
+      "last": "2015-09-12"
+    }
+  },
+  "oset-pl-2-1": {
+    "id": "oset-pl-2-1",
+    "name": "OSET Public License version 2.1",
+    "spdx_id": "OSET-PL-2.1",
+    "status": "approved",
+    "submitter": "Heather Meeker",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 11,
+      "date_range": [
+        "2015-09-01",
+        "2015-09-12"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2015-09-01",
+      "last": "2015-09-12"
+    }
+  },
+  "0bsd": {
+    "id": "0bsd",
+    "name": "Zero-Clause BSD",
+    "spdx_id": "0BSD",
+    "status": "approved",
+    "submitter": "Christian Bundy",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 77,
+      "date_range": [
+        "2015-08-30",
+        "2015-11-15"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2015-08-30",
+      "last": "2015-11-15"
+    }
+  },
+  "ecos-2.0": {
+    "id": "ecos-2-0",
+    "name": "eCos License version 2.0",
+    "spdx_id": "eCos-2.0",
+    "status": "approved",
+    "submitter": "John Dallaway",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 465,
+      "date_range": [
+        "2014-08-29",
+        "2015-12-07"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2014-08-29",
+      "last": "2015-12-07"
+    }
+  },
+  "ecos-2-0": {
+    "id": "ecos-2-0",
+    "name": "eCos License version 2.0",
+    "spdx_id": "eCos-2.0",
+    "status": "approved",
+    "submitter": "John Dallaway",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 465,
+      "date_range": [
+        "2014-08-29",
+        "2015-12-07"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2014-08-29",
+      "last": "2015-12-07"
+    }
+  },
+  "upl-1.0": {
+    "id": "upl-1-0",
+    "name": "The Universal Permissive License Version 1.0",
+    "spdx_id": "UPL-1.0",
+    "status": "approved",
+    "submitter": "Jim Wright",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 315,
+      "date_range": [
+        "2014-04-11",
+        "2015-02-20"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2014-04-11",
+      "last": "2015-02-20"
+    }
+  },
+  "upl-1-0": {
+    "id": "upl-1-0",
+    "name": "The Universal Permissive License Version 1.0",
+    "spdx_id": "UPL-1.0",
+    "status": "approved",
+    "submitter": "Jim Wright",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 315,
+      "date_range": [
+        "2014-04-11",
+        "2015-02-20"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2014-04-11",
+      "last": "2015-02-20"
+    }
+  },
+  "cecill-2.1": {
+    "id": "cecill-2-1",
+    "name": "Cea Cnrs Inria Logiciel Libre License, version 2.1",
+    "spdx_id": "CECILL-2.1",
+    "status": "approved",
+    "submitter": "Patrick Moreau",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 372,
+      "date_range": [
+        "2012-02-27",
+        "2013-03-05"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2012-02-27",
+      "last": "2013-03-05"
+    }
+  },
+  "cecill-2-1": {
+    "id": "cecill-2-1",
+    "name": "Cea Cnrs Inria Logiciel Libre License, version 2.1",
+    "spdx_id": "CECILL-2.1",
+    "status": "approved",
+    "submitter": "Patrick Moreau",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 372,
+      "date_range": [
+        "2012-02-27",
+        "2013-03-05"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2012-02-27",
+      "last": "2013-03-05"
+    }
+  },
+  "mpl-2.0": {
+    "id": "mpl-2-0",
+    "name": "Mozilla Public License 2.0",
+    "spdx_id": "MPL-2.0",
+    "status": "approved",
+    "submitter": "Luis Villa",
+    "stats": {
+      "total_messages": 4,
+      "duration_days": 0,
+      "date_range": [
+        "2011-08-15",
+        "2011-08-15"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 4,
+      "first": "2011-08-15",
+      "last": "2011-08-15"
+    }
+  },
+  "mpl-2-0": {
+    "id": "mpl-2-0",
+    "name": "Mozilla Public License 2.0",
+    "spdx_id": "MPL-2.0",
+    "status": "approved",
+    "submitter": "Luis Villa",
+    "stats": {
+      "total_messages": 4,
+      "duration_days": 0,
+      "date_range": [
+        "2011-08-15",
+        "2011-08-15"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 4,
+      "first": "2011-08-15",
+      "last": "2011-08-15"
+    }
+  },
+  "intel": {
+    "id": "intel",
+    "name": "Intel Open Source License",
+    "spdx_id": "Intel",
+    "status": "approved",
+    "submitter": "David Smith",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 2,
+      "date_range": [
+        "2011-04-16",
+        "2011-04-18"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2011-04-16",
+      "last": "2011-04-18"
+    }
+  },
+  "mpl-1.1": {
+    "id": "mpl-1-1",
+    "name": "Mozilla Public License 1.1",
+    "spdx_id": "MPL-1.1",
+    "status": "approved",
+    "submitter": "Luis Villa",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 32,
+      "date_range": [
+        "2010-10-21",
+        "2010-11-22"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2010-10-21",
+      "last": "2010-11-22"
+    }
+  },
+  "mpl-1-1": {
+    "id": "mpl-1-1",
+    "name": "Mozilla Public License 1.1",
+    "spdx_id": "MPL-1.1",
+    "status": "approved",
+    "submitter": "Luis Villa",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 32,
+      "date_range": [
+        "2010-10-21",
+        "2010-11-22"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2010-10-21",
+      "last": "2010-11-22"
+    }
+  },
+  "zlib": {
+    "id": "zlib",
+    "name": "The zlib/libpng License",
+    "spdx_id": "Zlib",
+    "status": "approved",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 5,
+      "duration_days": 1,
+      "date_range": [
+        "2010-08-30",
+        "2010-08-31"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 5,
+      "first": "2010-08-30",
+      "last": "2010-08-31"
+    }
+  },
+  "postgresql": {
+    "id": "postgresql",
+    "name": "The PostgreSQL License",
+    "spdx_id": "PostgreSQL",
+    "status": "approved",
+    "submitter": "Dave Page",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 62,
+      "date_range": [
+        "2009-09-24",
+        "2009-11-25"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2009-09-24",
+      "last": "2009-11-25"
+    }
+  },
+  "lppl-1.3c": {
+    "id": "lppl-1-3c",
+    "name": "LaTeX Project Public License, Version 1.3c",
+    "spdx_id": "LPPL-1.3c",
+    "status": "approved",
+    "submitter": "Will Robertson",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 47,
+      "date_range": [
+        "2009-09-08",
+        "2009-10-25"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2009-09-08",
+      "last": "2009-10-25"
+    }
+  },
+  "lppl-1-3c": {
+    "id": "lppl-1-3c",
+    "name": "LaTeX Project Public License, Version 1.3c",
+    "spdx_id": "LPPL-1.3c",
+    "status": "approved",
+    "submitter": "Will Robertson",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 47,
+      "date_range": [
+        "2009-09-08",
+        "2009-10-25"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2009-09-08",
+      "last": "2009-10-25"
+    }
+  },
+  "osl-3.0": {
+    "id": "osl-3-0",
+    "name": "The Open Software License 3.0",
+    "spdx_id": "OSL-3.0",
+    "status": "approved",
+    "submitter": "Renzo Verleysen",
+    "stats": {
+      "total_messages": 3,
+      "duration_days": 0,
+      "date_range": [
+        "2009-06-01",
+        "2009-06-01"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 3,
+      "first": "2009-06-01",
+      "last": "2009-06-01"
+    }
+  },
+  "osl-3-0": {
+    "id": "osl-3-0",
+    "name": "The Open Software License 3.0",
+    "spdx_id": "OSL-3.0",
+    "status": "approved",
+    "submitter": "Renzo Verleysen",
+    "stats": {
+      "total_messages": 3,
+      "duration_days": 0,
+      "date_range": [
+        "2009-06-01",
+        "2009-06-01"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 3,
+      "first": "2009-06-01",
+      "last": "2009-06-01"
+    }
+  },
+  "ipa": {
+    "id": "ipa",
+    "name": "IPA Font License",
+    "spdx_id": "IPA",
+    "status": "approved",
+    "submitter": "Yuko Noguchi",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 54,
+      "date_range": [
+        "2009-02-04",
+        "2009-03-30"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2009-02-04",
+      "last": "2009-03-30"
+    }
+  },
+  "ofl-1.1": {
+    "id": "ofl-1-1",
+    "name": "SIL OPEN FONT LICENSE",
+    "spdx_id": "OFL-1.1",
+    "status": "approved",
+    "submitter": "Yuko Noguchi",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 6,
+      "date_range": [
+        "2008-11-05",
+        "2008-11-11"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2008-11-05",
+      "last": "2008-11-11"
+    }
+  },
+  "ofl-1-1": {
+    "id": "ofl-1-1",
+    "name": "SIL OPEN FONT LICENSE",
+    "spdx_id": "OFL-1.1",
+    "status": "approved",
+    "submitter": "Yuko Noguchi",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 6,
+      "date_range": [
+        "2008-11-05",
+        "2008-11-11"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2008-11-05",
+      "last": "2008-11-11"
+    }
+  },
+  "artistic-1.0": {
+    "id": "artistic-1-0",
+    "name": "Artistic License 1.0",
+    "spdx_id": "Artistic-1.0",
+    "status": "approved",
+    "submitter": "Russ Nelson",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 1,
+      "date_range": [
+        "2008-07-09",
+        "2008-07-10"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2008-07-09",
+      "last": "2008-07-10"
+    }
+  },
+  "artistic-1-0": {
+    "id": "artistic-1-0",
+    "name": "Artistic License 1.0",
+    "spdx_id": "Artistic-1.0",
+    "status": "approved",
+    "submitter": "Russ Nelson",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 1,
+      "date_range": [
+        "2008-07-09",
+        "2008-07-10"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2008-07-09",
+      "last": "2008-07-10"
+    }
+  },
+  "miros": {
+    "id": "miros",
+    "name": "MirOS Licence",
+    "spdx_id": "MirOS",
+    "status": "approved",
+    "submitter": "Thorsten Glaser",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 4,
+      "date_range": [
+        "2008-07-05",
+        "2008-07-09"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2008-07-05",
+      "last": "2008-07-09"
+    }
+  },
+  "eupl-1.1": {
+    "id": "eupl-1-1",
+    "name": "The European Union Public License, version 1.1",
+    "spdx_id": "EUPL-1.1",
+    "status": "approved",
+    "submitter": "Patrice-Emmanuel Schmitz",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 329,
+      "date_range": [
+        "2008-03-14",
+        "2009-02-06"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2008-03-14",
+      "last": "2009-02-06"
+    }
+  },
+  "eupl-1-1": {
+    "id": "eupl-1-1",
+    "name": "The European Union Public License, version 1.1",
+    "spdx_id": "EUPL-1.1",
+    "status": "approved",
+    "submitter": "Patrice-Emmanuel Schmitz",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 329,
+      "date_range": [
+        "2008-03-14",
+        "2009-02-06"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2008-03-14",
+      "last": "2009-02-06"
+    }
+  },
+  "ntp": {
+    "id": "ntp",
+    "name": "NTP License",
+    "spdx_id": "NTP",
+    "status": "approved",
+    "submitter": "Harlan Stenn",
+    "stats": {
+      "total_messages": 4,
+      "duration_days": 2,
+      "date_range": [
+        "2008-02-26",
+        "2008-02-28"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 4,
+      "first": "2008-02-26",
+      "last": "2008-02-28"
+    }
+  },
+  "agpl-3.0": {
+    "id": "agpl-3-0",
+    "name": "GNU Affero General Public License version 3",
+    "spdx_id": "AGPL-3.0",
+    "status": "approved",
+    "submitter": "Stefano Maffulli",
+    "stats": {
+      "total_messages": 9,
+      "duration_days": 2,
+      "date_range": [
+        "2008-01-30",
+        "2008-02-01"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 9,
+      "first": "2008-01-30",
+      "last": "2008-02-01"
+    }
+  },
+  "agpl-3-0": {
+    "id": "agpl-3-0",
+    "name": "GNU Affero General Public License version 3",
+    "spdx_id": "AGPL-3.0",
+    "status": "approved",
+    "submitter": "Stefano Maffulli",
+    "stats": {
+      "total_messages": 9,
+      "duration_days": 2,
+      "date_range": [
+        "2008-01-30",
+        "2008-02-01"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 9,
+      "first": "2008-01-30",
+      "last": "2008-02-01"
+    }
+  },
+  "gpl-2.0": {
+    "id": "gpl-2-0",
+    "name": "GNU General Public License version 2",
+    "spdx_id": "GPL-2.0",
+    "status": "approved",
+    "submitter": "Stefano Maffulli",
+    "stats": {
+      "total_messages": 9,
+      "duration_days": 2,
+      "date_range": [
+        "2008-01-30",
+        "2008-02-01"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 9,
+      "first": "2008-01-30",
+      "last": "2008-02-01"
+    }
+  },
+  "gpl-2-0": {
+    "id": "gpl-2-0",
+    "name": "GNU General Public License version 2",
+    "spdx_id": "GPL-2.0",
+    "status": "approved",
+    "submitter": "Stefano Maffulli",
+    "stats": {
+      "total_messages": 9,
+      "duration_days": 2,
+      "date_range": [
+        "2008-01-30",
+        "2008-02-01"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 9,
+      "first": "2008-01-30",
+      "last": "2008-02-01"
+    }
+  },
+  "icu": {
+    "id": "icu",
+    "name": "ICU License",
+    "spdx_id": "ICU",
+    "status": "approved",
+    "submitter": "Jeff Johnson",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 11,
+      "date_range": [
+        "2007-12-19",
+        "2007-12-30"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2007-12-19",
+      "last": "2007-12-30"
+    }
+  },
+  "isc": {
+    "id": "isc",
+    "name": "ISC License",
+    "spdx_id": "ISC",
+    "status": "approved",
+    "submitter": "Harlan Stenn",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 11,
+      "date_range": [
+        "2007-12-19",
+        "2007-12-30"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2007-12-19",
+      "last": "2007-12-30"
+    }
+  },
+  "mit": {
+    "id": "mit",
+    "name": "The MIT License",
+    "spdx_id": "MIT",
+    "status": "approved",
+    "submitter": "Sean B. Palmer",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 11,
+      "date_range": [
+        "2007-12-19",
+        "2007-12-30"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2007-12-19",
+      "last": "2007-12-30"
+    }
+  },
+  "multics": {
+    "id": "multics",
+    "name": "Multics License",
+    "spdx_id": "Multics",
+    "status": "approved",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 31,
+      "date_range": [
+        "2007-11-14",
+        "2007-12-15"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2007-11-14",
+      "last": "2007-12-15"
+    }
+  },
+  "frameworx-1.0": {
+    "id": "frameworx-1-0",
+    "name": "Frameworx License 1.0",
+    "spdx_id": "Frameworx-1.0",
+    "status": "approved",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 2,
+      "date_range": [
+        "2007-10-14",
+        "2007-10-16"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2007-10-14",
+      "last": "2007-10-16"
+    }
+  },
+  "frameworx-1-0": {
+    "id": "frameworx-1-0",
+    "name": "Frameworx License 1.0",
+    "spdx_id": "Frameworx-1.0",
+    "status": "approved",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 2,
+      "date_range": [
+        "2007-10-14",
+        "2007-10-16"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2007-10-14",
+      "last": "2007-10-16"
+    }
+  },
+  "ms-pl": {
+    "id": "ms-pl",
+    "name": "Microsoft Public License",
+    "spdx_id": "MS-PL",
+    "status": "approved",
+    "submitter": "Jon Rosenberg",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 14,
+      "date_range": [
+        "2007-10-03",
+        "2007-10-17"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2007-10-03",
+      "last": "2007-10-17"
+    }
+  },
+  "bsl-1.0": {
+    "id": "bsl-1-0",
+    "name": "Boost Software License 1.0",
+    "spdx_id": "BSL-1.0",
+    "status": "approved",
+    "submitter": "Alexander Terekhov",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 63,
+      "date_range": [
+        "2007-09-15",
+        "2007-11-17"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2007-09-15",
+      "last": "2007-11-17"
+    }
+  },
+  "bsl-1-0": {
+    "id": "bsl-1-0",
+    "name": "Boost Software License 1.0",
+    "spdx_id": "BSL-1.0",
+    "status": "approved",
+    "submitter": "Alexander Terekhov",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 63,
+      "date_range": [
+        "2007-09-15",
+        "2007-11-17"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2007-09-15",
+      "last": "2007-11-17"
+    }
+  },
+  "nposl-3.0": {
+    "id": "nposl-3-0",
+    "name": "Non-Profit Open Software License version 3.0",
+    "spdx_id": "NPOSL-3.0",
+    "status": "approved",
+    "submitter": "Lawrence Rosen",
+    "stats": {
+      "total_messages": 5,
+      "duration_days": 1,
+      "date_range": [
+        "2007-08-06",
+        "2007-08-07"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 5,
+      "first": "2007-08-06",
+      "last": "2007-08-07"
+    }
+  },
+  "nposl-3-0": {
+    "id": "nposl-3-0",
+    "name": "Non-Profit Open Software License version 3.0",
+    "spdx_id": "NPOSL-3.0",
+    "status": "approved",
+    "submitter": "Lawrence Rosen",
+    "stats": {
+      "total_messages": 5,
+      "duration_days": 1,
+      "date_range": [
+        "2007-08-06",
+        "2007-08-07"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 5,
+      "first": "2007-08-06",
+      "last": "2007-08-07"
+    }
+  },
+  "rpl-1.5": {
+    "id": "rpl-1-5",
+    "name": "Reciprocal Public License 1.5",
+    "spdx_id": "RPL-1.5",
+    "status": "approved",
+    "submitter": "William J. Edney",
+    "stats": {
+      "total_messages": 1,
+      "duration_days": 0,
+      "date_range": [
+        "2007-07-24",
+        "2007-07-24"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 1,
+      "first": "2007-07-24",
+      "last": "2007-07-24"
+    }
+  },
+  "rpl-1-5": {
+    "id": "rpl-1-5",
+    "name": "Reciprocal Public License 1.5",
+    "spdx_id": "RPL-1.5",
+    "status": "approved",
+    "submitter": "William J. Edney",
+    "stats": {
+      "total_messages": 1,
+      "duration_days": 0,
+      "date_range": [
+        "2007-07-24",
+        "2007-07-24"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 1,
+      "first": "2007-07-24",
+      "last": "2007-07-24"
+    }
+  },
+  "lgpl-3.0": {
+    "id": "lgpl-3-0",
+    "name": "GNU Lesser General Public License version 3",
+    "spdx_id": "LGPL-3.0",
+    "status": "approved",
+    "submitter": "Chris DiBona",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 20,
+      "date_range": [
+        "2007-06-29",
+        "2007-07-19"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2007-06-29",
+      "last": "2007-07-19"
+    }
+  },
+  "lgpl-3-0": {
+    "id": "lgpl-3-0",
+    "name": "GNU Lesser General Public License version 3",
+    "spdx_id": "LGPL-3.0",
+    "status": "approved",
+    "submitter": "Chris DiBona",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 20,
+      "date_range": [
+        "2007-06-29",
+        "2007-07-19"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2007-06-29",
+      "last": "2007-07-19"
+    }
+  },
+  "gpl-3.0": {
+    "id": "gpl-3-0",
+    "name": "GNU General Public License version 3",
+    "spdx_id": "GPL-3.0",
+    "status": "approved",
+    "submitter": "Chris DiBona",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 20,
+      "date_range": [
+        "2007-06-29",
+        "2007-07-19"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2007-06-29",
+      "last": "2007-07-19"
+    }
+  },
+  "gpl-3-0": {
+    "id": "gpl-3-0",
+    "name": "GNU General Public License version 3",
+    "spdx_id": "GPL-3.0",
+    "status": "approved",
+    "submitter": "Chris DiBona",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 20,
+      "date_range": [
+        "2007-06-29",
+        "2007-07-19"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2007-06-29",
+      "last": "2007-07-19"
+    }
+  },
+  "cpal-1.0": {
+    "id": "cpal-1-0",
+    "name": "Common Public Attribution License Version 1.0",
+    "spdx_id": "CPAL-1.0",
+    "status": "approved",
+    "submitter": "Ross Mayfield",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 3,
+      "date_range": [
+        "2007-06-26",
+        "2007-06-29"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2007-06-26",
+      "last": "2007-06-29"
+    }
+  },
+  "cpal-1-0": {
+    "id": "cpal-1-0",
+    "name": "Common Public Attribution License Version 1.0",
+    "spdx_id": "CPAL-1.0",
+    "status": "approved",
+    "submitter": "Ross Mayfield",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 3,
+      "date_range": [
+        "2007-06-26",
+        "2007-06-29"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2007-06-26",
+      "last": "2007-06-29"
+    }
+  },
+  "ecl-2.0": {
+    "id": "ecl-2-0",
+    "name": "Educational Community License, Version 2.0",
+    "spdx_id": "ECL-2.0",
+    "status": "approved",
+    "submitter": "Christopher D. Coppola",
+    "stats": {
+      "total_messages": 4,
+      "duration_days": 15,
+      "date_range": [
+        "2007-05-21",
+        "2007-06-05"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 4,
+      "first": "2007-05-21",
+      "last": "2007-06-05"
+    }
+  },
+  "ecl-2-0": {
+    "id": "ecl-2-0",
+    "name": "Educational Community License, Version 2.0",
+    "spdx_id": "ECL-2.0",
+    "status": "approved",
+    "submitter": "Christopher D. Coppola",
+    "stats": {
+      "total_messages": 4,
+      "duration_days": 15,
+      "date_range": [
+        "2007-05-21",
+        "2007-06-05"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 4,
+      "first": "2007-05-21",
+      "last": "2007-06-05"
+    }
+  },
+  "simpl-2.0": {
+    "id": "simpl-2-0",
+    "name": "Simple Public License",
+    "spdx_id": "SimPL-2.0",
+    "status": "approved",
+    "submitter": "Jim Sfekas",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 76,
+      "date_range": [
+        "2007-03-16",
+        "2007-05-31"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2007-03-16",
+      "last": "2007-05-31"
+    }
+  },
+  "simpl-2-0": {
+    "id": "simpl-2-0",
+    "name": "Simple Public License",
+    "spdx_id": "SimPL-2.0",
+    "status": "approved",
+    "submitter": "Jim Sfekas",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 76,
+      "date_range": [
+        "2007-03-16",
+        "2007-05-31"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2007-03-16",
+      "last": "2007-05-31"
+    }
+  },
+  "artistic-2.0": {
+    "id": "artistic-2-0",
+    "name": "Artistic License 2.0",
+    "spdx_id": "Artistic-2.0",
+    "status": "approved",
+    "submitter": "Allison Randal",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 2,
+      "date_range": [
+        "2007-03-14",
+        "2007-03-16"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2007-03-14",
+      "last": "2007-03-16"
+    }
+  },
+  "artistic-2-0": {
+    "id": "artistic-2-0",
+    "name": "Artistic License 2.0",
+    "spdx_id": "Artistic-2.0",
+    "status": "approved",
+    "submitter": "Allison Randal",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 2,
+      "date_range": [
+        "2007-03-14",
+        "2007-03-16"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2007-03-14",
+      "last": "2007-03-16"
+    }
+  },
+  "ms-rl": {
+    "id": "ms-rl",
+    "name": "Microsoft Reciprocal License",
+    "spdx_id": "MS-RL",
+    "status": "approved",
+    "submitter": "Rick Moen",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 670,
+      "date_range": [
+        "2005-12-09",
+        "2007-10-10"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2005-12-09",
+      "last": "2007-10-10"
+    }
+  },
+  "cddl-1.0": {
+    "id": "cddl-1-0",
+    "name": "Common Development and Distribution License 1.0",
+    "spdx_id": "CDDL-1.0",
+    "status": "approved",
+    "submitter": "Claire Giordano",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 13,
+      "date_range": [
+        "2004-12-02",
+        "2004-12-15"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2004-12-02",
+      "last": "2004-12-15"
+    }
+  },
+  "cddl-1-0": {
+    "id": "cddl-1-0",
+    "name": "Common Development and Distribution License 1.0",
+    "spdx_id": "CDDL-1.0",
+    "status": "approved",
+    "submitter": "Claire Giordano",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 13,
+      "date_range": [
+        "2004-12-02",
+        "2004-12-15"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2004-12-02",
+      "last": "2004-12-15"
+    }
+  },
+  "ipl-1.0": {
+    "id": "ipl-1-0",
+    "name": "IBM Public License Version 1.0",
+    "spdx_id": "IPL-1.0",
+    "status": "approved",
+    "submitter": "Daniel Wallace",
+    "stats": {
+      "total_messages": 2,
+      "duration_days": 1,
+      "date_range": [
+        "2004-08-15",
+        "2004-08-16"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 2,
+      "first": "2004-08-15",
+      "last": "2004-08-16"
+    }
+  },
+  "ipl-1-0": {
+    "id": "ipl-1-0",
+    "name": "IBM Public License Version 1.0",
+    "spdx_id": "IPL-1.0",
+    "status": "approved",
+    "submitter": "Daniel Wallace",
+    "stats": {
+      "total_messages": 2,
+      "duration_days": 1,
+      "date_range": [
+        "2004-08-15",
+        "2004-08-16"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 2,
+      "first": "2004-08-15",
+      "last": "2004-08-16"
+    }
+  },
+  "sleepycat": {
+    "id": "sleepycat",
+    "name": "The Sleepycat License",
+    "spdx_id": "Sleepycat",
+    "status": "approved",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 1,
+      "duration_days": 0,
+      "date_range": [
+        "2004-06-14",
+        "2004-06-14"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 1,
+      "first": "2004-06-14",
+      "last": "2004-06-14"
+    }
+  },
+  "osl-2.1": {
+    "id": "osl-2-1",
+    "name": "Open Software License 2.1",
+    "spdx_id": "OSL-2.1",
+    "status": "approved",
+    "submitter": "Lawrence E. Rosen",
+    "stats": {
+      "total_messages": 2,
+      "duration_days": 0,
+      "date_range": [
+        "2004-03-25",
+        "2004-03-25"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 2,
+      "first": "2004-03-25",
+      "last": "2004-03-25"
+    }
+  },
+  "osl-2-1": {
+    "id": "osl-2-1",
+    "name": "Open Software License 2.1",
+    "spdx_id": "OSL-2.1",
+    "status": "approved",
+    "submitter": "Lawrence E. Rosen",
+    "stats": {
+      "total_messages": 2,
+      "duration_days": 0,
+      "date_range": [
+        "2004-03-25",
+        "2004-03-25"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 2,
+      "first": "2004-03-25",
+      "last": "2004-03-25"
+    }
+  },
+  "nasa-1.3": {
+    "id": "nasa-1-3",
+    "name": "NASA Open Source Agreement v1.3",
+    "spdx_id": "NASA-1.3",
+    "status": "approved",
+    "submitter": "Robert Padilla",
+    "stats": {
+      "total_messages": 2,
+      "duration_days": 0,
+      "date_range": [
+        "2004-03-23",
+        "2004-03-23"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 2,
+      "first": "2004-03-23",
+      "last": "2004-03-23"
+    }
+  },
+  "nasa-1-3": {
+    "id": "nasa-1-3",
+    "name": "NASA Open Source Agreement v1.3",
+    "spdx_id": "NASA-1.3",
+    "status": "approved",
+    "submitter": "Robert Padilla",
+    "stats": {
+      "total_messages": 2,
+      "duration_days": 0,
+      "date_range": [
+        "2004-03-23",
+        "2004-03-23"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 2,
+      "first": "2004-03-23",
+      "last": "2004-03-23"
+    }
+  },
+  "epl-1.0": {
+    "id": "epl-1-0",
+    "name": "Eclipse Public License -v 1.0",
+    "spdx_id": "EPL-1.0",
+    "status": "approved",
+    "submitter": "Philip Ma",
+    "stats": {
+      "total_messages": 3,
+      "duration_days": 1,
+      "date_range": [
+        "2004-03-08",
+        "2004-03-09"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 3,
+      "first": "2004-03-08",
+      "last": "2004-03-09"
+    }
+  },
+  "epl-1-0": {
+    "id": "epl-1-0",
+    "name": "Eclipse Public License -v 1.0",
+    "spdx_id": "EPL-1.0",
+    "status": "approved",
+    "submitter": "Philip Ma",
+    "stats": {
+      "total_messages": 3,
+      "duration_days": 1,
+      "date_range": [
+        "2004-03-08",
+        "2004-03-09"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 3,
+      "first": "2004-03-08",
+      "last": "2004-03-09"
+    }
+  },
+  "apache-2.0": {
+    "id": "apache-2-0",
+    "name": "Apache License, Version 2.0",
+    "spdx_id": "Apache-2.0",
+    "status": "approved",
+    "submitter": "Kevin Coar",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 18,
+      "date_range": [
+        "2004-02-08",
+        "2004-02-26"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2004-02-08",
+      "last": "2004-02-26"
+    }
+  },
+  "apache-2-0": {
+    "id": "apache-2-0",
+    "name": "Apache License, Version 2.0",
+    "spdx_id": "Apache-2.0",
+    "status": "approved",
+    "submitter": "Kevin Coar",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 18,
+      "date_range": [
+        "2004-02-08",
+        "2004-02-26"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2004-02-08",
+      "last": "2004-02-26"
+    }
+  },
+  "fair": {
+    "id": "fair",
+    "name": "Fair License",
+    "spdx_id": "Fair",
+    "status": "approved",
+    "submitter": "James William Pye",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 457,
+      "date_range": [
+        "2004-01-26",
+        "2005-04-27"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2004-01-26",
+      "last": "2005-04-27"
+    }
+  },
+  "cua-opl-1.0": {
+    "id": "cua-opl-1-0",
+    "name": "CUA Office Public License",
+    "spdx_id": "CUA-OPL-1.0",
+    "status": "approved",
+    "submitter": "Patranun Limudomporn",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 2,
+      "date_range": [
+        "2003-12-20",
+        "2003-12-22"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2003-12-20",
+      "last": "2003-12-22"
+    }
+  },
+  "cua-opl-1-0": {
+    "id": "cua-opl-1-0",
+    "name": "CUA Office Public License",
+    "spdx_id": "CUA-OPL-1.0",
+    "status": "approved",
+    "submitter": "Patranun Limudomporn",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 2,
+      "date_range": [
+        "2003-12-20",
+        "2003-12-22"
+      ]
+    },
+    "has_vote": true,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2003-12-20",
+      "last": "2003-12-22"
+    }
+  },
+  "lpl-1.02": {
+    "id": "lpl-1-02",
+    "name": "Lucent Public License Version 1.02",
+    "spdx_id": "LPL-1.02",
+    "status": "approved",
+    "submitter": "David Presotto",
+    "stats": {
+      "total_messages": 3,
+      "duration_days": 141,
+      "date_range": [
+        "2003-09-25",
+        "2004-02-13"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 3,
+      "first": "2003-09-25",
+      "last": "2004-02-13"
+    }
+  },
+  "lpl-1-02": {
+    "id": "lpl-1-02",
+    "name": "Lucent Public License Version 1.02",
+    "spdx_id": "LPL-1.02",
+    "status": "approved",
+    "submitter": "David Presotto",
+    "stats": {
+      "total_messages": 3,
+      "duration_days": 141,
+      "date_range": [
+        "2003-09-25",
+        "2004-02-13"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 3,
+      "first": "2003-09-25",
+      "last": "2004-02-13"
+    }
+  },
+  "eudatagrid": {
+    "id": "eudatagrid",
+    "name": "EU DataGrid Software License",
+    "spdx_id": "EUDatagrid",
+    "status": "approved",
+    "submitter": "Bob Jones",
+    "stats": {
+      "total_messages": 2,
+      "duration_days": 21,
+      "date_range": [
+        "2003-08-19",
+        "2003-09-09"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 2,
+      "first": "2003-08-19",
+      "last": "2003-09-09"
+    }
+  },
+  "apsl-2.0": {
+    "id": "apsl-2-0",
+    "name": "Apple Public Source License 2.0",
+    "spdx_id": "APSL-2.0",
+    "status": "approved",
+    "submitter": "Ernest Pabhakar",
+    "stats": {
+      "total_messages": 3,
+      "duration_days": 0,
+      "date_range": [
+        "2003-08-06",
+        "2003-08-06"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 3,
+      "first": "2003-08-06",
+      "last": "2003-08-06"
+    }
+  },
+  "apsl-2-0": {
+    "id": "apsl-2-0",
+    "name": "Apple Public Source License 2.0",
+    "spdx_id": "APSL-2.0",
+    "status": "approved",
+    "submitter": "Ernest Pabhakar",
+    "stats": {
+      "total_messages": 3,
+      "duration_days": 0,
+      "date_range": [
+        "2003-08-06",
+        "2003-08-06"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 3,
+      "first": "2003-08-06",
+      "last": "2003-08-06"
+    }
+  },
+  "php-3.0": {
+    "id": "php-3-0",
+    "name": "PHP License 3.0",
+    "spdx_id": "PHP-3.0",
+    "status": "approved",
+    "submitter": "Rasmus Lerdorf",
+    "stats": {
+      "total_messages": 3,
+      "duration_days": 4,
+      "date_range": [
+        "2003-05-31",
+        "2003-06-04"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 3,
+      "first": "2003-05-31",
+      "last": "2003-06-04"
+    }
+  },
+  "php-3-0": {
+    "id": "php-3-0",
+    "name": "PHP License 3.0",
+    "spdx_id": "PHP-3.0",
+    "status": "approved",
+    "submitter": "Rasmus Lerdorf",
+    "stats": {
+      "total_messages": 3,
+      "duration_days": 4,
+      "date_range": [
+        "2003-05-31",
+        "2003-06-04"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 3,
+      "first": "2003-05-31",
+      "last": "2003-06-04"
+    }
+  },
+  "apl-1.0": {
+    "id": "apl-1-0",
+    "name": "Adaptive Public License 1.0",
+    "spdx_id": "APL-1.0",
+    "status": "approved",
+    "submitter": "Carmen Leeming",
+    "stats": {
+      "total_messages": 1,
+      "duration_days": 0,
+      "date_range": [
+        "2003-05-26",
+        "2003-05-26"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 1,
+      "first": "2003-05-26",
+      "last": "2003-05-26"
+    }
+  },
+  "apl-1-0": {
+    "id": "apl-1-0",
+    "name": "Adaptive Public License 1.0",
+    "spdx_id": "APL-1.0",
+    "status": "approved",
+    "submitter": "Carmen Leeming",
+    "stats": {
+      "total_messages": 1,
+      "duration_days": 0,
+      "date_range": [
+        "2003-05-26",
+        "2003-05-26"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 1,
+      "first": "2003-05-26",
+      "last": "2003-05-26"
+    }
+  },
+  "entessa": {
+    "id": "entessa",
+    "name": "Entessa Public License Version. 1.0",
+    "spdx_id": "Entessa",
+    "status": "approved",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 2,
+      "duration_days": 27,
+      "date_range": [
+        "2003-04-17",
+        "2003-05-14"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 2,
+      "first": "2003-04-17",
+      "last": "2003-05-14"
+    }
+  },
+  "lpl-1.0": {
+    "id": "lpl-1-0",
+    "name": "Lucent Public License, Plan 9, version 1.0",
+    "spdx_id": "LPL-1.0",
+    "status": "approved",
+    "submitter": "David Presotto",
+    "stats": {
+      "total_messages": 4,
+      "duration_days": 0,
+      "date_range": [
+        "2003-04-09",
+        "2003-04-09"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 4,
+      "first": "2003-04-09",
+      "last": "2003-04-09"
+    }
+  },
+  "lpl-1-0": {
+    "id": "lpl-1-0",
+    "name": "Lucent Public License, Plan 9, version 1.0",
+    "spdx_id": "LPL-1.0",
+    "status": "approved",
+    "submitter": "David Presotto",
+    "stats": {
+      "total_messages": 4,
+      "duration_days": 0,
+      "date_range": [
+        "2003-04-09",
+        "2003-04-09"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 4,
+      "first": "2003-04-09",
+      "last": "2003-04-09"
+    }
+  },
+  "efl-2.0": {
+    "id": "efl-2-0",
+    "name": "Eiffel Forum License, Version 2",
+    "spdx_id": "EFL-2.0",
+    "status": "approved",
+    "submitter": "Christian Couder",
+    "stats": {
+      "total_messages": 1,
+      "duration_days": 0,
+      "date_range": [
+        "2002-12-06",
+        "2002-12-06"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 1,
+      "first": "2002-12-06",
+      "last": "2002-12-06"
+    }
+  },
+  "efl-2-0": {
+    "id": "efl-2-0",
+    "name": "Eiffel Forum License, Version 2",
+    "spdx_id": "EFL-2.0",
+    "status": "approved",
+    "submitter": "Christian Couder",
+    "stats": {
+      "total_messages": 1,
+      "duration_days": 0,
+      "date_range": [
+        "2002-12-06",
+        "2002-12-06"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 1,
+      "first": "2002-12-06",
+      "last": "2002-12-06"
+    }
+  },
+  "hpnd": {
+    "id": "hpnd",
+    "name": "Historical Permission Notice and Disclaimer",
+    "spdx_id": "HPND",
+    "status": "approved",
+    "submitter": "Bruce Dodson",
+    "stats": {
+      "total_messages": 3,
+      "duration_days": 31,
+      "date_range": [
+        "2002-11-09",
+        "2002-12-10"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 3,
+      "first": "2002-11-09",
+      "last": "2002-12-10"
+    }
+  },
+  "wxwindows": {
+    "id": "wxwindows",
+    "name": "The wxWindows Library Licence",
+    "spdx_id": "wxWindows",
+    "status": "approved",
+    "submitter": "Julian Smart",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 1,
+      "date_range": [
+        "2002-10-22",
+        "2002-10-23"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2002-10-22",
+      "last": "2002-10-23"
+    }
+  },
+  "rpl-1.1": {
+    "id": "rpl-1-1",
+    "name": "Reciprocal Public License, version 1.1",
+    "spdx_id": "RPL-1.1",
+    "status": "approved",
+    "submitter": "Randall Burns",
+    "stats": {
+      "total_messages": 3,
+      "duration_days": 0,
+      "date_range": [
+        "2002-10-16",
+        "2002-10-16"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 3,
+      "first": "2002-10-16",
+      "last": "2002-10-16"
+    }
+  },
+  "rpl-1-1": {
+    "id": "rpl-1-1",
+    "name": "Reciprocal Public License, version 1.1",
+    "spdx_id": "RPL-1.1",
+    "status": "approved",
+    "submitter": "Randall Burns",
+    "stats": {
+      "total_messages": 3,
+      "duration_days": 0,
+      "date_range": [
+        "2002-10-16",
+        "2002-10-16"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 3,
+      "first": "2002-10-16",
+      "last": "2002-10-16"
+    }
+  },
+  "oclc-2.0": {
+    "id": "oclc-2-0",
+    "name": "The OCLC Research Public License 2.0 License",
+    "spdx_id": "OCLC-2.0",
+    "status": "approved",
+    "submitter": "Russell Nelson",
+    "stats": {
+      "total_messages": 9,
+      "duration_days": 2,
+      "date_range": [
+        "2002-09-30",
+        "2002-10-02"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 9,
+      "first": "2002-09-30",
+      "last": "2002-10-02"
+    }
+  },
+  "oclc-2-0": {
+    "id": "oclc-2-0",
+    "name": "The OCLC Research Public License 2.0 License",
+    "spdx_id": "OCLC-2.0",
+    "status": "approved",
+    "submitter": "Russell Nelson",
+    "stats": {
+      "total_messages": 9,
+      "duration_days": 2,
+      "date_range": [
+        "2002-09-30",
+        "2002-10-02"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 9,
+      "first": "2002-09-30",
+      "last": "2002-10-02"
+    }
+  },
+  "sissl": {
+    "id": "sissl",
+    "name": "Sun Industry Standards Source License",
+    "spdx_id": "SISSL",
+    "status": "approved",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 2,
+      "duration_days": 4,
+      "date_range": [
+        "2002-08-22",
+        "2002-08-26"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 2,
+      "first": "2002-08-22",
+      "last": "2002-08-26"
+    }
+  },
+  "osl-1.0": {
+    "id": "osl-1-0",
+    "name": "Open Software License, version 1.0",
+    "spdx_id": "OSL-1.0",
+    "status": "approved",
+    "submitter": "Lawrence E. Rosen",
+    "stats": {
+      "total_messages": 2,
+      "duration_days": 1,
+      "date_range": [
+        "2002-07-28",
+        "2002-07-29"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 2,
+      "first": "2002-07-28",
+      "last": "2002-07-29"
+    }
+  },
+  "osl-1-0": {
+    "id": "osl-1-0",
+    "name": "Open Software License, version 1.0",
+    "spdx_id": "OSL-1.0",
+    "status": "approved",
+    "submitter": "Lawrence E. Rosen",
+    "stats": {
+      "total_messages": 2,
+      "duration_days": 1,
+      "date_range": [
+        "2002-07-28",
+        "2002-07-29"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 2,
+      "first": "2002-07-28",
+      "last": "2002-07-29"
+    }
+  },
+  "afl-3.0": {
+    "id": "afl-3-0",
+    "name": "Academic Free License v. 3.0",
+    "spdx_id": "AFL-3.0",
+    "status": "approved",
+    "submitter": "Lawrence Rosen",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 57,
+      "date_range": [
+        "2002-06-25",
+        "2002-08-21"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2002-06-25",
+      "last": "2002-08-21"
+    }
+  },
+  "afl-3-0": {
+    "id": "afl-3-0",
+    "name": "Academic Free License v. 3.0",
+    "spdx_id": "AFL-3.0",
+    "status": "approved",
+    "submitter": "Lawrence Rosen",
+    "stats": {
+      "total_messages": 6,
+      "duration_days": 57,
+      "date_range": [
+        "2002-06-25",
+        "2002-08-21"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 6,
+      "first": "2002-06-25",
+      "last": "2002-08-21"
+    }
+  },
+  "aal": {
+    "id": "aal",
+    "name": "Attribution Assurance License",
+    "spdx_id": "AAL",
+    "status": "approved",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 2,
+      "duration_days": 0,
+      "date_range": [
+        "2002-05-13",
+        "2002-05-13"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 2,
+      "first": "2002-05-13",
+      "last": "2002-05-13"
+    }
+  },
+  "ncsa": {
+    "id": "ncsa",
+    "name": "The University of Illinois/NCSA Open Source License",
+    "spdx_id": "NCSA",
+    "status": "approved",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 7,
+      "duration_days": 5,
+      "date_range": [
+        "2002-01-17",
+        "2002-01-22"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 7,
+      "first": "2002-01-17",
+      "last": "2002-01-22"
+    }
+  },
+  "xnet": {
+    "id": "xnet",
+    "name": "The X.Net, Inc. License",
+    "spdx_id": "Xnet",
+    "status": "approved",
+    "submitter": "Carl W. Brown - Russell Nelson",
+    "stats": {
+      "total_messages": 8,
+      "duration_days": 4,
+      "date_range": [
+        "2001-08-05",
+        "2001-08-09"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 8,
+      "first": "2001-08-05",
+      "last": "2001-08-09"
+    }
+  },
+  "motosoto": {
+    "id": "motosoto",
+    "name": "Motosoto Open Source License",
+    "spdx_id": "Motosoto",
+    "status": "approved",
+    "submitter": "Leon Gommans",
+    "stats": {
+      "total_messages": 1,
+      "duration_days": 0,
+      "date_range": [
+        "2001-05-23",
+        "2001-05-23"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 1,
+      "first": "2001-05-23",
+      "last": "2001-05-23"
+    }
+  },
+  "zpl-2.0": {
+    "id": "zpl-2-0",
+    "name": "Zope Public License 2.0",
+    "spdx_id": "ZPL-2.0",
+    "status": "approved",
+    "submitter": "Gregor Hoffleit",
+    "stats": {
+      "total_messages": 4,
+      "duration_days": 283,
+      "date_range": [
+        "2001-02-15",
+        "2001-11-25"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 4,
+      "first": "2001-02-15",
+      "last": "2001-11-25"
+    }
+  },
+  "zpl-2-0": {
+    "id": "zpl-2-0",
+    "name": "Zope Public License 2.0",
+    "spdx_id": "ZPL-2.0",
+    "status": "approved",
+    "submitter": "Gregor Hoffleit",
+    "stats": {
+      "total_messages": 4,
+      "duration_days": 283,
+      "date_range": [
+        "2001-02-15",
+        "2001-11-25"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 4,
+      "first": "2001-02-15",
+      "last": "2001-11-25"
+    }
+  },
+  "cpl-1.0": {
+    "id": "cpl-1-0",
+    "name": "Common Public License Version 1.0",
+    "spdx_id": "CPL-1.0",
+    "status": "approved",
+    "submitter": "Dan Streetman, Steve Gerdt",
+    "stats": {
+      "total_messages": 4,
+      "duration_days": 2,
+      "date_range": [
+        "2001-01-23",
+        "2001-01-25"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 4,
+      "first": "2001-01-23",
+      "last": "2001-01-25"
+    }
+  },
+  "cpl-1-0": {
+    "id": "cpl-1-0",
+    "name": "Common Public License Version 1.0",
+    "spdx_id": "CPL-1.0",
+    "status": "approved",
+    "submitter": "Dan Streetman, Steve Gerdt",
+    "stats": {
+      "total_messages": 4,
+      "duration_days": 2,
+      "date_range": [
+        "2001-01-23",
+        "2001-01-25"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "timeline_meta": {
+      "count": 4,
+      "first": "2001-01-23",
+      "last": "2001-01-25"
+    }
+  },
+  "lgpl-2.0": {
+    "id": "lgpl-2-0",
+    "name": "GNU Library General Public License version 2",
+    "spdx_id": "LGPL-2.0",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "lgpl-2-0": {
+    "id": "lgpl-2-0",
+    "name": "GNU Library General Public License version 2",
+    "spdx_id": "LGPL-2.0",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "artistic-1.0-perl": {
+    "id": "artistic-1-0-perl",
+    "name": "Artistic License (Perl) 1.0",
+    "spdx_id": "Artistic-1.0-Perl",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "artistic-1-0-perl": {
+    "id": "artistic-1-0-perl",
+    "name": "Artistic License (Perl) 1.0",
+    "spdx_id": "Artistic-1.0-Perl",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "gpl-1.0": {
+    "id": "gpl-1-0",
+    "name": "GNU General Public License, version 1",
+    "spdx_id": "GPL-1.0",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "gpl-1-0": {
+    "id": "gpl-1-0",
+    "name": "GNU General Public License, version 1",
+    "spdx_id": "GPL-1.0",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "vsl-1.0": {
+    "id": "vsl-1-0",
+    "name": "The Vovida Software License v. 1.0",
+    "spdx_id": "VSL-1.0",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "vsl-1-0": {
+    "id": "vsl-1-0",
+    "name": "The Vovida Software License v. 1.0",
+    "spdx_id": "VSL-1.0",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "watcom-1.0": {
+    "id": "watcom-1-0",
+    "name": "The Sybase Open Source Licence",
+    "spdx_id": "Watcom-1.0",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "watcom-1-0": {
+    "id": "watcom-1-0",
+    "name": "The Sybase Open Source Licence",
+    "spdx_id": "Watcom-1.0",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "rscpl": {
+    "id": "rscpl",
+    "name": "The Ricoh Source Code Public License",
+    "spdx_id": "RSCPL",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "rpsl-1.0": {
+    "id": "rpsl-1-0",
+    "name": "RealNetworks Public Source License Version 1.0",
+    "spdx_id": "RPSL-1.0",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "rpsl-1-0": {
+    "id": "rpsl-1-0",
+    "name": "RealNetworks Public Source License Version 1.0",
+    "spdx_id": "RPSL-1.0",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "ogtsl": {
+    "id": "ogtsl",
+    "name": "Open Group Test Suite License",
+    "spdx_id": "OGTSL",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "nokia": {
+    "id": "nokia",
+    "name": "Nokia Open Source License Version 1.0a",
+    "spdx_id": "NOKIA",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "ngpl": {
+    "id": "ngpl",
+    "name": "The Nethack General Public License",
+    "spdx_id": "NGPL",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "naumen": {
+    "id": "naumen",
+    "name": "NAUMEN Public License",
+    "spdx_id": "Naumen",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "mpl-1.0": {
+    "id": "mpl-1-0",
+    "name": "Mozilla Public License, version 1.0",
+    "spdx_id": "MPL-1.0",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "mpl-1-0": {
+    "id": "mpl-1-0",
+    "name": "Mozilla Public License, version 1.0",
+    "spdx_id": "MPL-1.0",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "cvw": {
+    "id": "cvw",
+    "name": "MITRE Collaborative Virtual Workspace License",
+    "spdx_id": "",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "jabberpl": {
+    "id": "jabberpl",
+    "name": "Jabber Open Source License",
+    "spdx_id": "",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "lgpl-2.1": {
+    "id": "lgpl-2-1",
+    "name": "GNU Lesser General Public License version 2.1",
+    "spdx_id": "LGPL-2.1",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "lgpl-2-1": {
+    "id": "lgpl-2-1",
+    "name": "GNU Lesser General Public License version 2.1",
+    "spdx_id": "LGPL-2.1",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "efl-1.0": {
+    "id": "efl-1-0",
+    "name": "Eiffel Forum License, version 1",
+    "spdx_id": "EFL-1.0",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "efl-1-0": {
+    "id": "efl-1-0",
+    "name": "Eiffel Forum License, version 1",
+    "spdx_id": "EFL-1.0",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "ecl-1.0": {
+    "id": "ecl-1-0",
+    "name": "Educational Community License, Version 1.0",
+    "spdx_id": "ECL-1.0",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": true,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "ecl-1-0": {
+    "id": "ecl-1-0",
+    "name": "Educational Community License, Version 1.0",
+    "spdx_id": "ECL-1.0",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": true,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "catosl-1.1": {
+    "id": "catosl-1-1",
+    "name": "Computer Associates Trusted Open Source License 1.1",
+    "spdx_id": "CATOSL-1.1",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "catosl-1-1": {
+    "id": "catosl-1-1",
+    "name": "Computer Associates Trusted Open Source License 1.1",
+    "spdx_id": "CATOSL-1.1",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "bsd-2-clause": {
+    "id": "bsd-2-clause",
+    "name": "The 2-Clause BSD License",
+    "spdx_id": "BSD-2-Clause",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "apache-1.1": {
+    "id": "apache-1-1",
+    "name": "Apache Software License, version 1.1",
+    "spdx_id": "Apache-1.1",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  },
+  "apache-1-1": {
+    "id": "apache-1-1",
+    "name": "Apache Software License, version 1.1",
+    "spdx_id": "Apache-1.1",
+    "status": "legacy",
+    "submitter": "Unknown",
+    "stats": {
+      "total_messages": 0,
+      "duration_days": 0,
+      "date_range": []
+    },
+    "has_vote": false,
+    "has_timeline": false,
+    "timeline_meta": {
+      "count": 0,
+      "first": null,
+      "last": null
+    }
+  }
+}

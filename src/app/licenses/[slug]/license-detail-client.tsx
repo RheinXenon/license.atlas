@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Badge } from "@/components/badge";
 import { LicenseBodySection } from "@/components/license-body-section";
+import { LicenseReviewBlock } from "@/components/license-review-block";
 import { useLang } from "@/lib/i18n";
 import type { License } from "@/lib/types";
 
@@ -163,6 +164,9 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
           </div>
         </div>
       )}
+
+      {/* OSI License Review (only for licenses reviewed by OSI) */}
+      <LicenseReviewBlock spdxId={license.spdx_id} />
 
       {/* License Text */}
       {license.body && (

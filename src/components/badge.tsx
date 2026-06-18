@@ -44,6 +44,43 @@ export const themes: Record<string, BadgeTheme> = {
     tooltip: "bg-teal-50 border-teal-300 dark:bg-teal-950 dark:border-teal-700",
     glow: "shadow-[0_0_8px_rgba(20,184,166,0.3)]",
   },
+  // OSI Review Tracker statuses (review-* themeKey)
+  "review-approved": {
+    desc: "OSI board approved this license.",
+    badge: "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300",
+    tooltip: "bg-green-50 border-green-300 dark:bg-green-950 dark:border-green-700",
+    glow: "shadow-[0_0_8px_rgba(34,197,94,0.3)]",
+  },
+  "review-rejected": {
+    desc: "OSI board rejected this license.",
+    badge: "bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300",
+    tooltip: "bg-red-50 border-red-300 dark:bg-red-950 dark:border-red-700",
+    glow: "shadow-[0_0_8px_rgba(239,68,68,0.3)]",
+  },
+  "review-pending": {
+    desc: "Under review.",
+    badge: "bg-violet-100 text-violet-700 dark:bg-violet-900/40 dark:text-violet-300",
+    tooltip: "bg-violet-50 border-violet-300 dark:bg-violet-950 dark:border-violet-700",
+    glow: "shadow-[0_0_8px_rgba(139,92,246,0.3)]",
+  },
+  "review-withdrawn": {
+    desc: "Submitter withdrew this license.",
+    badge: "bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300",
+    tooltip: "bg-amber-50 border-amber-300 dark:bg-amber-950 dark:border-amber-700",
+    glow: "shadow-[0_0_8px_rgba(245,158,11,0.3)]",
+  },
+  "review-superseded": {
+    desc: "Replaced by a later version.",
+    badge: "bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-300",
+    tooltip: "bg-sky-50 border-sky-300 dark:bg-sky-950 dark:border-sky-700",
+    glow: "shadow-[0_0_8px_rgba(14,165,233,0.3)]",
+  },
+  "review-legacy": {
+    desc: "Pre-review-era license (board resolution, no public thread).",
+    badge: "bg-zinc-100 text-zinc-600 dark:bg-zinc-800/60 dark:text-zinc-300",
+    tooltip: "bg-zinc-50 border-zinc-300 dark:bg-zinc-800 dark:border-zinc-600",
+    glow: "",
+  },
   // Variants
   osi: {
     desc: "Approved by the Open Source Initiative as meeting the Open Source Definition",

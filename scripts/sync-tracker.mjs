@@ -27,14 +27,20 @@ function resolveKbPath() {
 const KB_ROOT = resolveKbPath();
 const KB_V2 = resolve(KB_ROOT, "data", "osi", "license-review-tracker-v2.json");
 
-if (!existsSync(KB_V2)) {
-  console.error(`✗ KB v2.json not found: ${KB_V2}`);
-  console.error("  Pass --kb-path <path> or set KB_PATH env.");
-  process.exit(1);
-}
-
 const ATLAS_FULL = resolve(ROOT, "public", "data", "tracker.json");
 const ATLAS_INDEX = resolve(ROOT, "src", "data", "tracker-index.json");
+
+if (!existsSync(KB_V2)) {
+  if (existsSync(ATLAS_FULL) && existsSync(ATLAS_INDEX)) {
+    const existing = JSON.parse(readFileSync(ATLAS_INDEX, "utf8"));
+    console.log(`✓ KB v2.json not found at ${KB_V2}`);
+    console.log(`  Using committed tracker data (hash ${existing?._meta?.source_hash || "unknown"}).`);
+    process.exit(0);
+  }
+  console.error(`✗ KB v2.json not found: ${KB_V2}`);
+  console.error("  Pass --kb-path <path> or set KB_PATH env, or commit public/data/tracker.json and src/data/tracker-index.json.");
+  process.exit(1);
+}
 
 // ── Compute source hash from KB v2.json ──
 const kbRaw = readFileSync(KB_V2, "utf8");

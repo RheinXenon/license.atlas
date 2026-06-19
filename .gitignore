@@ -6,3 +6,6 @@ tsconfig.tsbuildinfo
 .env*.local
 CLAUDE.md
 .claude/
+.serena/
+process_emails.py
+src/app/tracker/tracker-client 2.tsx

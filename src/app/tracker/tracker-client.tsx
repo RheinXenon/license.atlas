@@ -48,7 +48,8 @@ export function TrackerClient() {
     const scrollToCard = () => {
       const el = document.getElementById(`card-${sub.id}`);
       if (el) {
-        el.scrollIntoView({ behavior: "auto", block: "center" });
+        const top = el.getBoundingClientRect().top + window.scrollY - 70;
+        window.scrollTo({ top: Math.max(0, top), behavior: "auto" });
         el.classList.remove("tracker-flash");
         void el.offsetWidth;
         el.classList.add("tracker-flash");
@@ -66,6 +67,16 @@ export function TrackerClient() {
   const [query, setQuery] = useState("");
   const [sortBy, setSortBy] = useState("recent");
   const [activeFilter, setActiveFilter] = useState("all");
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setShowBackToTop(window.scrollY > window.innerHeight);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const STATUS_ORDER = ["all", "approved", "rejected", "pending", "withdrawn", "superseded", "legacy"];
 
@@ -132,6 +143,17 @@ export function TrackerClient() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
+      {showBackToTop && (
+        <button
+          type="button"
+          aria-label="Back to top"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="fixed bottom-5 right-5 z-40 flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200/70 bg-white/90 text-lg font-semibold text-zinc-600 shadow-lg shadow-zinc-900/10 backdrop-blur transition hover:border-[#7c3aed] hover:text-[#7c3aed] dark:border-zinc-700/70 dark:bg-zinc-900/90 dark:text-zinc-300"
+        >
+          ↑
+        </button>
+      )}
+
       <div className="mb-6">
         <h1 className="bg-gradient-to-r from-[#7c3aed] to-zinc-950 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl dark:to-zinc-50">
           {t("tracker.title")}
@@ -203,6 +225,7 @@ export function TrackerClient() {
           <TrackerCard key={s.id} s={s} expanded={expandedIds.has(s.id)} onToggleExpand={toggleExpand} />
         ))
       )}
+
     </div>
   );
 }

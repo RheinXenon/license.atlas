@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, useCallback, type ReactNode } from "react";
+import { createContext, useContext, useState, useCallback, useEffect, type ReactNode } from "react";
 
 export type Lang = "en" | "zh";
 
@@ -44,6 +44,9 @@ const dict: Record<Lang, Record<string, string>> = {
     "tracker.motion": "Motion",
     "tracker.second": "Second",
     "tracker.voteRecordOnly": "Board decision recorded by OSI API.",
+    "tracker.voteUnanimous": "Passed unanimously",
+    "tracker.voteMajority": "Passed by majority",
+    "tracker.voteExactCountsNotRecorded": "Exact counts not recorded",
     "tracker.minutes": "Board Meeting Minutes",
     "tracker.status-approved": "Approved",
     "tracker.status-rejected": "Rejected",
@@ -198,16 +201,18 @@ const dict: Record<Lang, Record<string, string>> = {
     "browse.loadMore": "Load More ({remaining} remaining)",
 
     // Footer
+    "footer.dataUpdatedAt": "Latest Data Update: {date}",
     "footer.views": "views",
     "footer.visitors": "visitors",
 
     // About
     "about.title": "About LicenseAtlas",
-    "about.intro": "LicenseAtlas is the most comprehensive collection of software, AI model, data, and agent licenses — covering {total} licenses across four categories. Our goal is to provide a single, searchable reference for every license you might encounter in modern software and AI development.",
+    "about.intro": "LicenseAtlas is the most comprehensive collection of software, AI model, data, agent, and terms licenses — covering {total} licenses across five categories. Our goal is to provide a single, searchable reference for every license you might encounter in modern software and AI development.",
     "about.stats.software": "Software",
     "about.stats.model": "AI Model",
     "about.stats.data": "Data",
     "about.stats.agent": "Agent",
+    "about.stats.terms": "Terms",
     "about.sourcesTitle": "License Text Sources",
     "about.sourcesIntro": "License data is aggregated from the following authoritative sources:",
     "about.src.spdx": "Software Package Data Exchange license list",
@@ -224,6 +229,9 @@ const dict: Record<Lang, Record<string, string>> = {
     "about.src.scancode": "1,800+ custom license texts from ScanCode LicenseDB (CC-BY-4.0). Permissive, copyleft, proprietary-free, and source-available licenses.",
     "about.src.blueoak": "Quality ratings for 225+ permissive licenses (Model/Gold/Silver/Bronze/Lead)",
     "about.src.openmdw": "Permissive open-source license for machine-learning models and related artifacts, by Linux Foundation",
+    "about.src.osiTracker": "Public OSI license-review submissions, mailing-list timelines, board decisions, and vote records",
+    "about.reviewTitle": "OSI License Review Tracker",
+    "about.reviewIntro": "The review tracker covers {total} OSI license submissions, including {approved} approved, {rejected} rejected, and {pending} pending reviews, with discussion timelines and board-vote records where available.",
     "about.popTitle": "Popularity & Trends",
     "about.popIntro": "Popularity scores and trend charts are generated from real-world usage data across three major platforms:",
     "about.pop.hf": "2.8M+ models and 927K+ datasets",
@@ -287,6 +295,9 @@ const dict: Record<Lang, Record<string, string>> = {
     "tracker.motion": "动议人",
     "tracker.second": "附议人",
     "tracker.voteRecordOnly": "OSI API 记录的董事会决议。",
+    "tracker.voteUnanimous": "一致通过",
+    "tracker.voteMajority": "多数通过",
+    "tracker.voteExactCountsNotRecorded": "未记录具体票数",
     "tracker.minutes": "董事会会议纪要",
     "tracker.status-approved": "已批准",
     "tracker.status-rejected": "已否决",
@@ -445,16 +456,18 @@ const dict: Record<Lang, Record<string, string>> = {
     "browse.loadMore": "加载更多（剩余 {remaining} 个）",
 
     // Footer
+    "footer.dataUpdatedAt": "最新数据更新时间：{date}",
     "footer.views": "次浏览",
     "footer.visitors": "位访客",
 
     // About
     "about.title": "关于许可图鉴（LicenseAtlas）",
-    "about.intro": "许可图鉴（LicenseAtlas）是最全面的软件、AI 模型、数据和智能体许可证集合——涵盖 {total} 个许可证，分为四大类别。我们的目标是为现代软件和 AI 开发中可能遇到的每一个许可证提供统一的可搜索参考。",
+    "about.intro": "许可图鉴（LicenseAtlas）是最全面的软件、AI 模型、数据、智能体和服务条款许可证集合——涵盖 {total} 个许可证，分为五大类别。我们的目标是为现代软件和 AI 开发中可能遇到的每一个许可证提供统一的可搜索参考。",
     "about.stats.software": "软件",
     "about.stats.model": "AI 模型",
     "about.stats.data": "数据",
     "about.stats.agent": "智能体",
+    "about.stats.terms": "服务条款",
     "about.sourcesTitle": "许可证原文来源",
     "about.sourcesIntro": "许可证数据聚合自以下权威来源：",
     "about.src.spdx": "Software Package Data Exchange 许可证列表",
@@ -471,6 +484,9 @@ const dict: Record<Lang, Record<string, string>> = {
     "about.src.scancode": "来自 ScanCode LicenseDB 的 1800+ 自定义许可证全文 (CC-BY-4.0)。包括宽松、Copyleft、专有免费和源码可用许可证。",
     "about.src.blueoak": "225+ 宽松许可证的质量评级（Model/Gold/Silver/Bronze/Lead）",
     "about.src.openmdw": "由 Linux Foundation 发布的 AI 模型及关联制品宽松开源许可证",
+    "about.src.osiTracker": "公开的 OSI 许可证审查提交、邮件列表时间线、董事会决议与投票记录",
+    "about.reviewTitle": "OSI 许可证审查追踪器",
+    "about.reviewIntro": "审查追踪器覆盖 {total} 个 OSI 许可证提交，包括 {approved} 个已批准、{rejected} 个已否决、{pending} 个待定审查，并在可用时提供讨论时间线与董事会投票记录。",
     "about.popTitle": "热度与趋势",
     "about.popIntro": "热度评分和趋势图表基于以下三大平台的真实使用数据生成：",
     "about.pop.hf": "280 万+ 模型和 92.7 万+ 数据集",
@@ -513,7 +529,14 @@ function detectLang(): Lang {
 }
 
 export function LangProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>(detectLang);
+  // Keep the server render and the first client render identical. Reading
+  // localStorage/navigator during the initial client render can switch text
+  // from "Home" to "首页" before hydration completes.
+  const [lang, setLangState] = useState<Lang>("en");
+
+  useEffect(() => {
+    setLangState(detectLang());
+  }, []);
 
   const setLang = useCallback((l: Lang) => {
     setLangState(l);

@@ -16,20 +16,21 @@
       "rejected_withdrawn": 50,
       "license_text_files": 216,
       "minutes_files": 221,
-      "vote_blocks_extracted": 282
+      "vote_blocks_extracted": 574
     },
-    "enriched_at": "2026-06-18T14:41:50.128Z",
+    "enriched_at": "2026-06-19T17:35:53.312Z",
     "coverage": {
-      "submissions_with_license_text": 61,
-      "submissions_with_board_vote": 62,
+      "submissions_with_license_text": 60,
+      "submissions_with_board_vote": 77,
       "board_vote_by_source": {
-        "minutes": 16,
+        "minutes": 50,
         "timeline": 3,
-        "osi_api": 43
+        "osi_api": 24
       },
       "outcome_backfill": {
-        "from_tally": 2,
-        "from_osi_approved_list": 1
+        "from_tally": 26,
+        "from_osi_approved_list": 0,
+        "conflicts_corrected_by_osi_approved_list": 1
       },
       "status_corrected_by_osi_list": 0
     }
@@ -6650,7 +6651,7 @@
       "board_vote": {
         "date": "2020-01-18",
         "motion_by": "Pam",
-        "motion_text": "The Board of the Open Source Initiative withholds approval of the Vaccine License as an Open Source Initiative Approved Open Source license.",
+        "motion_text": "The Board of the Open Source Initiative withholds approval of the Vaccine License as an Open Source Initiative Approved Open Source license",
         "second_by": "Deb",
         "discussion": "Review of the License Review committee’s decision making and decision.",
         "vote": {
@@ -7904,7 +7905,22 @@
           "point": "C-FSL-type licenses are designed to allow companies to perform bait-and-switch tactics on users, and labeling such practices as 'open source' is nothing new."
         }
       ],
-      "board_vote": null,
+      "board_vote": {
+        "date": "2019-03-13",
+        "motion_by": "Richard",
+        "motion_text": "Convertible Free Software License version 1.4 – Richard recommends Board reject — Reject the Convertible Free Software License version 1.4",
+        "second_by": "Patrick",
+        "discussion": "Convertible Free Software License version 1.4 – Richard recommends Board reject",
+        "vote": {
+          "yes": 8,
+          "no": 0,
+          "abstain": 0
+        },
+        "outcome": "rejected",
+        "source": "minutes",
+        "minutes_file": "2019-03-13-march-14-2019.md",
+        "minutes_url": "https://opensource.org/minutes20190314/"
+      },
       "rejection_reason": "Resubmitted version; still not approved. Same fundamental issues as v1.1 despite revisions.",
       "osi_api_data": null,
       "stats": {
@@ -9451,7 +9467,22 @@
           "point": "Considers original authors retaining re-licensing rights a major obstacle to approval; if not made reciprocal, it constitutes a discriminatory provision, and suggests extending that right to fork project authors."
         }
       ],
-      "board_vote": null,
+      "board_vote": {
+        "date": "2019-03-13",
+        "motion_by": "Richard",
+        "motion_text": "Convertible Free Software License version 1.4 – Richard recommends Board reject — Reject the Convertible Free Software License version 1.4",
+        "second_by": "Patrick",
+        "discussion": "Convertible Free Software License version 1.4 – Richard recommends Board reject",
+        "vote": {
+          "yes": 8,
+          "no": 0,
+          "abstain": 0
+        },
+        "outcome": "rejected",
+        "source": "minutes",
+        "minutes_file": "2019-03-13-march-14-2019.md",
+        "minutes_url": "https://opensource.org/minutes20190314/"
+      },
       "rejection_reason": "License Committee recommended rejection (Dec 2018). Board withheld approval pending redrafting. Key concerns: the license restricted relicensing rights to 'original authors', which could violate OSD #5 and #7.",
       "osi_api_data": null,
       "stats": {
@@ -36152,7 +36183,7 @@
       "board_vote": {
         "date": "2019-08-15",
         "motion_by": "Pam",
-        "motion_text": "The Board of the Open Source Initiative withholds its approval of the Cryptographic Autonomy License Version 1.0 as an Open Source Initiative Certified license.",
+        "motion_text": "The Board of the Open Source Initiative withholds its approval of the Cryptographic Autonomy License Version 1.0 as an Open Source Initiative Certified license",
         "second_by": "Elana",
         "discussion": "None.",
         "vote": {
@@ -36582,10 +36613,14 @@
       "board_vote": {
         "date": "2025-07-18",
         "motion_by": "",
-        "motion_text": "Josh moves to approve the BSD-3-Clause-Open-MPI license as a regular license.",
+        "motion_text": "Josh moves to approve the BSD-3-Clause-Open-MPI license as a regular license",
         "second_by": "",
         "discussion": "",
-        "vote": null,
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": 1
+        },
         "outcome": "approved",
         "source": "minutes",
         "minutes_file": "2025-07-18-2025-07-18.md",
@@ -36741,7 +36776,22 @@
           "point": "Josh Berkus announces that the BSD-3-Clause-Open-MPI License has been approved by the OSI board and will be added to the website."
         }
       ],
-      "board_vote": null,
+      "board_vote": {
+        "date": "2025-07-18",
+        "motion_by": "",
+        "motion_text": "Josh moves to approve the BSD-3-Clause-Open-MPI license as a regular license",
+        "second_by": "",
+        "discussion": "",
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": 1
+        },
+        "outcome": "approved",
+        "source": "minutes",
+        "minutes_file": "2025-07-18-2025-07-18.md",
+        "minutes_url": "https://opensource.org/meeting-minutes/2025-07-18"
+      },
       "rejection_reason": "",
       "osi_api_data": {
         "submission_date": "",
@@ -36862,15 +36912,19 @@
         }
       ],
       "board_vote": {
-        "date": "20250718",
+        "date": "2025-07-18",
         "motion_by": "",
-        "motion_text": "",
+        "motion_text": "Josh moves to approve the CDDL1.1 license in the legacy category",
         "second_by": "",
         "discussion": "",
-        "vote": null,
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": 0
+        },
         "outcome": "approved",
-        "source": "osi_api",
-        "minutes_file": "https://opensource.org/meeting-minutes/2025-07-18",
+        "source": "minutes",
+        "minutes_file": "2025-07-18-2025-07-18.md",
         "minutes_url": "https://opensource.org/meeting-minutes/2025-07-18"
       },
       "rejection_reason": "",
@@ -36981,10 +37035,14 @@
       "board_vote": {
         "date": "2025-07-18",
         "motion_by": "",
-        "motion_text": "Josh moves to approve the WordNet license in the legacy category.",
+        "motion_text": "Josh moves to approve the WordNet license in the legacy category",
         "second_by": "",
         "discussion": "",
-        "vote": null,
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": 0
+        },
         "outcome": "approved",
         "source": "minutes",
         "minutes_file": "2025-07-18-2025-07-18.md",
@@ -37144,15 +37202,19 @@
         }
       ],
       "board_vote": {
-        "date": "20250321",
+        "date": "2025-03-21",
         "motion_by": "",
-        "motion_text": "",
+        "motion_text": "Pam moves that the OSI approve the OSC License version 1 as an Open Source Initiative Certified license in the International category of licenses",
         "second_by": "",
         "discussion": "",
-        "vote": null,
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": 0
+        },
         "outcome": "approved",
-        "source": "osi_api",
-        "minutes_file": "https://opensource.org/meeting-minutes/2025-03-21",
+        "source": "minutes",
+        "minutes_file": "2025-03-21-2025-03-21.md",
         "minutes_url": "https://opensource.org/meeting-minutes/2025-03-21"
       },
       "rejection_reason": "",
@@ -37340,10 +37402,14 @@
       "board_vote": {
         "date": "2024-09-20",
         "motion_by": "Pam Chestek",
-        "motion_text": "That the Los Alamos National Labs BSD-3 Variant License be approved as an Open Source Initiative Certified license in the Non-Reusable category of licenses.",
+        "motion_text": "That the Los Alamos National Labs BSD-3 Variant License be approved as an Open Source Initiative Certified license in the Non-Reusable category of licenses",
         "second_by": "Anne-Marie Scott",
         "discussion": "",
-        "vote": null,
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": 0
+        },
         "outcome": "approved",
         "source": "minutes",
         "minutes_file": "2024-09-20-2024-09-20.md",
@@ -37503,10 +37569,14 @@
       "board_vote": {
         "date": "2024-09-20",
         "motion_by": "Pam Chestek",
-        "motion_text": "That the MIT-CMU License be approved as an Open Source Initiative Certified license in the Redundant with More Popular category of licenses.",
+        "motion_text": "That the MIT-CMU License be approved as an Open Source Initiative Certified license in the Redundant with More Popular category of licenses",
         "second_by": "Josh Berkus",
         "discussion": "",
-        "vote": null,
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": 0
+        },
         "outcome": "approved",
         "source": "minutes",
         "minutes_file": "2024-09-20-2024-09-20.md",
@@ -38056,8 +38126,8 @@
         "vote": null,
         "outcome": "approved",
         "source": "osi_api",
-        "minutes_file": "https://wiki.opensource.org/bin/Main/OSI%20Board%20of%20Directors/Board%20minutes/2023/2023-03-17%20Minutes/",
-        "minutes_url": "https://wiki.opensource.org/bin/Main/OSI%20Board%20of%20Directors/Board%20minutes/2023/2023-03-17%20Minutes/"
+        "minutes_file": "https://opensource.org/meeting-minutes/2023-03-17",
+        "minutes_url": "https://opensource.org/meeting-minutes/2023-03-17"
       },
       "rejection_reason": "",
       "osi_api_data": {
@@ -38065,7 +38135,7 @@
         "submitter_name": "Andreas Nettsträter",
         "approval_date": "20230317",
         "submission_url": "https://lists.opensource.org/pipermail/license-review_lists.opensource.org/2023-January/005333.html",
-        "board_minutes": "https://wiki.opensource.org/bin/Main/OSI%20Board%20of%20Directors/Board%20minutes/2023/2023-03-17%20Minutes/"
+        "board_minutes": "https://opensource.org/meeting-minutes/2023-03-17"
       },
       "stats": {
         "total_messages": 7,
@@ -38222,8 +38292,8 @@
         "vote": null,
         "outcome": "approved",
         "source": "osi_api",
-        "minutes_file": "https://wiki.opensource.org/bin/Main/OSI%20Board%20of%20Directors/Board%20minutes/2021/2021-09-17/",
-        "minutes_url": "https://wiki.opensource.org/bin/Main/OSI%20Board%20of%20Directors/Board%20minutes/2021/2021-09-17/"
+        "minutes_file": "https://opensource.org/meeting-minutes/2021-09-17",
+        "minutes_url": "https://opensource.org/meeting-minutes/2021-09-17"
       },
       "rejection_reason": "",
       "osi_api_data": {
@@ -38231,7 +38301,7 @@
         "submitter_name": "Jack Hill",
         "approval_date": "20210917",
         "submission_url": "https://lists.opensource.org/pipermail/license-review_lists.opensource.org/2021-April/005139.html",
-        "board_minutes": "https://wiki.opensource.org/bin/Main/OSI%20Board%20of%20Directors/Board%20minutes/2021/2021-09-17/"
+        "board_minutes": "https://opensource.org/meeting-minutes/2021-09-17"
       },
       "stats": {
         "total_messages": 7,
@@ -38418,7 +38488,7 @@
         "submitter_name": "Jens Vagelpohl",
         "approval_date": "20210625",
         "submission_url": "https://lists.opensource.org/pipermail/license-review_lists.opensource.org/2021-April/005124.html",
-        "board_minutes": "https://wiki.opensource.org/bin/Main/OSI%20Board%20of%20Directors/Board%20minutes/2021/2021-06-25/"
+        "board_minutes": "https://opensource.org/meeting-minutes/2021-06-25"
       },
       "stats": {
         "total_messages": 7,
@@ -38595,8 +38665,8 @@
         "vote": null,
         "outcome": "approved",
         "source": "osi_api",
-        "minutes_file": "https://wiki.opensource.org/bin/Main/OSI%20Board%20of%20Directors/Board%20minutes/2021/2021-01-15/",
-        "minutes_url": "https://wiki.opensource.org/bin/Main/OSI%20Board%20of%20Directors/Board%20minutes/2021/2021-01-15/"
+        "minutes_file": "https://opensource.org/meeting-minutes/2021-01-15",
+        "minutes_url": "https://opensource.org/meeting-minutes/2021-01-15"
       },
       "rejection_reason": "",
       "osi_api_data": {
@@ -38604,7 +38674,7 @@
         "submitter_name": "Andrew Katz",
         "approval_date": "20210115",
         "submission_url": "https://lists.opensource.org/pipermail/license-review_lists.opensource.org/2020-June/004892.html",
-        "board_minutes": "https://wiki.opensource.org/bin/Main/OSI%20Board%20of%20Directors/Board%20minutes/2021/2021-01-15/"
+        "board_minutes": "https://opensource.org/meeting-minutes/2021-01-15"
       },
       "stats": {
         "total_messages": 6,
@@ -38781,8 +38851,8 @@
         "vote": null,
         "outcome": "approved",
         "source": "osi_api",
-        "minutes_file": "https://wiki.opensource.org/bin/Main/OSI%20Board%20of%20Directors/Board%20minutes/2021/2021-01-15/",
-        "minutes_url": "https://wiki.opensource.org/bin/Main/OSI%20Board%20of%20Directors/Board%20minutes/2021/2021-01-15/"
+        "minutes_file": "https://opensource.org/meeting-minutes/2021-01-15",
+        "minutes_url": "https://opensource.org/meeting-minutes/2021-01-15"
       },
       "rejection_reason": "",
       "osi_api_data": {
@@ -38790,7 +38860,7 @@
         "submitter_name": "Andrew Katz",
         "approval_date": "20210115",
         "submission_url": "https://lists.opensource.org/pipermail/license-review_lists.opensource.org/2020-June/004892.html",
-        "board_minutes": "https://wiki.opensource.org/bin/Main/OSI%20Board%20of%20Directors/Board%20minutes/2021/2021-01-15/"
+        "board_minutes": "https://opensource.org/meeting-minutes/2021-01-15"
       },
       "stats": {
         "total_messages": 6,
@@ -38967,8 +39037,8 @@
         "vote": null,
         "outcome": "approved",
         "source": "osi_api",
-        "minutes_file": "https://wiki.opensource.org/bin/Main/OSI%20Board%20of%20Directors/Board%20minutes/2021/2021-01-15/",
-        "minutes_url": "https://wiki.opensource.org/bin/Main/OSI%20Board%20of%20Directors/Board%20minutes/2021/2021-01-15/"
+        "minutes_file": "https://opensource.org/meeting-minutes/2021-01-15",
+        "minutes_url": "https://opensource.org/meeting-minutes/2021-01-15"
       },
       "rejection_reason": "",
       "osi_api_data": {
@@ -38976,7 +39046,7 @@
         "submitter_name": "Andrew Katz",
         "approval_date": "20210115",
         "submission_url": "https://lists.opensource.org/pipermail/license-review_lists.opensource.org/2020-June/004892.html",
-        "board_minutes": "https://wiki.opensource.org/bin/Main/OSI%20Board%20of%20Directors/Board%20minutes/2021/2021-01-15/"
+        "board_minutes": "https://opensource.org/meeting-minutes/2021-01-15"
       },
       "stats": {
         "total_messages": 6,
@@ -39113,7 +39183,7 @@
         "submitter_name": "Tobie Langel, URL N/A",
         "approval_date": "20200814",
         "submission_url": "https://lists.opensource.org/pipermail/license-review_lists.opensource.org/2020-May/004856.html",
-        "board_minutes": "https://wiki.opensource.org/bin/Main/OSI%20Board%20of%20Directors/Board%20minutes/2020/2020-08-14/"
+        "board_minutes": "https://opensource.org/meeting-minutes/2020-08-14"
       },
       "stats": {
         "total_messages": 5,
@@ -39271,8 +39341,8 @@
         "vote": null,
         "outcome": "approved",
         "source": "osi_api",
-        "minutes_file": "https://wiki.opensource.org/bin/Main/OSI%20Board%20of%20Directors/Board%20minutes/2020/2020-06-12",
-        "minutes_url": "https://wiki.opensource.org/bin/Main/OSI%20Board%20of%20Directors/Board%20minutes/2020/2020-06-12"
+        "minutes_file": "https://opensource.org/meeting-minutes/2020-06-12",
+        "minutes_url": "https://opensource.org/meeting-minutes/2020-06-12"
       },
       "rejection_reason": "",
       "osi_api_data": {
@@ -39280,7 +39350,7 @@
         "submitter_name": "Steffen Jaeckel",
         "approval_date": "20200612",
         "submission_url": "https://lists.opensource.org/pipermail/license-review_lists.opensource.org/2020-March/004795.html",
-        "board_minutes": "https://wiki.opensource.org/bin/Main/OSI%20Board%20of%20Directors/Board%20minutes/2020/2020-06-12"
+        "board_minutes": "https://opensource.org/meeting-minutes/2020-06-12"
       },
       "stats": {
         "total_messages": 7,
@@ -39454,8 +39524,8 @@
         "vote": null,
         "outcome": "approved",
         "source": "osi_api",
-        "minutes_file": "https://wiki.opensource.org/bin/Main/OSI%20Board%20of%20Directors/Board%20minutes/2020/2020-05-11",
-        "minutes_url": "https://wiki.opensource.org/bin/Main/OSI%20Board%20of%20Directors/Board%20minutes/2020/2020-05-11"
+        "minutes_file": "https://opensource.org/meeting-minutes/2020-05-11",
+        "minutes_url": "https://opensource.org/meeting-minutes/2020-05-11"
       },
       "rejection_reason": "",
       "osi_api_data": {
@@ -39463,7 +39533,7 @@
         "submitter_name": "Ben Ramsey",
         "approval_date": "20200511",
         "submission_url": "https://lists.opensource.org/pipermail/license-review_lists.opensource.org/2020-March/004716.html",
-        "board_minutes": "https://wiki.opensource.org/bin/Main/OSI%20Board%20of%20Directors/Board%20minutes/2020/2020-05-11"
+        "board_minutes": "https://opensource.org/meeting-minutes/2020-05-11"
       },
       "stats": {
         "total_messages": 7,
@@ -39649,10 +39719,14 @@
       "board_vote": {
         "date": "2020-03-12",
         "motion_by": "Pam",
-        "motion_text": "BSD-1-Clause: Resolved that it is the opinion of the OSI that the BSD 1 Clause License be approved as an Open Source Initiative Approved license in the “Other/Miscellaneous” category of licenses.",
+        "motion_text": "BSD-1-Clause: Resolved that it is the opinion of the OSI that the BSD 1 Clause License be approved as an Open Source Initiative Approved license in the “Other/Miscellaneous” category of licenses",
         "second_by": "Chris",
         "discussion": "Review of License Review discussions and recommendation from the License Committee.",
-        "vote": null,
+        "vote": {
+          "yes": 10,
+          "no": 0,
+          "abstain": 0
+        },
         "outcome": "approved",
         "source": "minutes",
         "minutes_file": "2020-03-12-march-13-2020.md",
@@ -39866,7 +39940,7 @@
       "board_vote": {
         "date": "2020-02-13",
         "motion_by": "Pam",
-        "motion_text": "CAL beta 4: Resolved that it is the opinion of the OSI that the Cryptographic Autonomy License Beta 4 be approved for the Uncategorized Licenses category.",
+        "motion_text": "CAL beta 4: Resolved that it is the opinion of the OSI that the Cryptographic Autonomy License Beta 4 be approved for the Uncategorized Licenses category",
         "second_by": "Elana",
         "discussion": "The Board discussed the additional emails sent after the License Committee made its recommendation to the Board and found that they did not raise issues not previously considered.",
         "vote": {
@@ -40095,7 +40169,7 @@
       "board_vote": {
         "date": "2020-02-13",
         "motion_by": "Pam",
-        "motion_text": "Mulan PSL License v2: Resolved that it is the opinion of the OSI that the Mulan PSL License v2 be approved as an Open Source Initiative Approved License in the International category of licenses.",
+        "motion_text": "Mulan PSL License v2: Resolved that it is the opinion of the OSI that the Mulan PSL License v2 be approved as an Open Source Initiative Approved License in the International category of licenses",
         "second_by": "Chris",
         "discussion": "License in Chinese — Chinese language controls should there be differences",
         "vote": {
@@ -40272,10 +40346,14 @@
       "board_vote": {
         "date": "2019-09-19",
         "motion_by": "Pam",
-        "motion_text": "That the Board of the Open Source Initiative approve The OpenLDAP Public License Version 2.8, 17 August 2003 as an Open Source Initiative Certified license in the “legacy” category of licenses.",
+        "motion_text": "That the Board of the Open Source Initiative approve The OpenLDAP Public License Version 2.8, 17 August 2003 as an Open Source Initiative Certified license in the “legacy” category of licenses",
         "second_by": "Elana",
         "discussion": "Thanks the license committee and committee chair",
-        "vote": null,
+        "vote": {
+          "yes": 7,
+          "no": 0,
+          "abstain": 0
+        },
         "outcome": "approved",
         "source": "minutes",
         "minutes_file": "2019-09-19-september-20-2019.md",
@@ -40460,10 +40538,15 @@
       "board_vote": {
         "date": "2019-06-13",
         "motion_by": "Pam",
-        "motion_text": "Resolved that the LBNL BSD be approved as an Open Source Initiative Certified license in the “legacy” category of licenses.",
+        "motion_text": "Resolved that the LBNL BSD be approved as an Open Source Initiative Certified license in the “legacy” category of licenses",
         "second_by": "Chris",
         "discussion": "",
-        "vote": null,
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": -1,
+          "unanimous": true
+        },
         "outcome": "approved",
         "source": "minutes",
         "minutes_file": "2019-06-13-june-14-2019.md",
@@ -41173,16 +41256,20 @@
         }
       ],
       "board_vote": {
-        "date": "20170810",
-        "motion_by": "",
-        "motion_text": "",
-        "second_by": "",
-        "discussion": "",
-        "vote": null,
+        "date": "2017-08-09",
+        "motion_by": "Richard",
+        "motion_text": "Approve Eclipse Public License 2.0",
+        "second_by": "Simon",
+        "discussion": "Review by the Board and Licensing Team Lead with time for comment on the OSI lists.",
+        "vote": {
+          "yes": 7,
+          "no": 0,
+          "abstain": 1
+        },
         "outcome": "approved",
-        "source": "osi_api",
-        "minutes_file": "https://opensource.org/meeting-minutes/minutes20170810/",
-        "minutes_url": "https://opensource.org/meeting-minutes/minutes20170810/"
+        "source": "minutes",
+        "minutes_file": "2017-08-09-thursday-august-10-2017.md",
+        "minutes_url": "https://opensource.org/minutes20170810/"
       },
       "rejection_reason": "",
       "osi_api_data": {
@@ -41354,7 +41441,22 @@
           "point": "Announces that OSI has approved EPL 2.0 and that it will replace EPL 1.0 on the \"popular, widely used or strong communities\" list, mirroring the MPL 1.1/2.0 treatment."
         }
       ],
-      "board_vote": null,
+      "board_vote": {
+        "date": "2017-08-09",
+        "motion_by": "Richard",
+        "motion_text": "Approve Eclipse Public License 2.0",
+        "second_by": "Simon",
+        "discussion": "Review by the Board and Licensing Team Lead with time for comment on the OSI lists.",
+        "vote": {
+          "yes": 7,
+          "no": 0,
+          "abstain": 1
+        },
+        "outcome": "approved",
+        "source": "minutes",
+        "minutes_file": "2017-08-09-thursday-august-10-2017.md",
+        "minutes_url": "https://opensource.org/minutes20170810/"
+      },
       "rejection_reason": "",
       "osi_api_data": {
         "submission_date": "",
@@ -41502,11 +41604,15 @@
       ],
       "board_vote": {
         "date": "2017-07-12",
-        "motion_by": "",
-        "motion_text": "Motion to approve European Union Public License (EUPL) v1.2",
-        "second_by": "",
+        "motion_by": "Richard",
+        "motion_text": "Approve the European Union Public License (EUPL) v1.2",
+        "second_by": "Simon",
         "discussion": "",
-        "vote": null,
+        "vote": {
+          "yes": 8,
+          "no": 0,
+          "abstain": 0
+        },
         "outcome": "approved",
         "source": "minutes",
         "minutes_file": "2017-07-12-thursday-july-13-2017.md",
@@ -42785,16 +42891,20 @@
         }
       ],
       "board_vote": {
-        "date": "20150909",
-        "motion_by": "",
-        "motion_text": "",
-        "second_by": "",
-        "discussion": "",
-        "vote": null,
+        "date": "2015-09-08",
+        "motion_by": "Richard",
+        "motion_text": "Motion to approve the eCos license in the “legacy approval” category",
+        "second_by": "Simon",
+        "discussion": "See Above",
+        "vote": {
+          "yes": 8,
+          "no": 0,
+          "abstain": 0
+        },
         "outcome": "approved",
-        "source": "osi_api",
-        "minutes_file": "https://opensource.org/meeting-minutes/minutes20150909/",
-        "minutes_url": "https://opensource.org/meeting-minutes/minutes20150909/"
+        "source": "minutes",
+        "minutes_file": "2015-09-08-wednesday-september-9-2015-board-meeting.md",
+        "minutes_url": "https://opensource.org/minutes20150909/"
       },
       "rejection_reason": "",
       "osi_api_data": {
@@ -42956,7 +43066,7 @@
       "board_vote": {
         "date": "2015-02-03",
         "motion_by": "Simon",
-        "motion_text": "Approve the Universal Permissive License (UPL) license subject to the clarification of the language discussed.",
+        "motion_text": "Approve the Universal Permissive License (UPL) license subject to the clarification of the language discussed",
         "second_by": "Bruno",
         "discussion": "Had several discussions with Oracle representatives and community. Board agreed the UPL is OSD compliant, however concerned about further changes. Oracle intends to release software soon and wants us to approve, but prefers not to publish anything until approved by the OSI as the recognize the authority of this body and does not want release a license that is not OSI approved. Initially the Board was waiting for JPC review, but that has been undertaken with agreeable results. Some Board members raised concerns over the use of the phrase, “Provided that…” It was suggested that those Board members with concerns work with the applicant to modify the license to address those concerns. If they can be met as described, the Board would approve the UPL.",
         "vote": {
@@ -43126,16 +43236,21 @@
         }
       ],
       "board_vote": {
-        "date": "20130501",
-        "motion_by": "",
-        "motion_text": "",
-        "second_by": "",
+        "date": "2013-04-30",
+        "motion_by": "seconded.",
+        "motion_text": "Villa made a motion to approve the CeCILL 2.1 license. Phipps — ",
+        "second_by": "Phipps",
         "discussion": "",
-        "vote": null,
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": -1,
+          "unanimous": true
+        },
         "outcome": "approved",
-        "source": "osi_api",
-        "minutes_file": "https://opensource.org/meeting-minutes/minutes20130501/",
-        "minutes_url": "https://opensource.org/meeting-minutes/minutes20130501/"
+        "source": "minutes",
+        "minutes_file": "2013-04-30-wednesday-may-1-2013-board-meeting.md",
+        "minutes_url": "https://opensource.org/minutes20130501/"
       },
       "rejection_reason": "",
       "osi_api_data": {
@@ -43835,16 +43950,21 @@
         }
       ],
       "board_vote": {
-        "date": "20100210",
-        "motion_by": "",
-        "motion_text": "",
-        "second_by": "",
+        "date": "2010-02-09",
+        "motion_by": "Tiemann",
+        "motion_text": "to approve committee's PostgreSQL license recommendation",
+        "second_by": "Coar",
         "discussion": "",
-        "vote": null,
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": -1,
+          "unanimous": true
+        },
         "outcome": "approved",
-        "source": "osi_api",
-        "minutes_file": "https://opensource.org/meeting-minutes/minutes20100210/",
-        "minutes_url": "https://opensource.org/meeting-minutes/minutes20100210/"
+        "source": "minutes",
+        "minutes_file": "2010-02-09-wednesday-february-10-2010.md",
+        "minutes_url": "https://opensource.org/minutes20100210/"
       },
       "rejection_reason": "",
       "osi_api_data": {
@@ -44112,7 +44232,23 @@
           "point": "Says the proposed license resembles LGPL, MPL, or EPL and recommends using one of those instead to avoid adding burden to developers."
         }
       ],
-      "board_vote": null,
+      "board_vote": {
+        "date": "2006-01-05",
+        "motion_by": "Tiemann",
+        "motion_text": "c) Motion: The OSI accepts the License Committee report recommendation and asks Mr. Rosen to work with the OSI on communication regarding deprecation of older versions of OSL and AFL prior to announcement of approval of the v3 versions. Mr. Nelson and Ms. Majerus should contact Mr. Rosen. Mr. Tiemann will be involved as appropriate — the motion",
+        "second_by": "Coar",
+        "discussion": "",
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": -1,
+          "unanimous": true
+        },
+        "outcome": "approved",
+        "source": "minutes",
+        "minutes_file": "2006-01-05-friday-january-6-2006.md",
+        "minutes_url": "https://opensource.org/minutes20060106/"
+      },
       "rejection_reason": "",
       "osi_api_data": {
         "submission_date": "",
@@ -44576,7 +44712,23 @@
           "point": "Explains the origin of the \"we sell rope\" saying (Unix gives you the rope to hang yourself); notes it is tangential to the license discussion."
         }
       ],
-      "board_vote": null,
+      "board_vote": {
+        "date": "2007-06-05",
+        "motion_by": "",
+        "motion_text": "Artistic License v2: Committee recommended to approve replacement of Artistic License v1 — Mr. Tiemann moved that we approve to replace Artistic License v1",
+        "second_by": "Nelson",
+        "discussion": "Artistic License v2: Committee recommended to approve replacement of Artistic License v1",
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": -1,
+          "unanimous": true
+        },
+        "outcome": "approved",
+        "source": "minutes",
+        "minutes_file": "2007-06-05-wednesday-june-6-2007.md",
+        "minutes_url": "https://opensource.org/minutes20070606/"
+      },
       "rejection_reason": "",
       "osi_api_data": {
         "submission_date": "",
@@ -44876,16 +45028,20 @@
         }
       ],
       "board_vote": {
-        "date": "20090304",
-        "motion_by": "",
-        "motion_text": "",
-        "second_by": "",
+        "date": "2017-07-12",
+        "motion_by": "Richard",
+        "motion_text": "Approve the European Union Public License (EUPL) v1.2",
+        "second_by": "Simon",
         "discussion": "",
-        "vote": null,
+        "vote": {
+          "yes": 8,
+          "no": 0,
+          "abstain": 0
+        },
         "outcome": "approved",
-        "source": "osi_api",
-        "minutes_file": "https://opensource.org/meeting-minutes/minutes20090304/",
-        "minutes_url": "https://opensource.org/meeting-minutes/minutes20090304/"
+        "source": "minutes",
+        "minutes_file": "2017-07-12-thursday-july-13-2017.md",
+        "minutes_url": "https://opensource.org/minutes20170713/"
       },
       "rejection_reason": "",
       "osi_api_data": {
@@ -44995,16 +45151,20 @@
         }
       ],
       "board_vote": {
-        "date": "20080402",
-        "motion_by": "",
-        "motion_text": "",
+        "date": "2008-03-11",
+        "motion_by": "Nelson",
+        "motion_text": "we return the NTP License to the submitter for",
         "second_by": "",
         "discussion": "",
-        "vote": null,
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": 1
+        },
         "outcome": "approved",
-        "source": "osi_api",
-        "minutes_file": "https://opensource.org/meeting-minutes/minutes20080402/",
-        "minutes_url": "https://opensource.org/meeting-minutes/minutes20080402/"
+        "source": "minutes",
+        "minutes_file": "2008-03-11-wednesday-march-12-2008.md",
+        "minutes_url": "https://opensource.org/minutes20080312/"
       },
       "rejection_reason": "",
       "osi_api_data": {
@@ -45394,7 +45554,23 @@
           "point": "Argues AGPLv3 may not be enforceable under US copyright law, citing 17 USC 117(a)(1) and case law (Aymes v. Bonelli, Krause v. Titleserv) that grants owners the right to modify software for business needs, including over a network."
         }
       ],
-      "board_vote": null,
+      "board_vote": {
+        "date": "2008-03-11",
+        "motion_by": "Nelson",
+        "motion_text": "we approve the Affero GPLv2.0 as submitted to the",
+        "second_by": "",
+        "discussion": "",
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": -1,
+          "unanimous": true
+        },
+        "outcome": "approved",
+        "source": "minutes",
+        "minutes_file": "2008-03-11-wednesday-march-12-2008.md",
+        "minutes_url": "https://opensource.org/minutes20080312/"
+      },
       "rejection_reason": "",
       "osi_api_data": {
         "submission_date": "",
@@ -45718,7 +45894,22 @@
           "point": "Expresses strong support for an OSI-approved minimal permissive license, sharing that he uses a custom permissive license but must select BSD for databases requiring OSI-approved choices."
         }
       ],
-      "board_vote": null,
+      "board_vote": {
+        "date": "2008-03-11",
+        "motion_by": "Nelson",
+        "motion_text": "we approve the ISC License as submitted to the OSI",
+        "second_by": "",
+        "discussion": "",
+        "vote": {
+          "yes": 5,
+          "no": 0,
+          "abstain": 1
+        },
+        "outcome": "approved",
+        "source": "minutes",
+        "minutes_file": "2008-03-11-wednesday-march-12-2008.md",
+        "minutes_url": "https://opensource.org/minutes20080312/"
+      },
       "rejection_reason": "",
       "osi_api_data": {
         "submission_date": "",
@@ -46015,7 +46206,23 @@
           "point": "Supports approving the Multics license as open source while immediately deprecating it."
         }
       ],
-      "board_vote": null,
+      "board_vote": {
+        "date": "2008-01-08",
+        "motion_by": "Nelson",
+        "motion_text": "Discussion of un-named license used for Multics. Recommend Legacy approval; Discussion of Open Source Hardware License. Note it was Withdrawn; Discussion of Minimal Library License. Recommend no action; Discussion of Simplified BSD License. Recommend we modify existing BSD template?; Discussion of Boost Software License 1.0. Recommend to approve; Discussion of Reciprocal Public License 1.5. Recommend to approve pending retirement of previous version (RPL 1.1); Discussion of THINGIEsthetic Permissive License. Discussion of Unicode representations. Return to submitter for revision per discussion of legal validity — to accept committee recommendations with changes as noted above",
+        "second_by": "Ghosh",
+        "discussion": "Discussion of un-named license used for Multics. Recommend Legacy approval; Discussion of Open Source Hardware License. Note it was Withdrawn; Discussion of Minimal Library License. Recommend no action; Discussion of Simplified BSD License. Recommend we modify existing BSD template?; Discussion of Boost Software License 1.0. Recommend to approve; Discussion of Reciprocal Public License 1.5. Recommend to approve pending retirement of previous version (RPL 1.1); Discussion of THINGIEsthetic Permissive License. Discussion of Unicode representations. Return to submitter for revision per discussion of legal validity",
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": -1,
+          "unanimous": true
+        },
+        "outcome": "approved",
+        "source": "minutes",
+        "minutes_file": "2008-01-08-wednesday-january-9-2008.md",
+        "minutes_url": "https://opensource.org/minutes20080109/"
+      },
       "rejection_reason": "",
       "osi_api_data": {
         "submission_date": "",
@@ -46328,16 +46535,21 @@
         }
       ],
       "board_vote": {
-        "date": "20071010",
-        "motion_by": "",
-        "motion_text": "",
-        "second_by": "",
+        "date": "2007-10-09",
+        "motion_by": "Nelson",
+        "motion_text": "Microsoft Public License (Ms-PL) and Microsoft Reciprocal License (Ms-RL) — we accept both licenses pending drafting of a public statement explaining our position",
+        "second_by": "Cooper",
         "discussion": "",
-        "vote": null,
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": -1,
+          "unanimous": true
+        },
         "outcome": "approved",
-        "source": "osi_api",
-        "minutes_file": "https://opensource.org/meeting-minutes/minutes20071010/",
-        "minutes_url": "https://opensource.org/meeting-minutes/minutes20071010/"
+        "source": "minutes",
+        "minutes_file": "2007-10-09-wednesday-october-10-2007.md",
+        "minutes_url": "https://opensource.org/minutes20071010/"
       },
       "rejection_reason": "",
       "osi_api_data": {
@@ -46497,16 +46709,21 @@
         }
       ],
       "board_vote": {
-        "date": "20080109",
-        "motion_by": "",
-        "motion_text": "",
-        "second_by": "",
-        "discussion": "",
-        "vote": null,
+        "date": "2008-01-08",
+        "motion_by": "Nelson",
+        "motion_text": "Discussion of un-named license used for Multics. Recommend Legacy approval; Discussion of Open Source Hardware License. Note it was Withdrawn; Discussion of Minimal Library License. Recommend no action; Discussion of Simplified BSD License. Recommend we modify existing BSD template?; Discussion of Boost Software License 1.0. Recommend to approve; Discussion of Reciprocal Public License 1.5. Recommend to approve pending retirement of previous version (RPL 1.1); Discussion of THINGIEsthetic Permissive License. Discussion of Unicode representations. Return to submitter for revision per discussion of legal validity — to accept committee recommendations with changes as noted above",
+        "second_by": "Ghosh",
+        "discussion": "Discussion of un-named license used for Multics. Recommend Legacy approval; Discussion of Open Source Hardware License. Note it was Withdrawn; Discussion of Minimal Library License. Recommend no action; Discussion of Simplified BSD License. Recommend we modify existing BSD template?; Discussion of Boost Software License 1.0. Recommend to approve; Discussion of Reciprocal Public License 1.5. Recommend to approve pending retirement of previous version (RPL 1.1); Discussion of THINGIEsthetic Permissive License. Discussion of Unicode representations. Return to submitter for revision per discussion of legal validity",
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": -1,
+          "unanimous": true
+        },
         "outcome": "approved",
-        "source": "osi_api",
-        "minutes_file": "https://opensource.org/meeting-minutes/minutes20080109/",
-        "minutes_url": "https://opensource.org/meeting-minutes/minutes20080109/"
+        "source": "minutes",
+        "minutes_file": "2008-01-08-wednesday-january-9-2008.md",
+        "minutes_url": "https://opensource.org/minutes20080109/"
       },
       "rejection_reason": "",
       "osi_api_data": {
@@ -46630,16 +46847,21 @@
         }
       ],
       "board_vote": {
-        "date": "20070905",
-        "motion_by": "",
-        "motion_text": "",
-        "second_by": "",
+        "date": "2007-09-04",
+        "motion_by": "Nelson",
+        "motion_text": "Non-profit OSL 3.0 — to approve",
+        "second_by": "Ghosh",
         "discussion": "",
-        "vote": null,
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": -1,
+          "unanimous": true
+        },
         "outcome": "approved",
-        "source": "osi_api",
-        "minutes_file": "https://opensource.org/meeting-minutes/minutes20070905/",
-        "minutes_url": "https://opensource.org/meeting-minutes/minutes20070905/"
+        "source": "minutes",
+        "minutes_file": "2007-09-04-wednesday-september-5-2007.md",
+        "minutes_url": "https://opensource.org/minutes20070905/"
       },
       "rejection_reason": "",
       "osi_api_data": {
@@ -46696,16 +46918,21 @@
         }
       ],
       "board_vote": {
-        "date": "20090901",
-        "motion_by": "",
-        "motion_text": "",
-        "second_by": "",
-        "discussion": "",
-        "vote": null,
+        "date": "2008-01-08",
+        "motion_by": "Nelson",
+        "motion_text": "Discussion of un-named license used for Multics. Recommend Legacy approval; Discussion of Open Source Hardware License. Note it was Withdrawn; Discussion of Minimal Library License. Recommend no action; Discussion of Simplified BSD License. Recommend we modify existing BSD template?; Discussion of Boost Software License 1.0. Recommend to approve; Discussion of Reciprocal Public License 1.5. Recommend to approve pending retirement of previous version (RPL 1.1); Discussion of THINGIEsthetic Permissive License. Discussion of Unicode representations. Return to submitter for revision per discussion of legal validity — to accept committee recommendations with changes as noted above",
+        "second_by": "Ghosh",
+        "discussion": "Discussion of un-named license used for Multics. Recommend Legacy approval; Discussion of Open Source Hardware License. Note it was Withdrawn; Discussion of Minimal Library License. Recommend no action; Discussion of Simplified BSD License. Recommend we modify existing BSD template?; Discussion of Boost Software License 1.0. Recommend to approve; Discussion of Reciprocal Public License 1.5. Recommend to approve pending retirement of previous version (RPL 1.1); Discussion of THINGIEsthetic Permissive License. Discussion of Unicode representations. Return to submitter for revision per discussion of legal validity",
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": -1,
+          "unanimous": true
+        },
         "outcome": "approved",
-        "source": "osi_api",
-        "minutes_file": "https://opensource.org/meeting-minutes/minutes20080109/",
-        "minutes_url": "https://opensource.org/meeting-minutes/minutes20080109/"
+        "source": "minutes",
+        "minutes_file": "2008-01-08-wednesday-january-9-2008.md",
+        "minutes_url": "https://opensource.org/minutes20080109/"
       },
       "rejection_reason": "",
       "osi_api_data": {
@@ -46770,38 +46997,7 @@
           "message_count": 1
         }
       ],
-      "license_texts": [
-        {
-          "filename": "gpl-3-with-whonix-additional-terms-gplv3-with-improved-legal-protections-as-per- 2.txt",
-          "version": "3",
-          "content_preview": "---\ntitle: \"GPL-3+-with-whonix-additional-terms - GPLv3 with improved, legal protections as per GNU GPL version 3 section 7\"\nsource_url: \"https://lists.opensource.org/pipermail/license-review_lists.op",
-          "size": 7889
-        },
-        {
-          "filename": "gpl-3-with-whonix-additional-terms-gplv3-with-improved-legal-protections-as-per-.txt",
-          "version": "3",
-          "content_preview": "---\ntitle: \"GPL-3+-with-whonix-additional-terms - GPLv3 with improved, legal protections as per GNU GPL version 3 section 7\"\nsource_url: \"https://lists.opensource.org/pipermail/license-review_lists.op",
-          "size": 7889
-        },
-        {
-          "filename": "lgpl-2-kde.txt",
-          "version": "",
-          "content_preview": "---\ntitle: \"LGPL-2+-KDE\"\nsource_url: \"https://lists.opensource.org/pipermail/license-review_lists.opensource.org/2019-December/004454.html\"\nmessage_url: \"https://lists.opensource.org/pipermail/license",
-          "size": 1964
-        },
-        {
-          "filename": "whonix-devel-for-approval-gpl-3-with-whonix-additional-terms-gplv3-with-improved 2.txt",
-          "version": "3",
-          "content_preview": "---\ntitle: \"[Whonix-devel] For Approval: GPL-3+-with-whonix-additional-terms - GPLv3 with improved, legal protections as per GNU GPL version 3 section 7\"\nsource_url: \"https://lists.opensource.org/pipe",
-          "size": 1112
-        },
-        {
-          "filename": "whonix-devel-for-approval-gpl-3-with-whonix-additional-terms-gplv3-with-improved.txt",
-          "version": "3",
-          "content_preview": "---\ntitle: \"[Whonix-devel] For Approval: GPL-3+-with-whonix-additional-terms - GPLv3 with improved, legal protections as per GNU GPL version 3 section 7\"\nsource_url: \"https://lists.opensource.org/pipe",
-          "size": 1112
-        }
-      ],
+      "license_texts": [],
       "timeline": [
         {
           "date": "2007-06-29",
@@ -46883,16 +47079,21 @@
         }
       ],
       "board_vote": {
-        "date": "20070905",
-        "motion_by": "",
-        "motion_text": "",
-        "second_by": "",
+        "date": "2007-09-04",
+        "motion_by": "Nelson",
+        "motion_text": "GPLv3 & LGPLv3 — we approve these licenses with the following statement: “The Open Source Initiative is pleased to announce that, based on broad review and acceptance by both the Board and the community, it has confirmed that GPLv3 and LGPLv3 both conform to the Open Source Definition. Note that new licenses containing “further restrictions” allowed by GPLv3 and LGPLv3 may not be conformant with the OSD, and thus will still require separate review and approval. Due to the dramatic differences between and viable communities around both the GPLv3 family and the GPLv2 family of licenses, we will not be marking GPLv2 and LGPLv2 as redundant, even thought they are technically superseded respectively by GPLv3 and LGPLv3.”",
+        "second_by": "Tiemann",
         "discussion": "",
-        "vote": null,
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": -1,
+          "unanimous": true
+        },
         "outcome": "approved",
-        "source": "osi_api",
-        "minutes_file": "https://opensource.org/meeting-minutes/minutes20070905/",
-        "minutes_url": "https://opensource.org/meeting-minutes/minutes20070905/"
+        "source": "minutes",
+        "minutes_file": "2007-09-04-wednesday-september-5-2007.md",
+        "minutes_url": "https://opensource.org/minutes20070905/"
       },
       "rejection_reason": "",
       "osi_api_data": {
@@ -46957,32 +47158,7 @@
           "message_count": 1
         }
       ],
-      "license_texts": [
-        {
-          "filename": "gpl-3-with-whonix-additional-terms-gplv3-with-improved-legal-protections-as-per- 2.txt",
-          "version": "3",
-          "content_preview": "---\ntitle: \"GPL-3+-with-whonix-additional-terms - GPLv3 with improved, legal protections as per GNU GPL version 3 section 7\"\nsource_url: \"https://lists.opensource.org/pipermail/license-review_lists.op",
-          "size": 7889
-        },
-        {
-          "filename": "gpl-3-with-whonix-additional-terms-gplv3-with-improved-legal-protections-as-per-.txt",
-          "version": "3",
-          "content_preview": "---\ntitle: \"GPL-3+-with-whonix-additional-terms - GPLv3 with improved, legal protections as per GNU GPL version 3 section 7\"\nsource_url: \"https://lists.opensource.org/pipermail/license-review_lists.op",
-          "size": 7889
-        },
-        {
-          "filename": "whonix-devel-for-approval-gpl-3-with-whonix-additional-terms-gplv3-with-improved 2.txt",
-          "version": "3",
-          "content_preview": "---\ntitle: \"[Whonix-devel] For Approval: GPL-3+-with-whonix-additional-terms - GPLv3 with improved, legal protections as per GNU GPL version 3 section 7\"\nsource_url: \"https://lists.opensource.org/pipe",
-          "size": 1112
-        },
-        {
-          "filename": "whonix-devel-for-approval-gpl-3-with-whonix-additional-terms-gplv3-with-improved.txt",
-          "version": "3",
-          "content_preview": "---\ntitle: \"[Whonix-devel] For Approval: GPL-3+-with-whonix-additional-terms - GPLv3 with improved, legal protections as per GNU GPL version 3 section 7\"\nsource_url: \"https://lists.opensource.org/pipe",
-          "size": 1112
-        }
-      ],
+      "license_texts": [],
       "timeline": [
         {
           "date": "2007-06-29",
@@ -47064,16 +47240,21 @@
         }
       ],
       "board_vote": {
-        "date": "20070905",
-        "motion_by": "",
-        "motion_text": "",
-        "second_by": "",
+        "date": "2007-09-04",
+        "motion_by": "Nelson",
+        "motion_text": "GPLv3 & LGPLv3 — we approve these licenses with the following statement: “The Open Source Initiative is pleased to announce that, based on broad review and acceptance by both the Board and the community, it has confirmed that GPLv3 and LGPLv3 both conform to the Open Source Definition. Note that new licenses containing “further restrictions” allowed by GPLv3 and LGPLv3 may not be conformant with the OSD, and thus will still require separate review and approval. Due to the dramatic differences between and viable communities around both the GPLv3 family and the GPLv2 family of licenses, we will not be marking GPLv2 and LGPLv2 as redundant, even thought they are technically superseded respectively by GPLv3 and LGPLv3.”",
+        "second_by": "Tiemann",
         "discussion": "",
-        "vote": null,
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": -1,
+          "unanimous": true
+        },
         "outcome": "approved",
-        "source": "osi_api",
-        "minutes_file": "https://opensource.org/meeting-minutes/minutes20070905/",
-        "minutes_url": "https://opensource.org/meeting-minutes/minutes20070905/"
+        "source": "minutes",
+        "minutes_file": "2007-09-04-wednesday-september-5-2007.md",
+        "minutes_url": "https://opensource.org/minutes20070905/"
       },
       "rejection_reason": "",
       "osi_api_data": {
@@ -47332,16 +47513,21 @@
         }
       ],
       "board_vote": {
-        "date": "20070606",
-        "motion_by": "",
-        "motion_text": "",
-        "second_by": "",
+        "date": "2007-09-04",
+        "motion_by": "Nelson",
+        "motion_text": "GPLv3 & LGPLv3 — we approve these licenses with the following statement: “The Open Source Initiative is pleased to announce that, based on broad review and acceptance by both the Board and the community, it has confirmed that GPLv3 and LGPLv3 both conform to the Open Source Definition. Note that new licenses containing “further restrictions” allowed by GPLv3 and LGPLv3 may not be conformant with the OSD, and thus will still require separate review and approval. Due to the dramatic differences between and viable communities around both the GPLv3 family and the GPLv2 family of licenses, we will not be marking GPLv2 and LGPLv2 as redundant, even thought they are technically superseded respectively by GPLv3 and LGPLv3.”",
+        "second_by": "Tiemann",
         "discussion": "",
-        "vote": null,
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": -1,
+          "unanimous": true
+        },
         "outcome": "approved",
-        "source": "osi_api",
-        "minutes_file": "https://opensource.org/meeting-minutes/minutes20070606/",
-        "minutes_url": "https://opensource.org/meeting-minutes/minutes20070606/"
+        "source": "minutes",
+        "minutes_file": "2007-09-04-wednesday-september-5-2007.md",
+        "minutes_url": "https://opensource.org/minutes20070905/"
       },
       "rejection_reason": "",
       "osi_api_data": {
@@ -47488,12 +47674,18 @@
       "board_vote": {
         "date": "2007-06-05",
         "motion_by": "",
-        "motion_text": "Mr. Tiemann moved to accept the following language for our recommendation: “To the extent the Simple Public License as proposed is a simplification and alternative to the GPL and yet is not on its face compatible with the GPL, we decline to approve at this time and suggest that the committee in future consider compatibility for licenses that advertise simplification.” Ms. Sharma seconded. Passed by General Consent.",
-        "second_by": "",
+        "motion_text": "Mr. Tiemann moved to accept the following language for our recommendation: “To the extent the Simple Public License as proposed is a simplification and alternative to the GPL and yet is not on its face compatible with the GPL, we decline to approve at this time and suggest that the committee in future consider compatibility for licenses that advertise simplification.”",
+        "second_by": "Sharma",
         "discussion": "",
-        "vote": null,
-        "outcome": "rejected",
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": -1,
+          "unanimous": true
+        },
+        "outcome": "approved",
         "source": "minutes",
+        "source_note": "outcome corrected by OSI approved list after minutes/status conflict",
         "minutes_file": "2007-06-05-wednesday-june-6-2007.md",
         "minutes_url": "https://opensource.org/minutes20070606/"
       },
@@ -47634,16 +47826,21 @@
         }
       ],
       "board_vote": {
-        "date": "20070606",
+        "date": "2007-06-05",
         "motion_by": "",
-        "motion_text": "",
-        "second_by": "",
-        "discussion": "",
-        "vote": null,
+        "motion_text": "Artistic License v2: Committee recommended to approve replacement of Artistic License v1 — Mr. Tiemann moved that we approve to replace Artistic License v1",
+        "second_by": "Nelson",
+        "discussion": "Artistic License v2: Committee recommended to approve replacement of Artistic License v1",
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": -1,
+          "unanimous": true
+        },
         "outcome": "approved",
-        "source": "osi_api",
-        "minutes_file": "https://opensource.org/meeting-minutes/minutes20070606/",
-        "minutes_url": "https://opensource.org/meeting-minutes/minutes20070606/"
+        "source": "minutes",
+        "minutes_file": "2007-06-05-wednesday-june-6-2007.md",
+        "minutes_url": "https://opensource.org/minutes20070606/"
       },
       "rejection_reason": "",
       "osi_api_data": {
@@ -47808,16 +48005,21 @@
         }
       ],
       "board_vote": {
-        "date": "20071010",
-        "motion_by": "",
-        "motion_text": "",
-        "second_by": "",
+        "date": "2007-10-09",
+        "motion_by": "Nelson",
+        "motion_text": "Microsoft Public License (Ms-PL) and Microsoft Reciprocal License (Ms-RL) — we accept both licenses pending drafting of a public statement explaining our position",
+        "second_by": "Cooper",
         "discussion": "",
-        "vote": null,
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": -1,
+          "unanimous": true
+        },
         "outcome": "approved",
-        "source": "osi_api",
-        "minutes_file": "https://opensource.org/meeting-minutes/minutes20071010/",
-        "minutes_url": "https://opensource.org/meeting-minutes/minutes20071010/"
+        "source": "minutes",
+        "minutes_file": "2007-10-09-wednesday-october-10-2007.md",
+        "minutes_url": "https://opensource.org/minutes20071010/"
       },
       "rejection_reason": "",
       "osi_api_data": {
@@ -47877,7 +48079,20 @@
           "message_count": 1
         }
       ],
-      "license_texts": [],
+      "license_texts": [
+        {
+          "filename": "legacy-license-suggestion-cddl-11 2.txt",
+          "version": "1.1",
+          "content_preview": "---\ntitle: \"Legacy license suggestion: CDDL 1.1\"\nsource_url: \"https://lists.opensource.org/pipermail/license-review_lists.opensource.org/2025-May/005756.html\"\nmessage_url: \"https://lists.opensource.or",
+          "size": 17629
+        },
+        {
+          "filename": "legacy-license-suggestion-cddl-11.txt",
+          "version": "1.1",
+          "content_preview": "---\ntitle: \"Legacy license suggestion: CDDL 1.1\"\nsource_url: \"https://lists.opensource.org/pipermail/license-review_lists.opensource.org/2025-May/005756.html\"\nmessage_url: \"https://lists.opensource.or",
+          "size": 17629
+        }
+      ],
       "timeline": [
         {
           "date": "2004-12-02",
@@ -47958,7 +48173,22 @@
           "point": "Clarifies he was conflated with Russell; states the MPL has flaws but not serious ones, and that the CDDL is an advance on it."
         }
       ],
-      "board_vote": null,
+      "board_vote": {
+        "date": "2025-07-18",
+        "motion_by": "",
+        "motion_text": "Josh moves to approve the CDDL1.1 license in the legacy category",
+        "second_by": "",
+        "discussion": "",
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": 0
+        },
+        "outcome": "approved",
+        "source": "minutes",
+        "minutes_file": "2025-07-18-2025-07-18.md",
+        "minutes_url": "https://opensource.org/meeting-minutes/2025-07-18"
+      },
       "rejection_reason": "",
       "osi_api_data": {
         "submission_date": "20041202",
@@ -48644,16 +48874,21 @@
         }
       ],
       "board_vote": {
-        "date": "20050912",
-        "motion_by": "",
-        "motion_text": "",
-        "second_by": "",
-        "discussion": "",
-        "vote": null,
+        "date": "2005-09-11",
+        "motion_by": "Nelson",
+        "motion_text": "Fair License – modification to existing OSI approved license — we approve",
+        "second_by": "Tiemann",
+        "discussion": "Fair License – modification to existing OSI approved license",
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": -1,
+          "unanimous": true
+        },
         "outcome": "approved",
-        "source": "osi_api",
-        "minutes_file": "https://opensource.org/meeting-minutes/minutes20050912/",
-        "minutes_url": "https://opensource.org/meeting-minutes/minutes20050912/"
+        "source": "minutes",
+        "minutes_file": "2005-09-11-monday-september-12-2005.md",
+        "minutes_url": "https://opensource.org/minutes20050912/"
       },
       "rejection_reason": "",
       "osi_api_data": {
@@ -48821,11 +49056,11 @@
         "second_by": "",
         "discussion": "",
         "vote": {
-          "yes": 0,
+          "yes": 8,
           "no": 0,
           "abstain": 0
         },
-        "outcome": "rejected",
+        "outcome": "approved",
         "source": "minutes",
         "minutes_file": "2018-10-10-october-11-2018.md",
         "minutes_url": "https://opensource.org/minutes20181011/"
@@ -49826,7 +50061,23 @@
           "point": "Answers that the CISG can generally be expressly excluded from U.S. transactions."
         }
       ],
-      "board_vote": null,
+      "board_vote": {
+        "date": "2008-01-08",
+        "motion_by": "Nelson",
+        "motion_text": "Discussion of un-named license used for Multics. Recommend Legacy approval; Discussion of Open Source Hardware License. Note it was Withdrawn; Discussion of Minimal Library License. Recommend no action; Discussion of Simplified BSD License. Recommend we modify existing BSD template?; Discussion of Boost Software License 1.0. Recommend to approve; Discussion of Reciprocal Public License 1.5. Recommend to approve pending retirement of previous version (RPL 1.1); Discussion of THINGIEsthetic Permissive License. Discussion of Unicode representations. Return to submitter for revision per discussion of legal validity — to accept committee recommendations with changes as noted above",
+        "second_by": "Ghosh",
+        "discussion": "Discussion of un-named license used for Multics. Recommend Legacy approval; Discussion of Open Source Hardware License. Note it was Withdrawn; Discussion of Minimal Library License. Recommend no action; Discussion of Simplified BSD License. Recommend we modify existing BSD template?; Discussion of Boost Software License 1.0. Recommend to approve; Discussion of Reciprocal Public License 1.5. Recommend to approve pending retirement of previous version (RPL 1.1); Discussion of THINGIEsthetic Permissive License. Discussion of Unicode representations. Return to submitter for revision per discussion of legal validity",
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": -1,
+          "unanimous": true
+        },
+        "outcome": "approved",
+        "source": "minutes",
+        "minutes_file": "2008-01-08-wednesday-january-9-2008.md",
+        "minutes_url": "https://opensource.org/minutes20080109/"
+      },
       "rejection_reason": "",
       "osi_api_data": {
         "submission_date": "20021016",
@@ -50303,7 +50554,23 @@
           "point": "States that the OSI board should promptly approve the revised AFL."
         }
       ],
-      "board_vote": null,
+      "board_vote": {
+        "date": "2006-01-05",
+        "motion_by": "Tiemann",
+        "motion_text": "c) Motion: The OSI accepts the License Committee report recommendation and asks Mr. Rosen to work with the OSI on communication regarding deprecation of older versions of OSL and AFL prior to announcement of approval of the v3 versions. Mr. Nelson and Ms. Majerus should contact Mr. Rosen. Mr. Tiemann will be involved as appropriate — the motion",
+        "second_by": "Coar",
+        "discussion": "",
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": -1,
+          "unanimous": true
+        },
+        "outcome": "approved",
+        "source": "minutes",
+        "minutes_file": "2006-01-05-friday-january-6-2006.md",
+        "minutes_url": "https://opensource.org/minutes20060106/"
+      },
       "rejection_reason": "",
       "osi_api_data": {
         "submission_date": "",
@@ -51028,7 +51295,23 @@
       "participants": [],
       "license_texts": [],
       "timeline": [],
-      "board_vote": null,
+      "board_vote": {
+        "date": "2007-09-04",
+        "motion_by": "Nelson",
+        "motion_text": "GPLv3 & LGPLv3 — we approve these licenses with the following statement: “The Open Source Initiative is pleased to announce that, based on broad review and acceptance by both the Board and the community, it has confirmed that GPLv3 and LGPLv3 both conform to the Open Source Definition. Note that new licenses containing “further restrictions” allowed by GPLv3 and LGPLv3 may not be conformant with the OSD, and thus will still require separate review and approval. Due to the dramatic differences between and viable communities around both the GPLv3 family and the GPLv2 family of licenses, we will not be marking GPLv2 and LGPLv2 as redundant, even thought they are technically superseded respectively by GPLv3 and LGPLv3.”",
+        "second_by": "Tiemann",
+        "discussion": "",
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": -1,
+          "unanimous": true
+        },
+        "outcome": "approved",
+        "source": "minutes",
+        "minutes_file": "2007-09-04-wednesday-september-5-2007.md",
+        "minutes_url": "https://opensource.org/minutes20070905/"
+      },
       "rejection_reason": "",
       "osi_api_data": {
         "submission_date": "",
@@ -51056,7 +51339,23 @@
       "participants": [],
       "license_texts": [],
       "timeline": [],
-      "board_vote": null,
+      "board_vote": {
+        "date": "2007-06-05",
+        "motion_by": "",
+        "motion_text": "Artistic License v2: Committee recommended to approve replacement of Artistic License v1 — Mr. Tiemann moved that we approve to replace Artistic License v1",
+        "second_by": "Nelson",
+        "discussion": "Artistic License v2: Committee recommended to approve replacement of Artistic License v1",
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": -1,
+          "unanimous": true
+        },
+        "outcome": "approved",
+        "source": "minutes",
+        "minutes_file": "2007-06-05-wednesday-june-6-2007.md",
+        "minutes_url": "https://opensource.org/minutes20070606/"
+      },
       "rejection_reason": "",
       "osi_api_data": {
         "submission_date": "",
@@ -51451,7 +51750,23 @@
       "participants": [],
       "license_texts": [],
       "timeline": [],
-      "board_vote": null,
+      "board_vote": {
+        "date": "2007-09-04",
+        "motion_by": "Nelson",
+        "motion_text": "GPLv3 & LGPLv3 — we approve these licenses with the following statement: “The Open Source Initiative is pleased to announce that, based on broad review and acceptance by both the Board and the community, it has confirmed that GPLv3 and LGPLv3 both conform to the Open Source Definition. Note that new licenses containing “further restrictions” allowed by GPLv3 and LGPLv3 may not be conformant with the OSD, and thus will still require separate review and approval. Due to the dramatic differences between and viable communities around both the GPLv3 family and the GPLv2 family of licenses, we will not be marking GPLv2 and LGPLv2 as redundant, even thought they are technically superseded respectively by GPLv3 and LGPLv3.”",
+        "second_by": "Tiemann",
+        "discussion": "",
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": -1,
+          "unanimous": true
+        },
+        "outcome": "approved",
+        "source": "minutes",
+        "minutes_file": "2007-09-04-wednesday-september-5-2007.md",
+        "minutes_url": "https://opensource.org/minutes20070905/"
+      },
       "rejection_reason": "",
       "osi_api_data": {
         "submission_date": "",
@@ -51508,16 +51823,21 @@
       "license_texts": [],
       "timeline": [],
       "board_vote": {
-        "date": "20070606",
+        "date": "2007-06-05",
         "motion_by": "",
-        "motion_text": "",
-        "second_by": "",
-        "discussion": "",
-        "vote": null,
+        "motion_text": "Educational Community License: Committee recommended to replace previous version — Mr. Tiemann moved that we approve to replace ECLv1.1",
+        "second_by": "Nelson",
+        "discussion": "Educational Community License: Committee recommended to replace previous version",
+        "vote": {
+          "yes": -1,
+          "no": 0,
+          "abstain": -1,
+          "unanimous": true
+        },
         "outcome": "approved",
-        "source": "osi_api",
-        "minutes_file": "https://opensource.org/meeting-minutes/minutes20070606/",
-        "minutes_url": "https://opensource.org/meeting-minutes/minutes20070606/"
+        "source": "minutes",
+        "minutes_file": "2007-06-05-wednesday-june-6-2007.md",
+        "minutes_url": "https://opensource.org/minutes20070606/"
       },
       "rejection_reason": "",
       "osi_api_data": {

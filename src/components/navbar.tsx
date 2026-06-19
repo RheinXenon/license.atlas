@@ -57,6 +57,10 @@ export function Navbar() {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
+  function resetHomeSearch() {
+    window.dispatchEvent(new Event("license-atlas:reset-home"));
+  }
+
   const brandName = mounted && lang === "zh"
     ? <span className="font-serif tracking-widest">许可图鉴</span>
     : "LicenseAtlas";
@@ -64,7 +68,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-[100] border-b border-zinc-200/60 bg-white/70 backdrop-blur-lg dark:border-zinc-800/60 dark:bg-zinc-950/70">
       <nav className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6">
-        <Link href="/" className="flex items-center gap-2 font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
+        <Link href="/" onClick={resetHomeSearch} className="flex items-center gap-2 font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
           <svg width="24" height="24" viewBox="0 0 32 32" className="shrink-0">
             <defs><linearGradient id="logo-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#7c3aed"/><stop offset="100%" stopColor="#06b6d4"/></linearGradient></defs>
             <rect width="32" height="32" rx="8" fill="url(#logo-bg)"/>
@@ -77,6 +81,7 @@ export function Navbar() {
         <div className="flex items-center gap-4 text-sm">
           <Link
             href="/"
+            onClick={resetHomeSearch}
             className="text-zinc-600 transition-colors hover:text-[#7c3aed] dark:text-zinc-400 dark:hover:text-[#a78bfa]"
           >
             {t("nav.browse")}

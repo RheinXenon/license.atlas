@@ -2,6 +2,7 @@
 
 import { useLang } from "@/lib/i18n";
 import { formatTrackerDate } from "@/lib/tracker-date";
+import { describeVote } from "@/lib/tracker-vote";
 import type { TrackerBoardVote, TrackerStatus } from "@/lib/types";
 
 export function BoardVoteCard({ v, status }: { v: TrackerBoardVote; status: TrackerStatus }) {
@@ -14,14 +15,15 @@ export function BoardVoteCard({ v, status }: { v: TrackerBoardVote; status: Trac
     : oc === "approved"
     ? "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300"
     : "";
+  const voteShape = describeVote(v);
   const hasMotionMeta = !!(v.motion_by || v.second_by);
-  const hasVoteDetail = !!(v.motion_text || hasMotionMeta || v.vote);
+  const hasVoteDetail = !!(v.motion_text || hasMotionMeta || voteShape.kind !== "none");
   const hasOutcomeOnly = !hasVoteDetail && !!ocLabel;
   const motionLc = (v.motion_text || "").toLowerCase();
   const withhold = /\b(withholds?\s+(?:its\s+)?approval|did\s+not\s+approve|do\s+not\s+approve|decline|reject)\b/.test(motionLc);
-  const tallyNote = oc === "rejected" && withhold && v.vote && v.vote.yes > (v.vote.no || 0)
+  const tallyNote = oc === "rejected" && withhold && voteShape.kind === "exact" && voteShape.yes > (voteShape.no || 0)
     ? <div className="my-2 rounded-lg border-l-[3px] border-red-500 bg-red-50 p-3 text-sm dark:bg-red-900/10">
-        ⚠️ The {v.vote.yes}-{v.vote.no || 0} vote means the board AGREED to withhold approval — this is a <strong>rejection</strong>, not approval.
+        ⚠️ The {voteShape.yes}-{voteShape.no || 0} vote means the board AGREED to withhold approval — this is a <strong>rejection</strong>, not approval.
       </div>
     : null;
 
@@ -39,11 +41,23 @@ export function BoardVoteCard({ v, status }: { v: TrackerBoardVote; status: Trac
       )}
       {v.motion_text && <div className="my-2 text-sm text-zinc-500 dark:text-zinc-400">{v.motion_text}</div>}
       {tallyNote}
-      {v.vote ? (
+      {voteShape.kind === "exact" ? (
         <div className="flex gap-4 text-sm font-semibold">
-          <span className="text-green-600 dark:text-green-400">✓ {v.vote.yes} Yes</span>
-          <span className="text-red-600 dark:text-red-400">✗ {v.vote.no} No</span>
-          <span className="text-zinc-400">○ {v.vote.abstain} Abstain</span>
+          <span className="text-green-600 dark:text-green-400">✓ {voteShape.yes} Yes</span>
+          <span className="text-red-600 dark:text-red-400">✗ {voteShape.no} No</span>
+          <span className="text-zinc-400">○ {voteShape.abstain} Abstain</span>
+        </div>
+      ) : voteShape.kind === "unanimous" ? (
+        <div className="flex flex-wrap items-center gap-2 text-sm font-semibold">
+          <span className="text-green-600 dark:text-green-400">✓ {t("tracker.voteUnanimous")}</span>
+          {voteShape.abstain != null && <span className="text-zinc-400">○ {voteShape.abstain} Abstain</span>}
+          <span className="text-xs font-normal text-zinc-400">{t("tracker.voteExactCountsNotRecorded")}</span>
+        </div>
+      ) : voteShape.kind === "majority" ? (
+        <div className="flex flex-wrap items-center gap-2 text-sm font-semibold">
+          <span className="text-green-600 dark:text-green-400">✓ {t("tracker.voteMajority")}</span>
+          {voteShape.abstain != null && <span className="text-zinc-400">○ {voteShape.abstain} Abstain</span>}
+          <span className="text-xs font-normal text-zinc-400">{t("tracker.voteExactCountsNotRecorded")}</span>
         </div>
       ) : hasOutcomeOnly ? (
         <div className="flex items-center gap-2 text-sm font-semibold">

@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "source_hash": "b1aa91eddc9a3fb3",
-    "generated_at": "2026-06-18T14:41:50.128Z",
+    "source_hash": "8494e90fb44a1922",
+    "generated_at": "2026-06-19T17:35:53.312Z",
     "total_submissions": 172,
     "by_status": {
       "approved": 102,
@@ -410,7 +410,7 @@
         "2019-01-14"
       ]
     },
-    "has_vote": false,
+    "has_vote": true,
     "has_timeline": true,
     "timeline_meta": {
       "count": 33,
@@ -474,7 +474,7 @@
         "2018-12-10"
       ]
     },
-    "has_vote": false,
+    "has_vote": true,
     "has_timeline": true,
     "timeline_meta": {
       "count": 88,
@@ -1754,7 +1754,7 @@
         "2025-07-18"
       ]
     },
-    "has_vote": false,
+    "has_vote": true,
     "has_timeline": true,
     "timeline_meta": {
       "count": 7,
@@ -3066,7 +3066,7 @@
         "2017-08-10"
       ]
     },
-    "has_vote": false,
+    "has_vote": true,
     "has_timeline": true,
     "timeline_meta": {
       "count": 8,
@@ -3098,7 +3098,7 @@
         "2017-08-10"
       ]
     },
-    "has_vote": false,
+    "has_vote": true,
     "has_timeline": true,
     "timeline_meta": {
       "count": 8,
@@ -4058,7 +4058,7 @@
         "2009-06-01"
       ]
     },
-    "has_vote": false,
+    "has_vote": true,
     "has_timeline": true,
     "timeline_meta": {
       "count": 3,
@@ -4090,7 +4090,7 @@
         "2009-06-01"
       ]
     },
-    "has_vote": false,
+    "has_vote": true,
     "has_timeline": true,
     "timeline_meta": {
       "count": 3,
@@ -4218,7 +4218,7 @@
         "2008-07-10"
       ]
     },
-    "has_vote": false,
+    "has_vote": true,
     "has_timeline": true,
     "timeline_meta": {
       "count": 7,
@@ -4250,7 +4250,7 @@
         "2008-07-10"
       ]
     },
-    "has_vote": false,
+    "has_vote": true,
     "has_timeline": true,
     "timeline_meta": {
       "count": 7,
@@ -4474,7 +4474,7 @@
         "2008-02-01"
       ]
     },
-    "has_vote": false,
+    "has_vote": true,
     "has_timeline": true,
     "timeline_meta": {
       "count": 9,
@@ -4506,7 +4506,7 @@
         "2008-02-01"
       ]
     },
-    "has_vote": false,
+    "has_vote": true,
     "has_timeline": true,
     "timeline_meta": {
       "count": 9,
@@ -4570,7 +4570,7 @@
         "2007-12-30"
       ]
     },
-    "has_vote": false,
+    "has_vote": true,
     "has_timeline": true,
     "timeline_meta": {
       "count": 7,
@@ -4634,7 +4634,7 @@
         "2007-12-15"
       ]
     },
-    "has_vote": false,
+    "has_vote": true,
     "has_timeline": true,
     "timeline_meta": {
       "count": 6,
@@ -5370,7 +5370,7 @@
         "2004-12-15"
       ]
     },
-    "has_vote": false,
+    "has_vote": true,
     "has_timeline": true,
     "timeline_meta": {
       "count": 6,
@@ -5402,7 +5402,7 @@
         "2004-12-15"
       ]
     },
-    "has_vote": false,
+    "has_vote": true,
     "has_timeline": true,
     "timeline_meta": {
       "count": 6,
@@ -6394,7 +6394,7 @@
         "2002-10-16"
       ]
     },
-    "has_vote": false,
+    "has_vote": true,
     "has_timeline": true,
     "timeline_meta": {
       "count": 3,
@@ -6426,7 +6426,7 @@
         "2002-10-16"
       ]
     },
-    "has_vote": false,
+    "has_vote": true,
     "has_timeline": true,
     "timeline_meta": {
       "count": 3,
@@ -6618,7 +6618,7 @@
         "2002-08-21"
       ]
     },
-    "has_vote": false,
+    "has_vote": true,
     "has_timeline": true,
     "timeline_meta": {
       "count": 6,
@@ -6650,7 +6650,7 @@
         "2002-08-21"
       ]
     },
-    "has_vote": false,
+    "has_vote": true,
     "has_timeline": true,
     "timeline_meta": {
       "count": 6,
@@ -6935,7 +6935,7 @@
       "duration_days": 0,
       "date_range": []
     },
-    "has_vote": false,
+    "has_vote": true,
     "has_timeline": false,
     "timeline_meta": {
       "count": 0,
@@ -6955,7 +6955,7 @@
       "duration_days": 0,
       "date_range": []
     },
-    "has_vote": false,
+    "has_vote": true,
     "has_timeline": false,
     "timeline_meta": {
       "count": 0,
@@ -6975,7 +6975,7 @@
       "duration_days": 0,
       "date_range": []
     },
-    "has_vote": false,
+    "has_vote": true,
     "has_timeline": false,
     "timeline_meta": {
       "count": 0,
@@ -6995,7 +6995,7 @@
       "duration_days": 0,
       "date_range": []
     },
-    "has_vote": false,
+    "has_vote": true,
     "has_timeline": false,
     "timeline_meta": {
       "count": 0,
@@ -7355,7 +7355,7 @@
       "duration_days": 0,
       "date_range": []
     },
-    "has_vote": false,
+    "has_vote": true,
     "has_timeline": false,
     "timeline_meta": {
       "count": 0,
@@ -7375,7 +7375,7 @@
       "duration_days": 0,
       "date_range": []
     },
-    "has_vote": false,
+    "has_vote": true,
     "has_timeline": false,
     "timeline_meta": {
       "count": 0,

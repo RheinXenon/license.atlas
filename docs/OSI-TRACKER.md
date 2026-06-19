@@ -5,7 +5,7 @@
 - **页面**：`data/osi/license-review-tracker.html`（通过 HTTP fetch `license-review-tracker-v2.json`，需 `python3 -m http.server` 起本地服务）
 - **数据**：`data/osi/license-review-tracker-v2.json`（enrich 后的最终数据）
 - **规模**：172 个提交（approved 102 / rejected 37 / withdrawn 4 / pending 6 / superseded 3 / legacy 20）
-- **离线版**：`license-review-tracker-standalone.html`（JSON 内嵌，`file://` 可直开）。每次重建 v2 后需同步重新嵌入 JSON；当前已同步到 2026-06-18 的 ModelGo series + 全量 point 修复。
+- **离线版**：`license-review-tracker-standalone.html`（JSON 内嵌，`file://` 可直开）。每次重建 v2 后需同步重新嵌入 JSON；当前已同步到 2026-06-20 的 board-vote exhaustive audit + ModelGo series + 全量 point 修复。
 
 ## 数据管线
 
@@ -94,8 +94,8 @@ node -e "const fs=require('fs'); const html=fs.readFileSync('data/osi/license-re
 - **alias 邮件标题清洗（2026-06-18）**：`findBoardVotes` 构建 names 前剥离邮件标题前缀（`Re:`/`Fwd:`/`For approval:`/`License Approval Request:`/`Approval Request:`），并丢弃清洗后等于**他者规范名**的 alias。修复 bsd-3-clause 的 alias `"License Approval Request: BSD-3-Clause-Open-MPI"` 注入 `mpi` keyword、回声他者许可证名导致串配。
 - **STOP_WORDS 扩展（2026-06-18）**：补入邮件/行政噪声词（`posted`/`web`/`now`/`with`/`terms`/`non`/`profit`/`inc`/`simple`/`seats`/`vacant`/`appointed`/`affiliate`/`application` 等），避免泛词凑数通过 relevance gate。修复 nasa-1-3（alias "posted on the web" 命中 "post to the web" admin motion）、whonix（with/terms 命中席位任命 motion）、unicode×2（inc/agreement 命中 BigBlueButton）、nposl-3-0（non/profit 命中 Affiliate motion）。
 - **cross-reference 拒绝（2026-06-18）**：step 3 开头构建 `otherCanonicalIds`（所有 submission 的 spdx_id/id/normalized name 集合）。`findBoardVotes` 打分时，若 motion 文本以词边界方式**精确包含他者规范名**（≥8 字符且含连字符或版本数字，排除泛词），直接 `-999` 拒绝。最后一道防线，挡 alias 未覆盖的他者许可证 motion。
-- **minutes URL**：解析 minutes frontmatter 的 `source_url` 到 `board_vote.minutes_url`；UI 优先显示 OSI board minutes URL，不显示本地 `.md` 文件名。
-- `deriveFallbackVote()`：minutes 匹配失败时，从 timeline 的 board_decision 公告或 OSI API metadata 降级推导；OSI API 的 `board_minutes` 同步写入 `minutes_url`。
+- **minutes URL**：解析 minutes frontmatter 的 `source_url` 到 `board_vote.minutes_url`；UI 优先显示 OSI board minutes URL，不显示本地 `.md` 文件名。`normalizeBoardMinutesUrl()` 会把 OSI API 中遗留的旧 XWiki board-minutes URL（如 `wiki.opensource.org/.../Board%20minutes/2020/2020-05-11`）规范化为当前公开页面 `https://opensource.org/meeting-minutes/YYYY-MM-DD`。
+- `deriveFallbackVote()`：minutes 匹配失败时，从 timeline 的 board_decision 公告或 OSI API metadata 降级推导；OSI API 的 `board_minutes` 先经 `normalizeBoardMinutesUrl()` 再写入 `minutes_url`。
 
 **Outcome 回填**（三道，按顺序）：
 
@@ -107,7 +107,7 @@ node -e "const fs=require('fs'); const html=fs.readFileSync('data/osi/license-re
 
 **Status 校对**：OSI list 成员若 tracker status 非 approved/legacy → 改 approved（权威源覆盖邮件分类推断；当前 0 例）。
 
-当前覆盖：board_vote 62 个（minutes 16 / timeline 3 / osi_api 43）；outcome null 0 个。2026-06-18 全量审计：minutes-sourced board vote 可疑串配 0；LiLiQ-Rplus/R/P 改为 OSI API `https://opensource.org/meeting-minutes/minutes20160113/`，不再误显示 Mulan PSL v2 motion。同日二次审计清除 7 个历史串配（nasa-1-3→admin motion、bsd-3-clause→Open-MPI motion、whonix→席位任命、unicode-3-0/unicode-dfs-2016→BigBlueButton、nposl-3-0→Affiliate、whonix outcome=null），minutes vote 21→16，逐条语义核对全部正确。
+当前覆盖（2026-06-20 exhaustive audit 后）：board_vote 77 个（minutes 50 / timeline 3 / osi_api 24）；含详细 `vote` 对象 50 个；outcome null 0 个；minutes-sourced board vote 可疑串配 0。2026-06-18 全量审计修复 LiLiQ-Rplus/R/P，不再误显示 Mulan PSL v2 motion，并清除 7 个历史串配（nasa-1-3→admin motion、bsd-3-clause→Open-MPI motion、whonix→席位任命、unicode-3-0/unicode-dfs-2016→BigBlueButton、nposl-3-0→Affiliate、whonix outcome=null）。2026-06-20 再审计补齐旧 minutes 中更杂的明确票数格式，恢复 Fair、Boost、RPL 1.5、Multics、ECL 2.0、Artistic 2.0、LBNL BSD、MIT-CMU、LANL BSD、WordNet、CDDL 1.1、eCos、EPL 2.0、OSC 1.0、OpenLDAP 2.8、ISC、GPLv3、LGPLv3、NPOSL/OSL/AFL 3.0 等 vote 绑定。
 
 **Timeline point 合并优先级（2026-06-18 修正）**：`build-license-review-tracker.mjs` 已从 `all-points-manifest.json` 注入全量 `snippet=point_en`、`point_zh`、`sentiment`。`enrich-license-tracker.mjs` 只做兜底，不应再用早期 102 子集 `points-manifest.json` 覆盖 base 中已存在的全量 point。当前规则：`point = ev.point || ev.snippet || pm.point || null`，`point_zh = ev.point_zh || pm.point_zh || null`。这个顺序避免 ModelGo 等全量批次结果被旧 points manifest 回滚。
 

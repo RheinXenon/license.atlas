@@ -4,6 +4,7 @@ import { useState } from "react";
 import { createPortal } from "react-dom";
 import { useLang } from "@/lib/i18n";
 import { formatTrackerDate, formatTrackerShortDate } from "@/lib/tracker-date";
+import { describeVote, voteCompactLabel } from "@/lib/tracker-vote";
 import type { TrackerTimelineEvent, TrackerBoardVote } from "@/lib/types";
 
 // Sentiment → parent tint color (mirrors KB SENT_TINT + SENT_COLOR).
@@ -34,14 +35,20 @@ const TIP_W = 340;
 const TIP_OFFSET = 14;
 
 function voteTally(vote: TrackerBoardVote): string {
-  return vote.vote ? `${vote.vote.yes}-${vote.vote.no}-${vote.vote.abstain}` : "";
+  return voteCompactLabel(vote);
 }
 
-function voteSummary(vote: TrackerBoardVote): string {
-  const outcome = vote.outcome === "rejected" ? "REJECTED" : vote.outcome === "approved" ? "APPROVED" : "Board vote";
-  const tally = vote.vote
-    ? `${vote.vote.yes} Yes / ${vote.vote.no} No / ${vote.vote.abstain} Abstain`
-    : "";
+function voteSummary(vote: TrackerBoardVote, t: (key: string) => string): string {
+  const outcome = vote.outcome === "rejected" ? t("tracker.voteRejected") : vote.outcome === "approved" ? t("tracker.voteApproved") : t("tracker.voteHeader");
+  const shape = describeVote(vote);
+  let tally = "";
+  if (shape.kind === "exact") {
+    tally = `${shape.yes} Yes / ${shape.no} No / ${shape.abstain} Abstain`;
+  } else if (shape.kind === "unanimous") {
+    tally = shape.abstain != null ? `${t("tracker.voteUnanimous")} (${shape.abstain} Abstain; ${t("tracker.voteExactCountsNotRecorded")})` : `${t("tracker.voteUnanimous")} (${t("tracker.voteExactCountsNotRecorded")})`;
+  } else if (shape.kind === "majority") {
+    tally = shape.abstain != null ? `${t("tracker.voteMajority")} (${shape.abstain} Abstain; ${t("tracker.voteExactCountsNotRecorded")})` : `${t("tracker.voteMajority")} (${t("tracker.voteExactCountsNotRecorded")})`;
+  }
   const motion = vote.motion_text || "";
   return [outcome, tally, motion].filter(Boolean).join("\n");
 }
@@ -55,7 +62,7 @@ export function TimelineStrip({
   onNodeClick?: (tab: string, idx: number) => void;
   onVoteClick?: () => void;
 }) {
-  const { lang } = useLang();
+  const { lang, t } = useLang();
   const [tip, setTip] = useState<TipState | null>(null);
 
   // Clamp tooltip within viewport so it never clips off-screen.
@@ -122,13 +129,13 @@ export function TimelineStrip({
               type: "Board Vote", typeColor: TYPE_COLOR.board_decision,
               stripeColor: vote.outcome === "rejected" ? "#ef4444" : TYPE_COLOR.board_decision,
               date: formatTrackerDate(vote.date),
-              sender: "", snip: voteSummary(vote), sentiment: "",
+              sender: "", snip: voteSummary(vote, t), sentiment: "",
             })}
             onMouseMove={(e) => tip && setTip({ ...tip, x: e.clientX, y: e.clientY })}
             onMouseLeave={() => setTip(null)}
             onClick={(e) => { e.stopPropagation(); onVoteClick?.(); }}
           >
-            {vote.vote ? `🗳️ ${voteTally(vote)}` : "🗳️"}
+            {voteTally(vote) ? `🗳️ ${voteTally(vote)}` : vote.outcome === "rejected" ? "🗳️ ✗" : vote.outcome === "approved" ? "🗳️ ✓" : "🗳️"}
           </span>
         </span>
       )}

@@ -59,11 +59,55 @@ function HomeContent() {
     return t ? new Set(t.split(",")) : new Set();
   });
   const [page, setPage] = useState(0);
+  const searchParamString = sp.toString();
 
   // Full-text search state
   const [searchGroups, setSearchGroups] = useState<SearchGroup[] | null>(null);
   const [searchLoading, setSearchLoading] = useState(false);
   const debounceRef = useRef<ReturnType<typeof setTimeout>>(undefined);
+
+  // Link navigation to "/" clears the URL params but does not remount this client
+  // component, so mirror URL params back into state when the router changes them.
+  useEffect(() => {
+    const nextQuery = sp.get("q") ?? "";
+    const nextType = sp.get("type") ?? "";
+    const nextOsi = sp.get("osi") === "1";
+    const nextFsf = sp.get("fsf") === "1";
+    const nextProp = sp.get("prop") === "1";
+    const nextLang = sp.get("lang") ?? "";
+    const nextSort = sp.get("sort") ?? "";
+    const nextTags = sp.get("tags");
+
+    setQuery(nextQuery);
+    setTypeFilter(nextType);
+    setOsiOnly(nextOsi);
+    setFsfOnly(nextFsf);
+    setPropOnly(nextProp);
+    setLangFilter(nextLang);
+    setSort(nextSort);
+    setTagFilter(nextTags ? new Set(nextTags.split(",")) : new Set());
+    setPage(0);
+  }, [searchParamString]);
+
+  useEffect(() => {
+    const reset = () => {
+      setQuery("");
+      setTypeFilter("");
+      setOsiOnly(false);
+      setFsfOnly(false);
+      setPropOnly(false);
+      setLangFilter("");
+      setSort("");
+      setTagFilter(new Set());
+      setPage(0);
+      setSearchGroups(null);
+      setSearchLoading(false);
+      const homePath = window.location.pathname.startsWith("/license.atlas") ? "/license.atlas" : "/";
+      window.history.replaceState(null, "", homePath);
+    };
+    window.addEventListener("license-atlas:reset-home", reset);
+    return () => window.removeEventListener("license-atlas:reset-home", reset);
+  }, []);
 
   useEffect(() => {
     const p = new URLSearchParams();
@@ -113,7 +157,8 @@ function HomeContent() {
     return m;
   }, []);
 
-  // Apply filters + sort by popularity to search results
+  // Apply filters to search results. Preserve search relevance order; popularity is
+  // only a tie-breaker so exact identifier matches are not pushed down.
   const filteredGroups = useMemo(() => {
     if (!searchGroups) return null;
     return searchGroups.map((g) => {
@@ -142,7 +187,11 @@ function HomeContent() {
         const l = allLicenses.find((lic) => lic.slug === r.slug);
         return l?.languages?.some((lang) => lang === langFilter || lang.startsWith(langFilter));
       });
-      results.sort((a, b) => (popularityMap.get(b.slug) ?? 0) - (popularityMap.get(a.slug) ?? 0));
+      results = [...results].sort((a, b) => {
+        const scoreDiff = b.score - a.score;
+        if (Math.abs(scoreDiff) > 0.0001) return scoreDiff;
+        return (popularityMap.get(b.slug) ?? 0) - (popularityMap.get(a.slug) ?? 0);
+      });
       return { ...g, results };
     }).filter((g) => g.results.length > 0);
   }, [searchGroups, typeFilter, osionly, fsfOnly, propOnly, tagFilter, langFilter]);

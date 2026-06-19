@@ -2,20 +2,20 @@
 
 English | [中文](README.zh-CN.md)
 
-A comprehensive collection of **2,587** software, AI model, data, and agent licenses — searchable, filterable, and available in English and Chinese.
+A comprehensive collection of **2,588** software, AI model, data, agent, and terms licenses — searchable, filterable, and available in English and Chinese.
 
 **Live site**: [LicenseAtlas](https://morningd.github.io/license.atlas)
 
 ## Features
 
 - **Full-text search** — search license name, source, body text, with fuzzy matching (powered by MiniSearch)
-- **Category filters** — software, model, data, agent
+- **Category filters** — software, model, data, agent, terms
 - **Tag filters** — Permissive, Copyleft, Creative Commons, Hardware, etc.
 - **Popularity & trends** — sparkline charts from HuggingFace, GitHub, and Kaggle data
-- **[OSI License Review Tracker](https://morningd.github.io/license.atlas/tracker)** (`/tracker`) — live board of OSI license submissions, review status, board votes, and timeline
+- **[OSI License Review Tracker](https://morningd.github.io/license.atlas/tracker)** (`/tracker`) — live board of 172 OSI license submissions, review status, board votes, and timeline
 - **Bilingual UI** — English/Chinese with automatic browser language detection
 - **Dark mode** — system preference + manual toggle
-- **Static export** — 2,587 pre-rendered pages, fast loading
+- **Static export** — 2,588 pre-rendered pages, fast loading
 
 ## Tech Stack
 
@@ -44,14 +44,18 @@ License texts are aggregated from:
 | GNU / FSF | 66 licenses |
 | Creative Commons | 37 licenses |
 | choosealicense.com | 47 licenses |
+| ScanCode LicenseDB | Custom license texts and metadata |
+| Blue Oak Council | Permissive-license quality ratings |
 | HuggingFace Hub | Custom model & dataset licenses |
 | GitHub | Agent skill, MCP server, and tool licenses |
 | Open Data Commons | 3 data licenses |
 | RAIL | Responsible AI licenses |
 | OpenAtom Foundation | Model and hardware licenses (bilingual CN/EN) |
 | OpenMDW | Permissive license for ML models and related artifacts (Linux Foundation) |
+| OSI Review Tracker | 172 OSI license-review submissions, timelines, and board-vote records |
 
 Popularity data comes from HuggingFace Hub (2.8M+ models), GitHub (28 license types), and Kaggle (714K+ datasets via Meta-Kaggle).
+The site footer reports the latest data update using the newer timestamp from the license corpus and the OSI review tracker sync.
 
 ## License
 

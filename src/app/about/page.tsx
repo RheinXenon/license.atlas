@@ -2,6 +2,7 @@
 
 import { useLang } from "@/lib/i18n";
 import stats from "@/data/stats.json";
+import trackerIndex from "@/data/tracker-index.json";
 
 const sources = [
   ["SPDX", "about.src.spdx"],
@@ -18,6 +19,7 @@ const sources = [
   ["ScanCode LicenseDB", "about.src.scancode"],
   ["Blue Oak Council", "about.src.blueoak"],
   ["OpenMDW", "about.src.openmdw"],
+  ["OSI Review Tracker", "about.src.osiTracker"],
 ] as const;
 
 const popSources = [
@@ -33,10 +35,11 @@ const statItems = [
   { value: String(stats.by_type.model), key: "about.stats.model" },
   { value: String(stats.by_type.data), key: "about.stats.data" },
   { value: String(stats.by_type.agent), key: "about.stats.agent" },
+  { value: String(stats.by_type.terms), key: "about.stats.terms" },
 ];
 
 export default function AboutPage() {
-  const { t, lang } = useLang();
+  const { t } = useLang();
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
@@ -49,7 +52,7 @@ export default function AboutPage() {
           {t("about.intro", { total: String(stats.total) })}
         </p>
 
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-5">
           {statItems.map((s) => (
             <div
               key={s.key}
@@ -70,6 +73,16 @@ export default function AboutPage() {
             </li>
           ))}
         </ul>
+
+        <h2 className="text-xl font-semibold text-zinc-950 dark:text-zinc-50">{t("about.reviewTitle")}</h2>
+        <p>
+          {t("about.reviewIntro", {
+            total: String(trackerIndex._meta.total_submissions),
+            approved: String(trackerIndex._meta.by_status.approved),
+            rejected: String(trackerIndex._meta.by_status.rejected),
+            pending: String(trackerIndex._meta.by_status.pending),
+          })}
+        </p>
 
         <h2 className="text-xl font-semibold text-zinc-950 dark:text-zinc-50">{t("about.popTitle")}</h2>
         <p>{t("about.popIntro")}</p>

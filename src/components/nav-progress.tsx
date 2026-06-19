@@ -31,12 +31,11 @@ export function NavProgress() {
     window.addEventListener("load", done);
 
     const pushState = history.pushState;
-    history.pushState = function () {
+    history.pushState = function (...args) {
       show();
-      return pushState.apply(this, arguments as any);
+      return pushState.apply(this, args);
     };
 
-    const origClick = document.body.onclick;
     window.addEventListener("click", (e) => {
       const a = (e.target as HTMLElement).closest("a");
       if (a && a.href && a.target !== "_blank" && a.origin === location.origin) {

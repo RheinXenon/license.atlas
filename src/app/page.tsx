@@ -11,14 +11,24 @@ import type { SearchGroup } from "@/lib/search";
 import licenses from "@/data/licenses-index.json";
 import stats from "@/data/stats.json";
 import type { License } from "@/lib/types";
+import { hasReviewContent, resolveTrackerEntry } from "@/lib/tracker-match";
 
 const PAGE_SIZE = 30;
+const REVIEW_TRACKED_TAG = "Review Tracked";
 const allLicenses = licenses as License[];
+const reviewTrackedSlugs = new Set(
+  allLicenses
+    .filter((l) => {
+      const entry = resolveTrackerEntry(l);
+      return entry && hasReviewContent(entry);
+    })
+    .map((l) => l.slug)
+);
 const allTags = Array.from(
-  new Set(allLicenses.flatMap((l) => l.tags))
+  new Set([...allLicenses.flatMap((l) => l.tags), REVIEW_TRACKED_TAG])
 ).filter((t) => !["MCP Server", "Agent Framework", "Agent Skill", "LLM Tool", "Proprietary"].includes(t));
 
-const tagOrder = ["Public Domain", "Permissive", "Weak Copyleft", "Copyleft", "Creative Commons", "GNU", "ModelGo", "GNU Nonfree", "Hardware", "Custom", "HuggingFace", "MCP Server", "Agent Framework", "Agent Skill", "LLM Tool", "tl;drLegal Verified"];
+const tagOrder = ["Public Domain", "Permissive", "Weak Copyleft", "Copyleft", "Creative Commons", "GNU", "ModelGo", "GNU Nonfree", "Hardware", "Custom", "HuggingFace", "MCP Server", "Agent Framework", "Agent Skill", "LLM Tool", "tl;drLegal Verified", "Review Tracked"];
 allTags.sort((a, b) => {
   const ai = tagOrder.indexOf(a), bi = tagOrder.indexOf(b);
   if (ai !== -1 && bi !== -1) return ai - bi;
@@ -49,11 +59,55 @@ function HomeContent() {
     return t ? new Set(t.split(",")) : new Set();
   });
   const [page, setPage] = useState(0);
+  const searchParamString = sp.toString();
 
   // Full-text search state
   const [searchGroups, setSearchGroups] = useState<SearchGroup[] | null>(null);
   const [searchLoading, setSearchLoading] = useState(false);
   const debounceRef = useRef<ReturnType<typeof setTimeout>>(undefined);
+
+  // Link navigation to "/" clears the URL params but does not remount this client
+  // component, so mirror URL params back into state when the router changes them.
+  useEffect(() => {
+    const nextQuery = sp.get("q") ?? "";
+    const nextType = sp.get("type") ?? "";
+    const nextOsi = sp.get("osi") === "1";
+    const nextFsf = sp.get("fsf") === "1";
+    const nextProp = sp.get("prop") === "1";
+    const nextLang = sp.get("lang") ?? "";
+    const nextSort = sp.get("sort") ?? "";
+    const nextTags = sp.get("tags");
+
+    setQuery(nextQuery);
+    setTypeFilter(nextType);
+    setOsiOnly(nextOsi);
+    setFsfOnly(nextFsf);
+    setPropOnly(nextProp);
+    setLangFilter(nextLang);
+    setSort(nextSort);
+    setTagFilter(nextTags ? new Set(nextTags.split(",")) : new Set());
+    setPage(0);
+  }, [searchParamString]);
+
+  useEffect(() => {
+    const reset = () => {
+      setQuery("");
+      setTypeFilter("");
+      setOsiOnly(false);
+      setFsfOnly(false);
+      setPropOnly(false);
+      setLangFilter("");
+      setSort("");
+      setTagFilter(new Set());
+      setPage(0);
+      setSearchGroups(null);
+      setSearchLoading(false);
+      const homePath = window.location.pathname.startsWith("/license.atlas") ? "/license.atlas" : "/";
+      window.history.replaceState(null, "", homePath);
+    };
+    window.addEventListener("license-atlas:reset-home", reset);
+    return () => window.removeEventListener("license-atlas:reset-home", reset);
+  }, []);
 
   useEffect(() => {
     const p = new URLSearchParams();
@@ -103,7 +157,8 @@ function HomeContent() {
     return m;
   }, []);
 
-  // Apply filters + sort by popularity to search results
+  // Apply filters to search results. Preserve search relevance order; popularity is
+  // only a tie-breaker so exact identifier matches are not pushed down.
   const filteredGroups = useMemo(() => {
     if (!searchGroups) return null;
     return searchGroups.map((g) => {
@@ -126,13 +181,17 @@ function HomeContent() {
       }
       if (tagFilter.size > 0) results = results.filter((r) => {
         const l = allLicenses.find((lic) => lic.slug === r.slug);
-        return l && [...tagFilter].every((tag) => l.tags.includes(tag));
+        return l && [...tagFilter].every((tag) => tag === REVIEW_TRACKED_TAG ? reviewTrackedSlugs.has(l.slug) : l.tags.includes(tag));
       });
       if (langFilter) results = results.filter((r) => {
         const l = allLicenses.find((lic) => lic.slug === r.slug);
         return l?.languages?.some((lang) => lang === langFilter || lang.startsWith(langFilter));
       });
-      results.sort((a, b) => (popularityMap.get(b.slug) ?? 0) - (popularityMap.get(a.slug) ?? 0));
+      results = [...results].sort((a, b) => {
+        const scoreDiff = b.score - a.score;
+        if (Math.abs(scoreDiff) > 0.0001) return scoreDiff;
+        return (popularityMap.get(b.slug) ?? 0) - (popularityMap.get(a.slug) ?? 0);
+      });
       return { ...g, results };
     }).filter((g) => g.results.length > 0);
   }, [searchGroups, typeFilter, osionly, fsfOnly, propOnly, tagFilter, langFilter]);
@@ -156,7 +215,7 @@ function HomeContent() {
       if (osionly) result = result.filter((l) => l.osi_approved);
       if (fsfOnly) result = result.filter((l) => l.fsf_libre);
     }
-    if (tagFilter.size > 0) result = result.filter((l) => [...tagFilter].every((t) => l.tags.includes(t)));
+    if (tagFilter.size > 0) result = result.filter((l) => [...tagFilter].every((t) => t === REVIEW_TRACKED_TAG ? reviewTrackedSlugs.has(l.slug) : l.tags.includes(t)));
     if (langFilter) result = result.filter((l) => l.languages?.some((lang) => lang === langFilter || lang.startsWith(langFilter)));
     if (sort === "newest") result = [...result].sort((a, b) => (b.created_at || "").localeCompare(a.created_at || ""));
     return result;
@@ -338,7 +397,7 @@ function HomeContent() {
                   : "border-zinc-200 bg-zinc-100 text-zinc-500 hover:bg-zinc-200 dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
               }`}
             >
-              {isVerified ? <span>{t(`tag.${tagKey}`) !== `tag.${tagKey}` ? t(`tag.${tagKey}`) : tg}</span> : (t(`tag.${tagKey}`) !== `tag.${tagKey}` ? t(`tag.${tagKey}`) : tg)} <span className="opacity-60">({(stats.by_tag as Record<string, number>)[tg] ?? 0})</span>
+              {isVerified ? <span>{t(`tag.${tagKey}`) !== `tag.${tagKey}` ? t(`tag.${tagKey}`) : tg}</span> : (t(`tag.${tagKey}`) !== `tag.${tagKey}` ? t(`tag.${tagKey}`) : tg)} <span className="opacity-60">({tg === REVIEW_TRACKED_TAG ? reviewTrackedSlugs.size : (stats.by_tag as Record<string, number>)[tg] ?? 0})</span>
             </button>
           );
         })}
@@ -369,7 +428,7 @@ function HomeContent() {
                 {group.results.map((r) => {
                   const lic = allLicenses.find((l) => l.slug === r.slug);
                   if (!lic) return null;
-                  return <LicenseCard key={r.slug} license={lic} />;
+                  return <LicenseCard key={r.slug} license={lic} reviewTracked={reviewTrackedSlugs.has(lic.slug)} />;
                 })}
               </div>
             </div>
@@ -388,7 +447,7 @@ function HomeContent() {
           </p>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {paged.map((l) => (
-              <LicenseCard key={l.slug} license={l} />
+              <LicenseCard key={l.slug} license={l} reviewTracked={reviewTrackedSlugs.has(l.slug)} />
             ))}
           </div>
           {paged.length === 0 && (

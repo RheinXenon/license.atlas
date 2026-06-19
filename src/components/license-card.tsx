@@ -7,17 +7,18 @@ import type { License } from "@/lib/types";
 
 interface LicenseCardProps {
   license: Pick<License, "slug" | "title" | "spdx_id" | "type" | "osi_approved" | "fsf_libre" | "fsf_tags" | "tags" | "description" | "trend">;
+  reviewTracked?: boolean;
 }
 
 function Sparkline({ data }: { data: number[] }) {
-  const W = 80, H = 24, PAD = 2;
+  const W = 80, H = 30, PAD_X = 2, PAD_Y = 5;
   const max = Math.max(...data);
   const min = Math.min(...data);
   const range = max - min || 1;
 
   const points = data.map((v, i) => ({
-    x: PAD + (i / (data.length - 1)) * (W - PAD * 2),
-    y: PAD + (1 - (v - min) / range) * (H - PAD * 2),
+    x: PAD_X + (i / (data.length - 1)) * (W - PAD_X * 2),
+    y: PAD_Y + (1 - (v - min) / range) * (H - PAD_Y * 2),
   }));
 
   // Catmull-Rom → cubic Bézier for smooth curves
@@ -56,7 +57,7 @@ function Sparkline({ data }: { data: number[] }) {
   );
 }
 
-export function LicenseCard({ license }: LicenseCardProps) {
+export function LicenseCard({ license, reviewTracked = false }: LicenseCardProps) {
   const { t } = useLang();
 
   return (
@@ -100,6 +101,7 @@ export function LicenseCard({ license }: LicenseCardProps) {
           const translated = t(tagKey) !== tagKey ? t(tagKey) : tag;
           return <Badge key={tag} variant={tag === "tl;drLegal Verified" ? "verified" : "tag"} themeKey={tag}>{translated}</Badge>;
         })}
+        {reviewTracked && <Badge variant="tag" themeKey="review-tracked">{t("tag.review-tracked")}</Badge>}
       </div>
     </Link>
   );

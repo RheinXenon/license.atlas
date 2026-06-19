@@ -40,3 +40,115 @@ export interface Stats {
   by_tag: Record<string, number>;
   updated: string;
 }
+
+// ── OSI License Review Tracker types (from KB v2.json) ──
+export type TrackerStatus =
+  | "approved" | "rejected" | "pending"
+  | "withdrawn" | "superseded" | "legacy";
+
+export type TrackerTimelineEventType =
+  | "submission" | "revision" | "withdrawal"
+  | "board_decision" | "feedback";
+
+export type TrackerSentiment =
+  | "positive" | "negative" | "neutral" | "question"
+  | "mixed" | "support" | "oppose" | "critical";
+
+export interface TrackerTimelineEvent {
+  date: string;
+  type: TrackerTimelineEventType;
+  subject?: string;
+  url?: string;
+  sender: string;
+  snippet: string;
+  point?: string | null;
+  point_zh?: string | null;
+  sentiment: TrackerSentiment;
+  source: "license-review" | "license-discuss";
+  position?: string;
+  relevance?: "high" | "medium" | "low";
+}
+
+export interface TrackerParticipant {
+  name: string;
+  role: "submitter" | "board_member" | "reviewer" | "participant";
+  message_count: number;
+  affiliation?: string;
+}
+
+export interface TrackerBoardVote {
+  date: string;
+  motion_by: string;
+  motion_text: string;
+  second_by: string;
+  discussion: string;
+  vote: { yes: number; no: number; abstain: number; unanimous?: boolean } | null;
+  outcome: "approved" | "rejected" | null;
+  source: "minutes" | "timeline" | "osi_api";
+  minutes_file: string;
+  minutes_url: string;
+  source_note?: string;
+}
+
+export interface TrackerLicenseText {
+  filename: string;
+  version: string;
+  content_preview: string;
+  size: number;
+}
+
+export interface TrackerSubmission {
+  id: string;
+  name: string;
+  aliases: string[];
+  spdx_id: string;
+  status: TrackerStatus;
+  submitter: { name: string; org?: string; role?: string };
+  participants: TrackerParticipant[];
+  license_texts: TrackerLicenseText[];
+  timeline: TrackerTimelineEvent[];
+  board_vote: TrackerBoardVote | null;
+  rejection_reason: string;
+  osi_api_data: object | null;
+  stats: {
+    total_messages: number;
+    date_range: string[];
+    duration_days: number;
+    unique_participants: string[];
+  };
+}
+
+export interface TrackerData {
+  meta: {
+    generated_at: string;
+    total_submissions: number;
+    by_status: Record<string, number>;
+    enriched_at?: string;
+  };
+  submissions: TrackerSubmission[];
+}
+
+// Lightweight index (tracker-index.json) entry
+export interface TrackerIndexEntry {
+  id: string;
+  name: string;
+  spdx_id: string;
+  status: TrackerStatus;
+  submitter: string;
+  stats: { total_messages: number; duration_days: number; date_range: string[] };
+  has_vote: boolean;
+  has_timeline: boolean;
+  timeline_meta: { count: number; first: string | null; last: string | null };
+}
+
+export interface TrackerIndexMeta {
+  source_hash: string;
+  generated_at: string;
+  total_submissions: number;
+  by_status: Record<string, number>;
+}
+
+export interface TrackerIndex {
+  _meta: TrackerIndexMeta;
+  [spdxOrId: string]: TrackerIndexEntry | TrackerIndexMeta;
+}

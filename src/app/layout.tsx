@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
@@ -67,6 +66,10 @@ export default function RootLayout({
       >
         <head>
           <script
+            id="theme-init"
+            dangerouslySetInnerHTML={{ __html: themeScript }}
+          />
+          <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
               __html: JSON.stringify({
@@ -87,7 +90,6 @@ export default function RootLayout({
           />
         </head>
         <body className="flex min-h-full flex-col bg-[var(--background)] text-[var(--foreground)]">
-          <Script id="theme-init" strategy="beforeInteractive">{themeScript}</Script>
           <NavProgress />
           <LangProvider>
             <Navbar />

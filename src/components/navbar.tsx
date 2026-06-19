@@ -57,6 +57,10 @@ export function Navbar() {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
+  function resetHomeSearch() {
+    window.dispatchEvent(new Event("license-atlas:reset-home"));
+  }
+
   const brandName = mounted && lang === "zh"
     ? <span className="font-serif tracking-widest">许可图鉴</span>
     : "LicenseAtlas";
@@ -64,7 +68,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-[100] border-b border-zinc-200/60 bg-white/70 backdrop-blur-lg dark:border-zinc-800/60 dark:bg-zinc-950/70">
       <nav className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6">
-        <Link href="/" className="flex items-center gap-2 font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
+        <Link href="/" onClick={resetHomeSearch} className="flex items-center gap-2 font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
           <svg width="24" height="24" viewBox="0 0 32 32" className="shrink-0">
             <defs><linearGradient id="logo-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#7c3aed"/><stop offset="100%" stopColor="#06b6d4"/></linearGradient></defs>
             <rect width="32" height="32" rx="8" fill="url(#logo-bg)"/>
@@ -77,6 +81,7 @@ export function Navbar() {
         <div className="flex items-center gap-4 text-sm">
           <Link
             href="/"
+            onClick={resetHomeSearch}
             className="text-zinc-600 transition-colors hover:text-[#7c3aed] dark:text-zinc-400 dark:hover:text-[#a78bfa]"
           >
             {t("nav.browse")}
@@ -86,6 +91,12 @@ export function Navbar() {
             className="text-zinc-600 transition-colors hover:text-[#7c3aed] dark:text-zinc-400 dark:hover:text-[#a78bfa]"
           >
             {t("nav.about")}
+          </Link>
+          <Link
+            href="/tracker"
+            className="rounded-full border border-[#3da639]/20 bg-[#3da639]/[0.08] px-3 py-1 text-xs font-semibold text-[#2f7d32] transition-colors hover:border-[#3da639]/40 hover:bg-[#3da639]/[0.14] dark:border-[#3da639]/25 dark:bg-[#3da639]/[0.12] dark:text-[#78d672] dark:hover:bg-[#3da639]/20"
+          >
+            {t("nav.tracker")}
           </Link>
           <a
             href="https://github.com/morningD/license.atlas"

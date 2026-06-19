@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, useCallback, type ReactNode } from "react";
+import { createContext, useContext, useState, useCallback, useEffect, type ReactNode } from "react";
 
 export type Lang = "en" | "zh";
 
@@ -9,6 +9,55 @@ const dict: Record<Lang, Record<string, string>> = {
     // Navbar
     "nav.browse": "Home",
     "nav.about": "About",
+    "nav.tracker": "License Review Tracker",
+    "tracker.title": "License Review Tracker",
+    "tracker.subtitlePre": "Track the license approval process at ",
+    "tracker.subtitlePost": " — every license ever submitted for review, with the full mailing-list debate, community sentiment, and the final decision for each.",
+    "tracker.search": "Search license, sender...",
+    "tracker.sortRecent": "Sort: Recent Activity",
+    "tracker.sortStatus": "Sort: Status",
+    "tracker.sortNewest": "Newest Submitted",
+    "tracker.sortOldest": "Oldest First",
+    "tracker.sortMostDiscussed": "Most Discussed",
+    "tracker.sortLongest": "Longest Review",
+    "tracker.sortName": "Name A-Z",
+    "tracker.expand": "▼ Expand details",
+    "tracker.collapse": "▲ Collapse",
+    "tracker.tabTimeline": "Timeline",
+    "tracker.tabParticipants": "Participants",
+    "tracker.tabArguments": "Arguments",
+    "tracker.tabTexts": "License Texts",
+    "tracker.tabVote": "Board Vote",
+    "tracker.all": "All",
+    "tracker.review": "Review",
+    "tracker.discuss": "Discuss",
+    "tracker.events": "Events",
+    "tracker.noResults": "No matching submissions found.",
+    "tracker.loading": "Loading review tracker...",
+    "tracker.days": "days",
+    "tracker.messages": "messages",
+    "tracker.participants": "participants",
+    "tracker.viewFull": "View full review →",
+    "tracker.voteApproved": "APPROVED",
+    "tracker.voteRejected": "REJECTED",
+    "tracker.voteHeader": "Board Vote",
+    "tracker.motion": "Motion",
+    "tracker.second": "Second",
+    "tracker.voteRecordOnly": "Board decision recorded by OSI API.",
+    "tracker.voteUnanimous": "Passed unanimously",
+    "tracker.voteMajority": "Passed by majority",
+    "tracker.voteExactCountsNotRecorded": "Exact counts not recorded",
+    "tracker.minutes": "Board Meeting Minutes",
+    "tracker.status-approved": "Approved",
+    "tracker.status-rejected": "Rejected",
+    "tracker.status-pending": "Pending",
+    "tracker.status-withdrawn": "Withdrawn",
+    "tracker.status-superseded": "Superseded",
+    "tracker.status-legacy": "Legacy",
+    "review.title": "License Review Status from OSI",
+    "review.subtitle": "This license went through the OSI board review process.",
+    "review.latest": "Latest event",
+    "tag.review-tracked": "Review Tracked",
 
     // Home
     "home.subtitle": "A comprehensive collection of {total} software, AI model, data, and agent licenses.",
@@ -58,6 +107,7 @@ const dict: Record<Lang, Record<string, string>> = {
     "tagdesc.agent": "License for AI agent tools — MCP servers, agent frameworks, skills, and LLM integrations",
     "tagdesc.osi": "Approved by the Open Source Initiative as meeting the Open Source Definition",
     "tagdesc.fsf": "Classified as a free license by the Free Software Foundation",
+    "tagdesc.review-tracked": "Has a public license review record, including submissions, discussions, votes, or final decisions.",
     "tagdesc.proprietary": "Proprietary license that restricts one or more fundamental usage rights",
     "tagdesc.custom": "Custom license not registered with SPDX or other standard bodies",
     "tagdesc.huggingface": "License found on a HuggingFace Hub model",
@@ -151,16 +201,18 @@ const dict: Record<Lang, Record<string, string>> = {
     "browse.loadMore": "Load More ({remaining} remaining)",
 
     // Footer
+    "footer.dataUpdatedAt": "Latest Data Update: {date}",
     "footer.views": "views",
     "footer.visitors": "visitors",
 
     // About
     "about.title": "About LicenseAtlas",
-    "about.intro": "LicenseAtlas is the most comprehensive collection of software, AI model, data, and agent licenses — covering {total} licenses across four categories. Our goal is to provide a single, searchable reference for every license you might encounter in modern software and AI development.",
+    "about.intro": "LicenseAtlas is the most comprehensive collection of software, AI model, data, agent, and terms licenses — covering {total} licenses across five categories. Our goal is to provide a single, searchable reference for every license you might encounter in modern software and AI development.",
     "about.stats.software": "Software",
     "about.stats.model": "AI Model",
     "about.stats.data": "Data",
     "about.stats.agent": "Agent",
+    "about.stats.terms": "Terms",
     "about.sourcesTitle": "License Text Sources",
     "about.sourcesIntro": "License data is aggregated from the following authoritative sources:",
     "about.src.spdx": "Software Package Data Exchange license list",
@@ -177,6 +229,9 @@ const dict: Record<Lang, Record<string, string>> = {
     "about.src.scancode": "1,800+ custom license texts from ScanCode LicenseDB (CC-BY-4.0). Permissive, copyleft, proprietary-free, and source-available licenses.",
     "about.src.blueoak": "Quality ratings for 225+ permissive licenses (Model/Gold/Silver/Bronze/Lead)",
     "about.src.openmdw": "Permissive open-source license for machine-learning models and related artifacts, by Linux Foundation",
+    "about.src.osiTracker": "Public OSI license-review submissions, mailing-list timelines, board decisions, and vote records",
+    "about.reviewTitle": "OSI License Review Tracker",
+    "about.reviewIntro": "The review tracker covers {total} OSI license submissions, including {approved} approved, {rejected} rejected, and {pending} pending reviews, with discussion timelines and board-vote records where available.",
     "about.popTitle": "Popularity & Trends",
     "about.popIntro": "Popularity scores and trend charts are generated from real-world usage data across three major platforms:",
     "about.pop.hf": "2.8M+ models and 927K+ datasets",
@@ -205,6 +260,55 @@ const dict: Record<Lang, Record<string, string>> = {
     // Navbar
     "nav.browse": "首页",
     "nav.about": "关于",
+    "nav.tracker": "许可证审查追踪器",
+    "tracker.title": "许可证审查追踪器",
+    "tracker.subtitlePre": "追踪 ",
+    "tracker.subtitlePost": " 的许可证审批全过程 —— 每一个提交审查的许可证，连同完整的邮件列表讨论、社区态度，以及各自的最终决议。",
+    "tracker.search": "搜索许可证、发件人...",
+    "tracker.sortRecent": "排序：最近活动",
+    "tracker.sortStatus": "排序：状态",
+    "tracker.sortNewest": "最新提交",
+    "tracker.sortOldest": "最早提交",
+    "tracker.sortMostDiscussed": "讨论最多",
+    "tracker.sortLongest": "审查最长",
+    "tracker.sortName": "名称 A-Z",
+    "tracker.expand": "▼ 展开详情",
+    "tracker.collapse": "▲ 收起",
+    "tracker.tabTimeline": "时间轴",
+    "tracker.tabParticipants": "参与者",
+    "tracker.tabArguments": "论点",
+    "tracker.tabTexts": "许可证文本",
+    "tracker.tabVote": "董事会投票",
+    "tracker.all": "全部",
+    "tracker.review": "Review",
+    "tracker.discuss": "Discuss",
+    "tracker.events": "事件",
+    "tracker.noResults": "未找到匹配的提交。",
+    "tracker.loading": "正在加载审查追踪器...",
+    "tracker.days": "天",
+    "tracker.messages": "条消息",
+    "tracker.participants": "位参与者",
+    "tracker.viewFull": "查看完整审查 →",
+    "tracker.voteApproved": "已批准",
+    "tracker.voteRejected": "已否决",
+    "tracker.voteHeader": "董事会投票",
+    "tracker.motion": "动议人",
+    "tracker.second": "附议人",
+    "tracker.voteRecordOnly": "OSI API 记录的董事会决议。",
+    "tracker.voteUnanimous": "一致通过",
+    "tracker.voteMajority": "多数通过",
+    "tracker.voteExactCountsNotRecorded": "未记录具体票数",
+    "tracker.minutes": "董事会会议纪要",
+    "tracker.status-approved": "已批准",
+    "tracker.status-rejected": "已否决",
+    "tracker.status-pending": "待定",
+    "tracker.status-withdrawn": "已撤回",
+    "tracker.status-superseded": "已取代",
+    "tracker.status-legacy": "传统",
+    "review.title": "来自 OSI 的许可证审查状态",
+    "review.subtitle": "该许可证经过了 OSI 董事会审查流程。",
+    "review.latest": "最新事件",
+    "tag.review-tracked": "审查记录",
 
     // Home
     "home.subtitle": "涵盖 {total} 个软件、AI 模型、数据和智能体许可证的全面集合。",
@@ -254,6 +358,7 @@ const dict: Record<Lang, Record<string, string>> = {
     "tagdesc.agent": "AI 智能体工具许可证 — MCP 服务器、智能体框架、技能和 LLM 集成",
     "tagdesc.osi": "经开放源代码促进会（OSI）批准，符合开源定义",
     "tagdesc.fsf": "被自由软件基金会（FSF）归类为自由许可证",
+    "tagdesc.review-tracked": "有公开的许可证审查记录，可能包含提交、讨论、投票或最终决议。",
     "tagdesc.proprietary": "限制一个或多个基本使用权利的专有许可证",
     "tagdesc.custom": "未在 SPDX 或其他标准机构注册的自定义许可证",
     "tagdesc.huggingface": "来自 HuggingFace Hub 模型的许可证",
@@ -351,16 +456,18 @@ const dict: Record<Lang, Record<string, string>> = {
     "browse.loadMore": "加载更多（剩余 {remaining} 个）",
 
     // Footer
+    "footer.dataUpdatedAt": "最新数据更新时间：{date}",
     "footer.views": "次浏览",
     "footer.visitors": "位访客",
 
     // About
     "about.title": "关于许可图鉴（LicenseAtlas）",
-    "about.intro": "许可图鉴（LicenseAtlas）是最全面的软件、AI 模型、数据和智能体许可证集合——涵盖 {total} 个许可证，分为四大类别。我们的目标是为现代软件和 AI 开发中可能遇到的每一个许可证提供统一的可搜索参考。",
+    "about.intro": "许可图鉴（LicenseAtlas）是最全面的软件、AI 模型、数据、智能体和服务条款许可证集合——涵盖 {total} 个许可证，分为五大类别。我们的目标是为现代软件和 AI 开发中可能遇到的每一个许可证提供统一的可搜索参考。",
     "about.stats.software": "软件",
     "about.stats.model": "AI 模型",
     "about.stats.data": "数据",
     "about.stats.agent": "智能体",
+    "about.stats.terms": "服务条款",
     "about.sourcesTitle": "许可证原文来源",
     "about.sourcesIntro": "许可证数据聚合自以下权威来源：",
     "about.src.spdx": "Software Package Data Exchange 许可证列表",
@@ -377,6 +484,9 @@ const dict: Record<Lang, Record<string, string>> = {
     "about.src.scancode": "来自 ScanCode LicenseDB 的 1800+ 自定义许可证全文 (CC-BY-4.0)。包括宽松、Copyleft、专有免费和源码可用许可证。",
     "about.src.blueoak": "225+ 宽松许可证的质量评级（Model/Gold/Silver/Bronze/Lead）",
     "about.src.openmdw": "由 Linux Foundation 发布的 AI 模型及关联制品宽松开源许可证",
+    "about.src.osiTracker": "公开的 OSI 许可证审查提交、邮件列表时间线、董事会决议与投票记录",
+    "about.reviewTitle": "OSI 许可证审查追踪器",
+    "about.reviewIntro": "审查追踪器覆盖 {total} 个 OSI 许可证提交，包括 {approved} 个已批准、{rejected} 个已否决、{pending} 个待定审查，并在可用时提供讨论时间线与董事会投票记录。",
     "about.popTitle": "热度与趋势",
     "about.popIntro": "热度评分和趋势图表基于以下三大平台的真实使用数据生成：",
     "about.pop.hf": "280 万+ 模型和 92.7 万+ 数据集",
@@ -419,7 +529,14 @@ function detectLang(): Lang {
 }
 
 export function LangProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>(detectLang);
+  // Keep the server render and the first client render identical. Reading
+  // localStorage/navigator during the initial client render can switch text
+  // from "Home" to "首页" before hydration completes.
+  const [lang, setLangState] = useState<Lang>("en");
+
+  useEffect(() => {
+    setLangState(detectLang());
+  }, []);
 
   const setLang = useCallback((l: Lang) => {
     setLangState(l);

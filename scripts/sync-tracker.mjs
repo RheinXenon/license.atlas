@@ -71,6 +71,7 @@ const index = {
 const byKey = {};
 for (const s of kbData.submissions) {
   const tl = s.timeline || [];
+  const latest = tl.length ? tl[tl.length - 1] : null;
   const entry = {
     id: s.id,
     name: s.name,
@@ -89,6 +90,16 @@ for (const s of kbData.submissions) {
       first: tl.length ? tl[0].date : null,
       last: tl.length ? tl[tl.length - 1].date : null,
     },
+    latest_event: latest ? {
+      date: latest.date || "",
+      type: latest.type || "",
+      source: latest.source || "",
+      sender: latest.sender || "",
+      subject: latest.subject || "",
+      sentiment: latest.sentiment || "",
+      point: latest.point || latest.snippet || "",
+      point_zh: latest.point_zh || "",
+    } : null,
   };
   // Key by normalized spdx if present, else by id
   const key = s.spdx_id ? normSpdx(s.spdx_id) : normSpdx(s.id);

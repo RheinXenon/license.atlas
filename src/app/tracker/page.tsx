@@ -3,9 +3,9 @@ import { Suspense } from "react";
 import { TrackerClient } from "./tracker-client";
 
 export const metadata: Metadata = {
-  title: "OSI License Review Tracker — LicenseAtlas",
+  title: "License Review Tracker — LicenseAtlas",
   description:
-    "Every license the OSI board has reviewed: submissions, debates, sentiment, and board votes.",
+    "Every license reviewed by OSI: submissions, debates, sentiment, and board votes.",
 };
 
 // useSearchParams requires a Suspense boundary under static export (output: "export").

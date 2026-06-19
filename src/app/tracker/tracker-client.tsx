@@ -1,15 +1,14 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useLang } from "@/lib/i18n";
 import type { TrackerData } from "@/lib/types";
-import { TrackerCard } from "@/components/tracker/tracker-card";
+import { TrackerCard, statusLabel } from "@/components/tracker/tracker-card";
 
 export function TrackerClient() {
   const { t } = useLang();
   const searchParams = useSearchParams();
-  const router = useRouter();
   const [data, setData] = useState<TrackerData | null>(null);
   const [loadError, setLoadError] = useState(false);
 
@@ -44,20 +43,25 @@ export function TrackerClient() {
     );
     if (!sub) return;
     setExpandedIds((prev) => new Set(prev).add(sub.id));
-    // scroll + flash after render
-    requestAnimationFrame(() => {
+    // Wait for the card to expand + render before scrolling. Two rAFs: first
+    // commits the expand state, second positions after layout settles.
+    const scrollToCard = () => {
       const el = document.getElementById(`card-${sub.id}`);
       if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "center" });
+        el.scrollIntoView({ behavior: "auto", block: "center" });
         el.classList.remove("tracker-flash");
         void el.offsetWidth;
         el.classList.add("tracker-flash");
         setTimeout(() => el.classList.remove("tracker-flash"), 1700);
       }
-    });
-    // clear focus param to avoid re-scroll on refresh
-    router.replace("/tracker");
-  }, [data, focusKey, router]);
+    };
+    requestAnimationFrame(() => requestAnimationFrame(scrollToCard));
+    // Clear the focus param WITHOUT triggering a navigation/rerender
+    // (router.replace would reset scroll). replaceState silently drops ?focus.
+    if (window.history?.replaceState) {
+      window.history.replaceState({}, "", `${window.location.pathname}`);
+    }
+  }, [data, focusKey]);
 
   const [query, setQuery] = useState("");
   const [sortBy, setSortBy] = useState("recent");
@@ -129,10 +133,21 @@ export function TrackerClient() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       <div className="mb-6">
-        <h1 className="bg-gradient-to-r from-[#7c3aed] to-[#06b6d4] bg-clip-text text-2xl font-bold text-transparent">
+        <h1 className="bg-gradient-to-r from-[#7c3aed] to-zinc-950 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl dark:to-zinc-50">
           {t("tracker.title")}
         </h1>
-        <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">{t("tracker.subtitle")}</p>
+        <p className="mt-2 max-w-3xl text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
+          {t("tracker.subtitlePre")}
+          <a
+            href="https://opensource.org/about/osi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#7c3aed] hover:underline dark:text-[#a78bfa]"
+          >
+            OSI
+          </a>
+          {t("tracker.subtitlePost")}
+        </p>
       </div>
 
       <div className="mb-4 flex flex-wrap items-center gap-2">
@@ -161,7 +176,7 @@ export function TrackerClient() {
       <div className="mb-4 flex flex-wrap gap-1.5">
         {STATUS_ORDER.filter((st) => st === "all" || (statusCounts[st] || 0) > 0).map((st) => {
           const count = st === "all" ? visibleAll.length : statusCounts[st] || 0;
-          const label = st === "all" ? t("tracker.all") : st.charAt(0).toUpperCase() + st.slice(1);
+          const label = st === "all" ? t("tracker.all") : statusLabel(t, st);
           const active = st === activeFilter;
           const color =
             st === "all" ? "#7c3aed" : st === "approved" ? "#3DA639" : st === "rejected" ? "#B11107"

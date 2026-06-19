@@ -5,6 +5,7 @@ import { Badge } from "@/components/badge";
 import { LicenseBodySection } from "@/components/license-body-section";
 import { LicenseReviewBlock } from "@/components/license-review-block";
 import { useLang } from "@/lib/i18n";
+import { hasReviewContent, resolveTrackerEntry } from "@/lib/tracker-match";
 import type { License } from "@/lib/types";
 
 const LANG_NAMES_EN: Record<string, string> = {
@@ -43,6 +44,8 @@ interface Props {
 
 export function LicenseDetailClient({ license, prev, next }: Props) {
   const { t, lang } = useLang();
+  const trackerEntry = resolveTrackerEntry(license);
+  const reviewTracked = !!trackerEntry && hasReviewContent(trackerEntry);
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6">
@@ -98,6 +101,7 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
                   </Badge>
                 );
               })}
+              {reviewTracked && <Badge variant="tag" themeKey="review-tracked">{t("tag.review-tracked")}</Badge>}
             </>
           )}
         </div>
@@ -166,7 +170,7 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
       )}
 
       {/* OSI License Review (only for licenses reviewed by OSI) */}
-      <LicenseReviewBlock spdxId={license.spdx_id} />
+      <LicenseReviewBlock license={license} />
 
       {/* License Text */}
       {license.body && (

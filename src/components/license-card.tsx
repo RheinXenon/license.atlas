@@ -7,6 +7,7 @@ import type { License } from "@/lib/types";
 
 interface LicenseCardProps {
   license: Pick<License, "slug" | "title" | "spdx_id" | "type" | "osi_approved" | "fsf_libre" | "fsf_tags" | "tags" | "description" | "trend">;
+  reviewTracked?: boolean;
 }
 
 function Sparkline({ data }: { data: number[] }) {
@@ -56,7 +57,7 @@ function Sparkline({ data }: { data: number[] }) {
   );
 }
 
-export function LicenseCard({ license }: LicenseCardProps) {
+export function LicenseCard({ license, reviewTracked = false }: LicenseCardProps) {
   const { t } = useLang();
 
   return (
@@ -100,6 +101,7 @@ export function LicenseCard({ license }: LicenseCardProps) {
           const translated = t(tagKey) !== tagKey ? t(tagKey) : tag;
           return <Badge key={tag} variant={tag === "tl;drLegal Verified" ? "verified" : "tag"} themeKey={tag}>{translated}</Badge>;
         })}
+        {reviewTracked && <Badge variant="tag" themeKey="review-tracked">{t("tag.review-tracked")}</Badge>}
       </div>
     </Link>
   );

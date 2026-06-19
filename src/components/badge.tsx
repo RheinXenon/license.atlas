@@ -44,7 +44,13 @@ export const themes: Record<string, BadgeTheme> = {
     tooltip: "bg-teal-50 border-teal-300 dark:bg-teal-950 dark:border-teal-700",
     glow: "shadow-[0_0_8px_rgba(20,184,166,0.3)]",
   },
-  // OSI Review Tracker statuses (review-* themeKey)
+  // Review tracker marker + OSI Review Tracker statuses (review-* themeKey)
+  "review-tracked": {
+    desc: "Has a public license review record, including submissions, discussions, votes, or final decisions.",
+    badge: "bg-[#3da639]/[0.08] text-[#2f7d32] ring-1 ring-inset ring-[#3da639]/20 dark:bg-[#3da639]/[0.12] dark:text-[#78d672] dark:ring-[#3da639]/25",
+    tooltip: "bg-green-50 border-green-200 dark:bg-green-950 dark:border-green-800",
+    glow: "shadow-[0_0_8px_rgba(61,166,57,0.18)]",
+  },
   "review-approved": {
     desc: "OSI board approved this license.",
     badge: "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300",

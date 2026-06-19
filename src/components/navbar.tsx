@@ -89,7 +89,7 @@ export function Navbar() {
           </Link>
           <Link
             href="/tracker"
-            className="text-zinc-600 transition-colors hover:text-[#7c3aed] dark:text-zinc-400 dark:hover:text-[#a78bfa]"
+            className="rounded-full border border-[#3da639]/20 bg-[#3da639]/[0.08] px-3 py-1 text-xs font-semibold text-[#2f7d32] transition-colors hover:border-[#3da639]/40 hover:bg-[#3da639]/[0.14] dark:border-[#3da639]/25 dark:bg-[#3da639]/[0.12] dark:text-[#78d672] dark:hover:bg-[#3da639]/20"
           >
             {t("nav.tracker")}
           </Link>

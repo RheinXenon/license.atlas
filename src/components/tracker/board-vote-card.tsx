@@ -1,6 +1,7 @@
 "use client";
 
 import { useLang } from "@/lib/i18n";
+import { formatTrackerDate } from "@/lib/tracker-date";
 import type { TrackerBoardVote, TrackerStatus } from "@/lib/types";
 
 export function BoardVoteCard({ v, status }: { v: TrackerBoardVote; status: TrackerStatus }) {
@@ -13,6 +14,9 @@ export function BoardVoteCard({ v, status }: { v: TrackerBoardVote; status: Trac
     : oc === "approved"
     ? "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300"
     : "";
+  const hasMotionMeta = !!(v.motion_by || v.second_by);
+  const hasVoteDetail = !!(v.motion_text || hasMotionMeta || v.vote);
+  const hasOutcomeOnly = !hasVoteDetail && !!ocLabel;
   const motionLc = (v.motion_text || "").toLowerCase();
   const withhold = /\b(withholds?\s+(?:its\s+)?approval|did\s+not\s+approve|do\s+not\s+approve|decline|reject)\b/.test(motionLc);
   const tallyNote = oc === "rejected" && withhold && v.vote && v.vote.yes > (v.vote.no || 0)
@@ -24,22 +28,31 @@ export function BoardVoteCard({ v, status }: { v: TrackerBoardVote; status: Trac
   return (
     <div className="mt-3 rounded-xl border border-violet-200/50 bg-gradient-to-br from-violet-50/40 to-cyan-50/40 p-4 dark:border-violet-800/40 dark:from-violet-900/10 dark:to-cyan-900/10">
       <div className="mb-2 text-sm font-semibold text-violet-700 dark:text-violet-300">
-        🗳️ {t("tracker.voteHeader")} — {v.date || "?"}
+        🗳️ {t("tracker.voteHeader")} — {formatTrackerDate(v.date)}
         {ocLabel && <span className={`ml-2 rounded px-2 py-0.5 text-xs font-bold ${ocCls}`}>{ocLabel}</span>}
       </div>
-      <div className="mb-2 text-sm text-zinc-600 dark:text-zinc-300">
-        <strong>{t("tracker.motion")}:</strong> {v.motion_by || "—"}<br />
-        <strong>{t("tracker.second")}:</strong> {v.second_by || "—"}
-      </div>
+      {hasMotionMeta && (
+        <div className="mb-2 text-sm text-zinc-600 dark:text-zinc-300">
+          {v.motion_by && <><strong>{t("tracker.motion")}:</strong> {v.motion_by}<br /></>}
+          {v.second_by && <><strong>{t("tracker.second")}:</strong> {v.second_by}</>}
+        </div>
+      )}
       {v.motion_text && <div className="my-2 text-sm text-zinc-500 dark:text-zinc-400">{v.motion_text}</div>}
       {tallyNote}
-      {v.vote && (
+      {v.vote ? (
         <div className="flex gap-4 text-sm font-semibold">
           <span className="text-green-600 dark:text-green-400">✓ {v.vote.yes} Yes</span>
           <span className="text-red-600 dark:text-red-400">✗ {v.vote.no} No</span>
           <span className="text-zinc-400">○ {v.vote.abstain} Abstain</span>
         </div>
-      )}
+      ) : hasOutcomeOnly ? (
+        <div className="flex items-center gap-2 text-sm font-semibold">
+          <span className={oc === "rejected" ? "text-red-600 dark:text-red-400" : "text-green-600 dark:text-green-400"}>
+            {oc === "rejected" ? "✗" : "✓"} {ocLabel}
+          </span>
+          <span className="text-xs font-normal text-zinc-400">{t("tracker.voteRecordOnly")}</span>
+        </div>
+      ) : null}
       {v.minutes_url && (
         <div className="mt-2 text-xs">
           <a href={v.minutes_url} target="_blank" rel="noopener noreferrer" className="text-[#7c3aed] hover:underline dark:text-[#a78bfa]">

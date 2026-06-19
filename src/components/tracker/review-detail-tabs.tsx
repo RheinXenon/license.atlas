@@ -1,19 +1,46 @@
 "use client";
 
-import { useState } from "react";
 import { useLang } from "@/lib/i18n";
+import { formatTrackerDate } from "@/lib/tracker-date";
 import type { TrackerSubmission } from "@/lib/types";
 import { ParticipantsList } from "./participants-list";
 import { BoardVoteCard } from "./board-vote-card";
 
-export function ReviewDetailTabs({ s }: { s: TrackerSubmission }) {
+type DetailTab = "timeline" | "participants" | "texts" | "vote";
+
+// Sentiment → small colored pill, mirroring the timeline-strip sentiment tint.
+// Only feedback events carry a meaningful sentiment; non-feedback or neutral → no pill.
+const SENT_PILL: Record<string, string> = {
+  positive: "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300",
+  support: "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300",
+  negative: "bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300",
+  oppose: "bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300",
+  critical: "bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300",
+  question: "bg-violet-100 text-violet-700 dark:bg-violet-900/40 dark:text-violet-300",
+  mixed: "bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300",
+};
+
+function sentimentPill(type: string, sentiment?: string | null): string | null {
+  if (!sentiment || type !== "feedback") return null;
+  const s = sentiment.toLowerCase();
+  return SENT_PILL[s] || null;
+}
+
+export function ReviewDetailTabs({
+  s, tab, setTab, src, setSrc, focusEventIdx, clearFocus,
+}: {
+  s: TrackerSubmission;
+  tab: DetailTab;
+  setTab: (t: DetailTab) => void;
+  src: "review" | "discuss" | "all";
+  setSrc: (s: "review" | "discuss" | "all") => void;
+  focusEventIdx: number | null;
+  clearFocus: () => void;
+}) {
   const { lang, t } = useLang();
   const timeline = s.timeline || [];
   const discussCount = timeline.filter((e) => e.source === "license-discuss").length;
   const reviewCount = timeline.length - discussCount;
-  const defaultSrc = reviewCount === 0 ? "discuss" : "review";
-  const [src, setSrc] = useState<"review" | "discuss" | "all">(defaultSrc);
-  const [tab, setTab] = useState<"timeline" | "participants" | "texts" | "vote">("timeline");
 
   const hasVote = !!s.board_vote;
   const texts = s.license_texts || [];
@@ -21,6 +48,11 @@ export function ReviewDetailTabs({ s }: { s: TrackerSubmission }) {
   const filtered = timeline.filter((e) =>
     src === "all" ? true : src === "discuss" ? e.source === "license-discuss" : e.source !== "license-discuss"
   );
+  // Map filtered index → original timeline index so strip-node clicks (original idx) match rows.
+  const filteredOrigIdx = timeline.map((_, i) => i).filter((i) => {
+    const e = timeline[i];
+    return src === "all" ? true : src === "discuss" ? e.source === "license-discuss" : e.source !== "license-discuss";
+  });
 
   return (
     <div className="mt-4 border-t border-zinc-200/60 pt-4 dark:border-zinc-800/60">
@@ -33,7 +65,7 @@ export function ReviewDetailTabs({ s }: { s: TrackerSubmission }) {
         ] as const).map(([k, label]) => (
           <button
             key={k}
-            onClick={() => setTab(k as typeof tab)}
+            onClick={() => { setTab(k as DetailTab); if (k !== "timeline") clearFocus(); }}
             className={`border-b-2 px-3 py-2 text-sm font-medium transition-colors ${
               tab === k ? "border-[#7c3aed] text-[#7c3aed] dark:text-[#a78bfa]" : "border-transparent text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-200"
             }`}
@@ -55,20 +87,32 @@ export function ReviewDetailTabs({ s }: { s: TrackerSubmission }) {
             <button onClick={() => setSrc("all")} className={`rounded-full px-2.5 py-1 text-xs ${src === "all" ? "bg-[#7c3aed] text-white" : "border border-zinc-200/60 dark:border-zinc-700/60"}`}>{t("tracker.all")} ({timeline.length})</button>
           </div>
           <div className="flex flex-col gap-1">
-            {filtered.map((ev, i) => (
-              <div key={i} className="grid grid-cols-[80px_1fr] gap-2 text-sm">
-                <span className="text-xs text-zinc-400">{ev.date || "?"}</span>
-                <div>
-                  <div className="text-xs font-semibold uppercase tracking-wide text-zinc-500">
-                    {ev.type.replace(/_/g, " ")}
-                    <span className="ml-1.5 rounded bg-violet-50 px-1 text-[9px] dark:bg-violet-900/20">{ev.source.includes("discuss") ? "discuss" : "review"}</span>
+            {filtered.map((ev, i) => {
+              const origIdx = filteredOrigIdx[i];
+              const focused = focusEventIdx === origIdx;
+              const sentPill = sentimentPill(ev.type, ev.sentiment);
+              return (
+                <div
+                  key={i}
+                  id={`ev-${s.id}-${origIdx}`}
+                  className={`grid grid-cols-[80px_1fr] gap-2 rounded-md px-1 py-0.5 text-sm ${focused ? "ring-2 ring-[#7c3aed]/40" : ""}`}
+                >
+                  <span className="text-xs text-zinc-400">{formatTrackerDate(ev.date)}</span>
+                  <div>
+                    <div className="text-xs font-semibold uppercase tracking-wide text-zinc-500">
+                      {ev.type.replace(/_/g, " ")}
+                      <span className="ml-1.5 rounded bg-violet-50 px-1 text-[9px] dark:bg-violet-900/20">{ev.source.includes("discuss") ? "discuss" : "review"}</span>
+                      {sentPill && (
+                        <span className={`ml-1.5 rounded px-1 text-[9px] ${sentPill}`}>{ev.sentiment}</span>
+                      )}
+                    </div>
+                    {ev.sender && ev.sender !== "Unknown" && <span className="font-medium">{ev.sender}: </span>}
+                    <span className="text-zinc-600 dark:text-zinc-300">{(lang === "zh" ? ev.point_zh || ev.snippet : ev.snippet) || ev.subject?.slice(0, 100)}</span>
+                    {ev.url && <a href={ev.url} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="ml-1 text-xs text-[#7c3aed] hover:underline dark:text-[#a78bfa]">[source ↗]</a>}
                   </div>
-                  {ev.sender && ev.sender !== "Unknown" && <span className="font-medium">{ev.sender}: </span>}
-                  <span className="text-zinc-600 dark:text-zinc-300">{(lang === "zh" ? ev.point_zh || ev.snippet : ev.snippet) || ev.subject?.slice(0, 100)}</span>
-                  {ev.url && <a href={ev.url} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="ml-1 text-xs text-[#7c3aed] hover:underline dark:text-[#a78bfa]">[source ↗]</a>}
                 </div>
-              </div>
-            ))}
+              );
+            })}
             {!filtered.length && <div className="text-sm text-zinc-400">No events.</div>}
           </div>
         </div>

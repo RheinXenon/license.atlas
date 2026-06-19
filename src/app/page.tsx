@@ -11,14 +11,24 @@ import type { SearchGroup } from "@/lib/search";
 import licenses from "@/data/licenses-index.json";
 import stats from "@/data/stats.json";
 import type { License } from "@/lib/types";
+import { hasReviewContent, resolveTrackerEntry } from "@/lib/tracker-match";
 
 const PAGE_SIZE = 30;
+const REVIEW_TRACKED_TAG = "Review Tracked";
 const allLicenses = licenses as License[];
+const reviewTrackedSlugs = new Set(
+  allLicenses
+    .filter((l) => {
+      const entry = resolveTrackerEntry(l);
+      return entry && hasReviewContent(entry);
+    })
+    .map((l) => l.slug)
+);
 const allTags = Array.from(
-  new Set(allLicenses.flatMap((l) => l.tags))
+  new Set([...allLicenses.flatMap((l) => l.tags), REVIEW_TRACKED_TAG])
 ).filter((t) => !["MCP Server", "Agent Framework", "Agent Skill", "LLM Tool", "Proprietary"].includes(t));
 
-const tagOrder = ["Public Domain", "Permissive", "Weak Copyleft", "Copyleft", "Creative Commons", "GNU", "ModelGo", "GNU Nonfree", "Hardware", "Custom", "HuggingFace", "MCP Server", "Agent Framework", "Agent Skill", "LLM Tool", "tl;drLegal Verified"];
+const tagOrder = ["Public Domain", "Permissive", "Weak Copyleft", "Copyleft", "Creative Commons", "GNU", "ModelGo", "GNU Nonfree", "Hardware", "Custom", "HuggingFace", "MCP Server", "Agent Framework", "Agent Skill", "LLM Tool", "tl;drLegal Verified", "Review Tracked"];
 allTags.sort((a, b) => {
   const ai = tagOrder.indexOf(a), bi = tagOrder.indexOf(b);
   if (ai !== -1 && bi !== -1) return ai - bi;
@@ -126,7 +136,7 @@ function HomeContent() {
       }
       if (tagFilter.size > 0) results = results.filter((r) => {
         const l = allLicenses.find((lic) => lic.slug === r.slug);
-        return l && [...tagFilter].every((tag) => l.tags.includes(tag));
+        return l && [...tagFilter].every((tag) => tag === REVIEW_TRACKED_TAG ? reviewTrackedSlugs.has(l.slug) : l.tags.includes(tag));
       });
       if (langFilter) results = results.filter((r) => {
         const l = allLicenses.find((lic) => lic.slug === r.slug);
@@ -156,7 +166,7 @@ function HomeContent() {
       if (osionly) result = result.filter((l) => l.osi_approved);
       if (fsfOnly) result = result.filter((l) => l.fsf_libre);
     }
-    if (tagFilter.size > 0) result = result.filter((l) => [...tagFilter].every((t) => l.tags.includes(t)));
+    if (tagFilter.size > 0) result = result.filter((l) => [...tagFilter].every((t) => t === REVIEW_TRACKED_TAG ? reviewTrackedSlugs.has(l.slug) : l.tags.includes(t)));
     if (langFilter) result = result.filter((l) => l.languages?.some((lang) => lang === langFilter || lang.startsWith(langFilter)));
     if (sort === "newest") result = [...result].sort((a, b) => (b.created_at || "").localeCompare(a.created_at || ""));
     return result;
@@ -338,7 +348,7 @@ function HomeContent() {
                   : "border-zinc-200 bg-zinc-100 text-zinc-500 hover:bg-zinc-200 dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
               }`}
             >
-              {isVerified ? <span>{t(`tag.${tagKey}`) !== `tag.${tagKey}` ? t(`tag.${tagKey}`) : tg}</span> : (t(`tag.${tagKey}`) !== `tag.${tagKey}` ? t(`tag.${tagKey}`) : tg)} <span className="opacity-60">({(stats.by_tag as Record<string, number>)[tg] ?? 0})</span>
+              {isVerified ? <span>{t(`tag.${tagKey}`) !== `tag.${tagKey}` ? t(`tag.${tagKey}`) : tg}</span> : (t(`tag.${tagKey}`) !== `tag.${tagKey}` ? t(`tag.${tagKey}`) : tg)} <span className="opacity-60">({tg === REVIEW_TRACKED_TAG ? reviewTrackedSlugs.size : (stats.by_tag as Record<string, number>)[tg] ?? 0})</span>
             </button>
           );
         })}
@@ -369,7 +379,7 @@ function HomeContent() {
                 {group.results.map((r) => {
                   const lic = allLicenses.find((l) => l.slug === r.slug);
                   if (!lic) return null;
-                  return <LicenseCard key={r.slug} license={lic} />;
+                  return <LicenseCard key={r.slug} license={lic} reviewTracked={reviewTrackedSlugs.has(lic.slug)} />;
                 })}
               </div>
             </div>
@@ -388,7 +398,7 @@ function HomeContent() {
           </p>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {paged.map((l) => (
-              <LicenseCard key={l.slug} license={l} />
+              <LicenseCard key={l.slug} license={l} reviewTracked={reviewTrackedSlugs.has(l.slug)} />
             ))}
           </div>
           {paged.length === 0 && (

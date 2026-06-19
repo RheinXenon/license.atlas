@@ -57,6 +57,23 @@ No data processing scripts in this project — KB is the single source of truth.
 
 **OpenMDW 特殊处理**：KB `crawlers/licenses_crawl.js` 的 `crawlOpenMDW` 函数通过 GitHub API 监控 `OpenMDW/OpenMDW` repo 的版本目录，自动发现新版本并爬取许可证正文。P/C/L 元数据通过静态映射维护（`OPENMDW_METADATA` 对象）。FAQ 和 About 等参考资料保存在 `KB/data/licenses/openmdw/`。
 
+## OSI License Review Tracker
+
+集成 KB 的 OSI License Review Tracker，提供 `/tracker` 独立入口 + 详情页内嵌 review 块。
+
+- 数据：`public/data/tracker.json`（全量，lazy-load）+ `src/data/tracker-index.json`（轻量映射）
+- 同步：`npm run sync:tracker`（hash 增量检测，幂等）
+- 全链路：`npm run update:tracker [--full]`（调 KB build/enrich/LLM + sync）
+- `npm run build` 已内嵌 sync，每次构建自动检测同步
+- KB 侧构建细节：`docs/OSI-TRACKER.md`；集成架构：`docs/tracker-architecture.md`
+
+### 更新 tracker Checklist
+
+修改 KB OSI 数据后：
+1. `npm run sync:tracker`（或直接 `npm run build`，会自动同步）
+2. 若要重跑 KB 全链路：`npm run update:tracker`（增量 LLM）/ `--full`（全量）
+3. 详情页 review 块自动从 `tracker-index.json` 读取，无需额外操作
+
 ## i18n
 
 Lightweight client-side i18n via `src/lib/i18n.tsx`:

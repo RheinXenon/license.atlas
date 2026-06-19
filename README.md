@@ -12,6 +12,7 @@ A comprehensive collection of **2,587** software, AI model, data, and agent lice
 - **Category filters** — software, model, data, agent
 - **Tag filters** — Permissive, Copyleft, Creative Commons, Hardware, etc.
 - **Popularity & trends** — sparkline charts from HuggingFace, GitHub, and Kaggle data
+- **[OSI License Review Tracker](https://morningd.github.io/license.atlas/tracker)** (`/tracker`) — live board of OSI license submissions, review status, board votes, and timeline
 - **Bilingual UI** — English/Chinese with automatic browser language detection
 - **Dark mode** — system preference + manual toggle
 - **Static export** — 2,587 pre-rendered pages, fast loading

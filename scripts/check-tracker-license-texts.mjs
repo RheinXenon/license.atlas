@@ -82,6 +82,15 @@ for (const s of DATA.submissions || []) {
     if (!body.trim() && tx.extraction_confidence !== "none") {
       fail(`${label}: empty text/display_text without extraction_confidence=none`);
     }
+    if (/^(Dear|Hi|Hello)\b/i.test(body.trim())) {
+      fail(`${label}: looks like a mail message, not a license text`);
+    }
+    if (/License-review mailing list|License-discuss mailing list/i.test(body)) {
+      fail(`${label}: contains mailing-list footer`);
+    }
+    if (/\bI am\b.{0,80}\bsubmitt/i.test(body.slice(0, 1200))) {
+      fail(`${label}: contains submission narrative near start`);
+    }
 
     if (/^\d{2,}\.?$/.test(String(tx.version || tx.version_label || ""))) {
       fail(`${label}: suspicious compact version "${tx.version || tx.version_label}"`);

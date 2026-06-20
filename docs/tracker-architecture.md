@@ -48,20 +48,20 @@ KB（source of truth）→ license-atlas 单向同步：
 - 174 个 submissions：approved 102 / rejected 37 / withdrawn 4 / pending 8 / superseded 3 / legacy 20
 - 77 个 `board_vote`：minutes 50 / timeline 3 / osi_api 24
 - 50 个含详细票数对象（yes/no/abstain）的 board vote
-- 188 个 `license_texts`，其中 65 个可直接回链 timeline event，44 个重复内容标记 `duplicate_of`，78 个同系列相邻版本 diff
+- 87 个保守抽取的 `license_texts`，其中 61 个可直接回链 timeline event，20 个重复内容标记 `duplicate_of`，24 个同系列相邻版本 diff
 
 ## 设计约束
 
 - KB 是 source of truth；Atlas 只同步和展示。状态色纳入 atlas 语义色板（见 `badge.tsx` `review-*` themes）。详见设计文档 `docs/superpowers/specs/2026-06-18-license-review-tracker-integration-design.md`。
 - KB 数据构建细节见 `docs/OSI-TRACKER.md`。
-- `public/data/tracker.json` 当前包含提交许可证文本正文（约 8.1MB / gzip 约 1.28MB）。后续加入 diff hunks 前必须重新评估体积；如果 gzip 明显增长，应拆为 `public/data/tracker-texts/{submission_id}.json` 按需加载。
+- `public/data/tracker.json` 当前包含提交许可证文本正文和 diff hunks。文本来源是本地附件文件和 Pipermail plain-text MIME part；整封提交邮件、FAQ、OSD notes、代码附件、diff、签名等被过滤。如果后续抓取更多附件导致 gzip 明显增长，应拆为 `public/data/tracker-texts/{submission_id}.json` 按需加载。
 
 ## 近期 UI 行为
 
 - `/tracker` 底部右侧有无文字的返回顶部按钮；页面滚动超过一屏后出现，点击平滑回到顶部。
 - 左上 LicenseAtlas/Home 导航会清空首页搜索和筛选状态，避免回到首页后保留旧查询。
 - Review detail 的 `[source ↗]` 链接使用 `whitespace-nowrap`，不会被截断或单独断开。
-- Review detail 的 License Texts tab 已显示结构化文本历史：版本列表、series、日期、timeline 编号、提取可信度、重复标记、来源链接和本地正文；若选中版本有同系列上一版，`Diff from previous` 显示 line-level 增删 hunks。Timeline 事件若有关联 `text_ids`，事件行显示 `text` 按钮可切到对应文本；文本详情中的 `timeline #N` 可跳回并高亮原事件。
+- Review detail 的 License Texts tab 显示结构化许可证原文历史：版本列表、series、日期、timeline 编号、提取可信度、重复标记、来源链接和本地正文；若选中版本有同系列上一版，`Diff from previous` 显示 line-level 增删 hunks。Timeline 事件若有关联 `text_ids`，事件行显示 `text` 按钮可切到对应文本；文本详情中的 `timeline #N` 可跳回并高亮原事件。
 - 多个 tracker 卡片可同时展开；展开一个 license 不会折叠其他已展开 license。
 - Timeline hover tooltip 的事件类型首字母大写，并在 `Feedback` 后紧跟 sentiment tag（如 `negative`）。
 - 详情页内嵌 `LicenseReviewBlock` 显示 `First Submitted` 和最终 `Approved Date` / `Rejected Date`。

@@ -43,6 +43,7 @@ let submissionWithTexts = 0;
 let totalTexts = 0;
 let linkedTexts = 0;
 let duplicateTexts = 0;
+let totalDiffs = 0;
 
 for (const s of DATA.submissions || []) {
   const texts = s.license_texts || [];
@@ -61,6 +62,7 @@ for (const s of DATA.submissions || []) {
   let previousSortKey = null;
   const canonicalByHash = new Map();
   const idsInSubmission = new Set();
+  const textById = new Map();
 
   for (const tx of texts) {
     const label = `${s.id} :: ${tx.filename || tx.id || "(unknown text)"}`;
@@ -71,6 +73,7 @@ for (const s of DATA.submissions || []) {
 
     if (tx.id && idsInSubmission.has(tx.id)) fail(`${label}: duplicate id within submission ${tx.id}`);
     if (tx.id) idsInSubmission.add(tx.id);
+    if (tx.id) textById.set(tx.id, tx);
 
     if (!tx.source_url && !tx.message_url) fail(`${label}: missing both source_url and message_url`);
     if (!tx.sha256 || !/^[a-f0-9]{64}$/i.test(tx.sha256)) fail(`${label}: invalid sha256`);
@@ -113,6 +116,30 @@ for (const s of DATA.submissions || []) {
       warn(`${label}: message_url is not in this submission timeline`);
     }
   }
+
+  const diffs = s.license_text_diffs || [];
+  totalDiffs += diffs.length;
+  const seenDiffIds = new Set();
+  for (const diff of diffs) {
+    const label = `${s.id} :: diff ${diff.id || "(missing id)"}`;
+    if (!diff.id) fail(`${label}: missing id`);
+    else if (seenDiffIds.has(diff.id)) fail(`${label}: duplicate diff id`);
+    else seenDiffIds.add(diff.id);
+    const from = textById.get(diff.from_text_id);
+    const to = textById.get(diff.to_text_id);
+    if (!from) fail(`${label}: from_text_id not found (${diff.from_text_id})`);
+    if (!to) fail(`${label}: to_text_id not found (${diff.to_text_id})`);
+    if (from && to && (from.series || "") !== (to.series || "")) {
+      fail(`${label}: crosses series ${from.series || "(none)"} -> ${to.series || "(none)"}`);
+    }
+    if (from?.duplicate_of || to?.duplicate_of) fail(`${label}: diff should not use duplicate text records`);
+    if (!diff.stats || !Number.isInteger(diff.stats.added) || !Number.isInteger(diff.stats.removed)) {
+      fail(`${label}: missing numeric stats`);
+    }
+    if (!diff.too_large && (!Array.isArray(diff.hunks) || !diff.hunks.length) && (diff.stats?.added || diff.stats?.removed)) {
+      fail(`${label}: changed diff has no hunks`);
+    }
+  }
 }
 
 const modelGo = (DATA.submissions || []).find((s) => s.id === "modelgo-attribution-v2");
@@ -123,6 +150,8 @@ if (modelGo) {
   }
   const linked = (modelGo.license_texts || []).filter((t) => Number.isInteger(t.event_index)).length;
   if (linked < 12) fail(`modelgo-attribution-v2: expected at least 12 linked text records, got ${linked}`);
+  const diffs = modelGo.license_text_diffs || [];
+  if (diffs.length < 6) fail(`modelgo-attribution-v2: expected at least 6 text diffs, got ${diffs.length}`);
 } else {
   fail("modelgo-attribution-v2: missing submission");
 }
@@ -131,6 +160,7 @@ console.log(`license text submissions: ${submissionWithTexts}`);
 console.log(`license text records: ${totalTexts}`);
 console.log(`linked to timeline: ${linkedTexts}`);
 console.log(`duplicates marked: ${duplicateTexts}`);
+console.log(`license text diffs: ${totalDiffs}`);
 if (warnings.length) {
   console.log(`warnings: ${warnings.length}`);
   for (const w of warnings.slice(0, 20)) console.log(`  warn: ${w}`);

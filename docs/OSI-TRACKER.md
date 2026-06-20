@@ -113,7 +113,9 @@ node -e "const fs=require('fs'); const html=fs.readFileSync('data/osi/license-re
 
 **License text 结构化（2026-06-20）**：`enrich-license-tracker.mjs` 不再只输出 `{filename, version, content_preview, size}`，而是解析 `mail/licenses/*.txt` frontmatter（`source_url` / `message_url` / `message_subject` / `type` / `downloaded_at`）与正文，写入稳定 `id`、`sha256`、`duplicate_of`、`text`、`display_text`、`normalized_text`、`extraction_confidence`。同 submission 内相同正文 hash 的后续文件标记 `duplicate_of`；若 `message_url` 或 `source_url` 命中 timeline event，则写入 `event_index/event_type`，并在 timeline event 上追加 `text_ids`。当前 v2：188 条 license_texts，65 条直接回链 timeline，44 条重复内容标记。ModelGo series 输出为 `MG0` / `MG-BY` / `MG-BY-OS` / `MG-BY-SA`。
 
-**License text 验证 gate**：`check-license-texts.mjs` 检查全局 text id 唯一、source/message URL、sha256、正文非空、可疑版本号（如 `20`/`10`）拦截、排序、duplicate canonical、timeline 反向 `text_ids`、ModelGo 四系列。未命中的历史 source URL 仅 warning，因为很多旧 license text 文件来自 sibling/legacy thread，不能强行绑定。
+**License text diff（2026-06-20）**：`buildLicenseTextDiffs()` 只比较同一 `series` 内、非 duplicate 的相邻文本版本，生成 line-level LCS diff：`stats.added/removed/unchanged` + context hunks。跨 series 不比较，避免 ModelGo 四变体互相产生噪声。当前生成 78 个同系列相邻版本 diff；超大文本对会标记 `too_large` 而不内嵌 hunks。
+
+**License text 验证 gate**：`check-license-texts.mjs` / Atlas `check-tracker-license-texts.mjs` 检查全局 text id 唯一、source/message URL、sha256、正文非空、可疑版本号（如 `20`/`10`）拦截、排序、duplicate canonical、timeline 反向 `text_ids`、diff from/to id 与同 series 约束、ModelGo 四系列。未命中的历史 source URL 仅 warning，因为很多旧 license text 文件来自 sibling/legacy thread，不能强行绑定。
 
 > 🔑 **vote 的唯一权威数据源是 board meeting minutes，不是邮件正文。** OSI 董事会投票走线下会议，结果以 board decision 公告形式发回邮件列表（如 Ritchey 的 "Board adopted... did NOT approve"）。邮件正文里几乎不存在 "I move to approve" 这类真投票——任何从邮件正文抓 vote 的尝试都是引用块误判。`board_vote` 字段**只**由 `findBoardVotes()` 从 `data/osi/minutes/*.md`（221 个）提取，timeline event 的 `type` 不应含 `vote`。
 
@@ -168,6 +170,14 @@ node -e "const fs=require('fs'); const html=fs.readFileSync('data/osi/license-re
     "sha256", "duplicate_of", "extraction_confidence",
     "text", "display_text", "normalized_text", "content_preview", "size",
     "event_index", "event_type"
+  }],
+  "license_text_diffs": [{
+    "id", "series",
+    "from_text_id", "to_text_id", "from_label", "to_label",
+    "from_date", "to_date",
+    "stats": { "added", "removed", "unchanged" },
+    "too_large", "truncated",
+    "hunks": [{ "old_start", "new_start", "lines": [{ "type", "text" }] }]
   }],
   "timeline": [{                   // review/discuss 事件流
     "date", "type",                // type: submission|revision|withdrawal|board_decision|feedback|status_inquiry（无 vote）

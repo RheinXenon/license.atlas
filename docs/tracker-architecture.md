@@ -28,7 +28,7 @@ KB（source of truth）→ license-atlas 单向同步：
 
 **轻量 index 日期字段**：`tracker-index.json` 写入 `review_dates.first_submitted` / `review_dates.decision` / `review_dates.decision_status`。优先级：首次提交 = OSI API `submission_date` → timeline 首个 `submission` → `stats.date_range[0]`；批准/否决日期 = OSI API `approval_date` → `board_vote.date` → timeline `board_decision.date`。详情页 `LicenseReviewBlock` 显示 `First Submitted` 和 `Approved Date` / `Rejected Date`。
 
-**轻量 index 文本字段**：`tracker-index.json` 写入 `text_meta.count` / `linked_count` / `duplicate_count` / `series` / `latest_text_date`，供详情页和未来按需加载判断，不在轻量 index 放全文。
+**轻量 index 文本字段**：`tracker-index.json` 写入 `text_meta.count` / `linked_count` / `duplicate_count` / `diff_count` / `series` / `latest_text_date`，供详情页和未来按需加载判断，不在轻量 index 放全文。
 
 **两种更新场景**：
 - KB 先更新 OSI 源 → atlas 下次 `build` 自动识别 hash/schema 变化同步。
@@ -43,12 +43,12 @@ KB（source of truth）→ license-atlas 单向同步：
 
 ## 当前同步快照
 
-- `source_hash`: `0473d18bca694020`
-- `index_schema_version`: `3`
+- `source_hash`: `c58de23344fb4bbd`
+- `index_schema_version`: `4`
 - 174 个 submissions：approved 102 / rejected 37 / withdrawn 4 / pending 8 / superseded 3 / legacy 20
 - 77 个 `board_vote`：minutes 50 / timeline 3 / osi_api 24
 - 50 个含详细票数对象（yes/no/abstain）的 board vote
-- 188 个 `license_texts`，其中 65 个可直接回链 timeline event，44 个重复内容标记 `duplicate_of`
+- 188 个 `license_texts`，其中 65 个可直接回链 timeline event，44 个重复内容标记 `duplicate_of`，78 个同系列相邻版本 diff
 
 ## 设计约束
 
@@ -61,7 +61,7 @@ KB（source of truth）→ license-atlas 单向同步：
 - `/tracker` 底部右侧有无文字的返回顶部按钮；页面滚动超过一屏后出现，点击平滑回到顶部。
 - 左上 LicenseAtlas/Home 导航会清空首页搜索和筛选状态，避免回到首页后保留旧查询。
 - Review detail 的 `[source ↗]` 链接使用 `whitespace-nowrap`，不会被截断或单独断开。
-- Review detail 的 License Texts tab 已显示结构化文本历史：版本列表、series、日期、timeline 编号、提取可信度、重复标记、来源链接和本地正文预览。完整 diff/双向跳转属于下一阶段。
+- Review detail 的 License Texts tab 已显示结构化文本历史：版本列表、series、日期、timeline 编号、提取可信度、重复标记、来源链接和本地正文；若选中版本有同系列上一版，`Diff from previous` 显示 line-level 增删 hunks。完整 timeline 双向跳转属于下一阶段。
 - 多个 tracker 卡片可同时展开；展开一个 license 不会折叠其他已展开 license。
 - Timeline hover tooltip 的事件类型首字母大写，并在 `Feedback` 后紧跟 sentiment tag（如 `negative`）。
 - 详情页内嵌 `LicenseReviewBlock` 显示 `First Submitted` 和最终 `Approved Date` / `Rejected Date`。

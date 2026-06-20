@@ -29,7 +29,7 @@ const KB_V2 = resolve(KB_ROOT, "data", "osi", "license-review-tracker-v2.json");
 
 const ATLAS_FULL = resolve(ROOT, "public", "data", "tracker.json");
 const ATLAS_INDEX = resolve(ROOT, "src", "data", "tracker-index.json");
-const INDEX_SCHEMA_VERSION = 3;
+const INDEX_SCHEMA_VERSION = 4;
 
 if (!existsSync(KB_V2)) {
   if (existsSync(ATLAS_FULL) && existsSync(ATLAS_INDEX)) {
@@ -97,6 +97,7 @@ const textMeta = (s) => {
     count: texts.length,
     linked_count: texts.filter((t) => Number.isInteger(t.event_index)).length,
     duplicate_count: texts.filter((t) => t.duplicate_of).length,
+    diff_count: (s.license_text_diffs || []).length,
     series: [...new Set(texts.map((t) => t.series).filter(Boolean))].sort(),
     latest_text_date: texts.map((t) => isoDate(t.date)).filter(Boolean).sort().at(-1) || "",
   };

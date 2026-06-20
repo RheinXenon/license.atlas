@@ -40,6 +40,18 @@ function confidenceClass(confidence?: string) {
   return "bg-zinc-100 text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400";
 }
 
+function diffLineClass(type: string) {
+  if (type === "add") return "bg-emerald-50 text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-200";
+  if (type === "remove") return "bg-red-50 text-red-800 dark:bg-red-950/40 dark:text-red-200";
+  return "text-zinc-600 dark:text-zinc-300";
+}
+
+function diffLinePrefix(type: string) {
+  if (type === "add") return "+";
+  if (type === "remove") return "-";
+  return " ";
+}
+
 export function ReviewDetailTabs({
   s, tab, setTab, src, setSrc, focusEventIdx, clearFocus,
 }: {
@@ -59,9 +71,14 @@ export function ReviewDetailTabs({
   const hasVote = !!s.board_vote;
   const texts = useMemo(() => s.license_texts || [], [s.license_texts]);
   const [selectedTextId, setSelectedTextId] = useState<string | null>(null);
+  const [textView, setTextView] = useState<"text" | "diff">("text");
   const selectedText = useMemo(
     () => texts.find((tx) => tx.id === selectedTextId) || texts.find((tx) => !tx.duplicate_of) || texts[0],
     [texts, selectedTextId],
+  );
+  const selectedDiff = useMemo(
+    () => (s.license_text_diffs || []).find((d) => d.to_text_id === selectedText?.id) || null,
+    [s.license_text_diffs, selectedText?.id],
   );
 
   const filtered = timeline.filter((e) =>
@@ -148,7 +165,10 @@ export function ReviewDetailTabs({
                 <button
                   key={tx.id || i}
                   type="button"
-                  onClick={() => setSelectedTextId(tx.id || null)}
+                  onClick={() => {
+                    setSelectedTextId(tx.id || null);
+                    setTextView("text");
+                  }}
                   className={`rounded-lg border px-3 py-2 text-left text-sm transition-colors ${
                     active
                       ? "border-[#7c3aed]/50 bg-violet-50 dark:border-[#a78bfa]/50 dark:bg-violet-950/30"
@@ -183,9 +203,41 @@ export function ReviewDetailTabs({
                     <a href={selectedText.message_url} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="inline-flex shrink-0 whitespace-nowrap text-[#7c3aed] hover:underline dark:text-[#a78bfa]">[source ↗]</a>
                   )}
                 </div>
-                <pre className="max-h-[560px] overflow-auto whitespace-pre-wrap break-words rounded-md bg-white p-3 font-mono text-xs leading-relaxed text-zinc-700 dark:bg-zinc-950 dark:text-zinc-200">
-                  {selectedText.display_text || selectedText.text || selectedText.content_preview || selectedText.filename}
-                </pre>
+                <div className="mb-2 flex gap-1.5">
+                  <button type="button" onClick={() => setTextView("text")} className={`rounded-full px-2.5 py-1 text-xs ${textView === "text" ? "bg-[#7c3aed] text-white" : "border border-zinc-200/60 dark:border-zinc-700/60"}`}>Text</button>
+                  <button type="button" onClick={() => setTextView("diff")} disabled={!selectedDiff} className={`rounded-full px-2.5 py-1 text-xs disabled:cursor-not-allowed disabled:opacity-40 ${textView === "diff" ? "bg-[#7c3aed] text-white" : "border border-zinc-200/60 dark:border-zinc-700/60"}`}>
+                    Diff from previous{selectedDiff ? ` (+${selectedDiff.stats.added}/-${selectedDiff.stats.removed})` : ""}
+                  </button>
+                </div>
+                {textView === "diff" && selectedDiff ? (
+                  <div className="max-h-[560px] overflow-auto rounded-md bg-white p-3 font-mono text-xs leading-relaxed dark:bg-zinc-950">
+                    <div className="mb-2 font-sans text-xs text-zinc-500">
+                      {selectedDiff.from_label} → {selectedDiff.to_label}
+                      {selectedDiff.truncated && <span className="ml-2 rounded bg-amber-100 px-1.5 py-0.5 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">truncated</span>}
+                    </div>
+                    {selectedDiff.too_large ? (
+                      <div className="text-zinc-500">Diff is too large to render inline.</div>
+                    ) : selectedDiff.hunks.length ? (
+                      selectedDiff.hunks.map((hunk, hunkIdx) => (
+                        <div key={hunkIdx} className="mb-3 overflow-hidden rounded border border-zinc-100 dark:border-zinc-800">
+                          <div className="bg-zinc-100 px-2 py-1 text-[10px] text-zinc-500 dark:bg-zinc-900">@@ {hunk.old_start} / {hunk.new_start} @@</div>
+                          {hunk.lines.map((line, lineIdx) => (
+                            <div key={lineIdx} className={`grid grid-cols-[18px_1fr] gap-2 px-2 py-0.5 ${diffLineClass(line.type)}`}>
+                              <span>{diffLinePrefix(line.type)}</span>
+                              <span className="whitespace-pre-wrap break-words">{line.text || " "}</span>
+                            </div>
+                          ))}
+                        </div>
+                      ))
+                    ) : (
+                      <div className="text-zinc-500">No textual changes from the previous version.</div>
+                    )}
+                  </div>
+                ) : (
+                  <pre className="max-h-[560px] overflow-auto whitespace-pre-wrap break-words rounded-md bg-white p-3 font-mono text-xs leading-relaxed text-zinc-700 dark:bg-zinc-950 dark:text-zinc-200">
+                    {selectedText.display_text || selectedText.text || selectedText.content_preview || selectedText.filename}
+                  </pre>
+                )}
               </>
             ) : (
               <div className="text-sm text-zinc-400">No license text files found.</div>

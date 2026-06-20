@@ -118,6 +118,26 @@ export interface TrackerLicenseText {
   event_type?: TrackerTimelineEventType;
 }
 
+export interface TrackerLicenseTextDiffLine {
+  type: "context" | "add" | "remove";
+  text: string;
+}
+
+export interface TrackerLicenseTextDiff {
+  id: string;
+  series: string;
+  from_text_id: string;
+  to_text_id: string;
+  from_label: string;
+  to_label: string;
+  from_date: string;
+  to_date: string;
+  stats: { added: number; removed: number; unchanged: number };
+  too_large?: boolean;
+  truncated?: boolean;
+  hunks: { old_start: number; new_start: number; lines: TrackerLicenseTextDiffLine[] }[];
+}
+
 export interface TrackerSubmission {
   id: string;
   name: string;
@@ -127,6 +147,7 @@ export interface TrackerSubmission {
   submitter: { name: string; org?: string; role?: string };
   participants: TrackerParticipant[];
   license_texts: TrackerLicenseText[];
+  license_text_diffs?: TrackerLicenseTextDiff[];
   timeline: TrackerTimelineEvent[];
   board_vote: TrackerBoardVote | null;
   rejection_reason: string;
@@ -168,6 +189,7 @@ export interface TrackerIndexEntry {
     count: number;
     linked_count: number;
     duplicate_count: number;
+    diff_count: number;
     series: string[];
     latest_text_date: string;
   };

@@ -1,6 +1,6 @@
 "use client";
 
-import { memo, useState } from "react";
+import { memo, useEffect, useMemo, useRef, useState } from "react";
 import { useLang } from "@/lib/i18n";
 import { Badge } from "@/components/badge";
 import type { TrackerIndexEntry, TrackerSubmission } from "@/lib/types";
@@ -12,6 +12,15 @@ export function statusLabel(t: (k: string) => string, status: string): string {
   const key = `tracker.status-${status}`;
   const translated = t(key);
   return translated !== key ? translated : status.charAt(0).toUpperCase() + status.slice(1);
+}
+
+type TimelineSource = "review" | "discuss" | "all";
+
+function defaultTimelineSource(timeline: TrackerSubmission["timeline"]): TimelineSource {
+  const reviewCount = timeline.filter((e) => e.source !== "license-discuss").length;
+  if (reviewCount > 0) return "review";
+  const discussCount = timeline.filter((e) => e.source === "license-discuss").length;
+  return discussCount > 0 ? "discuss" : "all";
 }
 
 export const TrackerCard = memo(function TrackerCard({
@@ -26,7 +35,8 @@ export const TrackerCard = memo(function TrackerCard({
   const submitter = full ? s.submitter?.name || t("tracker.unknown") : s.submitter || t("tracker.unknown");
   const msgs = s.stats?.total_messages || 0;
   const days = s.stats?.duration_days || 0;
-  const timeline = full ? s.timeline || [] : [];
+  const fullTimeline = full ? s.timeline : undefined;
+  const timeline = useMemo(() => fullTimeline || [], [fullTimeline]);
   const participantCount = full ? s.participants.length : 0;
   const detailCount = full
     ? timeline.length + participantCount + (s.license_texts?.length || 0) + (s.board_vote ? 1 : 0)
@@ -35,11 +45,20 @@ export const TrackerCard = memo(function TrackerCard({
 
   // Lifted tab + focus + source-filter state so strip-node clicks can drive the detail panel.
   const [tab, setTab] = useState<"timeline" | "participants" | "texts" | "vote">("timeline");
-  const [src, setSrc] = useState<"review" | "discuss" | "all">(() => {
-    const reviewCount = timeline.filter((e) => e.source !== "license-discuss").length;
-    return reviewCount === 0 ? "discuss" : "review";
-  });
+  const [src, setSrc] = useState<TimelineSource>("review");
   const [focusEventIdx, setFocusEventIdx] = useState<number | null>(null);
+  const sourceTouchedRef = useRef(false);
+
+  useEffect(() => {
+    if (full && timeline.length > 0 && !sourceTouchedRef.current) {
+      setSrc(defaultTimelineSource(timeline));
+    }
+  }, [full, timeline]);
+
+  function setTimelineSource(next: TimelineSource) {
+    sourceTouchedRef.current = true;
+    setSrc(next);
+  }
 
   // Clicking a strip node: force-open this card, switch to timeline tab, ensure the event's
   // source is visible, and flash the event row.
@@ -51,8 +70,8 @@ export const TrackerCard = memo(function TrackerCard({
     const ev = timeline[idx];
     if (ev && src !== "all") {
       const isDiscuss = ev.source === "license-discuss";
-      if (src === "review" && isDiscuss) setSrc("all");
-      if (src === "discuss" && !isDiscuss) setSrc("all");
+      if (src === "review" && isDiscuss) setTimelineSource("all");
+      if (src === "discuss" && !isDiscuss) setTimelineSource("all");
     }
     requestAnimationFrame(() => {
       const el = document.getElementById(`ev-${s.id}-${idx}`);
@@ -66,8 +85,8 @@ export const TrackerCard = memo(function TrackerCard({
     const ev = timeline[idx];
     if (ev && src !== "all") {
       const isDiscuss = ev.source === "license-discuss";
-      if (src === "review" && isDiscuss) setSrc("all");
-      if (src === "discuss" && !isDiscuss) setSrc("all");
+      if (src === "review" && isDiscuss) setTimelineSource("all");
+      if (src === "discuss" && !isDiscuss) setTimelineSource("all");
     }
     requestAnimationFrame(() => {
       const el = document.getElementById(`ev-${s.id}-${idx}`);
@@ -144,7 +163,7 @@ export const TrackerCard = memo(function TrackerCard({
           tab={tab}
           setTab={setTab}
           src={src}
-          setSrc={setSrc}
+          setSrc={setTimelineSource}
           focusEventIdx={focusEventIdx}
           focusTimelineEvent={focusTimelineEvent}
           clearFocus={() => setFocusEventIdx(null)}

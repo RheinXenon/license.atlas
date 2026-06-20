@@ -8,7 +8,7 @@ A comprehensive collection of **2,588** software, AI model, data, agent, and ter
 
 ## Features
 
-- **Full-text search** — search license name, source, body text, with fuzzy matching (powered by MiniSearch)
+- **Full-text search** — search license name, SPDX id, source, and body text, with fuzzy matching and exact/prefix SPDX-slug matches ranked first (powered by MiniSearch)
 - **Category filters** — software, model, data, agent, terms
 - **Tag filters** — Permissive, Copyleft, Creative Commons, Hardware, etc.
 - **Popularity & trends** — sparkline charts from HuggingFace, GitHub, and Kaggle data
@@ -55,7 +55,7 @@ License texts are aggregated from:
 | OSI Review Tracker | 174 OSI license-review submissions, timelines, first/decision dates, board-vote records, and locally archived submitted license texts |
 
 Popularity data comes from HuggingFace Hub (2.8M+ models), GitHub (28 license types), and Kaggle (714K+ datasets via Meta-Kaggle).
-The site footer reports the latest data update using the newer timestamp from the license corpus and the OSI review tracker sync.
+The site footer reports the latest data update using the newer timestamp from the license corpus and the OSI review tracker sync, shown inline with the page-view counter.
 
 ## License
 

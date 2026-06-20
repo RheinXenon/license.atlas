@@ -20,13 +20,15 @@ KB（source of truth）→ license-atlas 单向同步：
 |---|---|
 | `npm run build` | 内嵌 sync（hash 检测，无变化跳过）+ search-index + next build |
 | `npm run sync:tracker` | 只同步 tracker（不跑 KB 构建） |
-| `npm run update:tracker -- --month YYYY-MM` | 全链路：刷新 OSI `license-review`/`license-discuss` 邮件归档 + 重建索引 + 发现 pending + 合并 LLM point + build/enrich + coverage check + sync |
+| `npm run update:tracker -- --month YYYY-MM` | 全链路：刷新 OSI `license-review`/`license-discuss` 邮件归档 + 重建索引 + 发现 pending + 合并 LLM point + build/enrich + point/text coverage checks + sync |
 | `npm run update:tracker -- --since YYYY-MM` | 从指定月份到当前月份增量刷新 |
 | `npm run update:tracker -- --skip-mail` | 跳过邮件抓取，只跑已有 KB 数据的 build/enrich/sync |
 
 **增量检测**：`sync-tracker.mjs` 对 KB v2 的稳定 payload 做 hash（忽略 `meta.generated_at` / `meta.enriched_at` 这类纯重建时间戳），并同时检查 `tracker-index.json._meta.index_schema_version`。不变则跳过（幂等）；schema 变化时即使 source hash 不变也会重建 index。
 
 **轻量 index 日期字段**：`tracker-index.json` 写入 `review_dates.first_submitted` / `review_dates.decision` / `review_dates.decision_status`。优先级：首次提交 = OSI API `submission_date` → timeline 首个 `submission` → `stats.date_range[0]`；批准/否决日期 = OSI API `approval_date` → `board_vote.date` → timeline `board_decision.date`。详情页 `LicenseReviewBlock` 显示 `First Submitted` 和 `Approved Date` / `Rejected Date`。
+
+**轻量 index 文本字段**：`tracker-index.json` 写入 `text_meta.count` / `linked_count` / `duplicate_count` / `series` / `latest_text_date`，供详情页和未来按需加载判断，不在轻量 index 放全文。
 
 **两种更新场景**：
 - KB 先更新 OSI 源 → atlas 下次 `build` 自动识别 hash/schema 变化同步。
@@ -41,22 +43,25 @@ KB（source of truth）→ license-atlas 单向同步：
 
 ## 当前同步快照
 
-- `source_hash`: `034778e13ca28fd4`
-- `index_schema_version`: `2`
+- `source_hash`: `0473d18bca694020`
+- `index_schema_version`: `3`
 - 174 个 submissions：approved 102 / rejected 37 / withdrawn 4 / pending 8 / superseded 3 / legacy 20
 - 77 个 `board_vote`：minutes 50 / timeline 3 / osi_api 24
 - 50 个含详细票数对象（yes/no/abstain）的 board vote
+- 188 个 `license_texts`，其中 65 个可直接回链 timeline event，44 个重复内容标记 `duplicate_of`
 
 ## 设计约束
 
 - KB 是 source of truth；Atlas 只同步和展示。状态色纳入 atlas 语义色板（见 `badge.tsx` `review-*` themes）。详见设计文档 `docs/superpowers/specs/2026-06-18-license-review-tracker-integration-design.md`。
 - KB 数据构建细节见 `docs/OSI-TRACKER.md`。
+- `public/data/tracker.json` 当前包含提交许可证文本正文（约 8.1MB / gzip 约 1.28MB）。后续加入 diff hunks 前必须重新评估体积；如果 gzip 明显增长，应拆为 `public/data/tracker-texts/{submission_id}.json` 按需加载。
 
 ## 近期 UI 行为
 
 - `/tracker` 底部右侧有无文字的返回顶部按钮；页面滚动超过一屏后出现，点击平滑回到顶部。
 - 左上 LicenseAtlas/Home 导航会清空首页搜索和筛选状态，避免回到首页后保留旧查询。
 - Review detail 的 `[source ↗]` 链接使用 `whitespace-nowrap`，不会被截断或单独断开。
+- Review detail 的 License Texts tab 已显示结构化文本历史：版本列表、series、日期、timeline 编号、提取可信度、重复标记、来源链接和本地正文预览。完整 diff/双向跳转属于下一阶段。
 - 多个 tracker 卡片可同时展开；展开一个 license 不会折叠其他已展开 license。
 - Timeline hover tooltip 的事件类型首字母大写，并在 `Feedback` 后紧跟 sentiment tag（如 `negative`）。
 - 详情页内嵌 `LicenseReviewBlock` 显示 `First Submitted` 和最终 `Approved Date` / `Rejected Date`。

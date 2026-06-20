@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo, useState } from "react";
 import { useLang } from "@/lib/i18n";
 import { formatTrackerDate } from "@/lib/tracker-date";
 import type { TrackerSubmission } from "@/lib/types";
@@ -32,6 +33,13 @@ function sourceLabel(source: string): string {
   return "review";
 }
 
+function confidenceClass(confidence?: string) {
+  if (confidence === "high") return "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300";
+  if (confidence === "medium") return "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300";
+  if (confidence === "low") return "bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300";
+  return "bg-zinc-100 text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400";
+}
+
 export function ReviewDetailTabs({
   s, tab, setTab, src, setSrc, focusEventIdx, clearFocus,
 }: {
@@ -49,7 +57,12 @@ export function ReviewDetailTabs({
   const reviewCount = timeline.length - discussCount;
 
   const hasVote = !!s.board_vote;
-  const texts = s.license_texts || [];
+  const texts = useMemo(() => s.license_texts || [], [s.license_texts]);
+  const [selectedTextId, setSelectedTextId] = useState<string | null>(null);
+  const selectedText = useMemo(
+    () => texts.find((tx) => tx.id === selectedTextId) || texts.find((tx) => !tx.duplicate_of) || texts[0],
+    [texts, selectedTextId],
+  );
 
   const filtered = timeline.filter((e) =>
     src === "all" ? true : src === "discuss" ? e.source === "license-discuss" : e.source !== "license-discuss"
@@ -127,14 +140,57 @@ export function ReviewDetailTabs({
       {tab === "participants" && <ParticipantsList participants={s.participants} />}
 
       {tab === "texts" && (
-        <div className="flex flex-col gap-1.5">
-          {texts.map((tx, i) => (
-            <div key={i} className="flex items-center gap-2 rounded-lg bg-violet-50/40 px-3 py-2 text-sm dark:bg-violet-900/10">
-              {tx.version && <span className="rounded bg-violet-100 px-2 py-0.5 text-xs font-semibold text-violet-700 dark:bg-violet-900/40 dark:text-violet-300">v{tx.version}</span>}
-              <span>{tx.filename}</span>
-              <span className="text-xs text-zinc-400">{(tx.size / 1024).toFixed(1)}KB</span>
-            </div>
-          ))}
+        <div className="grid gap-3 lg:grid-cols-[minmax(260px,0.85fr)_minmax(0,1.35fr)]">
+          <div className="flex max-h-[560px] flex-col gap-1.5 overflow-auto pr-1">
+            {texts.map((tx, i) => {
+              const active = (selectedText?.id || texts[0]?.id) === tx.id;
+              return (
+                <button
+                  key={tx.id || i}
+                  type="button"
+                  onClick={() => setSelectedTextId(tx.id || null)}
+                  className={`rounded-lg border px-3 py-2 text-left text-sm transition-colors ${
+                    active
+                      ? "border-[#7c3aed]/50 bg-violet-50 dark:border-[#a78bfa]/50 dark:bg-violet-950/30"
+                      : "border-zinc-200/60 bg-white hover:border-zinc-300 dark:border-zinc-800/60 dark:bg-zinc-950/30 dark:hover:border-zinc-700"
+                  }`}
+                >
+                  <div className="flex flex-wrap items-center gap-1.5">
+                    {tx.date && <span className="text-xs text-zinc-400">{formatTrackerDate(tx.date)}</span>}
+                    {tx.series && <span className="rounded bg-cyan-50 px-1.5 py-0.5 text-[10px] font-semibold text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-300">{tx.series}</span>}
+                    {(tx.version_label || tx.version) && <span className="rounded bg-violet-100 px-1.5 py-0.5 text-[10px] font-semibold text-violet-700 dark:bg-violet-900/40 dark:text-violet-300">v{tx.version_label || tx.version}</span>}
+                    {tx.revision_label && <span className="rounded bg-zinc-100 px-1.5 py-0.5 text-[10px] text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">{tx.revision_label}</span>}
+                    {tx.duplicate_of && <span className="rounded bg-zinc-100 px-1.5 py-0.5 text-[10px] text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">duplicate</span>}
+                  </div>
+                  <div className="mt-1 line-clamp-2 font-medium text-zinc-800 dark:text-zinc-100">{tx.title || tx.filename}</div>
+                  <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-zinc-400">
+                    <span>{(tx.size / 1024).toFixed(1)}KB</span>
+                    {Number.isInteger(tx.event_index) && <span>timeline #{(tx.event_index || 0) + 1}</span>}
+                    {tx.extraction_confidence && <span className={`rounded px-1.5 py-0.5 ${confidenceClass(tx.extraction_confidence)}`}>{tx.extraction_confidence}</span>}
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="min-w-0 rounded-lg border border-zinc-200/60 bg-zinc-50/70 p-3 dark:border-zinc-800/60 dark:bg-zinc-950/40">
+            {selectedText ? (
+              <>
+                <div className="mb-3 flex flex-wrap items-center gap-2 text-xs text-zinc-500">
+                  <span className="font-semibold text-zinc-800 dark:text-zinc-100">{selectedText.title || selectedText.filename}</span>
+                  {selectedText.sha256 && <span className="font-mono">{selectedText.sha256.slice(0, 12)}</span>}
+                  {selectedText.message_url && (
+                    <a href={selectedText.message_url} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="inline-flex shrink-0 whitespace-nowrap text-[#7c3aed] hover:underline dark:text-[#a78bfa]">[source ↗]</a>
+                  )}
+                </div>
+                <pre className="max-h-[560px] overflow-auto whitespace-pre-wrap break-words rounded-md bg-white p-3 font-mono text-xs leading-relaxed text-zinc-700 dark:bg-zinc-950 dark:text-zinc-200">
+                  {selectedText.display_text || selectedText.text || selectedText.content_preview || selectedText.filename}
+                </pre>
+              </>
+            ) : (
+              <div className="text-sm text-zinc-400">No license text files found.</div>
+            )}
+          </div>
         </div>
       )}
 

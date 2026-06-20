@@ -34,6 +34,9 @@ enrich-license-tracker.mjs        →  license-review-tracker-v2.json (final)
 check-point-manifest-coverage.mjs  →  确保所有邮件 timeline event 都有 point manifest
         │
         ▼
+check-license-texts.mjs            →  验证 license_texts 结构、去重、版本号与 timeline 回链
+        │
+        ▼
 手动重新嵌入 JSON 到 standalone HTML（无专用 embed 脚本）
 ```
 
@@ -57,6 +60,7 @@ node scripts/apply-llm-batches.mjs            # batch-*.out.json → 两个 mani
 node scripts/build-license-review-tracker.mjs
 node scripts/enrich-license-tracker.mjs
 node scripts/check-point-manifest-coverage.mjs
+node scripts/check-license-texts.mjs
 node scripts/test-tracker-data.mjs        # 数据质量检查（--verbose 显示详情）
 # 页面用 HTTP fetch，需起本地服务；若浏览器直接 file:// 打开普通版会因 fetch 本地 JSON 失败而空白
 cd data/osi && python3 -m http.server 8770 --bind 127.0.0.1
@@ -99,13 +103,17 @@ node -e "const fs=require('fs'); const html=fs.readFileSync('data/osi/license-re
 
 **三步**：
 
-1. **License text 关联**：从 `data/osi/mail/licenses/`（216 个文件）按名称/slug/关键词匹配。
+1. **License text 关联**：从 `data/osi/mail/licenses/`（216 个文件）按名称/slug/关键词匹配，解析 frontmatter 与正文，输出结构化文本历史。
 2. **Board vote 提取**：从 `data/osi/minutes/`（221 个 .md）解析动议 + 投票，按许可证名 + 日期评分匹配。
 3. **Sender 修正 + participants 构建**：用 messages.json 的 URL→sender 映射修正 Unknown sender。
 
 **Timeline sender 显示规范化（2026-06-20）**：timeline event 层同样应用 `displayName()`，不只处理 `submitter` / `participants`。Pipermail 全小写 sender（如 `subham mahesh`）显示为 `Subham Mahesh`；伪邮箱/地址式 sender（含 ` at ` / `@` / 域名后缀）不做 title-case，避免 `cowan at ccil.org` 被误改。
 
 **API-derived submission 兜底（2026-06-20）**：少数 OSI API 记录有 `submitter_name` / `submission_date`，但公开 Pipermail timeline 没有该 submitter 的具体邮件。典型例子是 WordNet：OSI API 指向 2025-April `thread.html`，官方 archive index 无具体 message 链接，可见 WordNet thread 从 Josh/McCoy 后续讨论开始。`enrich-license-tracker.mjs` 仅在 submitter 不出现在任何 timeline sender 中时插入一条 `source: "osi_api"` 的 synthetic `submission` event，带内联 `point/point_zh`，`url` 指向 `https://opensource.org/api/license/{id}`。它参与 timeline 日期范围和 participants，但不计入 `stats.total_messages`（邮件数）。`check-point-manifest-coverage.mjs` 跳过 `source==="osi_api"`，因为它不是 LLM-cleaned Pipermail message。
+
+**License text 结构化（2026-06-20）**：`enrich-license-tracker.mjs` 不再只输出 `{filename, version, content_preview, size}`，而是解析 `mail/licenses/*.txt` frontmatter（`source_url` / `message_url` / `message_subject` / `type` / `downloaded_at`）与正文，写入稳定 `id`、`sha256`、`duplicate_of`、`text`、`display_text`、`normalized_text`、`extraction_confidence`。同 submission 内相同正文 hash 的后续文件标记 `duplicate_of`；若 `message_url` 或 `source_url` 命中 timeline event，则写入 `event_index/event_type`，并在 timeline event 上追加 `text_ids`。当前 v2：188 条 license_texts，65 条直接回链 timeline，44 条重复内容标记。ModelGo series 输出为 `MG0` / `MG-BY` / `MG-BY-OS` / `MG-BY-SA`。
+
+**License text 验证 gate**：`check-license-texts.mjs` 检查全局 text id 唯一、source/message URL、sha256、正文非空、可疑版本号（如 `20`/`10`）拦截、排序、duplicate canonical、timeline 反向 `text_ids`、ModelGo 四系列。未命中的历史 source URL 仅 warning，因为很多旧 license text 文件来自 sibling/legacy thread，不能强行绑定。
 
 > 🔑 **vote 的唯一权威数据源是 board meeting minutes，不是邮件正文。** OSI 董事会投票走线下会议，结果以 board decision 公告形式发回邮件列表（如 Ritchey 的 "Board adopted... did NOT approve"）。邮件正文里几乎不存在 "I move to approve" 这类真投票——任何从邮件正文抓 vote 的尝试都是引用块误判。`board_vote` 字段**只**由 `findBoardVotes()` 从 `data/osi/minutes/*.md`（221 个）提取，timeline event 的 `type` 不应含 `vote`。
 
@@ -153,13 +161,21 @@ node -e "const fs=require('fs'); const html=fs.readFileSync('data/osi/license-re
   "status": "approved",            // approved|rejected|withdrawn|pending|superseded|legacy
   "submitter": { "name": "..." },
   "participants": [{ "name", "role", "message_count" }],
-  "license_texts": [{ "filename", "version", "content_preview", "size" }],
+  "license_texts": [{
+    "id", "filename", "title",
+    "version", "version_label", "revision_label", "series",
+    "date", "source_url", "message_url", "message_subject", "type",
+    "sha256", "duplicate_of", "extraction_confidence",
+    "text", "display_text", "normalized_text", "content_preview", "size",
+    "event_index", "event_type"
+  }],
   "timeline": [{                   // review/discuss 事件流
     "date", "type",                // type: submission|revision|withdrawal|board_decision|feedback|status_inquiry（无 vote）
     "subject", "url", "sender", "snippet",
     "point", "point_zh", "sentiment", // LLM 双语观点 + 情感（build 从 all-points 注入；enrich 仅兜底）
     "source",                      // license-review | license-discuss | osi_api
-    "position"                     // support|oppose|question|procedural|neutral
+    "position",                    // support|oppose|question|procedural|neutral
+    "text_ids"                     // 可选：该邮件关联的 license_text ids
   }],
   "board_vote": {                  // 可选
     "date", "motion_by", "motion_text", "second_by", "discussion",

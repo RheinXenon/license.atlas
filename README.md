@@ -12,7 +12,7 @@ A comprehensive collection of **2,588** software, AI model, data, agent, and ter
 - **Category filters** — software, model, data, agent, terms
 - **Tag filters** — Permissive, Copyleft, Creative Commons, Hardware, etc.
 - **Popularity & trends** — sparkline charts from HuggingFace, GitHub, and Kaggle data
-- **[OSI License Review Tracker](https://morningd.github.io/license.atlas/tracker)** (`/tracker`) — live board of 174 OSI license submissions, review status, board votes, and timeline
+- **[OSI License Review Tracker](https://morningd.github.io/license.atlas/tracker)** (`/tracker`) — live board of 174 OSI license submissions, review status, board votes, timelines, and linked license-text history
 - **Bilingual UI** — English/Chinese with automatic browser language detection
 - **Dark mode** — system preference + manual toggle
 - **Static export** — 2,588 pre-rendered pages, fast loading
@@ -52,7 +52,7 @@ License texts are aggregated from:
 | RAIL | Responsible AI licenses |
 | OpenAtom Foundation | Model and hardware licenses (bilingual CN/EN) |
 | OpenMDW | Permissive license for ML models and related artifacts (Linux Foundation) |
-| OSI Review Tracker | 174 OSI license-review submissions, timelines, first/decision dates, and board-vote records |
+| OSI Review Tracker | 174 OSI license-review submissions, timelines, first/decision dates, board-vote records, and locally archived submitted license texts |
 
 Popularity data comes from HuggingFace Hub (2.8M+ models), GitHub (28 license types), and Kaggle (714K+ datasets via Meta-Kaggle).
 The site footer reports the latest data update using the newer timestamp from the license corpus and the OSI review tracker sync.

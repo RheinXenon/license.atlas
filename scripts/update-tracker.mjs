@@ -93,6 +93,7 @@ run("node scripts/enrich-license-tracker.mjs", KB_ROOT);
 
 // 5. Verify every rendered timeline event is backed by a point manifest entry.
 run("node scripts/check-point-manifest-coverage.mjs", KB_ROOT);
+run(`node scripts/check-tracker-license-texts.mjs --tracker "${resolve(KB_ROOT, "data", "osi", "license-review-tracker-v2.json")}"`, ROOT);
 
 // 6. Sync to atlas
 console.log("\n▶ Syncing to license-atlas...");

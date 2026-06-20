@@ -29,7 +29,7 @@ const KB_V2 = resolve(KB_ROOT, "data", "osi", "license-review-tracker-v2.json");
 
 const ATLAS_FULL = resolve(ROOT, "public", "data", "tracker.json");
 const ATLAS_INDEX = resolve(ROOT, "src", "data", "tracker-index.json");
-const INDEX_SCHEMA_VERSION = 2;
+const INDEX_SCHEMA_VERSION = 3;
 
 if (!existsSync(KB_V2)) {
   if (existsSync(ATLAS_FULL) && existsSync(ATLAS_INDEX)) {
@@ -91,6 +91,16 @@ const decisionDate = (s, tl) => {
     isoDate(s.board_vote?.date) ||
     isoDate((tl || []).find((ev) => ev.type === "board_decision")?.date);
 };
+const textMeta = (s) => {
+  const texts = s.license_texts || [];
+  return {
+    count: texts.length,
+    linked_count: texts.filter((t) => Number.isInteger(t.event_index)).length,
+    duplicate_count: texts.filter((t) => t.duplicate_of).length,
+    series: [...new Set(texts.map((t) => t.series).filter(Boolean))].sort(),
+    latest_text_date: texts.map((t) => isoDate(t.date)).filter(Boolean).sort().at(-1) || "",
+  };
+};
 
 // ── Build lightweight index keyed by normalized spdx_id ──
 const index = {
@@ -126,6 +136,7 @@ for (const s of kbData.submissions) {
       decision: decisionDate(s, tl),
       decision_status: ["approved", "rejected"].includes(s.status) ? s.status : "",
     },
+    text_meta: textMeta(s),
     timeline_meta: {
       count: tl.length,
       first: tl.length ? tl[0].date : null,

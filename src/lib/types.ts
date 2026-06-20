@@ -67,6 +67,7 @@ export interface TrackerTimelineEvent {
   source: "license-review" | "license-discuss" | "osi_api";
   position?: string;
   relevance?: "high" | "medium" | "low";
+  text_ids?: string[];
 }
 
 export interface TrackerParticipant {
@@ -91,10 +92,30 @@ export interface TrackerBoardVote {
 }
 
 export interface TrackerLicenseText {
+  id?: string;
   filename: string;
+  title?: string;
   version: string;
+  version_label?: string;
+  revision_label?: string;
+  series?: string;
+  date?: string;
+  source_url?: string;
+  message_url?: string;
+  message_subject?: string;
+  type?: string;
+  downloaded_at?: string;
+  sha256?: string;
+  duplicate_of?: string;
+  extraction_confidence?: "high" | "medium" | "low" | "none";
+  text?: string;
+  display_text?: string;
+  normalized_text?: string;
   content_preview: string;
   size: number;
+  match_score?: number;
+  event_index?: number;
+  event_type?: TrackerTimelineEventType;
 }
 
 export interface TrackerSubmission {
@@ -142,6 +163,13 @@ export interface TrackerIndexEntry {
     first_submitted?: string;
     decision?: string;
     decision_status?: "approved" | "rejected" | "";
+  };
+  text_meta?: {
+    count: number;
+    linked_count: number;
+    duplicate_count: number;
+    series: string[];
+    latest_text_date: string;
   };
   timeline_meta: { count: number; first: string | null; last: string | null };
 }

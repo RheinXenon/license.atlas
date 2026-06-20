@@ -1,0 +1,26 @@
+{
+  "source_hash": "63de4c6a0502fcfb",
+  "index_schema_version": 1,
+  "generated_at": "2026-06-20T13:16:46.545Z",
+  "source": "OSADL Open Source License Checklists",
+  "source_url": "https://www.osadl.org/Access-to-raw-data.oss-compliance-raw-data-access.0.html",
+  "checklist_project_url": "https://www.osadl.org/OSADL-Open-Source-License-Checklists.oss-compliance-lists.0.html",
+  "compatibility_notes_url": "https://www.osadl.org/License-compatibility.oss-checklist-edit-compatibility.0.html",
+  "osloc2json_url": "https://github.com/osadl/OSLOC2JSON",
+  "raw_data_license": "Creative Commons Attribution 4.0 International license (CC-BY-4.0)",
+  "attribution": "A project by the Open Source Automation Development Lab (OSADL) eG. For further information about the project see the description at www.osadl.org/checklists.",
+  "copyright": "(C) 2017 - 2024 Open Source Automation Development Lab (OSADL) eG and contributors, info@osadl.org",
+  "disclaimer": "The checklists and particularly the copyleft data have been assembled with maximum diligence and care; however, the authors do not warrant nor can be held liable in any way for its correctness, usefulness, merchantibility or fitness for a particular purpose as far as permissible by applicable law. Anyone who uses the information does this on his or her sole responsibility. For any individual legal advice, it is recommended to contact a lawyer.",
+  "draft_note": "OSADL states the checklist material is work in progress/draft state; use as informational data, not legal advice.",
+  "timestamp": "2026-02-12T16:31:00+0000",
+  "matrix_timestamp": "2026-02-12T16:31:00+0000",
+  "record_count": 121,
+  "matrix_license_count": 121,
+  "match_counts": {
+    "osadl_records": 121,
+    "atlas_licenses": 2588,
+    "matched": 116,
+    "osadl_unmatched": 5,
+    "atlas_unmatched": 594
+  }
+}

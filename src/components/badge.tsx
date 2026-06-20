@@ -343,7 +343,7 @@ export function Badge({ children, variant = "tag", className, themeKey }: BadgeP
       {badge}
       <span
         className={cn(
-          "pointer-events-none absolute top-full left-1/2 z-[100] mt-1.5 -translate-x-1/2 whitespace-normal rounded-lg border px-2.5 py-1.5 text-[11px] font-medium leading-snug text-zinc-700 opacity-0 transition-opacity duration-150 group-hover/badge:opacity-100 dark:text-zinc-200",
+          "pointer-events-none absolute top-full left-1/2 z-[100] mt-1.5 hidden -translate-x-1/2 whitespace-normal rounded-lg border px-2.5 py-1.5 text-[11px] font-medium leading-snug text-zinc-700 group-hover/badge:block group-focus-within/badge:block dark:text-zinc-200",
           tipStyle,
           tipGlow,
         )}

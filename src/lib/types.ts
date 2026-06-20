@@ -217,3 +217,80 @@ export interface TrackerIndex {
   _meta: TrackerIndexMeta;
   [spdxOrId: string]: TrackerIndexEntry | TrackerIndexMeta;
 }
+
+// ── OSADL Open Source License Checklists sidecar types ──
+export interface OsadlChecklistAction {
+  text: string;
+  use_case: string | null;
+  condition: string | null;
+}
+
+export interface OsadlChecklistEntry {
+  spdx_id: string;
+  slug: string;
+  source_urls: {
+    json?: string;
+    json_opt?: string;
+    txt?: string;
+  };
+  has_raw_txt: boolean;
+  copyleft: string;
+  source_disclosure: string;
+  patent_hints: string | null;
+  copyleft_clause: string | null;
+  raw_hash: string;
+  use_cases: string[];
+  conditions: string[];
+  obligations: OsadlChecklistAction[];
+  prohibitions: OsadlChecklistAction[];
+  compatibility_samples: {
+    compatible: string[];
+    incompatible: string[];
+    check_dependency: string[];
+  };
+  counts: {
+    use_cases: number;
+    conditions: number;
+    obligations: number;
+    prohibitions: number;
+  };
+  compatibility_summary: {
+    yes: number;
+    no: number;
+    same: number;
+    unknown: number;
+    check_dependency: number;
+  };
+}
+
+export interface OsadlIndexMeta {
+  source_hash: string;
+  index_schema_version: number;
+  generated_at: string;
+  source: string;
+  source_url: string;
+  checklist_project_url: string;
+  compatibility_notes_url: string;
+  osloc2json_url: string;
+  raw_data_license: string;
+  attribution: string;
+  copyright: string;
+  disclaimer: string;
+  draft_note: string;
+  timestamp: string;
+  matrix_timestamp: string;
+  record_count: number;
+  matrix_license_count: number;
+  match_counts?: {
+    osadl_records?: number;
+    atlas_licenses?: number;
+    matched?: number;
+    osadl_unmatched?: number;
+    atlas_unmatched?: number;
+  };
+}
+
+export interface OsadlIndex {
+  _meta: OsadlIndexMeta;
+  by_spdx: Record<string, OsadlChecklistEntry>;
+}

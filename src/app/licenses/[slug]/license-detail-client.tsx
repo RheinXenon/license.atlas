@@ -4,7 +4,9 @@ import Link from "next/link";
 import { Badge } from "@/components/badge";
 import { LicenseBodySection } from "@/components/license-body-section";
 import { LicenseReviewBlock } from "@/components/license-review-block";
+import { OsadlChecklistBlock } from "@/components/osadl-checklist-block";
 import { useLang } from "@/lib/i18n";
+import { osadlMeta, resolveOsadlChecklist } from "@/lib/osadl";
 import { hasReviewContent, resolveTrackerEntry } from "@/lib/tracker-match";
 import type { License } from "@/lib/types";
 
@@ -46,6 +48,7 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
   const { t, lang } = useLang();
   const trackerEntry = resolveTrackerEntry(license);
   const reviewTracked = !!trackerEntry && hasReviewContent(trackerEntry);
+  const osadlEntry = resolveOsadlChecklist(license);
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6">
@@ -59,7 +62,7 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
 
       {/* Header */}
       <div className="fade-in-1 relative z-50 mb-8">
-        <h1 className="text-3xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">
+        <h1 className="break-words text-3xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">
           {license.title}
         </h1>
         <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-zinc-500">
@@ -171,6 +174,9 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
 
       {/* OSI License Review (only for licenses reviewed by OSI) */}
       <LicenseReviewBlock license={license} />
+
+      {/* OSADL Open Source License Checklist */}
+      <OsadlChecklistBlock entry={osadlEntry} meta={osadlMeta} />
 
       {/* License Text */}
       {license.body && (

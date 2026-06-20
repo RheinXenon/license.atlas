@@ -40,6 +40,18 @@ function confidenceClass(confidence?: string) {
   return "bg-zinc-100 text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400";
 }
 
+function confidenceLabel(confidence?: string) {
+  if (!confidence) return "";
+  return confidence.charAt(0).toUpperCase() + confidence.slice(1);
+}
+
+function confidenceTitle(confidence?: string) {
+  if (confidence === "high") return "High confidence: this text came from a license attachment or standalone MIME part.";
+  if (confidence === "medium") return "Medium confidence: this text was isolated from the message body using license-text markers or typical license language.";
+  if (confidence === "low") return "Low confidence: this text looks like a license, but its source or boundaries are less certain.";
+  return "Confidence that this license text was correctly extracted from the review record.";
+}
+
 function diffLineClass(type: string) {
   if (type === "add") return "bg-emerald-50 text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-200";
   if (type === "remove") return "bg-red-50 text-red-800 dark:bg-red-950/40 dark:text-red-200";
@@ -202,7 +214,14 @@ export function ReviewDetailTabs({
                   <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-zinc-400">
                     <span>{(tx.size / 1024).toFixed(1)}KB</span>
                     {Number.isInteger(tx.event_index) && <span>timeline #{(tx.event_index || 0) + 1}</span>}
-                    {tx.extraction_confidence && <span className={`rounded px-1.5 py-0.5 ${confidenceClass(tx.extraction_confidence)}`}>{tx.extraction_confidence}</span>}
+                    {tx.extraction_confidence && (
+                      <span
+                        className={`rounded px-1.5 py-0.5 ${confidenceClass(tx.extraction_confidence)}`}
+                        title={confidenceTitle(tx.extraction_confidence)}
+                      >
+                        {confidenceLabel(tx.extraction_confidence)}
+                      </span>
+                    )}
                   </div>
                 </button>
               );

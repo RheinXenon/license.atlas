@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "source_hash": "97e1fe890586b3ed",
+    "source_hash": "c82757b1bc1c0554",
     "index_schema_version": 4,
-    "generated_at": "2026-06-20T05:08:08.267Z",
+    "generated_at": "2026-06-20T05:34:20.881Z",
     "total_submissions": 174,
     "by_status": {
       "approved": 102,
@@ -150,7 +150,7 @@
   },
   "modelgo-attribution-v2": {
     "id": "modelgo-attribution-v2",
-    "name": "ModelGo Attribution License v2.0",
+    "name": "ModelGo License Family v2.0",
     "spdx_id": "",
     "status": "pending",
     "submitter": "Moming Duan",

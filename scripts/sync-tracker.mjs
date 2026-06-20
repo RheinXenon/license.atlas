@@ -29,6 +29,7 @@ const KB_V2 = resolve(KB_ROOT, "data", "osi", "license-review-tracker-v2.json");
 
 const ATLAS_FULL = resolve(ROOT, "public", "data", "tracker.json");
 const ATLAS_INDEX = resolve(ROOT, "src", "data", "tracker-index.json");
+const INDEX_SCHEMA_VERSION = 2;
 
 if (!existsSync(KB_V2)) {
   if (existsSync(ATLAS_FULL) && existsSync(ATLAS_INDEX)) {
@@ -45,13 +46,23 @@ if (!existsSync(KB_V2)) {
 // ── Compute source hash from KB v2.json ──
 const kbRaw = readFileSync(KB_V2, "utf8");
 const kbData = JSON.parse(kbRaw);
-const sourceHash = createHash("sha1").update(kbRaw).digest("hex").slice(0, 16);
+// Ignore rebuild-time-only fields so repeated `update:tracker` runs do not
+// create fake data updates when the tracker content itself is unchanged.
+function stableTrackerPayload(data) {
+  const copy = JSON.parse(JSON.stringify(data));
+  if (copy.meta) {
+    delete copy.meta.generated_at;
+    delete copy.meta.enriched_at;
+  }
+  return JSON.stringify(copy);
+}
+const sourceHash = createHash("sha1").update(stableTrackerPayload(kbData)).digest("hex").slice(0, 16);
 
 // ── Idempotency check ──
 if (existsSync(ATLAS_INDEX)) {
   try {
     const existing = JSON.parse(readFileSync(ATLAS_INDEX, "utf8"));
-    if (existing?._meta?.source_hash === sourceHash) {
+    if (existing?._meta?.source_hash === sourceHash && existing?._meta?.index_schema_version === INDEX_SCHEMA_VERSION) {
       console.log(`✓ tracker 无变化 (hash ${sourceHash})，跳过同步`);
       process.exit(0);
     }
@@ -62,11 +73,30 @@ if (existsSync(ATLAS_INDEX)) {
 
 // ── spdx normalize (lowercase, trimmed) for matching robustness ──
 const normSpdx = (s) => (s || "").trim().toLowerCase();
+const isoDate = (s) => {
+  const raw = String(s || "").trim();
+  let m = raw.match(/^(\d{4})(\d{2})(\d{2})$/);
+  if (m) return `${m[1]}-${m[2]}-${m[3]}`;
+  m = raw.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (m) return `${m[1]}-${m[2]}-${m[3]}`;
+  return "";
+};
+const firstSubmittedDate = (s, tl) =>
+  isoDate(s.osi_api_data?.submission_date) ||
+  isoDate((tl || []).find((ev) => ev.type === "submission")?.date) ||
+  isoDate(s.stats?.date_range?.[0]);
+const decisionDate = (s, tl) => {
+  if (!["approved", "rejected"].includes(s.status)) return "";
+  return isoDate(s.osi_api_data?.approval_date) ||
+    isoDate(s.board_vote?.date) ||
+    isoDate((tl || []).find((ev) => ev.type === "board_decision")?.date);
+};
 
 // ── Build lightweight index keyed by normalized spdx_id ──
 const index = {
   _meta: {
     source_hash: sourceHash,
+    index_schema_version: INDEX_SCHEMA_VERSION,
     generated_at: kbData.meta?.enriched_at || kbData.meta?.generated_at || "",
     total_submissions: kbData.submissions.length,
     by_status: kbData.meta?.by_status || {},
@@ -91,6 +121,11 @@ for (const s of kbData.submissions) {
     },
     has_vote: !!s.board_vote,
     has_timeline: tl.length > 0,
+    review_dates: {
+      first_submitted: firstSubmittedDate(s, tl),
+      decision: decisionDate(s, tl),
+      decision_status: ["approved", "rejected"].includes(s.status) ? s.status : "",
+    },
     timeline_meta: {
       count: tl.length,
       first: tl.length ? tl[0].date : null,

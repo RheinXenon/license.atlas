@@ -5,6 +5,7 @@ import { Badge } from "@/components/badge";
 import { useRouter } from "next/navigation";
 import { resolveTrackerEntry, hasReviewContent } from "@/lib/tracker-match";
 import { statusLabel } from "@/components/tracker/tracker-card";
+import { formatTrackerDate } from "@/lib/tracker-date";
 
 type TrackerEntry = {
   id: string;
@@ -15,6 +16,11 @@ type TrackerEntry = {
   stats?: { total_messages?: number; duration_days?: number; date_range?: string[] };
   has_vote?: boolean;
   has_timeline?: boolean;
+  review_dates?: {
+    first_submitted?: string;
+    decision?: string;
+    decision_status?: "approved" | "rejected" | "";
+  };
   timeline_meta?: { count?: number; first?: string; last?: string };
   latest_event?: {
     date?: string;
@@ -42,6 +48,15 @@ export function LicenseReviewBlock({ license }: {
   const { status, submitter, stats, has_timeline, has_vote } = entry;
   const days = stats?.duration_days || 0;
   const msgs = stats?.total_messages || 0;
+  const reviewDates = entry.review_dates || {};
+  const firstSubmitted = reviewDates.first_submitted;
+  const decisionDate = reviewDates.decision;
+  const decisionLabel = reviewDates.decision_status === "rejected"
+    ? t("review.rejectedDate")
+    : reviewDates.decision_status === "approved"
+      ? t("review.approvedDate")
+      : "";
+  const decisionIcon = reviewDates.decision_status === "rejected" ? "✗" : "✓";
   const latest = entry.latest_event;
   const latestPoint = latest ? (lang === "zh" ? latest.point_zh || latest.point : latest.point) : "";
 
@@ -69,6 +84,8 @@ export function LicenseReviewBlock({ license }: {
 
       <div className="mb-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-zinc-600 dark:text-zinc-300">
         <span>👤 {submitter}</span>
+        {firstSubmitted && <span>🗓️ {t("review.firstSubmitted")}: {formatTrackerDate(firstSubmitted)}</span>}
+        {decisionDate && decisionLabel && <span>{decisionIcon} {decisionLabel}: {formatTrackerDate(decisionDate)}</span>}
         {days > 0 && <span>📅 {days} {t("tracker.days")}</span>}
         {msgs > 0 && <span>💬 {msgs} {t("tracker.messages")}</span>}
         {has_vote && <span>🗳️ {t("tracker.tabVote")}</span>}

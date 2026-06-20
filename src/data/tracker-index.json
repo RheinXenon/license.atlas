@@ -1,15 +1,90 @@
 {
   "_meta": {
-    "source_hash": "8494e90fb44a1922",
-    "generated_at": "2026-06-19T17:35:53.312Z",
-    "total_submissions": 172,
+    "source_hash": "034778e13ca28fd4",
+    "index_schema_version": 2,
+    "generated_at": "2026-06-20T03:05:52.950Z",
+    "total_submissions": 174,
     "by_status": {
       "approved": 102,
       "rejected": 37,
       "withdrawn": 4,
-      "pending": 6,
+      "pending": 8,
       "superseded": 3,
       "legacy": 20
+    }
+  },
+  "linkumori-free-license-1-0": {
+    "id": "linkumori-free-license-1-0",
+    "name": "Linkumori Free License, Version 1.0",
+    "spdx_id": "",
+    "status": "pending",
+    "submitter": "Subham Mahesh",
+    "stats": {
+      "total_messages": 8,
+      "duration_days": 3,
+      "date_range": [
+        "2026-06-16",
+        "2026-06-19"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2026-06-16",
+      "decision": "",
+      "decision_status": ""
+    },
+    "timeline_meta": {
+      "count": 8,
+      "first": "2026-06-16",
+      "last": "2026-06-19"
+    },
+    "latest_event": {
+      "date": "2026-06-19",
+      "type": "feedback",
+      "source": "license-review",
+      "sender": "Carlo Piana",
+      "subject": "[License-review] : [License] Linkumori Free License, Version 1.0 – Submission for OSI Review",
+      "sentiment": "negative",
+      "point": "Suggests deferring license review until the Linkumori text has been widely discussed and is no longer subject to change, because the current discussion belongs on license-discuss.",
+      "point_zh": "建议等 Linkumori 文本经过充分讨论且不再频繁变动后再进入许可证审查，因为当前讨论更适合 license-discuss。"
+    }
+  },
+  "mutualist-license-v1-2": {
+    "id": "mutualist-license-v1-2",
+    "name": "The Mutualist License (MutuaL) v1.2",
+    "spdx_id": "",
+    "status": "pending",
+    "submitter": "Kat Suricata",
+    "stats": {
+      "total_messages": 5,
+      "duration_days": 4,
+      "date_range": [
+        "2026-06-06",
+        "2026-06-10"
+      ]
+    },
+    "has_vote": false,
+    "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2026-06-06",
+      "decision": "",
+      "decision_status": ""
+    },
+    "timeline_meta": {
+      "count": 5,
+      "first": "2026-06-06",
+      "last": "2026-06-10"
+    },
+    "latest_event": {
+      "date": "2026-06-10",
+      "type": "feedback",
+      "source": "license-review",
+      "sender": "Pamela Chestek",
+      "subject": "[License-review] The Mutualist License (MutuaL) v1.2",
+      "sentiment": "negative",
+      "point": "Argues that OSI review must rigorously pressure-test licenses for ecosystem health and legal clarity, because interpretive canons cannot reliably rescue ambiguous drafting.",
+      "point_zh": "指出 OSI 审查应从生态健康和法律清晰度出发严格压力测试许可证，因为解释规则无法可靠弥补含糊起草。"
     }
   },
   "ai-mit-license": {
@@ -28,6 +103,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2026-03-12",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 35,
       "first": "2026-03-12",
@@ -36,12 +116,12 @@
     "latest_event": {
       "date": "2026-03-19",
       "type": "feedback",
-      "source": "license-discuss",
-      "sender": "Bruce Perens",
-      "subject": "[License-discuss] [SUBMISSION] AI-MIT License 1.0 — permissive license for AI-generated code",
-      "sentiment": "negative",
-      "point": "Highlights two major risks: that informal community norms can be codified into law by courts, and that the community generally overestimates the power of licenses and underestimates the limits of copyright, leading to conflicts with companies and disappointment in court.",
-      "point_zh": "强调两大风险：社区非正式规范会被法院固化为法律，以及社区普遍高估许可证与版权的效力、低估其边界，导致与公司冲突并在法庭上失望。"
+      "source": "license-review",
+      "sender": "Nik",
+      "subject": "[License-review] [SUBMISSION] AI-MIT License 1.0 — permissive license for AI-generated code",
+      "sentiment": "neutral",
+      "point": "Requests withdrawal of the current submission from license-review, intending to summarize the discussion, revise the draft, and continue the concept on license-discuss before any future formal submission.",
+      "point_zh": "请求从 license-review 撤回当前提交，改为在 license-discuss 继续讨论和迭代后再行正式提交。"
     }
   },
   "modelgo-attribution-v2": {
@@ -60,6 +140,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2025-02-12",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 113,
       "first": "2025-02-10",
@@ -72,8 +157,8 @@
       "sender": "Moming Duan",
       "subject": "[License-review] [3rd Resubmission] ModelGo Zero License (MG0-2.0) AND ModelGo Attribution License (MG-BY-2.0)",
       "sentiment": "mixed",
-      "point": "Asks for the current blocking concern and argues that Output should remain covered because AI agents now create and execute code.",
-      "point_zh": "询问当前最主要的阻碍点，并主张继续在免责声明和责任限制中覆盖 Output，因为 AI 代理已能生成并自动执行代码。"
+      "point": "The sender asks for the current blocking concern and argues that Output should remain covered because AI agents now create and execute code.",
+      "point_zh": "发件人询问当前最主要的阻碍点，并主张继续在免责声明和责任限制中覆盖 Output，因为 AI 代理已能生成并自动执行代码。"
     }
   },
   "public-benefit-zero-copyright": {
@@ -92,6 +177,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2024-12-17",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 20,
       "first": "2024-12-17",
@@ -124,6 +214,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2024-10-25",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 21,
       "first": "2024-10-25",
@@ -156,6 +251,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2020-12-26",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 40,
       "first": "2020-12-26",
@@ -188,6 +288,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2015-06-10",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 49,
       "first": "2015-06-10",
@@ -211,7 +316,7 @@
     "status": "rejected",
     "submitter": "Steve Pieper",
     "stats": {
-      "total_messages": 41,
+      "total_messages": 44,
       "duration_days": 19,
       "date_range": [
         "2021-05-27",
@@ -220,8 +325,13 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2021-05-27",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
-      "count": 41,
+      "count": 44,
       "first": "2021-05-27",
       "last": "2021-06-15"
     },
@@ -252,6 +362,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2021-02-14",
+      "decision": "2021-07-06",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 41,
       "first": "2021-02-14",
@@ -284,6 +399,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2020-03-25",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 35,
       "first": "2020-03-25",
@@ -316,6 +436,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2019-10-29",
+      "decision": "2020-01-18",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 28,
       "first": "2019-10-29",
@@ -348,6 +473,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2019-03-15",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 21,
       "first": "2019-03-15",
@@ -380,6 +510,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2019-02-05",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 19,
       "first": "2019-02-05",
@@ -412,6 +547,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2019-01-08",
+      "decision": "2019-03-13",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 33,
       "first": "2019-01-08",
@@ -444,6 +584,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2018-11-05",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 14,
       "first": "2018-11-05",
@@ -476,6 +621,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2018-09-26",
+      "decision": "2019-03-13",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 88,
       "first": "2018-09-26",
@@ -508,6 +658,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2018-06-14",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2018-06-14",
@@ -540,6 +695,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2016-06-16",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 54,
       "first": "2016-06-16",
@@ -572,6 +732,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2016-06-06",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 21,
       "first": "2016-06-06",
@@ -604,6 +769,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2015-07-20",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 38,
       "first": "2015-07-20",
@@ -636,6 +806,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2013-11-08",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 30,
       "first": "2013-11-08",
@@ -668,6 +843,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2013-11-05",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 27,
       "first": "2013-11-05",
@@ -700,6 +880,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2013-10-05",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 29,
       "first": "2013-10-05",
@@ -732,6 +917,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2012-09-23",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 22,
       "first": "2012-09-23",
@@ -744,8 +934,8 @@
       "sender": "Asreq Asen",
       "subject": "[License-review] Request for Approval : Modular Open-source Software License (MOSL)",
       "sentiment": "neutral",
-      "point": "Forwards a message in a non-English language (Indonesian reply header), no substantive new content.",
-      "point_zh": "转发一封非英文（印尼语回复 header）邮件，无实质性新内容。"
+      "point": "Contains only a quoted-reply lead-in after cleanup, with no substantive MOSL review comment preserved.",
+      "point_zh": "清洗后只剩引用回复引导语，没有保留实质 MOSL 审查意见。"
     }
   },
   "svoboda": {
@@ -764,6 +954,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2012-05-20",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 24,
       "first": "2012-05-20",
@@ -796,6 +991,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2011-05-24",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 27,
       "first": "2011-05-24",
@@ -819,29 +1019,34 @@
     "status": "rejected",
     "submitter": "Christian Solmecke",
     "stats": {
-      "total_messages": 20,
-      "duration_days": 1,
+      "total_messages": 27,
+      "duration_days": 25,
       "date_range": [
         "2010-10-06",
-        "2010-10-07"
+        "2010-10-31"
       ]
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2010-10-06",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
-      "count": 20,
+      "count": 27,
       "first": "2010-10-06",
-      "last": "2010-10-07"
+      "last": "2010-10-31"
     },
     "latest_event": {
-      "date": "2010-10-07",
+      "date": "2010-10-31",
       "type": "feedback",
       "source": "license-review",
-      "sender": "John Cowan",
-      "subject": "For Approval: The netX Public Lisense (in plain text)",
-      "sentiment": "neutral",
-      "point": "Counters the license conflict argument by noting each licensor disclaims liability only for their own code, so BSD and netX disclaimers can coexist without conflict.",
-      "point_zh": "反驳许可证冲突论点，指出每个许可方只对自己的代码免责，因此 BSD 和 netX 的免责条款可以共存而不冲突。"
+      "sender": "Rick Moen",
+      "subject": "AW: For Approval: The netX Public Lisense (in plain text)",
+      "sentiment": "negative",
+      "point": "Notes that impossible notification obligations might become unenforceable, but still argues such clauses are bad drafting because they create avoidable legal uncertainty.",
+      "point_zh": "指出无法履行的通知义务可能变得不可执行，但仍认为此类条款是糟糕起草，因为会制造本可避免的法律不确定性。"
     }
   },
   "webm-license": {
@@ -849,7 +1054,7 @@
     "name": "WebM License (third-party submission)",
     "spdx_id": "",
     "status": "rejected",
-    "submitter": "third-party submitter",
+    "submitter": "Third-Party Submitter",
     "stats": {
       "total_messages": 28,
       "duration_days": 3,
@@ -860,6 +1065,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2010-05-25",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 28,
       "first": "2010-05-25",
@@ -892,6 +1102,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2009-04-08",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 41,
       "first": "2009-04-08",
@@ -924,6 +1139,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2008-12-15",
+      "decision": "2009-02-19",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 126,
       "first": "2008-12-15",
@@ -932,8 +1152,8 @@
     "latest_event": {
       "date": "2009-02-27",
       "type": "feedback",
-      "source": "license-discuss",
-      "sender": "zooko",
+      "source": "license-review",
+      "sender": "Zooko",
       "subject": "For Approval: Transitive Grace Period Public Licence, v1.0",
       "sentiment": "positive",
       "point": "Distinguishes TGPPL's transitive delayed-source obligation from one-shot eventual-source releases, then shares empirical examples suggesting such models have mixed practical results.",
@@ -945,7 +1165,7 @@
     "name": "The Beer-Ware License",
     "spdx_id": "",
     "status": "rejected",
-    "submitter": "third-party submitter",
+    "submitter": "Third-Party Submitter",
     "stats": {
       "total_messages": 27,
       "duration_days": 13,
@@ -956,6 +1176,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2008-01-11",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 27,
       "first": "2008-01-11",
@@ -988,6 +1213,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2007-07-05",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 34,
       "first": "2007-07-05",
@@ -1020,6 +1250,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2007-04-18",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 21,
       "first": "2007-04-18",
@@ -1052,6 +1287,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2007-03-08",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 24,
       "first": "2007-03-08",
@@ -1084,6 +1324,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2006-12-04",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 181,
       "first": "2006-12-04",
@@ -1096,8 +1341,8 @@
       "sender": "Christian Maletz",
       "subject": "[Fwd: FW: For Approval: Generic Attribution Provision]",
       "sentiment": "neutral",
-      "point": "Forwards the Generic Attribution Provision approval discussion without adding substantive new review comments.",
-      "point_zh": "转发 Generic Attribution Provision 的审批讨论，未加入实质性新的评审意见。"
+      "point": "Contains no substantive archived body in the Generic Attribution Provision thread.",
+      "point_zh": "在 Generic Attribution Provision 线程中没有可提取的实质归档正文。"
     }
   },
   "broad-institute-public-license": {
@@ -1116,6 +1361,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2006-07-11",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 32,
       "first": "2006-07-11",
@@ -1148,6 +1398,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2006-07-10",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 23,
       "first": "2006-07-10",
@@ -1180,6 +1435,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2005-10-06",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 21,
       "first": "2005-10-06",
@@ -1212,6 +1472,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2004-09-26",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 35,
       "first": "2004-09-26",
@@ -1244,6 +1509,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2004-02-12",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 42,
       "first": "2004-02-12",
@@ -1276,6 +1546,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2003-09-24",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 119,
       "first": "2003-09-24",
@@ -1297,7 +1572,7 @@
     "name": "BXAPL",
     "spdx_id": "",
     "status": "rejected",
-    "submitter": "unknown",
+    "submitter": "Unknown",
     "stats": {
       "total_messages": 21,
       "duration_days": 7,
@@ -1308,6 +1583,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2002-07-02",
+      "decision": "2002-07-02",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 21,
       "first": "2002-07-02",
@@ -1320,8 +1600,8 @@
       "sender": "Abe Kornelis",
       "subject": "Approval request for BXAPL",
       "sentiment": "question",
-      "point": "Makes public a private discussion with Nathan regarding Bixoft Public License sections on Dependent Software definition and patent retaliation clause, responding to each challenge and explaining the legislative intent behind each provision.",
-      "point_zh": "将与 Nathan 的私信讨论公开到邮件列表，逐一回应 Nathan 对 Bixoft Public License 第 10 条（Dependent Software 定义）和第 16 条（专利反制条款）的质疑，解释各条款的立法意图。"
+      "point": "Acknowledges that the definitions of Distributor and Contributor in the BXAPL are confusing and counter-intuitive, and states the need to untangle these terms.",
+      "point_zh": "承认 BXAPL 中 Distributor 和 Contributor 的定义相互混淆且反直觉，表示需要重新梳理这两个术语的定义。"
     }
   },
   "apossl": {
@@ -1329,7 +1609,7 @@
     "name": "APOSSL (Anti-Piracy Open Source Software License)",
     "spdx_id": "",
     "status": "rejected",
-    "submitter": "dave sag",
+    "submitter": "Dave Sag",
     "stats": {
       "total_messages": 34,
       "duration_days": 1,
@@ -1340,6 +1620,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2002-03-05",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 34,
       "first": "2002-03-05",
@@ -1361,7 +1646,7 @@
     "name": "qmail License",
     "spdx_id": "",
     "status": "rejected",
-    "submitter": "third-party submitter",
+    "submitter": "Third-Party Submitter",
     "stats": {
       "total_messages": 21,
       "duration_days": 1,
@@ -1372,6 +1657,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2001-06-07",
+      "decision": "",
+      "decision_status": "rejected"
+    },
     "timeline_meta": {
       "count": 21,
       "first": "2001-06-07",
@@ -1404,6 +1694,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2018-11-21",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 52,
       "first": "2018-11-21",
@@ -1436,6 +1731,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2018-10-16",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 107,
       "first": "2018-10-16",
@@ -1468,6 +1768,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2017-10-27",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 46,
       "first": "2017-10-27",
@@ -1491,7 +1796,7 @@
     "status": "withdrawn",
     "submitter": "Kyle Mitchell",
     "stats": {
-      "total_messages": 129,
+      "total_messages": 132,
       "duration_days": 33,
       "date_range": [
         "2017-09-23",
@@ -1500,8 +1805,13 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2017-09-23",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
-      "count": 129,
+      "count": 132,
       "first": "2017-09-23",
       "last": "2017-10-26"
     },
@@ -1532,6 +1842,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2022-12-05",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 34,
       "first": "2022-12-05",
@@ -1555,7 +1870,7 @@
     "status": "superseded",
     "submitter": "Van Lindsay",
     "stats": {
-      "total_messages": 110,
+      "total_messages": 117,
       "duration_days": 215,
       "date_range": [
         "2019-08-19",
@@ -1564,8 +1879,13 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2019-08-19",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
-      "count": 110,
+      "count": 117,
       "first": "2019-08-19",
       "last": "2020-03-21"
     },
@@ -1587,7 +1907,7 @@
     "status": "superseded",
     "submitter": "Van Lindsay",
     "stats": {
-      "total_messages": 153,
+      "total_messages": 163,
       "duration_days": 116,
       "date_range": [
         "2019-04-22",
@@ -1596,8 +1916,13 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2019-04-22",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
-      "count": 153,
+      "count": 163,
       "first": "2019-04-22",
       "last": "2019-08-16"
     },
@@ -1628,6 +1953,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2026-03-20",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 4,
       "first": "2026-03-20",
@@ -1660,6 +1990,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2026-03-20",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 4,
       "first": "2026-03-20",
@@ -1692,6 +2027,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2026-03-20",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 5,
       "first": "2026-03-20",
@@ -1724,6 +2064,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2025-05-20",
+      "decision": "2025-07-18",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2025-05-20",
@@ -1756,6 +2101,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2025-05-20",
+      "decision": "2025-07-18",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2025-05-20",
@@ -1788,6 +2138,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2025-05-02",
+      "decision": "2025-07-18",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 4,
       "first": "2025-05-02",
@@ -1820,6 +2175,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2025-05-02",
+      "decision": "2025-07-18",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 4,
       "first": "2025-05-02",
@@ -1844,17 +2204,22 @@
     "submitter": "Brian Warner",
     "stats": {
       "total_messages": 4,
-      "duration_days": 77,
+      "duration_days": 79,
       "date_range": [
-        "2025-05-02",
+        "2025-04-30",
         "2025-07-18"
       ]
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2025-04-30",
+      "decision": "2025-07-18",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
-      "count": 4,
-      "first": "2025-05-02",
+      "count": 5,
+      "first": "2025-04-30",
       "last": "2025-07-18"
     },
     "latest_event": {
@@ -1884,6 +2249,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2024-12-23",
+      "decision": "2025-03-21",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2024-12-23",
@@ -1916,6 +2286,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2024-12-23",
+      "decision": "2025-03-21",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2024-12-23",
@@ -1948,6 +2323,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2024-06-26",
+      "decision": "2024-09-20",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 9,
       "first": "2024-06-26",
@@ -1980,6 +2360,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2024-06-14",
+      "decision": "2024-09-20",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2024-06-12",
@@ -2012,6 +2397,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2023-11-09",
+      "decision": "2024-01-19",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2023-11-08",
@@ -2044,6 +2434,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2023-11-09",
+      "decision": "2024-01-19",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2023-11-08",
@@ -2076,6 +2471,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2023-08-24",
+      "decision": "2023-11-17",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 8,
       "first": "2023-08-23",
@@ -2108,6 +2508,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2023-08-24",
+      "decision": "2023-11-17",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 8,
       "first": "2023-08-23",
@@ -2140,6 +2545,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2023-01-17",
+      "decision": "2023-03-17",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2023-01-17",
@@ -2172,6 +2582,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2023-01-17",
+      "decision": "2023-03-17",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2023-01-17",
@@ -2204,6 +2619,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2021-04-25",
+      "decision": "2021-09-17",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2021-04-25",
@@ -2236,6 +2656,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2021-04-06",
+      "decision": "2021-06-25",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2021-04-06",
@@ -2268,6 +2693,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2021-04-06",
+      "decision": "2021-06-25",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2021-04-06",
@@ -2300,6 +2730,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2020-06-29",
+      "decision": "2021-01-15",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2020-06-29",
@@ -2332,6 +2767,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2020-06-29",
+      "decision": "2021-01-15",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2020-06-29",
@@ -2364,6 +2804,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2020-06-29",
+      "decision": "2021-01-15",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2020-06-29",
@@ -2396,6 +2841,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2020-06-29",
+      "decision": "2021-01-15",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2020-06-29",
@@ -2428,6 +2878,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2020-06-29",
+      "decision": "2021-01-15",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2020-06-29",
@@ -2460,6 +2915,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2020-06-29",
+      "decision": "2021-01-15",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2020-06-29",
@@ -2492,6 +2952,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2020-05-15",
+      "decision": "2020-08-14",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 5,
       "first": "2020-05-15",
@@ -2524,8 +2989,13 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2020-03-28",
+      "decision": "2020-06-12",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
-      "count": 7,
+      "count": 8,
       "first": "2020-03-28",
       "last": "2020-06-16"
     },
@@ -2537,7 +3007,7 @@
       "subject": "[License-review] Request for legacy approval: The Unlicense",
       "sentiment": "neutral",
       "point": "Announces that the Board approved the Unlicense as an OSI Approved License on June 12, 2020.",
-      "point_zh": "宣布董事会已于 2020 年 6 月 12 日将 Unlicense 批准为 OSI 认可许可证。"
+      "point_zh": "她宣布董事会已于 2020 年 6 月 12 日将 Unlicense 批准为 OSI 认可许可证。"
     }
   },
   "php-3.01": {
@@ -2556,6 +3026,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2020-03-04",
+      "decision": "2020-05-11",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2020-03-04",
@@ -2588,6 +3063,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2020-03-04",
+      "decision": "2020-05-11",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2020-03-04",
@@ -2620,6 +3100,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2019-12-10",
+      "decision": "2020-03-13",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 9,
       "first": "2019-12-10",
@@ -2652,8 +3137,13 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2019-12-04",
+      "decision": "2019-02-14",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
-      "count": 7,
+      "count": 8,
       "first": "2019-12-04",
       "last": "2020-03-13"
     },
@@ -2684,8 +3174,13 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2019-12-04",
+      "decision": "2019-02-14",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
-      "count": 7,
+      "count": 8,
       "first": "2019-12-04",
       "last": "2020-03-13"
     },
@@ -2716,6 +3211,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2020-01-06",
+      "decision": "2020-02-14",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2019-12-03",
@@ -2748,6 +3248,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2020-01-06",
+      "decision": "2020-02-14",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2019-12-03",
@@ -2780,6 +3285,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2019-08-13",
+      "decision": "2019-09-20",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2019-08-13",
@@ -2812,6 +3322,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2019-08-13",
+      "decision": "2019-09-20",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2019-08-13",
@@ -2844,6 +3359,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2019-05-16",
+      "decision": "2019-06-14",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2019-05-16",
@@ -2876,6 +3396,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2018-10-16",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2018-10-16",
@@ -2908,6 +3433,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2018-10-16",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2018-10-16",
@@ -2940,6 +3470,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2017-11-29",
+      "decision": "2018-04-30",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 8,
       "first": "2017-11-29",
@@ -2953,7 +3488,7 @@
       "subject": "[License-review] Request for Legacy Approval: Unicode Data Files and Software License",
       "sentiment": "neutral",
       "point": "Announces that the OSI board granted Legacy Approval to the Unicode Data Files and Software License and placed it in the redundant-licenses proliferation category.",
-      "point_zh": "宣布 OSI 董事会已授予 Unicode Data Files and Software License 旧许可证批准，并将其归入「与更流行许可证重复」的许可证扩散类别。"
+      "point_zh": "他宣布 OSI 董事会已授予 Unicode Data Files and Software License 旧许可证批准，并将其归入“与更流行许可证重复”的许可证扩散类别。"
     }
   },
   "w3c-20150513": {
@@ -2972,6 +3507,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2017-08-09",
+      "decision": "2017-11-29",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2017-08-09",
@@ -3004,6 +3544,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2017-06-15",
+      "decision": "2017-08-10",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 8,
       "first": "2017-06-15",
@@ -3036,6 +3581,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2017-06-15",
+      "decision": "2017-08-10",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 8,
       "first": "2017-06-15",
@@ -3068,6 +3618,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2017-06-15",
+      "decision": "2017-08-09",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 8,
       "first": "2017-06-15",
@@ -3100,6 +3655,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2017-06-15",
+      "decision": "2017-08-09",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 8,
       "first": "2017-06-15",
@@ -3132,6 +3692,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2017-05-30",
+      "decision": "2017-07-13",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2017-05-30",
@@ -3164,6 +3729,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2017-05-30",
+      "decision": "2017-07-13",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2017-05-30",
@@ -3196,6 +3766,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2017-02-23",
+      "decision": "2017-04-04",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2016-10-24",
@@ -3228,6 +3803,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2017-02-23",
+      "decision": "2017-04-04",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2016-10-24",
@@ -3260,6 +3840,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2016-01-13",
+      "decision": "2017-04-04",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2016-01-13",
@@ -3292,8 +3877,13 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2015-09-15",
+      "decision": "2016-01-13",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
-      "count": 6,
+      "count": 7,
       "first": "2015-09-15",
       "last": "2016-01-18"
     },
@@ -3324,8 +3914,13 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2015-09-15",
+      "decision": "2016-01-13",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
-      "count": 6,
+      "count": 7,
       "first": "2015-09-15",
       "last": "2016-01-18"
     },
@@ -3356,8 +3951,13 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2015-09-15",
+      "decision": "2016-01-13",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
-      "count": 6,
+      "count": 7,
       "first": "2015-09-15",
       "last": "2016-01-18"
     },
@@ -3388,8 +3988,13 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2015-09-15",
+      "decision": "2016-01-13",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
-      "count": 6,
+      "count": 7,
       "first": "2015-09-15",
       "last": "2016-01-18"
     },
@@ -3420,8 +4025,13 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2015-09-15",
+      "decision": "2016-01-13",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
-      "count": 6,
+      "count": 7,
       "first": "2015-09-15",
       "last": "2016-01-18"
     },
@@ -3452,8 +4062,13 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2015-09-15",
+      "decision": "2016-01-13",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
-      "count": 6,
+      "count": 7,
       "first": "2015-09-15",
       "last": "2016-01-18"
     },
@@ -3484,8 +4099,13 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2015-09-01",
+      "decision": "2015-11-10",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
-      "count": 6,
+      "count": 7,
       "first": "2015-09-01",
       "last": "2015-09-12"
     },
@@ -3516,8 +4136,13 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2015-09-01",
+      "decision": "2015-11-10",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
-      "count": 6,
+      "count": 7,
       "first": "2015-09-01",
       "last": "2015-09-12"
     },
@@ -3548,6 +4173,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2015-08-30",
+      "decision": "2015-10-14",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2015-08-30",
@@ -3580,6 +4210,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2014-08-29",
+      "decision": "2015-09-09",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2014-08-29",
@@ -3612,6 +4247,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2014-08-29",
+      "decision": "2015-09-09",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2014-08-29",
@@ -3644,6 +4284,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2014-04-11",
+      "decision": "2015-02-04",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2014-04-11",
@@ -3676,6 +4321,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2014-04-11",
+      "decision": "2015-02-04",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2014-04-11",
@@ -3708,6 +4358,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2012-02-27",
+      "decision": "2013-05-01",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2012-02-27",
@@ -3740,6 +4395,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2012-02-27",
+      "decision": "2013-05-01",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2012-02-27",
@@ -3772,6 +4432,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2011-08-15",
+      "decision": "2012-01-09",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 4,
       "first": "2011-08-15",
@@ -3804,6 +4469,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2011-08-15",
+      "decision": "2012-01-09",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 4,
       "first": "2011-08-15",
@@ -3836,6 +4506,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2011-04-16",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2011-04-16",
@@ -3868,6 +4543,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2010-10-21",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2010-10-21",
@@ -3900,6 +4580,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2010-10-21",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2010-10-21",
@@ -3932,6 +4617,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2010-08-30",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 5,
       "first": "2010-08-30",
@@ -3964,6 +4654,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2009-09-24",
+      "decision": "2010-02-10",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2009-09-24",
@@ -3996,6 +4691,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2009-09-08",
+      "decision": "2009-11-11",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2009-09-08",
@@ -4028,6 +4728,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2009-09-08",
+      "decision": "2009-11-11",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2009-09-08",
@@ -4060,6 +4765,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2009-06-01",
+      "decision": "2006-01-05",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 3,
       "first": "2009-06-01",
@@ -4092,6 +4802,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2009-06-01",
+      "decision": "2006-01-05",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 3,
       "first": "2009-06-01",
@@ -4124,8 +4839,13 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2009-02-04",
+      "decision": "2009-04-01",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
-      "count": 6,
+      "count": 7,
       "first": "2009-02-04",
       "last": "2009-03-30"
     },
@@ -4156,8 +4876,13 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2008-11-05",
+      "decision": "2009-04-01",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
-      "count": 6,
+      "count": 7,
       "first": "2008-11-05",
       "last": "2008-11-11"
     },
@@ -4188,8 +4913,13 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2008-11-05",
+      "decision": "2009-04-01",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
-      "count": 6,
+      "count": 7,
       "first": "2008-11-05",
       "last": "2008-11-11"
     },
@@ -4220,6 +4950,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2008-07-09",
+      "decision": "2007-06-05",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2008-07-09",
@@ -4252,6 +4987,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2008-07-09",
+      "decision": "2007-06-05",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2008-07-09",
@@ -4284,6 +5024,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2008-07-05",
+      "decision": "2008-09-10",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2008-07-05",
@@ -4316,6 +5061,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2008-05-13",
+      "decision": "2009-03-04",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2008-03-14",
@@ -4348,6 +5098,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2008-05-13",
+      "decision": "2009-03-04",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2008-03-14",
@@ -4380,6 +5135,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2008-02-26",
+      "decision": "2008-04-02",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 4,
       "first": "2008-02-26",
@@ -4412,6 +5172,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2008-01-30",
+      "decision": "2008-03-03",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 9,
       "first": "2008-01-30",
@@ -4444,6 +5209,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2008-01-30",
+      "decision": "2008-03-03",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 9,
       "first": "2008-01-30",
@@ -4476,6 +5246,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2008-01-30",
+      "decision": "2008-03-11",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 9,
       "first": "2008-01-30",
@@ -4508,6 +5283,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2008-01-30",
+      "decision": "2008-03-11",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 9,
       "first": "2008-01-30",
@@ -4532,28 +5312,33 @@
     "submitter": "Jeff Johnson",
     "stats": {
       "total_messages": 7,
-      "duration_days": 11,
+      "duration_days": 5719,
       "date_range": [
         "2007-12-19",
-        "2007-12-30"
+        "2023-08-16"
       ]
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2023-08-16",
+      "decision": "2023-10-20",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
-      "count": 7,
+      "count": 8,
       "first": "2007-12-19",
-      "last": "2007-12-30"
+      "last": "2023-08-16"
     },
     "latest_event": {
-      "date": "2007-12-30",
-      "type": "feedback",
-      "source": "license-review",
-      "sender": "zooko",
-      "subject": "Re: Æsthetic Permissive License - For Approval",
-      "sentiment": "positive",
-      "point": "Expresses strong support for an OSI-approved minimal permissive license, sharing that he uses a custom permissive license but must select BSD for databases requiring OSI-approved choices.",
-      "point_zh": "强烈支持OSI批准的极简宽松许可证，分享了自己使用自定义宽松许可证但因数据库要求而被迫选择BSD的经历。"
+      "date": "2023-08-16",
+      "type": "submission",
+      "source": "osi_api",
+      "sender": "Jeff Johnson",
+      "subject": "OSI API submission record: ICU License",
+      "sentiment": "neutral",
+      "point": "(OSI API records Jeff Johnson as the submitter of ICU License. The public mailing-list archive does not expose a concrete submission message for this event.)",
+      "point_zh": "（OSI API 记录 Jeff Johnson 为 ICU License 的提交者；公开邮件归档没有暴露这一事件的具体提交邮件。）"
     }
   },
   "isc": {
@@ -4572,6 +5357,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2007-12-19",
+      "decision": "2008-03-11",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2007-12-19",
@@ -4581,7 +5371,7 @@
       "date": "2007-12-30",
       "type": "feedback",
       "source": "license-review",
-      "sender": "zooko",
+      "sender": "Zooko",
       "subject": "Re: Æsthetic Permissive License - For Approval",
       "sentiment": "positive",
       "point": "Expresses strong support for an OSI-approved minimal permissive license, sharing that he uses a custom permissive license but must select BSD for databases requiring OSI-approved choices.",
@@ -4604,6 +5394,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2007-12-19",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2007-12-19",
@@ -4613,7 +5408,7 @@
       "date": "2007-12-30",
       "type": "feedback",
       "source": "license-review",
-      "sender": "zooko",
+      "sender": "Zooko",
       "subject": "Re: Æsthetic Permissive License - For Approval",
       "sentiment": "positive",
       "point": "Expresses strong support for an OSI-approved minimal permissive license, sharing that he uses a custom permissive license but must select BSD for databases requiring OSI-approved choices.",
@@ -4636,6 +5431,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2007-11-14",
+      "decision": "2008-01-08",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2007-11-14",
@@ -4668,6 +5468,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2007-10-14",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2007-10-14",
@@ -4700,6 +5505,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2007-10-14",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2007-10-14",
@@ -4732,6 +5542,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2007-10-03",
+      "decision": "2007-10-10",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2007-10-03",
@@ -4744,8 +5559,8 @@
       "sender": "knight99",
       "subject": "For Approval: Microsoft Public License",
       "sentiment": "neutral",
-      "point": "Note: only an HTML attachment, no readable plain-text body was preserved.",
-      "point_zh": "备注：仅含 HTML 附件，无可读的纯文本正文被保留。"
+      "point": "Archived content is only a scrubbed HTML attachment, with no extractable Microsoft Public License argument.",
+      "point_zh": "归档内容仅为被清理的 HTML 附件，没有可提取的 Microsoft Public License 论点。"
     }
   },
   "bsl-1.0": {
@@ -4764,6 +5579,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2007-09-15",
+      "decision": "2008-01-09",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2007-09-15",
@@ -4796,6 +5616,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2007-09-15",
+      "decision": "2008-01-09",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2007-09-15",
@@ -4828,6 +5653,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2007-08-07",
+      "decision": "2007-09-05",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 5,
       "first": "2007-08-06",
@@ -4860,6 +5690,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2007-08-07",
+      "decision": "2007-09-05",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 5,
       "first": "2007-08-06",
@@ -4892,6 +5727,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2007-07-24",
+      "decision": "2009-09-01",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 1,
       "first": "2007-07-24",
@@ -4924,6 +5764,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2007-07-24",
+      "decision": "2009-09-01",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 1,
       "first": "2007-07-24",
@@ -4956,6 +5801,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2007-06-29",
+      "decision": "2007-09-05",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2007-06-29",
@@ -4988,6 +5838,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2007-06-29",
+      "decision": "2007-09-05",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2007-06-29",
@@ -5020,6 +5875,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2007-06-29",
+      "decision": "2007-09-05",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2007-06-29",
@@ -5052,6 +5912,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2007-06-29",
+      "decision": "2007-09-05",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2007-06-29",
@@ -5084,6 +5949,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2007-06-26",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2007-06-26",
@@ -5116,6 +5986,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2007-06-26",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2007-06-26",
@@ -5148,6 +6023,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2007-05-21",
+      "decision": "2007-06-06",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 4,
       "first": "2007-05-21",
@@ -5180,6 +6060,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2007-05-21",
+      "decision": "2007-06-06",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 4,
       "first": "2007-05-21",
@@ -5212,6 +6097,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2007-03-16",
+      "decision": "2007-06-06",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2007-03-16",
@@ -5244,6 +6134,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2007-03-16",
+      "decision": "2007-06-06",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2007-03-16",
@@ -5276,6 +6171,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2007-03-14",
+      "decision": "2007-06-06",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2007-03-14",
@@ -5308,6 +6208,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2007-03-14",
+      "decision": "2007-06-06",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2007-03-14",
@@ -5340,8 +6245,13 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2007-10-03",
+      "decision": "2007-10-10",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
-      "count": 7,
+      "count": 8,
       "first": "2005-12-09",
       "last": "2007-10-10"
     },
@@ -5372,6 +6282,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2004-12-02",
+      "decision": "2025-07-18",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2004-12-02",
@@ -5404,6 +6319,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2004-12-02",
+      "decision": "2025-07-18",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2004-12-02",
@@ -5436,8 +6356,13 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2004-08-15",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
-      "count": 2,
+      "count": 3,
       "first": "2004-08-15",
       "last": "2004-08-16"
     },
@@ -5468,8 +6393,13 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2004-08-15",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
-      "count": 2,
+      "count": 3,
       "first": "2004-08-15",
       "last": "2004-08-16"
     },
@@ -5500,6 +6430,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2004-06-14",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 1,
       "first": "2004-06-14",
@@ -5532,6 +6467,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2004-03-25",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 2,
       "first": "2004-03-25",
@@ -5564,6 +6504,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2004-03-25",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 2,
       "first": "2004-03-25",
@@ -5596,6 +6541,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2004-03-23",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 2,
       "first": "2004-03-23",
@@ -5628,6 +6578,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2004-03-23",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 2,
       "first": "2004-03-23",
@@ -5660,6 +6615,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2004-03-08",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 3,
       "first": "2004-03-08",
@@ -5692,6 +6652,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2004-03-08",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 3,
       "first": "2004-03-08",
@@ -5724,8 +6689,13 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2004-02-08",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
-      "count": 7,
+      "count": 8,
       "first": "2004-02-08",
       "last": "2004-02-26"
     },
@@ -5756,8 +6726,13 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2004-02-08",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
-      "count": 7,
+      "count": 8,
       "first": "2004-02-08",
       "last": "2004-02-26"
     },
@@ -5788,6 +6763,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2004-01-26",
+      "decision": "2005-09-12",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2004-01-26",
@@ -5820,6 +6800,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2003-12-20",
+      "decision": "2018-10-10",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2003-12-20",
@@ -5852,6 +6837,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2003-12-20",
+      "decision": "2018-10-10",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2003-12-20",
@@ -5884,6 +6874,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2003-09-25",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 3,
       "first": "2003-09-25",
@@ -5916,6 +6911,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2003-09-25",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 3,
       "first": "2003-09-25",
@@ -5948,6 +6948,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2003-08-19",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 2,
       "first": "2003-08-19",
@@ -5980,8 +6985,13 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2003-08-06",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
-      "count": 3,
+      "count": 4,
       "first": "2003-08-06",
       "last": "2003-08-06"
     },
@@ -6012,8 +7022,13 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2003-08-06",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
-      "count": 3,
+      "count": 4,
       "first": "2003-08-06",
       "last": "2003-08-06"
     },
@@ -6044,6 +7059,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2003-05-31",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 3,
       "first": "2003-05-31",
@@ -6076,6 +7096,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2003-05-31",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 3,
       "first": "2003-05-31",
@@ -6108,6 +7133,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2003-05-26",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 1,
       "first": "2003-05-26",
@@ -6140,6 +7170,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2003-05-26",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 1,
       "first": "2003-05-26",
@@ -6172,6 +7207,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2003-04-17",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 2,
       "first": "2003-04-17",
@@ -6204,6 +7244,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2003-04-09",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 4,
       "first": "2003-04-09",
@@ -6236,6 +7281,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2003-04-09",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 4,
       "first": "2003-04-09",
@@ -6268,6 +7318,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2002-12-06",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 1,
       "first": "2002-12-06",
@@ -6300,6 +7355,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2002-12-06",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 1,
       "first": "2002-12-06",
@@ -6332,6 +7392,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2002-11-09",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 3,
       "first": "2002-11-09",
@@ -6364,6 +7429,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2002-10-22",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2002-10-22",
@@ -6396,6 +7466,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2002-10-16",
+      "decision": "2008-01-08",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 3,
       "first": "2002-10-16",
@@ -6428,6 +7503,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2002-10-16",
+      "decision": "2008-01-08",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 3,
       "first": "2002-10-16",
@@ -6460,6 +7540,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2002-09-23",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 9,
       "first": "2002-09-30",
@@ -6492,6 +7577,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2002-09-23",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 9,
       "first": "2002-09-30",
@@ -6524,6 +7614,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2002-08-22",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 2,
       "first": "2002-08-22",
@@ -6556,6 +7651,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2002-07-28",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 2,
       "first": "2002-07-28",
@@ -6588,6 +7688,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2002-07-28",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 2,
       "first": "2002-07-28",
@@ -6620,6 +7725,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2002-06-25",
+      "decision": "2006-01-05",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2002-06-25",
@@ -6652,6 +7762,11 @@
     },
     "has_vote": true,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2002-06-25",
+      "decision": "2006-01-05",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 6,
       "first": "2002-06-25",
@@ -6684,6 +7799,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2002-05-13",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 2,
       "first": "2002-05-13",
@@ -6716,6 +7836,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2002-01-17",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 7,
       "first": "2002-01-17",
@@ -6748,8 +7873,13 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2001-08-05",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
-      "count": 8,
+      "count": 9,
       "first": "2001-08-05",
       "last": "2001-08-09"
     },
@@ -6780,6 +7910,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2001-04-23",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 1,
       "first": "2001-05-23",
@@ -6812,6 +7947,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2001-11-21",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 4,
       "first": "2001-02-15",
@@ -6844,6 +7984,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2001-11-21",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 4,
       "first": "2001-02-15",
@@ -6876,6 +8021,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2001-01-23",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 4,
       "first": "2001-01-23",
@@ -6908,6 +8058,11 @@
     },
     "has_vote": false,
     "has_timeline": true,
+    "review_dates": {
+      "first_submitted": "2001-01-23",
+      "decision": "",
+      "decision_status": "approved"
+    },
     "timeline_meta": {
       "count": 4,
       "first": "2001-01-23",
@@ -6937,6 +8092,11 @@
     },
     "has_vote": true,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -6957,6 +8117,11 @@
     },
     "has_vote": true,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -6977,6 +8142,11 @@
     },
     "has_vote": true,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -6997,6 +8167,11 @@
     },
     "has_vote": true,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -7017,6 +8192,11 @@
     },
     "has_vote": false,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -7037,6 +8217,11 @@
     },
     "has_vote": false,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -7057,6 +8242,11 @@
     },
     "has_vote": false,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -7077,6 +8267,11 @@
     },
     "has_vote": false,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -7097,6 +8292,11 @@
     },
     "has_vote": false,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -7117,6 +8317,11 @@
     },
     "has_vote": false,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -7137,6 +8342,11 @@
     },
     "has_vote": false,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -7157,6 +8367,11 @@
     },
     "has_vote": false,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -7177,6 +8392,11 @@
     },
     "has_vote": false,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -7197,6 +8417,11 @@
     },
     "has_vote": false,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -7217,6 +8442,11 @@
     },
     "has_vote": false,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -7237,6 +8467,11 @@
     },
     "has_vote": false,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -7257,6 +8492,11 @@
     },
     "has_vote": false,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -7277,6 +8517,11 @@
     },
     "has_vote": false,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -7297,6 +8542,11 @@
     },
     "has_vote": false,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -7317,6 +8567,11 @@
     },
     "has_vote": false,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -7337,6 +8592,11 @@
     },
     "has_vote": false,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -7357,6 +8617,11 @@
     },
     "has_vote": true,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -7377,6 +8642,11 @@
     },
     "has_vote": true,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -7397,6 +8667,11 @@
     },
     "has_vote": false,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -7417,6 +8692,11 @@
     },
     "has_vote": false,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -7437,6 +8717,11 @@
     },
     "has_vote": true,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -7457,6 +8742,11 @@
     },
     "has_vote": true,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -7477,6 +8767,11 @@
     },
     "has_vote": false,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -7497,6 +8792,11 @@
     },
     "has_vote": false,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -7517,6 +8817,11 @@
     },
     "has_vote": false,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -7537,6 +8842,11 @@
     },
     "has_vote": false,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,
@@ -7557,6 +8867,11 @@
     },
     "has_vote": false,
     "has_timeline": false,
+    "review_dates": {
+      "first_submitted": "",
+      "decision": "",
+      "decision_status": ""
+    },
     "timeline_meta": {
       "count": 0,
       "first": null,

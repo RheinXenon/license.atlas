@@ -37,8 +37,9 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-col items-center justify-between gap-4 text-sm text-zinc-500 sm:flex-row">
           <p>{brandName}</p>
-          <div className="flex flex-col items-center gap-1 text-xs text-zinc-400 sm:items-end">
+          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-zinc-400 sm:justify-end">
             <p>{t("footer.dataUpdatedAt", { date: updatedLabel })}</p>
+            <span className="text-zinc-300 dark:text-zinc-700" aria-hidden="true">|</span>
             <p className="flex items-center gap-1">
               <span id="busuanzi_value_page_pv" className="font-mono">-</span> {t("footer.views")}
             </p>

@@ -57,6 +57,9 @@ const dict: Record<Lang, Record<string, string>> = {
     "review.title": "License Review Status from OSI",
     "review.subtitle": "This license went through the OSI board review process.",
     "review.latest": "Latest event",
+    "review.firstSubmitted": "First Submitted",
+    "review.approvedDate": "Approved Date",
+    "review.rejectedDate": "Rejected Date",
     "tag.review-tracked": "Review Tracked",
 
     // Home
@@ -308,6 +311,9 @@ const dict: Record<Lang, Record<string, string>> = {
     "review.title": "来自 OSI 的许可证审查状态",
     "review.subtitle": "该许可证经过了 OSI 董事会审查流程。",
     "review.latest": "最新事件",
+    "review.firstSubmitted": "首次提交",
+    "review.approvedDate": "批准日期",
+    "review.rejectedDate": "否决日期",
     "tag.review-tracked": "审查记录",
 
     // Home

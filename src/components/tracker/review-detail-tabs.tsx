@@ -26,6 +26,12 @@ function sentimentPill(type: string, sentiment?: string | null): string | null {
   return SENT_PILL[s] || null;
 }
 
+function sourceLabel(source: string): string {
+  if (source === "license-discuss") return "discuss";
+  if (source === "osi_api") return "api";
+  return "review";
+}
+
 export function ReviewDetailTabs({
   s, tab, setTab, src, setSrc, focusEventIdx, clearFocus,
 }: {
@@ -101,7 +107,7 @@ export function ReviewDetailTabs({
                   <div>
                     <div className="text-xs font-semibold uppercase tracking-wide text-zinc-500">
                       {ev.type.replace(/_/g, " ")}
-                      <span className="ml-1.5 rounded bg-violet-50 px-1 text-[9px] dark:bg-violet-900/20">{ev.source.includes("discuss") ? "discuss" : "review"}</span>
+                      <span className="ml-1.5 rounded bg-violet-50 px-1 text-[9px] dark:bg-violet-900/20">{sourceLabel(ev.source)}</span>
                       {sentPill && (
                         <span className={`ml-1.5 rounded px-1 text-[9px] ${sentPill}`}>{ev.sentiment}</span>
                       )}

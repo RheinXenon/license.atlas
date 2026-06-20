@@ -64,7 +64,7 @@ export interface TrackerTimelineEvent {
   point?: string | null;
   point_zh?: string | null;
   sentiment: TrackerSentiment;
-  source: "license-review" | "license-discuss";
+  source: "license-review" | "license-discuss" | "osi_api";
   position?: string;
   relevance?: "high" | "medium" | "low";
 }
@@ -138,6 +138,11 @@ export interface TrackerIndexEntry {
   stats: { total_messages: number; duration_days: number; date_range: string[] };
   has_vote: boolean;
   has_timeline: boolean;
+  review_dates?: {
+    first_submitted?: string;
+    decision?: string;
+    decision_status?: "approved" | "rejected" | "";
+  };
   timeline_meta: { count: number; first: string | null; last: string | null };
 }
 

@@ -14,6 +14,11 @@ type TrackerEntry = {
   stats?: { total_messages?: number; duration_days?: number; date_range?: string[] };
   has_vote?: boolean;
   has_timeline?: boolean;
+  review_dates?: {
+    first_submitted?: string;
+    decision?: string;
+    decision_status?: "approved" | "rejected" | "";
+  };
   timeline_meta?: { count?: number; first?: string; last?: string };
   latest_event?: {
     date?: string;

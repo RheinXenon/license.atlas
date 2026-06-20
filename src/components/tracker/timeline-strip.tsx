@@ -16,6 +16,16 @@ const SENT_TINT: Record<string, string> = {
 const SENT_HEX: Record<string, string> = {
   positive: "#10b981", negative: "#ef4444", question: "#8b5cf6",
 };
+const SENT_BADGE_STYLE: Record<string, { background: string; color: string }> = {
+  positive: { background: "rgba(16,185,129,0.14)", color: "#059669" },
+  support: { background: "rgba(16,185,129,0.14)", color: "#059669" },
+  negative: { background: "rgba(239,68,68,0.14)", color: "#dc2626" },
+  oppose: { background: "rgba(239,68,68,0.14)", color: "#dc2626" },
+  critical: { background: "rgba(249,115,22,0.14)", color: "#ea580c" },
+  question: { background: "rgba(139,92,246,0.14)", color: "#7c3aed" },
+  mixed: { background: "rgba(245,158,11,0.14)", color: "#d97706" },
+  neutral: { background: "rgba(100,116,139,0.12)", color: "#64748b" },
+};
 const TYPE_COLOR: Record<string, string> = {
   board_decision: "var(--c-approved, #3DA639)",
   withdrawal: "var(--c-withdrawn, #d97706)",
@@ -23,6 +33,10 @@ const TYPE_COLOR: Record<string, string> = {
   submission: "var(--c-approved, #3DA639)",
   feedback: "var(--c-legacy, #71717a)",
 };
+
+function titleCaseType(type: string): string {
+  return type.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+}
 
 interface TipState {
   x: number; y: number;
@@ -73,7 +87,7 @@ export function TimelineStrip({
     const d = formatTrackerShortDate(ev.date);
     const rawType = ev.type || "feedback";
     const label = rawType === "board_decision" ? "✓" : rawType === "withdrawal" ? "✗" : "";
-    const typeLabel = rawType.replace(/_/g, " ");
+    const typeLabel = titleCaseType(rawType);
     const colorKey =
       rawType === "board_decision" ? "board_decision"
       : rawType === "withdrawal" ? "withdrawal"
@@ -148,9 +162,27 @@ export function TimelineStrip({
             width: TIP_W, pointerEvents: "none",
           }}
         >
-          <div className="tt-head" style={{ display: "flex", justifyContent: "space-between" }}>
-            <span className="tt-type" style={{ color: tip.typeColor }}>
-              {tip.type}
+          <div className="tt-head" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8 }}>
+            <span style={{ display: "inline-flex", alignItems: "center", gap: 6, minWidth: 0 }}>
+              <span className="tt-type" style={{ color: tip.typeColor }}>
+                {tip.type}
+              </span>
+              {tip.sentiment && (
+                <span
+                  className="tt-sentiment"
+                  style={{
+                    ...(SENT_BADGE_STYLE[tip.sentiment] || SENT_BADGE_STYLE.neutral),
+                    borderRadius: 999,
+                    padding: "1px 7px",
+                    fontSize: 10,
+                    fontWeight: 700,
+                    lineHeight: 1.4,
+                    textTransform: "uppercase",
+                  }}
+                >
+                  {tip.sentiment}
+                </span>
+              )}
             </span>
             <span className="tt-date" style={{ color: "#94a3b8" }}>{tip.date}</span>
           </div>

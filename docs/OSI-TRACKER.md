@@ -4,12 +4,18 @@
 
 - **页面**：`data/osi/license-review-tracker.html`（通过 HTTP fetch `license-review-tracker-v2.json`，需 `python3 -m http.server` 起本地服务）
 - **数据**：`data/osi/license-review-tracker-v2.json`（enrich 后的最终数据）
-- **规模**：172 个提交（approved 102 / rejected 37 / withdrawn 4 / pending 6 / superseded 3 / legacy 20）
+- **规模**：174 个提交（approved 102 / rejected 37 / withdrawn 4 / pending 8 / superseded 3 / legacy 20）
 - **离线版**：`license-review-tracker-standalone.html`（JSON 内嵌，`file://` 可直开）。每次重建 v2 后需同步重新嵌入 JSON；当前已同步到 2026-06-20 的 board-vote exhaustive audit + ModelGo series + 全量 point 修复。
 
 ## 数据管线
 
 ```
+OSI Pipermail 增量抓取（license-review + license-discuss）
+        │
+        ▼
+update-mail-archives.mjs → rebuild-mail-indexes.mjs → update-pending-submissions.mjs
+        │
+        ▼
 LLM 批次清洗（/tmp/llm-batches/batch-*.out.json：{clean,point_en,point_zh,sentiment}）
         │
         ▼
@@ -25,16 +31,32 @@ build-license-review-tracker.mjs  →  license-review-tracker.json  (base)
 enrich-license-tracker.mjs        →  license-review-tracker-v2.json (final)
         │
         ▼
+check-point-manifest-coverage.mjs  →  确保所有邮件 timeline event 都有 point manifest
+        │
+        ▼
 手动重新嵌入 JSON 到 standalone HTML（无专用 embed 脚本）
 ```
 
 重跑：
 
 ```bash
+# Atlas 一条龙入口（推荐）：刷新最近 2 个月 review/discuss 邮件、重建 KB tracker、同步到 Atlas
+npm run update:tracker
+
+# 指定月份/范围
+npm run update:tracker -- --month 2026-06
+npm run update:tracker -- --since 2026-01
+
+# KB 内部手动流程
+node scripts/update-mail-archives.mjs --month 2026-06 --lists license-review,license-discuss
+node scripts/rebuild-mail-indexes.mjs
+node scripts/update-pending-submissions.mjs --since 2026-06
+
 # 仅当有新 LLM 批次产物在 /tmp/llm-batches 时才跑（幂等合并）
 node scripts/apply-llm-batches.mjs            # batch-*.out.json → 两个 manifest
 node scripts/build-license-review-tracker.mjs
 node scripts/enrich-license-tracker.mjs
+node scripts/check-point-manifest-coverage.mjs
 node scripts/test-tracker-data.mjs        # 数据质量检查（--verbose 显示详情）
 # 页面用 HTTP fetch，需起本地服务；若浏览器直接 file:// 打开普通版会因 fetch 本地 JSON 失败而空白
 cd data/osi && python3 -m http.server 8770 --bind 127.0.0.1
@@ -47,7 +69,7 @@ node -e "const fs=require('fs'); const html=fs.readFileSync('data/osi/license-re
 
 把 `/tmp/llm-batches/batch-*.out.json`（codex/subagent 跑出的 `{clean, point_en, point_zh, sentiment}`）合并回两个 manifest：
 
-- `all-points-manifest.json`（2758 条，build 读）：写 `{point(=point_en 别名), point_en, point_zh, sentiment}`，clean 不存
+- `all-points-manifest.json`（2898 条，build 读）：写 `{point(=point_en 别名), point_en, point_zh, sentiment}`，clean 不存
 - `points-manifest.json`（102 条子集，enrich 读）：仅更新落在子集内的条目
 
 同 url 多 id（timeline 事件复用消息）取最后非空值；clean 为空的条目三字段设 null、sentiment=neutral。幂等、安全覆盖。
@@ -62,12 +84,12 @@ node -e "const fs=require('fs'); const html=fs.readFileSync('data/osi/license-re
 |--------|------|------|
 | OSI API | `osi-api-licenses.json` | 122 个 OSI 认可许可证的元数据（submission/approval date、board minutes URL） |
 | 邮件聚类 | `thread-clusters.json` | 完整邮件线程（review + discuss），按 subject 聚类 |
-| license-review 邮件 | `messages.json` | license-review 列表 6074 条，含 from + body_preview |
+| license-review 邮件 | `messages.json` | license-review 列表 6087 条，含 from + body_preview |
 | license-discuss 补充 | `discuss-supplement.json` | 66 个 submission 的 discuss 邮件（1973 条），含 body |
 | 摘要 | `license-summaries.json` | 102 个 approved 许可证的 key_messages 精选 |
-| 拒绝/撤回/待定 | `rejected-withdrawn-pending.json` | 50 个非 approved 提交的人工标注 |
+| 拒绝/撤回/待定 | `rejected-withdrawn-pending.json` | 52 个非 approved 提交/待定提交的人工标注与自动发现条目 |
 
-构建产物每条 timeline event 含 `source` 字段（`license-review` 或 `license-discuss`），由 `detectSource()` 判定（source_file hint → URL 路径 → 合并消息 source 三级优先级）。
+构建产物每条 timeline event 含 `source` 字段。邮件事件为 `license-review` 或 `license-discuss`，由 `detectSource()` 判定（source_file hint → URL 路径 → 合并消息 source 三级优先级）。少数 OSI API 补位事件为 `osi_api`（见下）。
 
 **同族 cluster 合并**（`merge_clusters`）：`rejected-withdrawn-pending.json` 的 entry 默认只取 curated timeline 命中的**第一个** cluster。部分提交的评审横跨多个兄弟线程（多次 resubmission、平行变体讨论），单 cluster 会漏掉大量邮件。entry 可声明 `merge_clusters: ["<subject 关键词>"]`，build 会扫描所有 `thread-clusters`，按 `normalized_subject` 命中关键词（排除 off-topic）的 cluster 全部合并、按 URL 去重。当前用于 **ModelGo**（14 个同族 cluster，113 封邮件，跨 2025-02-10 → 2026-05-26）。合并路径的 sender 兜底链：`urlToMessage.from → urlToSender → md loader 的 from`（discuss 邮件只在 .md archive 有 sender）。
 
@@ -80,6 +102,10 @@ node -e "const fs=require('fs'); const html=fs.readFileSync('data/osi/license-re
 1. **License text 关联**：从 `data/osi/mail/licenses/`（216 个文件）按名称/slug/关键词匹配。
 2. **Board vote 提取**：从 `data/osi/minutes/`（221 个 .md）解析动议 + 投票，按许可证名 + 日期评分匹配。
 3. **Sender 修正 + participants 构建**：用 messages.json 的 URL→sender 映射修正 Unknown sender。
+
+**Timeline sender 显示规范化（2026-06-20）**：timeline event 层同样应用 `displayName()`，不只处理 `submitter` / `participants`。Pipermail 全小写 sender（如 `subham mahesh`）显示为 `Subham Mahesh`；伪邮箱/地址式 sender（含 ` at ` / `@` / 域名后缀）不做 title-case，避免 `cowan at ccil.org` 被误改。
+
+**API-derived submission 兜底（2026-06-20）**：少数 OSI API 记录有 `submitter_name` / `submission_date`，但公开 Pipermail timeline 没有该 submitter 的具体邮件。典型例子是 WordNet：OSI API 指向 2025-April `thread.html`，官方 archive index 无具体 message 链接，可见 WordNet thread 从 Josh/McCoy 后续讨论开始。`enrich-license-tracker.mjs` 仅在 submitter 不出现在任何 timeline sender 中时插入一条 `source: "osi_api"` 的 synthetic `submission` event，带内联 `point/point_zh`，`url` 指向 `https://opensource.org/api/license/{id}`。它参与 timeline 日期范围和 participants，但不计入 `stats.total_messages`（邮件数）。`check-point-manifest-coverage.mjs` 跳过 `source==="osi_api"`，因为它不是 LLM-cleaned Pipermail message。
 
 > 🔑 **vote 的唯一权威数据源是 board meeting minutes，不是邮件正文。** OSI 董事会投票走线下会议，结果以 board decision 公告形式发回邮件列表（如 Ritchey 的 "Board adopted... did NOT approve"）。邮件正文里几乎不存在 "I move to approve" 这类真投票——任何从邮件正文抓 vote 的尝试都是引用块误判。`board_vote` 字段**只**由 `findBoardVotes()` 从 `data/osi/minutes/*.md`（221 个）提取，timeline event 的 `type` 不应含 `vote`。
 
@@ -132,7 +158,7 @@ node -e "const fs=require('fs'); const html=fs.readFileSync('data/osi/license-re
     "date", "type",                // type: submission|revision|withdrawal|board_decision|feedback|status_inquiry（无 vote）
     "subject", "url", "sender", "snippet",
     "point", "point_zh", "sentiment", // LLM 双语观点 + 情感（build 从 all-points 注入；enrich 仅兜底）
-    "source",                      // license-review | license-discuss
+    "source",                      // license-review | license-discuss | osi_api
     "position"                     // support|oppose|question|procedural|neutral
   }],
   "board_vote": {                  // 可选
@@ -164,7 +190,7 @@ node -e "const fs=require('fs'); const html=fs.readFileSync('data/osi/license-re
 - **打开方式**：普通版 `license-review-tracker.html` 通过 HTTP fetch `license-review-tracker-v2.json`，需 `python3 -m http.server ...`；浏览器直接 `file://` 打开可能空白。离线直开使用 `license-review-tracker-standalone.html`。
 - **Vote 按 outcome 着色**：strip 的 🗳️ vote 节点和 Board Vote 卡片 header 的颜色由 `board_vote.outcome` 驱动（rejected→红、approved→绿），**不是** yes 票数。卡片 header 加 outcome badge（红 `REJECTED`/绿 `APPROVED`）；当 outcome=rejected 且 motion 含 withhold/reject 且 yes>no 时，加 ⚠️ 说明行 "The 9-0 vote PASSED the motion to withhold approval — i.e. the board voted to REJECT the license"（消除 Vaccine License "9-0 绿✓ 像通过"的误读）。
 - **深色模式**、事件 tooltip、timeline Review/Discuss 过滤
-- **空 legacy 卡片隐藏**：20 个 pre-review-era 许可证（GPL v1、Apache 1.1、BSD-2-Clause、LGPL 2.0/2.1、MPL 1.0、Artistic 1.0、Nokia、Watcom 等）早于邮件审批流程，无公开评审线程，timeline 为空。`applyFilters` 在 status filter 之前剔除 `status==='legacy' && timeline 为空` 的条目（已验证 legacy+非空 timeline 为 0，故该条件唯一锁定这 20 个），搜索/排序/计数都不再触及，比渲染层隐藏更彻底。`renderFilters` 改为运行时对 visible 集重算 status 计数（不再读构建期 `DATA.meta.by_status`），All 172→152、Legacy 20→0；计为 0 的 status 不渲染 filter 按钮。这些许可证是"无数据"而非"待评审"，整张隐藏比空卡片更准确。
+- **空 legacy 卡片隐藏**：20 个 pre-review-era 许可证（GPL v1、Apache 1.1、BSD-2-Clause、LGPL 2.0/2.1、MPL 1.0、Artistic 1.0、Nokia、Watcom 等）早于邮件审批流程，无公开评审线程，timeline 为空。`applyFilters` 在 status filter 之前剔除 `status==='legacy' && timeline 为空` 的条目（已验证 legacy+非空 timeline 为 0，故该条件唯一锁定这 20 个），搜索/排序/计数都不再触及，比渲染层隐藏更彻底。`renderFilters` 改为运行时对 visible 集重算 status 计数（不再读构建期 `DATA.meta.by_status`），All 174→154、Legacy 20→0；计为 0 的 status 不渲染 filter 按钮。这些许可证是"无数据"而非"待评审"，整张隐藏比空卡片更准确。
 - **stripClick 隐藏行兜底**：即便默认源已对齐，用户手动切到 Review 后点 discuss 节点（或反之），目标行仍会被隐藏。`stripClick` 在 timeline 分支补防御：目标 `#ev-{idx}` 若 `display:none`，先点该卡片的 All 按钮展开全部再 `scrollIntoView` + 高亮，保证跳转始终可见。
 
 ## 已知数据缺口
@@ -203,7 +229,7 @@ node -e "const fs=require('fs'); const html=fs.readFileSync('data/osi/license-re
 
 **生成**：`scripts/extract-points.mjs` 读取 `data/osi/mail/_index/submissions/*.json`，调用 LLM 提取。prompt 见 `scripts/prompts/extract-point.md`。
 
-> 📌 **当前数据流**：point 字段现由 `apply-llm-batches.mjs` 从全量 LLM 批次（2758 事件，双语 point_en/point_zh）合并注入，而非此节描述的单语 extract-points（后者是早期 102 子集，已被批次产物覆盖/补齐）。单数 `point` = `point_en` 的别名（build/enrich 仍读 `.point`），新增 `point_zh` 透传到 tracker.json/v2.json 供 HTML 中英切换。
+> 📌 **当前数据流**：point 字段现由 `apply-llm-batches.mjs` 从全量 LLM 批次（2898 manifest entries，双语 point_en/point_zh）合并注入，而非此节描述的单语 extract-points（后者是早期 102 子集，已被批次产物覆盖/补齐）。单数 `point` = `point_en` 的别名（build/enrich 仍读 `.point`），新增 `point_zh` 透传到 tracker.json/v2.json 供 HTML 中英切换。
 
 **输出**：`data/osi/mail/_index/points-manifest.json`，格式：
 ```json

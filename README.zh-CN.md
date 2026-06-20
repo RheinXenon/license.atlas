@@ -12,7 +12,7 @@
 - **分类筛选** — 软件、模型、数据、智能体、服务条款
 - **标签筛选** — 宽松许可、Copyleft、知识共享、硬件等
 - **热度与趋势** — 基于 HuggingFace、GitHub、Kaggle 数据的迷你趋势图
-- **[OSI 许可证审查追踪器](https://morningd.github.io/license.atlas/tracker)**（`/tracker`）— 172 个 OSI 许可证提交、审查状态、董事会投票与时间线的实时看板
+- **[OSI 许可证审查追踪器](https://morningd.github.io/license.atlas/tracker)**（`/tracker`）— 174 个 OSI 许可证提交、审查状态、董事会投票与时间线的实时看板
 - **双语界面** — 中英文切换，自动检测浏览器语言
 - **暗色模式** — 跟随系统偏好 + 手动切换
 - **静态导出** — 2,588 个预渲染页面，加载极速
@@ -52,7 +52,7 @@ npm run build     # 静态导出到 out/
 | RAIL | 负责任 AI 许可证 |
 | 开放原子开源基金会 | 模型与硬件许可证（中英双语） |
 | OpenMDW | AI 模型及关联制品的宽松开源许可证（Linux Foundation） |
-| OSI Review Tracker | 172 个 OSI 许可证审查提交、时间线与董事会投票记录 |
+| OSI Review Tracker | 174 个 OSI 许可证审查提交、时间线、首次提交/决议日期与董事会投票记录 |
 
 热度数据来自 HuggingFace Hub（280 万+ 模型）、GitHub（28 种许可证类型）和 Kaggle（通过 Meta-Kaggle 覆盖 71.4 万+ 数据集）。
 网站页脚会显示最新数据更新时间，取许可证语料更新时间与 OSI 审查追踪器同步时间中的较新者。

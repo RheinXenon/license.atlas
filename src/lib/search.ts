@@ -1,5 +1,4 @@
 import MiniSearch from "minisearch";
-import trackerIndex from "@/data/tracker-index.json";
 import type { TrackerIndex, TrackerIndexEntry, TrackerStatus } from "@/lib/types";
 
 export type SearchGroup = {
@@ -34,6 +33,8 @@ const indexOptions = {
 
 let miniSearch: MiniSearch | null = null;
 let loading: Promise<MiniSearch> | null = null;
+let trackerLoading: Promise<TrackerIndexEntry[]> | null = null;
+let trackerEntryCache: TrackerIndexEntry[] | null = null;
 
 function loadIndex(): Promise<MiniSearch> {
   if (miniSearch) return Promise.resolve(miniSearch);
@@ -83,8 +84,7 @@ function rankResults(query: string, raw: RawResult[]) {
     .sort((a, b) => b.score - a.score);
 }
 
-function trackerEntries(): TrackerIndexEntry[] {
-  const idx = trackerIndex as unknown as TrackerIndex;
+function buildTrackerEntries(idx: TrackerIndex): TrackerIndexEntry[] {
   const seen = new Set<string>();
   return Object.entries(idx)
     .filter(([key]) => key !== "_meta")
@@ -95,6 +95,17 @@ function trackerEntries(): TrackerIndexEntry[] {
       seen.add(entry.id);
       return true;
     });
+}
+
+async function trackerEntries(): Promise<TrackerIndexEntry[]> {
+  if (trackerEntryCache) return trackerEntryCache;
+  if (trackerLoading) return trackerLoading;
+
+  trackerLoading = import("@/data/tracker-index.json").then((mod) => {
+    trackerEntryCache = buildTrackerEntries(mod.default as unknown as TrackerIndex);
+    return trackerEntryCache;
+  });
+  return trackerLoading;
 }
 
 function trackerScore(query: string, entry: TrackerIndexEntry) {
@@ -123,10 +134,11 @@ function trackerScore(query: string, entry: TrackerIndexEntry) {
   return score;
 }
 
-function searchTracker(query: string, licenseSeen: Set<string>): TrackerSearchResult[] {
+async function searchTracker(query: string, licenseSeen: Set<string>): Promise<TrackerSearchResult[]> {
   const q = query.trim();
   if (!q) return [];
-  return trackerEntries()
+  const entries = await trackerEntries();
+  return entries
     .map((entry) => ({ ...entry, score: trackerScore(q, entry) }))
     .filter((entry) => entry.score > 0)
     // If the same reviewed license already appears as a formal Atlas result,
@@ -212,7 +224,7 @@ export async function searchLicenses(
     }
   }
 
-  const trackerResults = searchTracker(q, licenseIdentifiers);
+  const trackerResults = await searchTracker(q, licenseIdentifiers);
   if (trackerResults.length > 0) {
     groups.push({
       key: "tracker",

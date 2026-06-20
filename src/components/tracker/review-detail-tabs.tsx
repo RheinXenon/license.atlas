@@ -28,10 +28,10 @@ function sentimentPill(type: string, sentiment?: string | null): string | null {
   return SENT_PILL[s] || null;
 }
 
-function sourceLabel(source: string): string {
-  if (source === "license-discuss") return "discuss";
-  if (source === "osi_api") return "api";
-  return "review";
+function sourceLabel(source: string, t: (key: string) => string): string {
+  if (source === "license-discuss") return t("tracker.source-discuss");
+  if (source === "osi_api") return t("tracker.source-api");
+  return t("tracker.source-review");
 }
 
 function confidenceClass(confidence?: string) {
@@ -41,16 +41,34 @@ function confidenceClass(confidence?: string) {
   return "bg-zinc-100 text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400";
 }
 
-function confidenceLabel(confidence?: string) {
+function confidenceLabel(confidence: string | undefined, t: (key: string) => string) {
   if (!confidence) return "";
-  return confidence.charAt(0).toUpperCase() + confidence.slice(1);
+  const key = `tracker.confidence-${confidence}`;
+  const translated = t(key);
+  return translated !== key ? translated : confidence.charAt(0).toUpperCase() + confidence.slice(1);
 }
 
-function confidenceTitle(confidence?: string) {
-  if (confidence === "high") return "High confidence: this text came from a license attachment or standalone MIME part.";
-  if (confidence === "medium") return "Medium confidence: this text was isolated from the message body using license-text markers or typical license language.";
-  if (confidence === "low") return "Low confidence: this text looks like a license, but its source or boundaries are less certain.";
-  return "Confidence that this license text was correctly extracted from the review record.";
+function confidenceTitle(confidence: string | undefined, t: (key: string) => string) {
+  const key = confidence ? `tracker.confidenceTitle-${confidence}` : "tracker.confidenceTitle-default";
+  const translated = t(key);
+  return translated !== key ? translated : t("tracker.confidenceTitle-default");
+}
+
+function eventTypeLabel(type: string, t: (key: string) => string) {
+  const key = `tracker.type-${type}`;
+  const translated = t(key);
+  return translated !== key ? translated : type.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+function sentimentLabel(sentiment: string | undefined | null, t: (key: string) => string) {
+  if (!sentiment) return "";
+  const key = `tracker.sentiment-${sentiment.toLowerCase()}`;
+  const translated = t(key);
+  return translated !== key ? translated : sentiment;
+}
+
+function seriesLabel(series: string, t: (key: string) => string) {
+  return series === "Other" ? t("tracker.seriesOther") : series;
 }
 
 function diffLineClass(type: string) {
@@ -111,7 +129,7 @@ export function ReviewDetailTabs({
   clearFocus: () => void;
 }) {
   const { lang, t } = useLang();
-  const timeline = s.timeline || [];
+  const timeline = useMemo(() => s.timeline || [], [s.timeline]);
   const discussCount = timeline.filter((e) => e.source === "license-discuss").length;
   const reviewCount = timeline.length - discussCount;
 
@@ -146,15 +164,23 @@ export function ReviewDetailTabs({
     () => (s.license_text_diffs || []).find((d) => d.to_text_id === selectedText?.id) || null,
     [s.license_text_diffs, selectedText?.id],
   );
-
-  const filtered = timeline.filter((e) =>
-    src === "all" ? true : src === "discuss" ? e.source === "license-discuss" : e.source !== "license-discuss"
+  const selectedTextBody = selectedText?.display_text || selectedText?.text || selectedText?.content_preview || selectedText?.filename || "";
+  const filtered = useMemo(
+    () =>
+      timeline.filter((e) =>
+        src === "all" ? true : src === "discuss" ? e.source === "license-discuss" : e.source !== "license-discuss"
+      ),
+    [timeline, src],
   );
   // Map filtered index → original timeline index so strip-node clicks (original idx) match rows.
-  const filteredOrigIdx = timeline.map((_, i) => i).filter((i) => {
-    const e = timeline[i];
-    return src === "all" ? true : src === "discuss" ? e.source === "license-discuss" : e.source !== "license-discuss";
-  });
+  const filteredOrigIdx = useMemo(
+    () =>
+      timeline.map((_, i) => i).filter((i) => {
+        const e = timeline[i];
+        return src === "all" ? true : src === "discuss" ? e.source === "license-discuss" : e.source !== "license-discuss";
+      }),
+    [timeline, src],
+  );
 
   return (
     <div className="mt-4 border-t border-zinc-200/60 pt-4 dark:border-zinc-800/60">
@@ -202,10 +228,10 @@ export function ReviewDetailTabs({
                   <span className="text-xs text-zinc-400">{formatTrackerDate(ev.date)}</span>
                   <div>
                     <div className="text-xs font-semibold uppercase tracking-wide text-zinc-500">
-                      {ev.type.replace(/_/g, " ")}
-                      <span className="ml-1.5 rounded bg-violet-50 px-1 text-[9px] dark:bg-violet-900/20">{sourceLabel(ev.source)}</span>
+                      {eventTypeLabel(ev.type, t)}
+                      <span className="ml-1.5 rounded bg-violet-50 px-1 text-[9px] dark:bg-violet-900/20">{sourceLabel(ev.source, t)}</span>
                       {sentPill && (
-                        <span className={`ml-1.5 rounded px-1 text-[9px] ${sentPill}`}>{ev.sentiment}</span>
+                        <span className={`ml-1.5 rounded px-1 text-[9px] ${sentPill}`}>{sentimentLabel(ev.sentiment, t)}</span>
                       )}
                       {!!ev.text_ids?.length && (
                         <button
@@ -222,18 +248,18 @@ export function ReviewDetailTabs({
                           }}
                           className="ml-1.5 rounded bg-cyan-50 px-1 text-[9px] text-cyan-700 hover:bg-cyan-100 dark:bg-cyan-900/30 dark:text-cyan-300 dark:hover:bg-cyan-900/50"
                         >
-                          Text
+                          {t("tracker.text")}
                         </button>
                       )}
                     </div>
                     {ev.sender && ev.sender !== "Unknown" && <span className="font-medium">{ev.sender}: </span>}
                     <span className="text-zinc-600 dark:text-zinc-300">{(lang === "zh" ? ev.point_zh || ev.snippet : ev.snippet) || ev.subject?.slice(0, 100)}</span>
-                    {ev.url && <a href={ev.url} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="ml-1 inline-flex shrink-0 whitespace-nowrap text-xs text-[#7c3aed] hover:underline dark:text-[#a78bfa]">[source ↗]</a>}
+                    {ev.url && <a href={ev.url} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="ml-1 inline-flex shrink-0 whitespace-nowrap text-xs text-[#7c3aed] hover:underline dark:text-[#a78bfa]">{t("tracker.sourceLink")}</a>}
                   </div>
                 </div>
               );
             })}
-            {!filtered.length && <div className="text-sm text-zinc-400">No events.</div>}
+            {!filtered.length && <div className="text-sm text-zinc-400">{t("tracker.noEvents")}</div>}
           </div>
         </div>
       )}
@@ -250,7 +276,7 @@ export function ReviewDetailTabs({
                   onClick={() => { setTextSeries("all"); setSelectedTextId(null); setTextView("text"); }}
                   className={`rounded-full px-2.5 py-1 text-xs ${textSeries === "all" ? "bg-[#7c3aed] text-white" : "border border-zinc-200/60 text-zinc-600 hover:border-zinc-300 dark:border-zinc-700/60 dark:text-zinc-300"}`}
                 >
-                  All ({texts.length})
+                  {t("tracker.all")} ({texts.length})
                 </button>
                 {seriesCounts.map(([series, count]) => (
                   <button
@@ -259,7 +285,7 @@ export function ReviewDetailTabs({
                     onClick={() => { setTextSeries(series); setSelectedTextId(null); setTextView("text"); }}
                     className={`rounded-full px-2.5 py-1 text-xs ${textSeries === series ? "bg-cyan-600 text-white" : "border border-zinc-200/60 text-zinc-600 hover:border-zinc-300 dark:border-zinc-700/60 dark:text-zinc-300"}`}
                   >
-                    {series} ({count})
+                    {seriesLabel(series, t)} ({count})
                   </button>
                 ))}
               </div>
@@ -283,21 +309,21 @@ export function ReviewDetailTabs({
                 >
                   <div className="flex flex-wrap items-center gap-1.5">
                     {tx.date && <span className="text-xs text-zinc-400">{formatTrackerDate(tx.date)}</span>}
-                    {tx.series && <span className="rounded bg-cyan-50 px-1.5 py-0.5 text-[10px] font-semibold text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-300">{tx.series}</span>}
+                    {tx.series && <span className="rounded bg-cyan-50 px-1.5 py-0.5 text-[10px] font-semibold text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-300">{seriesLabel(tx.series, t)}</span>}
                     {(tx.version_label || tx.version) && <span className="rounded bg-violet-100 px-1.5 py-0.5 text-[10px] font-semibold text-violet-700 dark:bg-violet-900/40 dark:text-violet-300">v{tx.version_label || tx.version}</span>}
                     {tx.revision_label && <span className="rounded bg-zinc-100 px-1.5 py-0.5 text-[10px] text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">{tx.revision_label}</span>}
-                    {tx.duplicate_of && <span className="rounded bg-zinc-100 px-1.5 py-0.5 text-[10px] text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">duplicate</span>}
+                    {tx.duplicate_of && <span className="rounded bg-zinc-100 px-1.5 py-0.5 text-[10px] text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">{t("tracker.duplicate")}</span>}
                   </div>
                   <div className="mt-1 line-clamp-2 font-medium text-zinc-800 dark:text-zinc-100">{tx.title || tx.filename}</div>
                   <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-zinc-400">
                     <span>{(tx.size / 1024).toFixed(1)}KB</span>
-                    {Number.isInteger(tx.event_index) && <span>timeline #{(tx.event_index || 0) + 1}</span>}
+                    {Number.isInteger(tx.event_index) && <span>{t("tracker.timelineRef", { n: (tx.event_index || 0) + 1 })}</span>}
                     {tx.extraction_confidence && (
                       <span
                         className={`rounded px-1.5 py-0.5 ${confidenceClass(tx.extraction_confidence)}`}
-                        title={confidenceTitle(tx.extraction_confidence)}
+                        title={confidenceTitle(tx.extraction_confidence, t)}
                       >
-                        {confidenceLabel(tx.extraction_confidence)}
+                        {confidenceLabel(tx.extraction_confidence, t)}
                       </span>
                     )}
                   </div>
@@ -314,7 +340,7 @@ export function ReviewDetailTabs({
                   <span className="font-semibold text-zinc-800 dark:text-zinc-100">{selectedText.title || selectedText.filename}</span>
                   {selectedText.sha256 && <span className="font-mono">{selectedText.sha256.slice(0, 12)}</span>}
                   {selectedText.message_url && (
-                    <a href={selectedText.message_url} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="inline-flex shrink-0 whitespace-nowrap text-[#7c3aed] hover:underline dark:text-[#a78bfa]">[source ↗]</a>
+                    <a href={selectedText.message_url} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="inline-flex shrink-0 whitespace-nowrap text-[#7c3aed] hover:underline dark:text-[#a78bfa]">{t("tracker.sourceLink")}</a>
                   )}
                   {Number.isInteger(selectedText.event_index) && (
                     <button
@@ -322,27 +348,27 @@ export function ReviewDetailTabs({
                       onClick={() => focusTimelineEvent(selectedText.event_index || 0)}
                       className="inline-flex shrink-0 whitespace-nowrap text-[#7c3aed] hover:underline dark:text-[#a78bfa]"
                     >
-                      timeline #{(selectedText.event_index || 0) + 1}
+                      {t("tracker.timelineRef", { n: (selectedText.event_index || 0) + 1 })}
                     </button>
                   )}
                   <span className="ml-auto">
-                    <TrackerCopyButton text={selectedText.display_text || selectedText.text || selectedText.content_preview || selectedText.filename} />
+                    <TrackerCopyButton text={selectedTextBody} />
                   </span>
                 </div>
                 <div className="mb-2 flex gap-1.5">
-                  <button type="button" onClick={() => setTextView("text")} className={`rounded-full px-2.5 py-1 text-xs ${textView === "text" ? "bg-[#7c3aed] text-white" : "border border-zinc-200/60 dark:border-zinc-700/60"}`}>Text</button>
+                  <button type="button" onClick={() => setTextView("text")} className={`rounded-full px-2.5 py-1 text-xs ${textView === "text" ? "bg-[#7c3aed] text-white" : "border border-zinc-200/60 dark:border-zinc-700/60"}`}>{t("tracker.text")}</button>
                   <button type="button" onClick={() => setTextView("diff")} disabled={!selectedDiff} className={`rounded-full px-2.5 py-1 text-xs disabled:cursor-not-allowed disabled:opacity-40 ${textView === "diff" ? "bg-[#7c3aed] text-white" : "border border-zinc-200/60 dark:border-zinc-700/60"}`}>
-                    Diff from previous{selectedDiff ? ` (+${selectedDiff.stats.added}/-${selectedDiff.stats.removed})` : ""}
+                    {t("tracker.diffFromPrevious")}{selectedDiff ? ` (+${selectedDiff.stats.added}/-${selectedDiff.stats.removed})` : ""}
                   </button>
                 </div>
                 {textView === "diff" && selectedDiff ? (
                   <div className="max-h-[560px] overflow-auto rounded-md bg-white p-3 font-mono text-xs leading-relaxed dark:bg-zinc-950">
                     <div className="mb-2 font-sans text-xs text-zinc-500">
                       {selectedDiff.from_label} → {selectedDiff.to_label}
-                      {selectedDiff.truncated && <span className="ml-2 rounded bg-amber-100 px-1.5 py-0.5 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">truncated</span>}
+                      {selectedDiff.truncated && <span className="ml-2 rounded bg-amber-100 px-1.5 py-0.5 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">{t("tracker.truncated")}</span>}
                     </div>
                     {selectedDiff.too_large ? (
-                      <div className="text-zinc-500">Diff is too large to render inline.</div>
+                      <div className="text-zinc-500">{t("tracker.diffTooLarge")}</div>
                     ) : selectedDiff.hunks.length ? (
                       selectedDiff.hunks.map((hunk, hunkIdx) => (
                         <div key={hunkIdx} className="mb-3 overflow-hidden rounded border border-zinc-100 dark:border-zinc-800">
@@ -356,17 +382,17 @@ export function ReviewDetailTabs({
                         </div>
                       ))
                     ) : (
-                      <div className="text-zinc-500">No textual changes from the previous version.</div>
+                      <div className="text-zinc-500">{t("tracker.noTextChanges")}</div>
                     )}
                   </div>
                 ) : (
                   <pre className="max-h-[560px] overflow-auto whitespace-pre-wrap break-words rounded-md bg-white p-3 font-mono text-xs leading-relaxed text-zinc-700 dark:bg-zinc-950 dark:text-zinc-200">
-                    {selectedText.display_text || selectedText.text || selectedText.content_preview || selectedText.filename}
+                    {selectedTextBody}
                   </pre>
                 )}
               </>
             ) : (
-              <div className="text-sm text-zinc-400">No license text files found.</div>
+              <div className="text-sm text-zinc-400">{t("tracker.noLicenseTexts")}</div>
             )}
           </div>
         </div>

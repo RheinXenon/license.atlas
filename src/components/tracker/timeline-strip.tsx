@@ -34,8 +34,16 @@ const TYPE_COLOR: Record<string, string> = {
   feedback: "var(--c-legacy, #71717a)",
 };
 
-function titleCaseType(type: string): string {
-  return type.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+function eventTypeLabel(type: string, t: (key: string) => string): string {
+  const key = `tracker.type-${type}`;
+  const translated = t(key);
+  return translated !== key ? translated : type.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+function sentimentLabel(sentiment: string, t: (key: string) => string): string {
+  const key = `tracker.sentiment-${sentiment}`;
+  const translated = t(key);
+  return translated !== key ? translated : sentiment;
 }
 
 interface TipState {
@@ -57,11 +65,11 @@ function voteSummary(vote: TrackerBoardVote, t: (key: string) => string): string
   const shape = describeVote(vote);
   let tally = "";
   if (shape.kind === "exact") {
-    tally = `${shape.yes} Yes / ${shape.no} No / ${shape.abstain} Abstain`;
+    tally = `${shape.yes} ${t("tracker.yes")} / ${shape.no} ${t("tracker.no")} / ${shape.abstain} ${t("tracker.abstain")}`;
   } else if (shape.kind === "unanimous") {
-    tally = shape.abstain != null ? `${t("tracker.voteUnanimous")} (${shape.abstain} Abstain; ${t("tracker.voteExactCountsNotRecorded")})` : `${t("tracker.voteUnanimous")} (${t("tracker.voteExactCountsNotRecorded")})`;
+    tally = shape.abstain != null ? `${t("tracker.voteUnanimous")} (${shape.abstain} ${t("tracker.abstain")}; ${t("tracker.voteExactCountsNotRecorded")})` : `${t("tracker.voteUnanimous")} (${t("tracker.voteExactCountsNotRecorded")})`;
   } else if (shape.kind === "majority") {
-    tally = shape.abstain != null ? `${t("tracker.voteMajority")} (${shape.abstain} Abstain; ${t("tracker.voteExactCountsNotRecorded")})` : `${t("tracker.voteMajority")} (${t("tracker.voteExactCountsNotRecorded")})`;
+    tally = shape.abstain != null ? `${t("tracker.voteMajority")} (${shape.abstain} ${t("tracker.abstain")}; ${t("tracker.voteExactCountsNotRecorded")})` : `${t("tracker.voteMajority")} (${t("tracker.voteExactCountsNotRecorded")})`;
   }
   const motion = vote.motion_text || "";
   return [outcome, tally, motion].filter(Boolean).join("\n");
@@ -87,7 +95,7 @@ export function TimelineStrip({
     const d = formatTrackerShortDate(ev.date);
     const rawType = ev.type || "feedback";
     const label = rawType === "board_decision" ? "✓" : rawType === "withdrawal" ? "✗" : "";
-    const typeLabel = titleCaseType(rawType);
+    const typeLabel = eventTypeLabel(rawType, t);
     const colorKey =
       rawType === "board_decision" ? "board_decision"
       : rawType === "withdrawal" ? "withdrawal"
@@ -140,7 +148,7 @@ export function TimelineStrip({
             className={`tl-node vote-${vote.outcome || "neutral"}`}
             onMouseEnter={(e) => setTip({
               x: e.clientX, y: e.clientY,
-              type: "Board Vote", typeColor: TYPE_COLOR.board_decision,
+              type: t("tracker.voteHeader"), typeColor: TYPE_COLOR.board_decision,
               stripeColor: vote.outcome === "rejected" ? "#ef4444" : TYPE_COLOR.board_decision,
               date: formatTrackerDate(vote.date),
               sender: "", snip: voteSummary(vote, t), sentiment: "",
@@ -180,7 +188,7 @@ export function TimelineStrip({
                     textTransform: "uppercase",
                   }}
                 >
-                  {tip.sentiment}
+                  {sentimentLabel(tip.sentiment, t)}
                 </span>
               )}
             </span>

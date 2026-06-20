@@ -63,7 +63,7 @@ export function LicenseBodySection({ slug, body, hasBodies }: LicenseBodySection
         setBodies(allBodies);
       })
       .catch(() => {});
-  }, [slug, hasBodies]);
+  }, [slug, body, hasBodies]);
 
   return (
     <div className="mb-8">

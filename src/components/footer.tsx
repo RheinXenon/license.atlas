@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useLang } from "@/lib/i18n";
 import stats from "@/data/stats.json";
-import trackerIndex from "@/data/tracker-index.json";
+import trackerMeta from "@/data/tracker-meta.json";
 
 export function Footer() {
   const { t, lang } = useLang();
@@ -24,7 +24,7 @@ export function Footer() {
     ? <span className="font-serif tracking-widest"><span className="font-medium text-[#7c3aed]">许可</span>图鉴</span>
     : <><span className="font-medium text-[#7c3aed]">License</span>Atlas</>;
   const statsUpdated = new Date(`${stats.updated}T00:00:00Z`);
-  const trackerUpdated = new Date(trackerIndex._meta.generated_at);
+  const trackerUpdated = new Date(trackerMeta.generated_at);
   const latestUpdated = trackerUpdated > statsUpdated ? trackerUpdated : statsUpdated;
   const updatedLabel = new Intl.DateTimeFormat(lang === "zh" ? "zh-CN" : "en-US", {
     year: "numeric",

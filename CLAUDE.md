@@ -61,7 +61,7 @@ No data processing scripts in this project — KB is the single source of truth.
 
 集成 KB 的 OSI License Review Tracker，提供 `/tracker` 独立入口 + 详情页内嵌 review 块。
 
-- 数据：`public/data/tracker.json`（全量，lazy-load）+ `src/data/tracker-index.json`（轻量映射）
+- 数据：`public/data/tracker.json`（全量，lazy-load）+ `src/data/tracker-index.json`（轻量映射，按需/dynamic 使用）+ `src/data/tracker-meta.json`（footer/about 用极轻量摘要）
 - 同步：`npm run sync:tracker`（hash 增量检测，幂等）
 - 全链路：`npm run update:tracker [--full]`（调 KB build/enrich/LLM + sync）
 - `npm run build` 已内嵌 sync，每次构建自动检测同步
@@ -72,7 +72,7 @@ No data processing scripts in this project — KB is the single source of truth.
 修改 KB OSI 数据后：
 1. `npm run sync:tracker`（或直接 `npm run build`，会自动同步）
 2. 若要重跑 KB 全链路：`npm run update:tracker`（增量 LLM）/ `--full`（全量）
-3. 详情页 review 块自动从 `tracker-index.json` 读取，无需额外操作
+3. 详情页 review 块自动从 `tracker-index.json` 读取；footer/about 从 `tracker-meta.json` 读取更新时间和汇总数，无需额外操作
 
 ## i18n
 
@@ -82,13 +82,18 @@ Lightweight client-side i18n via `src/lib/i18n.tsx`:
 - `t(key, params)` for string interpolation with `{param}` placeholders
 - Auto-detects language: `localStorage("lang")` → `navigator.language.startsWith("zh")` → fallback "en"
 - Language toggle in navbar shows "中"/"EN"
-- 已翻译范围：navbar/footer 品牌、type/tag/FSF-tag pills、P/C/L 徽章、Blue Oak 评级、语言标签、正文区（Full Text/Copy/Copied/Language）、About 页面、搜索分组
+- 已翻译范围：navbar/footer 品牌、type/tag/FSF-tag pills、P/C/L 徽章、Blue Oak 评级、语言标签、正文区（Full Text/Copy/Copied/Language）、About 页面、搜索分组、Tracker 搜索卡、Tracker timeline / participants / board vote / License Texts 可见控件
+- 新增 Tracker UI 文案必须走 `src/lib/i18n.tsx` en/zh key；邮件 point 和许可证正文是数据内容，不进 UI 字典
 
 Server components (`licenses/[slug]/page.tsx`) are split into:
 - `page.tsx` (server) — data fetching + `generateStaticParams`
 - `license-detail-client.tsx` (client) — rendering with `useLang`
 
 ## Performance
+
+- 首页首屏避免静态导入 `tracker-index.json`：Review Tracked 标签通过 mount 后动态加载 `tracker-match`，搜索旁路在实际查询时动态 import tracker index。
+- `/tracker` 页面先动态导入轻量 `tracker-index.json` 渲染列表，再后台预热 `public/data/tracker.json`；展开卡片或 `?focus=` 时再强制确保全量详情可用。`ensureFullData` 用 ref 防重入，不能依赖 `indexEntries`，否则 index setState 后会重复触发首屏加载 effect。
+- footer/about 只导入 `tracker-meta.json`，不要为了更新时间或汇总数把整个 tracker index 放进全站 bundle。
 
 - Homepage imports `licenses-index.json` (0.6MB) instead of full `licenses.json` (11MB)
 - Detail pages are SSG — 11MB JSON only used at build time, users get pre-rendered HTML

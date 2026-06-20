@@ -7,6 +7,12 @@ import { resolveTrackerEntry, hasReviewContent } from "@/lib/tracker-match";
 import { statusLabel } from "@/components/tracker/tracker-card";
 import { formatTrackerDate } from "@/lib/tracker-date";
 
+function sourceLabel(source: string | undefined, t: (key: string) => string): string {
+  if (source === "license-discuss") return t("tracker.source-discuss");
+  if (source === "osi_api") return t("tracker.source-api");
+  return t("tracker.source-review");
+}
+
 type TrackerEntry = {
   id: string;
   name?: string;
@@ -120,8 +126,8 @@ export function LicenseReviewBlock({ license }: {
           <div className="mb-1 flex flex-wrap gap-x-3 gap-y-1 text-[11px] font-medium text-zinc-500 dark:text-zinc-400">
             <span>{t("review.latest")}</span>
             {latest?.sender && <span>👤 {latest.sender}</span>}
-            {latest?.date && <span>📅 {latest.date}</span>}
-            {latest?.source && <span>{latest.source}</span>}
+            {latest?.date && <span>📅 {formatTrackerDate(latest.date)}</span>}
+            {latest?.source && <span>{sourceLabel(latest.source, t)}</span>}
           </div>
           <span>{latestPoint}</span>
         </div>

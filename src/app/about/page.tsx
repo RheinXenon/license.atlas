@@ -1,8 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { useLang } from "@/lib/i18n";
 import stats from "@/data/stats.json";
-import trackerIndex from "@/data/tracker-index.json";
+import trackerMeta from "@/data/tracker-meta.json";
 
 const sources = [
   ["SPDX", "about.src.spdx"],
@@ -77,10 +78,10 @@ export default function AboutPage() {
         <h2 className="text-xl font-semibold text-zinc-950 dark:text-zinc-50">{t("about.reviewTitle")}</h2>
         <p>
           {t("about.reviewIntro", {
-            total: String(trackerIndex._meta.total_submissions),
-            approved: String(trackerIndex._meta.by_status.approved),
-            rejected: String(trackerIndex._meta.by_status.rejected),
-            pending: String(trackerIndex._meta.by_status.pending),
+            total: String(trackerMeta.total_submissions),
+            approved: String(trackerMeta.by_status.approved),
+            rejected: String(trackerMeta.by_status.rejected),
+            pending: String(trackerMeta.by_status.pending),
           })}
         </p>
 
@@ -135,7 +136,7 @@ export default function AboutPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 transition-colors hover:text-zinc-600 dark:hover:text-zinc-300"
             >
-              <img src="/license.atlas/zai-logo.webp" alt="Z.ai" className="h-4 w-4 rounded-sm" />
+              <Image src="/license.atlas/zai-logo.webp" alt="Z.ai" width={16} height={16} className="rounded-sm" />
               <span className="font-medium text-zinc-500 dark:text-zinc-400">GLM 5.1</span>
             </a>
           </div>

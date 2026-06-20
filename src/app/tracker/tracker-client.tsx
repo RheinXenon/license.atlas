@@ -1,27 +1,68 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useLang } from "@/lib/i18n";
-import type { TrackerData } from "@/lib/types";
+import type { TrackerData, TrackerIndex, TrackerIndexEntry } from "@/lib/types";
 import { TrackerCard, statusLabel } from "@/components/tracker/tracker-card";
+
+function submitterName(entry: TrackerIndexEntry | TrackerData["submissions"][number]) {
+  return typeof entry.submitter === "string" ? entry.submitter : entry.submitter?.name || "";
+}
 
 export function TrackerClient() {
   const { t } = useLang();
   const searchParams = useSearchParams();
+  const [indexEntries, setIndexEntries] = useState<TrackerIndexEntry[] | null>(null);
   const [data, setData] = useState<TrackerData | null>(null);
   const [loadError, setLoadError] = useState(false);
+  const fullLoadRef = useRef<Promise<TrackerData> | null>(null);
+  const dataRef = useRef<TrackerData | null>(null);
+  const indexLoadedRef = useRef(false);
 
-  // Lazy-load full tracker.json (3.25MB) on client.
   useEffect(() => {
-    let cancelled = false;
-    fetch(`${window.location.origin}/license.atlas/data/tracker.json`)
+    dataRef.current = data;
+  }, [data]);
+
+  const ensureFullData = useCallback((showErrorOnFailure = false) => {
+    if (dataRef.current) return Promise.resolve(dataRef.current);
+    if (fullLoadRef.current) return fullLoadRef.current;
+    fullLoadRef.current = fetch(`${window.location.origin}/license.atlas/data/tracker.json`)
       .then((r) => {
         if (!r.ok) throw new Error(String(r.status));
         return r.json();
       })
       .then((d: TrackerData) => {
-        if (!cancelled) setData(d);
+        dataRef.current = d;
+        setData(d);
+        return d;
+      })
+      .catch((err) => {
+        if (showErrorOnFailure || !indexLoadedRef.current) setLoadError(true);
+        throw err;
+      })
+      .finally(() => {
+        fullLoadRef.current = null;
+      });
+    return fullLoadRef.current;
+  }, []);
+
+  // Load the lightweight tracker index first (~315KB), then warm full details in background.
+  useEffect(() => {
+    let cancelled = false;
+    import("@/data/tracker-index.json")
+      .then((mod) => {
+        if (cancelled) return;
+        const idx = mod.default as unknown as TrackerIndex;
+        const entries = Object.entries(idx)
+          .filter(([key]) => key !== "_meta")
+          .map(([, value]) => value as TrackerIndexEntry)
+          .filter((entry, i, arr) => arr.findIndex((x) => x.id === entry.id) === i);
+        setIndexEntries(entries);
+        indexLoadedRef.current = true;
+        setTimeout(() => {
+          if (!cancelled) ensureFullData(false).catch(() => {});
+        }, 0);
       })
       .catch(() => {
         if (!cancelled) setLoadError(true);
@@ -29,14 +70,18 @@ export function TrackerClient() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [ensureFullData]);
 
   // Focus handling: expand + scroll + flash when ?focus=<spdx|id> present.
   const focusKey = searchParams.get("focus");
   const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set());
 
   useEffect(() => {
-    if (!data || !focusKey) return;
+    if (!focusKey) return;
+    if (!data) {
+      ensureFullData(true).catch(() => {});
+      return;
+    }
     const norm = (s: string) => s.trim().toLowerCase();
     const sub = data.submissions.find(
       (s) => norm(s.spdx_id) === norm(focusKey) || norm(s.id) === norm(focusKey)
@@ -62,16 +107,18 @@ export function TrackerClient() {
     if (window.history?.replaceState) {
       window.history.replaceState({}, "", `${window.location.pathname}`);
     }
-  }, [data, focusKey]);
+  }, [data, focusKey, ensureFullData]);
 
   const [query, setQuery] = useState("");
   const [sortBy, setSortBy] = useState("recent");
   const [activeFilter, setActiveFilter] = useState("all");
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const deferredQuery = useDeferredValue(query.trim().toLowerCase());
 
   useEffect(() => {
     const onScroll = () => {
-      setShowBackToTop(window.scrollY > window.innerHeight);
+      const next = window.scrollY > window.innerHeight;
+      setShowBackToTop((prev) => (prev === next ? prev : next));
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -80,32 +127,47 @@ export function TrackerClient() {
 
   const STATUS_ORDER = ["all", "approved", "rejected", "pending", "withdrawn", "superseded", "legacy"];
 
-  const visibleAll = useMemo(
-    () => (data?.submissions || []).filter((s) => !(s.status === "legacy" && (!s.timeline || s.timeline.length === 0))),
-    [data]
-  );
+  const fullById = useMemo(() => {
+    const map = new Map<string, TrackerData["submissions"][number]>();
+    for (const s of data?.submissions || []) map.set(s.id, s);
+    return map;
+  }, [data]);
+  const visibleEntries = useMemo(() => {
+    const base = data?.submissions ?? indexEntries ?? [];
+    return base.filter((s) => {
+      if ("timeline" in s) return !(s.status === "legacy" && (!s.timeline || s.timeline.length === 0));
+      return !(s.status === "legacy" && !s.has_timeline);
+    });
+  }, [data, indexEntries]);
   const statusCounts = useMemo(() => {
     const c: Record<string, number> = {};
-    for (const s of visibleAll) c[s.status] = (c[s.status] || 0) + 1;
+    for (const s of visibleEntries) c[s.status] = (c[s.status] || 0) + 1;
     return c;
-  }, [visibleAll]);
+  }, [visibleEntries]);
+  const searchRows = useMemo(
+    () =>
+      visibleEntries.map((s) => ({
+        submission: s,
+        hay: [
+          s.name,
+          s.id,
+          s.spdx_id,
+          ...("aliases" in s ? (s.aliases || []) : []),
+          submitterName(s),
+          ...("participants" in s ? s.participants.map((p) => p.name) : []),
+          ...("timeline" in s ? s.timeline.map((e) => `${e.sender || ""} ${e.subject || ""} ${e.snippet || ""}`) : []),
+        ].join(" ").toLowerCase(),
+      })),
+    [visibleEntries],
+  );
 
   const filtered = useMemo(() => {
-    let items = visibleAll;
-    if (activeFilter !== "all") items = items.filter((s) => s.status === activeFilter);
-    const q = query.toLowerCase().trim();
-    if (q) {
-      items = items.filter((s) => {
-        const hay = [
-          s.name, s.id, s.spdx_id, ...(s.aliases || []), s.submitter?.name || "",
-          ...s.participants.map((p) => p.name),
-          ...s.timeline.map((e) => e.sender + " " + e.subject + " " + e.snippet),
-        ].join(" ").toLowerCase();
-        return hay.includes(q);
-      });
-    }
+    let rows = activeFilter === "all"
+      ? searchRows
+      : searchRows.filter(({ submission }) => submission.status === activeFilter);
+    if (deferredQuery) rows = rows.filter(({ hay }) => hay.includes(deferredQuery));
     const order: Record<string, number> = { pending: 0, rejected: 1, withdrawn: 2, superseded: 3, approved: 4, legacy: 5 };
-    const arr = [...items];
+    const arr = rows.map(({ submission }) => submission);
     switch (sortBy) {
       case "recent": arr.sort((a, b) => (b.stats?.date_range?.[1] || "").localeCompare(a.stats?.date_range?.[1] || "")); break;
       case "status": arr.sort((a, b) => (order[a.status] ?? 9) - (order[b.status] ?? 9) || (b.stats?.date_range?.[0] || "").localeCompare(a.stats?.date_range?.[0] || "")); break;
@@ -116,24 +178,24 @@ export function TrackerClient() {
       case "name": arr.sort((a, b) => a.name.localeCompare(b.name)); break;
     }
     return arr;
-  }, [visibleAll, activeFilter, query, sortBy]);
+  }, [searchRows, activeFilter, deferredQuery, sortBy]);
 
-  function toggleExpand(id: string) {
+  const toggleExpand = useCallback((id: string) => {
     setExpandedIds((prev) => {
       const next = new Set(prev);
       if (next.has(id)) next.delete(id); else next.add(id);
       return next;
     });
-  }
+  }, []);
 
   if (loadError) {
     return (
       <div className="mx-auto max-w-7xl px-4 py-20 text-center text-zinc-500">
-        Failed to load tracker data.
+        {t("tracker.loadError")}
       </div>
     );
   }
-  if (!data) {
+  if (!indexEntries) {
     return (
       <div className="mx-auto max-w-7xl px-4 py-20 text-center text-zinc-500">
         {t("tracker.loading")}
@@ -146,7 +208,7 @@ export function TrackerClient() {
       {showBackToTop && (
         <button
           type="button"
-          aria-label="Back to top"
+          aria-label={t("tracker.backToTop")}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="fixed bottom-5 right-5 z-40 flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200/70 bg-white/90 text-lg font-semibold text-zinc-600 shadow-lg shadow-zinc-900/10 backdrop-blur transition hover:border-[#7c3aed] hover:text-[#7c3aed] dark:border-zinc-700/70 dark:bg-zinc-900/90 dark:text-zinc-300"
         >
@@ -197,7 +259,7 @@ export function TrackerClient() {
 
       <div className="mb-4 flex flex-wrap gap-1.5">
         {STATUS_ORDER.filter((st) => st === "all" || (statusCounts[st] || 0) > 0).map((st) => {
-          const count = st === "all" ? visibleAll.length : statusCounts[st] || 0;
+          const count = st === "all" ? visibleEntries.length : statusCounts[st] || 0;
           const label = st === "all" ? t("tracker.all") : statusLabel(t, st);
           const active = st === activeFilter;
           const color =
@@ -222,7 +284,15 @@ export function TrackerClient() {
         <div className="py-16 text-center text-zinc-400">{t("tracker.noResults")}</div>
       ) : (
         filtered.map((s) => (
-          <TrackerCard key={s.id} s={s} expanded={expandedIds.has(s.id)} onToggleExpand={toggleExpand} />
+          <TrackerCard
+            key={s.id}
+            s={("timeline" in s) ? s : fullById.get(s.id) || s}
+            expanded={expandedIds.has(s.id)}
+            onToggleExpand={(id) => {
+              toggleExpand(id);
+              if (!data) ensureFullData(true).catch(() => {});
+            }}
+          />
         ))
       )}
 

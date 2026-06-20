@@ -1,5 +1,6 @@
 "use client";
 
+import { useLang } from "@/lib/i18n";
 import type { TrackerParticipant } from "@/lib/types";
 
 const ROLE_CLASS: Record<string, string> = {
@@ -13,15 +14,20 @@ function roleKey(role?: string) {
   return (role || "participant").replace(/[-\s]+/g, "_").toLowerCase();
 }
 
-function roleLabel(role?: string) {
-  return roleKey(role)
+function roleLabel(role: string | undefined, t: (key: string) => string) {
+  const key = roleKey(role);
+  const i18nKey = `tracker.role-${key}`;
+  const translated = t(i18nKey);
+  if (translated !== i18nKey) return translated;
+  return key
     .split("_")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 }
 
 export function ParticipantsList({ participants }: { participants: TrackerParticipant[] }) {
-  if (!participants.length) return <div className="text-sm text-zinc-400">No participants identified.</div>;
+  const { t } = useLang();
+  if (!participants.length) return <div className="text-sm text-zinc-400">{t("tracker.noParticipants")}</div>;
   return (
     <div className="flex flex-wrap gap-2">
       {participants.map((p, i) => {
@@ -33,7 +39,7 @@ export function ParticipantsList({ participants }: { participants: TrackerPartic
           >
             <span className="font-medium text-zinc-700 dark:text-zinc-200">{p.name}</span>
             <span className={`rounded-full px-1.5 py-0.5 text-[10px] font-semibold ${ROLE_CLASS[key] || ROLE_CLASS.participant}`}>
-              {roleLabel(p.role)}
+              {roleLabel(p.role, t)}
             </span>
             <span className="font-mono text-zinc-400">{p.message_count}</span>
           </span>

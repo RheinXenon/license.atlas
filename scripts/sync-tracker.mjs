@@ -29,6 +29,7 @@ const KB_V2 = resolve(KB_ROOT, "data", "osi", "license-review-tracker-v2.json");
 
 const ATLAS_FULL = resolve(ROOT, "public", "data", "tracker.json");
 const ATLAS_INDEX = resolve(ROOT, "src", "data", "tracker-index.json");
+const ATLAS_META = resolve(ROOT, "src", "data", "tracker-meta.json");
 const INDEX_SCHEMA_VERSION = 4;
 
 if (!existsSync(KB_V2)) {
@@ -59,7 +60,7 @@ function stableTrackerPayload(data) {
 const sourceHash = createHash("sha1").update(stableTrackerPayload(kbData)).digest("hex").slice(0, 16);
 
 // ── Idempotency check ──
-if (existsSync(ATLAS_INDEX)) {
+if (existsSync(ATLAS_INDEX) && existsSync(ATLAS_META)) {
   try {
     const existing = JSON.parse(readFileSync(ATLAS_INDEX, "utf8"));
     if (existing?._meta?.source_hash === sourceHash && existing?._meta?.index_schema_version === INDEX_SCHEMA_VERSION) {
@@ -113,6 +114,7 @@ const index = {
     by_status: kbData.meta?.by_status || {},
   },
 };
+const meta = index._meta;
 
 // Also keep an id-keyed list for /tracker lookup by ?focus= (id or spdx).
 const byKey = {};
@@ -165,7 +167,8 @@ Object.assign(index, byKey);
 mkdirSync(dirname(ATLAS_FULL), { recursive: true });
 copyFileSync(KB_V2, ATLAS_FULL);
 writeFileSync(ATLAS_INDEX, JSON.stringify(index, null, 2));
+writeFileSync(ATLAS_META, JSON.stringify(meta, null, 2));
 
-console.log(`✓ 同步 ${kbData.submissions.length} submissions → public/data/tracker.json + src/data/tracker-index.json`);
+console.log(`✓ 同步 ${kbData.submissions.length} submissions → public/data/tracker.json + src/data/tracker-index.json + src/data/tracker-meta.json`);
 console.log(`  source_hash: ${sourceHash}`);
 console.log(`  by_status: ${JSON.stringify(kbData.meta?.by_status || {})}`);

@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { memo, useState } from "react";
 import { useLang } from "@/lib/i18n";
 import { Badge } from "@/components/badge";
-import type { TrackerSubmission } from "@/lib/types";
+import type { TrackerIndexEntry, TrackerSubmission } from "@/lib/types";
 import { TimelineStrip } from "./timeline-strip";
 import { ReviewDetailTabs } from "./review-detail-tabs";
 
@@ -14,18 +14,24 @@ export function statusLabel(t: (k: string) => string, status: string): string {
   return translated !== key ? translated : status.charAt(0).toUpperCase() + status.slice(1);
 }
 
-export function TrackerCard({
+export const TrackerCard = memo(function TrackerCard({
   s, expanded, onToggleExpand,
 }: {
-  s: TrackerSubmission;
+  s: TrackerSubmission | TrackerIndexEntry;
   expanded: boolean;
   onToggleExpand: (id: string) => void;
 }) {
   const { t } = useLang();
-  const submitter = s.submitter?.name || "Unknown";
+  const full = "timeline" in s;
+  const submitter = full ? s.submitter?.name || t("tracker.unknown") : s.submitter || t("tracker.unknown");
   const msgs = s.stats?.total_messages || 0;
   const days = s.stats?.duration_days || 0;
-  const timeline = s.timeline || [];
+  const timeline = full ? s.timeline || [] : [];
+  const participantCount = full ? s.participants.length : 0;
+  const detailCount = full
+    ? timeline.length + participantCount + (s.license_texts?.length || 0) + (s.board_vote ? 1 : 0)
+    : ((s.timeline_meta?.count || 0) + (s.text_meta?.count || 0) + (s.has_vote ? 1 : 0));
+  const loadingDetails = expanded && !full;
 
   // Lifted tab + focus + source-filter state so strip-node clicks can drive the detail panel.
   const [tab, setTab] = useState<"timeline" | "participants" | "texts" | "vote">("timeline");
@@ -99,18 +105,21 @@ export function TrackerCard({
             <span>👤 {submitter}</span>
             {days > 0 && <span>📅 {days} {t("tracker.days")}</span>}
             {msgs > 0 && <span>💬 {msgs} {t("tracker.messages")}</span>}
-            <button
-              onClick={(e) => { e.stopPropagation(); onToggleExpand(s.id); setTab("participants"); }}
-              className="cursor-pointer hover:text-[#7c3aed] dark:hover:text-[#a78bfa]"
-            >
-              👥 {s.participants.length} {t("tracker.participants")}
-            </button>
+            {full && (
+              <button
+                onClick={(e) => { e.stopPropagation(); onToggleExpand(s.id); setTab("participants"); }}
+                className="cursor-pointer hover:text-[#7c3aed] dark:hover:text-[#a78bfa]"
+              >
+                👥 {participantCount} {t("tracker.participants")}
+              </button>
+            )}
+            {!full && detailCount > 0 && <span>⌛ {detailCount} {t("tracker.events")}</span>}
           </div>
         </div>
         <Badge variant="tag" themeKey={`review-${s.status}`}>{statusLabel(t, s.status)}</Badge>
       </div>
 
-      {timeline.length > 0 && (
+      {full && timeline.length > 0 && (
         <div className="mt-3" onClick={(e) => e.stopPropagation()}>
           <TimelineStrip timeline={timeline} submitter={submitter} vote={s.board_vote} onNodeClick={handleNodeClick} onVoteClick={handleVoteClick} />
         </div>
@@ -120,10 +129,16 @@ export function TrackerCard({
         className="mt-3 border-none bg-none p-0 text-sm font-medium text-[#7c3aed] hover:underline dark:text-[#a78bfa]"
         onClick={() => onToggleExpand(s.id)}
       >
-        {expanded ? t("tracker.collapse") : t("tracker.expand")}
+        {loadingDetails ? t("tracker.loadingDetails") : expanded ? t("tracker.collapse") : t("tracker.expand")}
       </button>
 
-      {expanded && (
+      {loadingDetails && (
+        <div className="mt-4 border-t border-zinc-200/60 pt-4 text-sm text-zinc-500 dark:border-zinc-800/60 dark:text-zinc-400">
+          {t("tracker.loadingDetails")}
+        </div>
+      )}
+
+      {expanded && full && (
         <ReviewDetailTabs
           s={s}
           tab={tab}
@@ -137,4 +152,4 @@ export function TrackerCard({
       )}
     </div>
   );
-}
+});

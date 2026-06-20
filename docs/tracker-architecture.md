@@ -6,7 +6,7 @@ license-atlas 集成 KB 的 OSI License Review Tracker，提供两种入口：
 
 1. **独立入口** `/tracker` — React/Tailwind 完整复刻 KB tracker 全部功能。
 2. **详情页内嵌** `LicenseReviewBlock` — 命中 OSI review 的许可证显示摘要 + 压缩 strip，点击跳 `/tracker?focus=<spdx>`。
-3. **首页搜索旁路结果** — `src/lib/search.ts` 读取轻量 `tracker-index.json`，把 pending / rejected / withdrawn / superseded 等未正式收录进 Atlas 的 OSI review submission 作为 `Review Tracker Match` 分组展示，点击跳 `/tracker?focus=<id>`；这些条目不会写入 `licenses-index.json` / `licenses.json`，也不会计入正式 LicenseAtlas 收录数。
+3. **首页搜索旁路结果** — `src/lib/search.ts` 在用户搜索时动态加载轻量 `tracker-index.json`，把 pending / rejected / withdrawn / superseded 等未正式收录进 Atlas 的 OSI review submission 作为 `Review Tracker Match` 分组展示，点击跳 `/tracker?focus=<id>`；这些条目不会写入 `licenses-index.json` / `licenses.json`，也不会计入正式 LicenseAtlas 收录数。
 
 ## 数据流
 
@@ -14,6 +14,9 @@ KB（source of truth）→ license-atlas 单向同步：
 
 - `public/data/tracker.json`（~3.2MB，全量，lazy-load）— cp 自 KB `data/osi/license-review-tracker-v2.json`
 - `src/data/tracker-index.json`（轻量，build-time）— 供详情页查 spdx→submission 映射，并包含 `review_dates`（首次提交、批准/否决日期）
+- `src/data/tracker-meta.json`（极轻量）— 仅含 `_meta` 摘要，供 footer/about 显示更新时间和 tracker 汇总数，避免全站为了 meta 导入整个 tracker index。
+
+`/tracker` 页面本身也采用 index-first 策略：客户端先动态导入 `tracker-index.json` 渲染列表和筛选统计，再后台预热 `public/data/tracker.json`。在全量详情尚未返回时，卡片以 index 态显示；用户展开卡片或通过 `?focus=` 跳转时会主动 `ensureFullData()`，拿到完整 timeline / participants / board vote / license texts 后替换为完整态。`ensureFullData` 必须保持稳定 callback，并用 ref 防重入；不要把 `indexEntries` 放进它的依赖，否则 index setState 后会重复触发首屏加载 effect。
 
 ## 更新流程
 
@@ -25,7 +28,7 @@ KB（source of truth）→ license-atlas 单向同步：
 | `npm run update:tracker -- --since YYYY-MM` | 从指定月份到当前月份增量刷新 |
 | `npm run update:tracker -- --skip-mail` | 跳过邮件抓取，只跑已有 KB 数据的 build/enrich/sync |
 
-**增量检测**：`sync-tracker.mjs` 对 KB v2 的稳定 payload 做 hash（忽略 `meta.generated_at` / `meta.enriched_at` 这类纯重建时间戳），并同时检查 `tracker-index.json._meta.index_schema_version`。不变则跳过（幂等）；schema 变化时即使 source hash 不变也会重建 index。
+**增量检测**：`sync-tracker.mjs` 对 KB v2 的稳定 payload 做 hash（忽略 `meta.generated_at` / `meta.enriched_at` 这类纯重建时间戳），并同时检查 `tracker-index.json._meta.index_schema_version` 和 `tracker-meta.json` 是否存在。不变则跳过（幂等）；schema 变化或 meta 文件缺失时即使 source hash 不变也会重建 index/meta。
 
 **轻量 index 日期字段**：`tracker-index.json` 写入 `review_dates.first_submitted` / `review_dates.decision` / `review_dates.decision_status`。优先级：首次提交 = OSI API `submission_date` → timeline 首个 `submission` → `stats.date_range[0]`；批准/否决日期 = OSI API `approval_date` → `board_vote.date` → timeline `board_decision.date`。详情页 `LicenseReviewBlock` 显示 `First Submitted` 和 `Approved Date` / `Rejected Date`。
 
@@ -40,18 +43,18 @@ KB（source of truth）→ license-atlas 单向同步：
 - `src/app/tracker/` — `/tracker` 路由（page + client）
 - `src/components/tracker/` — tracker-card / timeline-strip / board-vote-card / participants-list / review-detail-tabs
 - `src/components/license-review-block.tsx` — 详情页内嵌块
-- `src/lib/search.ts` — 正式 Atlas MiniSearch 结果之外，额外从 `tracker-index.json` 生成 `Review Tracker Match` 搜索分组；只作为跳转入口，不把 review submissions 并入正式许可证库
-- `src/components/footer.tsx` — 全站页脚显示最新数据更新时间，取 `src/data/stats.json.updated` 与 `src/data/tracker-index.json._meta.generated_at` 中较新者
+- `src/lib/search.ts` — 正式 Atlas MiniSearch 结果之外，在有搜索查询时动态加载 `tracker-index.json` 并生成 `Review Tracker Match` 搜索分组；只作为跳转入口，不把 review submissions 并入正式许可证库
+- `src/components/footer.tsx` — 全站页脚显示最新数据更新时间，取 `src/data/stats.json.updated` 与 `src/data/tracker-meta.json.generated_at` 中较新者
 
 ## 当前同步快照
 
-- `source_hash`: `c82757b1bc1c0554`
+- `source_hash`: `3c49eea8b73c810d`
 - `index_schema_version`: `4`
 - 174 个 submissions：approved 102 / rejected 37 / withdrawn 4 / pending 8 / superseded 3 / legacy 20
 - 129 个 submissions 可通过 `resolveTrackerEntry()` 映射到 Atlas 正式许可证；45 个仅作为 tracker submission 暴露在首页 `Review Tracker Match` 搜索分组中（其中 AGPL-3.0 / LGPL-3.0 属于 `-only` vs `-or-later` canonical 映射歧义，不应视为真正缺失；严格 tracker-only 约 43 个）
 - 77 个 `board_vote`：minutes 50 / timeline 3 / osi_api 24
 - 50 个含详细票数对象（yes/no/abstain）的 board vote
-- 115 个保守抽取的 `license_texts`，其中 83 个可直接回链 timeline event，24 个重复内容标记 `duplicate_of`，34 个同系列相邻版本 diff
+- 119 个保守抽取的 `license_texts`，其中 78 个可直接回链 timeline event，15 个重复内容标记 `duplicate_of`，42 个同系列相邻版本 diff
 
 ## Tracker-Only 搜索口径
 
@@ -68,7 +71,9 @@ KB（source of truth）→ license-atlas 单向同步：
 
 - KB 是 source of truth；Atlas 只同步和展示。状态色纳入 atlas 语义色板（见 `badge.tsx` `review-*` themes）。详见设计文档 `docs/superpowers/specs/2026-06-18-license-review-tracker-integration-design.md`。
 - KB 数据构建细节见 `docs/OSI-TRACKER.md`。
-- `public/data/tracker.json` 当前包含提交许可证文本正文和 diff hunks。文本来源是本地附件文件、Pipermail plain-text MIME part，以及 `Text of the license:` / `License text:` / “pasted full text/final draft” 上下文引出的强边界内联许可证块；中英文条款信号都会评分。整封提交邮件、FAQ、OSD notes、讨论回复、引用块、代码附件、diff、签名、转发块和 mailing-list footer 等被过滤。内联块必须通过强许可证边界检查（如 `Copyright YYYY` + title/version/definitions、干净 license title、`Redistribution and use`、`Permission is hereby granted`、中文许可证条款信号）；泛 BSD 基础 slug 不会跨挂 `BSD-3-Clause-Open-MPI` / `BSD-3-Clause-PPPL` 等变体。如果后续抓取更多附件导致 gzip 明显增长，应拆为 `public/data/tracker-texts/{submission_id}.json` 按需加载。
+- `public/data/tracker.json` 当前约 8MB，包含提交许可证文本正文和 diff hunks。文本来源是本地附件文件、Pipermail plain-text MIME part，以及 `Text of the license:` / `License text:` / “pasted full text/final draft” 上下文引出的强边界内联许可证块；中英文条款信号都会评分。整封提交邮件、FAQ、OSD notes、讨论回复、引用块、代码附件、diff、签名、转发块和 mailing-list footer 等被过滤。内联块必须通过强许可证边界检查（如 `Copyright YYYY` + title/version/definitions、干净 license title、`Redistribution and use`、`Permission is hereby granted`、中文许可证条款信号）；泛 BSD 基础 slug 不会跨挂 `BSD-3-Clause-Open-MPI` / `BSD-3-Clause-PPPL` 等变体。如果后续抓取更多附件导致 gzip 明显增长，应拆为 `public/data/tracker-texts/{submission_id}.json` 按需加载。
+- 首页首屏不得静态导入全量 tracker 数据或 `tracker-index.json`：`Review Tracked` 首页标签通过 mount 后动态加载 `tracker-match`，搜索旁路通过 `search.ts` 动态 import tracker index；footer/about 只读取 `tracker-meta.json`。
+- Tracker 可见 UI 文案走 `src/lib/i18n.tsx`。新增按钮、空态、tooltip、role label、vote tally、License Texts 控件时必须补 en/zh key；邮件 point/许可证正文属于数据内容，不在 UI i18n 字典内翻译。
 
 ## 近期 UI 行为
 

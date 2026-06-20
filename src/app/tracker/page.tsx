@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { Suspense } from "react";
 import { TrackerClient } from "./tracker-client";
+import { TrackerPageFallback } from "@/components/tracker/tracker-page-fallback";
 
 export const metadata: Metadata = {
   title: "License Review Tracker — LicenseAtlas",
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 // useSearchParams requires a Suspense boundary under static export (output: "export").
 export default function TrackerPage() {
   return (
-    <Suspense fallback={<div className="mx-auto max-w-7xl px-4 py-20 text-center text-zinc-500">Loading...</div>}>
+    <Suspense fallback={<TrackerPageFallback />}>
       <TrackerClient />
     </Suspense>
   );

@@ -180,6 +180,16 @@ export interface TrackerIndexEntry {
   stats: { total_messages: number; duration_days: number; date_range: string[] };
   has_vote: boolean;
   has_timeline: boolean;
+  latest_event?: {
+    date?: string;
+    type?: string;
+    source?: string;
+    sender?: string;
+    subject?: string;
+    sentiment?: string;
+    point?: string;
+    point_zh?: string;
+  } | null;
   review_dates?: {
     first_submitted?: string;
     decision?: string;

@@ -11,19 +11,10 @@ import type { SearchGroup, SearchResult } from "@/lib/search";
 import licenses from "@/data/licenses-index.json";
 import stats from "@/data/stats.json";
 import type { License } from "@/lib/types";
-import { hasReviewContent, resolveTrackerEntry } from "@/lib/tracker-match";
 
 const PAGE_SIZE = 30;
 const REVIEW_TRACKED_TAG = "Review Tracked";
 const allLicenses = licenses as License[];
-const reviewTrackedSlugs = new Set(
-  allLicenses
-    .filter((l) => {
-      const entry = resolveTrackerEntry(l);
-      return entry && hasReviewContent(entry);
-    })
-    .map((l) => l.slug)
-);
 const allTags = Array.from(
   new Set([...allLicenses.flatMap((l) => l.tags), REVIEW_TRACKED_TAG])
 ).filter((t) => !["MCP Server", "Agent Framework", "Agent Skill", "LLM Tool", "Proprietary"].includes(t));
@@ -70,15 +61,15 @@ function TrackerSearchCard({ result }: { result: SearchResult }) {
             </code>
           )}
           <span className="rounded-md bg-violet-50 px-2 py-0.5 text-xs font-medium text-violet-700 dark:bg-violet-900/30 dark:text-violet-300">
-            Review Tracker
+            {t("search.trackerBadge")}
           </span>
         </div>
       </div>
       <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-zinc-500 dark:text-zinc-400">
-        {result.submitter && <span>Submitter: {result.submitter}</span>}
-        {result.firstSubmitted && <span>First Submitted: {result.firstSubmitted}</span>}
-        {result.decisionDate && <span>Decision: {result.decisionDate}</span>}
-        {typeof result.messages === "number" && <span>{result.messages} Messages</span>}
+        {result.submitter && <span>{t("search.trackerSubmitter")}: {result.submitter}</span>}
+        {result.firstSubmitted && <span>{t("search.trackerFirstSubmitted")}: {result.firstSubmitted}</span>}
+        {result.decisionDate && <span>{t("search.trackerDecision")}: {result.decisionDate}</span>}
+        {typeof result.messages === "number" && <span>{result.messages} {t("search.trackerMessages")}</span>}
       </div>
     </Link>
   );
@@ -101,6 +92,7 @@ function HomeContent() {
   const [propOnly, setPropOnly] = useState(sp.get("prop") === "1");
   const [langFilter, setLangFilter] = useState(sp.get("lang") ?? "");
   const [sort, setSort] = useState(sp.get("sort") ?? "");
+  const [reviewTrackedSlugs, setReviewTrackedSlugs] = useState<Set<string>>(new Set());
   const [tagFilter, setTagFilter] = useState<Set<string>>(() => {
     const t = sp.get("tags");
     return t ? new Set(t.split(",")) : new Set();
@@ -113,17 +105,36 @@ function HomeContent() {
   const [searchLoading, setSearchLoading] = useState(false);
   const debounceRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
+  useEffect(() => {
+    let cancelled = false;
+    import("@/lib/tracker-match").then(({ hasReviewContent, resolveTrackerEntry }) => {
+      if (cancelled) return;
+      setReviewTrackedSlugs(new Set(
+        allLicenses
+          .filter((l) => {
+            const entry = resolveTrackerEntry(l);
+            return entry && hasReviewContent(entry);
+          })
+          .map((l) => l.slug)
+      ));
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   // Link navigation to "/" clears the URL params but does not remount this client
   // component, so mirror URL params back into state when the router changes them.
   useEffect(() => {
-    const nextQuery = sp.get("q") ?? "";
-    const nextType = sp.get("type") ?? "";
-    const nextOsi = sp.get("osi") === "1";
-    const nextFsf = sp.get("fsf") === "1";
-    const nextProp = sp.get("prop") === "1";
-    const nextLang = sp.get("lang") ?? "";
-    const nextSort = sp.get("sort") ?? "";
-    const nextTags = sp.get("tags");
+    const params = new URLSearchParams(searchParamString);
+    const nextQuery = params.get("q") ?? "";
+    const nextType = params.get("type") ?? "";
+    const nextOsi = params.get("osi") === "1";
+    const nextFsf = params.get("fsf") === "1";
+    const nextProp = params.get("prop") === "1";
+    const nextLang = params.get("lang") ?? "";
+    const nextSort = params.get("sort") ?? "";
+    const nextTags = params.get("tags");
 
     setQuery(nextQuery);
     setTypeFilter(nextType);
@@ -242,7 +253,7 @@ function HomeContent() {
       });
       return { ...g, results };
     }).filter((g) => g.results.length > 0);
-  }, [searchGroups, typeFilter, osionly, fsfOnly, propOnly, tagFilter, langFilter]);
+  }, [searchGroups, typeFilter, osionly, fsfOnly, propOnly, tagFilter, langFilter, popularityMap, reviewTrackedSlugs]);
 
   // Original filter logic (non-search mode)
   const filtered = useMemo(() => {
@@ -267,7 +278,7 @@ function HomeContent() {
     if (langFilter) result = result.filter((l) => l.languages?.some((lang) => lang === langFilter || lang.startsWith(langFilter)));
     if (sort === "newest") result = [...result].sort((a, b) => (b.created_at || "").localeCompare(a.created_at || ""));
     return result;
-  }, [query, typeFilter, osionly, fsfOnly, propOnly, langFilter, tagFilter, sort, searchGroups]);
+  }, [query, typeFilter, osionly, fsfOnly, propOnly, langFilter, tagFilter, sort, searchGroups, reviewTrackedSlugs]);
 
   const paged = filtered.slice(0, (page + 1) * PAGE_SIZE);
   const hasMore = paged.length < filtered.length;

@@ -53,7 +53,7 @@ function diffLinePrefix(type: string) {
 }
 
 export function ReviewDetailTabs({
-  s, tab, setTab, src, setSrc, focusEventIdx, clearFocus,
+  s, tab, setTab, src, setSrc, focusEventIdx, focusTimelineEvent, clearFocus,
 }: {
   s: TrackerSubmission;
   tab: DetailTab;
@@ -61,6 +61,7 @@ export function ReviewDetailTabs({
   src: "review" | "discuss" | "all";
   setSrc: (s: "review" | "discuss" | "all") => void;
   focusEventIdx: number | null;
+  focusTimelineEvent: (idx: number) => void;
   clearFocus: () => void;
 }) {
   const { lang, t } = useLang();
@@ -141,6 +142,21 @@ export function ReviewDetailTabs({
                       {sentPill && (
                         <span className={`ml-1.5 rounded px-1 text-[9px] ${sentPill}`}>{ev.sentiment}</span>
                       )}
+                      {!!ev.text_ids?.length && (
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setSelectedTextId(ev.text_ids?.[0] || null);
+                            setTextView("text");
+                            setTab("texts");
+                            clearFocus();
+                          }}
+                          className="ml-1.5 rounded bg-cyan-50 px-1 text-[9px] text-cyan-700 hover:bg-cyan-100 dark:bg-cyan-900/30 dark:text-cyan-300 dark:hover:bg-cyan-900/50"
+                        >
+                          text
+                        </button>
+                      )}
                     </div>
                     {ev.sender && ev.sender !== "Unknown" && <span className="font-medium">{ev.sender}: </span>}
                     <span className="text-zinc-600 dark:text-zinc-300">{(lang === "zh" ? ev.point_zh || ev.snippet : ev.snippet) || ev.subject?.slice(0, 100)}</span>
@@ -201,6 +217,15 @@ export function ReviewDetailTabs({
                   {selectedText.sha256 && <span className="font-mono">{selectedText.sha256.slice(0, 12)}</span>}
                   {selectedText.message_url && (
                     <a href={selectedText.message_url} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="inline-flex shrink-0 whitespace-nowrap text-[#7c3aed] hover:underline dark:text-[#a78bfa]">[source ↗]</a>
+                  )}
+                  {Number.isInteger(selectedText.event_index) && (
+                    <button
+                      type="button"
+                      onClick={() => focusTimelineEvent(selectedText.event_index || 0)}
+                      className="inline-flex shrink-0 whitespace-nowrap text-[#7c3aed] hover:underline dark:text-[#a78bfa]"
+                    >
+                      timeline #{(selectedText.event_index || 0) + 1}
+                    </button>
                   )}
                 </div>
                 <div className="mb-2 flex gap-1.5">

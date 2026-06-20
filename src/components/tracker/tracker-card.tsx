@@ -54,6 +54,21 @@ export function TrackerCard({
     });
   }
 
+  function focusTimelineEvent(idx: number) {
+    setTab("timeline");
+    setFocusEventIdx(idx);
+    const ev = timeline[idx];
+    if (ev && src !== "all") {
+      const isDiscuss = ev.source === "license-discuss";
+      if (src === "review" && isDiscuss) setSrc("all");
+      if (src === "discuss" && !isDiscuss) setSrc("all");
+    }
+    requestAnimationFrame(() => {
+      const el = document.getElementById(`ev-${s.id}-${idx}`);
+      flash(el);
+    });
+  }
+
   function flash(el: HTMLElement | null) {
     if (!el) return;
     el.scrollIntoView({ behavior: "auto", block: "center" });
@@ -116,6 +131,7 @@ export function TrackerCard({
           src={src}
           setSrc={setSrc}
           focusEventIdx={focusEventIdx}
+          focusTimelineEvent={focusTimelineEvent}
           clearFocus={() => setFocusEventIdx(null)}
         />
       )}

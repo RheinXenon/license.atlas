@@ -123,7 +123,7 @@ export const TrackerCard = memo(function TrackerCard({
           <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-xs text-zinc-500 dark:text-zinc-400">
             <span>👤 {submitter}</span>
             {days > 0 && <span>📅 {days} {t("tracker.days")}</span>}
-            {msgs > 0 && <span>💬 {msgs} {t("tracker.messages")}</span>}
+            {msgs > 0 && <span>💬 {msgs} {t("tracker.events")}</span>}
             {full && (
               <button
                 onClick={(e) => { e.stopPropagation(); onToggleExpand(s.id); setTab("participants"); }}

@@ -93,7 +93,7 @@ export function LicenseReviewBlock({ license }: {
         {firstSubmitted && <span>🗓️ {t("review.firstSubmitted")}: {formatTrackerDate(firstSubmitted)}</span>}
         {decisionDate && decisionLabel && <span>{decisionIcon} {decisionLabel}: {formatTrackerDate(decisionDate)}</span>}
         {days > 0 && <span>📅 {days} {t("tracker.days")}</span>}
-        {msgs > 0 && <span>💬 {msgs} {t("tracker.messages")}</span>}
+        {msgs > 0 && <span>💬 {msgs} {t("tracker.events")}</span>}
         {has_vote && <span>🗳️ {t("tracker.tabVote")}</span>}
       </div>
 

@@ -43,18 +43,18 @@ KB（source of truth）→ license-atlas 单向同步：
 
 ## 当前同步快照
 
-- `source_hash`: `c58de23344fb4bbd`
+- `source_hash`: `97e1fe890586b3ed`
 - `index_schema_version`: `4`
 - 174 个 submissions：approved 102 / rejected 37 / withdrawn 4 / pending 8 / superseded 3 / legacy 20
 - 77 个 `board_vote`：minutes 50 / timeline 3 / osi_api 24
 - 50 个含详细票数对象（yes/no/abstain）的 board vote
-- 87 个保守抽取的 `license_texts`，其中 61 个可直接回链 timeline event，20 个重复内容标记 `duplicate_of`，24 个同系列相邻版本 diff
+- 115 个保守抽取的 `license_texts`，其中 83 个可直接回链 timeline event，24 个重复内容标记 `duplicate_of`，34 个同系列相邻版本 diff
 
 ## 设计约束
 
 - KB 是 source of truth；Atlas 只同步和展示。状态色纳入 atlas 语义色板（见 `badge.tsx` `review-*` themes）。详见设计文档 `docs/superpowers/specs/2026-06-18-license-review-tracker-integration-design.md`。
 - KB 数据构建细节见 `docs/OSI-TRACKER.md`。
-- `public/data/tracker.json` 当前包含提交许可证文本正文和 diff hunks。文本来源是本地附件文件和 Pipermail plain-text MIME part；整封提交邮件、FAQ、OSD notes、代码附件、diff、签名等被过滤。如果后续抓取更多附件导致 gzip 明显增长，应拆为 `public/data/tracker-texts/{submission_id}.json` 按需加载。
+- `public/data/tracker.json` 当前包含提交许可证文本正文和 diff hunks。文本来源是本地附件文件、Pipermail plain-text MIME part，以及 `Text of the license:` / `License text:` 等 marker 引出的内联许可证块；中英文条款信号都会评分。整封提交邮件、FAQ、OSD notes、代码附件、diff、签名、转发块和 mailing-list footer 等被过滤。如果后续抓取更多附件导致 gzip 明显增长，应拆为 `public/data/tracker-texts/{submission_id}.json` 按需加载。
 
 ## 近期 UI 行为
 

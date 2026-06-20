@@ -286,6 +286,7 @@ export interface OsadlIndexMeta {
     atlas_licenses?: number;
     matched?: number;
     osadl_unmatched?: number;
+    osadl_unmatched_ids?: string[];
     atlas_unmatched?: number;
   };
 }

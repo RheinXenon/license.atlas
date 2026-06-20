@@ -16,8 +16,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})();`;
-
 export const metadata: Metadata = {
   title: "LicenseAtlas — The Comprehensive License Collection",
   description:
@@ -65,10 +63,6 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <head>
-          <script
-            id="theme-init"
-            dangerouslySetInnerHTML={{ __html: themeScript }}
-          />
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{

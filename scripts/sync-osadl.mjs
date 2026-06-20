@@ -9,7 +9,7 @@ import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
-const INDEX_SCHEMA_VERSION = 1;
+const INDEX_SCHEMA_VERSION = 2;
 
 function resolveKbPath() {
   const flagIdx = process.argv.indexOf("--kb-path");
@@ -35,6 +35,22 @@ const KB_MATCH = resolve(KB_DIR, "match-report.json");
 const ATLAS_FULL = resolve(ROOT, "public", "data", "osadl-checklists.json");
 const ATLAS_INDEX = resolve(ROOT, "src", "data", "osadl-checklists-index.json");
 const ATLAS_META = resolve(ROOT, "src", "data", "osadl-meta.json");
+const ATLAS_LICENSES = resolve(ROOT, "src", "data", "licenses-index.json");
+
+const DEPRECATED_SPDX_OSADL_MAP = {
+  "gpl-1.0": "gpl-1.0-only",
+  "gpl-2.0": "gpl-2.0-only",
+  "gpl-3.0": "gpl-3.0-only",
+  "lgpl-2.0": "lgpl-2.0-only",
+  "lgpl-2.1": "lgpl-2.1-only",
+};
+
+const SCANCODE_SLUG_OSADL_MAP = {
+  "bsla-no-advert": "licenseref-scancode-bsla-no-advert",
+  "info-zip-2003-05": "licenseref-scancode-info-zip-2003-05",
+  "ppp": "licenseref-scancode-ppp",
+  "bzip2-libbzip-1.0.5": "bzip2-1.0.5",
+};
 
 function stablePayload(...values) {
   const copies = values.map((value) => {
@@ -144,6 +160,39 @@ for (const record of compactRecords) {
   if (record.spdx_id) bySpdx[normKey(record.spdx_id)] = record;
 }
 
+function atlasDisplayMatchCounts() {
+  if (!existsSync(ATLAS_LICENSES)) return matchReport.counts || {};
+  const licenses = JSON.parse(readFileSync(ATLAS_LICENSES, "utf8"));
+  const atlasSpdx = new Set(licenses.map((license) => normKey(license.spdx_id)).filter(Boolean));
+  const atlasSlugs = new Set(licenses.map((license) => normKey(license.slug)).filter(Boolean));
+  const reverseDeprecated = Object.fromEntries(
+    Object.entries(DEPRECATED_SPDX_OSADL_MAP).map(([deprecated, current]) => [current, deprecated]),
+  );
+  const reverseSlug = Object.fromEntries(
+    Object.entries(SCANCODE_SLUG_OSADL_MAP).map(([atlasSlug, osadlSpdx]) => [osadlSpdx, atlasSlug]),
+  );
+
+  let matched = 0;
+  const unmatched = [];
+  for (const record of compactRecords) {
+    const spdx = normKey(record.spdx_id);
+    const deprecatedSpdx = reverseDeprecated[spdx];
+    const atlasSlug = reverseSlug[spdx];
+    if (atlasSpdx.has(spdx) || (deprecatedSpdx && atlasSpdx.has(deprecatedSpdx)) || (atlasSlug && atlasSlugs.has(atlasSlug))) {
+      matched++;
+    } else {
+      unmatched.push(record.spdx_id);
+    }
+  }
+
+  return {
+    ...(matchReport.counts || {}),
+    matched,
+    osadl_unmatched: unmatched.length,
+    osadl_unmatched_ids: unmatched,
+  };
+}
+
 const meta = {
   source_hash: sourceHash,
   index_schema_version: INDEX_SCHEMA_VERSION,
@@ -162,7 +211,7 @@ const meta = {
   matrix_timestamp: full.meta?.matrix_timestamp || "",
   record_count: records.length,
   matrix_license_count: full.meta?.matrix_license_count || 0,
-  match_counts: matchReport.counts || {},
+  match_counts: atlasDisplayMatchCounts(),
 };
 
 const atlasIndex = {

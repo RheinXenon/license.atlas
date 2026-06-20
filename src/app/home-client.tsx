@@ -28,6 +28,10 @@ allTags.sort((a, b) => {
   return a.localeCompare(b);
 });
 
+function tagThemeKey(tag: string): string {
+  return tag.toLowerCase().replace(/ /g, "-").replace(/[^a-z0-9-]/g, "");
+}
+
 const groupTitleKey: Record<string, string> = {
   name: "search.group.name",
   source: "search.group.source",
@@ -143,8 +147,8 @@ function HomeContent() {
 
     setQuery(nextQuery);
     setTypeFilter(nextType);
-    setOsiOnly(nextOsi);
-    setFsfOnly(nextFsf);
+    setOsiOnly(nextProp ? false : nextOsi);
+    setFsfOnly(nextProp ? false : nextFsf);
     setPropOnly(nextProp);
     setLangFilter(nextLang);
     setSort(nextSort);
@@ -283,12 +287,33 @@ function HomeContent() {
 
   useEffect(() => { setPage(0); }, [typeFilter, osionly, fsfOnly, propOnly, langFilter, tagFilter, sort]);
 
+  function toggleOsiOnly() {
+    const next = !osionly;
+    setOsiOnly(next);
+    if (next) setPropOnly(false);
+  }
+
+  function toggleFsfOnly() {
+    const next = !fsfOnly;
+    setFsfOnly(next);
+    if (next) setPropOnly(false);
+  }
+
+  function togglePropOnly() {
+    const next = !propOnly;
+    setPropOnly(next);
+    if (next) {
+      setOsiOnly(false);
+      setFsfOnly(false);
+    }
+  }
+
   return (
     <div className="min-h-full bg-[radial-gradient(circle_at_top,rgba(124,58,237,0.08),transparent_36%),linear-gradient(180deg,rgba(255,255,255,0.96),rgba(255,255,255,1))] dark:bg-[radial-gradient(circle_at_top,rgba(124,58,237,0.14),transparent_38%),linear-gradient(180deg,rgba(10,10,10,0.96),rgba(10,10,10,1))]">
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
         <header className="mb-8">
-          <h1 className="bg-gradient-to-r from-[#7c3aed] to-zinc-950 bg-clip-text text-4xl font-bold tracking-tight text-transparent dark:to-zinc-50 sm:text-5xl">
-            {lang === "zh" ? "许可图鉴" : "LicenseAtlas"}
+          <h1 className="text-3xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50 sm:text-4xl">
+            {lang === "zh" ? "许可图鉴" : <><span className="text-[#7c3aed]">License</span>Atlas</>}
           </h1>
           <p className="mt-3 max-w-3xl text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
             {lang === "zh"
@@ -297,7 +322,7 @@ function HomeContent() {
           </p>
         </header>
 
-        <div className="mb-5 flex flex-wrap gap-2">
+        <div className="mb-5 flex flex-wrap items-center gap-2">
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
@@ -312,6 +337,24 @@ function HomeContent() {
             <option value="agent">{t("filter.agent")}</option>
             <option value="terms">{t("filter.terms")}</option>
           </select>
+
+          <span className="hidden h-5 w-px bg-zinc-200 dark:bg-zinc-700 sm:block" />
+
+          <label className={`flex cursor-pointer items-center gap-1.5 text-sm transition-opacity ${propOnly ? "pointer-events-none opacity-30" : "text-zinc-600 dark:text-zinc-400"}`}>
+            <input type="checkbox" checked={osionly} disabled={propOnly} onChange={toggleOsiOnly} className="accent-[#7c3aed]" />
+            OSI
+          </label>
+          <label className={`flex cursor-pointer items-center gap-1.5 text-sm transition-opacity ${propOnly ? "pointer-events-none opacity-30" : "text-zinc-600 dark:text-zinc-400"}`}>
+            <input type="checkbox" checked={fsfOnly} disabled={propOnly} onChange={toggleFsfOnly} className="accent-[#7c3aed]" />
+            FSF
+          </label>
+          <label className={`flex cursor-pointer items-center gap-1.5 text-sm ${propOnly ? "font-medium text-amber-700 dark:text-amber-400" : "text-zinc-600 dark:text-zinc-400"}`}>
+            <input type="checkbox" checked={propOnly} onChange={togglePropOnly} className="accent-amber-600" />
+            {t("filter.proprietary")}
+          </label>
+
+          <span className="hidden h-5 w-px bg-zinc-200 dark:bg-zinc-700 sm:block" />
+
           <select value={langFilter} onChange={(e) => setLangFilter(e.target.value)} className="rounded-xl border border-zinc-200/70 bg-white/80 px-3 py-3 text-sm dark:border-zinc-800 dark:bg-zinc-900/70">
             <option value="">{t("filter.allLanguages")}</option>
             <option value="en">English</option>
@@ -326,7 +369,7 @@ function HomeContent() {
         <div className="mb-4 flex flex-wrap gap-2">
           {allTags.map((tag) => {
             const active = tagFilter.has(tag);
-            const theme = themes[tag] || themes.Custom;
+            const theme = themes[tagThemeKey(tag)] || themes.custom;
             return (
               <button
                 key={tag}
@@ -341,21 +384,6 @@ function HomeContent() {
               </button>
             );
           })}
-        </div>
-
-        <div className="mb-5 flex flex-wrap items-center gap-3 text-sm text-zinc-500 dark:text-zinc-400">
-          <label className="inline-flex items-center gap-2">
-            <input type="checkbox" checked={osionly} onChange={(e) => setOsiOnly(e.target.checked)} />
-            <span>{t("filter.osiOnly")}</span>
-          </label>
-          <label className="inline-flex items-center gap-2">
-            <input type="checkbox" checked={fsfOnly} onChange={(e) => setFsfOnly(e.target.checked)} />
-            <span>{t("filter.fsfOnly")}</span>
-          </label>
-          <label className="inline-flex items-center gap-2">
-            <input type="checkbox" checked={propOnly} onChange={(e) => setPropOnly(e.target.checked)} />
-            <span>{t("filter.proprietaryOnly")}</span>
-          </label>
         </div>
 
         {query.trim() ? (

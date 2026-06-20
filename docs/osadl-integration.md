@@ -36,22 +36,34 @@ Generated Atlas files:
 
 `scripts/sync-osadl.mjs` is hash-gated. If KB data is unavailable in CI but committed Atlas sidecar files exist, the script keeps using committed data.
 
+The sync script also computes an Atlas-display coverage count. This differs from the raw KB `match-report.json` count because LicenseAtlas can resolve a few extra OSADL records through page-level aliases:
+
+- Deprecated GNU SPDX IDs: `GPL-1.0`, `GPL-2.0`, `GPL-3.0`, `LGPL-2.0`, and `LGPL-2.1` resolve to the corresponding `*-only` OSADL checklist.
+- ScanCode pages without SPDX IDs resolve by Atlas slug:
+  - `bsla-no-advert` -> `LicenseRef-scancode-bsla-no-advert`
+  - `info-zip-2003-05` -> `LicenseRef-scancode-info-zip-2003-05`
+  - `ppp` -> `LicenseRef-scancode-ppp`
+  - `bzip2-libbzip-1.0.5` -> `bzip2-1.0.5`
+
+Current display coverage: **120 / 121** OSADL records. The remaining record is `GPL-2.0-only WITH Classpath-exception-2.0`, an SPDX license expression rather than a standalone LicenseAtlas license page.
+
 ## UI
 
-License detail pages call `resolveOsadlChecklist(license)` by SPDX ID.
+License detail pages call `resolveOsadlChecklist(license)` by SPDX ID and selected slug aliases.
 
-When a checklist exists, `OsadlChecklistBlock` renders:
+When a checklist exists, `OsadlChecklistBlock` renders a compact, collapsed summary by default:
 
 - Copyleft
 - Source Disclosure
 - Patent Hints
 - OSADL Data Timestamp
-- Use Cases
-- Conditions
-- Must / Must Not previews
-- Compatibility Summary
-- Raw checklist/source links
-- OSADL attribution, CC-BY-4.0 license note, draft note, and disclaimer
+- A click-to-expand `[+]` affordance on the surrounding OSADL box
+
+Expanded content includes:
+
+- `Checklist Actions` as a compact ASCII-style action tree grouped by condition, with `[Must]` / `[Must Not]` action markers.
+- `Compatibility Summary` with colored segments and matching colored count labels.
+- Raw checklist/source links.
 
 Long action lists are previewed in-page and linked to the raw checklist for complete detail.
 
@@ -70,8 +82,9 @@ npm run build
 
 Browser checks:
 
-- Apache-2.0, MIT, and GPL-2.0-only show the OSADL checklist block.
-- GPL-3.0 currently does not show OSADL because Atlas stores it as legacy `GPL-3.0`, while OSADL uses `GPL-3.0-only` / `GPL-3.0-or-later`.
+- Apache-2.0, MIT, GPL-2.0-only, and GPL-3.0 show the OSADL checklist block.
+- Alias-only ScanCode pages show OSADL: `bsla-no-advert`, `info-zip-2003-05`, `ppp`, and `bzip2-libbzip-1.0.5`.
+- The OSADL box is collapsed by default; clicking the box expands it, while clicking stat chips, `Checklist Actions`, `Compatibility Summary`, source links, and compatibility popovers does not collapse it.
 - Desktop and mobile layouts have no horizontal overflow.
 - Dark mode renders the OSADL block legibly.
 - Production static pages report no console errors.

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useLang } from "@/lib/i18n";
 import stats from "@/data/stats.json";
 import trackerMeta from "@/data/tracker-meta.json";
+import osadlMeta from "@/data/osadl-meta.json";
 
 const sources = [
   ["SPDX", "about.src.spdx"],
@@ -21,6 +22,7 @@ const sources = [
   ["Blue Oak Council", "about.src.blueoak"],
   ["OpenMDW", "about.src.openmdw"],
   ["OSI Review Tracker", "about.src.osiTracker"],
+  ["OSADL", "about.src.osadl"],
 ] as const;
 
 const popSources = [
@@ -74,6 +76,37 @@ export default function AboutPageClient() {
             </li>
           ))}
         </ul>
+
+        <h2 className="text-xl font-semibold text-zinc-950 dark:text-zinc-50">{t("about.osadlTitle")}</h2>
+        <p>
+          {t("about.osadlIntro", {
+            records: String(osadlMeta.record_count),
+            matched: String(osadlMeta.match_counts.matched),
+            license: osadlMeta.raw_data_license,
+          })}
+        </p>
+        {osadlMeta.match_counts.osadl_unmatched_ids?.length ? (
+          <p>
+            {t("about.osadlCoverageNote", {
+              missing: osadlMeta.match_counts.osadl_unmatched_ids.join(", "),
+            })}
+          </p>
+        ) : null}
+        <p>{t("about.osadlNotice")}</p>
+        <p className="text-sm text-zinc-500 dark:text-zinc-400">
+          {osadlMeta.copyright}
+        </p>
+        <div className="flex flex-wrap gap-x-3 gap-y-1 text-sm">
+          <a href={osadlMeta.source_url} target="_blank" rel="noopener noreferrer" className="font-medium text-[#7c3aed] hover:underline dark:text-[#a78bfa]">
+            {t("about.osadlRawData")}
+          </a>
+          <a href={osadlMeta.checklist_project_url} target="_blank" rel="noopener noreferrer" className="font-medium text-[#7c3aed] hover:underline dark:text-[#a78bfa]">
+            {t("about.osadlProject")}
+          </a>
+          <a href={osadlMeta.compatibility_notes_url} target="_blank" rel="noopener noreferrer" className="font-medium text-[#7c3aed] hover:underline dark:text-[#a78bfa]">
+            {t("about.osadlCompatibility")}
+          </a>
+        </div>
 
         <h2 className="text-xl font-semibold text-zinc-950 dark:text-zinc-50">{t("about.reviewTitle")}</h2>
         <p>

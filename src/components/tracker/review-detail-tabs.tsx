@@ -135,7 +135,7 @@ export function ReviewDetailTabs({
             )}
             <button onClick={() => setSrc("all")} className={`rounded-full px-2.5 py-1 text-xs ${src === "all" ? "bg-[#7c3aed] text-white" : "border border-zinc-200/60 dark:border-zinc-700/60"}`}>{t("tracker.all")} ({timeline.length})</button>
           </div>
-          <div className="flex flex-col gap-1">
+          <div className="flex max-h-[560px] flex-col gap-1 overflow-auto pr-1">
             {filtered.map((ev, i) => {
               const origIdx = filteredOrigIdx[i];
               const focused = focusEventIdx === origIdx;
@@ -166,7 +166,7 @@ export function ReviewDetailTabs({
                           }}
                           className="ml-1.5 rounded bg-cyan-50 px-1 text-[9px] text-cyan-700 hover:bg-cyan-100 dark:bg-cyan-900/30 dark:text-cyan-300 dark:hover:bg-cyan-900/50"
                         >
-                          text
+                          Text
                         </button>
                       )}
                     </div>

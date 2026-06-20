@@ -61,7 +61,7 @@ KB（source of truth）→ license-atlas 单向同步：
 - `/tracker` 底部右侧有无文字的返回顶部按钮；页面滚动超过一屏后出现，点击平滑回到顶部。
 - 左上 LicenseAtlas/Home 导航会清空首页搜索和筛选状态，避免回到首页后保留旧查询。
 - Review detail 的 `[source ↗]` 链接使用 `whitespace-nowrap`，不会被截断或单独断开。
-- Review detail 的 License Texts tab 显示结构化许可证原文历史：版本列表、series、日期、timeline 编号、提取可信度、重复标记、来源链接和本地正文；若选中版本有同系列上一版，`Diff from previous` 显示 line-level 增删 hunks。Timeline 事件若有关联 `text_ids`，事件行显示 `text` 按钮可切到对应文本；文本详情中的 `timeline #N` 可跳回并高亮原事件。
+- Review detail 的 License Texts tab 显示结构化许可证原文历史：版本列表、series、日期、timeline 编号、提取可信度、重复标记、来源链接和本地正文；若选中版本有同系列上一版，`Diff from previous` 显示 line-level 增删 hunks。Timeline 事件若有关联 `text_ids`，事件行显示 `Text` 按钮可切到对应文本；文本详情中的 `timeline #N` 可跳回并高亮原事件。Timeline 事件列表和 License Texts 内容区保持相同的 560px 最大高度并内部滚动，避免切换 tab 时页面视口大幅跳动。
 - ModelGo 在 tracker 中显示为 `ModelGo License Family v2.0`，不是单个 `Attribution` 变体；四个具体变体保留在 aliases 和 License Texts series 中：`MG0` / `MG-BY` / `MG-BY-OS` / `MG-BY-SA`。
 - 多个 tracker 卡片可同时展开；展开一个 license 不会折叠其他已展开 license。
 - Timeline hover tooltip 的事件类型首字母大写，并在 `Feedback` 后紧跟 sentiment tag（如 `negative`）。

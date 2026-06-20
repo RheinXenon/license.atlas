@@ -1,6 +1,7 @@
 node_modules/
 .next/
 out/
+out */
 .DS_Store
 tsconfig.tsbuildinfo
 .env*.local

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/build-search-index.mjs && node scripts/sync-tracker.mjs && next build",
+    "build": "node scripts/build-search-index.mjs && node scripts/sync-tracker.mjs && next build --webpack",
     "build:search": "node scripts/build-search-index.mjs",
     "sync:tracker": "node scripts/sync-tracker.mjs",
     "update:tracker": "node scripts/update-tracker.mjs",

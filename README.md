@@ -52,10 +52,11 @@ License texts are aggregated from:
 | RAIL | Responsible AI licenses |
 | OpenAtom Foundation | Model and hardware licenses (bilingual CN/EN) |
 | OpenMDW | Permissive license for ML models and related artifacts (Linux Foundation) |
-| OSI Review Tracker | 174 OSI license-review submissions, timelines, first/decision dates, board-vote records, and locally archived submitted license texts |
+| OSI Review Tracker | 174 OSI license-review submissions, timelines, first/decision dates, board-vote records, and locally archived submitted license texts from public review/discussion records |
 
 Popularity data comes from HuggingFace Hub (2.8M+ models), GitHub (28 license types), and Kaggle (714K+ datasets via Meta-Kaggle).
 The site footer reports the latest data update using the newer timestamp from the license corpus and the OSI review tracker sync, shown inline with the page-view counter.
+Submitted license texts in the OSI Review Tracker are reproduced from public OSI review/discussion records for research and review-tracking purposes; copyright remains with the original authors or license stewards.
 
 ## License
 

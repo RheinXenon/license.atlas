@@ -267,8 +267,12 @@ export function ReviewDetailTabs({
       {tab === "participants" && <ParticipantsList participants={s.participants} />}
 
       {tab === "texts" && (
-        <div className="grid gap-3 lg:grid-cols-[minmax(260px,0.85fr)_minmax(0,1.35fr)]">
-          <div className="flex max-h-[560px] flex-col gap-2">
+        <div className="space-y-3">
+          <p className="rounded-lg border border-amber-200/70 bg-amber-50/70 px-3 py-2 text-xs leading-relaxed text-amber-800 dark:border-amber-900/50 dark:bg-amber-950/25 dark:text-amber-200">
+            {t("tracker.licenseTextNotice")}
+          </p>
+          <div className="grid gap-3 lg:grid-cols-[minmax(260px,0.85fr)_minmax(0,1.35fr)]">
+            <div className="flex max-h-[560px] flex-col gap-2">
             {hasSeriesFilter && (
               <div className="flex flex-wrap gap-1.5 pr-1">
                 <button
@@ -333,7 +337,7 @@ export function ReviewDetailTabs({
             </div>
           </div>
 
-          <div className="min-w-0 rounded-lg border border-zinc-200/60 bg-zinc-50/70 p-3 dark:border-zinc-800/60 dark:bg-zinc-950/40">
+            <div className="min-w-0 rounded-lg border border-zinc-200/60 bg-zinc-50/70 p-3 dark:border-zinc-800/60 dark:bg-zinc-950/40">
             {selectedText ? (
               <>
                 <div className="mb-3 flex flex-wrap items-center gap-2 text-xs text-zinc-500">
@@ -394,6 +398,7 @@ export function ReviewDetailTabs({
             ) : (
               <div className="text-sm text-zinc-400">{t("tracker.noLicenseTexts")}</div>
             )}
+            </div>
           </div>
         </div>
       )}

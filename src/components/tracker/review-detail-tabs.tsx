@@ -8,6 +8,7 @@ import { ParticipantsList } from "./participants-list";
 import { BoardVoteCard } from "./board-vote-card";
 
 type DetailTab = "timeline" | "participants" | "texts" | "vote";
+const TEXT_SERIES_ORDER = ["MG0", "MG-BY", "MG-BY-OS", "MG-BY-SA"];
 
 // Sentiment → small colored pill, mirroring the timeline-strip sentiment tint.
 // Only feedback events carry a meaningful sentiment; non-feedback or neutral → no pill.
@@ -85,9 +86,28 @@ export function ReviewDetailTabs({
   const texts = useMemo(() => s.license_texts || [], [s.license_texts]);
   const [selectedTextId, setSelectedTextId] = useState<string | null>(null);
   const [textView, setTextView] = useState<"text" | "diff">("text");
+  const [textSeries, setTextSeries] = useState<string>("all");
+  const seriesCounts = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const tx of texts) {
+      const key = tx.series || "Other";
+      counts.set(key, (counts.get(key) || 0) + 1);
+    }
+    return [...counts.entries()].sort(([a], [b]) => {
+      const ai = TEXT_SERIES_ORDER.indexOf(a);
+      const bi = TEXT_SERIES_ORDER.indexOf(b);
+      if (ai !== -1 || bi !== -1) return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
+      return a.localeCompare(b);
+    });
+  }, [texts]);
+  const hasSeriesFilter = seriesCounts.length > 1;
+  const filteredTexts = useMemo(
+    () => textSeries === "all" ? texts : texts.filter((tx) => (tx.series || "Other") === textSeries),
+    [texts, textSeries],
+  );
   const selectedText = useMemo(
-    () => texts.find((tx) => tx.id === selectedTextId) || texts.find((tx) => !tx.duplicate_of) || texts[0],
-    [texts, selectedTextId],
+    () => filteredTexts.find((tx) => tx.id === selectedTextId) || filteredTexts.find((tx) => !tx.duplicate_of) || filteredTexts[0] || texts[0],
+    [filteredTexts, selectedTextId, texts],
   );
   const selectedDiff = useMemo(
     () => (s.license_text_diffs || []).find((d) => d.to_text_id === selectedText?.id) || null,
@@ -159,7 +179,10 @@ export function ReviewDetailTabs({
                           type="button"
                           onClick={(e) => {
                             e.stopPropagation();
-                            setSelectedTextId(ev.text_ids?.[0] || null);
+                            const textId = ev.text_ids?.[0] || null;
+                            const linkedText = texts.find((tx) => tx.id === textId);
+                            setSelectedTextId(textId);
+                            if (hasSeriesFilter) setTextSeries(linkedText?.series || "Other");
                             setTextView("text");
                             setTab("texts");
                             clearFocus();
@@ -186,9 +209,31 @@ export function ReviewDetailTabs({
 
       {tab === "texts" && (
         <div className="grid gap-3 lg:grid-cols-[minmax(260px,0.85fr)_minmax(0,1.35fr)]">
-          <div className="flex max-h-[560px] flex-col gap-1.5 overflow-auto pr-1">
-            {texts.map((tx, i) => {
-              const active = (selectedText?.id || texts[0]?.id) === tx.id;
+          <div className="flex max-h-[560px] flex-col gap-2">
+            {hasSeriesFilter && (
+              <div className="flex flex-wrap gap-1.5 pr-1">
+                <button
+                  type="button"
+                  onClick={() => { setTextSeries("all"); setSelectedTextId(null); setTextView("text"); }}
+                  className={`rounded-full px-2.5 py-1 text-xs ${textSeries === "all" ? "bg-[#7c3aed] text-white" : "border border-zinc-200/60 text-zinc-600 hover:border-zinc-300 dark:border-zinc-700/60 dark:text-zinc-300"}`}
+                >
+                  All ({texts.length})
+                </button>
+                {seriesCounts.map(([series, count]) => (
+                  <button
+                    key={series}
+                    type="button"
+                    onClick={() => { setTextSeries(series); setSelectedTextId(null); setTextView("text"); }}
+                    className={`rounded-full px-2.5 py-1 text-xs ${textSeries === series ? "bg-cyan-600 text-white" : "border border-zinc-200/60 text-zinc-600 hover:border-zinc-300 dark:border-zinc-700/60 dark:text-zinc-300"}`}
+                  >
+                    {series} ({count})
+                  </button>
+                ))}
+              </div>
+            )}
+            <div className="flex min-h-0 flex-1 flex-col gap-1.5 overflow-auto pr-1">
+            {filteredTexts.map((tx, i) => {
+              const active = (selectedText?.id || filteredTexts[0]?.id) === tx.id;
               return (
                 <button
                   key={tx.id || i}
@@ -226,6 +271,7 @@ export function ReviewDetailTabs({
                 </button>
               );
             })}
+            </div>
           </div>
 
           <div className="min-w-0 rounded-lg border border-zinc-200/60 bg-zinc-50/70 p-3 dark:border-zinc-800/60 dark:bg-zinc-950/40">

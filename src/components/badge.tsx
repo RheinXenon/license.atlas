@@ -339,15 +339,18 @@ export function Badge({ children, variant = "tag", className, themeKey }: BadgeP
   const tipGlow = theme?.glow || "";
 
   return (
-    <span className="group/badge relative">
+    <span className="group/badge relative z-0 inline-flex align-middle hover:z-[90] focus-within:z-[90]">
       {badge}
       <span
         className={cn(
-          "pointer-events-none absolute top-full left-1/2 z-[60] mt-1.5 -translate-x-1/2 whitespace-normal rounded-lg border px-2.5 py-1.5 text-[11px] font-medium leading-snug text-zinc-700 opacity-0 transition-opacity duration-150 group-hover/badge:opacity-100 dark:text-zinc-200",
+          "pointer-events-none absolute top-full left-1/2 z-[100] mt-1.5 -translate-x-1/2 whitespace-normal rounded-lg border px-2.5 py-1.5 text-[11px] font-medium leading-snug text-zinc-700 opacity-0 transition-opacity duration-150 group-hover/badge:opacity-100 dark:text-zinc-200",
           tipStyle,
           tipGlow,
         )}
-        style={{ width: "max-content", maxWidth: 220 }}
+        style={{
+          width: "max-content",
+          maxWidth: 220,
+        }}
       >
         {desc}
       </span>

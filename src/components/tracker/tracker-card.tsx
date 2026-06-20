@@ -88,7 +88,7 @@ export function TrackerCard({
   return (
     <div
       id={`card-${s.id}`}
-      className={`mb-3 rounded-2xl border border-zinc-200/60 bg-white/60 p-5 backdrop-blur-xl transition hover:shadow-lg dark:border-zinc-800/60 dark:bg-zinc-900/40 ${expanded ? "" : "cursor-pointer hover:-translate-y-px"}`}
+      className={`relative z-0 mb-3 rounded-2xl border border-zinc-200/60 bg-white/60 p-5 backdrop-blur-xl transition hover:z-30 hover:shadow-lg focus-within:z-30 dark:border-zinc-800/60 dark:bg-zinc-900/40 ${expanded ? "" : "cursor-pointer hover:-translate-y-px"}`}
     >
       <div className="flex items-start justify-between gap-3" onClick={() => !expanded && onToggleExpand(s.id)}>
         <div>

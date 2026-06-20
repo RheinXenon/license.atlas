@@ -253,6 +253,7 @@ const dict: Record<Lang, Record<string, string>> = {
     "search.group.source": "Source Match",
     "search.group.fulltext": "Full-text Match",
     "search.group.fuzzy": "Fuzzy Match",
+    "search.group.tracker": "Review Tracker Match",
     "search.loading": "Loading search index…",
     "search.placeholder": "Search name, source, or full text…",
 
@@ -511,6 +512,7 @@ const dict: Record<Lang, Record<string, string>> = {
     "search.group.source": "来源匹配",
     "search.group.fulltext": "全文匹配",
     "search.group.fuzzy": "模糊匹配",
+    "search.group.tracker": "审查记录匹配",
     "search.loading": "正在加载搜索索引…",
     "search.placeholder": "搜索名称、来源或全文…",
 

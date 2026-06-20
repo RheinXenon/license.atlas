@@ -1,4 +1,6 @@
 import MiniSearch from "minisearch";
+import trackerIndex from "@/data/tracker-index.json";
+import type { TrackerIndex, TrackerIndexEntry, TrackerStatus } from "@/lib/types";
 
 export type SearchGroup = {
   key: string;
@@ -6,14 +8,21 @@ export type SearchGroup = {
 };
 
 export type SearchResult = {
+  kind?: "license" | "tracker";
   slug: string;
   title: string;
   spdx_id: string;
   type: string;
   score: number;
+  status?: TrackerStatus;
+  submitter?: string;
+  messages?: number;
+  firstSubmitted?: string;
+  decisionDate?: string;
 };
 
 type RawResult = { id: string; slug: string; title: string; spdx_id: string; type: string; score: number };
+type TrackerSearchResult = TrackerIndexEntry & { score: number };
 
 const INDEX_URL = "/license.atlas/search-index.json";
 
@@ -74,6 +83,63 @@ function rankResults(query: string, raw: RawResult[]) {
     .sort((a, b) => b.score - a.score);
 }
 
+function trackerEntries(): TrackerIndexEntry[] {
+  const idx = trackerIndex as unknown as TrackerIndex;
+  const seen = new Set<string>();
+  return Object.entries(idx)
+    .filter(([key]) => key !== "_meta")
+    .map(([, value]) => value as TrackerIndexEntry)
+    .filter((entry) => entry.has_timeline || entry.has_vote)
+    .filter((entry) => {
+      if (seen.has(entry.id)) return false;
+      seen.add(entry.id);
+      return true;
+    });
+}
+
+function trackerScore(query: string, entry: TrackerIndexEntry) {
+  const q = query.trim().toLowerCase();
+  const nq = normalizeIdentifier(q);
+  if (!q || !nq) return 0;
+
+  const hay = [
+    entry.name,
+    entry.id,
+    entry.spdx_id,
+    entry.submitter,
+    entry.status,
+  ].filter(Boolean).join(" ").toLowerCase();
+  const identifiers = [entry.id, entry.spdx_id, entry.name].map((v) => normalizeIdentifier(v || ""));
+
+  let score = 0;
+  if (identifiers.some((v) => v === nq)) score += 10000;
+  else if (identifiers.some((v) => v.startsWith(nq))) score += 7000;
+  else if (identifiers.some((v) => v.includes(nq))) score += 4000;
+  if (entry.name.toLowerCase().includes(q)) score += 1200;
+  if ((entry.spdx_id || "").toLowerCase().includes(q)) score += 1000;
+  if (entry.id.toLowerCase().includes(q)) score += 900;
+  if ((entry.submitter || "").toLowerCase().includes(q)) score += 350;
+  if (hay.includes(q)) score += 150;
+  return score;
+}
+
+function searchTracker(query: string, licenseSeen: Set<string>): TrackerSearchResult[] {
+  const q = query.trim();
+  if (!q) return [];
+  return trackerEntries()
+    .map((entry) => ({ ...entry, score: trackerScore(q, entry) }))
+    .filter((entry) => entry.score > 0)
+    // If the same reviewed license already appears as a formal Atlas result,
+    // avoid duplicating it in the tracker-only group. Tracker-only pending or
+    // rejected submissions still appear here because they are not in Atlas.
+    .filter((entry) => {
+      const candidates = [entry.id, entry.spdx_id].map((v) => normalizeIdentifier(v || "")).filter(Boolean);
+      return !candidates.some((v) => licenseSeen.has(v));
+    })
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 12);
+}
+
 export async function searchLicenses(
   query: string
 ): Promise<SearchGroup[]> {
@@ -120,6 +186,7 @@ export async function searchLicenses(
       groups.push({
         key,
         results: deduped.map((r) => ({
+          kind: "license",
           slug: r.slug,
           title: r.title,
           spdx_id: r.spdx_id,
@@ -134,6 +201,36 @@ export async function searchLicenses(
   addGroup("source", sourceResults);
   addGroup("fulltext", fulltextResults);
   addGroup("fuzzy", fuzzyResults);
+
+  const licenseIdentifiers = new Set<string>();
+  for (const id of seen) licenseIdentifiers.add(normalizeIdentifier(id));
+  for (const group of groups) {
+    for (const result of group.results) {
+      licenseIdentifiers.add(normalizeIdentifier(result.slug));
+      licenseIdentifiers.add(normalizeIdentifier(result.spdx_id));
+      licenseIdentifiers.add(normalizeIdentifier(result.title));
+    }
+  }
+
+  const trackerResults = searchTracker(q, licenseIdentifiers);
+  if (trackerResults.length > 0) {
+    groups.push({
+      key: "tracker",
+      results: trackerResults.map((entry) => ({
+        kind: "tracker",
+        slug: entry.id,
+        title: entry.name,
+        spdx_id: entry.spdx_id,
+        type: "tracker",
+        score: entry.score,
+        status: entry.status,
+        submitter: entry.submitter,
+        messages: entry.stats?.total_messages,
+        firstSubmitted: entry.review_dates?.first_submitted || entry.timeline_meta?.first || undefined,
+        decisionDate: entry.review_dates?.decision || undefined,
+      })),
+    });
+  }
 
   return groups;
 }

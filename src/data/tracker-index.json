@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "source_hash": "c82757b1bc1c0554",
+    "source_hash": "3c49eea8b73c810d",
     "index_schema_version": 4,
-    "generated_at": "2026-06-20T05:34:20.881Z",
+    "generated_at": "2026-06-20T06:23:55.412Z",
     "total_submissions": 174,
     "by_status": {
       "approved": 102,
@@ -170,9 +170,9 @@
       "decision_status": ""
     },
     "text_meta": {
-      "count": 23,
-      "linked_count": 23,
-      "duplicate_count": 6,
+      "count": 22,
+      "linked_count": 22,
+      "duplicate_count": 5,
       "diff_count": 13,
       "series": [
         "MG-BY",
@@ -193,9 +193,9 @@
       "source": "license-review",
       "sender": "Moming Duan",
       "subject": "[License-review] [3rd Resubmission] ModelGo Zero License (MG0-2.0) AND ModelGo Attribution License (MG-BY-2.0)",
-      "sentiment": "mixed",
-      "point": "The sender asks for the current blocking concern and argues that Output should remain covered because AI agents now create and execute code.",
-      "point_zh": "发件人询问当前最主要的阻碍点，并主张继续在免责声明和责任限制中覆盖 Output，因为 AI 代理已能生成并自动执行代码。"
+      "sentiment": "support",
+      "point": "Thanks for prior feedback, asks the latest unresolved concerns from January, and defends keeping Output in limitation/disclaimer because autonomous code-executing agents create real risk, citing Meta and Google as alignment.",
+      "point_zh": "感谢历时一年的反馈并追问一月会议后两份许可的最新主要障碍；同时将 output 纳入免责声明的做法解释为应对自动执行代码代理的真实风险，并提及 Meta 与 Google 的做法以支持该方向。"
     }
   },
   "public-benefit-zero-copyright": {
@@ -220,9 +220,9 @@
       "decision_status": ""
     },
     "text_meta": {
-      "count": 2,
-      "linked_count": 2,
-      "duplicate_count": 1,
+      "count": 1,
+      "linked_count": 1,
+      "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
       "latest_text_date": "2024-12-17"
@@ -490,9 +490,9 @@
       "decision_status": "rejected"
     },
     "text_meta": {
-      "count": 2,
-      "linked_count": 2,
-      "duplicate_count": 1,
+      "count": 1,
+      "linked_count": 1,
+      "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
       "latest_text_date": "2020-03-25"
@@ -580,9 +580,9 @@
       "decision_status": "rejected"
     },
     "text_meta": {
-      "count": 3,
-      "linked_count": 3,
-      "duplicate_count": 2,
+      "count": 2,
+      "linked_count": 2,
+      "duplicate_count": 1,
       "diff_count": 0,
       "series": [],
       "latest_text_date": "2019-03-15"
@@ -670,12 +670,12 @@
       "decision_status": "rejected"
     },
     "text_meta": {
-      "count": 0,
-      "linked_count": 0,
+      "count": 1,
+      "linked_count": 1,
       "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
-      "latest_text_date": ""
+      "latest_text_date": "2019-01-08"
     },
     "timeline_meta": {
       "count": 33,
@@ -805,12 +805,12 @@
       "decision_status": "rejected"
     },
     "text_meta": {
-      "count": 0,
-      "linked_count": 0,
+      "count": 1,
+      "linked_count": 1,
       "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
-      "latest_text_date": ""
+      "latest_text_date": "2018-06-14"
     },
     "timeline_meta": {
       "count": 6,
@@ -1120,12 +1120,12 @@
       "decision_status": "rejected"
     },
     "text_meta": {
-      "count": 1,
-      "linked_count": 1,
+      "count": 0,
+      "linked_count": 0,
       "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
-      "latest_text_date": "2012-09-25"
+      "latest_text_date": ""
     },
     "timeline_meta": {
       "count": 22,
@@ -2129,8 +2129,8 @@
       "sender": "Nigel T",
       "subject": "[License-review] Approval: Server Side Public License, Version 1 (SSPL v1)",
       "sentiment": "neutral",
-      "point": "Adds that the blog also contains OSI annual reports, which would make a reader assume it reflected OSI’s position.",
-      "point_zh": "补充说该博客还包含 OSI 年度报告，因此读者会以为其中内容代表 OSI 立场。"
+      "point": "Notes the blog also hosts the OSI annual report and says he would have assumed the post reflected OSI’s position.",
+      "point_zh": "指出该博客还收录了 OSI 年报，因此原本会以为那是 OSI 的立场。"
     }
   },
   "license-zero-reciprocal-rewrite": {
@@ -2200,12 +2200,12 @@
       "decision_status": ""
     },
     "text_meta": {
-      "count": 0,
-      "linked_count": 0,
+      "count": 1,
+      "linked_count": 1,
       "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
-      "latest_text_date": ""
+      "latest_text_date": "2017-10-20"
     },
     "timeline_meta": {
       "count": 132,
@@ -2250,7 +2250,7 @@
       "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
-      "latest_text_date": "2022-12-13"
+      "latest_text_date": "2022-12-05"
     },
     "timeline_meta": {
       "count": 34,
@@ -2534,8 +2534,8 @@
       "sender": "Josh Berkus",
       "subject": "[License-review] License Approval Request: BSD-3-Clause-Open-MPI",
       "sentiment": "positive",
-      "point": "Josh Berkus announces that the BSD-3-Clause-Open-MPI License has been approved by the OSI board and will be added to the website.",
-      "point_zh": "Josh Berkus 宣布 BSD-3-Clause-Open-MPI 许可证已获 OSI 董事会批准，将被添加到官网。"
+      "point": "Josh Berkus announces that the BSD-3-Clause-Open-MPI License has been approved by the OSI board.",
+      "point_zh": "Josh Berkus 宣布 BSD-3-Clause-Open-MPI 许可证已获 OSI 董事会批准。"
     }
   },
   "bsd-3-clause": {
@@ -2560,12 +2560,12 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 1,
+      "count": 0,
       "linked_count": 0,
       "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
-      "latest_text_date": "2025-07-09"
+      "latest_text_date": ""
     },
     "timeline_meta": {
       "count": 7,
@@ -2579,8 +2579,8 @@
       "sender": "Josh Berkus",
       "subject": "[License-review] License Approval Request: BSD-3-Clause-Open-MPI",
       "sentiment": "positive",
-      "point": "Josh Berkus announces that the BSD-3-Clause-Open-MPI License has been approved by the OSI board and will be added to the website.",
-      "point_zh": "Josh Berkus 宣布 BSD-3-Clause-Open-MPI 许可证已获 OSI 董事会批准，将被添加到官网。"
+      "point": "Josh Berkus announces that the BSD-3-Clause-Open-MPI License has been approved by the OSI board.",
+      "point_zh": "Josh Berkus 宣布 BSD-3-Clause-Open-MPI 许可证已获 OSI 董事会批准。"
     }
   },
   "cddl-1.1": {
@@ -2605,9 +2605,9 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 3,
-      "linked_count": 3,
-      "duplicate_count": 2,
+      "count": 1,
+      "linked_count": 1,
+      "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
       "latest_text_date": "2025-05-02"
@@ -2650,9 +2650,9 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 3,
-      "linked_count": 3,
-      "duplicate_count": 2,
+      "count": 1,
+      "linked_count": 1,
+      "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
       "latest_text_date": "2025-05-02"
@@ -2920,12 +2920,12 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 4,
-      "linked_count": 2,
-      "duplicate_count": 3,
+      "count": 0,
+      "linked_count": 0,
+      "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
-      "latest_text_date": "2023-11-08"
+      "latest_text_date": ""
     },
     "timeline_meta": {
       "count": 7,
@@ -2965,12 +2965,12 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 4,
-      "linked_count": 2,
-      "duplicate_count": 3,
+      "count": 0,
+      "linked_count": 0,
+      "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
-      "latest_text_date": "2023-11-08"
+      "latest_text_date": ""
     },
     "timeline_meta": {
       "count": 7,
@@ -3100,12 +3100,12 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 0,
-      "linked_count": 0,
+      "count": 1,
+      "linked_count": 1,
       "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
-      "latest_text_date": ""
+      "latest_text_date": "2023-01-17"
     },
     "timeline_meta": {
       "count": 7,
@@ -3145,12 +3145,12 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 0,
-      "linked_count": 0,
+      "count": 1,
+      "linked_count": 1,
       "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
-      "latest_text_date": ""
+      "latest_text_date": "2023-01-17"
     },
     "timeline_meta": {
       "count": 7,
@@ -3595,12 +3595,12 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 1,
-      "linked_count": 1,
+      "count": 2,
+      "linked_count": 2,
       "duplicate_count": 0,
-      "diff_count": 0,
+      "diff_count": 1,
       "series": [],
-      "latest_text_date": "2020-05-15"
+      "latest_text_date": "2020-08-05"
     },
     "timeline_meta": {
       "count": 5,
@@ -3775,12 +3775,12 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 0,
-      "linked_count": 0,
+      "count": 1,
+      "linked_count": 1,
       "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
-      "latest_text_date": ""
+      "latest_text_date": "2020-03-04"
     },
     "timeline_meta": {
       "count": 9,
@@ -3910,12 +3910,12 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 6,
+      "count": 7,
       "linked_count": 4,
       "duplicate_count": 2,
-      "diff_count": 3,
+      "diff_count": 4,
       "series": [],
-      "latest_text_date": "2020-01-07"
+      "latest_text_date": "2020-02-12"
     },
     "timeline_meta": {
       "count": 6,
@@ -3955,12 +3955,12 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 6,
+      "count": 7,
       "linked_count": 4,
       "duplicate_count": 2,
-      "diff_count": 3,
+      "diff_count": 4,
       "series": [],
-      "latest_text_date": "2020-01-07"
+      "latest_text_date": "2020-02-12"
     },
     "timeline_meta": {
       "count": 6,
@@ -4000,12 +4000,12 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 2,
+      "count": 3,
       "linked_count": 2,
       "duplicate_count": 1,
-      "diff_count": 0,
+      "diff_count": 1,
       "series": [],
-      "latest_text_date": "2019-08-13"
+      "latest_text_date": "2019-09-14"
     },
     "timeline_meta": {
       "count": 6,
@@ -4045,12 +4045,12 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 2,
+      "count": 3,
       "linked_count": 2,
       "duplicate_count": 1,
-      "diff_count": 0,
+      "diff_count": 1,
       "series": [],
-      "latest_text_date": "2019-08-13"
+      "latest_text_date": "2019-09-14"
     },
     "timeline_meta": {
       "count": 6,
@@ -4154,8 +4154,8 @@
       "sender": "Nigel T",
       "subject": "[License-review] Approval: Server Side Public License, Version 1 (SSPL v1)",
       "sentiment": "neutral",
-      "point": "Adds that the blog also contains OSI annual reports, which would make a reader assume it reflected OSI’s position.",
-      "point_zh": "补充说该博客还包含 OSI 年度报告，因此读者会以为其中内容代表 OSI 立场。"
+      "point": "Notes the blog also hosts the OSI annual report and says he would have assumed the post reflected OSI’s position.",
+      "point_zh": "指出该博客还收录了 OSI 年报，因此原本会以为那是 OSI 的立场。"
     }
   },
   "spl-1-0": {
@@ -4199,8 +4199,8 @@
       "sender": "Nigel T",
       "subject": "[License-review] Approval: Server Side Public License, Version 1 (SSPL v1)",
       "sentiment": "neutral",
-      "point": "Adds that the blog also contains OSI annual reports, which would make a reader assume it reflected OSI’s position.",
-      "point_zh": "补充说该博客还包含 OSI 年度报告，因此读者会以为其中内容代表 OSI 立场。"
+      "point": "Notes the blog also hosts the OSI annual report and says he would have assumed the post reflected OSI’s position.",
+      "point_zh": "指出该博客还收录了 OSI 年报，因此原本会以为那是 OSI 的立场。"
     }
   },
   "unicode-dfs-2016": {
@@ -4225,12 +4225,12 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 1,
+      "count": 0,
       "linked_count": 0,
       "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
-      "latest_text_date": "2023-08-23"
+      "latest_text_date": ""
     },
     "timeline_meta": {
       "count": 8,
@@ -4334,8 +4334,8 @@
       "sender": "Richard Fontana",
       "subject": "[License-review] For Approval: Eclipse Public LIcense version\t2.0",
       "sentiment": "neutral",
-      "point": "Announces that OSI has approved EPL 2.0 and that it will replace EPL 1.0 on the \"popular, widely used or strong communities\" list, mirroring the MPL 1.1/2.0 treatment.",
-      "point_zh": "宣布 OSI 已批准 EPL 2.0，并将依照 MPL 1.1/2.0 的先例在「流行、广泛使用或具强势社区」名单中以 EPL 2.0 替代 EPL 1.0。"
+      "point": "Announces that OSI has approved EPL 2.0 and will update the popular-licenses list to replace EPL 1.0.",
+      "point_zh": "宣布 OSI 已批准 EPL 2.0，并将更新常用许可证列表，以 EPL 2.0 取代 EPL 1.0。"
     }
   },
   "epl-2-0": {
@@ -4379,8 +4379,8 @@
       "sender": "Richard Fontana",
       "subject": "[License-review] For Approval: Eclipse Public LIcense version\t2.0",
       "sentiment": "neutral",
-      "point": "Announces that OSI has approved EPL 2.0 and that it will replace EPL 1.0 on the \"popular, widely used or strong communities\" list, mirroring the MPL 1.1/2.0 treatment.",
-      "point_zh": "宣布 OSI 已批准 EPL 2.0，并将依照 MPL 1.1/2.0 的先例在「流行、广泛使用或具强势社区」名单中以 EPL 2.0 替代 EPL 1.0。"
+      "point": "Announces that OSI has approved EPL 2.0 and will update the popular-licenses list to replace EPL 1.0.",
+      "point_zh": "宣布 OSI 已批准 EPL 2.0，并将更新常用许可证列表，以 EPL 2.0 取代 EPL 1.0。"
     }
   },
   "qpl-1.0": {
@@ -4424,8 +4424,8 @@
       "sender": "Richard Fontana",
       "subject": "[License-review] For Approval: Eclipse Public LIcense version\t2.0",
       "sentiment": "neutral",
-      "point": "Announces that OSI has approved EPL 2.0 and that it will replace EPL 1.0 on the \"popular, widely used or strong communities\" list, mirroring the MPL 1.1/2.0 treatment.",
-      "point_zh": "宣布 OSI 已批准 EPL 2.0，并将依照 MPL 1.1/2.0 的先例在「流行、广泛使用或具强势社区」名单中以 EPL 2.0 替代 EPL 1.0。"
+      "point": "Announces that OSI has approved EPL 2.0 and will update the popular-licenses list to replace EPL 1.0.",
+      "point_zh": "宣布 OSI 已批准 EPL 2.0，并将更新常用许可证列表，以 EPL 2.0 取代 EPL 1.0。"
     }
   },
   "qpl-1-0": {
@@ -4469,8 +4469,8 @@
       "sender": "Richard Fontana",
       "subject": "[License-review] For Approval: Eclipse Public LIcense version\t2.0",
       "sentiment": "neutral",
-      "point": "Announces that OSI has approved EPL 2.0 and that it will replace EPL 1.0 on the \"popular, widely used or strong communities\" list, mirroring the MPL 1.1/2.0 treatment.",
-      "point_zh": "宣布 OSI 已批准 EPL 2.0，并将依照 MPL 1.1/2.0 的先例在「流行、广泛使用或具强势社区」名单中以 EPL 2.0 替代 EPL 1.0。"
+      "point": "Announces that OSI has approved EPL 2.0 and will update the popular-licenses list to replace EPL 1.0.",
+      "point_zh": "宣布 OSI 已批准 EPL 2.0，并将更新常用许可证列表，以 EPL 2.0 取代 EPL 1.0。"
     }
   },
   "eupl-1.2": {
@@ -4585,12 +4585,12 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 1,
-      "linked_count": 1,
+      "count": 0,
+      "linked_count": 0,
       "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
-      "latest_text_date": "2016-10-24"
+      "latest_text_date": ""
     },
     "timeline_meta": {
       "count": 7,
@@ -4630,12 +4630,12 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 1,
-      "linked_count": 1,
+      "count": 0,
+      "linked_count": 0,
       "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
-      "latest_text_date": "2016-10-24"
+      "latest_text_date": ""
     },
     "timeline_meta": {
       "count": 7,
@@ -4675,12 +4675,12 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 0,
+      "count": 2,
       "linked_count": 0,
       "duplicate_count": 0,
-      "diff_count": 0,
+      "diff_count": 1,
       "series": [],
-      "latest_text_date": ""
+      "latest_text_date": "2017-03-13"
     },
     "timeline_meta": {
       "count": 6,
@@ -4720,10 +4720,10 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 0,
+      "count": 3,
       "linked_count": 0,
       "duplicate_count": 0,
-      "diff_count": 0,
+      "diff_count": 2,
       "series": [],
       "latest_text_date": ""
     },
@@ -4765,10 +4765,10 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 0,
+      "count": 3,
       "linked_count": 0,
       "duplicate_count": 0,
-      "diff_count": 0,
+      "diff_count": 2,
       "series": [],
       "latest_text_date": ""
     },
@@ -4810,10 +4810,10 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 0,
+      "count": 3,
       "linked_count": 0,
       "duplicate_count": 0,
-      "diff_count": 0,
+      "diff_count": 2,
       "series": [],
       "latest_text_date": ""
     },
@@ -4855,10 +4855,10 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 0,
+      "count": 3,
       "linked_count": 0,
       "duplicate_count": 0,
-      "diff_count": 0,
+      "diff_count": 2,
       "series": [],
       "latest_text_date": ""
     },
@@ -4900,10 +4900,10 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 0,
+      "count": 3,
       "linked_count": 0,
       "duplicate_count": 0,
-      "diff_count": 0,
+      "diff_count": 2,
       "series": [],
       "latest_text_date": ""
     },
@@ -4945,10 +4945,10 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 0,
+      "count": 3,
       "linked_count": 0,
       "duplicate_count": 0,
-      "diff_count": 0,
+      "diff_count": 2,
       "series": [],
       "latest_text_date": ""
     },
@@ -5215,12 +5215,12 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 0,
+      "count": 1,
       "linked_count": 0,
       "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
-      "latest_text_date": ""
+      "latest_text_date": "2014-09-17"
     },
     "timeline_meta": {
       "count": 7,
@@ -5260,12 +5260,12 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 0,
+      "count": 1,
       "linked_count": 0,
       "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
-      "latest_text_date": ""
+      "latest_text_date": "2014-09-17"
     },
     "timeline_meta": {
       "count": 7,
@@ -6539,8 +6539,8 @@
       "sender": "Zooko",
       "subject": "Re: Æsthetic Permissive License - For Approval",
       "sentiment": "positive",
-      "point": "Expresses strong support for an OSI-approved minimal permissive license, sharing that he uses a custom permissive license but must select BSD for databases requiring OSI-approved choices.",
-      "point_zh": "强烈支持OSI批准的极简宽松许可证，分享了自己使用自定义宽松许可证但因数据库要求而被迫选择BSD的经历。"
+      "point": "Expresses strong desire for an OSI-approved minimal permissive license, explaining that as an open source author he currently uses his own unapproved Simple Permissive Licence and falls back to BSD only in databases.",
+      "point_zh": "表达了对 OSI 批准的最小宽松许可证的强烈需求，解释他作为开源作者目前使用自己未获批准的 Simple Permissive Licence，仅在数据库中被迫选择 BSD。"
     }
   },
   "mit": {
@@ -6584,8 +6584,8 @@
       "sender": "Zooko",
       "subject": "Re: Æsthetic Permissive License - For Approval",
       "sentiment": "positive",
-      "point": "Expresses strong support for an OSI-approved minimal permissive license, sharing that he uses a custom permissive license but must select BSD for databases requiring OSI-approved choices.",
-      "point_zh": "强烈支持OSI批准的极简宽松许可证，分享了自己使用自定义宽松许可证但因数据库要求而被迫选择BSD的经历。"
+      "point": "Expresses strong desire for an OSI-approved minimal permissive license, explaining that as an open source author he currently uses his own unapproved Simple Permissive Licence and falls back to BSD only in databases.",
+      "point_zh": "表达了对 OSI 批准的最小宽松许可证的强烈需求，解释他作为开源作者目前使用自己未获批准的 Simple Permissive Licence，仅在数据库中被迫选择 BSD。"
     }
   },
   "multics": {
@@ -6790,12 +6790,12 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 0,
+      "count": 1,
       "linked_count": 0,
       "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
-      "latest_text_date": ""
+      "latest_text_date": "2007-09-15"
     },
     "timeline_meta": {
       "count": 7,
@@ -6835,12 +6835,12 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 0,
+      "count": 1,
       "linked_count": 0,
       "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
-      "latest_text_date": ""
+      "latest_text_date": "2007-09-15"
     },
     "timeline_meta": {
       "count": 7,
@@ -7061,11 +7061,11 @@
     },
     "text_meta": {
       "count": 1,
-      "linked_count": 0,
+      "linked_count": 1,
       "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
-      "latest_text_date": "2007-07-31"
+      "latest_text_date": "2007-06-29"
     },
     "timeline_meta": {
       "count": 6,
@@ -7079,8 +7079,8 @@
       "sender": "Russ Nelson",
       "subject": "Submitting GPLv3 and LGPLv3 for OSI inclusion.",
       "sentiment": "neutral",
-      "point": "Suggests that the Microsoft licenses should be submitted separately for individual discussion and provides the OSI submission procedure link.",
-      "point_zh": "建议微软许可证应分别提交以单独讨论，并提供了OSI的许可证提交流程链接。"
+      "point": "Suggests the licenses should be submitted separately for distinct discussion, and provides the OSI license submission procedure link.",
+      "point_zh": "建议将许可证分别提交以便分别讨论，并提供了 OSI 许可证提交流程链接。"
     }
   },
   "lgpl-3-0": {
@@ -7106,11 +7106,11 @@
     },
     "text_meta": {
       "count": 1,
-      "linked_count": 0,
+      "linked_count": 1,
       "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
-      "latest_text_date": "2007-07-31"
+      "latest_text_date": "2007-06-29"
     },
     "timeline_meta": {
       "count": 6,
@@ -7124,8 +7124,8 @@
       "sender": "Russ Nelson",
       "subject": "Submitting GPLv3 and LGPLv3 for OSI inclusion.",
       "sentiment": "neutral",
-      "point": "Suggests that the Microsoft licenses should be submitted separately for individual discussion and provides the OSI submission procedure link.",
-      "point_zh": "建议微软许可证应分别提交以单独讨论，并提供了OSI的许可证提交流程链接。"
+      "point": "Suggests the licenses should be submitted separately for distinct discussion, and provides the OSI license submission procedure link.",
+      "point_zh": "建议将许可证分别提交以便分别讨论，并提供了 OSI 许可证提交流程链接。"
     }
   },
   "gpl-3.0": {
@@ -7151,11 +7151,11 @@
     },
     "text_meta": {
       "count": 1,
-      "linked_count": 0,
+      "linked_count": 1,
       "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
-      "latest_text_date": "2007-07-31"
+      "latest_text_date": "2007-06-29"
     },
     "timeline_meta": {
       "count": 6,
@@ -7169,8 +7169,8 @@
       "sender": "Russ Nelson",
       "subject": "Submitting GPLv3 and LGPLv3 for OSI inclusion.",
       "sentiment": "neutral",
-      "point": "Suggests that the Microsoft licenses should be submitted separately for individual discussion and provides the OSI submission procedure link.",
-      "point_zh": "建议微软许可证应分别提交以单独讨论，并提供了OSI的许可证提交流程链接。"
+      "point": "Suggests the licenses should be submitted separately for distinct discussion, and provides the OSI license submission procedure link.",
+      "point_zh": "建议将许可证分别提交以便分别讨论，并提供了 OSI 许可证提交流程链接。"
     }
   },
   "gpl-3-0": {
@@ -7196,11 +7196,11 @@
     },
     "text_meta": {
       "count": 1,
-      "linked_count": 0,
+      "linked_count": 1,
       "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
-      "latest_text_date": "2007-07-31"
+      "latest_text_date": "2007-06-29"
     },
     "timeline_meta": {
       "count": 6,
@@ -7214,8 +7214,8 @@
       "sender": "Russ Nelson",
       "subject": "Submitting GPLv3 and LGPLv3 for OSI inclusion.",
       "sentiment": "neutral",
-      "point": "Suggests that the Microsoft licenses should be submitted separately for individual discussion and provides the OSI submission procedure link.",
-      "point_zh": "建议微软许可证应分别提交以单独讨论，并提供了OSI的许可证提交流程链接。"
+      "point": "Suggests the licenses should be submitted separately for distinct discussion, and provides the OSI license submission procedure link.",
+      "point_zh": "建议将许可证分别提交以便分别讨论，并提供了 OSI 许可证提交流程链接。"
     }
   },
   "cpal-1.0": {
@@ -7420,12 +7420,12 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 3,
+      "count": 2,
       "linked_count": 0,
       "duplicate_count": 0,
-      "diff_count": 2,
+      "diff_count": 1,
       "series": [],
-      "latest_text_date": "2000-05-05"
+      "latest_text_date": "2000-04-06"
     },
     "timeline_meta": {
       "count": 7,
@@ -7465,12 +7465,12 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 3,
+      "count": 2,
       "linked_count": 0,
       "duplicate_count": 0,
-      "diff_count": 2,
+      "diff_count": 1,
       "series": [],
-      "latest_text_date": "2000-05-05"
+      "latest_text_date": "2000-04-06"
     },
     "timeline_meta": {
       "count": 7,
@@ -8275,12 +8275,12 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 2,
-      "linked_count": 2,
+      "count": 0,
+      "linked_count": 0,
       "duplicate_count": 0,
-      "diff_count": 1,
+      "diff_count": 0,
       "series": [],
-      "latest_text_date": "2003-12-22"
+      "latest_text_date": ""
     },
     "timeline_meta": {
       "count": 7,
@@ -8320,12 +8320,12 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 2,
-      "linked_count": 2,
+      "count": 0,
+      "linked_count": 0,
       "duplicate_count": 0,
-      "diff_count": 1,
+      "diff_count": 0,
       "series": [],
-      "latest_text_date": "2003-12-22"
+      "latest_text_date": ""
     },
     "timeline_meta": {
       "count": 7,
@@ -8995,12 +8995,12 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 1,
+      "count": 0,
       "linked_count": 0,
       "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
-      "latest_text_date": "2020-05-04"
+      "latest_text_date": ""
     },
     "timeline_meta": {
       "count": 3,
@@ -9040,12 +9040,12 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 0,
+      "count": 1,
       "linked_count": 0,
       "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
-      "latest_text_date": ""
+      "latest_text_date": "2003-12-13"
     },
     "timeline_meta": {
       "count": 7,
@@ -9085,12 +9085,12 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 1,
-      "linked_count": 1,
+      "count": 0,
+      "linked_count": 0,
       "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
-      "latest_text_date": "2002-10-16"
+      "latest_text_date": ""
     },
     "timeline_meta": {
       "count": 3,
@@ -9130,12 +9130,12 @@
       "decision_status": "approved"
     },
     "text_meta": {
-      "count": 1,
-      "linked_count": 1,
+      "count": 0,
+      "linked_count": 0,
       "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
-      "latest_text_date": "2002-10-16"
+      "latest_text_date": ""
     },
     "timeline_meta": {
       "count": 3,
@@ -10606,12 +10606,12 @@
       "decision_status": ""
     },
     "text_meta": {
-      "count": 0,
+      "count": 1,
       "linked_count": 0,
       "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
-      "latest_text_date": ""
+      "latest_text_date": "2000-04-29"
     },
     "timeline_meta": {
       "count": 0,
@@ -10639,12 +10639,12 @@
       "decision_status": ""
     },
     "text_meta": {
-      "count": 0,
+      "count": 1,
       "linked_count": 0,
       "duplicate_count": 0,
       "diff_count": 0,
       "series": [],
-      "latest_text_date": ""
+      "latest_text_date": "2000-04-29"
     },
     "timeline_meta": {
       "count": 0,

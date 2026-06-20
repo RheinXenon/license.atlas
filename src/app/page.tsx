@@ -7,7 +7,7 @@ import { LicenseCard } from "@/components/license-card";
 import { themes } from "@/components/badge";
 import { useLang } from "@/lib/i18n";
 import { searchLicenses, preloadIndex } from "@/lib/search";
-import type { SearchGroup } from "@/lib/search";
+import type { SearchGroup, SearchResult } from "@/lib/search";
 import licenses from "@/data/licenses-index.json";
 import stats from "@/data/stats.json";
 import type { License } from "@/lib/types";
@@ -36,6 +36,53 @@ allTags.sort((a, b) => {
   if (bi !== -1) return 1;
   return a.localeCompare(b);
 });
+
+function TrackerSearchCard({ result }: { result: SearchResult }) {
+  const { t } = useLang();
+  const status = result.status || "pending";
+  const statusKey = `tracker.status-${status}`;
+  const label = t(statusKey);
+  return (
+    <Link
+      href={`/tracker?focus=${encodeURIComponent(result.slug)}`}
+      prefetch={false}
+      className="group relative flex flex-col gap-3 overflow-visible rounded-2xl border border-zinc-200/70 bg-white/70 p-5 transition hover:-translate-y-px hover:border-[#7c3aed]/40 hover:shadow-lg dark:border-zinc-800/70 dark:bg-zinc-900/50"
+    >
+      <div>
+        <div className="flex items-start justify-between gap-2">
+          <h3 className="font-semibold text-zinc-950 group-hover:text-[#7c3aed] dark:text-zinc-50 dark:group-hover:text-[#a78bfa]">
+            {result.title}
+          </h3>
+          <span className={`shrink-0 rounded-full px-2 py-0.5 text-[11px] font-semibold ${
+            status === "approved" ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/35 dark:text-emerald-300"
+            : status === "rejected" ? "bg-rose-100 text-rose-700 dark:bg-rose-900/35 dark:text-rose-300"
+            : status === "pending" ? "bg-sky-100 text-sky-700 dark:bg-sky-900/35 dark:text-sky-300"
+            : status === "withdrawn" ? "bg-zinc-200 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
+            : "bg-amber-100 text-amber-700 dark:bg-amber-900/35 dark:text-amber-300"
+          }`}>
+            {label !== statusKey ? label : status.charAt(0).toUpperCase() + status.slice(1)}
+          </span>
+        </div>
+        <div className="mt-0.5 flex flex-wrap items-center gap-2">
+          {result.spdx_id && (
+            <code className="rounded-md bg-zinc-100 px-2 py-0.5 font-mono text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">
+              {result.spdx_id}
+            </code>
+          )}
+          <span className="rounded-md bg-violet-50 px-2 py-0.5 text-xs font-medium text-violet-700 dark:bg-violet-900/30 dark:text-violet-300">
+            Review Tracker
+          </span>
+        </div>
+      </div>
+      <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-zinc-500 dark:text-zinc-400">
+        {result.submitter && <span>Submitter: {result.submitter}</span>}
+        {result.firstSubmitted && <span>First Submitted: {result.firstSubmitted}</span>}
+        {result.decisionDate && <span>Decision: {result.decisionDate}</span>}
+        {typeof result.messages === "number" && <span>{result.messages} Messages</span>}
+      </div>
+    </Link>
+  );
+}
 
 export default function HomePage() {
   return <Suspense><HomeContent /></Suspense>;
@@ -163,6 +210,7 @@ function HomeContent() {
     if (!searchGroups) return null;
     return searchGroups.map((g) => {
       let results = g.results;
+      if (g.key === "tracker") return { ...g, results };
       if (typeFilter) results = results.filter((r) => r.type === typeFilter);
       if (propOnly) {
         results = results.filter((r) => {
@@ -426,6 +474,9 @@ function HomeContent() {
               </h3>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {group.results.map((r) => {
+                  if (r.kind === "tracker") {
+                    return <TrackerSearchCard key={`tracker-${r.slug}`} result={r} />;
+                  }
                   const lic = allLicenses.find((l) => l.slug === r.slug);
                   if (!lic) return null;
                   return <LicenseCard key={r.slug} license={lic} reviewTracked={reviewTrackedSlugs.has(lic.slug)} />;

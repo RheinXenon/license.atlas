@@ -58,7 +58,7 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
       </Link>
 
       {/* Header */}
-      <div className="fade-in-1 relative z-20 mb-8">
+      <div className="fade-in-1 relative z-50 mb-8">
         <h1 className="text-3xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">
           {license.title}
         </h1>
@@ -111,7 +111,7 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
       {(license.permissions.length > 0 ||
         license.conditions.length > 0 ||
         license.limitations.length > 0) && (
-        <div className="fade-in-2 mb-8 flex flex-wrap gap-6">
+        <div className="fade-in-2 relative z-40 mb-8 flex flex-wrap gap-6">
           {license.permissions.length > 0 && (
             <div>
               <p className="mb-2 text-xs font-medium uppercase tracking-wider text-zinc-400">
@@ -156,7 +156,7 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
 
       {/* Blue Oak Rating */}
       {license.blueoak_tier && (
-        <div className="fade-in-2 relative z-10 mb-8">
+        <div className="fade-in-2 relative z-30 mb-8">
           <p className="mb-2 text-xs font-medium uppercase tracking-wider text-zinc-400">
             {t("detail.blueOakRating")}
           </p>

@@ -2,7 +2,7 @@
 
 English | [中文](README.zh-CN.md)
 
-LicenseAtlas is a software, data, AI model, and agent license explorer covering **2,588** licenses and terms — searchable, filterable, comparable, and available in English and Chinese.
+LicenseAtlas is a software, data, AI model, and agent license explorer covering **2,604** licenses and terms — searchable, filterable, comparable, and available in English and Chinese.
 
 **Live site**: [LicenseAtlas](https://morningd.github.io/license.atlas)
 
@@ -17,7 +17,7 @@ LicenseAtlas is a software, data, AI model, and agent license explorer covering 
 - **Popular Projects** — right-rail showcase of top GitHub, HuggingFace, and Kaggle projects for selected licenses, with source-aware incremental refresh
 - **Bilingual UI** — English/Chinese with automatic browser language detection
 - **Dark mode** — system preference + manual toggle
-- **Static export** — 2,588 pre-rendered pages, fast loading
+- **Static export** — 2,604 pre-rendered pages, fast loading
 
 ## Tech Stack
 
@@ -37,6 +37,8 @@ npm run build     # static export to out/
 Data-source maintenance commands:
 
 ```bash
+npm run update:data     # full incremental update: core license texts + tracker + OSADL + project showcase
+npm run sync:licenses   # sync already-cleaned KB license corpus into Atlas
 npm run update:tracker   # refresh OSI license-review/license-discuss data via the sibling KB checkout
 npm run update:osadl     # refresh OSADL checklist raw data via the sibling KB checkout
 npm run update:projects  # refresh GitHub/HuggingFace/Kaggle showcase sidecar data via the sibling KB checkout
@@ -45,6 +47,12 @@ npm run sync:tracker     # sync already-built KB tracker data into Atlas
 npm run sync:osadl       # sync already-built KB OSADL checklist data into Atlas
 npm run sync:projects    # sync already-built KB project-showcase data into Atlas
 ```
+
+Use `npm run update:data` as the normal update entry point. It starts with the KB
+core license corpus pipeline (including license full-text discovery and
+cleaning), syncs the cleaned corpus into Atlas, then refreshes tracker, OSADL,
+and project-showcase sidecars. The per-source commands above are for targeted
+debugging or recovery. See [Data Update Workflow](docs/data-update-workflow.md).
 
 `npm run build` always regenerates the search index, syncs tracker, OSADL, and project-showcase sidecar data, and then runs the static Next.js build. The build script currently sets `NEXT_PRIVATE_BUILD_WORKER=0` to avoid a Next.js 16 webpack worker hang observed in local and CI builds.
 

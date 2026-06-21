@@ -16,7 +16,8 @@ Selection is computed in KB by `scripts/build-project-showcase.mjs`:
   - HuggingFace top model/dataset `>= 1,000` likes
   - Kaggle top dataset `>= 1,000` votes
 
-Each source is capped at top 5 items per license. Ranking uses source-native social signals:
+GitHub and HuggingFace are capped at top 10 items per license; Kaggle stays capped
+at top 5 to keep the sidecar compact. Ranking uses source-native social signals:
 
 - GitHub: stars
 - HuggingFace: likes, with downloads only as a tie-breaker

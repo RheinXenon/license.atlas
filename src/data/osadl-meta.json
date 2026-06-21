@@ -1,7 +1,7 @@
 {
-  "source_hash": "63de4c6a0502fcfb",
+  "source_hash": "fbb934805fd60f2a",
   "index_schema_version": 2,
-  "generated_at": "2026-06-20T13:16:46.545Z",
+  "generated_at": "2026-06-21T16:08:04.318Z",
   "source": "OSADL Open Source License Checklists",
   "source_url": "https://www.osadl.org/Access-to-raw-data.oss-compliance-raw-data-access.0.html",
   "checklist_project_url": "https://www.osadl.org/OSADL-Open-Source-License-Checklists.oss-compliance-lists.0.html",
@@ -18,7 +18,7 @@
   "matrix_license_count": 121,
   "match_counts": {
     "osadl_records": 121,
-    "atlas_licenses": 2588,
+    "atlas_licenses": 2604,
     "matched": 120,
     "osadl_unmatched": 1,
     "atlas_unmatched": 594,

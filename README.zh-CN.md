@@ -1,6 +1,6 @@
 # LicenseAtlas
 
-LicenseAtlas 是面向软件、数据、AI 模型与 Agent 的许可证探索器，覆盖 **2,588** 个许可证和服务条款——支持搜索、筛选、对比，并提供中英文双语界面。
+LicenseAtlas 是面向软件、数据、AI 模型与 Agent 的许可证探索器，覆盖 **2,604** 个许可证和服务条款——支持搜索、筛选、对比，并提供中英文双语界面。
 
 **在线访问**：[LicenseAtlas](https://morningd.github.io/license.atlas)
 
@@ -17,7 +17,7 @@ LicenseAtlas 是面向软件、数据、AI 模型与 Agent 的许可证探索器
 - **明星项目** — 在部分许可证详情页右侧展示按来源分组的 GitHub、HuggingFace 与 Kaggle 代表项目，并支持增量刷新
 - **双语界面** — 中英文切换，自动检测浏览器语言
 - **暗色模式** — 跟随系统偏好 + 手动切换
-- **静态导出** — 2,588 个预渲染页面，加载极速
+- **静态导出** — 2,604 个预渲染页面，加载极速
 
 ## 技术栈
 
@@ -37,6 +37,8 @@ npm run build     # 静态导出到 out/
 数据源维护命令：
 
 ```bash
+npm run update:data     # 完整增量更新：许可证原文 + tracker + OSADL + 明星项目
+npm run sync:licenses   # 将 KB 已清洗的主许可证语料同步到 Atlas
 npm run update:tracker   # 通过相邻 KB 仓库刷新 OSI license-review/license-discuss 数据
 npm run update:osadl     # 通过相邻 KB 仓库刷新 OSADL 检查清单原始数据
 npm run update:projects  # 通过相邻 KB 仓库刷新 GitHub/HuggingFace/Kaggle 明星项目 sidecar
@@ -45,6 +47,11 @@ npm run sync:tracker     # 将已构建的 KB tracker 数据同步到 Atlas
 npm run sync:osadl       # 将已构建的 KB OSADL 检查清单数据同步到 Atlas
 npm run sync:projects    # 将已构建的 KB project-showcase 数据同步到 Atlas
 ```
+
+日常更新优先使用 `npm run update:data`。它会先执行 KB 主许可证语料流程（包括
+license full text 发现与清洗），再同步到 Atlas，随后刷新 tracker、OSADL 和
+project-showcase sidecar。上面的局部命令主要用于定向调试或补跑。详见
+[Data Update Workflow](docs/data-update-workflow.md)。
 
 `npm run build` 会重新生成搜索索引，同步 tracker、OSADL 与 project-showcase sidecar 数据，然后执行 Next.js 静态构建。当前 build 脚本设置了 `NEXT_PRIVATE_BUILD_WORKER=0`，用于规避 Next.js 16 webpack build worker 在本地和 CI 中观察到的卡住问题。
 

@@ -1,12 +1,12 @@
 {
-  "total": 2588,
+  "total": 2604,
   "osi_approved": 122,
   "fsf_libre": 146,
-  "proprietary": 766,
+  "proprietary": 770,
   "by_type": {
-    "software": 2297,
+    "software": 2312,
     "data": 101,
-    "model": 154,
+    "model": 155,
     "agent": 20,
     "terms": 16
   },
@@ -18,7 +18,7 @@
     "GNU License List": 66,
     "creativecommons.org": 37,
     "opendatacommons.org": 3,
-    "scancode-licensedb.aboutcode.org": 1659,
+    "scancode-licensedb.aboutcode.org": 1674,
     "openmdw.ai": 2,
     "github.com": 11,
     "53AI/53AIHub": 1,
@@ -39,7 +39,7 @@
     "anthropics/skills/skills/pdf": 1,
     "anthropics/skills/skills/pptx": 1,
     "anthropics/skills/skills/xlsx": 1,
-    "huggingface.co": 6,
+    "huggingface.co": 7,
     "apple/OpenELM": 1,
     "EPFL-VILAB/4M-21_B": 1,
     "aubmindlab/aragpt2-medium": 1,
@@ -301,13 +301,13 @@
     "Public Domain": 22,
     "Creative Commons": 77,
     "Weak Copyleft": 16,
-    "Proprietary": 788,
-    "Custom": 1836,
+    "Proprietary": 792,
+    "Custom": 1851,
     "MCP Server": 10,
     "HuggingFace": 158,
     "Terms": 16,
     "Agent Skill": 3,
-    "Hardware": 9,
+    "Hardware": 8,
     "LLM Tool": 3,
     "ModelGo": 8,
     "Agent Framework": 4
@@ -316,7 +316,7 @@
     "tagsFixed": 164,
     "duplicatesFound": 43,
     "linesFixed": 0,
-    "osiFixed": 4
+    "osiFixed": 5
   },
-  "updated": "2026-06-07"
+  "updated": "2026-06-21"
 }

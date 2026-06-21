@@ -22,7 +22,7 @@ KB（source of truth）→ license-atlas 单向同步：
 
 | 命令 | 作用 |
 |---|---|
-| `npm run build` | 内嵌 sync（hash 检测，无变化跳过）+ search-index + next build |
+| `npm run build` | search-index + tracker sync + OSADL sync（hash 检测，无变化跳过）+ `NEXT_PRIVATE_BUILD_WORKER=0 next build --webpack` |
 | `npm run sync:tracker` | 只同步 tracker（不跑 KB 构建） |
 | `npm run update:tracker -- --month YYYY-MM` | 全链路：刷新 OSI `license-review`/`license-discuss` 邮件归档 + 重建索引 + 发现 pending + 合并 LLM point + build/enrich + point/text coverage checks + sync |
 | `npm run update:tracker -- --since YYYY-MM` | 从指定月份到当前月份增量刷新 |
@@ -44,7 +44,7 @@ KB（source of truth）→ license-atlas 单向同步：
 - `src/components/tracker/` — tracker-card / timeline-strip / board-vote-card / participants-list / review-detail-tabs
 - `src/components/license-review-block.tsx` — 详情页内嵌块
 - `src/lib/search.ts` — 正式 Atlas MiniSearch 结果之外，在有搜索查询时动态加载 `tracker-index.json` 并生成 `Review Tracker Match` 搜索分组；只作为跳转入口，不把 review submissions 并入正式许可证库
-- `src/components/footer.tsx` — 全站页脚显示最新数据更新时间，取 `src/data/stats.json.updated` 与 `src/data/tracker-meta.json.generated_at` 中较新者
+- `src/components/footer.tsx` — 全站页脚显示最新数据更新时间，取 `src/data/stats.json.updated`、`src/data/tracker-meta.json.generated_at` 与 `src/data/osadl-meta.json.generated_at` 中最新者
 
 ## 当前同步快照
 
@@ -72,7 +72,7 @@ KB（source of truth）→ license-atlas 单向同步：
 - KB 是 source of truth；Atlas 只同步和展示。状态色纳入 atlas 语义色板（见 `badge.tsx` `review-*` themes）。详见设计文档 `docs/superpowers/specs/2026-06-18-license-review-tracker-integration-design.md`。
 - KB 数据构建细节见 `docs/OSI-TRACKER.md`。
 - `public/data/tracker.json` 当前约 8MB，包含提交许可证文本正文和 diff hunks。文本来源是本地附件文件、Pipermail plain-text MIME part，以及 `Text of the license:` / `License text:` / “pasted full text/final draft” 上下文引出的强边界内联许可证块；中英文条款信号都会评分。整封提交邮件、FAQ、OSD notes、讨论回复、引用块、代码附件、diff、签名、转发块和 mailing-list footer 等被过滤。内联块必须通过强许可证边界检查（如 `Copyright YYYY` + title/version/definitions、干净 license title、`Redistribution and use`、`Permission is hereby granted`、中文许可证条款信号）；泛 BSD 基础 slug 不会跨挂 `BSD-3-Clause-Open-MPI` / `BSD-3-Clause-PPPL` 等变体。如果后续抓取更多附件导致 gzip 明显增长，应拆为 `public/data/tracker-texts/{submission_id}.json` 按需加载。合规口径：这些提交许可证原文来自公开 OSI review/discussion 记录，仅用于研究和审查追踪；版权仍归原作者或 license steward，UI 需持续展示来源链接和版权归属提示。
-- 首页首屏不得静态导入全量 tracker 数据或 `tracker-index.json`：`Review Tracked` 首页标签通过 mount 后动态加载 `tracker-match`，搜索旁路通过 `search.ts` 动态 import tracker index；footer/about 只读取 `tracker-meta.json`。
+- 首页首屏不得静态导入全量 `public/data/tracker.json`。`Review Tracked` 首页标签允许通过轻量 `tracker-index.json`/`tracker-match` 在 module scope 同步计算，保证首屏就能显示；搜索旁路仍通过 `src/lib/search.ts` 动态 import `tracker-index.json`，避免无查询时加载 tracker-only 搜索数据；footer/about 只读取轻量 meta（`tracker-meta.json`、`osadl-meta.json`）。
 - Tracker 可见 UI 文案走 `src/lib/i18n.tsx`。新增按钮、空态、tooltip、role label、vote tally、License Texts 控件时必须补 en/zh key；邮件 point/许可证正文属于数据内容，不在 UI i18n 字典内翻译。
 
 ## 近期 UI 行为

@@ -40,7 +40,7 @@ Generated Atlas files:
 - `src/data/osadl-checklists-index.json` — compact SPDX-keyed detail index for license pages.
 - `src/data/osadl-meta.json` — source metadata, attribution, timestamps, and match counts.
 
-`scripts/sync-osadl.mjs` is hash-gated. If KB data is unavailable in CI but committed Atlas sidecar files exist, the script keeps using committed data.
+`scripts/sync-osadl.mjs` is hash-gated. If KB data is unavailable in CI but committed Atlas sidecar files exist, the script keeps using committed data. The generated `src/data/osadl-meta.json.generated_at` also participates in the site footer's latest-data timestamp alongside the core license corpus and OSI tracker sync.
 
 `scripts/update-osadl.mjs` is the Atlas-side full-chain updater. It calls the sibling KB repository to:
 
@@ -86,8 +86,8 @@ When a checklist exists, `OsadlChecklistBlock` renders a compact, collapsed summ
 Expanded content includes:
 
 - `Checklist Actions` as a compact ASCII-style action tree grouped by condition, with `[Must]` / `[Must Not]` action markers.
-- `Compatibility Summary` with colored segments and matching colored count labels.
-- Raw checklist/source links.
+- `Compatibility Summary` with full-width colored segments, matching colored count labels, and a small mouse-positioned popover for each verdict segment. The popover supports simple search by license name or short id and links matching licenses to their Atlas detail pages.
+- Raw checklist/source links appended to the OSADL source line.
 
 Long action lists are previewed in-page and linked to the raw checklist for complete detail.
 

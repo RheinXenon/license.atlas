@@ -1,6 +1,6 @@
 # LicenseAtlas
 
-涵盖 **2,588** 个软件、AI 模型、数据、智能体和服务条款许可证的全面集合——支持搜索、筛选，提供中英文双语界面。
+LicenseAtlas 是面向软件、数据、AI 模型与 Agent 的许可证探索器，覆盖 **2,588** 个许可证和服务条款——支持搜索、筛选、对比，并提供中英文双语界面。
 
 **在线访问**：[LicenseAtlas](https://morningd.github.io/license.atlas)
 
@@ -13,6 +13,7 @@
 - **标签筛选** — 宽松许可、Copyleft、知识共享、硬件等
 - **热度与趋势** — 基于 HuggingFace、GitHub、Kaggle 数据的迷你趋势图
 - **[OSI 许可证审查追踪器](https://morningd.github.io/license.atlas/tracker)**（`/tracker`）— 174 个 OSI 许可证提交、审查状态、董事会投票、时间线与关联许可证文本历史的实时看板
+- **OSADL 检查清单信号** — 为已匹配许可证展示义务/禁止项摘要、Copyleft/源码披露/专利提示，以及方向性兼容性数据
 - **双语界面** — 中英文切换，自动检测浏览器语言
 - **暗色模式** — 跟随系统偏好 + 手动切换
 - **静态导出** — 2,588 个预渲染页面，加载极速
@@ -31,6 +32,17 @@ npm install
 npm run dev       # http://localhost:3000
 npm run build     # 静态导出到 out/
 ```
+
+数据源维护命令：
+
+```bash
+npm run update:tracker   # 通过相邻 KB 仓库刷新 OSI license-review/license-discuss 数据
+npm run update:osadl     # 通过相邻 KB 仓库刷新 OSADL 检查清单原始数据
+npm run sync:tracker     # 将已构建的 KB tracker 数据同步到 Atlas
+npm run sync:osadl       # 将已构建的 KB OSADL 检查清单数据同步到 Atlas
+```
+
+`npm run build` 会重新生成搜索索引，同步 tracker 与 OSADL sidecar 数据，然后执行 Next.js 静态构建。当前 build 脚本设置了 `NEXT_PRIVATE_BUILD_WORKER=0`，用于规避 Next.js 16 webpack build worker 在本地和 CI 中观察到的卡住问题。
 
 ## 数据来源
 
@@ -53,10 +65,12 @@ npm run build     # 静态导出到 out/
 | 开放原子开源基金会 | 模型与硬件许可证（中英双语） |
 | OpenMDW | AI 模型及关联制品的宽松开源许可证（Linux Foundation） |
 | OSI Review Tracker | 174 个 OSI 许可证审查提交、时间线、首次提交/决议日期、董事会投票记录，以及来自公开审查/讨论记录的本地归档提交许可证文本 |
+| OSADL Open Source License Checklists | 121 条检查清单记录，120 个匹配的 LicenseAtlas 页面，并提供由检查清单提取的义务/禁止项、Copyleft/源码披露/专利提示与方向性兼容性摘要 |
 
 热度数据来自 HuggingFace Hub（280 万+ 模型）、GitHub（28 种许可证类型）和 Kaggle（通过 Meta-Kaggle 覆盖 71.4 万+ 数据集）。
-网站页脚会显示最新数据更新时间，取许可证语料更新时间与 OSI 审查追踪器同步时间中的较新者，并与页面浏览量计数同排展示。
+网站页脚会显示最新数据更新时间，取许可证语料、OSI 审查追踪器同步时间与 OSADL 检查清单同步时间中的最新者，并与页面浏览量计数同排展示。
 OSI Review Tracker 中的提交许可证原文来自公开 OSI 审查/讨论记录，仅用于研究和审查追踪；版权仍归原作者或许可证维护方所有。
+OSADL 检查清单数据归属 Open Source Automation Development Lab (OSADL) eG，由 OSADL 以 CC-BY-4.0 原始数据形式发布；LicenseAtlas 将其作为信息性合规元数据展示，不构成法律意见。
 
 ## 许可证
 

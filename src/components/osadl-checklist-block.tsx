@@ -191,6 +191,7 @@ const TERM_ZH: OsadlTermMap = {
   "Copyright notices": "版权声明",
   "Delayed source code delivery": "延迟源码提供",
   "Distribution material": "分发材料",
+  "Advertisement": "广告",
   "Documentation": "文档",
   "Equivalent License obligations": "等同的许可证义务",
   "File 「LEGAL」": "LEGAL 文件",
@@ -261,6 +262,14 @@ const TERM_ZH: OsadlTermMap = {
   "Written offer": "书面要约",
 };
 
+const PLACE_ZH: OsadlTermMap = {
+  "Advertisement": "广告",
+  "Binary delivery": "二进制分发",
+  "Distribution material": "分发材料",
+  "Documentation": "文档",
+  "Source code delivery": "源码分发",
+};
+
 const ACTION_EXACT_ZH: OsadlTermMap = {
   "Append Name To Original name": "在原名称后追加名称",
   "End Binary delivery": "停止二进制分发",
@@ -325,6 +334,61 @@ function restoreQuotedText(value: string, parts: string[]) {
   return parts.reduce((text, part, idx) => text.replace(`__Q${idx}__`, part), value);
 }
 
+function translatePlaceList(value: string) {
+  return value
+    .split(/\s+AND\s+|\s+OR\s+/)
+    .map((part) => PLACE_ZH[part.trim()] || translateTerm(part.trim()))
+    .join(value.includes(" OR ") ? "或" : "、");
+}
+
+function translateQuotedList(value: string) {
+  const quoted = [...value.matchAll(/"([^"]+)"/g)].map((match) => `「${match[1]}」`);
+  if (!quoted.length) return value;
+  return quoted.join(value.toLowerCase().includes(" or ") || value.includes(" OR ") ? "或" : "、");
+}
+
+function translateCreditAction(value: string) {
+  let m = value.match(/^Credit In (.+?) Verbatim "([^"]+)"$/);
+  if (m) return `在${translatePlaceList(m[1])}中逐字标注「${m[2]}」`;
+
+  m = value.match(/^Credit Verbatim In (.+?) "([^"]+)"$/);
+  if (m) return `在${translatePlaceList(m[1])}中逐字标注「${m[2]}」`;
+
+  m = value.match(/^Credit Verbatim "([^"]+)" In (.+)$/);
+  if (m) return `在${translatePlaceList(m[2])}中逐字标注「${m[1]}」`;
+
+  m = value.match(/^Credit Verbatim "([^"]+)"$/);
+  if (m) return `逐字标注「${m[1]}」`;
+
+  m = value.match(/^Credit In (.+?) (.+)$/);
+  if (m) return `在${translatePlaceList(m[1])}中标注 ${m[2]}`;
+
+  return value.replace(/^Credit\s+/, "标注 ");
+}
+
+function translatePromoteAction(value: string) {
+  if (value === "Promote") return "用于宣传或背书";
+  const m = value.match(/^Promote Using (.+)$/);
+  if (m) return `使用${translateQuotedList(m[1])}进行宣传或背书`;
+  return value;
+}
+
+function translateUseAction(value: string) {
+  let m = value.match(/^Use (.+?) In Product name$/);
+  if (m) return `在产品名称中使用${translateQuotedList(m[1])}`;
+
+  m = value.match(/^Use (.+?) In Font Name$/);
+  if (m) return `在字体名称中使用${translateQuotedList(m[1])}`;
+
+  m = value.match(/^Use (.+?) In Name$/);
+  if (m) return `在名称中使用${translateQuotedList(m[1])}`;
+
+  m = value.match(/^Use "([^"]+)"(?:, .*)?$/);
+  if (m && value.includes(",")) return `使用这些名称：${translateQuotedList(value)}`;
+
+  return "";
+}
+
 function translateTerm(value: string): string {
   const raw = value.trim();
   if (!raw) return raw;
@@ -382,6 +446,10 @@ function translateOsadlText(value: string, lang: Lang, kind: "action" | "conditi
       return "因改用或追加许可证条款产生的责任或索赔，使其他贡献者免受影响并承担赔偿义务";
     }
   }
+  if (value.startsWith("Credit ")) return translateCreditAction(value);
+  if (value.startsWith("Promote")) return translatePromoteAction(value);
+  const useText = translateUseAction(value);
+  if (useText) return useText;
 
   if (ACTION_EXACT_ZH[value]) return ACTION_EXACT_ZH[value];
   const { text, parts } = protectQuotedText(value);

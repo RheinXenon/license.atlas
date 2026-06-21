@@ -129,7 +129,7 @@ export function LicenseReviewBlock({ license }: {
             {latest?.date && <span>📅 {formatTrackerDate(latest.date)}</span>}
             {latest?.source && <span>{sourceLabel(latest.source, t)}</span>}
           </div>
-          <span>{latestPoint}</span>
+          <span className="block min-h-[3.75rem]">{latestPoint}</span>
         </div>
       )}
 

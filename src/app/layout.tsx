@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "LicenseAtlas — The Comprehensive License Collection",
+  title: "LicenseAtlas — Software, Data, AI Model, and Agent License Explorer",
   description:
     "Browse and explore 2,587+ software, AI model, data, and agent licenses. Including SPDX, OSI, Creative Commons, and more.",
   keywords: [
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   authors: [{ name: "morningD" }],
   metadataBase: new URL("https://morningd.github.io/license.atlas"),
   openGraph: {
-    title: "LicenseAtlas — The Comprehensive License Collection",
+    title: "LicenseAtlas — Software, Data, AI Model, and Agent License Explorer",
     description:
       "Browse and explore 2,587+ software, AI model, data, and agent licenses.",
     url: "https://morningd.github.io/license.atlas",

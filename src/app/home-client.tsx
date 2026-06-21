@@ -8,6 +8,7 @@ import { themes } from "@/components/badge";
 import { useLang } from "@/lib/i18n";
 import { searchLicenses, preloadIndex } from "@/lib/search";
 import type { SearchGroup, SearchResult } from "@/lib/search";
+import { hasReviewContent, resolveTrackerEntry } from "@/lib/tracker-match";
 import licenses from "@/data/licenses-index.json";
 import stats from "@/data/stats.json";
 import type { License } from "@/lib/types";
@@ -15,6 +16,14 @@ import type { License } from "@/lib/types";
 const PAGE_SIZE = 30;
 const REVIEW_TRACKED_TAG = "Review Tracked";
 const allLicenses = licenses as License[];
+const reviewTrackedSlugs = new Set(
+  allLicenses
+    .filter((license) => {
+      const entry = resolveTrackerEntry(license);
+      return entry && hasReviewContent(entry);
+    })
+    .map((license) => license.slug),
+);
 const allTags = Array.from(
   new Set([...allLicenses.flatMap((l) => l.tags), REVIEW_TRACKED_TAG])
 ).filter((t) => !["MCP Server", "Agent Framework", "Agent Skill", "LLM Tool", "Proprietary"].includes(t));
@@ -104,7 +113,6 @@ function HomeContent() {
   const [propOnly, setPropOnly] = useState(sp.get("prop") === "1");
   const [langFilter, setLangFilter] = useState(sp.get("lang") ?? "");
   const [sort, setSort] = useState(sp.get("sort") ?? "");
-  const [reviewTrackedSlugs, setReviewTrackedSlugs] = useState<Set<string>>(new Set());
   const [tagFilter, setTagFilter] = useState<Set<string>>(() => {
     const t = sp.get("tags");
     return t ? new Set(t.split(",")) : new Set();
@@ -115,24 +123,6 @@ function HomeContent() {
   const [searchGroups, setSearchGroups] = useState<SearchGroup[] | null>(null);
   const [searchLoading, setSearchLoading] = useState(false);
   const debounceRef = useRef<ReturnType<typeof setTimeout>>(undefined);
-
-  useEffect(() => {
-    let cancelled = false;
-    import("@/lib/tracker-match").then(({ hasReviewContent, resolveTrackerEntry }) => {
-      if (cancelled) return;
-      setReviewTrackedSlugs(new Set(
-        allLicenses
-          .filter((l) => {
-            const entry = resolveTrackerEntry(l);
-            return entry && hasReviewContent(entry);
-          })
-          .map((l) => l.slug)
-      ));
-    });
-    return () => {
-      cancelled = true;
-    };
-  }, []);
 
   useEffect(() => {
     const params = new URLSearchParams(searchParamString);
@@ -261,7 +251,7 @@ function HomeContent() {
       }
       return { ...g, results };
     }).filter((g) => g.results.length > 0);
-  }, [searchGroups, typeFilter, propOnly, osionly, fsfOnly, langFilter, tagFilter, reviewTrackedSlugs, sort, popularityMap]);
+  }, [searchGroups, typeFilter, propOnly, osionly, fsfOnly, langFilter, tagFilter, sort, popularityMap]);
 
   useEffect(() => { preloadIndex(); }, []);
 
@@ -280,7 +270,7 @@ function HomeContent() {
     });
     if (sort === "popular") arr = [...arr].sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
     return arr;
-  }, [typeFilter, osionly, fsfOnly, propOnly, langFilter, tagFilter, sort, reviewTrackedSlugs]);
+  }, [typeFilter, osionly, fsfOnly, propOnly, langFilter, tagFilter, sort]);
 
   const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
   const pageItems = filtered.slice(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE);

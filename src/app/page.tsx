@@ -6,13 +6,13 @@ const BASE_URL = "https://morningd.github.io/license.atlas";
 const homeDescription = `Browse ${stats.total} software, AI model, data, agent, and terms licenses with full-text search, tag filters, popularity signals, and OSI review tracking. 收录 ${stats.total} 个软件、AI 模型、数据、Agent 与服务条款文本，支持全文搜索、标签筛选、热度信号与 OSI 审查追踪。`;
 
 export const metadata: Metadata = {
-  title: "LicenseAtlas — Software, AI Model, Data, and Agent Licenses | 许可图鉴",
+  title: "LicenseAtlas — Software, Data, AI Model, and Agent License Explorer | 许可图鉴",
   description: homeDescription,
   alternates: {
     canonical: `${BASE_URL}/`,
   },
   openGraph: {
-    title: "LicenseAtlas — The Comprehensive License Collection",
+    title: "LicenseAtlas — Software, Data, AI Model, and Agent License Explorer",
     description: homeDescription,
     url: `${BASE_URL}/`,
     type: "website",

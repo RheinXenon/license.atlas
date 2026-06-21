@@ -16,6 +16,7 @@ import type { License } from "@/lib/types";
 const PAGE_SIZE = 30;
 const REVIEW_TRACKED_TAG = "Review Tracked";
 const allLicenses = licenses as License[];
+const licenseBySlug = new Map(allLicenses.map((license) => [license.slug, license]));
 const reviewTrackedSlugs = new Set(
   allLicenses
     .filter((license) => {
@@ -112,7 +113,7 @@ function HomeContent() {
   const [fsfOnly, setFsfOnly] = useState(sp.get("fsf") === "1");
   const [propOnly, setPropOnly] = useState(sp.get("prop") === "1");
   const [langFilter, setLangFilter] = useState(sp.get("lang") ?? "");
-  const [sort, setSort] = useState(sp.get("sort") ?? "");
+  const [sort, setSort] = useState(sp.get("sort") === "newest" ? "newest" : "");
   const [tagFilter, setTagFilter] = useState<Set<string>>(() => {
     const t = sp.get("tags");
     return t ? new Set(t.split(",")) : new Set();
@@ -132,7 +133,7 @@ function HomeContent() {
     const nextFsf = params.get("fsf") === "1";
     const nextProp = params.get("prop") === "1";
     const nextLang = params.get("lang") ?? "";
-    const nextSort = params.get("sort") ?? "";
+    const nextSort = params.get("sort") === "newest" ? "newest" : "";
     const nextTags = params.get("tags");
 
     setQuery(nextQuery);
@@ -175,7 +176,7 @@ function HomeContent() {
     if (propOnly) p.set("prop", "1");
     if (langFilter) p.set("lang", langFilter);
     if (tagFilter.size > 0) p.set("tags", [...tagFilter].join(","));
-    if (sort) p.set("sort", sort);
+    if (sort === "newest") p.set("sort", sort);
     const search = p.toString();
     const url = search ? `${window.location.pathname}?${search}` : window.location.pathname;
     window.history.replaceState(null, "", url);
@@ -246,7 +247,9 @@ function HomeContent() {
           return [...tagFilter].every((tag) => tags.has(tag));
         });
       }
-      if (sort === "popular") {
+      if (sort === "newest") {
+        results = [...results].sort((a, b) => (licenseBySlug.get(b.slug)?.created_at || "").localeCompare(licenseBySlug.get(a.slug)?.created_at || ""));
+      } else {
         results = [...results].sort((a, b) => (popularityMap.get(b.slug) || 0) - (popularityMap.get(a.slug) || 0));
       }
       return { ...g, results };
@@ -268,12 +271,17 @@ function HomeContent() {
       }
       return true;
     });
-    if (sort === "popular") arr = [...arr].sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
+    if (sort === "newest") {
+      arr = [...arr].sort((a, b) => (b.created_at || "").localeCompare(a.created_at || ""));
+    } else {
+      arr = [...arr].sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
+    }
     return arr;
   }, [typeFilter, osionly, fsfOnly, propOnly, langFilter, tagFilter, sort]);
 
-  const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
-  const pageItems = filtered.slice(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE);
+  const visibleCount = (page + 1) * PAGE_SIZE;
+  const pageItems = filtered.slice(0, visibleCount);
+  const remainingCount = Math.max(0, filtered.length - pageItems.length);
 
   useEffect(() => { setPage(0); }, [typeFilter, osionly, fsfOnly, propOnly, langFilter, tagFilter, sort]);
 
@@ -296,6 +304,10 @@ function HomeContent() {
       setOsiOnly(false);
       setFsfOnly(false);
     }
+  }
+
+  function toggleNewest() {
+    setSort(sort === "newest" ? "" : "newest");
   }
 
   return (
@@ -350,10 +362,10 @@ function HomeContent() {
             <option value="en">English</option>
             <option value="zh">中文</option>
           </select>
-          <select value={sort} onChange={(e) => setSort(e.target.value)} className="rounded-xl border border-zinc-200/70 bg-white/80 px-3 py-3 text-sm dark:border-zinc-800 dark:bg-zinc-900/70">
-            <option value="">{t("filter.defaultSort")}</option>
-            <option value="popular">{t("filter.popular")}</option>
-          </select>
+          <label className={`flex cursor-pointer items-center gap-1.5 text-sm ${sort === "newest" ? "font-medium text-[#7c3aed] dark:text-[#a78bfa]" : "text-zinc-600 dark:text-zinc-400"}`}>
+            <input type="checkbox" checked={sort === "newest"} onChange={toggleNewest} className="accent-[#7c3aed]" />
+            {t("home.latest")}
+          </label>
         </div>
 
         <div className="mb-4 flex flex-wrap gap-2">
@@ -409,14 +421,13 @@ function HomeContent() {
                 <LicenseCard key={license.slug} license={license} />
               ))}
             </div>
-            {totalPages > 1 && (
-              <div className="mt-8 flex items-center justify-center gap-2">
-                <button disabled={page === 0} onClick={() => setPage((p) => Math.max(0, p - 1))} className="rounded-lg border border-zinc-200 px-3 py-2 text-sm disabled:opacity-40 dark:border-zinc-700">
-                  {t("pager.prev")}
-                </button>
-                <span className="text-sm text-zinc-500 dark:text-zinc-400">{page + 1} / {totalPages}</span>
-                <button disabled={page >= totalPages - 1} onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))} className="rounded-lg border border-zinc-200 px-3 py-2 text-sm disabled:opacity-40 dark:border-zinc-700">
-                  {t("pager.next")}
+            {remainingCount > 0 && (
+              <div className="mt-8 flex justify-center">
+                <button
+                  onClick={() => setPage((p) => p + 1)}
+                  className="rounded-xl border border-zinc-200 bg-white px-4 py-2 text-sm text-zinc-700 transition hover:border-[#7c3aed]/50 hover:text-[#7c3aed] dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:border-[#a78bfa]/50 dark:hover:text-[#a78bfa]"
+                >
+                  {t("home.loadMore", { remaining: String(remainingCount) })}
                 </button>
               </div>
             )}

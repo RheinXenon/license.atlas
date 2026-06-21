@@ -13,11 +13,12 @@ tracker.
 ## Update Order
 
 1. **Core license corpus** in the sibling KB checkout
-   - Runs `../KB/scripts/update-all.sh --skip-atlas --skip-confirm`.
+   - Runs `../KB/scripts/update-all.sh --skip-atlas` by default.
    - Crawls standard license full texts via `crawlers/licenses_crawl.js`.
    - Crawls ScanCode LicenseDB via `crawlers/scancode_crawl.js`.
    - Refreshes HuggingFace, GitHub, and Kaggle popularity inputs.
-   - Processes HuggingFace custom license discoveries.
+   - Processes HuggingFace custom license discoveries and pauses for the KB
+     review workflow when new custom texts appear.
    - Runs `../KB/scripts/clean-licenses.mjs`.
    - Syncs `licenses.json`, `licenses-index.json`, and `stats.json` into Atlas
      through `scripts/sync-license-corpus.mjs`.
@@ -47,11 +48,15 @@ The full update is incremental by default:
 
 - Core license sources use each crawler's local `crawl_state.json` and source
   freshness checks.
-- HuggingFace custom licenses are handled conservatively. The default
-  non-interactive mode applies known/auto-classified matches and leaves new
-  custom licenses in `../KB/data/hf-hub-stats/hf-custom-licenses/temp/` for
-  review. Use `--review-hf-custom` when you want the script to pause for manual
-  review.
+- HuggingFace custom licenses follow the strict KB review workflow by default:
+  new custom texts are written to
+  `../KB/data/hf-hub-stats/hf-custom-licenses/temp/`, then must be manually
+  deduplicated, cleaned, renamed, confirmed, and applied before they can enter
+  the cleaned corpus.
+- Atlas blocks new license slugs by default during `sync-license-corpus`. If the
+  KB cleaned corpus contains previously unseen slugs, sync stops and prints the
+  candidate list. After the KB-side dedupe / cleanup / confirmation workflow is
+  complete, rerun with `--allow-new-licenses`.
 - Tracker mail refresh defaults to recent months. Use `--since YYYY-MM`,
   `--month YYYY-MM`, or `--recent N` to adjust the OSI mail window.
 - Sync scripts are hash-gated; unchanged outputs are not rewritten.
@@ -59,11 +64,15 @@ The full update is incremental by default:
 ## Commands
 
 ```bash
-# Full incremental update, non-interactive HF custom handling.
+# Full incremental update. Stops for HF custom review and blocks unconfirmed new slugs.
 npm run update:data
 
-# Full update, but pause for HF custom license review.
-npm run update:data -- --review-hf-custom
+# Sync newly confirmed license slugs only after KB review is complete.
+npm run update:data -- --allow-new-licenses
+
+# Not recommended: skip the interactive HF custom prompt. Atlas still blocks
+# previously unseen license slugs unless --allow-new-licenses is also supplied.
+npm run update:data -- --skip-confirm
 
 # Refresh from a specific OSI mail month onward.
 npm run update:data -- --since 2026-06
@@ -82,7 +91,8 @@ Use this sequence when changing update scripts:
 ```bash
 node --check scripts/update-data.mjs
 node --check scripts/sync-license-corpus.mjs
-npm run update:data -- --skip-fetch --skip-tracker --skip-osadl --skip-projects --skip-build
+npm run sync:licenses
+npm run update:data -- --skip-core --skip-tracker --skip-osadl --skip-projects --skip-build
 npx tsc --noEmit
 npm run lint
 npm run build

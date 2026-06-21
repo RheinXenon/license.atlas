@@ -53,6 +53,9 @@ core license corpus pipeline (including license full-text discovery and
 cleaning), syncs the cleaned corpus into Atlas, then refreshes tracker, OSADL,
 and project-showcase sidecars. The per-source commands above are for targeted
 debugging or recovery. See [Data Update Workflow](docs/data-update-workflow.md).
+New license slugs are blocked by default during `sync:licenses`; run the KB
+dedupe / cleanup / confirmation workflow first, then rerun with
+`--allow-new-licenses` only after review is complete.
 
 `npm run build` always regenerates the search index, syncs tracker, OSADL, and project-showcase sidecar data, and then runs the static Next.js build. The build script currently sets `NEXT_PRIVATE_BUILD_WORKER=0` to avoid a Next.js 16 webpack worker hang observed in local and CI builds.
 

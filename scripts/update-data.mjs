@@ -7,6 +7,8 @@
 // Run:
 //   node scripts/update-data.mjs
 //   node scripts/update-data.mjs --review-hf-custom
+//   node scripts/update-data.mjs --skip-confirm       # not recommended
+//   node scripts/update-data.mjs --allow-new-licenses # only after review
 //   node scripts/update-data.mjs --skip-core --skip-build
 import { existsSync } from "fs";
 import { dirname, resolve } from "path";
@@ -49,7 +51,8 @@ const skipOsadl = has("--skip-osadl");
 const skipProjects = has("--skip-projects");
 const skipBuild = has("--skip-build");
 const skipFetch = has("--skip-fetch");
-const reviewHfCustom = has("--review-hf-custom");
+const skipConfirm = has("--skip-confirm") && !has("--review-hf-custom");
+const allowNewLicenses = has("--allow-new-licenses");
 
 function pythonHasPolars(bin) {
   try {
@@ -76,14 +79,17 @@ const childEnv = { ...process.env, PYTHON_BIN };
 console.log(`LicenseAtlas incremental data update`);
 console.log(`KB: ${KB_ROOT}`);
 console.log(`Python: ${PYTHON_BIN}`);
-console.log(`HF custom review: ${reviewHfCustom ? "interactive" : "non-interactive (temp/ pending review)"}`);
+console.log(`HF custom review: ${skipConfirm ? "skipped (not recommended)" : "interactive / strict"}`);
+console.log(`New license sync: ${allowNewLicenses ? "allowed (review already completed)" : "blocked until confirmed"}`);
 
 if (!skipCore) {
   const coreArgs = ["--skip-atlas"];
   if (skipFetch) coreArgs.push("--skip-fetch");
-  if (!reviewHfCustom) coreArgs.push("--skip-confirm");
+  if (skipConfirm) coreArgs.push("--skip-confirm");
   run(`bash scripts/update-all.sh ${coreArgs.join(" ")}`, KB_ROOT);
-  run(`node scripts/sync-license-corpus.mjs --kb-path ${shellQuote(KB_ROOT)}`);
+  const syncArgs = [`--kb-path ${shellQuote(KB_ROOT)}`];
+  if (allowNewLicenses) syncArgs.push("--allow-new-licenses");
+  run(`node scripts/sync-license-corpus.mjs ${syncArgs.join(" ")}`);
 } else {
   console.log("\n↷ Skipping core license corpus update (--skip-core)");
 }

@@ -2,6 +2,8 @@
 // This covers the main license full texts and cleaned metadata, distinct from
 // sidecars such as tracker, OSADL, and project showcase data.
 // Run: node scripts/sync-license-corpus.mjs [--kb-path <path>]
+// New license slugs are blocked by default. After the KB-side dedupe / cleanup /
+// confirmation workflow is complete, pass --allow-new-licenses to sync them.
 import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
 import { createHash } from "crypto";
 import { dirname, resolve } from "path";
@@ -9,6 +11,7 @@ import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
+const allowNewLicenses = process.argv.includes("--allow-new-licenses");
 
 function resolveKbPath() {
   const flagIdx = process.argv.indexOf("--kb-path");
@@ -59,6 +62,24 @@ const existingHash = [ATLAS_LICENSES, ATLAS_INDEX, ATLAS_STATS].every(existsSync
 if (sourceHash === existingHash) {
   console.log(`✓ License corpus unchanged (hash ${sourceHash}), skip sync`);
   process.exit(0);
+}
+
+if (!allowNewLicenses && existsSync(ATLAS_INDEX)) {
+  const sourceIndex = JSON.parse(readFileSync(KB_INDEX, "utf8"));
+  const atlasIndex = JSON.parse(readFileSync(ATLAS_INDEX, "utf8"));
+  const atlasSlugs = new Set(atlasIndex.map((license) => license.slug));
+  const newLicenses = sourceIndex.filter((license) => !atlasSlugs.has(license.slug));
+
+  if (newLicenses.length > 0) {
+    console.error(`✗ Refusing to sync ${newLicenses.length} new license slug(s) before review.`);
+    console.error("  Run the KB dedupe / cleanup / confirmation workflow first, then rerun with --allow-new-licenses.");
+    console.error("  New candidates:");
+    for (const license of newLicenses) {
+      const sources = (license.sources || []).map((source) => `${source.name}: ${source.url}`).join(" | ");
+      console.error(`  - ${license.slug} :: ${license.title}${sources ? ` (${sources})` : ""}`);
+    }
+    process.exit(2);
+  }
 }
 
 mkdirSync(dirname(ATLAS_LICENSES), { recursive: true });

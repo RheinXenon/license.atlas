@@ -52,6 +52,8 @@ npm run sync:projects    # 将已构建的 KB project-showcase 数据同步到 A
 license full text 发现与清洗），再同步到 Atlas，随后刷新 tracker、OSADL 和
 project-showcase sidecar。上面的局部命令主要用于定向调试或补跑。详见
 [Data Update Workflow](docs/data-update-workflow.md)。
+新增 license slug 在 `sync:licenses` 阶段默认会被阻断；必须先在 KB 完成去重、
+清洗和确认流程，确认完成后才可显式使用 `--allow-new-licenses` 同步。
 
 `npm run build` 会重新生成搜索索引，同步 tracker、OSADL 与 project-showcase sidecar 数据，然后执行 Next.js 静态构建。当前 build 脚本设置了 `NEXT_PRIVATE_BUILD_WORKER=0`，用于规避 Next.js 16 webpack build worker 在本地和 CI 中观察到的卡住问题。
 

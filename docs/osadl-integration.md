@@ -22,6 +22,12 @@ Atlas sync command:
 npm run sync:osadl
 ```
 
+Full incremental update command:
+
+```bash
+npm run update:osadl
+```
+
 The build pipeline also runs the sync:
 
 ```bash
@@ -35,6 +41,24 @@ Generated Atlas files:
 - `src/data/osadl-meta.json` — source metadata, attribution, timestamps, and match counts.
 
 `scripts/sync-osadl.mjs` is hash-gated. If KB data is unavailable in CI but committed Atlas sidecar files exist, the script keeps using committed data.
+
+`scripts/update-osadl.mjs` is the Atlas-side full-chain updater. It calls the sibling KB repository to:
+
+1. Run `crawlers/osadl_checklists_crawl.js` (incremental by default via OSADL `alltimestamps.json`; unchanged files are skipped).
+2. Run `scripts/build-osadl-checklists.mjs --atlas-index <atlas licenses-index.json>`.
+3. Run KB `npm run test:osadl`.
+4. Run Atlas `scripts/sync-osadl.mjs --kb-path <KB>`.
+
+Useful update flags:
+
+```bash
+npm run update:osadl                         # normal timestamp-gated refresh
+npm run update:osadl -- --force              # re-download OSADL raw files
+npm run update:osadl -- --only Apache-2.0    # refresh one checklist after metadata/lists
+npm run update:osadl -- --metadata-only      # refresh metadata/lists/notes only
+npm run update:osadl -- --skip-crawl         # rebuild/sync existing KB data
+npm run update:osadl -- --kb-path /abs/KB    # use a non-default KB checkout
+```
 
 The sync script also computes an Atlas-display coverage count. This differs from the raw KB `match-report.json` count because LicenseAtlas can resolve a few extra OSADL records through page-level aliases:
 
@@ -73,8 +97,10 @@ Required checks:
 
 ```bash
 node --check scripts/sync-osadl.mjs
+node --check scripts/update-osadl.mjs
 npm run sync:osadl
 npm run sync:osadl
+npm run update:osadl -- --skip-crawl --skip-test
 npx tsc --noEmit
 npm run lint
 npm run build

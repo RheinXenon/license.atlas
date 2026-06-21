@@ -315,7 +315,7 @@ function HomeContent() {
           <h1 className="text-3xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50 sm:text-4xl">
             {lang === "zh" ? "许可图鉴" : <><span className="text-[#7c3aed]">License</span>Atlas</>}
           </h1>
-          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
+          <p className="mt-3 min-h-[3.75rem] max-w-3xl text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
             {lang === "zh"
               ? `收录 ${stats.total} 个软件、数据、AI 模型与 Agent 许可证，支持全文检索、标签筛选、许可文本对比与 OSI 审查追踪。`
               : `Browse ${stats.total} software, data, AI model, and agent licenses with full-text search, tag filtering, license text comparison, and OSI review tracking.`}

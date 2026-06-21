@@ -220,7 +220,7 @@ export function TrackerClient() {
         <h1 className="bg-gradient-to-r from-[#7c3aed] to-zinc-950 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl dark:to-zinc-50">
           {t("tracker.title")}
         </h1>
-        <p className="mt-2 max-w-3xl text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
+        <p className="mt-2 min-h-[3.75rem] max-w-3xl text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
           {t("tracker.subtitlePre")}
           <a
             href="https://opensource.org/about/osi"

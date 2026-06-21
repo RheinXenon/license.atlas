@@ -7,6 +7,7 @@
     "build": "node scripts/build-search-index.mjs && node scripts/sync-tracker.mjs && node scripts/sync-osadl.mjs && next build --webpack",
     "build:search": "node scripts/build-search-index.mjs",
     "sync:osadl": "node scripts/sync-osadl.mjs",
+    "update:osadl": "node scripts/update-osadl.mjs",
     "sync:tracker": "node scripts/sync-tracker.mjs",
     "update:tracker": "node scripts/update-tracker.mjs",
     "start": "next start",

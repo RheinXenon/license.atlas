@@ -41,6 +41,40 @@ export interface Stats {
   updated: string;
 }
 
+export interface ProjectShowcaseItem {
+  name: string;
+  url: string | null;
+  icon_url: string | null;
+  rank: number;
+  metric: {
+    stars?: number;
+    downloads?: number;
+    likes?: number;
+    votes?: number;
+    views?: number;
+    kernels?: number;
+  };
+}
+
+export interface ProjectShowcaseRecord {
+  atlas_slug: string;
+  title: string;
+  spdx_id: string;
+  type: License["type"];
+  source_counts: Record<string, number>;
+  sources: Record<string, ProjectShowcaseItem[]>;
+}
+
+export interface ProjectShowcaseIndex {
+  _meta: {
+    generated_at: string;
+    source_hash: string;
+    thresholds: Record<string, number>;
+    record_count: number;
+  };
+  by_slug: Record<string, ProjectShowcaseRecord>;
+}
+
 // ── OSI License Review Tracker types (from KB v2.json) ──
 export type TrackerStatus =
   | "approved" | "rejected" | "pending"

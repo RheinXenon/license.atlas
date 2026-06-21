@@ -1,0 +1,3850 @@
+{
+  "_meta": {
+    "generated_at": "2026-06-21T14:56:02.176Z",
+    "source_hash": "e6ebd28531601b33e7c6dbf4d8eef2e9b72d2d98",
+    "thresholds": {
+      "github_repos": 10000,
+      "kaggle_datasets": 1000,
+      "hf_popularity_floor": 1000,
+      "github_top_stars": 10000,
+      "hf_top_likes": 1000,
+      "kaggle_top_votes": 1000
+    },
+    "record_count": 31
+  },
+  "by_slug": {
+    "apache-2.0": {
+      "atlas_slug": "apache-2.0",
+      "title": "Apache License, Version 2.0",
+      "spdx_id": "Apache-2.0",
+      "type": "software",
+      "source_counts": {
+        "github": 5,
+        "huggingface": 5,
+        "kaggle": 5
+      },
+      "sources": {
+        "github": [
+          {
+            "name": "tensorflow/tensorflow",
+            "url": "https://github.com/tensorflow/tensorflow",
+            "icon_url": "https://avatars.githubusercontent.com/u/15658638?v=4",
+            "rank": 1,
+            "metric": {
+              "stars": 195787
+            }
+          },
+          {
+            "name": "huggingface/transformers",
+            "url": "https://github.com/huggingface/transformers",
+            "icon_url": "https://avatars.githubusercontent.com/u/25720743?v=4",
+            "rank": 2,
+            "metric": {
+              "stars": 161770
+            }
+          },
+          {
+            "name": "Snailclimb/JavaGuide",
+            "url": "https://github.com/Snailclimb/JavaGuide",
+            "icon_url": "https://avatars.githubusercontent.com/u/29880145?v=4",
+            "rank": 3,
+            "metric": {
+              "stars": 156503
+            }
+          },
+          {
+            "name": "Genymobile/scrcpy",
+            "url": "https://github.com/Genymobile/scrcpy",
+            "icon_url": "https://avatars.githubusercontent.com/u/3427627?v=4",
+            "rank": 4,
+            "metric": {
+              "stars": 143955
+            }
+          },
+          {
+            "name": "kubernetes/kubernetes",
+            "url": "https://github.com/kubernetes/kubernetes",
+            "icon_url": "https://avatars.githubusercontent.com/u/13629408?v=4",
+            "rank": 5,
+            "metric": {
+              "stars": 123154
+            }
+          }
+        ],
+        "huggingface": [
+          {
+            "name": "hexgrad/Kokoro-82M",
+            "url": "https://huggingface.co/hexgrad/Kokoro-82M",
+            "icon_url": null,
+            "rank": 1,
+            "metric": {
+              "downloads": 11016465,
+              "likes": 6193
+            }
+          },
+          {
+            "name": "openai/whisper-large-v3",
+            "url": "https://huggingface.co/openai/whisper-large-v3",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/68783facef79a05727260de3/UPX5RQxiPGA-ZbBmArIKq.png",
+            "rank": 2,
+            "metric": {
+              "downloads": 5076487,
+              "likes": 5723
+            }
+          },
+          {
+            "name": "black-forest-labs/FLUX.1-schnell",
+            "url": "https://huggingface.co/black-forest-labs/FLUX.1-schnell",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/633f7a8f4be90e06da248e0f/m5YoF33abJ09vcwFxt1Mj.png",
+            "rank": 3,
+            "metric": {
+              "downloads": 616450,
+              "likes": 4912
+            }
+          },
+          {
+            "name": "sentence-transformers/all-MiniLM-L6-v2",
+            "url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/1609621322398-5eff4688ff69163f6f59e66c.png",
+            "rank": 4,
+            "metric": {
+              "downloads": 260118595,
+              "likes": 4820
+            }
+          },
+          {
+            "name": "openai/gpt-oss-120b",
+            "url": "https://huggingface.co/openai/gpt-oss-120b",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/68783facef79a05727260de3/UPX5RQxiPGA-ZbBmArIKq.png",
+            "rank": 5,
+            "metric": {
+              "downloads": 5049460,
+              "likes": 4792
+            }
+          }
+        ],
+        "kaggle": [
+          {
+            "name": "Meta Kaggle",
+            "url": "https://www.kaggle.com/datasets/kaggle/meta-kaggle",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/9/6262762/77e7131d60170806cba8adabd7935b69/dataset-thumbnail.png?t=2023-08-07-18-11-09",
+            "rank": 1,
+            "metric": {
+              "votes": 1167,
+              "downloads": 80020,
+              "views": 355367,
+              "kernels": 1277
+            }
+          },
+          {
+            "name": "Student Habits vs Academic Performance",
+            "url": "https://www.kaggle.com/datasets/jayaantanaath/student-habits-vs-academic-performance",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/7122663/11376681/cc6e49010d6de607bd9b0dab106cc81f/dataset-thumbnail.png?t=2025-04-12-12-26-02",
+            "rank": 2,
+            "metric": {
+              "votes": 866,
+              "downloads": 65831,
+              "views": 242472,
+              "kernels": 142
+            }
+          },
+          {
+            "name": "Mobile Device Usage and User Behavior Dataset",
+            "url": "https://www.kaggle.com/datasets/valakhorasani/mobile-device-usage-and-user-behavior-dataset",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/5784553/9504237/8dad205de91ba816c0db61edef10aa15/dataset-thumbnail.jpeg?t=2024-09-28-20-44-40",
+            "rank": 3,
+            "metric": {
+              "votes": 709,
+              "downloads": 49113,
+              "views": 223537,
+              "kernels": 142
+            }
+          },
+          {
+            "name": "Crop Recommendation Dataset",
+            "url": "https://www.kaggle.com/datasets/atharvaingle/crop-recommendation-dataset",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/1046158/1760012/9c08835b1e7e1084728b5202089fb65b/dataset-thumbnail.jpg?t=2020-12-19-05-11-01",
+            "rank": 4,
+            "metric": {
+              "votes": 625,
+              "downloads": 95994,
+              "views": 504944,
+              "kernels": 253
+            }
+          },
+          {
+            "name": "Gym Members Exercise Dataset",
+            "url": "https://www.kaggle.com/datasets/valakhorasani/gym-members-exercise-dataset",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/5825454/9559728/a56fbff8d44295e3ede776f5e7c0ce5f/dataset-thumbnail.jpg?t=2024-10-06-11-34-12",
+            "rank": 5,
+            "metric": {
+              "votes": 533,
+              "downloads": 50942,
+              "views": 225146,
+              "kernels": 112
+            }
+          }
+        ]
+      }
+    },
+    "artistic-2.0": {
+      "atlas_slug": "artistic-2.0",
+      "title": "Artistic License 2.0",
+      "spdx_id": "Artistic-2.0",
+      "type": "software",
+      "source_counts": {
+        "github": 5,
+        "huggingface": 5
+      },
+      "sources": {
+        "github": [
+          {
+            "name": "DuGuQiuBai/Java",
+            "url": "https://github.com/DuGuQiuBai/Java",
+            "icon_url": "https://avatars.githubusercontent.com/u/15995080?v=4",
+            "rank": 1,
+            "metric": {
+              "stars": 14369
+            }
+          },
+          {
+            "name": "paralax/awesome-honeypots",
+            "url": "https://github.com/paralax/awesome-honeypots",
+            "icon_url": "https://avatars.githubusercontent.com/u/5619153?v=4",
+            "rank": 2,
+            "metric": {
+              "stars": 10402
+            }
+          },
+          {
+            "name": "emojicode/emojicode",
+            "url": "https://github.com/emojicode/emojicode",
+            "icon_url": "https://avatars.githubusercontent.com/u/16360592?v=4",
+            "rank": 3,
+            "metric": {
+              "stars": 3407
+            }
+          },
+          {
+            "name": "zhaipro/easy12306",
+            "url": "https://github.com/zhaipro/easy12306",
+            "icon_url": "https://avatars.githubusercontent.com/u/8620842?v=4",
+            "rank": 4,
+            "metric": {
+              "stars": 2911
+            }
+          },
+          {
+            "name": "mojolicious/mojo",
+            "url": "https://github.com/mojolicious/mojo",
+            "icon_url": "https://avatars.githubusercontent.com/u/2388868?v=4",
+            "rank": 5,
+            "metric": {
+              "stars": 2736
+            }
+          }
+        ],
+        "huggingface": [
+          {
+            "name": "Severian/ANIMA-Phi-Neptune-Mistral-7B",
+            "url": "https://huggingface.co/Severian/ANIMA-Phi-Neptune-Mistral-7B",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/64740cf7485a7c8e1bd51ac9/qxcEOKY4M36ggryaoc4L-.jpeg",
+            "rank": 1,
+            "metric": {
+              "downloads": 971,
+              "likes": 30
+            }
+          },
+          {
+            "name": "HentaiDiffusionGeneral/7thHoloAbyss",
+            "url": "https://huggingface.co/HentaiDiffusionGeneral/7thHoloAbyss",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674614020864-63d08e85f2341424c80b4e24.png",
+            "rank": 2,
+            "metric": {
+              "downloads": 0,
+              "likes": 29
+            }
+          },
+          {
+            "name": "Baraje/SexGod_NSFW_Female_Nudes_QWEN_Image_Edit_2511",
+            "url": "https://huggingface.co/Baraje/SexGod_NSFW_Female_Nudes_QWEN_Image_Edit_2511",
+            "icon_url": "https://huggingface.co/avatars/3874c90f7d6bcd235e16efa2f21b3fc5.svg",
+            "rank": 3,
+            "metric": {
+              "downloads": 30572,
+              "likes": 11
+            }
+          },
+          {
+            "name": "bartowski/BlackSheep-RP-12B-GGUF",
+            "url": "https://huggingface.co/bartowski/BlackSheep-RP-12B-GGUF",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/6435718aaaef013d1aec3b8b/XKf-8MA47tjVAM6SCX0MP.jpeg",
+            "rank": 4,
+            "metric": {
+              "downloads": 2234,
+              "likes": 11
+            }
+          },
+          {
+            "name": "PirateXX/AI-Content-Detector",
+            "url": "https://huggingface.co/PirateXX/AI-Content-Detector",
+            "icon_url": "https://huggingface.co/avatars/52c38a5730f34ec01e1ef2e93b9870af.svg",
+            "rank": 5,
+            "metric": {
+              "downloads": 81364,
+              "likes": 8
+            }
+          }
+        ]
+      }
+    },
+    "bsl-1.0": {
+      "atlas_slug": "bsl-1.0",
+      "title": "Boost Software License 1.0",
+      "spdx_id": "BSL-1.0",
+      "type": "software",
+      "source_counts": {
+        "github": 5,
+        "huggingface": 5
+      },
+      "sources": {
+        "github": [
+          {
+            "name": "catchorg/Catch2",
+            "url": "https://github.com/catchorg/Catch2",
+            "icon_url": "https://avatars.githubusercontent.com/u/33321405?v=4",
+            "rank": 1,
+            "metric": {
+              "stars": 20454
+            }
+          },
+          {
+            "name": "davisking/dlib",
+            "url": "https://github.com/davisking/dlib",
+            "icon_url": "https://avatars.githubusercontent.com/u/6259399?v=4",
+            "rank": 2,
+            "metric": {
+              "stars": 14404
+            }
+          },
+          {
+            "name": "tdlib/td",
+            "url": "https://github.com/tdlib/td",
+            "icon_url": "https://avatars.githubusercontent.com/u/34513022?v=4",
+            "rank": 3,
+            "metric": {
+              "stars": 8865
+            }
+          },
+          {
+            "name": "boostorg/boost",
+            "url": "https://github.com/boostorg/boost",
+            "icon_url": "https://avatars.githubusercontent.com/u/3170529?v=4",
+            "rank": 4,
+            "metric": {
+              "stars": 8490
+            }
+          },
+          {
+            "name": "red/red",
+            "url": "https://github.com/red/red",
+            "icon_url": "https://avatars.githubusercontent.com/u/4625645?v=4",
+            "rank": 5,
+            "metric": {
+              "stars": 6008
+            }
+          }
+        ],
+        "huggingface": [
+          {
+            "name": "cloudqi/crypto_trading_insights",
+            "url": "https://huggingface.co/cloudqi/crypto_trading_insights",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/6411d59aacf679839551cc3b/sBTtp3_FuCeUuHvs0emy5.png",
+            "rank": 1,
+            "metric": {
+              "downloads": 0,
+              "likes": 7
+            }
+          },
+          {
+            "name": "KenanKoiushov/Ken1.0-67B",
+            "url": "https://huggingface.co/KenanKoiushov/Ken1.0-67B",
+            "icon_url": "https://huggingface.co/avatars/fafde985a59fd7e72761214fb7ec77c4.svg",
+            "rank": 2,
+            "metric": {
+              "downloads": 2,
+              "likes": 6
+            }
+          },
+          {
+            "name": "kvn420/Tenro_V4.1",
+            "url": "https://huggingface.co/kvn420/Tenro_V4.1",
+            "icon_url": "https://huggingface.co/avatars/7eeb3c2d8f4dce99f5b14508cf683fda.svg",
+            "rank": 3,
+            "metric": {
+              "downloads": 0,
+              "likes": 6
+            }
+          },
+          {
+            "name": "BenjaminOcampo/peace_bert",
+            "url": "https://huggingface.co/BenjaminOcampo/peace_bert",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/633eefd14be90e06da1eff11/tnKwv9LegvEe6ukFhfho8.jpeg",
+            "rank": 4,
+            "metric": {
+              "downloads": 96,
+              "likes": 2
+            }
+          },
+          {
+            "name": "FlikTheInventor/ABugsLife2000VHS",
+            "url": "https://huggingface.co/FlikTheInventor/ABugsLife2000VHS",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/fduSMkjURMOUB9tzkQNBT.jpeg",
+            "rank": 5,
+            "metric": {
+              "downloads": 0,
+              "likes": 2
+            }
+          }
+        ]
+      }
+    },
+    "cdla-permissive-2.0": {
+      "atlas_slug": "cdla-permissive-2.0",
+      "title": "Community Data License Agreement Permissive 2.0",
+      "spdx_id": "CDLA-Permissive-2.0",
+      "type": "data",
+      "source_counts": {
+        "huggingface": 5
+      },
+      "sources": {
+        "huggingface": [
+          {
+            "name": "docling-project/SmolDocling-256M-preview",
+            "url": "https://huggingface.co/docling-project/SmolDocling-256M-preview",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/63c64dd877caf00391004e20/aWC70TyF2UhxyaUh1alpu.png",
+            "rank": 1,
+            "metric": {
+              "downloads": 33208,
+              "likes": 1613
+            }
+          },
+          {
+            "name": "docling-project/docling-models",
+            "url": "https://huggingface.co/docling-project/docling-models",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/63c64dd877caf00391004e20/aWC70TyF2UhxyaUh1alpu.png",
+            "rank": 2,
+            "metric": {
+              "downloads": 2736187,
+              "likes": 209
+            }
+          },
+          {
+            "name": "LyliaEngine/Pony_Diffusion_V6_XL",
+            "url": "https://huggingface.co/LyliaEngine/Pony_Diffusion_V6_XL",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/ztfXe_SwckILKvTfLQ98M.png",
+            "rank": 3,
+            "metric": {
+              "downloads": 136588,
+              "likes": 101
+            }
+          },
+          {
+            "name": "ibm-nasa-geospatial/Prithvi-WxC-1.0-2300M",
+            "url": "https://huggingface.co/ibm-nasa-geospatial/Prithvi-WxC-1.0-2300M",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/63f73fb3d36951307fcd5c1f/XYXRWd1QvgbGKFtZKGxGp.png",
+            "rank": 4,
+            "metric": {
+              "downloads": 193,
+              "likes": 82
+            }
+          },
+          {
+            "name": "docling-project/SmolDocling-256M-preview-mlx-bf16",
+            "url": "https://huggingface.co/docling-project/SmolDocling-256M-preview-mlx-bf16",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/63c64dd877caf00391004e20/aWC70TyF2UhxyaUh1alpu.png",
+            "rank": 5,
+            "metric": {
+              "downloads": 2125,
+              "likes": 66
+            }
+          }
+        ]
+      }
+    },
+    "cdla-sharing-1.0": {
+      "atlas_slug": "cdla-sharing-1.0",
+      "title": "Community Data License Agreement Sharing 1.0",
+      "spdx_id": "CDLA-Sharing-1.0",
+      "type": "data",
+      "source_counts": {
+        "huggingface": 5,
+        "kaggle": 5
+      },
+      "sources": {
+        "huggingface": [
+          {
+            "name": "cuneytkaya/fintech-chatbot-t5",
+            "url": "https://huggingface.co/cuneytkaya/fintech-chatbot-t5",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/669a700b990749decaab29af/iohS9pcro6rEtuGf6Vyuz.png",
+            "rank": 1,
+            "metric": {
+              "downloads": 8,
+              "likes": 6
+            }
+          },
+          {
+            "name": "billeth/frggg",
+            "url": "https://huggingface.co/billeth/frggg",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/aeHdCfYUoPOTIqlOJPqJx.jpeg",
+            "rank": 2,
+            "metric": {
+              "downloads": 0,
+              "likes": 1
+            }
+          },
+          {
+            "name": "emmahockett/customer-service-label-model-and-tokenizer",
+            "url": "https://huggingface.co/emmahockett/customer-service-label-model-and-tokenizer",
+            "icon_url": "https://huggingface.co/avatars/3d98748e0cf16c8696e7dd1ac7d7d993.svg",
+            "rank": 3,
+            "metric": {
+              "downloads": 4,
+              "likes": 1
+            }
+          },
+          {
+            "name": "hussam2025/Ta7loop",
+            "url": "https://huggingface.co/hussam2025/Ta7loop",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/SMbn9AOjA5B4DY_oLMaHP.png",
+            "rank": 4,
+            "metric": {
+              "downloads": 0,
+              "likes": 1
+            }
+          },
+          {
+            "name": "tomp56/jhbhh",
+            "url": "https://huggingface.co/tomp56/jhbhh",
+            "icon_url": "https://huggingface.co/avatars/66e4b70023ed7a397e7c762d7af89d9c.svg",
+            "rank": 5,
+            "metric": {
+              "downloads": 0,
+              "likes": 1
+            }
+          }
+        ],
+        "kaggle": [
+          {
+            "name": "Customer Shopping (Latest Trends) Dataset",
+            "url": "https://www.kaggle.com/datasets/bhadramohit/customer-shopping-latest-trends-dataset",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/6149964/9992547/5c1285cf43c5f8c7c80f163181c88d0d/dataset-thumbnail.jpg?t=2024-11-23-15-28-44",
+            "rank": 1,
+            "metric": {
+              "votes": 496,
+              "downloads": 33039,
+              "views": 132146,
+              "kernels": 211
+            }
+          },
+          {
+            "name": "Salary_Data",
+            "url": "https://www.kaggle.com/datasets/mohithsairamreddy/salary-data",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/3282301/5716504/a74da0289c1e1d39e3248d85e0b0b13c/dataset-thumbnail.png?t=2023-05-22-17-36-08",
+            "rank": 2,
+            "metric": {
+              "votes": 396,
+              "downloads": 45103,
+              "views": 167102,
+              "kernels": 79
+            }
+          },
+          {
+            "name": "House Price",
+            "url": "https://www.kaggle.com/datasets/juhibhojani/house-price",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/3583769/6237943/2c0af43f76c2e4fed37aa1e465fdf898/dataset-thumbnail.jpg?t=2023-08-03-03-47-27",
+            "rank": 3,
+            "metric": {
+              "votes": 281,
+              "downloads": 31342,
+              "views": 123069,
+              "kernels": 62
+            }
+          },
+          {
+            "name": "IBM Transactions for Anti Money Laundering (AML)",
+            "url": "https://www.kaggle.com/datasets/ealtman2019/ibm-transactions-for-anti-money-laundering-aml",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/new-version-temp-images/default-backgrounds-47.png-2715936/dataset-thumbnail.png",
+            "rank": 4,
+            "metric": {
+              "votes": 244,
+              "downloads": 30773,
+              "views": 153258,
+              "kernels": 54
+            }
+          },
+          {
+            "name": "Students Performance | Clean Dataset",
+            "url": "https://www.kaggle.com/datasets/muhammadroshaanriaz/students-performance-dataset-cleaned",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/5974518/9757212/d9e03d30fbdae497ee3d80ceb371f86c/dataset-thumbnail.png?t=2024-10-29-19-41-30",
+            "rank": 5,
+            "metric": {
+              "votes": 244,
+              "downloads": 15250,
+              "views": 67491,
+              "kernels": 14
+            }
+          }
+        ]
+      }
+    },
+    "cc-by-4.0": {
+      "atlas_slug": "cc-by-4.0",
+      "title": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "spdx_id": "CC-BY-4.0",
+      "type": "data",
+      "source_counts": {
+        "github": 5,
+        "huggingface": 5,
+        "kaggle": 5
+      },
+      "sources": {
+        "github": [
+          {
+            "name": "EbookFoundation/free-programming-books",
+            "url": "https://github.com/EbookFoundation/free-programming-books",
+            "icon_url": "https://avatars.githubusercontent.com/u/14127308?v=4",
+            "rank": 1,
+            "metric": {
+              "stars": 390579
+            }
+          },
+          {
+            "name": "Chalarangelo/30-seconds-of-code",
+            "url": "https://github.com/Chalarangelo/30-seconds-of-code",
+            "icon_url": "https://avatars.githubusercontent.com/u/8281875?v=4",
+            "rank": 2,
+            "metric": {
+              "stars": 128161
+            }
+          },
+          {
+            "name": "mtdvio/every-programmer-should-know",
+            "url": "https://github.com/mtdvio/every-programmer-should-know",
+            "icon_url": "https://avatars.githubusercontent.com/u/33053074?v=4",
+            "rank": 3,
+            "metric": {
+              "stars": 99876
+            }
+          },
+          {
+            "name": "microsoft/autogen",
+            "url": "https://github.com/microsoft/autogen",
+            "icon_url": "https://avatars.githubusercontent.com/u/6154722?v=4",
+            "rank": 4,
+            "metric": {
+              "stars": 59103
+            }
+          },
+          {
+            "name": "open-guides/og-aws",
+            "url": "https://github.com/open-guides/og-aws",
+            "icon_url": "https://avatars.githubusercontent.com/u/17152571?v=4",
+            "rank": 5,
+            "metric": {
+              "stars": 36423
+            }
+          }
+        ],
+        "huggingface": [
+          {
+            "name": "nvidia/parakeet-tdt-0.6b-v2",
+            "url": "https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/65df9200dc3292a8983e5017/Vs5FPVCH-VZBipV3qKTuy.png",
+            "rank": 1,
+            "metric": {
+              "downloads": 227443,
+              "likes": 1475
+            }
+          },
+          {
+            "name": "deepset/roberta-base-squad2",
+            "url": "https://huggingface.co/deepset/roberta-base-squad2",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/5ff48e9632a3bcb7c9874eb5/Q6ZHK_DzxJhzX_sm7PLZT.png",
+            "rank": 2,
+            "metric": {
+              "downloads": 880527,
+              "likes": 942
+            }
+          },
+          {
+            "name": "nvidia/parakeet-tdt-0.6b-v3",
+            "url": "https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/65df9200dc3292a8983e5017/Vs5FPVCH-VZBipV3qKTuy.png",
+            "rank": 3,
+            "metric": {
+              "downloads": 8127,
+              "likes": 861
+            }
+          },
+          {
+            "name": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+            "url": "https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/1647528626720-61ac8f8a00d01045fca0ad2f.png",
+            "rank": 4,
+            "metric": {
+              "downloads": 3347574,
+              "likes": 801
+            }
+          },
+          {
+            "name": "kyutai/pocket-tts",
+            "url": "https://huggingface.co/kyutai/pocket-tts",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/6355a3c1805be5a8f30fea49/8xGdIOlfkopZfhbMitw_k.jpeg",
+            "rank": 5,
+            "metric": {
+              "downloads": 5758,
+              "likes": 633
+            }
+          }
+        ],
+        "kaggle": [
+          {
+            "name": "Hotel booking demand",
+            "url": "https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/511638/944030/a5363784c50661435af251da741c9ba6/dataset-thumbnail.jpg?t=2020-02-13-01-47-43",
+            "rank": 1,
+            "metric": {
+              "votes": 2703,
+              "downloads": 215179,
+              "views": 1419823,
+              "kernels": 640
+            }
+          },
+          {
+            "name": "Heart Failure Prediction",
+            "url": "https://www.kaggle.com/datasets/andrewmvd/heart-failure-clinical-data",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/727551/1263738/b480e9c8a7b4efd0026dff1a2aeb98df/dataset-thumbnail.png?t=2020-08-18-10-19-56",
+            "rank": 2,
+            "metric": {
+              "votes": 2492,
+              "downloads": 182714,
+              "views": 1155556,
+              "kernels": 1146
+            }
+          },
+          {
+            "name": "Brain Tumor MRI Dataset",
+            "url": "https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/1608934/2645886/44583c7826d1bdea68598f0eef8e6cfc/dataset-thumbnail.jpg?t=2021-09-25-22-03-08",
+            "rank": 3,
+            "metric": {
+              "votes": 1303,
+              "downloads": 191123,
+              "views": 820057,
+              "kernels": 1330
+            }
+          },
+          {
+            "name": "A Large Scale Fish Dataset",
+            "url": "https://www.kaggle.com/datasets/crowww/a-large-scale-fish-dataset",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/1165452/1952708/7800a42ebd540a79041f184bd13d7698/dataset-thumbnail.png?t=2021-02-17-16-33-08",
+            "rank": 4,
+            "metric": {
+              "votes": 1103,
+              "downloads": 35201,
+              "views": 310878,
+              "kernels": 502
+            }
+          },
+          {
+            "name": "News Headlines Dataset For Sarcasm Detection",
+            "url": "https://www.kaggle.com/datasets/rmisra/news-headlines-dataset-for-sarcasm-detection",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/30764/39238/f6d4a6b815ff246e22b348a81f39a324/dataset-thumbnail.jpg?t=2018-06-09-22-48-02",
+            "rank": 5,
+            "metric": {
+              "votes": 1052,
+              "downloads": 62342,
+              "views": 373170,
+              "kernels": 355
+            }
+          }
+        ]
+      }
+    },
+    "cc-by-nd-4.0": {
+      "atlas_slug": "cc-by-nd-4.0",
+      "title": "Creative Commons Attribution No Derivatives 4.0 International",
+      "spdx_id": "CC-BY-ND-4.0",
+      "type": "data",
+      "source_counts": {
+        "huggingface": 5,
+        "kaggle": 5
+      },
+      "sources": {
+        "huggingface": [
+          {
+            "name": "Mawdistical/Predatorial-Extasy-70B",
+            "url": "https://huggingface.co/Mawdistical/Predatorial-Extasy-70B",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/67c10cfba43d7939d60160ff/HGOCYZ1LwrzNitiOD3xdh.png",
+            "rank": 1,
+            "metric": {
+              "downloads": 8,
+              "likes": 7
+            }
+          },
+          {
+            "name": "PulpBio/LUNA",
+            "url": "https://huggingface.co/PulpBio/LUNA",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/63749b5533bb19fd1cc0f571/tq-L9xcGBfeM5blwss84S.png",
+            "rank": 2,
+            "metric": {
+              "downloads": 2159,
+              "likes": 6
+            }
+          },
+          {
+            "name": "PulpBio/TinyMyo",
+            "url": "https://huggingface.co/PulpBio/TinyMyo",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/63749b5533bb19fd1cc0f571/tq-L9xcGBfeM5blwss84S.png",
+            "rank": 3,
+            "metric": {
+              "downloads": 115,
+              "likes": 6
+            }
+          },
+          {
+            "name": "Mawdistical/Squelching-Fantasies-8B",
+            "url": "https://huggingface.co/Mawdistical/Squelching-Fantasies-8B",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/67c10cfba43d7939d60160ff/HGOCYZ1LwrzNitiOD3xdh.png",
+            "rank": 4,
+            "metric": {
+              "downloads": 18,
+              "likes": 5
+            }
+          },
+          {
+            "name": "Mawdistical/Squelching-Fantasies-8B-GGUF",
+            "url": "https://huggingface.co/Mawdistical/Squelching-Fantasies-8B-GGUF",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/67c10cfba43d7939d60160ff/HGOCYZ1LwrzNitiOD3xdh.png",
+            "rank": 5,
+            "metric": {
+              "downloads": 292,
+              "likes": 5
+            }
+          }
+        ],
+        "kaggle": [
+          {
+            "name": "Big Data Certification KR",
+            "url": "https://www.kaggle.com/datasets/agileteam/bigdatacertificationkr",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/1633303/2683457/3b004ff9e6ad397092825b8061ddb8f6/dataset-thumbnail.png?t=2021-10-07-05-58-07",
+            "rank": 1,
+            "metric": {
+              "votes": 1483,
+              "downloads": 29245,
+              "views": 588796,
+              "kernels": 1549
+            }
+          },
+          {
+            "name": "Human Segmentation MADS Dataset, 1192 images",
+            "url": "https://www.kaggle.com/datasets/tapakah68/segmentation-full-body-mads-dataset",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/1108926/1863359/1f5acd213e62270de4911d10e4f2d0ca/dataset-thumbnail.png?t=2021-01-20-19-06-11",
+            "rank": 2,
+            "metric": {
+              "votes": 85,
+              "downloads": 4872,
+              "views": 39704,
+              "kernels": 38
+            }
+          },
+          {
+            "name": "NLP : Reports & News Classification",
+            "url": "https://www.kaggle.com/datasets/vbmokin/nlp-reports-news-classification",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/998206/1684637/a397b421a169841e50ed639d2e48438d/dataset-thumbnail.png?t=2020-11-26-09-37-25",
+            "rank": 3,
+            "metric": {
+              "votes": 77,
+              "downloads": 4737,
+              "views": 32444,
+              "kernels": 68
+            }
+          },
+          {
+            "name": "Threads, an Instagram app Reviews",
+            "url": "https://www.kaggle.com/datasets/saloni1712/threads-an-instagram-app-reviews",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/3558224/6198047/164f86ff741ead09e90f05d99066dd6c/dataset-thumbnail.png?t=2023-07-26-10-37-51",
+            "rank": 4,
+            "metric": {
+              "votes": 70,
+              "downloads": 3378,
+              "views": 18502,
+              "kernels": 32
+            }
+          },
+          {
+            "name": "MosMedData Chest CT Scans with COVID-19",
+            "url": "https://www.kaggle.com/datasets/mathurinache/mosmeddata-chest-ct-scans-with-covid19",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/863426/1471689/5fa095498e57fa5ab55653ec636a35f7/dataset-thumbnail.jpg?t=2020-09-08-05-57-50",
+            "rank": 5,
+            "metric": {
+              "votes": 69,
+              "downloads": 3502,
+              "views": 14907,
+              "kernels": 4
+            }
+          }
+        ]
+      }
+    },
+    "cc-by-nc-4.0": {
+      "atlas_slug": "cc-by-nc-4.0",
+      "title": "Creative Commons Attribution Non Commercial 4.0 International",
+      "spdx_id": "CC-BY-NC-4.0",
+      "type": "data",
+      "source_counts": {
+        "huggingface": 5,
+        "kaggle": 5
+      },
+      "sources": {
+        "huggingface": [
+          {
+            "name": "CohereLabs/c4ai-command-r-plus",
+            "url": "https://huggingface.co/CohereLabs/c4ai-command-r-plus",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/1678549441248-5e70f6048ce3c604d78fe133.png",
+            "rank": 1,
+            "metric": {
+              "downloads": 3000,
+              "likes": 1782
+            }
+          },
+          {
+            "name": "2Noise/ChatTTS",
+            "url": "https://huggingface.co/2Noise/ChatTTS",
+            "icon_url": "https://huggingface.co/avatars/43f0deed931bd44986ccfcb8980e05b2.svg",
+            "rank": 2,
+            "metric": {
+              "downloads": 2642,
+              "likes": 1654
+            }
+          },
+          {
+            "name": "SWivid/F5-TTS",
+            "url": "https://huggingface.co/SWivid/F5-TTS",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/636916bb85fef3ca96e2ef73/waHubUG9Ck-EBID9PBnWZ.jpeg",
+            "rank": 3,
+            "metric": {
+              "downloads": 560639,
+              "likes": 1172
+            }
+          },
+          {
+            "name": "jinaai/jina-embeddings-v3",
+            "url": "https://huggingface.co/jinaai/jina-embeddings-v3",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/603763514de52ff951d89793/wD54VbAHHyHop3uYlJKl4.png",
+            "rank": 4,
+            "metric": {
+              "downloads": 3589844,
+              "likes": 1143
+            }
+          },
+          {
+            "name": "CohereLabs/c4ai-command-r-v01",
+            "url": "https://huggingface.co/CohereLabs/c4ai-command-r-v01",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/1678549441248-5e70f6048ce3c604d78fe133.png",
+            "rank": 5,
+            "metric": {
+              "downloads": 29694,
+              "likes": 1106
+            }
+          }
+        ],
+        "kaggle": [
+          {
+            "name": "Trip Advisor Hotel Reviews",
+            "url": "https://www.kaggle.com/datasets/andrewmvd/trip-advisor-hotel-reviews",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/897156/1521931/02aa0816c38575dcf6396587c31fe5c2/dataset-thumbnail.png?t=2020-09-29-01-03-44",
+            "rank": 1,
+            "metric": {
+              "votes": 567,
+              "downloads": 46487,
+              "views": 312822,
+              "kernels": 203
+            }
+          },
+          {
+            "name": "Amazon Products Sales Dataset 2023",
+            "url": "https://www.kaggle.com/datasets/lokeshparab/amazon-products-dataset",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/3020336/5194368/e23dfcfcb990293657c427c868a66124/dataset-thumbnail.png?t=2023-03-26-09-06-22",
+            "rank": 2,
+            "metric": {
+              "votes": 523,
+              "downloads": 66547,
+              "views": 337780,
+              "kernels": 49
+            }
+          },
+          {
+            "name": "Pharma sales data",
+            "url": "https://www.kaggle.com/datasets/milanzdravkovic/pharma-sales-data",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/new-version-temp-images/default-backgrounds-26.png-2260526/dataset-thumbnail.png",
+            "rank": 3,
+            "metric": {
+              "votes": 355,
+              "downloads": 53908,
+              "views": 281286,
+              "kernels": 33
+            }
+          },
+          {
+            "name": "Animal Faces",
+            "url": "https://www.kaggle.com/datasets/andrewmvd/animal-faces",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/667852/1176357/11393b72efe545a3abc7af33b57d3156/dataset-thumbnail.jpg?t=2020-05-22-07-05-02",
+            "rank": 4,
+            "metric": {
+              "votes": 353,
+              "downloads": 40719,
+              "views": 147699,
+              "kernels": 217
+            }
+          },
+          {
+            "name": "UrbanSound8K",
+            "url": "https://www.kaggle.com/datasets/chrisfilo/urbansound8k",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/500970/928025/539a42be171f3c67de699ce7a29324d9/dataset-thumbnail.jpeg?t=2020-02-04-18-55-17",
+            "rank": 5,
+            "metric": {
+              "votes": 275,
+              "downloads": 46240,
+              "views": 142643,
+              "kernels": 342
+            }
+          }
+        ]
+      }
+    },
+    "cc-by-nc-nd-4.0": {
+      "atlas_slug": "cc-by-nc-nd-4.0",
+      "title": "Creative Commons Attribution Non Commercial No Derivatives 4.0 International",
+      "spdx_id": "CC-BY-NC-ND-4.0",
+      "type": "data",
+      "source_counts": {
+        "huggingface": 5,
+        "kaggle": 5
+      },
+      "sources": {
+        "huggingface": [
+          {
+            "name": "dataautogpt3/OpenDalleV1.1",
+            "url": "https://huggingface.co/dataautogpt3/OpenDalleV1.1",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/64430e32e255a338677fe9a7/qPn5pCkKOdpmyTHWFve_U.png",
+            "rank": 1,
+            "metric": {
+              "downloads": 1274,
+              "likes": 504
+            }
+          },
+          {
+            "name": "MahmoodLab/UNI",
+            "url": "https://huggingface.co/MahmoodLab/UNI",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/618e1ee7cc2aa4637228d9a8/uQgQ0Pe1w3rRf0fpPRNRE.jpeg",
+            "rank": 2,
+            "metric": {
+              "downloads": 43600,
+              "likes": 305
+            }
+          },
+          {
+            "name": "iiiorg/piiranha-v1-detect-personal-information",
+            "url": "https://huggingface.co/iiiorg/piiranha-v1-detect-personal-information",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/667d048a8cdd946f225b5f47/6-mkdJisMxpvl9limLmXx.png",
+            "rank": 3,
+            "metric": {
+              "downloads": 46821,
+              "likes": 243
+            }
+          },
+          {
+            "name": "MahmoodLab/CONCH",
+            "url": "https://huggingface.co/MahmoodLab/CONCH",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/618e1ee7cc2aa4637228d9a8/uQgQ0Pe1w3rRf0fpPRNRE.jpeg",
+            "rank": 4,
+            "metric": {
+              "downloads": 61660,
+              "likes": 167
+            }
+          },
+          {
+            "name": "RunDiffusion/Juggernaut-XI-v11",
+            "url": "https://huggingface.co/RunDiffusion/Juggernaut-XI-v11",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/63cc944df488db9bb3cc2231/khd95dYFWi7AQxxp0LhC9.png",
+            "rank": 5,
+            "metric": {
+              "downloads": 48904,
+              "likes": 131
+            }
+          }
+        ],
+        "kaggle": [
+          {
+            "name": "casting product image data for quality inspection",
+            "url": "https://www.kaggle.com/datasets/ravirajsinh45/real-life-industrial-dataset-of-casting-product",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/487456/908419/3619958f488692e4432fdecd05681d99/dataset-thumbnail.JPG?t=2020-01-27-16-29-27",
+            "rank": 1,
+            "metric": {
+              "votes": 345,
+              "downloads": 26401,
+              "views": 194929,
+              "kernels": 92
+            }
+          },
+          {
+            "name": "Dermnet",
+            "url": "https://www.kaggle.com/datasets/shubhamgoel27/dermnet",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/735911/1276317/ca6c3f48c7155c0babddc4802c43446c/dataset-thumbnail.jpg?t=2020-08-20-13-00-49",
+            "rank": 2,
+            "metric": {
+              "votes": 295,
+              "downloads": 36614,
+              "views": 217157,
+              "kernels": 139
+            }
+          },
+          {
+            "name": "Toronto emotional speech set (TESS)",
+            "url": "https://www.kaggle.com/datasets/ejlok1/toronto-emotional-speech-set-tess",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/316368/639622/f527677157ff71de32715f6fd066384f/dataset-thumbnail.png?t=2019-08-24-23-16-38",
+            "rank": 3,
+            "metric": {
+              "votes": 292,
+              "downloads": 55520,
+              "views": 185139,
+              "kernels": 610
+            }
+          },
+          {
+            "name": "Liver Tumor Segmentation",
+            "url": "https://www.kaggle.com/datasets/andrewmvd/liver-tumor-segmentation",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/767686/1323609/bda28a51a1f0cc5463b6ae7a865b90c9/dataset-thumbnail.png?t=2020-07-10-12-02-03",
+            "rank": 4,
+            "metric": {
+              "votes": 245,
+              "downloads": 32343,
+              "views": 167160,
+              "kernels": 139
+            }
+          },
+          {
+            "name": "Elliptic Data Set",
+            "url": "https://www.kaggle.com/datasets/ellipticco/elliptic-data-set",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/284040/584717/ec6857c0b88c31e4bcba5461bc462950/dataset-thumbnail.png?t=2019-08-01-12-41-52",
+            "rank": 5,
+            "metric": {
+              "votes": 235,
+              "downloads": 26803,
+              "views": 192968,
+              "kernels": 55
+            }
+          }
+        ]
+      }
+    },
+    "cc-by-nc-sa-4.0": {
+      "atlas_slug": "cc-by-nc-sa-4.0",
+      "title": "Creative Commons Attribution Non Commercial Share Alike 4.0 International",
+      "spdx_id": "CC-BY-NC-SA-4.0",
+      "type": "data",
+      "source_counts": {
+        "huggingface": 5,
+        "kaggle": 5
+      },
+      "sources": {
+        "huggingface": [
+          {
+            "name": "fishaudio/fish-speech-1.5",
+            "url": "https://huggingface.co/fishaudio/fish-speech-1.5",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/63124e13b843665ddc69837a/OwWIs3RNzXAdv4aSrV_xQ.png",
+            "rank": 1,
+            "metric": {
+              "downloads": 6410,
+              "likes": 744
+            }
+          },
+          {
+            "name": "SparkAudio/Spark-TTS-0.5B",
+            "url": "https://huggingface.co/SparkAudio/Spark-TTS-0.5B",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/6564364649f816b798ac3b4e/d9DpWR0eVlrzPu1cvKgcY.jpeg",
+            "rank": 2,
+            "metric": {
+              "downloads": 651,
+              "likes": 733
+            }
+          },
+          {
+            "name": "yisol/IDM-VTON",
+            "url": "https://huggingface.co/yisol/IDM-VTON",
+            "icon_url": "https://huggingface.co/avatars/2a1daf0fee29302c470cffa8e74a0fdb.svg",
+            "rank": 3,
+            "metric": {
+              "downloads": 10490,
+              "likes": 718
+            }
+          },
+          {
+            "name": "fishaudio/s1-mini",
+            "url": "https://huggingface.co/fishaudio/s1-mini",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/63124e13b843665ddc69837a/OwWIs3RNzXAdv4aSrV_xQ.png",
+            "rank": 4,
+            "metric": {
+              "downloads": 3350,
+              "likes": 646
+            }
+          },
+          {
+            "name": "microsoft/layoutlmv3-base",
+            "url": "https://huggingface.co/microsoft/layoutlmv3-base",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/1583646260758-5e64858c87403103f9f1055d.png",
+            "rank": 5,
+            "metric": {
+              "downloads": 1608372,
+              "likes": 491
+            }
+          }
+        ],
+        "kaggle": [
+          {
+            "name": "Brazilian E-Commerce Public Dataset by Olist",
+            "url": "https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/55151/105464/d59245a7014a35a35cc7f7b721de4dae/dataset-thumbnail.png?t=2018-09-21-16-21-21",
+            "rank": 1,
+            "metric": {
+              "votes": 4150,
+              "downloads": 520995,
+              "views": 2174829,
+              "kernels": 750
+            }
+          },
+          {
+            "name": "Breast Cancer Wisconsin (Diagnostic) Data Set",
+            "url": "https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/180/384/3da2510581f9d3b902307ff8d06fe327/dataset-thumbnail.jpg",
+            "rank": 2,
+            "metric": {
+              "votes": 4039,
+              "downloads": 538677,
+              "views": 2574257,
+              "kernels": 3792
+            }
+          },
+          {
+            "name": "Wine Reviews",
+            "url": "https://www.kaggle.com/datasets/zynicide/wine-reviews",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/1442/2584/c583eedd59e12a6c54266c13a50879c4/dataset-thumbnail.jpg",
+            "rank": 3,
+            "metric": {
+              "votes": 3860,
+              "downloads": 353103,
+              "views": 1486185,
+              "kernels": 7832
+            }
+          },
+          {
+            "name": "US Accidents (2016 - 2023)",
+            "url": "https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/199387/440241/412582fbce64eb8e7f25a8a029e4fee0/dataset-thumbnail.jpg?t=2019-05-21-00-08-38",
+            "rank": 4,
+            "metric": {
+              "votes": 2653,
+              "downloads": 183333,
+              "views": 1125247,
+              "kernels": 504
+            }
+          },
+          {
+            "name": "Climate Change: Earth Surface Temperature Data",
+            "url": "https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/29/33/default-backgrounds/dataset-thumbnail.jpg",
+            "rank": 5,
+            "metric": {
+              "votes": 2453,
+              "downloads": 181983,
+              "views": 1244067,
+              "kernels": 695
+            }
+          }
+        ]
+      }
+    },
+    "cc-by-sa-3.0": {
+      "atlas_slug": "cc-by-sa-3.0",
+      "title": "Creative Commons Attribution Share Alike 3.0 Unported",
+      "spdx_id": "CC-BY-SA-3.0",
+      "type": "data",
+      "source_counts": {
+        "huggingface": 5,
+        "kaggle": 5
+      },
+      "sources": {
+        "huggingface": [
+          {
+            "name": "NeuML/txtai-wikipedia",
+            "url": "https://huggingface.co/NeuML/txtai-wikipedia",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/1591115179978-5ed67cfa968f6028e0559fd1.png",
+            "rank": 1,
+            "metric": {
+              "downloads": 193,
+              "likes": 79
+            }
+          },
+          {
+            "name": "PWB/starlake",
+            "url": "https://huggingface.co/PWB/starlake",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/1677293278477-63e99ea746574e63a2ca0e49.png",
+            "rank": 2,
+            "metric": {
+              "downloads": 0,
+              "likes": 67
+            }
+          },
+          {
+            "name": "TheBloke/mpt-30B-instruct-GGML",
+            "url": "https://huggingface.co/TheBloke/mpt-30B-instruct-GGML",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/6426d3f3a7723d62b53c259b/tvPikpAzKTKGN5wrpadOJ.jpeg",
+            "rank": 3,
+            "metric": {
+              "downloads": 6,
+              "likes": 43
+            }
+          },
+          {
+            "name": "Roblox/voice-safety-classifier",
+            "url": "https://huggingface.co/Roblox/voice-safety-classifier",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/6438428526c25444413c54d1/zHEWe9jE0_osXQZ1f4tRl.png",
+            "rank": 4,
+            "metric": {
+              "downloads": 67,
+              "likes": 41
+            }
+          },
+          {
+            "name": "VMware/open-llama-7b-v2-open-instruct",
+            "url": "https://huggingface.co/VMware/open-llama-7b-v2-open-instruct",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/1652724114290-627ac486f967ef475abf799e.png",
+            "rank": 5,
+            "metric": {
+              "downloads": 925,
+              "likes": 35
+            }
+          }
+        ],
+        "kaggle": [
+          {
+            "name": "Supermarket store branches sales analysis",
+            "url": "https://www.kaggle.com/datasets/surajjha101/stores-area-and-sales-data",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/2133850/3548798/18d00397327e8c6de9bc8a5a4dcb140b/dataset-thumbnail.jpg?t=2022-04-29-11-13-05",
+            "rank": 1,
+            "metric": {
+              "votes": 790,
+              "downloads": 54280,
+              "views": 294419,
+              "kernels": 133
+            }
+          },
+          {
+            "name": "Stack Overflow Data",
+            "url": "https://www.kaggle.com/datasets/stackoverflow/stackoverflow",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/22685/29082/b45a8be2a522bfe407dc1bc74c0a03ec/dataset-thumbnail.jpeg?t=2018-04-20-16-18-47",
+            "rank": 2,
+            "metric": {
+              "votes": 746,
+              "downloads": 0,
+              "views": 275800,
+              "kernels": 643
+            }
+          },
+          {
+            "name": "80 Cereals",
+            "url": "https://www.kaggle.com/datasets/crawford/80-cereals",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/2021/3453/c45f7c23c2dfd5ef80b22c85eac26abd/dataset-thumbnail.jpg",
+            "rank": 3,
+            "metric": {
+              "votes": 681,
+              "downloads": 72689,
+              "views": 443317,
+              "kernels": 471
+            }
+          },
+          {
+            "name": "COVID-19 Healthy Diet Dataset",
+            "url": "https://www.kaggle.com/datasets/mariaren/covid19-healthy-diet-dataset",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/618335/1106021/950e6238008884f14afe8d63c857484c/dataset-thumbnail.jpg?t=2020-04-25-02-39-24",
+            "rank": 4,
+            "metric": {
+              "votes": 485,
+              "downloads": 29415,
+              "views": 262916,
+              "kernels": 42
+            }
+          },
+          {
+            "name": "CBIS-DDSM: Breast Cancer Image Dataset",
+            "url": "https://www.kaggle.com/datasets/awsaf49/cbis-ddsm-breast-cancer-image-dataset",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/1115384/1873742/1d7c4e6e5bccfae8146806a742ee3635/dataset-thumbnail.png?t=2021-01-24-07-43-11",
+            "rank": 5,
+            "metric": {
+              "votes": 373,
+              "downloads": 56592,
+              "views": 303042,
+              "kernels": 179
+            }
+          }
+        ]
+      }
+    },
+    "cc-by-sa-4.0": {
+      "atlas_slug": "cc-by-sa-4.0",
+      "title": "Creative Commons Attribution Share Alike 4.0 International",
+      "spdx_id": "CC-BY-SA-4.0",
+      "type": "data",
+      "source_counts": {
+        "github": 5,
+        "huggingface": 5,
+        "kaggle": 5
+      },
+      "sources": {
+        "github": [
+          {
+            "name": "jwasham/coding-interview-university",
+            "url": "https://github.com/jwasham/coding-interview-university",
+            "icon_url": "https://avatars.githubusercontent.com/u/3771963?v=4",
+            "rank": 1,
+            "metric": {
+              "stars": 353352
+            }
+          },
+          {
+            "name": "goldbergyoni/nodebestpractices",
+            "url": "https://github.com/goldbergyoni/nodebestpractices",
+            "icon_url": "https://avatars.githubusercontent.com/u/8571500?v=4",
+            "rank": 2,
+            "metric": {
+              "stars": 105349
+            }
+          },
+          {
+            "name": "doocs/advanced-java",
+            "url": "https://github.com/doocs/advanced-java",
+            "icon_url": "https://avatars.githubusercontent.com/u/43716716?v=4",
+            "rank": 3,
+            "metric": {
+              "stars": 78992
+            }
+          },
+          {
+            "name": "k88hudson/git-flight-rules",
+            "url": "https://github.com/k88hudson/git-flight-rules",
+            "icon_url": "https://avatars.githubusercontent.com/u/1455535?v=4",
+            "rank": 4,
+            "metric": {
+              "stars": 42471
+            }
+          },
+          {
+            "name": "PKUanonym/REKCARC-TSC-UHT",
+            "url": "https://github.com/PKUanonym/REKCARC-TSC-UHT",
+            "icon_url": "https://avatars.githubusercontent.com/u/49298122?v=4",
+            "rank": 5,
+            "metric": {
+              "stars": 37193
+            }
+          }
+        ],
+        "huggingface": [
+          {
+            "name": "replit/replit-code-v1-3b",
+            "url": "https://huggingface.co/replit/replit-code-v1-3b",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/6434ad9cea46c009904c91c2/4GU_47xngr4HPx0Bvr8iF.png",
+            "rank": 1,
+            "metric": {
+              "downloads": 984,
+              "likes": 742
+            }
+          },
+          {
+            "name": "defog/sqlcoder-7b-2",
+            "url": "https://huggingface.co/defog/sqlcoder-7b-2",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/603bbad3fd770a9997b57cb6/-L2fZf-T4VV81Na2q8luu.png",
+            "rank": 2,
+            "metric": {
+              "downloads": 26131,
+              "likes": 430
+            }
+          },
+          {
+            "name": "stabilityai/stablelm-3b-4e1t",
+            "url": "https://huggingface.co/stabilityai/stablelm-3b-4e1t",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/643feeb67bc3fbde1385cc25/7vmYr2XwVcPtkLzac_jxQ.png",
+            "rank": 3,
+            "metric": {
+              "downloads": 84327,
+              "likes": 312
+            }
+          },
+          {
+            "name": "nlpaueb/legal-bert-base-uncased",
+            "url": "https://huggingface.co/nlpaueb/legal-bert-base-uncased",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/1602178762706-5e32b20f9435f568d86092f2.jpeg",
+            "rank": 4,
+            "metric": {
+              "downloads": 67028,
+              "likes": 309
+            }
+          },
+          {
+            "name": "defog/llama-3-sqlcoder-8b",
+            "url": "https://huggingface.co/defog/llama-3-sqlcoder-8b",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/603bbad3fd770a9997b57cb6/-L2fZf-T4VV81Na2q8luu.png",
+            "rank": 5,
+            "metric": {
+              "downloads": 1804,
+              "likes": 275
+            }
+          }
+        ],
+        "kaggle": [
+          {
+            "name": "Google Play Store Apps",
+            "url": "https://www.kaggle.com/datasets/lava18/google-play-store-apps",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/49864/90482/cd5596dc740da68fc6896566758e60b4/dataset-thumbnail.jpg?t=2018-09-07-13-48-45",
+            "rank": 1,
+            "metric": {
+              "votes": 5126,
+              "downloads": 294530,
+              "views": 2047649,
+              "kernels": 1201
+            }
+          },
+          {
+            "name": "Bitcoin Historical Data",
+            "url": "https://www.kaggle.com/datasets/mczielinski/bitcoin-historical-data",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/1346/2425/573bbb9b260839fc8208792d1e0ba7e5/dataset-thumbnail.jpg",
+            "rank": 2,
+            "metric": {
+              "votes": 4050,
+              "downloads": 285009,
+              "views": 1744863,
+              "kernels": 549
+            }
+          },
+          {
+            "name": "Fruits-360 dataset",
+            "url": "https://www.kaggle.com/datasets/moltean/fruits",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/5857/8713/df2a86f4b6ecfff7996be179a4e8ebdf/dataset-thumbnail.jpg?t=2017-12-02-08-49-27",
+            "rank": 3,
+            "metric": {
+              "votes": 3461,
+              "downloads": 227055,
+              "views": 1417769,
+              "kernels": 735
+            }
+          },
+          {
+            "name": "Synthetic Financial Datasets For Fraud Detection",
+            "url": "https://www.kaggle.com/datasets/ealaxi/paysim1",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/1069/1927/4cbcc70173f19dc478109f129adc91a8/dataset-thumbnail.jpg",
+            "rank": 4,
+            "metric": {
+              "votes": 1600,
+              "downloads": 145207,
+              "views": 855148,
+              "kernels": 351
+            }
+          },
+          {
+            "name": "Uber Data Analytics Dashboard",
+            "url": "https://www.kaggle.com/datasets/yashdevladdha/uber-ride-analytics-dashboard",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/8032385/12709117/09f5959223f9b52bd29c4c23d4fdc1fc/dataset-thumbnail.png?t=2025-08-08-10-27-00",
+            "rank": 5,
+            "metric": {
+              "votes": 1298,
+              "downloads": 73615,
+              "views": 310993,
+              "kernels": 152
+            }
+          }
+        ]
+      }
+    },
+    "cc0-1.0": {
+      "atlas_slug": "cc0-1.0",
+      "title": "Creative Commons Zero v1.0 Universal",
+      "spdx_id": "CC0-1.0",
+      "type": "data",
+      "source_counts": {
+        "github": 5,
+        "huggingface": 5,
+        "kaggle": 5
+      },
+      "sources": {
+        "github": [
+          {
+            "name": "sindresorhus/awesome",
+            "url": "https://github.com/sindresorhus/awesome",
+            "icon_url": "https://avatars.githubusercontent.com/u/170270?v=4",
+            "rank": 1,
+            "metric": {
+              "stars": 477560
+            }
+          },
+          {
+            "name": "github/gitignore",
+            "url": "https://github.com/github/gitignore",
+            "icon_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+            "rank": 2,
+            "metric": {
+              "stars": 174521
+            }
+          },
+          {
+            "name": "Hack-with-Github/Awesome-Hacking",
+            "url": "https://github.com/Hack-with-Github/Awesome-Hacking",
+            "icon_url": "https://avatars.githubusercontent.com/u/18143746?v=4",
+            "rank": 3,
+            "metric": {
+              "stars": 114774
+            }
+          },
+          {
+            "name": "jaywcjlove/awesome-mac",
+            "url": "https://github.com/jaywcjlove/awesome-mac",
+            "icon_url": "https://avatars.githubusercontent.com/u/1680273?v=4",
+            "rank": 4,
+            "metric": {
+              "stars": 106065
+            }
+          },
+          {
+            "name": "sindresorhus/awesome-nodejs",
+            "url": "https://github.com/sindresorhus/awesome-nodejs",
+            "icon_url": "https://avatars.githubusercontent.com/u/170270?v=4",
+            "rank": 5,
+            "metric": {
+              "stars": 66018
+            }
+          }
+        ],
+        "huggingface": [
+          {
+            "name": "nick-x-hacker/bad-artist",
+            "url": "https://huggingface.co/nick-x-hacker/bad-artist",
+            "icon_url": "https://huggingface.co/avatars/5422efd4a00a4e44318d75a0118de747.svg",
+            "rank": 1,
+            "metric": {
+              "downloads": 0,
+              "likes": 317
+            }
+          },
+          {
+            "name": "glif/how2draw",
+            "url": "https://huggingface.co/glif/how2draw",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/60fb2fbbbfa81e553cc5c726/wFVXsiu8EttXZYBijzH3j.jpeg",
+            "rank": 2,
+            "metric": {
+              "downloads": 73,
+              "likes": 214
+            }
+          },
+          {
+            "name": "thiros/YuzuLemonTea",
+            "url": "https://huggingface.co/thiros/YuzuLemonTea",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/1672126521467-633bbacc5df91da9ceb470c7.jpeg",
+            "rank": 3,
+            "metric": {
+              "downloads": 0,
+              "likes": 191
+            }
+          },
+          {
+            "name": "malcolmrey/zimage",
+            "url": "https://huggingface.co/malcolmrey/zimage",
+            "icon_url": "https://huggingface.co/avatars/7ce28cc1fc60ae555e927b6821eebd34.svg",
+            "rank": 4,
+            "metric": {
+              "downloads": 0,
+              "likes": 157
+            }
+          },
+          {
+            "name": "ShinojiResearch/Senku-70B-Full",
+            "url": "https://huggingface.co/ShinojiResearch/Senku-70B-Full",
+            "icon_url": "https://www.gravatar.com/avatar/d2cb847b5a2ed377ce806f8d58ce8253?d=retro&size=100",
+            "rank": 5,
+            "metric": {
+              "downloads": 0,
+              "likes": 139
+            }
+          }
+        ],
+        "kaggle": [
+          {
+            "name": "Animal Crossing New Horizons Catalog",
+            "url": "https://www.kaggle.com/datasets/jessicali9530/animal-crossing-new-horizons-nookplaza-dataset",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/661950/1167700/23d555caba1da103da1d1ef2f466d9d6/dataset-thumbnail.png?t=2020-05-18-23-14-12",
+            "rank": 1,
+            "metric": {
+              "votes": 58168,
+              "downloads": 91564,
+              "views": 1054085,
+              "kernels": 125
+            }
+          },
+          {
+            "name": "Netflix Movies and TV Shows",
+            "url": "https://www.kaggle.com/datasets/shivamb/netflix-shows",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/434238/824878/30c0ef57882454a0419a348088aa2306/dataset-thumbnail.jpg?t=2019-12-04-06-00-44",
+            "rank": 2,
+            "metric": {
+              "votes": 9871,
+              "downloads": 754991,
+              "views": 3975649,
+              "kernels": 2607
+            }
+          },
+          {
+            "name": "Trending YouTube Video Statistics",
+            "url": "https://www.kaggle.com/datasets/datasnaek/youtube-new",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/4549/9659/61ea143988e2f7db2ee9377cfdb6ffca/dataset-thumbnail.png?t=2017-12-10-18-00-59",
+            "rank": 3,
+            "metric": {
+              "votes": 5919,
+              "downloads": 304057,
+              "views": 2181059,
+              "kernels": 6175
+            }
+          },
+          {
+            "name": "FiveThirtyEight Comic Characters Dataset",
+            "url": "https://www.kaggle.com/datasets/fivethirtyeight/fivethirtyeight-comic-characters-dataset",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/56596/165440/44ef520bf5be653cf7fcd7c500879031/dataset-thumbnail.jpg?t=2018-11-13-21-44-27",
+            "rank": 4,
+            "metric": {
+              "votes": 5421,
+              "downloads": 39160,
+              "views": 237266,
+              "kernels": 248
+            }
+          },
+          {
+            "name": "Pima Indians Diabetes Database",
+            "url": "https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/228/482/a520351269b547c89afe790820a1087e/dataset-thumbnail.jpeg",
+            "rank": 5,
+            "metric": {
+              "votes": 5072,
+              "downloads": 796089,
+              "views": 3350007,
+              "kernels": 4184
+            }
+          }
+        ]
+      }
+    },
+    "wtfpl": {
+      "atlas_slug": "wtfpl",
+      "title": "Do What The F*ck You Want To Public License",
+      "spdx_id": "WTFPL",
+      "type": "software",
+      "source_counts": {
+        "github": 5,
+        "huggingface": 5
+      },
+      "sources": {
+        "github": [
+          {
+            "name": "denysdovhan/wtfjs",
+            "url": "https://github.com/denysdovhan/wtfjs",
+            "icon_url": "https://avatars.githubusercontent.com/u/3459374?v=4",
+            "rank": 1,
+            "metric": {
+              "stars": 37628
+            }
+          },
+          {
+            "name": "satwikkansal/wtfpython",
+            "url": "https://github.com/satwikkansal/wtfpython",
+            "icon_url": "https://avatars.githubusercontent.com/u/10217535?v=4",
+            "rank": 2,
+            "metric": {
+              "stars": 36998
+            }
+          },
+          {
+            "name": "ziadoz/awesome-php",
+            "url": "https://github.com/ziadoz/awesome-php",
+            "icon_url": "https://avatars.githubusercontent.com/u/645637?v=4",
+            "rank": 3,
+            "metric": {
+              "stars": 32575
+            }
+          },
+          {
+            "name": "modood/Administrative-divisions-of-China",
+            "url": "https://github.com/modood/Administrative-divisions-of-China",
+            "icon_url": "https://avatars.githubusercontent.com/u/11327898?v=4",
+            "rank": 4,
+            "metric": {
+              "stars": 20826
+            }
+          },
+          {
+            "name": "preservim/nerdtree",
+            "url": "https://github.com/preservim/nerdtree",
+            "icon_url": "https://avatars.githubusercontent.com/u/56785356?v=4",
+            "rank": 5,
+            "metric": {
+              "stars": 20075
+            }
+          }
+        ],
+        "huggingface": [
+          {
+            "name": "CausalLM/14B",
+            "url": "https://huggingface.co/CausalLM/14B",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/63468a143ea42ee2cb49ddd1/xnlAnDFE3aZZu5ml9xFH9.png",
+            "rank": 1,
+            "metric": {
+              "downloads": 1220,
+              "likes": 311
+            }
+          },
+          {
+            "name": "hollowstrawberry/stable-diffusion-guide",
+            "url": "https://huggingface.co/hollowstrawberry/stable-diffusion-guide",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/63f022e5fc92a63ac815130e/pkFGh9E3G2QQ5_PbLHuIx.png",
+            "rank": 2,
+            "metric": {
+              "downloads": 0,
+              "likes": 265
+            }
+          },
+          {
+            "name": "TheBloke/CausalLM-14B-GGUF",
+            "url": "https://huggingface.co/TheBloke/CausalLM-14B-GGUF",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/6426d3f3a7723d62b53c259b/tvPikpAzKTKGN5wrpadOJ.jpeg",
+            "rank": 3,
+            "metric": {
+              "downloads": 4419,
+              "likes": 194
+            }
+          },
+          {
+            "name": "CausalLM/miniG",
+            "url": "https://huggingface.co/CausalLM/miniG",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/63468a143ea42ee2cb49ddd1/xnlAnDFE3aZZu5ml9xFH9.png",
+            "rank": 4,
+            "metric": {
+              "downloads": 46,
+              "likes": 183
+            }
+          },
+          {
+            "name": "CausalLM/7B",
+            "url": "https://huggingface.co/CausalLM/7B",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/63468a143ea42ee2cb49ddd1/xnlAnDFE3aZZu5ml9xFH9.png",
+            "rank": 5,
+            "metric": {
+              "downloads": 1097,
+              "likes": 137
+            }
+          }
+        ]
+      }
+    },
+    "epl-1.0": {
+      "atlas_slug": "epl-1.0",
+      "title": "Eclipse Public License -v 1.0",
+      "spdx_id": "EPL-1.0",
+      "type": "software",
+      "source_counts": {
+        "github": 5,
+        "huggingface": 5
+      },
+      "sources": {
+        "github": [
+          {
+            "name": "clojure/clojurescript",
+            "url": "https://github.com/clojure/clojurescript",
+            "icon_url": "https://avatars.githubusercontent.com/u/317875?v=4",
+            "rank": 1,
+            "metric": {
+              "stars": 9390
+            }
+          },
+          {
+            "name": "junit-team/junit4",
+            "url": "https://github.com/junit-team/junit4",
+            "icon_url": "https://avatars.githubusercontent.com/u/874086?v=4",
+            "rank": 2,
+            "metric": {
+              "stars": 8525
+            }
+          },
+          {
+            "name": "tonsky/AnyBar",
+            "url": "https://github.com/tonsky/AnyBar",
+            "icon_url": "https://avatars.githubusercontent.com/u/285292?v=4",
+            "rank": 3,
+            "metric": {
+              "stars": 6035
+            }
+          },
+          {
+            "name": "tonsky/datascript",
+            "url": "https://github.com/tonsky/datascript",
+            "icon_url": "https://avatars.githubusercontent.com/u/285292?v=4",
+            "rank": 4,
+            "metric": {
+              "stars": 5766
+            }
+          },
+          {
+            "name": "babashka/babashka",
+            "url": "https://github.com/babashka/babashka",
+            "icon_url": "https://avatars.githubusercontent.com/u/64927540?v=4",
+            "rank": 5,
+            "metric": {
+              "stars": 4543
+            }
+          }
+        ],
+        "huggingface": [
+          {
+            "name": "AZmongus/Azai",
+            "url": "https://huggingface.co/AZmongus/Azai",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/2xh4Myp0xCKB8cIC0sL3S.jpeg",
+            "rank": 1,
+            "metric": {
+              "downloads": 0,
+              "likes": 1
+            }
+          },
+          {
+            "name": "clakk/kylte",
+            "url": "https://huggingface.co/clakk/kylte",
+            "icon_url": "https://huggingface.co/avatars/1dae95b33a60c2d1112233268c5ca723.svg",
+            "rank": 2,
+            "metric": {
+              "downloads": 0,
+              "likes": 1
+            }
+          },
+          {
+            "name": "ducnguyen1/bgfd",
+            "url": "https://huggingface.co/ducnguyen1/bgfd",
+            "icon_url": "https://huggingface.co/avatars/346c26639d5ff1846700a720678fd2ef.svg",
+            "rank": 3,
+            "metric": {
+              "downloads": 0,
+              "likes": 1
+            }
+          },
+          {
+            "name": "linhla/ggjk",
+            "url": "https://huggingface.co/linhla/ggjk",
+            "icon_url": "https://huggingface.co/avatars/dad8e70262dd333e797521261df5ecff.svg",
+            "rank": 4,
+            "metric": {
+              "downloads": 0,
+              "likes": 1
+            }
+          },
+          {
+            "name": "Prohorsergio/prohorsergio",
+            "url": "https://huggingface.co/Prohorsergio/prohorsergio",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/1669474623298-noauth.png",
+            "rank": 5,
+            "metric": {
+              "downloads": 0,
+              "likes": 0
+            }
+          }
+        ]
+      }
+    },
+    "epl-2.0": {
+      "atlas_slug": "epl-2.0",
+      "title": "Eclipse Public License version 2.0",
+      "spdx_id": "EPL-2.0",
+      "type": "software",
+      "source_counts": {
+        "github": 5,
+        "huggingface": 5
+      },
+      "sources": {
+        "github": [
+          {
+            "name": "hcengineering/platform",
+            "url": "https://github.com/hcengineering/platform",
+            "icon_url": "https://avatars.githubusercontent.com/u/87086734?v=4",
+            "rank": 1,
+            "metric": {
+              "stars": 26265
+            }
+          },
+          {
+            "name": "eclipse-theia/theia",
+            "url": "https://github.com/eclipse-theia/theia",
+            "icon_url": "https://avatars.githubusercontent.com/u/54183333?v=4",
+            "rank": 2,
+            "metric": {
+              "stars": 21569
+            }
+          },
+          {
+            "name": "win12-online/win12",
+            "url": "https://github.com/win12-online/win12",
+            "icon_url": "https://avatars.githubusercontent.com/u/275231528?v=4",
+            "rank": 3,
+            "metric": {
+              "stars": 7234
+            }
+          },
+          {
+            "name": "eclipse-che/che",
+            "url": "https://github.com/eclipse-che/che",
+            "icon_url": "https://avatars.githubusercontent.com/u/78380170?v=4",
+            "rank": 4,
+            "metric": {
+              "stars": 7151
+            }
+          },
+          {
+            "name": "junit-team/junit-framework",
+            "url": "https://github.com/junit-team/junit-framework",
+            "icon_url": "https://avatars.githubusercontent.com/u/874086?v=4",
+            "rank": 5,
+            "metric": {
+              "stars": 7030
+            }
+          }
+        ],
+        "huggingface": [
+          {
+            "name": "clakk/bfdgrg",
+            "url": "https://huggingface.co/clakk/bfdgrg",
+            "icon_url": "https://huggingface.co/avatars/1dae95b33a60c2d1112233268c5ca723.svg",
+            "rank": 1,
+            "metric": {
+              "downloads": 0,
+              "likes": 1
+            }
+          },
+          {
+            "name": "EVA787797/juuiu45454",
+            "url": "https://huggingface.co/EVA787797/juuiu45454",
+            "icon_url": "https://huggingface.co/avatars/7a57869233fdb519d648ecc5659c559a.svg",
+            "rank": 2,
+            "metric": {
+              "downloads": 310,
+              "likes": 1
+            }
+          },
+          {
+            "name": "Muradshanta24/murad",
+            "url": "https://huggingface.co/Muradshanta24/murad",
+            "icon_url": "https://huggingface.co/avatars/04a14dc82e344d85e4e54c761e90fe51.svg",
+            "rank": 3,
+            "metric": {
+              "downloads": 0,
+              "likes": 1
+            }
+          },
+          {
+            "name": "tomp56/gdhtjyt",
+            "url": "https://huggingface.co/tomp56/gdhtjyt",
+            "icon_url": "https://huggingface.co/avatars/66e4b70023ed7a397e7c762d7af89d9c.svg",
+            "rank": 4,
+            "metric": {
+              "downloads": 0,
+              "likes": 1
+            }
+          },
+          {
+            "name": "tomp56/jyoit6",
+            "url": "https://huggingface.co/tomp56/jyoit6",
+            "icon_url": "https://huggingface.co/avatars/66e4b70023ed7a397e7c762d7af89d9c.svg",
+            "rank": 5,
+            "metric": {
+              "downloads": 0,
+              "likes": 1
+            }
+          }
+        ]
+      }
+    },
+    "eupl-1.2": {
+      "atlas_slug": "eupl-1.2",
+      "title": "European Union Public Licence, version 1.2",
+      "spdx_id": "EUPL-1.2",
+      "type": "software",
+      "source_counts": {
+        "github": 5,
+        "huggingface": 5
+      },
+      "sources": {
+        "github": [
+          {
+            "name": "eza-community/eza",
+            "url": "https://github.com/eza-community/eza",
+            "icon_url": "https://avatars.githubusercontent.com/u/141388427?v=4",
+            "rank": 1,
+            "metric": {
+              "stars": 22359
+            }
+          },
+          {
+            "name": "wled/WLED",
+            "url": "https://github.com/wled/WLED",
+            "icon_url": "https://avatars.githubusercontent.com/u/197231400?v=4",
+            "rank": 2,
+            "metric": {
+              "stars": 18241
+            }
+          },
+          {
+            "name": "getzola/zola",
+            "url": "https://github.com/getzola/zola",
+            "icon_url": "https://avatars.githubusercontent.com/u/43047029?v=4",
+            "rank": 3,
+            "metric": {
+              "stars": 17191
+            }
+          },
+          {
+            "name": "ogham/dog",
+            "url": "https://github.com/ogham/dog",
+            "icon_url": "https://avatars.githubusercontent.com/u/503760?v=4",
+            "rank": 4,
+            "metric": {
+              "stars": 6667
+            }
+          },
+          {
+            "name": "nix-community/nh",
+            "url": "https://github.com/nix-community/nh",
+            "icon_url": "https://avatars.githubusercontent.com/u/33221035?v=4",
+            "rank": 5,
+            "metric": {
+              "stars": 2902
+            }
+          }
+        ],
+        "huggingface": [
+          {
+            "name": "NetherlandsForensicInstitute/vuurwerkverkenner",
+            "url": "https://huggingface.co/NetherlandsForensicInstitute/vuurwerkverkenner",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/64a2b9f5918e480ced892f88/vuNM_DA8K87TE7jm9Uqo3.png",
+            "rank": 1,
+            "metric": {
+              "downloads": 0,
+              "likes": 7
+            }
+          },
+          {
+            "name": "NetherlandsForensicInstitute/ARM64BERT",
+            "url": "https://huggingface.co/NetherlandsForensicInstitute/ARM64BERT",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/64a2b9f5918e480ced892f88/vuNM_DA8K87TE7jm9Uqo3.png",
+            "rank": 2,
+            "metric": {
+              "downloads": 65,
+              "likes": 3
+            }
+          },
+          {
+            "name": "EuropeanParliament/EUBERT",
+            "url": "https://huggingface.co/EuropeanParliament/EUBERT",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/6377c9c344def3dd2a85abf6/Qh0P_sJNZeDuiyKh7QTCr.png",
+            "rank": 3,
+            "metric": {
+              "downloads": 73,
+              "likes": 2
+            }
+          },
+          {
+            "name": "lthn/lemer",
+            "url": "https://huggingface.co/lthn/lemer",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/698d5731a6ef757a4767e3d4/T3TAyLGb1zs6hmTZUiPeR.png",
+            "rank": 4,
+            "metric": {
+              "downloads": 536,
+              "likes": 2
+            }
+          },
+          {
+            "name": "LetheanNetwork/lemer-bk",
+            "url": "https://huggingface.co/LetheanNetwork/lemer-bk",
+            "icon_url": "https://www.gravatar.com/avatar/d0936b23757cc1c9469d517ac74800f2?d=retro&size=100",
+            "rank": 5,
+            "metric": {
+              "downloads": 187,
+              "likes": 1
+            }
+          }
+        ]
+      }
+    },
+    "gpl-2.0": {
+      "atlas_slug": "gpl-2.0",
+      "title": "GNU General Public License version 2",
+      "spdx_id": "GPL-2.0",
+      "type": "software",
+      "source_counts": {
+        "github": 5,
+        "huggingface": 5,
+        "kaggle": 5
+      },
+      "sources": {
+        "github": [
+          {
+            "name": "obsproject/obs-studio",
+            "url": "https://github.com/obsproject/obs-studio",
+            "icon_url": "https://avatars.githubusercontent.com/u/7725691?v=4",
+            "rank": 1,
+            "metric": {
+              "stars": 73335
+            }
+          },
+          {
+            "name": "ngosang/trackerslist",
+            "url": "https://github.com/ngosang/trackerslist",
+            "icon_url": "https://avatars.githubusercontent.com/u/10577978?v=4",
+            "rank": 2,
+            "metric": {
+              "stars": 54228
+            }
+          },
+          {
+            "name": "WerWolv/ImHex",
+            "url": "https://github.com/WerWolv/ImHex",
+            "icon_url": "https://avatars.githubusercontent.com/u/10835354?v=4",
+            "rank": 3,
+            "metric": {
+              "stars": 53960
+            }
+          },
+          {
+            "name": "jellyfin/jellyfin",
+            "url": "https://github.com/jellyfin/jellyfin",
+            "icon_url": "https://avatars.githubusercontent.com/u/45698031?v=4",
+            "rank": 4,
+            "metric": {
+              "stars": 53517
+            }
+          },
+          {
+            "name": "discourse/discourse",
+            "url": "https://github.com/discourse/discourse",
+            "icon_url": "https://avatars.githubusercontent.com/u/3220138?v=4",
+            "rank": 5,
+            "metric": {
+              "stars": 47295
+            }
+          }
+        ],
+        "huggingface": [
+          {
+            "name": "stanfordnlp/CoreNLP",
+            "url": "https://huggingface.co/stanfordnlp/CoreNLP",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/1628624969199-6032802e1f993496bc14d9e3.png",
+            "rank": 1,
+            "metric": {
+              "downloads": 0,
+              "likes": 41
+            }
+          },
+          {
+            "name": "NovelAI/calliope-legacy",
+            "url": "https://huggingface.co/NovelAI/calliope-legacy",
+            "icon_url": "https://www.gravatar.com/avatar/80207bcff5d692965ac43707da26cf88?d=retro&size=100",
+            "rank": 2,
+            "metric": {
+              "downloads": 15,
+              "likes": 30
+            }
+          },
+          {
+            "name": "NovelAI/nerdstash-tokenizer-v1",
+            "url": "https://huggingface.co/NovelAI/nerdstash-tokenizer-v1",
+            "icon_url": "https://www.gravatar.com/avatar/80207bcff5d692965ac43707da26cf88?d=retro&size=100",
+            "rank": 3,
+            "metric": {
+              "downloads": 0,
+              "likes": 8
+            }
+          },
+          {
+            "name": "NovelAI/nerdstash-tokenizer-v2",
+            "url": "https://huggingface.co/NovelAI/nerdstash-tokenizer-v2",
+            "icon_url": "https://www.gravatar.com/avatar/80207bcff5d692965ac43707da26cf88?d=retro&size=100",
+            "rank": 4,
+            "metric": {
+              "downloads": 0,
+              "likes": 8
+            }
+          },
+          {
+            "name": "Hugs288/sdxl-stuff",
+            "url": "https://huggingface.co/Hugs288/sdxl-stuff",
+            "icon_url": "https://huggingface.co/avatars/5a3672bd70e86e16bd66b79fe3d1f11a.svg",
+            "rank": 5,
+            "metric": {
+              "downloads": 0,
+              "likes": 6
+            }
+          }
+        ],
+        "kaggle": [
+          {
+            "name": "ASL Alphabet",
+            "url": "https://www.kaggle.com/datasets/grassknoted/asl-alphabet",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/23079/29550/2a528a1c081d77ddcc41bffc3a47d161/dataset-thumbnail.jpg?t=2018-04-23-02-22-43",
+            "rank": 1,
+            "metric": {
+              "votes": 1268,
+              "downloads": 119829,
+              "views": 581196,
+              "kernels": 498
+            }
+          },
+          {
+            "name": "Mobile App Store ( 7200 apps)",
+            "url": "https://www.kaggle.com/datasets/ramamet4/app-store-apple-data-set-10k-apps",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/30069/38320/8be6f8c0f05d5ac5ffca63bc2cf81169/dataset-thumbnail.jpg?t=2018-06-04-23-36-52",
+            "rank": 2,
+            "metric": {
+              "votes": 1236,
+              "downloads": 69378,
+              "views": 572479,
+              "kernels": 121
+            }
+          },
+          {
+            "name": "Animals-10",
+            "url": "https://www.kaggle.com/datasets/alessiocorrado99/animals10",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/59760/115796/95649e825d9344084af2a24012c4d072/dataset-thumbnail.jpg?t=2018-10-05-08-07-40",
+            "rank": 3,
+            "metric": {
+              "votes": 1213,
+              "downloads": 117282,
+              "views": 486093,
+              "kernels": 373
+            }
+          },
+          {
+            "name": "Superstore Sales Dataset",
+            "url": "https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/835308/1426440/aaf8255ae75bbbec8c79afb01c5f3314/dataset-thumbnail.jpg?t=2020-09-11-15-39-15",
+            "rank": 4,
+            "metric": {
+              "votes": 1087,
+              "downloads": 197944,
+              "views": 757963,
+              "kernels": 291
+            }
+          },
+          {
+            "name": "Health Insurance Cross Sell Prediction 🏠 🏥",
+            "url": "https://www.kaggle.com/datasets/anmolkumar/health-insurance-cross-sell-prediction",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/869050/1480773/4e86b323262079c472d860283e2c6aed/dataset-thumbnail.png?t=2020-09-11-18-51-25",
+            "rank": 5,
+            "metric": {
+              "votes": 786,
+              "downloads": 49737,
+              "views": 382327,
+              "kernels": 341
+            }
+          }
+        ]
+      }
+    },
+    "gpl-3.0": {
+      "atlas_slug": "gpl-3.0",
+      "title": "GNU General Public License version 3",
+      "spdx_id": "GPL-3.0",
+      "type": "software",
+      "source_counts": {
+        "github": 5,
+        "huggingface": 5,
+        "kaggle": 5
+      },
+      "sources": {
+        "github": [
+          {
+            "name": "massgravel/Microsoft-Activation-Scripts",
+            "url": "https://github.com/massgravel/Microsoft-Activation-Scripts",
+            "icon_url": "https://avatars.githubusercontent.com/u/59795046?v=4",
+            "rank": 1,
+            "metric": {
+              "stars": 180088
+            }
+          },
+          {
+            "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
+            "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
+            "icon_url": "https://avatars.githubusercontent.com/u/185671340?v=4",
+            "rank": 2,
+            "metric": {
+              "stars": 140961
+            }
+          },
+          {
+            "name": "clash-verge-rev/clash-verge-rev",
+            "url": "https://github.com/clash-verge-rev/clash-verge-rev",
+            "icon_url": "https://avatars.githubusercontent.com/u/152534467?v=4",
+            "rank": 3,
+            "metric": {
+              "stars": 126941
+            }
+          },
+          {
+            "name": "Comfy-Org/ComfyUI",
+            "url": "https://github.com/Comfy-Org/ComfyUI",
+            "icon_url": "https://avatars.githubusercontent.com/u/166579949?v=4",
+            "rank": 4,
+            "metric": {
+              "stars": 117763
+            }
+          },
+          {
+            "name": "justjavac/free-programming-books-zh_CN",
+            "url": "https://github.com/justjavac/free-programming-books-zh_CN",
+            "icon_url": "https://avatars.githubusercontent.com/u/359395?v=4",
+            "rank": 5,
+            "metric": {
+              "stars": 117151
+            }
+          }
+        ],
+        "huggingface": [
+          {
+            "name": "IDEA-CCNL/Ziya-LLaMA-13B-v1",
+            "url": "https://huggingface.co/IDEA-CCNL/Ziya-LLaMA-13B-v1",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/1658399570474-612300897d70fa0063f38731.png",
+            "rank": 1,
+            "metric": {
+              "downloads": 1073,
+              "likes": 276
+            }
+          },
+          {
+            "name": "JosephusCheung/Guanaco",
+            "url": "https://huggingface.co/JosephusCheung/Guanaco",
+            "icon_url": "https://huggingface.co/avatars/f54abfaa4be54e61c1052720eb498703.svg",
+            "rank": 2,
+            "metric": {
+              "downloads": 1375,
+              "likes": 230
+            }
+          },
+          {
+            "name": "vafipas663/Qwen-Edit-2509-Upscale-LoRA",
+            "url": "https://huggingface.co/vafipas663/Qwen-Edit-2509-Upscale-LoRA",
+            "icon_url": "https://huggingface.co/avatars/9e72b7edea2794c61cafb3dfffd6972e.svg",
+            "rank": 3,
+            "metric": {
+              "downloads": 12524,
+              "likes": 226
+            }
+          },
+          {
+            "name": "nomic-ai/gpt4all-lora",
+            "url": "https://huggingface.co/nomic-ai/gpt4all-lora",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/641f01fe6d51620635e118e9/wy0ax27ok1-uHWoUAHSEs.png",
+            "rank": 4,
+            "metric": {
+              "downloads": 0,
+              "likes": 209
+            }
+          },
+          {
+            "name": "dataautogpt3/ProteusV0.2",
+            "url": "https://huggingface.co/dataautogpt3/ProteusV0.2",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/64430e32e255a338677fe9a7/qPn5pCkKOdpmyTHWFve_U.png",
+            "rank": 5,
+            "metric": {
+              "downloads": 17998,
+              "likes": 148
+            }
+          }
+        ],
+        "kaggle": [
+          {
+            "name": "Genomics of Drug Sensitivity in Cancer (GDSC)",
+            "url": "https://www.kaggle.com/datasets/samiraalipour/genomics-of-drug-sensitivity-in-cancer-gdsc",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/5535401/9162081/763de467d488ebfe049f593f378dc709/dataset-thumbnail.jpeg?t=2024-08-13-02-37-32",
+            "rank": 1,
+            "metric": {
+              "votes": 130,
+              "downloads": 5498,
+              "views": 24744,
+              "kernels": 20
+            }
+          },
+          {
+            "name": "Letterboxd (Movies Dataset)",
+            "url": "https://www.kaggle.com/datasets/gsimonx37/letterboxd",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/4459542/7649925/b8dad68931e8be7061ea5c9773aae98b/dataset-thumbnail.jpg?t=2024-02-18-16-01-47",
+            "rank": 2,
+            "metric": {
+              "votes": 102,
+              "downloads": 11266,
+              "views": 24307,
+              "kernels": 5
+            }
+          },
+          {
+            "name": "Cybersecurity: Suspicious Web Threat Interactions",
+            "url": "https://www.kaggle.com/datasets/jancsg/cybersecurity-suspicious-web-threat-interactions",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/4890148/8243215/0fc7ff787b1115750e83381f5fd883c8/dataset-thumbnail.png?t=2024-04-27-09-40-25",
+            "rank": 3,
+            "metric": {
+              "votes": 80,
+              "downloads": 6518,
+              "views": 35928,
+              "kernels": 9
+            }
+          },
+          {
+            "name": "Explore Car Performance: Fuel Efficiency Data",
+            "url": "https://www.kaggle.com/datasets/arslaan5/explore-car-performance-fuel-efficiency-data",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/5896002/9652480/97300701c1086085232192bf13fcebef/dataset-thumbnail.jpg?t=2024-10-17-20-06-05",
+            "rank": 4,
+            "metric": {
+              "votes": 46,
+              "downloads": 3749,
+              "views": 18035,
+              "kernels": 14
+            }
+          },
+          {
+            "name": "Stock Portfolio Data with Prices and Indices",
+            "url": "https://www.kaggle.com/datasets/nikitamanaenkov/stock-portfolio-data-with-prices-and-indices",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/6949571/11140976/cf6eb047720cb135eb17044e373e1c11/dataset-thumbnail.jpg?t=2025-03-23-20-28-06",
+            "rank": 5,
+            "metric": {
+              "votes": 38,
+              "downloads": 2799,
+              "views": 11851,
+              "kernels": 5
+            }
+          }
+        ]
+      }
+    },
+    "lgpl-2.1": {
+      "atlas_slug": "lgpl-2.1",
+      "title": "GNU Lesser General Public License version 2.1",
+      "spdx_id": "LGPL-2.1",
+      "type": "software",
+      "source_counts": {
+        "github": 5,
+        "huggingface": 5
+      },
+      "sources": {
+        "github": [
+          {
+            "name": "FreeCAD/FreeCAD",
+            "url": "https://github.com/FreeCAD/FreeCAD",
+            "icon_url": "https://avatars.githubusercontent.com/u/2306237?v=4",
+            "rank": 1,
+            "metric": {
+              "stars": 31638
+            }
+          },
+          {
+            "name": "gfwlist/gfwlist",
+            "url": "https://github.com/gfwlist/gfwlist",
+            "icon_url": "https://avatars.githubusercontent.com/u/11460227?v=4",
+            "rank": 2,
+            "metric": {
+              "stars": 25401
+            }
+          },
+          {
+            "name": "processing/p5.js",
+            "url": "https://github.com/processing/p5.js",
+            "icon_url": "https://avatars.githubusercontent.com/u/1617169?v=4",
+            "rank": 3,
+            "metric": {
+              "stars": 23754
+            }
+          },
+          {
+            "name": "spicetify/cli",
+            "url": "https://github.com/spicetify/cli",
+            "icon_url": "https://avatars.githubusercontent.com/u/100136310?v=4",
+            "rank": 4,
+            "metric": {
+              "stars": 23468
+            }
+          },
+          {
+            "name": "PHPMailer/PHPMailer",
+            "url": "https://github.com/PHPMailer/PHPMailer",
+            "icon_url": "https://avatars.githubusercontent.com/u/3959702?v=4",
+            "rank": 5,
+            "metric": {
+              "stars": 22200
+            }
+          }
+        ],
+        "huggingface": [
+          {
+            "name": "AdeCode/lgpl-2.1",
+            "url": "https://huggingface.co/AdeCode/lgpl-2.1",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/u-KFuHjzkuHEZLwb_nVy6.jpeg",
+            "rank": 1,
+            "metric": {
+              "downloads": 0,
+              "likes": 1
+            }
+          },
+          {
+            "name": "billeth/jghfm",
+            "url": "https://huggingface.co/billeth/jghfm",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/aeHdCfYUoPOTIqlOJPqJx.jpeg",
+            "rank": 2,
+            "metric": {
+              "downloads": 0,
+              "likes": 1
+            }
+          },
+          {
+            "name": "clakk/hgf",
+            "url": "https://huggingface.co/clakk/hgf",
+            "icon_url": "https://huggingface.co/avatars/1dae95b33a60c2d1112233268c5ca723.svg",
+            "rank": 3,
+            "metric": {
+              "downloads": 0,
+              "likes": 1
+            }
+          },
+          {
+            "name": "kaiyuy/ASTactic",
+            "url": "https://huggingface.co/kaiyuy/ASTactic",
+            "icon_url": "https://huggingface.co/avatars/3d2e06330a5b1b044f46f7020b8fcf8d.svg",
+            "rank": 4,
+            "metric": {
+              "downloads": 0,
+              "likes": 1
+            }
+          },
+          {
+            "name": "kdawg500/super-cool-model",
+            "url": "https://huggingface.co/kdawg500/super-cool-model",
+            "icon_url": "https://huggingface.co/avatars/de3bfba1c9def9f95b74c228a6996888.svg",
+            "rank": 5,
+            "metric": {
+              "downloads": 0,
+              "likes": 1
+            }
+          }
+        ]
+      }
+    },
+    "isc": {
+      "atlas_slug": "isc",
+      "title": "ISC License",
+      "spdx_id": "ISC",
+      "type": "software",
+      "source_counts": {
+        "github": 5,
+        "huggingface": 5
+      },
+      "sources": {
+        "github": [
+          {
+            "name": "d3/d3",
+            "url": "https://github.com/d3/d3",
+            "icon_url": "https://avatars.githubusercontent.com/u/1562726?v=4",
+            "rank": 1,
+            "metric": {
+              "stars": 113108
+            }
+          },
+          {
+            "name": "starship/starship",
+            "url": "https://github.com/starship/starship",
+            "icon_url": "https://avatars.githubusercontent.com/u/49654870?v=4",
+            "rank": 2,
+            "metric": {
+              "stars": 58400
+            }
+          },
+          {
+            "name": "tmux/tmux",
+            "url": "https://github.com/tmux/tmux",
+            "icon_url": "https://avatars.githubusercontent.com/u/12054114?v=4",
+            "rank": 3,
+            "metric": {
+              "stars": 46775
+            }
+          },
+          {
+            "name": "nextauthjs/next-auth",
+            "url": "https://github.com/nextauthjs/next-auth",
+            "icon_url": "https://avatars.githubusercontent.com/u/67470890?v=4",
+            "rank": 4,
+            "metric": {
+              "stars": 28274
+            }
+          },
+          {
+            "name": "BuilderIO/gpt-crawler",
+            "url": "https://github.com/BuilderIO/gpt-crawler",
+            "icon_url": "https://avatars.githubusercontent.com/u/35700027?v=4",
+            "rank": 5,
+            "metric": {
+              "stars": 22249
+            }
+          }
+        ],
+        "huggingface": [
+          {
+            "name": "lighthousefeed/yoda-ner",
+            "url": "https://huggingface.co/lighthousefeed/yoda-ner",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/1664537887418-630728b8cada14cdcedb0576.png",
+            "rank": 1,
+            "metric": {
+              "downloads": 5,
+              "likes": 5
+            }
+          },
+          {
+            "name": "andrei12304/Llama",
+            "url": "https://huggingface.co/andrei12304/Llama",
+            "icon_url": "https://huggingface.co/avatars/75c12cace392fca051248d4feead0a3a.svg",
+            "rank": 2,
+            "metric": {
+              "downloads": 0,
+              "likes": 1
+            }
+          },
+          {
+            "name": "billeth/luiye",
+            "url": "https://huggingface.co/billeth/luiye",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/aeHdCfYUoPOTIqlOJPqJx.jpeg",
+            "rank": 3,
+            "metric": {
+              "downloads": 0,
+              "likes": 1
+            }
+          },
+          {
+            "name": "nev/byt5-song-lyrics",
+            "url": "https://huggingface.co/nev/byt5-song-lyrics",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/1631435931286-noauth.jpeg",
+            "rank": 4,
+            "metric": {
+              "downloads": 10,
+              "likes": 0
+            }
+          },
+          {
+            "name": "fabihamakhdoomi/TinyDNABERT",
+            "url": "https://huggingface.co/fabihamakhdoomi/TinyDNABERT",
+            "icon_url": "https://huggingface.co/avatars/3b395593a92c25156f59955a7323219c.svg",
+            "rank": 5,
+            "metric": {
+              "downloads": 1,
+              "likes": 0
+            }
+          }
+        ]
+      }
+    },
+    "ms-pl": {
+      "atlas_slug": "ms-pl",
+      "title": "Microsoft Public License",
+      "spdx_id": "MS-PL",
+      "type": "software",
+      "source_counts": {
+        "github": 5,
+        "huggingface": 5
+      },
+      "sources": {
+        "github": [
+          {
+            "name": "NickeManarin/ScreenToGif",
+            "url": "https://github.com/NickeManarin/ScreenToGif",
+            "icon_url": "https://avatars.githubusercontent.com/u/14798947?v=4",
+            "rank": 1,
+            "metric": {
+              "stars": 27144
+            }
+          },
+          {
+            "name": "microsoft/Windows-driver-samples",
+            "url": "https://github.com/microsoft/Windows-driver-samples",
+            "icon_url": "https://avatars.githubusercontent.com/u/6154722?v=4",
+            "rank": 2,
+            "metric": {
+              "stars": 7768
+            }
+          },
+          {
+            "name": "randyrants/sharpkeys",
+            "url": "https://github.com/randyrants/sharpkeys",
+            "icon_url": "https://avatars.githubusercontent.com/u/18704482?v=4",
+            "rank": 3,
+            "metric": {
+              "stars": 6895
+            }
+          },
+          {
+            "name": "Code52/carnac",
+            "url": "https://github.com/Code52/carnac",
+            "icon_url": "https://avatars.githubusercontent.com/u/1266849?v=4",
+            "rank": 4,
+            "metric": {
+              "stars": 4530
+            }
+          },
+          {
+            "name": "MvvmCross/MvvmCross",
+            "url": "https://github.com/MvvmCross/MvvmCross",
+            "icon_url": "https://avatars.githubusercontent.com/u/3919206?v=4",
+            "rank": 5,
+            "metric": {
+              "stars": 3916
+            }
+          }
+        ],
+        "huggingface": [
+          {
+            "name": "microsoft/msclap",
+            "url": "https://huggingface.co/microsoft/msclap",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/1583646260758-5e64858c87403103f9f1055d.png",
+            "rank": 1,
+            "metric": {
+              "downloads": 0,
+              "likes": 37
+            }
+          },
+          {
+            "name": "maria26/Floor_Plan_LoRA",
+            "url": "https://huggingface.co/maria26/Floor_Plan_LoRA",
+            "icon_url": "https://huggingface.co/avatars/7cbb936a20663b78d1bbb2024a9c3139.svg",
+            "rank": 2,
+            "metric": {
+              "downloads": 141,
+              "likes": 20
+            }
+          },
+          {
+            "name": "marketeam/Phi-Marketing",
+            "url": "https://huggingface.co/marketeam/Phi-Marketing",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/6536c3730eac5301c9a10bd9/o6F4lZVl54QrPbGmcQBRt.png",
+            "rank": 3,
+            "metric": {
+              "downloads": 22,
+              "likes": 13
+            }
+          },
+          {
+            "name": "malhajar/phi-2-meditron",
+            "url": "https://huggingface.co/malhajar/phi-2-meditron",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/639c5c448a34ed9a404a956b/u8X-sOxZy5U71RQaRXZIH.jpeg",
+            "rank": 4,
+            "metric": {
+              "downloads": 14,
+              "likes": 8
+            }
+          },
+          {
+            "name": "afrideva/phi-2-meditron-GGUF",
+            "url": "https://huggingface.co/afrideva/phi-2-meditron-GGUF",
+            "icon_url": "https://huggingface.co/avatars/50070b95473ad4819a1d2d7a2a7e4b7e.svg",
+            "rank": 5,
+            "metric": {
+              "downloads": 200,
+              "likes": 3
+            }
+          }
+        ]
+      }
+    },
+    "mpl-2.0": {
+      "atlas_slug": "mpl-2.0",
+      "title": "Mozilla Public License 2.0",
+      "spdx_id": "MPL-2.0",
+      "type": "software",
+      "source_counts": {
+        "github": 5,
+        "huggingface": 5
+      },
+      "sources": {
+        "github": [
+          {
+            "name": "syncthing/syncthing",
+            "url": "https://github.com/syncthing/syncthing",
+            "icon_url": "https://avatars.githubusercontent.com/u/7628018?v=4",
+            "rank": 1,
+            "metric": {
+              "stars": 85597
+            }
+          },
+          {
+            "name": "penpot/penpot",
+            "url": "https://github.com/penpot/penpot",
+            "icon_url": "https://avatars.githubusercontent.com/u/30179644?v=4",
+            "rank": 2,
+            "metric": {
+              "stars": 51931
+            }
+          },
+          {
+            "name": "coqui-ai/TTS",
+            "url": "https://github.com/coqui-ai/TTS",
+            "icon_url": "https://avatars.githubusercontent.com/u/75583352?v=4",
+            "rank": 3,
+            "metric": {
+              "stars": 45590
+            }
+          },
+          {
+            "name": "helix-editor/helix",
+            "url": "https://github.com/helix-editor/helix",
+            "icon_url": "https://avatars.githubusercontent.com/u/66235900?v=4",
+            "rank": 4,
+            "metric": {
+              "stars": 44957
+            }
+          },
+          {
+            "name": "zen-browser/desktop",
+            "url": "https://github.com/zen-browser/desktop",
+            "icon_url": "https://avatars.githubusercontent.com/u/165225155?v=4",
+            "rank": 5,
+            "metric": {
+              "stars": 42962
+            }
+          }
+        ],
+        "huggingface": [
+          {
+            "name": "WillHeld/DiVA-llama-3-v0-8b",
+            "url": "https://huggingface.co/WillHeld/DiVA-llama-3-v0-8b",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/1666207676653-632116accafe12f481a473cb.jpeg",
+            "rank": 1,
+            "metric": {
+              "downloads": 206,
+              "likes": 35
+            }
+          },
+          {
+            "name": "jerichosiahaya/vits-tts-id",
+            "url": "https://huggingface.co/jerichosiahaya/vits-tts-id",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/64869112c380bef1b1a0df26/QauNvdOt8I5YzQ7tw2UoM.png",
+            "rank": 2,
+            "metric": {
+              "downloads": 583,
+              "likes": 10
+            }
+          },
+          {
+            "name": "Mozilla/smart-tab-topic",
+            "url": "https://huggingface.co/Mozilla/smart-tab-topic",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/657f3d21f4f72f2c4c51d2ca/ITfWuC2xzwBwPiIY73M35.png",
+            "rank": 3,
+            "metric": {
+              "downloads": 454,
+              "likes": 8
+            }
+          },
+          {
+            "name": "KoelLabs/xlsr-timit-b0",
+            "url": "https://huggingface.co/KoelLabs/xlsr-timit-b0",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/674ce869541f12e9c93c3958/RPtDDp4Drbz8ebGotofTX.png",
+            "rank": 4,
+            "metric": {
+              "downloads": 12,
+              "likes": 6
+            }
+          },
+          {
+            "name": "useclaude/quantum-sync-xtts-v2",
+            "url": "https://huggingface.co/useclaude/quantum-sync-xtts-v2",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/TgVHe261X-U0fUVc74ith.png",
+            "rank": 5,
+            "metric": {
+              "downloads": 10,
+              "likes": 4
+            }
+          }
+        ]
+      }
+    },
+    "odbl-1.0": {
+      "atlas_slug": "odbl-1.0",
+      "title": "Open Data Commons Open Database License v1.0",
+      "spdx_id": "ODbL-1.0",
+      "type": "data",
+      "source_counts": {
+        "kaggle": 5
+      },
+      "sources": {
+        "kaggle": [
+          {
+            "name": "Credit Card Fraud Detection",
+            "url": "https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/310/684/3503c6c827ca269cc00ffa66f2a9c207/dataset-thumbnail.jpg",
+            "rank": 1,
+            "metric": {
+              "votes": 13187,
+              "downloads": 1135818,
+              "views": 12630940,
+              "kernels": 5993
+            }
+          },
+          {
+            "name": "European Soccer Database",
+            "url": "https://www.kaggle.com/datasets/hugomathien/soccer",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/63/141/e5591c2bbb5997993769650c8bf5ab79/dataset-thumbnail.jpg",
+            "rank": 2,
+            "metric": {
+              "votes": 4905,
+              "downloads": 272021,
+              "views": 1927987,
+              "kernels": 1607
+            }
+          },
+          {
+            "name": "Avocado Prices",
+            "url": "https://www.kaggle.com/datasets/neuromusic/avocado-prices",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/30292/38613/ab6171de10588e40148aed91ff39e2e9/dataset-thumbnail.jpg?t=2018-06-06-13-58-40",
+            "rank": 3,
+            "metric": {
+              "votes": 3850,
+              "downloads": 337940,
+              "views": 1551011,
+              "kernels": 516
+            }
+          },
+          {
+            "name": "Red Wine Quality",
+            "url": "https://www.kaggle.com/datasets/uciml/red-wine-quality-cortez-et-al-2009",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/4458/6836/30587db9a40233164f65a4a3f148f40d/dataset-thumbnail.jpg?t=2017-11-12-14-28-34",
+            "rank": 4,
+            "metric": {
+              "votes": 3251,
+              "downloads": 345844,
+              "views": 1735893,
+              "kernels": 2113
+            }
+          },
+          {
+            "name": "Medical Cost Personal Datasets",
+            "url": "https://www.kaggle.com/datasets/mirichoi0218/insurance",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/13720/18513/71003abbbd54cc65c64065c1de79a9ff/dataset-thumbnail.jpg?t=2018-02-21-00-25-33",
+            "rank": 5,
+            "metric": {
+              "votes": 3213,
+              "downloads": 404233,
+              "views": 1966137,
+              "kernels": 2101
+            }
+          }
+        ]
+      }
+    },
+    "ofl-1.1": {
+      "atlas_slug": "ofl-1.1",
+      "title": "SIL OPEN FONT LICENSE",
+      "spdx_id": "OFL-1.1",
+      "type": "software",
+      "source_counts": {
+        "github": 5,
+        "huggingface": 5
+      },
+      "sources": {
+        "github": [
+          {
+            "name": "tonsky/FiraCode",
+            "url": "https://github.com/tonsky/FiraCode",
+            "icon_url": "https://avatars.githubusercontent.com/u/285292?v=4",
+            "rank": 1,
+            "metric": {
+              "stars": 81774
+            }
+          },
+          {
+            "name": "subframe7536/maple-font",
+            "url": "https://github.com/subframe7536/maple-font",
+            "icon_url": "https://avatars.githubusercontent.com/u/78338239?v=4",
+            "rank": 2,
+            "metric": {
+              "stars": 26652
+            }
+          },
+          {
+            "name": "lxgw/LxgwWenKai",
+            "url": "https://github.com/lxgw/LxgwWenKai",
+            "icon_url": "https://avatars.githubusercontent.com/u/51902309?v=4",
+            "rank": 3,
+            "metric": {
+              "stars": 24766
+            }
+          },
+          {
+            "name": "be5invis/Iosevka",
+            "url": "https://github.com/be5invis/Iosevka",
+            "icon_url": "https://avatars.githubusercontent.com/u/240091?v=4",
+            "rank": 4,
+            "metric": {
+              "stars": 22403
+            }
+          },
+          {
+            "name": "adobe-fonts/source-code-pro",
+            "url": "https://github.com/adobe-fonts/source-code-pro",
+            "icon_url": "https://avatars.githubusercontent.com/u/4028872?v=4",
+            "rank": 5,
+            "metric": {
+              "stars": 20409
+            }
+          }
+        ],
+        "huggingface": [
+          {
+            "name": "Jopa5a/Prince",
+            "url": "https://huggingface.co/Jopa5a/Prince",
+            "icon_url": "https://www.gravatar.com/avatar/6cad51673eba1d0a7aa4ff131ed07a11?d=retro&size=100",
+            "rank": 1,
+            "metric": {
+              "downloads": 0,
+              "likes": 1
+            }
+          },
+          {
+            "name": "pszemraj/0xProto-368K-GGUF",
+            "url": "https://huggingface.co/pszemraj/0xProto-368K-GGUF",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/60bccec062080d33f875cd0c/KvEhYxx9-Tff_Qb7PsjAL.png",
+            "rank": 2,
+            "metric": {
+              "downloads": 50,
+              "likes": 0
+            }
+          },
+          {
+            "name": "decrystal/decrystal_ER",
+            "url": "https://huggingface.co/decrystal/decrystal_ER",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/645f9b50c40ddf03a9eae36a/IYgJG3yXVgM8NcbNz-8g_.jpeg",
+            "rank": 3,
+            "metric": {
+              "downloads": 0,
+              "likes": 0
+            }
+          },
+          {
+            "name": "Justaweeb/Ayo",
+            "url": "https://huggingface.co/Justaweeb/Ayo",
+            "icon_url": "https://huggingface.co/avatars/bd8e8f0213520d652364ced043640465.svg",
+            "rank": 4,
+            "metric": {
+              "downloads": 0,
+              "likes": 0
+            }
+          },
+          {
+            "name": "yamazaz/wak",
+            "url": "https://huggingface.co/yamazaz/wak",
+            "icon_url": "https://huggingface.co/avatars/96843d1e23276965afc8c9f6fef8c061.svg",
+            "rank": 5,
+            "metric": {
+              "downloads": 0,
+              "likes": 0
+            }
+          }
+        ]
+      }
+    },
+    "bsd-2-clause": {
+      "atlas_slug": "bsd-2-clause",
+      "title": "The 2-Clause BSD License",
+      "spdx_id": "BSD-2-Clause",
+      "type": "software",
+      "source_counts": {
+        "github": 5,
+        "huggingface": 5
+      },
+      "sources": {
+        "github": [
+          {
+            "name": "LadybirdBrowser/ladybird",
+            "url": "https://github.com/LadybirdBrowser/ladybird",
+            "icon_url": "https://avatars.githubusercontent.com/u/134672918?v=4",
+            "rank": 1,
+            "metric": {
+              "stars": 64179
+            }
+          },
+          {
+            "name": "Homebrew/brew",
+            "url": "https://github.com/Homebrew/brew",
+            "icon_url": "https://avatars.githubusercontent.com/u/1503512?v=4",
+            "rank": 2,
+            "metric": {
+              "stars": 48579
+            }
+          },
+          {
+            "name": "Leaflet/Leaflet",
+            "url": "https://github.com/Leaflet/Leaflet",
+            "icon_url": "https://avatars.githubusercontent.com/u/2854298?v=4",
+            "rank": 3,
+            "metric": {
+              "stars": 45215
+            }
+          },
+          {
+            "name": "restic/restic",
+            "url": "https://github.com/restic/restic",
+            "icon_url": "https://avatars.githubusercontent.com/u/10073512?v=4",
+            "rank": 4,
+            "metric": {
+              "stars": 34626
+            }
+          },
+          {
+            "name": "SerenityOS/serenity",
+            "url": "https://github.com/SerenityOS/serenity",
+            "icon_url": "https://avatars.githubusercontent.com/u/50811782?v=4",
+            "rank": 5,
+            "metric": {
+              "stars": 33509
+            }
+          }
+        ],
+        "huggingface": [
+          {
+            "name": "pipecat-ai/smart-turn-v3",
+            "url": "https://huggingface.co/pipecat-ai/smart-turn-v3",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/64529e7d0a19adf0445eea5f/zK07ZNxEozdIL0w_1mnGL.png",
+            "rank": 1,
+            "metric": {
+              "downloads": 0,
+              "likes": 161
+            }
+          },
+          {
+            "name": "pipecat-ai/smart-turn-v2",
+            "url": "https://huggingface.co/pipecat-ai/smart-turn-v2",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/64529e7d0a19adf0445eea5f/zK07ZNxEozdIL0w_1mnGL.png",
+            "rank": 2,
+            "metric": {
+              "downloads": 4639,
+              "likes": 76
+            }
+          },
+          {
+            "name": "pipecat-ai/smart-turn",
+            "url": "https://huggingface.co/pipecat-ai/smart-turn",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/64529e7d0a19adf0445eea5f/zK07ZNxEozdIL0w_1mnGL.png",
+            "rank": 3,
+            "metric": {
+              "downloads": 625,
+              "likes": 71
+            }
+          },
+          {
+            "name": "Haoz0206/Omni-R1",
+            "url": "https://huggingface.co/Haoz0206/Omni-R1",
+            "icon_url": "https://huggingface.co/avatars/83f8553630b9351008435e6822bdc83b.svg",
+            "rank": 4,
+            "metric": {
+              "downloads": 83,
+              "likes": 23
+            }
+          },
+          {
+            "name": "ridger/SpikeGPT-BookCorpus",
+            "url": "https://huggingface.co/ridger/SpikeGPT-BookCorpus",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/63ff09f24852102d4871c19c/lyE3xemtZss3qebK5sEXw.png",
+            "rank": 5,
+            "metric": {
+              "downloads": 0,
+              "likes": 21
+            }
+          }
+        ]
+      }
+    },
+    "bsd-3-clause": {
+      "atlas_slug": "bsd-3-clause",
+      "title": "The 3-Clause BSD License",
+      "spdx_id": "BSD-3-Clause",
+      "type": "software",
+      "source_counts": {
+        "github": 5,
+        "huggingface": 5
+      },
+      "sources": {
+        "github": [
+          {
+            "name": "freeCodeCamp/freeCodeCamp",
+            "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+            "icon_url": "https://avatars.githubusercontent.com/u/9892522?v=4",
+            "rank": 1,
+            "metric": {
+              "stars": 450027
+            }
+          },
+          {
+            "name": "flutter/flutter",
+            "url": "https://github.com/flutter/flutter",
+            "icon_url": "https://avatars.githubusercontent.com/u/14101776?v=4",
+            "rank": 2,
+            "metric": {
+              "stars": 177016
+            }
+          },
+          {
+            "name": "golang/go",
+            "url": "https://github.com/golang/go",
+            "icon_url": "https://avatars.githubusercontent.com/u/4314092?v=4",
+            "rank": 3,
+            "metric": {
+              "stars": 134850
+            }
+          },
+          {
+            "name": "django/django",
+            "url": "https://github.com/django/django",
+            "icon_url": "https://avatars.githubusercontent.com/u/27804?v=4",
+            "rank": 4,
+            "metric": {
+              "stars": 87916
+            }
+          },
+          {
+            "name": "pallets/flask",
+            "url": "https://github.com/pallets/flask",
+            "icon_url": "https://avatars.githubusercontent.com/u/16748505?v=4",
+            "rank": 5,
+            "metric": {
+              "stars": 71682
+            }
+          }
+        ],
+        "huggingface": [
+          {
+            "name": "Salesforce/blip-image-captioning-large",
+            "url": "https://huggingface.co/Salesforce/blip-image-captioning-large",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/1602756670970-noauth.jpeg",
+            "rank": 1,
+            "metric": {
+              "downloads": 762432,
+              "likes": 1474
+            }
+          },
+          {
+            "name": "Salesforce/blip-image-captioning-base",
+            "url": "https://huggingface.co/Salesforce/blip-image-captioning-base",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/1602756670970-noauth.jpeg",
+            "rank": 2,
+            "metric": {
+              "downloads": 2524103,
+              "likes": 855
+            }
+          },
+          {
+            "name": "MIT/ast-finetuned-audioset-10-10-0.4593",
+            "url": "https://huggingface.co/MIT/ast-finetuned-audioset-10-10-0.4593",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/S90qoeEJeEYaYf-c7Zs8g.png",
+            "rank": 3,
+            "metric": {
+              "downloads": 487742,
+              "likes": 356
+            }
+          },
+          {
+            "name": "lldacing/flash-attention-windows-wheel",
+            "url": "https://huggingface.co/lldacing/flash-attention-windows-wheel",
+            "icon_url": "https://huggingface.co/avatars/04a3100a08fb62ac71a78930d870ffc8.svg",
+            "rank": 4,
+            "metric": {
+              "downloads": 0,
+              "likes": 320
+            }
+          },
+          {
+            "name": "Salesforce/blip-vqa-base",
+            "url": "https://huggingface.co/Salesforce/blip-vqa-base",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/1602756670970-noauth.jpeg",
+            "rank": 5,
+            "metric": {
+              "downloads": 229201,
+              "likes": 193
+            }
+          }
+        ]
+      }
+    },
+    "mit": {
+      "atlas_slug": "mit",
+      "title": "The MIT License",
+      "spdx_id": "MIT",
+      "type": "software",
+      "source_counts": {
+        "github": 5,
+        "huggingface": 5,
+        "kaggle": 5
+      },
+      "sources": {
+        "github": [
+          {
+            "name": "public-apis/public-apis",
+            "url": "https://github.com/public-apis/public-apis",
+            "icon_url": "https://avatars.githubusercontent.com/u/51121562?v=4",
+            "rank": 1,
+            "metric": {
+              "stars": 443253
+            }
+          },
+          {
+            "name": "practical-tutorials/project-based-learning",
+            "url": "https://github.com/practical-tutorials/project-based-learning",
+            "icon_url": "https://avatars.githubusercontent.com/u/89421154?v=4",
+            "rank": 2,
+            "metric": {
+              "stars": 270295
+            }
+          },
+          {
+            "name": "react/react",
+            "url": "https://github.com/react/react",
+            "icon_url": "https://avatars.githubusercontent.com/u/102812?v=4",
+            "rank": 3,
+            "metric": {
+              "stars": 245971
+            }
+          },
+          {
+            "name": "obra/superpowers",
+            "url": "https://github.com/obra/superpowers",
+            "icon_url": "https://avatars.githubusercontent.com/u/45416?v=4",
+            "rank": 4,
+            "metric": {
+              "stars": 234687
+            }
+          },
+          {
+            "name": "trimstray/the-book-of-secret-knowledge",
+            "url": "https://github.com/trimstray/the-book-of-secret-knowledge",
+            "icon_url": "https://avatars.githubusercontent.com/u/31127917?v=4",
+            "rank": 5,
+            "metric": {
+              "stars": 229472
+            }
+          }
+        ],
+        "huggingface": [
+          {
+            "name": "deepseek-ai/DeepSeek-R1",
+            "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/6538815d1bdb3c40db94fbfa/xMBly9PUMphrFVMxLX4kq.png",
+            "rank": 1,
+            "metric": {
+              "downloads": 4434868,
+              "likes": 13337
+            }
+          },
+          {
+            "name": "deepseek-ai/DeepSeek-V4-Pro",
+            "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/6538815d1bdb3c40db94fbfa/xMBly9PUMphrFVMxLX4kq.png",
+            "rank": 2,
+            "metric": {
+              "downloads": 4510828,
+              "likes": 4175
+            }
+          },
+          {
+            "name": "deepseek-ai/Janus-Pro-7B",
+            "url": "https://huggingface.co/deepseek-ai/Janus-Pro-7B",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/6538815d1bdb3c40db94fbfa/xMBly9PUMphrFVMxLX4kq.png",
+            "rank": 3,
+            "metric": {
+              "downloads": 23950,
+              "likes": 3605
+            }
+          },
+          {
+            "name": "microsoft/phi-2",
+            "url": "https://huggingface.co/microsoft/phi-2",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/1583646260758-5e64858c87403103f9f1055d.png",
+            "rank": 4,
+            "metric": {
+              "downloads": 549755,
+              "likes": 3456
+            }
+          },
+          {
+            "name": "openai-community/gpt2",
+            "url": "https://huggingface.co/openai-community/gpt2",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/5dd96eb166059660ed1ee413/9NY4jfufqo1uyv8oNXQju.png",
+            "rank": 5,
+            "metric": {
+              "downloads": 17386984,
+              "likes": 3255
+            }
+          }
+        ],
+        "kaggle": [
+          {
+            "name": "Brain Tumor Classification (MRI)",
+            "url": "https://www.kaggle.com/datasets/sartajbhuvaji/brain-tumor-classification-mri",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/672377/1183165/ba9c868e65fe5291b3be871a89204a8b/dataset-thumbnail.jpg?t=2020-05-28-05-34-40",
+            "rank": 1,
+            "metric": {
+              "votes": 847,
+              "downloads": 100001,
+              "views": 631789,
+              "kernels": 860
+            }
+          },
+          {
+            "name": "Fashion Product Images Dataset",
+            "url": "https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-dataset",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/139630/329006/720cd7ceb25eb130d0b873464f734370/dataset-thumbnail.png?t=2019-03-15-02-52-57",
+            "rank": 2,
+            "metric": {
+              "votes": 839,
+              "downloads": 76976,
+              "views": 445105,
+              "kernels": 255
+            }
+          },
+          {
+            "name": "Online Food Dataset",
+            "url": "https://www.kaggle.com/datasets/sudarshan24byte/online-food-dataset",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/4527983/7745817/d1876f0b5d4c4f801e04a82b5f89580d/dataset-thumbnail.png?t=2024-03-02-19-10-55",
+            "rank": 3,
+            "metric": {
+              "votes": 790,
+              "downloads": 53467,
+              "views": 239568,
+              "kernels": 128
+            }
+          },
+          {
+            "name": "Vehicle Sales Data",
+            "url": "https://www.kaggle.com/datasets/syedanwarafridi/vehicle-sales-data",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/4476093/7673611/54c7e23d0997f6489d364e084b45a1df/dataset-thumbnail.jpg?t=2024-02-21-20-22-07",
+            "rank": 4,
+            "metric": {
+              "votes": 778,
+              "downloads": 87530,
+              "views": 335783,
+              "kernels": 164
+            }
+          },
+          {
+            "name": "Chocolate Sales Data 📊🍫",
+            "url": "https://www.kaggle.com/datasets/atharvasoundankar/chocolate-sales",
+            "icon_url": "https://storage.googleapis.com/kaggle-datasets-images/6784624/10914163/95abfa4d48dc5c5a28a55a7a0a85d56f/dataset-thumbnail.png?t=2025-03-04-05-22-43",
+            "rank": 5,
+            "metric": {
+              "votes": 520,
+              "downloads": 42713,
+              "views": 160483,
+              "kernels": 81
+            }
+          }
+        ]
+      }
+    },
+    "unlicense": {
+      "atlas_slug": "unlicense",
+      "title": "The Unlicense",
+      "spdx_id": "Unlicense",
+      "type": "software",
+      "source_counts": {
+        "github": 5,
+        "huggingface": 5
+      },
+      "sources": {
+        "github": [
+          {
+            "name": "yt-dlp/yt-dlp",
+            "url": "https://github.com/yt-dlp/yt-dlp",
+            "icon_url": "https://avatars.githubusercontent.com/u/79589310?v=4",
+            "rank": 1,
+            "metric": {
+              "stars": 172260
+            }
+          },
+          {
+            "name": "ytdl-org/youtube-dl",
+            "url": "https://github.com/ytdl-org/youtube-dl",
+            "icon_url": "https://avatars.githubusercontent.com/u/48381040?v=4",
+            "rank": 2,
+            "metric": {
+              "stars": 140546
+            }
+          },
+          {
+            "name": "iptv-org/iptv",
+            "url": "https://github.com/iptv-org/iptv",
+            "icon_url": "https://avatars.githubusercontent.com/u/55937028?v=4",
+            "rank": 3,
+            "metric": {
+              "stars": 126927
+            }
+          },
+          {
+            "name": "Anduin2017/HowToCook",
+            "url": "https://github.com/Anduin2017/HowToCook",
+            "icon_url": "https://avatars.githubusercontent.com/u/19531547?v=4",
+            "rank": 4,
+            "metric": {
+              "stars": 100872
+            }
+          },
+          {
+            "name": "BurntSushi/ripgrep",
+            "url": "https://github.com/BurntSushi/ripgrep",
+            "icon_url": "https://avatars.githubusercontent.com/u/456674?v=4",
+            "rank": 5,
+            "metric": {
+              "stars": 65285
+            }
+          }
+        ],
+        "huggingface": [
+          {
+            "name": "lexa862/NSFWmodel",
+            "url": "https://huggingface.co/lexa862/NSFWmodel",
+            "icon_url": "https://huggingface.co/avatars/38aa6824426f1a8a403daba1372a65e0.svg",
+            "rank": 1,
+            "metric": {
+              "downloads": 131,
+              "likes": 76
+            }
+          },
+          {
+            "name": "Sandro-Halpo/SamDoesArt-V3",
+            "url": "https://huggingface.co/Sandro-Halpo/SamDoesArt-V3",
+            "icon_url": "https://huggingface.co/avatars/c3824e001b19e3e2f1c544be273688de.svg",
+            "rank": 2,
+            "metric": {
+              "downloads": 19,
+              "likes": 71
+            }
+          },
+          {
+            "name": "LWDCLS/DarkIdol-Llama-3.1-8B-Instruct-1.2-Uncensored-GGUF-IQ-Imatrix-Request",
+            "url": "https://huggingface.co/LWDCLS/DarkIdol-Llama-3.1-8B-Instruct-1.2-Uncensored-GGUF-IQ-Imatrix-Request",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/65d4cf2693a0a3744a27536c/qGLojswp4QVWjKO5fiZge.png",
+            "rank": 3,
+            "metric": {
+              "downloads": 1107,
+              "likes": 67
+            }
+          },
+          {
+            "name": "Synthia/ChatGalRWKV",
+            "url": "https://huggingface.co/Synthia/ChatGalRWKV",
+            "icon_url": "https://www.gravatar.com/avatar/8f07a0168d802b9d73d9c88175781cd7?d=retro&size=100",
+            "rank": 4,
+            "metric": {
+              "downloads": 0,
+              "likes": 35
+            }
+          },
+          {
+            "name": "AI-B/UTENA-7B-NSFW-V2",
+            "url": "https://huggingface.co/AI-B/UTENA-7B-NSFW-V2",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/65a12c8ee96941538127ae0b/zqpybix_rm4AVKu94gaU1.png",
+            "rank": 5,
+            "metric": {
+              "downloads": 80,
+              "likes": 20
+            }
+          }
+        ]
+      }
+    },
+    "zlib": {
+      "atlas_slug": "zlib",
+      "title": "The zlib/libpng License",
+      "spdx_id": "Zlib",
+      "type": "software",
+      "source_counts": {
+        "github": 5,
+        "huggingface": 5
+      },
+      "sources": {
+        "github": [
+          {
+            "name": "portainer/portainer",
+            "url": "https://github.com/portainer/portainer",
+            "icon_url": "https://avatars.githubusercontent.com/u/22225832?v=4",
+            "rank": 1,
+            "metric": {
+              "stars": 37773
+            }
+          },
+          {
+            "name": "raysan5/raylib",
+            "url": "https://github.com/raysan5/raylib",
+            "icon_url": "https://avatars.githubusercontent.com/u/5766837?v=4",
+            "rank": 2,
+            "metric": {
+              "stars": 33529
+            }
+          },
+          {
+            "name": "nicbarker/clay",
+            "url": "https://github.com/nicbarker/clay",
+            "icon_url": "https://avatars.githubusercontent.com/u/2264338?v=4",
+            "rank": 3,
+            "metric": {
+              "stars": 17466
+            }
+          },
+          {
+            "name": "doitsujin/dxvk",
+            "url": "https://github.com/doitsujin/dxvk",
+            "icon_url": "https://avatars.githubusercontent.com/u/25567304?v=4",
+            "rank": 4,
+            "metric": {
+              "stars": 17346
+            }
+          },
+          {
+            "name": "libsdl-org/SDL",
+            "url": "https://github.com/libsdl-org/SDL",
+            "icon_url": "https://avatars.githubusercontent.com/u/77683370?v=4",
+            "rank": 5,
+            "metric": {
+              "stars": 15931
+            }
+          }
+        ],
+        "huggingface": [
+          {
+            "name": "advokat/NotSoGood",
+            "url": "https://huggingface.co/advokat/NotSoGood",
+            "icon_url": "https://cdn-avatars.huggingface.co/v1/production/uploads/63df025415266dd945fa5722/ytm0C72Qnba70Ln_4ljhv.jpeg",
+            "rank": 1,
+            "metric": {
+              "downloads": 0,
+              "likes": 1
+            }
+          },
+          {
+            "name": "calihyper/trad-kor-landscape-ink-wash-painting",
+            "url": "https://huggingface.co/calihyper/trad-kor-landscape-ink-wash-painting",
+            "icon_url": "https://huggingface.co/avatars/70baf448add5f44fff2065e184ac55b1.svg",
+            "rank": 2,
+            "metric": {
+              "downloads": 13,
+              "likes": 1
+            }
+          },
+          {
+            "name": "clakk/lkou",
+            "url": "https://huggingface.co/clakk/lkou",
+            "icon_url": "https://huggingface.co/avatars/1dae95b33a60c2d1112233268c5ca723.svg",
+            "rank": 3,
+            "metric": {
+              "downloads": 0,
+              "likes": 1
+            }
+          },
+          {
+            "name": "ducnguyen1/deegr",
+            "url": "https://huggingface.co/ducnguyen1/deegr",
+            "icon_url": "https://huggingface.co/avatars/346c26639d5ff1846700a720678fd2ef.svg",
+            "rank": 4,
+            "metric": {
+              "downloads": 0,
+              "likes": 1
+            }
+          },
+          {
+            "name": "bigfat/jeven_loras",
+            "url": "https://huggingface.co/bigfat/jeven_loras",
+            "icon_url": "https://huggingface.co/avatars/7cf4c72695078f3774843da3c4887d49.svg",
+            "rank": 5,
+            "metric": {
+              "downloads": 126,
+              "likes": 0
+            }
+          }
+        ]
+      }
+    },
+    "0bsd": {
+      "atlas_slug": "0bsd",
+      "title": "Zero-Clause BSD",
+      "spdx_id": "0BSD",
+      "type": "software",
+      "source_counts": {
+        "github": 5
+      },
+      "sources": {
+        "github": [
+          {
+            "name": "lucia-auth/lucia",
+            "url": "https://github.com/lucia-auth/lucia",
+            "icon_url": "https://avatars.githubusercontent.com/u/124423533?v=4",
+            "rank": 1,
+            "metric": {
+              "stars": 10461
+            }
+          },
+          {
+            "name": "smoltcp-rs/smoltcp",
+            "url": "https://github.com/smoltcp-rs/smoltcp",
+            "icon_url": "https://avatars.githubusercontent.com/u/61207812?v=4",
+            "rank": 2,
+            "metric": {
+              "stars": 4494
+            }
+          },
+          {
+            "name": "obsidianmd/obsidian-sample-plugin",
+            "url": "https://github.com/obsidianmd/obsidian-sample-plugin",
+            "icon_url": "https://avatars.githubusercontent.com/u/65011256?v=4",
+            "rank": 3,
+            "metric": {
+              "stars": 4315
+            }
+          },
+          {
+            "name": "Cats-Team/AdRules",
+            "url": "https://github.com/Cats-Team/AdRules",
+            "icon_url": "https://avatars.githubusercontent.com/u/88201352?v=4",
+            "rank": 4,
+            "metric": {
+              "stars": 3564
+            }
+          },
+          {
+            "name": "gatsbyjs/gatsby-starter-blog",
+            "url": "https://github.com/gatsbyjs/gatsby-starter-blog",
+            "icon_url": "https://avatars.githubusercontent.com/u/12551863?v=4",
+            "rank": 5,
+            "metric": {
+              "stars": 3515
+            }
+          }
+        ]
+      }
+    }
+  }
+}

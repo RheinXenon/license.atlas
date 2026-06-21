@@ -78,7 +78,7 @@ export function LicenseReviewBlock({ license }: {
   }
 
   return (
-    <section className="relative z-0 mt-6 mb-8 rounded-2xl border border-zinc-200/60 bg-white/60 p-5 backdrop-blur-xl hover:z-30 focus-within:z-30 dark:border-zinc-800/60 dark:bg-zinc-900/40">
+    <section className="detail-enter-3 relative z-0 mt-6 mb-8 rounded-2xl border border-zinc-200/60 bg-white/60 p-5 backdrop-blur-xl hover:z-30 focus-within:z-30 dark:border-zinc-800/60 dark:bg-zinc-900/40">
       <div className="mb-3 flex items-center justify-between gap-3">
         <div>
           <h2 className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">

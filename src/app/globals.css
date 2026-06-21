@@ -174,6 +174,13 @@ body {
 .fade-in-4 { animation: fadeIn 0.4s ease-out 0.2s both; }
 .fade-in-5 { animation: fadeIn 0.4s ease-out 0.25s both; }
 
+/* License detail page entrance rhythm */
+.detail-enter { animation: fadeIn 0.38s ease-out both; }
+.detail-enter-1 { animation: fadeIn 0.38s ease-out 0.04s both; }
+.detail-enter-2 { animation: fadeIn 0.38s ease-out 0.08s both; }
+.detail-enter-3 { animation: fadeIn 0.38s ease-out 0.12s both; }
+.detail-enter-4 { animation: fadeIn 0.38s ease-out 0.16s both; }
+
 /* OSI tracker timeline strip + tooltip */
 @keyframes trackerFlash {
   0% { background: rgba(124, 58, 237, 0.28); }

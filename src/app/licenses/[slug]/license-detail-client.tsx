@@ -3,10 +3,12 @@
 import Link from "next/link";
 import { Badge } from "@/components/badge";
 import { LicenseBodySection } from "@/components/license-body-section";
+import { ProjectShowcaseBlock } from "@/components/project-showcase-block";
 import { LicenseReviewBlock } from "@/components/license-review-block";
 import { OsadlChecklistBlock } from "@/components/osadl-checklist-block";
 import { useLang } from "@/lib/i18n";
 import { osadlMeta, resolveOsadlChecklist } from "@/lib/osadl";
+import { resolveProjectShowcase } from "@/lib/project-showcase";
 import { hasReviewContent, resolveTrackerEntry } from "@/lib/tracker-match";
 import type { License } from "@/lib/types";
 
@@ -49,19 +51,22 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
   const trackerEntry = resolveTrackerEntry(license);
   const reviewTracked = !!trackerEntry && hasReviewContent(trackerEntry);
   const osadlEntry = resolveOsadlChecklist(license);
+  const showcaseEntry = resolveProjectShowcase(license);
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6">
+    <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+      <div className="gap-10 lg:grid lg:grid-cols-[minmax(0,1fr)_18rem]">
+        <div className="min-w-0">
       {/* Nav */}
       <Link
         href="/"
-        className="fade-in mb-6 inline-flex items-center gap-1 text-sm text-zinc-500 hover:text-[#7c3aed] dark:hover:text-[#a78bfa]"
+        className="detail-enter mb-6 inline-flex items-center gap-1 text-sm text-zinc-500 hover:text-[#7c3aed] dark:hover:text-[#a78bfa]"
       >
         &larr; {t("detail.allLicenses")}
       </Link>
 
       {/* Header */}
-      <div className="fade-in-1 relative z-50 mb-8">
+      <div className="detail-enter-1 relative z-50 mb-8">
         <h1 className="break-words text-3xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">
           {license.title}
         </h1>
@@ -114,7 +119,7 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
       {(license.permissions.length > 0 ||
         license.conditions.length > 0 ||
         license.limitations.length > 0) && (
-        <div className="fade-in-2 relative z-40 mb-8 flex flex-wrap gap-6">
+        <div className="detail-enter-2 relative z-40 mb-8 flex flex-wrap gap-6">
           {license.permissions.length > 0 && (
             <div>
               <p className="mb-2 text-xs font-medium uppercase tracking-wider text-zinc-400">
@@ -159,7 +164,7 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
 
       {/* Blue Oak Rating */}
       {license.blueoak_tier && (
-        <div className="fade-in-2 relative z-30 mb-8">
+        <div className="detail-enter-2 relative z-30 mb-8">
           <p className="mb-2 text-xs font-medium uppercase tracking-wider text-zinc-400">
             {t("detail.blueOakRating")}
           </p>
@@ -180,14 +185,14 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
 
       {/* License Text */}
       {license.body && (
-        <div className="fade-in-3">
+        <div className="detail-enter-3">
           <LicenseBodySection slug={license.slug} body={license.body} hasBodies={!!license.languages && license.languages.length > 1} />
         </div>
       )}
 
       {/* Sources */}
       {license.sources.length > 0 && (
-        <div className="fade-in-4 mb-8">
+        <div className="detail-enter-4 mb-8">
           <h2 className="mb-4 text-lg font-semibold text-zinc-950 dark:text-zinc-50">
             {t("detail.sources")}
           </h2>
@@ -213,7 +218,7 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
 
       {/* Terms */}
       {license.terms && license.terms.length > 0 && (
-        <div className="fade-in-4 mb-8">
+        <div className="detail-enter-4 mb-8">
           <h2 className="mb-4 text-lg font-semibold text-zinc-950 dark:text-zinc-50">
             {t("detail.terms")}
           </h2>
@@ -244,7 +249,7 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
       )}
 
       {/* Report Issue */}
-      <div className="fade-in-4 mb-8 flex justify-end">
+      <div className="detail-enter-4 mb-8 flex justify-end">
         <a
           href={`https://github.com/morningD/license.atlas/issues/new?template=license-feedback.yml&labels=license-feedback&title=${encodeURIComponent(`[Feedback] ${license.title}`)}`}
           target="_blank"
@@ -257,7 +262,7 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
       </div>
 
       {/* Prev/Next */}
-      <div className="fade-in-5 flex items-center justify-between border-t border-zinc-200 pt-6 dark:border-zinc-800">
+      <div className="detail-enter-4 flex items-center justify-between border-t border-zinc-200 pt-6 dark:border-zinc-800">
         {prev ? (
           <Link
             href={`/licenses/${prev.slug}`}
@@ -278,6 +283,11 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
         ) : (
           <span />
         )}
+      </div>
+        </div>
+        <div className="mt-8 lg:mt-[7.875rem]">
+          <ProjectShowcaseBlock entry={showcaseEntry} />
+        </div>
       </div>
     </div>
   );

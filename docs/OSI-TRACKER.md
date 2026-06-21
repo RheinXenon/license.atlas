@@ -4,7 +4,7 @@
 
 - **页面**：`data/osi/license-review-tracker.html`（通过 HTTP fetch `license-review-tracker-v2.json`，需 `python3 -m http.server` 起本地服务）
 - **数据**：`data/osi/license-review-tracker-v2.json`（enrich 后的最终数据）
-- **规模**：174 个提交（approved 102 / rejected 37 / withdrawn 4 / pending 8 / superseded 3 / legacy 20）
+- **规模**：179 个提交（approved 102 / rejected 37 / withdrawn 4 / pending 13 / superseded 3 / legacy 20）
 - **离线版**：`license-review-tracker-standalone.html`（JSON 内嵌，`file://` 可直开）。每次重建 v2 后需同步重新嵌入 JSON；当前已同步到 2026-06-20 的 board-vote exhaustive audit + ModelGo series + 全量 point 修复。
 
 ## 数据管线
@@ -260,6 +260,28 @@ node -e "const fs=require('fs'); const html=fs.readFileSync('data/osi/license-re
 **生成**：`scripts/extract-points.mjs` 读取 `data/osi/mail/_index/submissions/*.json`，调用 LLM 提取。prompt 见 `scripts/prompts/extract-point.md`。
 
 > 📌 **当前数据流**：point 字段现由 `apply-llm-batches.mjs` 从全量 LLM 批次（2898 manifest entries，双语 point_en/point_zh）合并注入，而非此节描述的单语 extract-points（后者是早期 102 子集，已被批次产物覆盖/补齐）。单数 `point` = `point_en` 的别名（build/enrich 仍读 `.point`），新增 `point_zh` 透传到 tracker.json/v2.json 供 HTML 中英切换。
+
+## 2026-06-21 Full Refresh Notes
+
+- 执行：`npm run update:tracker -- --since 2026-01`
+- 邮件归档新增 8 封：
+  - NIST Software License（2026-03，2 封）
+  - AIAL v2 讨论（2026-03，5 封）
+  - OTPL v1.0 讨论（2026-04，1 封）
+- `update-pending-submissions.mjs` 新识别 5 个 candidate：
+  - ESA-PL resubmission
+  - Orivex Syscall Note License
+  - QmDeve License 1.0
+  - BFSL withdrawal
+  - CompanioNation Public Licence 1.0
+- 初次重建时 `check-point-manifest-coverage.mjs` 暴露 25 条 timeline event 缺 point 覆盖；已补写 `/tmp/llm-batches/batch-960.{in,out}.json`，重跑后恢复为：
+  - `Timeline events: 3013`
+  - `Manifest entries: 2923`
+  - `Missing manifest coverage: 0`
+- 当前同步结果：
+  - `179` submissions
+  - `78` board votes
+  - `62` submissions with license texts
 
 **输出**：`data/osi/mail/_index/points-manifest.json`，格式：
 ```json

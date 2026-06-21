@@ -480,7 +480,7 @@ function InlineStat({ label, value, className, tooltip }: {
   tooltip?: string;
 }) {
   return (
-    <span className="group/stat relative inline-flex" data-osadl-interactive="true">
+    <span className="group/stat relative inline-flex">
       <span
         className={`inline-flex items-center gap-1.5 rounded-full border px-2 py-0.5 text-[11px] ${className || "border-zinc-200 bg-zinc-50 text-zinc-600 dark:border-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-300"}`}
         aria-label={tooltip ? `${label}: ${value || "Unknown"}. ${tooltip}` : undefined}
@@ -883,7 +883,7 @@ export function OsadlChecklistBlock({ entry, meta }: {
 
   return (
     <section
-      className="fade-in-3 relative z-10 mb-8 cursor-pointer rounded-2xl border border-cyan-200/70 bg-cyan-50/40 p-4 transition-colors hover:border-cyan-300/80 hover:bg-cyan-50/70 focus:outline-none focus:ring-2 focus:ring-cyan-400/40 dark:border-cyan-900/40 dark:bg-cyan-950/10 dark:hover:border-cyan-800/70 dark:hover:bg-cyan-950/20 sm:p-5"
+      className="detail-enter-3 relative z-10 mb-8 cursor-pointer rounded-2xl border border-cyan-200/70 bg-cyan-50/40 p-4 transition-colors hover:border-cyan-300/80 hover:bg-cyan-50/70 focus:outline-none focus:ring-2 focus:ring-cyan-400/40 dark:border-cyan-900/40 dark:bg-cyan-950/10 dark:hover:border-cyan-800/70 dark:hover:bg-cyan-950/20 sm:p-5"
       role="button"
       tabIndex={0}
       aria-expanded={expanded}

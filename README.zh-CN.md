@@ -12,8 +12,9 @@ LicenseAtlas 是面向软件、数据、AI 模型与 Agent 的许可证探索器
 - **分类筛选** — 软件、模型、数据、智能体、服务条款
 - **标签筛选** — 宽松许可、Copyleft、知识共享、硬件等
 - **热度与趋势** — 基于 HuggingFace、GitHub、Kaggle 数据的迷你趋势图
-- **[OSI 许可证审查追踪器](https://morningd.github.io/license.atlas/tracker)**（`/tracker`）— 174 个 OSI 许可证提交、审查状态、董事会投票、时间线与关联许可证文本历史的实时看板
+- **[OSI 许可证审查追踪器](https://morningd.github.io/license.atlas/tracker)**（`/tracker`）— 179 个 OSI 许可证提交、审查状态、董事会投票、时间线与关联许可证文本历史的实时看板
 - **OSADL 检查清单信号** — 为已匹配许可证展示义务/禁止项摘要、Copyleft/源码披露/专利提示，以及方向性兼容性数据
+- **明星项目** — 在部分许可证详情页右侧展示按来源分组的 GitHub、HuggingFace 与 Kaggle 代表项目，并支持增量刷新
 - **双语界面** — 中英文切换，自动检测浏览器语言
 - **暗色模式** — 跟随系统偏好 + 手动切换
 - **静态导出** — 2,588 个预渲染页面，加载极速
@@ -38,11 +39,14 @@ npm run build     # 静态导出到 out/
 ```bash
 npm run update:tracker   # 通过相邻 KB 仓库刷新 OSI license-review/license-discuss 数据
 npm run update:osadl     # 通过相邻 KB 仓库刷新 OSADL 检查清单原始数据
+npm run update:projects  # 通过相邻 KB 仓库刷新 GitHub/HuggingFace/Kaggle 明星项目 sidecar
+npm run update:projects -- --source huggingface --force  # 只刷新某一个明星项目数据源
 npm run sync:tracker     # 将已构建的 KB tracker 数据同步到 Atlas
 npm run sync:osadl       # 将已构建的 KB OSADL 检查清单数据同步到 Atlas
+npm run sync:projects    # 将已构建的 KB project-showcase 数据同步到 Atlas
 ```
 
-`npm run build` 会重新生成搜索索引，同步 tracker 与 OSADL sidecar 数据，然后执行 Next.js 静态构建。当前 build 脚本设置了 `NEXT_PRIVATE_BUILD_WORKER=0`，用于规避 Next.js 16 webpack build worker 在本地和 CI 中观察到的卡住问题。
+`npm run build` 会重新生成搜索索引，同步 tracker、OSADL 与 project-showcase sidecar 数据，然后执行 Next.js 静态构建。当前 build 脚本设置了 `NEXT_PRIVATE_BUILD_WORKER=0`，用于规避 Next.js 16 webpack build worker 在本地和 CI 中观察到的卡住问题。
 
 ## 数据来源
 
@@ -64,11 +68,12 @@ npm run sync:osadl       # 将已构建的 KB OSADL 检查清单数据同步到 
 | RAIL | 负责任 AI 许可证 |
 | 开放原子开源基金会 | 模型与硬件许可证（中英双语） |
 | OpenMDW | AI 模型及关联制品的宽松开源许可证（Linux Foundation） |
-| OSI Review Tracker | 174 个 OSI 许可证审查提交、时间线、首次提交/决议日期、董事会投票记录，以及来自公开审查/讨论记录的本地归档提交许可证文本 |
+| OSI Review Tracker | 179 个 OSI 许可证审查提交、时间线、首次提交/决议日期、董事会投票记录，以及来自公开审查/讨论记录的本地归档提交许可证文本 |
 | OSADL Open Source License Checklists | 121 条检查清单记录，120 个匹配的 LicenseAtlas 页面，并提供由检查清单提取的义务/禁止项、Copyleft/源码披露/专利提示与方向性兼容性摘要 |
+| Project Showcase | 31 个精选许可证的 GitHub 仓库、HuggingFace 模型与 Kaggle 数据集榜单，经标准化后作为详情页右侧 sidecar 展示 |
 
-热度数据来自 HuggingFace Hub（280 万+ 模型）、GitHub（28 种许可证类型）和 Kaggle（通过 Meta-Kaggle 覆盖 71.4 万+ 数据集）。
-网站页脚会显示最新数据更新时间，取许可证语料、OSI 审查追踪器同步时间与 OSADL 检查清单同步时间中的最新者，并与页面浏览量计数同排展示。
+热度数据来自 HuggingFace Hub（280 万+ 模型）、GitHub（28 种许可证类型）和 Kaggle（通过 Meta-Kaggle 覆盖 71.4 万+ 数据集）。Project Showcase 中 GitHub 按 stars 排序，HuggingFace 按 likes/点赞排序，Kaggle 按 votes 排序；许可证会在 Atlas 聚合计数达标，或 raw 源数据里出现明确热门的 top item 时进入展示。更新流程在源级做增量刷新：GitHub 按 license key 做新鲜度窗口缓存，HuggingFace 用 parquet 指纹门控，Kaggle 用最新 Meta-Kaggle version id 以及缓存的 API 解析 URL/缩略图元数据门控，Atlas 侧同步再做 hash 检测。可用 `npm run update:projects -- --source <github|huggingface|kaggle> --force` 只刷新单个数据源。
+网站页脚会显示最新数据更新时间，取许可证语料、OSI 审查追踪器同步时间、OSADL 检查清单同步时间与 project-showcase 同步时间中的最新者，并与页面浏览量计数同排展示。
 OSI Review Tracker 中的提交许可证原文来自公开 OSI 审查/讨论记录，仅用于研究和审查追踪；版权仍归原作者或许可证维护方所有。
 OSADL 检查清单数据归属 Open Source Automation Development Lab (OSADL) eG，由 OSADL 以 CC-BY-4.0 原始数据形式发布；LicenseAtlas 将其作为信息性合规元数据展示，不构成法律意见。
 

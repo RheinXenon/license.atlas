@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState, type MouseEvent } from "react";
 import licenses from "@/data/licenses-index.json";
-import { useLang } from "@/lib/i18n";
+import { useLang, type Lang } from "@/lib/i18n";
 import type { License, OsadlChecklistAction, OsadlChecklistEntry, OsadlIndexMeta } from "@/lib/types";
 
 type CompatibilityVerdict = "Yes" | "No" | "Same" | "Unknown" | "Check dependency";
@@ -21,6 +21,7 @@ interface CompatibilityRecord {
 }
 
 type ChecklistTone = "must" | "must-not";
+type OsadlTermMap = Record<string, string>;
 
 interface ChecklistDisplayAction {
   text: string;
@@ -107,6 +108,303 @@ function formatTimestamp(value: string | undefined) {
   return date.toISOString().slice(0, 10);
 }
 
+const CONDITION_ZH: OsadlTermMap = {
+  "1": "条件 1",
+  "2": "条件 2",
+  "ATTRIBUTE Dynamic": "动态署名",
+  "Advertisement": "广告",
+  "Binary delivery": "二进制分发",
+  "Combined work With AGPL-3.0-only": "与 AGPL-3.0-only 组合的作品",
+  "Combined work With AGPL-3.0-only OR AGPL-3.0-or-later": "与 AGPL-3.0-only 或 AGPL-3.0-or-later 组合的作品",
+  "Commercial distribution": "商业分发",
+  "Displaying Copyright notices": "展示版权声明",
+  "Distributed With Other works": "与其他作品一同分发",
+  "Documentation": "文档",
+  "Font Modification": "字体修改",
+  "Including Windows code": "包含 Windows 代码",
+  "Installation Is NOT Feasible": "无法安装",
+  "Interactive": "交互式使用",
+  "Interactive AND Displaying Appropriate legal notices": "交互式使用并展示适当法律声明",
+  "Interactive AND Displaying Copyright notices": "交互式使用并展示版权声明",
+  "Interactive AND Displaying License announcement": "交互式使用并展示许可证公告",
+  "Interactive AND Reference Legal notices": "交互式使用并引用法律声明",
+  "License change": "许可证变更",
+  "Modification": "修改",
+  "Modification Of Files": "修改文件",
+  "Modified library NOT Interoperable": "修改后的库不可互操作",
+  "Modified work Is Protocol incompatible": "修改后的作品协议不兼容",
+  "Modified work Under Original license": "修改后的作品沿用原许可证",
+  "NOT Binary delivery of standard UnZipSFX binary as part of a self-extracting archive AND NOT Delete SFX banner AND NOT Disable SFX banner": "非将标准 UnZipSFX 二进制作为自解压归档的一部分分发，且未删除或禁用 SFX 横幅",
+  "NOT Legal notices": "非法律声明",
+  "No Legal notices": "无法律声明",
+  "Non-permissive additional terms Added": "添加非宽松附加条款",
+  "Notice From Copyright holder": "版权持有人提供的通知",
+  "Patent holder OR Trademark holder OR Third-party patents OR Third-party trademarks": "专利持有人、商标持有人、第三方专利或第三方商标",
+  "Permitted Non-permissive additional terms": "允许的非宽松附加条款",
+  "Pointer Expires": "指针过期",
+  "Pointer To Copyright notices OR License": "指向版权声明或许可证",
+  "Provided By Copyright holder": "由版权持有人提供",
+  "Service offerings": "服务提供",
+  "Software modification": "软件修改",
+  "Software modification Of Library": "库的软件修改",
+  "Software modification Uses Linked work": "软件修改使用链接作品",
+  "Source code delivery": "源码分发",
+  "Source code modification": "源码修改",
+  "Substantial work": "实质性作品",
+  "Third-party attribution notice In Copyright notices OR Terms of service OR By Reasonable means": "版权声明、服务条款或合理方式中的第三方署名声明",
+  "Title": "标题",
+  "Use in Product": "在产品中使用",
+  "Work Includes File \"NOTICE\"": "作品包含 NOTICE 文件",
+};
+
+const USE_CASE_ZH: OsadlTermMap = {
+  "Binary delivery": "二进制分发",
+  "Binary delivery Of Combined work": "组合作品的二进制分发",
+  "Binary delivery Of Linked work": "链接作品的二进制分发",
+  "Binary delivery Of Linked work With Header files Of Library Included In Linked work": "链接作品的二进制分发（链接作品包含库头文件）",
+  "Combined work delivery": "组合作品分发",
+  "Font delivery": "字体分发",
+  "Image delivery OR Font delivery": "图像或字体分发",
+  "Network service": "网络服务",
+  "Network services": "网络服务",
+  "Source code delivery": "源码分发",
+  "Source code delivery OR Binary delivery": "源码或二进制分发",
+  "Source code delivery OR Binary delivery OR Network service": "源码分发、二进制分发或网络服务",
+  "Source code delivery Of Combined library OR Binary delivery Of Combined library": "组合库的源码或二进制分发",
+  "Source code delivery Of Combined work": "组合作品的源码分发",
+  "Work Delivery": "作品分发",
+};
+
+const TERM_ZH: OsadlTermMap = {
+  "AGPL-3.0-only OR AGPL-3.0-or-later": "AGPL-3.0-only 或 AGPL-3.0-or-later",
+  "AGPL-3.0-only": "AGPL-3.0-only",
+  "Appropriate legal notices": "适当法律声明",
+  "Attribution notice": "署名声明",
+  "Attribution notices": "署名声明",
+  "Binary delivery": "二进制分发",
+  "Combined library": "组合库",
+  "Combined work": "组合作品",
+  "Compatible license": "兼容许可证",
+  "Contributors": "贡献者",
+  "Copyright holder": "版权持有人",
+  "Copyright notice": "版权声明",
+  "Copyright notices": "版权声明",
+  "Delayed source code delivery": "延迟源码提供",
+  "Distribution material": "分发材料",
+  "Documentation": "文档",
+  "Equivalent License obligations": "等同的许可证义务",
+  "File 「LEGAL」": "LEGAL 文件",
+  "File 「NOTICE」 In Documentation": "文档中的 NOTICE 文件",
+  "File 「NOTICE」 In Source code": "源码中的 NOTICE 文件",
+  "File 「NOTICE」": "NOTICE 文件",
+  "Font Name": "字体名称",
+  "Granted rights": "已授予权利",
+  "Header files": "头文件",
+  "Installation information": "安装信息",
+  "Interface To Work": "作品接口",
+  "Irrelevant parts": "无关部分",
+  "Legal notices": "法律声明",
+  "Liability disclaimer": "责任免责声明",
+  "Liability disclaimers": "责任免责声明",
+  "Library": "库",
+  "License acceptance": "许可证接受",
+  "License announcement": "许可证公告",
+  "License fee": "许可证费用",
+  "License notice": "许可证声明",
+  "License notices": "许可证声明",
+  "License obligations": "许可证义务",
+  "License text": "许可证文本",
+  "Modification author": "修改作者",
+  "Modification date": "修改日期",
+  "Modification notice": "修改声明",
+  "Modification reason": "修改理由",
+  "Modification report": "修改报告",
+  "Modified library": "修改后的库",
+  "Modified work": "修改后的作品",
+  "Name": "名称",
+  "Non-permissive additional terms": "非宽松附加条款",
+  "Notice": "通知",
+  "Original authors": "原作者",
+  "Original license": "原许可证",
+  "Original name": "原名称",
+  "Original source code": "原始源码",
+  "Original work": "原作品",
+  "Other Contributors": "其他贡献者",
+  "Other contributors": "其他贡献者",
+  "Patent notice": "专利声明",
+  "Patent notices": "专利声明",
+  "Pointer On Request": "按请求提供指针",
+  "Pointer To Source code": "源码指针",
+  "Pointer To Warranty disclaimer": "免责声明指针",
+  "Pointer": "指针",
+  "Primary reserved font name": "主要保留字体名称",
+  "Product name": "产品名称",
+  "Reference To Warranty disclaimer": "免责声明引用",
+  "Relinking With Modified library": "与修改后的库重新链接",
+  "Retrieval information of Source code in Notice": "通知中的源码获取信息",
+  "Retrieval information": "获取信息",
+  "Reverse engineering of Linked work": "对链接作品的逆向工程",
+  "Reverse engineering": "逆向工程",
+  "Source code delivery": "源码分发",
+  "Source code": "源码",
+  "Standard license notice": "标准许可证声明",
+  "Strong copyleft license": "强 copyleft 许可证",
+  "Target binary": "目标二进制文件",
+  "Technological measures": "技术措施",
+  "Third-party attribution notice": "第三方署名声明",
+  "Title Of Work": "作品标题",
+  "Trademark notice": "商标声明",
+  "Trademark notices": "商标声明",
+  "Warranty disclaimer of Apple": "Apple 免责声明",
+  "Warranty disclaimer": "免责声明",
+  "Warranty disclaimers": "免责声明",
+  "Written offer": "书面要约",
+};
+
+const ACTION_EXACT_ZH: OsadlTermMap = {
+  "Append Name To Original name": "在原名称后追加名称",
+  "End Binary delivery": "停止二进制分发",
+  "Grant License": "授予许可证",
+  "Indemnify Original authors": "使原作者免受相关责任或索赔，并承担赔偿义务",
+  "Indemnify Other Contributors": "使其他贡献者免受相关责任或索赔，并承担赔偿义务",
+  "Indemnify Other contributors": "使其他贡献者免受相关责任或索赔，并承担赔偿义务",
+  "Inform Recipients": "通知接收方",
+  "Permit Binary delivery of Library": "允许库的二进制分发",
+  "Permit Modification of Linked work": "允许修改链接作品",
+  "Permit Reverse engineering of Linked work": "允许对链接作品进行逆向工程",
+  "Prepend \"PHP\" To Product name": "在产品名称前加上「PHP」",
+  "Promote": "用于宣传或背书",
+  "Search License acceptance": "检查许可证接受情况",
+  "Sell Font": "销售字体",
+  "Sublicense": "再许可",
+  "Use": "使用",
+};
+
+const ACTION_VERBS_ZH: OsadlTermMap = {
+  "Append": "追加",
+  "Credit": "署名标注",
+  "Delete": "删除",
+  "Disseminate": "传播",
+  "Display": "展示",
+  "Enable": "允许",
+  "Ensure": "确保",
+  "Forward": "随同传递",
+  "Fulfill": "履行",
+  "Impede": "阻碍",
+  "Include": "包含",
+  "Indemnify": "赔偿",
+  "Litigate": "就以下事项提起诉讼：",
+  "Mark": "标记",
+  "Misrepresent": "歪曲",
+  "Modify": "修改",
+  "Notify": "通知",
+  "Permit": "允许",
+  "Prepend": "前置",
+  "Promote Using": "使用以下名称宣传：",
+  "Provide": "提供",
+  "Publish": "发布",
+  "Reference": "引用",
+  "Rename": "重命名",
+  "Require": "要求",
+  "Restrict": "限制",
+  "Update": "更新",
+  "Use": "使用",
+};
+
+function protectQuotedText(value: string) {
+  const parts: string[] = [];
+  const text = value.replace(/"([^"]*)"/g, (_, quoted: string) => {
+    const token = `__Q${parts.length}__`;
+    parts.push(`「${quoted.replace(/&lt;/g, "<").replace(/&gt;/g, ">")}」`);
+    return token;
+  });
+  return { text, parts };
+}
+
+function restoreQuotedText(value: string, parts: string[]) {
+  return parts.reduce((text, part, idx) => text.replace(`__Q${idx}__`, part), value);
+}
+
+function translateTerm(value: string): string {
+  const raw = value.trim();
+  if (!raw) return raw;
+  if (TERM_ZH[raw]) return TERM_ZH[raw];
+  if (USE_CASE_ZH[raw]) return USE_CASE_ZH[raw];
+  if (CONDITION_ZH[raw]) return CONDITION_ZH[raw];
+
+  for (const op of [" AND ", " OR "]) {
+    if (raw.includes(op)) {
+      const joiner = op.trim() === "AND" ? "和" : "或";
+      return raw.split(op).map(translateTerm).join(joiner);
+    }
+  }
+  if (raw.startsWith("NOT ")) return `非${translateTerm(raw.slice(4))}`;
+
+  const prepPatterns: [RegExp, (left: string, right: string) => string][] = [
+    [/^(.+?) In (.+)$/, (left, right) => `在${translateTerm(right)}中${translateTerm(left)}`],
+    [/^(.+?) On behalf of (.+)$/, (left, right) => `代表${translateTerm(right)}使用${translateTerm(left)}`],
+    [/^(.+?) Of (.+)$/, (left, right) => `${translateTerm(right)}的${translateTerm(left)}`],
+    [/^(.+?) For (.+)$/, (left, right) => `用于${translateTerm(right)}的${translateTerm(left)}`],
+    [/^(.+?) With (.+)$/, (left, right) => `${translateTerm(left)}（包含${translateTerm(right)}）`],
+    [/^(.+?) Under (.+)$/, (left, right) => `${translateTerm(left)}（遵循${translateTerm(right)}）`],
+    [/^(.+?) As (.+)$/, (left, right) => `以${translateTerm(right)}形式${translateTerm(left)}`],
+    [/^(.+?) To (.+)$/, (left, right) => `向${translateTerm(right)}${translateTerm(left)}`],
+  ];
+  for (const [pattern, render] of prepPatterns) {
+    const match = raw.match(pattern);
+    if (match) return render(match[1], match[2]);
+  }
+
+  return raw
+    .replace(/\bAND\b/g, "和")
+    .replace(/\bOR\b/g, "或")
+    .replace(/\bNOT\b/g, "非")
+    .replace(/\bOf\b/g, "的")
+    .replace(/\bIn\b/g, "在")
+    .replace(/\bWith\b/g, "包含")
+    .replace(/\bFor\b/g, "用于")
+    .replace(/\bTo\b/g, "向");
+}
+
+function translateOsadlText(value: string, lang: Lang, kind: "action" | "condition" | "use-case", context?: { condition?: string }) {
+  if (lang !== "zh") return value;
+  if (kind === "condition") return CONDITION_ZH[value] || translateTerm(value);
+  if (kind === "use-case") return USE_CASE_ZH[value] || translateTerm(value);
+
+  if (/^Indemnify Other Contributors?$/i.test(value)) {
+    if (context?.condition === "Service offerings") {
+      return "因自行提供支持、担保、赔偿或其他额外责任，使其他贡献者免受相关责任或索赔";
+    }
+    if (context?.condition === "Commercial distribution") {
+      return "因商业分发引发的责任或索赔，使其他贡献者免受影响并承担赔偿义务";
+    }
+    if (context?.condition === "License change") {
+      return "因改用或追加许可证条款产生的责任或索赔，使其他贡献者免受影响并承担赔偿义务";
+    }
+  }
+
+  if (ACTION_EXACT_ZH[value]) return ACTION_EXACT_ZH[value];
+  const { text, parts } = protectQuotedText(value);
+  if (ACTION_EXACT_ZH[text]) return restoreQuotedText(ACTION_EXACT_ZH[text], parts);
+
+  const verb = Object.keys(ACTION_VERBS_ZH)
+    .sort((a, b) => b.length - a.length)
+    .find((candidate) => text === candidate || text.startsWith(`${candidate} `));
+  if (!verb) return restoreQuotedText(translateTerm(text), parts);
+  const rest = text.slice(verb.length).trim();
+  const translated = rest ? `${ACTION_VERBS_ZH[verb]}${translateTerm(rest)}` : ACTION_VERBS_ZH[verb];
+  return restoreQuotedText(translated, parts);
+}
+
+function translateOsadlValue(value: string | number | null | undefined, lang: Lang) {
+  if (lang !== "zh" || typeof value !== "string") return value;
+  const normalized = value.toLowerCase();
+  if (normalized.startsWith("yes")) return value.replace(/^yes/i, "是");
+  if (normalized.startsWith("no")) return value.replace(/^no/i, "否");
+  if (normalized === "unknown") return "未知";
+  return value;
+}
+
 function InlineStat({ label, value, className, tooltip }: {
   label: string;
   value: string | number | null | undefined;
@@ -161,8 +459,9 @@ function mergeChecklistActions(
   return Array.from(merged.values());
 }
 
-function ChecklistActionTree({ entry, labels }: {
+function ChecklistActionTree({ entry, lang, labels }: {
   entry: OsadlChecklistEntry;
+  lang: Lang;
   labels: {
     must: string;
     mustNot: string;
@@ -233,7 +532,7 @@ function ChecklistActionTree({ entry, labels }: {
               <div className="mb-1 grid grid-cols-[4ch_minmax(0,1fr)] text-zinc-900 dark:text-zinc-100">
                 <span>+--</span>
                 <span>
-                  <span className="font-semibold">{condition}</span>
+                  <span className="font-semibold">{translateOsadlText(condition, lang, "condition")}</span>
                 <span className="font-sans text-[11px] text-zinc-500 dark:text-zinc-400">
                   {" "}
                   ({[
@@ -253,11 +552,11 @@ function ChecklistActionTree({ entry, labels }: {
                       [{action.tone === "must" ? labels.must : labels.mustNot}]
                     </span>{" "}
                     <span className="font-sans">
-                      <span className="font-medium text-zinc-900 dark:text-zinc-100">{action.text}</span>
+                      <span className="font-medium text-zinc-900 dark:text-zinc-100">{translateOsadlText(action.text, lang, "action", { condition: action.condition })}</span>
                       {action.useCases.length > 0 && (
                         <span className="text-xs text-zinc-500 dark:text-zinc-400">
                           {" "}
-                          ({action.useCases.join(" / ")})
+                          ({action.useCases.map((useCase) => translateOsadlText(useCase, lang, "use-case")).join(" / ")})
                         </span>
                       )}
                     </span>
@@ -417,7 +716,7 @@ export function OsadlChecklistBlock({ entry, meta }: {
   entry: OsadlChecklistEntry | null;
   meta: OsadlIndexMeta;
 }) {
-  const { t } = useLang();
+  const { lang, t } = useLang();
   const [expanded, setExpanded] = useState(false);
   const [activeVerdict, setActiveVerdict] = useState<CompatibilityVerdict | null>(null);
   const [compatibilityRows, setCompatibilityRows] = useState<CompatibilityRow[]>([]);
@@ -541,9 +840,9 @@ export function OsadlChecklistBlock({ entry, meta }: {
           </span>
         </div>
         <div className="flex flex-wrap gap-1.5">
-          <InlineStat label={labels.copyleft} value={entry.copyleft} className={yesNoTone(entry.copyleft)} tooltip={labels.copyleftHelp} />
-          <InlineStat label={labels.sourceDisclosure} value={entry.source_disclosure} className={sourceDisclosureTone(entry.source_disclosure)} tooltip={labels.sourceDisclosureHelp} />
-          <InlineStat label={labels.patent} value={entry.patent_hints || "Unknown"} className={patentHintsTone(entry.patent_hints)} tooltip={labels.patentHelp} />
+          <InlineStat label={labels.copyleft} value={translateOsadlValue(entry.copyleft, lang)} className={yesNoTone(entry.copyleft)} tooltip={labels.copyleftHelp} />
+          <InlineStat label={labels.sourceDisclosure} value={translateOsadlValue(entry.source_disclosure, lang)} className={sourceDisclosureTone(entry.source_disclosure)} tooltip={labels.sourceDisclosureHelp} />
+          <InlineStat label={labels.patent} value={translateOsadlValue(entry.patent_hints || "Unknown", lang)} className={patentHintsTone(entry.patent_hints)} tooltip={labels.patentHelp} />
           <InlineStat label={labels.updated} value={formatTimestamp(meta.timestamp)} />
         </div>
       </div>
@@ -551,7 +850,7 @@ export function OsadlChecklistBlock({ entry, meta }: {
       {expanded && (
         <div data-osadl-interactive="true">
           <div className="mb-5">
-            <ChecklistActionTree entry={entry} labels={labels} />
+            <ChecklistActionTree entry={entry} lang={lang} labels={labels} />
           </div>
 
           <div className="mb-4 rounded-xl border border-zinc-200/70 bg-white/70 p-4 dark:border-zinc-800/70 dark:bg-zinc-950/30">

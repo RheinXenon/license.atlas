@@ -315,7 +315,11 @@ function HomeContent() {
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
         <header className="mb-8">
           <h1 className="text-3xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50 sm:text-4xl">
-            {lang === "zh" ? "许可图鉴" : <><span className="text-[#7c3aed]">License</span>Atlas</>}
+            {mounted && lang === "zh" ? (
+              <span className="font-serif tracking-wide"><span className="text-[#7c3aed]">许可</span>图鉴</span>
+            ) : (
+              <><span className="text-[#7c3aed]">License</span>Atlas</>
+            )}
           </h1>
           <p className="mt-3 min-h-[3.75rem] max-w-3xl text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
             {lang === "zh"
@@ -420,7 +424,7 @@ function HomeContent() {
                     ? group.results.map((r) => <TrackerSearchCard key={`${group.key}-${r.slug}`} result={r} />)
                     : group.results.map((r) => {
                       const license = allLicenses.find((l) => l.slug === r.slug);
-                      return license ? <LicenseCard key={r.slug} license={license} /> : null;
+                      return license ? <LicenseCard key={r.slug} license={license} reviewTracked={reviewTrackedSlugs.has(license.slug)} /> : null;
                     })}
                 </div>
               </div>
@@ -436,7 +440,7 @@ function HomeContent() {
             </div>
             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
               {pageItems.map((license) => (
-                <LicenseCard key={license.slug} license={license} />
+                <LicenseCard key={license.slug} license={license} reviewTracked={reviewTrackedSlugs.has(license.slug)} />
               ))}
             </div>
             {remainingCount > 0 && (

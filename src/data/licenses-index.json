@@ -46,22 +46,22 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 19376524,
+    "popularity": 19387552,
     "github_repos": 19090657,
     "kaggle_datasets": 64671,
     "trend": [
-      6020,
-      4656,
-      4486,
-      4501,
-      4031,
-      4500,
-      5167,
-      5431,
-      9148,
-      6233,
-      5905,
-      6911
+      4594,
+      4422,
+      4467,
+      3998,
+      4798,
+      5480,
+      5385,
+      9029,
+      6862,
+      6366,
+      6765,
+      7007
     ],
     "blueoak_tier": "Silver"
   },
@@ -111,22 +111,22 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 4577035,
+    "popularity": 4597753,
     "github_repos": 3913687,
     "kaggle_datasets": 105065,
     "trend": [
-      14967,
-      11300,
-      12560,
-      13953,
-      13184,
-      12437,
-      12663,
-      14715,
-      15303,
-      22037,
-      20125,
-      24051
+      11267,
+      12497,
+      13918,
+      13119,
+      12350,
+      12596,
+      14588,
+      15231,
+      22077,
+      20554,
+      24037,
+      25487
     ],
     "blueoak_tier": "Silver"
   },
@@ -182,11 +182,10 @@
     "featured": true,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 3475214,
+    "popularity": 3475289,
     "github_repos": 3469773,
     "kaggle_datasets": 713,
     "trend": [
-      69,
       132,
       60,
       64,
@@ -194,10 +193,11 @@
       54,
       70,
       105,
-      70,
-      80,
+      72,
+      82,
       69,
-      72
+      73,
+      75
     ]
   },
   {
@@ -256,11 +256,10 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 630241,
+    "popularity": 630246,
     "github_repos": 628284,
     "kaggle_datasets": 1519,
     "trend": [
-      11,
       13,
       9,
       5,
@@ -271,7 +270,8 @@
       12,
       7,
       5,
-      4
+      4,
+      5
     ]
   },
   {
@@ -312,22 +312,22 @@
     "featured": false,
     "created_at": "2026-04-20",
     "proprietary": false,
-    "popularity": 541061,
+    "popularity": 541091,
     "github_repos": 375540,
     "kaggle_datasets": 160262,
     "trend": [
-      40,
       72,
       15,
       16,
       18,
       30,
       28,
-      189,
+      187,
       79,
-      31,
-      26,
-      36
+      29,
+      25,
+      34,
+      49
     ],
     "blueoak_tier": "Bronze"
   },
@@ -378,21 +378,21 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 491269,
+    "popularity": 491348,
     "github_repos": 488473,
     "trend": [
-      93,
       82,
       54,
       48,
       22,
-      24,
-      25,
-      311,
+      21,
+      22,
+      306,
       119,
-      60,
+      58,
       66,
-      131
+      133,
+      163
     ],
     "blueoak_tier": "Bronze"
   },
@@ -443,21 +443,21 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 423993,
+    "popularity": 424003,
     "github_repos": 422624,
     "trend": [
-      26,
       21,
       22,
       15,
       17,
       128,
       16,
-      35,
+      34,
       13,
       20,
       21,
-      15
+      14,
+      8
     ],
     "blueoak_tier": "Bronze"
   },
@@ -509,10 +509,9 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 162566,
+    "popularity": 162570,
     "github_repos": 161050,
     "trend": [
-      85,
       26,
       5,
       5,
@@ -523,7 +522,8 @@
       117,
       39,
       8,
-      2
+      2,
+      6
     ],
     "blueoak_tier": "Silver"
   },
@@ -574,10 +574,9 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 162266,
+    "popularity": 162275,
     "github_repos": 161993,
     "trend": [
-      5,
       1,
       1,
       2,
@@ -588,7 +587,8 @@
       30,
       10,
       6,
-      14
+      12,
+      11
     ]
   },
   {
@@ -670,22 +670,22 @@
       "zh-hant",
       "ko"
     ],
-    "popularity": 146397,
+    "popularity": 147178,
     "github_repos": 106281,
     "kaggle_datasets": 8160,
     "trend": [
-      220,
-      176,
+      177,
       171,
       162,
       179,
-      140,
-      188,
-      256,
+      139,
+      189,
       258,
-      252,
+      259,
+      251,
       439,
-      2052
+      2056,
+      2289
     ]
   },
   {
@@ -745,10 +745,9 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 74743,
+    "popularity": 74744,
     "github_repos": 74627,
     "trend": [
-      1,
       0,
       1,
       0,
@@ -759,7 +758,8 @@
       13,
       3,
       2,
-      1
+      1,
+      2
     ]
   },
   {
@@ -809,10 +809,9 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 65580,
+    "popularity": 65581,
     "github_repos": 65480,
     "trend": [
-      2,
       1,
       0,
       0,
@@ -822,6 +821,7 @@
       26,
       10,
       4,
+      0,
       0,
       0
     ],
@@ -921,10 +921,9 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 48463,
+    "popularity": 48466,
     "github_repos": 47059,
     "trend": [
-      151,
       37,
       6,
       1,
@@ -933,9 +932,10 @@
       8,
       289,
       142,
-      61,
+      60,
       11,
-      2
+      2,
+      6
     ],
     "blueoak_tier": "Silver"
   },
@@ -1012,22 +1012,22 @@
       "zh-hant",
       "ko"
     ],
-    "popularity": 47787,
+    "popularity": 47846,
     "github_repos": 32502,
     "kaggle_datasets": 6990,
     "trend": [
-      76,
-      62,
+      61,
       71,
       60,
       65,
       40,
-      45,
+      43,
       90,
-      72,
-      40,
-      115,
-      193
+      74,
+      41,
+      116,
+      190,
+      205
     ]
   },
   {
@@ -1072,7 +1072,6 @@
     "github_repos": 46947,
     "trend": [
       2,
-      2,
       0,
       1,
       0,
@@ -1082,7 +1081,8 @@
       18,
       7,
       1,
-      1
+      1,
+      0
     ]
   },
   {
@@ -1123,21 +1123,21 @@
     "featured": false,
     "created_at": "2026-04-20",
     "proprietary": false,
-    "popularity": 40262,
+    "popularity": 40280,
     "github_repos": 38815,
     "trend": [
-      19,
       34,
       11,
       16,
-      18,
+      19,
       10,
       12,
       45,
       30,
       23,
       35,
-      10
+      9,
+      17
     ],
     "blueoak_tier": "Lead"
   },
@@ -1186,10 +1186,9 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 38656,
+    "popularity": 38655,
     "github_repos": 38536,
     "trend": [
-      9,
       1,
       0,
       1,
@@ -1199,6 +1198,7 @@
       30,
       8,
       6,
+      0,
       0,
       0
     ]
@@ -1272,21 +1272,21 @@
       "zh-hant",
       "ko"
     ],
-    "popularity": 25408,
+    "popularity": 27201,
     "kaggle_datasets": 2471,
     "trend": [
-      470,
-      307,
-      266,
-      273,
+      308,
+      268,
+      270,
       291,
-      218,
-      427,
+      215,
+      426,
       360,
-      295,
-      422,
-      412,
-      535
+      296,
+      414,
+      1184,
+      535,
+      1386
     ]
   },
   {
@@ -1357,21 +1357,21 @@
       "zh-hant",
       "ko"
     ],
-    "popularity": 17613,
+    "popularity": 17807,
     "kaggle_datasets": 8683,
     "trend": [
-      118,
       95,
       95,
-      111,
+      115,
       67,
-      95,
-      100,
-      120,
+      102,
+      102,
+      126,
       118,
-      87,
-      138,
-      239
+      92,
+      141,
+      241,
+      199
     ]
   },
   {
@@ -1420,10 +1420,9 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 14875,
+    "popularity": 14883,
     "github_repos": 11281,
     "trend": [
-      234,
       94,
       30,
       22,
@@ -1432,9 +1431,10 @@
       20,
       356,
       220,
-      103,
+      102,
       20,
-      20
+      19,
+      16
     ],
     "blueoak_tier": "Bronze"
   },
@@ -1481,7 +1481,6 @@
     "popularity": 10907,
     "github_repos": 10857,
     "trend": [
-      2,
       1,
       0,
       0,
@@ -1492,7 +1491,8 @@
       3,
       3,
       1,
-      0
+      0,
+      1
     ]
   },
   {
@@ -1541,7 +1541,6 @@
     "github_repos": 9820,
     "trend": [
       1,
-      1,
       0,
       0,
       1,
@@ -1551,7 +1550,8 @@
       8,
       2,
       1,
-      0
+      0,
+      1
     ],
     "blueoak_tier": "Bronze"
   },
@@ -1645,21 +1645,21 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 8263,
+    "popularity": 8286,
     "github_repos": 2007,
     "trend": [
-      337,
-      100,
-      32,
+      99,
+      33,
       39,
-      45,
+      44,
       36,
       39,
       414,
       264,
-      102,
+      100,
       45,
-      27
+      27,
+      31
     ],
     "blueoak_tier": "Bronze"
   },
@@ -1697,21 +1697,21 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 8002,
+    "popularity": 8001,
     "github_repos": 7853,
     "trend": [
-      0,
       11,
       4,
       0,
       2,
       0,
-      2,
+      3,
       34,
-      8,
-      12,
+      9,
+      11,
       0,
-      25
+      25,
+      0
     ]
   },
   {
@@ -1781,21 +1781,21 @@
       "zh-hant",
       "ko"
     ],
-    "popularity": 4631,
+    "popularity": 4677,
     "kaggle_datasets": 1129,
     "trend": [
-      64,
-      44,
+      43,
       100,
       38,
       58,
-      34,
+      33,
       46,
       64,
       81,
-      51,
+      52,
       40,
-      50
+      48,
+      73
     ]
   },
   {
@@ -1830,10 +1830,9 @@
     "family": "by-sa",
     "created_at": "2026-04-30",
     "proprietary": false,
-    "popularity": 2674,
+    "popularity": 2675,
     "kaggle_datasets": 1071,
     "trend": [
-      13,
       2,
       0,
       1,
@@ -1844,7 +1843,8 @@
       34,
       12,
       5,
-      6
+      6,
+      2
     ]
   },
   {
@@ -1892,10 +1892,9 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 2430,
+    "popularity": 2432,
     "github_repos": 2231,
     "trend": [
-      3,
       0,
       2,
       0,
@@ -1905,6 +1904,7 @@
       22,
       13,
       1,
+      2,
       2,
       2
     ],
@@ -1937,7 +1937,6 @@
     "popularity": 1340,
     "kaggle_datasets": 1052,
     "trend": [
-      5,
       2,
       0,
       1,
@@ -1948,7 +1947,8 @@
       13,
       8,
       0,
-      0
+      0,
+      1
     ]
   },
   {
@@ -1978,7 +1978,6 @@
     "popularity": 949,
     "kaggle_datasets": 798,
     "trend": [
-      8,
       19,
       0,
       0,
@@ -1988,6 +1987,7 @@
       29,
       16,
       3,
+      0,
       0,
       0
     ]
@@ -2062,21 +2062,21 @@
       "zh-hant",
       "ko"
     ],
-    "popularity": 881,
+    "popularity": 882,
     "kaggle_datasets": 185,
     "trend": [
-      26,
       16,
       8,
       11,
       6,
       6,
-      6,
+      5,
       42,
       23,
       6,
       5,
-      11
+      11,
+      3
     ]
   },
   {
@@ -2115,10 +2115,9 @@
     "family": "by",
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 873,
+    "popularity": 874,
     "kaggle_datasets": 154,
     "trend": [
-      14,
       3,
       4,
       3,
@@ -2129,6 +2128,7 @@
       32,
       8,
       2,
+      3,
       3
     ]
   },
@@ -2164,9 +2164,8 @@
     "family": "by",
     "created_at": "2026-04-30",
     "proprietary": false,
-    "popularity": 843,
+    "popularity": 853,
     "trend": [
-      23,
       63,
       20,
       7,
@@ -2174,10 +2173,61 @@
       3,
       21,
       91,
-      24,
+      25,
       7,
       2,
-      3
+      3,
+      7
+    ]
+  },
+  {
+    "slug": "cc-by-nc-2.0",
+    "title": "Creative Commons Attribution Non Commercial 2.0 Generic",
+    "spdx_id": "CC-BY-NC-2.0",
+    "osi_approved": false,
+    "fsf_libre": false,
+    "fsf_tags": [
+      "non-free"
+    ],
+    "deprecated": false,
+    "type": "data",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Creative Commons",
+      "Proprietary"
+    ],
+    "sources": [
+      {
+        "name": "creativecommons.org",
+        "url": "https://creativecommons.org/licenses/by-nc/2.0/legalcode.en"
+      },
+      {
+        "name": "spdx.org",
+        "url": "https://spdx.org/licenses/CC-BY-NC-2.0.html"
+      }
+    ],
+    "featured": false,
+    "family": "by-nc",
+    "created_at": "2026-04-30",
+    "proprietary": true,
+    "popularity": 712,
+    "trend": [
+      14,
+      7,
+      13,
+      6,
+      5,
+      4,
+      61,
+      34,
+      10,
+      2,
+      6,
+      6
     ]
   },
   {
@@ -2230,7 +2280,6 @@
     "popularity": 700,
     "github_repos": 607,
     "trend": [
-      2,
       1,
       2,
       0,
@@ -2241,7 +2290,8 @@
       8,
       6,
       1,
-      1
+      1,
+      0
     ],
     "blueoak_tier": "Bronze"
   },
@@ -2281,72 +2331,22 @@
     "featured": false,
     "created_at": "2026-04-20",
     "proprietary": false,
-    "popularity": 696,
+    "popularity": 695,
     "trend": [
-      42,
       2,
       2,
       0,
       4,
-      3,
+      2,
       3,
       198,
-      78,
+      77,
       22,
       0,
-      3
+      3,
+      5
     ],
     "blueoak_tier": "Bronze"
-  },
-  {
-    "slug": "cc-by-nc-2.0",
-    "title": "Creative Commons Attribution Non Commercial 2.0 Generic",
-    "spdx_id": "CC-BY-NC-2.0",
-    "osi_approved": false,
-    "fsf_libre": false,
-    "fsf_tags": [
-      "non-free"
-    ],
-    "deprecated": false,
-    "type": "data",
-    "version": "",
-    "description": "",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [
-      "Creative Commons",
-      "Proprietary"
-    ],
-    "sources": [
-      {
-        "name": "creativecommons.org",
-        "url": "https://creativecommons.org/licenses/by-nc/2.0/legalcode.en"
-      },
-      {
-        "name": "spdx.org",
-        "url": "https://spdx.org/licenses/CC-BY-NC-2.0.html"
-      }
-    ],
-    "featured": false,
-    "family": "by-nc",
-    "created_at": "2026-04-30",
-    "proprietary": true,
-    "popularity": 692,
-    "trend": [
-      13,
-      14,
-      7,
-      13,
-      6,
-      5,
-      4,
-      61,
-      34,
-      10,
-      2,
-      6
-    ]
   },
   {
     "slug": "cdla-permissive-2.0",
@@ -2372,20 +2372,20 @@
     "featured": false,
     "created_at": "2026-05-14",
     "proprietary": false,
-    "popularity": 583,
+    "popularity": 589,
     "trend": [
-      17,
       3,
       2,
       5,
       4,
       5,
       1,
-      45,
+      44,
       25,
       11,
       8,
-      6
+      6,
+      13
     ]
   },
   {
@@ -2460,9 +2460,8 @@
     "family": "by-nc",
     "created_at": "2026-04-30",
     "proprietary": true,
-    "popularity": 462,
+    "popularity": 464,
     "trend": [
-      6,
       14,
       8,
       4,
@@ -2473,7 +2472,8 @@
       37,
       6,
       5,
-      6
+      7,
+      7
     ]
   },
   {
@@ -2514,10 +2514,9 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 421,
+    "popularity": 422,
     "github_repos": 327,
     "trend": [
-      2,
       1,
       1,
       2,
@@ -2528,7 +2527,8 @@
       6,
       3,
       1,
-      1
+      1,
+      0
     ],
     "blueoak_tier": "Silver"
   },
@@ -2564,9 +2564,8 @@
     "family": "by",
     "created_at": "2026-04-30",
     "proprietary": false,
-    "popularity": 387,
+    "popularity": 389,
     "trend": [
-      20,
       46,
       2,
       2,
@@ -2577,6 +2576,7 @@
       38,
       8,
       0,
+      1,
       1
     ]
   },
@@ -2650,9 +2650,8 @@
     "family": "by-nc-sa",
     "created_at": "2026-04-30",
     "proprietary": true,
-    "popularity": 343,
+    "popularity": 346,
     "trend": [
-      4,
       1,
       2,
       2,
@@ -2663,7 +2662,8 @@
       22,
       10,
       4,
-      16
+      16,
+      2
     ]
   },
   {
@@ -2698,20 +2698,20 @@
     "family": "by-nc-nd",
     "created_at": "2026-04-30",
     "proprietary": true,
-    "popularity": 321,
+    "popularity": 320,
     "trend": [
-      5,
       23,
       1,
       2,
       2,
       2,
-      1,
-      44,
+      0,
+      43,
       27,
       7,
       4,
-      1
+      1,
+      0
     ]
   },
   {
@@ -2747,9 +2747,8 @@
     "family": "by-nc-sa",
     "created_at": "2026-04-30",
     "proprietary": true,
-    "popularity": 256,
+    "popularity": 257,
     "trend": [
-      7,
       21,
       1,
       0,
@@ -2759,6 +2758,7 @@
       41,
       20,
       6,
+      0,
       0,
       0
     ]
@@ -2787,9 +2787,8 @@
     "featured": false,
     "created_at": "2026-05-14",
     "proprietary": false,
-    "popularity": 240,
+    "popularity": 242,
     "trend": [
-      3,
       22,
       3,
       1,
@@ -2800,7 +2799,8 @@
       20,
       8,
       4,
-      1
+      1,
+      2
     ]
   },
   {
@@ -2844,9 +2844,8 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 239,
+    "popularity": 241,
     "trend": [
-      4,
       2,
       0,
       2,
@@ -2857,7 +2856,8 @@
       12,
       1,
       1,
-      3
+      3,
+      1
     ],
     "blueoak_tier": "Silver"
   },
@@ -2905,9 +2905,8 @@
     "featured": false,
     "created_at": "2026-04-19",
     "proprietary": false,
-    "popularity": 223,
+    "popularity": 224,
     "trend": [
-      2,
       4,
       2,
       1,
@@ -2917,6 +2916,7 @@
       24,
       9,
       7,
+      1,
       1,
       1
     ]
@@ -2963,7 +2963,6 @@
     "proprietary": false,
     "popularity": 148,
     "trend": [
-      4,
       9,
       0,
       0,
@@ -2973,6 +2972,7 @@
       27,
       11,
       6,
+      0,
       0,
       0
     ]
@@ -3023,7 +3023,6 @@
     "proprietary": false,
     "popularity": 118,
     "trend": [
-      2,
       1,
       0,
       1,
@@ -3034,6 +3033,7 @@
       12,
       4,
       1,
+      0,
       0
     ],
     "blueoak_tier": "Bronze"
@@ -3083,11 +3083,10 @@
     "featured": false,
     "created_at": "2026-05-14",
     "proprietary": false,
-    "popularity": 98,
+    "popularity": 105,
     "trend": [
       0,
-      0,
-      0,
+      1,
       0,
       0,
       0,
@@ -3096,7 +3095,8 @@
       9,
       12,
       2,
-      5
+      5,
+      1
     ]
   },
   {
@@ -5532,34 +5532,6 @@
     "created_at": "2026-05-29"
   },
   {
-    "slug": "aleph-alpha-open-aleph-license",
-    "title": "Aleph Alpha Open Aleph License",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "deprecated": false,
-    "type": "model",
-    "version": "",
-    "description": "",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [
-      "Custom",
-      "HuggingFace",
-      "Proprietary"
-    ],
-    "sources": [
-      {
-        "name": "Aleph-Alpha/Pharia-1-LLM-7B-control-hf",
-        "url": "https://huggingface.co/Aleph-Alpha/Pharia-1-LLM-7B-control-hf"
-      }
-    ],
-    "featured": false,
-    "proprietary": true,
-    "created_at": "2026-05-27"
-  },
-  {
     "slug": "alexisisaac-freeware",
     "title": "Alexisisaac Freeware License",
     "spdx_id": "",
@@ -7557,6 +7529,33 @@
     "created_at": "2026-05-29"
   },
   {
+    "slug": "arcinstitute-state-nc-2025",
+    "title": "Arc Research Institute State Model Non-Commercial License 2025",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "software",
+    "version": "",
+    "description": "# Arc Research Institute State Model Non-Commercial License  **_Last Updated: June 23, 2025_**  Arc Research Institute (“**Licensor**”) is releasing certain materials collectively defined below as the",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "Proprietary"
+    ],
+    "sources": [
+      {
+        "name": "scancode-licensedb.aboutcode.org",
+        "url": "https://scancode-licensedb.aboutcode.org/arcinstitute-state-nc-2025.html"
+      }
+    ],
+    "featured": false,
+    "proprietary": true,
+    "created_at": "2026-06-21"
+  },
+  {
     "slug": "argmaxinc-license-notice",
     "title": "Argmax, Inc. License Notice",
     "spdx_id": "",
@@ -8612,6 +8611,33 @@
     "featured": false,
     "proprietary": false,
     "created_at": "2026-05-29"
+  },
+  {
+    "slug": "avtr-1-community-license-agreement",
+    "title": "AVTR-1 Community License Agreement",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "model",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace"
+    ],
+    "sources": [
+      {
+        "name": "avaturn-live/avtr-1",
+        "url": "https://huggingface.co/avaturn-live/avtr-1"
+      }
+    ],
+    "featured": false,
+    "created_at": "2026-06-22",
+    "proprietary": false
   },
   {
     "slug": "aws-ip-2021",
@@ -10032,6 +10058,33 @@
     "created_at": "2026-05-29"
   },
   {
+    "slug": "boson-higgs-audio-v3-research-and-non-commercial-license-agreement",
+    "title": "Boson Higgs Audio v3 Research and Non-Commercial License Agreement",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "model",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace"
+    ],
+    "sources": [
+      {
+        "name": "bosonai/higgs-audio-v3-tts-4b",
+        "url": "https://huggingface.co/bosonai/higgs-audio-v3-tts-4b"
+      }
+    ],
+    "featured": false,
+    "created_at": "2026-06-22",
+    "proprietary": false
+  },
+  {
     "slug": "boutell-libgd-2021",
     "title": "Boutell libgd declarations 2021",
     "spdx_id": "",
@@ -10134,6 +10187,32 @@
     "featured": false,
     "proprietary": false,
     "created_at": "2026-05-29"
+  },
+  {
+    "slug": "brakeman-public-use",
+    "title": "Brakeman Public Use License",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "software",
+    "version": "",
+    "description": "**LICENSE**  # Brakeman Public Use License  Synopsys, Inc. is willing to authorize use of the Software pursuant to the terms and conditions of this License by Licensee only upon the condition that Lic",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom"
+    ],
+    "sources": [
+      {
+        "name": "scancode-licensedb.aboutcode.org",
+        "url": "https://scancode-licensedb.aboutcode.org/brakeman-public-use.html"
+      }
+    ],
+    "featured": false,
+    "proprietary": false,
+    "created_at": "2026-06-21"
   },
   {
     "slug": "brankas-open-license-1.0",
@@ -12811,6 +12890,33 @@
     "created_at": "2026-05-29"
   },
   {
+    "slug": "carbon-agpl-and-commercial-license-notice",
+    "title": "Carbon AGPL and Commercial License Notice",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "agent",
+    "version": "",
+    "description": "Copyright © 2025, Carbon Manufacturing Systems Corp.  Portions of this software are licensed as follows:  - All content that resides under https://github.com/crnbos/carbon/tree/main/packages/ee and al",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "MCP Server"
+    ],
+    "sources": [
+      {
+        "name": "crbnos/carbon",
+        "url": "https://github.com/crbnos/carbon"
+      }
+    ],
+    "featured": false,
+    "created_at": "2026-06-22",
+    "proprietary": false
+  },
+  {
     "slug": "careware",
     "title": "Careware License",
     "spdx_id": "",
@@ -13513,14 +13619,8 @@
     "permissions": [],
     "conditions": [],
     "limitations": [],
-    "tags": [
-      "Hardware"
-    ],
+    "tags": [],
     "sources": [
-      {
-        "name": "opensource.org",
-        "url": "https://opensource.org/license/cern-ohl-s-2-0"
-      },
       {
         "name": "choosealicense.com",
         "url": "https://choosealicense.com/licenses/cern-ohl-s-2.0/"
@@ -13528,6 +13628,10 @@
       {
         "name": "spdx.org",
         "url": "https://spdx.org/licenses/CERN-OHL-S-2.0.html"
+      },
+      {
+        "name": "opensource.org",
+        "url": "https://opensource.org/license/cern-ohl-s-2-0"
       }
     ],
     "featured": false,
@@ -15356,6 +15460,32 @@
     "featured": false,
     "created_at": "2026-05-14",
     "proprietary": false
+  },
+  {
+    "slug": "comodo-available-source-sal",
+    "title": "Comodo Available Source License Agreement",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "software",
+    "version": "",
+    "description": "COMODO AVAILABLE SOURCE LICENSE (CASL) AGREEMENT  BY DOWNLOADING, INSTALLING, ACCESSING OR USING THE SOFTWARE, YOU ACKNOWLEDGE   THAT YOU HAVE READ THIS AGREEMENT, THAT YOU UNDERSTAND IT, AND THAT YOU",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom"
+    ],
+    "sources": [
+      {
+        "name": "scancode-licensedb.aboutcode.org",
+        "url": "https://scancode-licensedb.aboutcode.org/comodo-available-source-sal.html"
+      }
+    ],
+    "featured": false,
+    "proprietary": false,
+    "created_at": "2026-06-21"
   },
   {
     "slug": "compass",
@@ -23508,6 +23638,33 @@
     "created_at": "2026-05-29"
   },
   {
+    "slug": "finceptterminal-dual-licensing-notice",
+    "title": "FinceptTerminal Dual Licensing Notice",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "agent",
+    "version": "",
+    "description": "GNU AFFERO GENERAL PUBLIC LICENSE Version 3, 19 November 2007  Copyright (C) 2025-2026 Fincept Corporation  This program is free software: you can redistribute it and/or modify it under the terms of t",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "Agent Framework"
+    ],
+    "sources": [
+      {
+        "name": "Fincept-Corporation/FinceptTerminal",
+        "url": "https://github.com/Fincept-Corporation/FinceptTerminal"
+      }
+    ],
+    "featured": false,
+    "created_at": "2026-06-22",
+    "proprietary": false
+  },
+  {
     "slug": "first-epss-usage",
     "title": "FIRST EPSS Usage Agreement",
     "spdx_id": "",
@@ -30389,6 +30546,33 @@
     "proprietary": false
   },
   {
+    "slug": "hyperclova-x-seed-32b-think-model-license-agreement",
+    "title": "HyperCLOVA X SEED 32B Think Model License Agreement",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "model",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace"
+    ],
+    "sources": [
+      {
+        "name": "naver-hyperclovax/HyperCLOVAX-SEED-Think-32B",
+        "url": "https://huggingface.co/naver-hyperclovax/HyperCLOVAX-SEED-Think-32B"
+      }
+    ],
+    "featured": false,
+    "created_at": "2026-06-22",
+    "proprietary": false
+  },
+  {
     "slug": "hyperclova-x-seed-8b-omni-model-license-agreement",
     "title": "HyperCLOVA X SEED 8B Omni Model License Agreement",
     "spdx_id": "",
@@ -31094,6 +31278,33 @@
     ],
     "featured": false,
     "created_at": "2026-04-27",
+    "proprietary": false
+  },
+  {
+    "slug": "ideogram-non-commercial-model-agreement",
+    "title": "Ideogram Non-Commercial Model Agreement",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "model",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace"
+    ],
+    "sources": [
+      {
+        "name": "ideogram-ai/ideogram-4-fp8",
+        "url": "https://huggingface.co/ideogram-ai/ideogram-4-fp8"
+      }
+    ],
+    "featured": false,
+    "created_at": "2026-06-22",
     "proprietary": false
   },
   {
@@ -34108,6 +34319,37 @@
     "featured": false,
     "proprietary": false,
     "created_at": "2026-05-29"
+  },
+  {
+    "slug": "june-9-researcher-reciprocity-license",
+    "title": "June 9 Researcher Reciprocity License 1.0",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "data",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace"
+    ],
+    "sources": [
+      {
+        "name": "GPUMODE/kernelbot-data",
+        "url": "https://huggingface.co/datasets/GPUMODE/kernelbot-data"
+      },
+      {
+        "name": "GPUMODE/KernelBook",
+        "url": "https://huggingface.co/datasets/GPUMODE/KernelBook"
+      }
+    ],
+    "featured": false,
+    "created_at": "2026-06-22",
+    "proprietary": false
   },
   {
     "slug": "jython",
@@ -38484,6 +38726,10 @@
       {
         "name": "matlab/simulink-agentic-toolkit",
         "url": "https://github.com/matlab/simulink-agentic-toolkit"
+      },
+      {
+        "name": "matlab/matlab-mcp-server",
+        "url": "https://github.com/matlab/matlab-mcp-server"
       }
     ],
     "featured": false,
@@ -38856,6 +39102,37 @@
     "featured": false,
     "proprietary": false,
     "created_at": "2026-05-29"
+  },
+  {
+    "slug": "md2wechat-source-available-license",
+    "title": "md2wechat Source Available License",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "agent",
+    "version": "",
+    "description": "md2wechat Source Available License Based on Business Source License 1.1  =========================================================== PARAMETERS ========================================================",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "MCP Server"
+    ],
+    "sources": [
+      {
+        "name": "geekjourneyx/md2wechat-skill",
+        "url": "https://github.com/geekjourneyx/md2wechat-skill"
+      }
+    ],
+    "featured": false,
+    "created_at": "2026-06-22",
+    "proprietary": false,
+    "languages": [
+      "en",
+      "zh"
+    ]
   },
   {
     "slug": "mediainfo-lib",
@@ -39504,6 +39781,33 @@
     "featured": false,
     "proprietary": false,
     "created_at": "2026-05-29"
+  },
+  {
+    "slug": "mgb-brainiac-nc-2026",
+    "title": "MGB BrainIAC Research-Only License 2026",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "software",
+    "version": "",
+    "description": "BrainIAC Research-Only License  Copyright © 2026 Mass General Brigham and contributors  Permission is hereby granted to use, copy, modify, and distribute this software and associated documentation fil",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "Proprietary"
+    ],
+    "sources": [
+      {
+        "name": "scancode-licensedb.aboutcode.org",
+        "url": "https://scancode-licensedb.aboutcode.org/mgb-brainiac-nc-2026.html"
+      }
+    ],
+    "featured": false,
+    "proprietary": true,
+    "created_at": "2026-06-21"
   },
   {
     "slug": "mgb-1.0",
@@ -42700,6 +43004,33 @@
     "proprietary": false
   },
   {
+    "slug": "minimax-community-license",
+    "title": "MiniMax Community License",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "model",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace"
+    ],
+    "sources": [
+      {
+        "name": "MiniMaxAI/MiniMax-M3",
+        "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3"
+      }
+    ],
+    "featured": false,
+    "created_at": "2026-06-22",
+    "proprietary": false
+  },
+  {
     "slug": "minimax-mit-variant-2025",
     "title": "MiniMax MIT Variant 2025",
     "spdx_id": "",
@@ -42891,6 +43222,33 @@
     "created_at": "2026-04-19",
     "proprietary": false,
     "blueoak_tier": "Lead"
+  },
+  {
+    "slug": "miso-labs-modified-mit-license",
+    "title": "Miso Labs Modified MIT License",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "model",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace"
+    ],
+    "sources": [
+      {
+        "name": "MisoLabs/MisoTTS",
+        "url": "https://huggingface.co/MisoLabs/MisoTTS"
+      }
+    ],
+    "featured": false,
+    "created_at": "2026-06-22",
+    "proprietary": false
   },
   {
     "slug": "mistral-ai-non-production-license",
@@ -45165,6 +45523,32 @@
     "created_at": "2026-05-29"
   },
   {
+    "slug": "mux0-sal-2026",
+    "title": "MUX0 Source-Available License 2026",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "software",
+    "version": "",
+    "description": "MUX0 Source-Available License Copyright (c) 2026 10xChengTu  All rights reserved.  This source code is published for transparency, auditability, and personal reading. It is NOT open-source software as",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom"
+    ],
+    "sources": [
+      {
+        "name": "scancode-licensedb.aboutcode.org",
+        "url": "https://scancode-licensedb.aboutcode.org/mux0-sal-2026.html"
+      }
+    ],
+    "featured": false,
+    "proprietary": false,
+    "created_at": "2026-06-21"
+  },
+  {
     "slug": "mvt-1.1",
     "title": "MVT License 1.1",
     "spdx_id": "",
@@ -46513,6 +46897,33 @@
     "blueoak_tier": "Lead"
   },
   {
+    "slug": "nocobase-license-agreement",
+    "title": "NocoBase License Agreement",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "agent",
+    "version": "",
+    "description": "Updated Date: February 24, 2026  NocoBase License Agreement  NOCOBASE PTE. LTD.，a Singaporean Exempt Private Company Limited by Shares with its principal place of business located at 112 ROBINSON ROAD",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "LLM Tool"
+    ],
+    "sources": [
+      {
+        "name": "nocobase/nocobase",
+        "url": "https://github.com/nocobase/nocobase"
+      }
+    ],
+    "featured": false,
+    "created_at": "2026-06-22",
+    "proprietary": false
+  },
+  {
     "slug": "node-js",
     "title": "Node License",
     "spdx_id": "",
@@ -46656,6 +47067,58 @@
     "featured": false,
     "created_at": "2026-05-14",
     "proprietary": false
+  },
+  {
+    "slug": "nc-gov-public-sector-1.0",
+    "title": "Non-Commercial Government Licence for public sector information v1.0",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "software",
+    "version": "",
+    "description": "Non-Commercial Government Licence for public sector information v1.0  You are encouraged to use and re-use the Information that is available under this licence freely and flexibly, with only a few con",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom"
+    ],
+    "sources": [
+      {
+        "name": "scancode-licensedb.aboutcode.org",
+        "url": "https://scancode-licensedb.aboutcode.org/nc-gov-public-sector-1.0.html"
+      }
+    ],
+    "featured": false,
+    "proprietary": false,
+    "created_at": "2026-06-21"
+  },
+  {
+    "slug": "nc-gov-public-sector-2.0",
+    "title": "Non-Commercial Government Licence for public sector information v2.0",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "software",
+    "version": "",
+    "description": "Non-Commercial Government Licence for public sector information v2.0  You are encouraged to use and re-use the Information that is available under this licence freely and flexibly, with only a few con",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom"
+    ],
+    "sources": [
+      {
+        "name": "scancode-licensedb.aboutcode.org",
+        "url": "https://scancode-licensedb.aboutcode.org/nc-gov-public-sector-2.0.html"
+      }
+    ],
+    "featured": false,
+    "proprietary": false,
+    "created_at": "2026-06-21"
   },
   {
     "slug": "non-commercial-research-use-only-software-license-and-terms-of-use",
@@ -47781,6 +48244,32 @@
     "created_at": "2026-05-29"
   },
   {
+    "slug": "nvidia-open-model-2025",
+    "title": "NVIDIA Open Model License Agreement 2025",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "software",
+    "version": "",
+    "description": "NVIDIA Open Model License Agreement This NVIDIA Open Model License Agreement (the “Agreement”) is a legal agreement between the Legal Entity You represent, or if no entity is identified, You and NVIDI",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom"
+    ],
+    "sources": [
+      {
+        "name": "scancode-licensedb.aboutcode.org",
+        "url": "https://scancode-licensedb.aboutcode.org/nvidia-open-model-2025.html"
+      }
+    ],
+    "featured": false,
+    "proprietary": false,
+    "created_at": "2026-06-21"
+  },
+  {
     "slug": "nvidia-open-model-2025-04-28",
     "title": "NVIDIA Open Model License Agreement 2025-04-28",
     "spdx_id": "",
@@ -47970,6 +48459,33 @@
     "featured": false,
     "proprietary": false,
     "created_at": "2026-05-29"
+  },
+  {
+    "slug": "nxml-pokemon-legends-za-nc-1.0",
+    "title": "nxml-pokemon-legends-za Non-Commercial Research License v1.0",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "software",
+    "version": "",
+    "description": "# nxml-pokemon-legends-za — Non-Commercial Research License v1.0  Copyright (c) 2026 Clark Saben  > ⚠️ Important: this license covers **only** the original contribution by > the licensor — primarily t",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "Proprietary"
+    ],
+    "sources": [
+      {
+        "name": "scancode-licensedb.aboutcode.org",
+        "url": "https://scancode-licensedb.aboutcode.org/nxml-pokemon-legends-za-nc-1.0.html"
+      }
+    ],
+    "featured": false,
+    "proprietary": true,
+    "created_at": "2026-06-21"
   },
   {
     "slug": "nxp-firmware-patent",
@@ -49207,38 +49723,18 @@
       {
         "name": "Aleph-Alpha/tfree-hat-pretrained-7b-base",
         "url": "https://huggingface.co/Aleph-Alpha/tfree-hat-pretrained-7b-base"
-      }
-    ],
-    "featured": false,
-    "created_at": "2026-04-27",
-    "proprietary": true
-  },
-  {
-    "slug": "open-aleph-license-1.0",
-    "title": "Open Aleph License 1.0",
-    "spdx_id": "",
-    "osi_approved": false,
-    "fsf_libre": null,
-    "deprecated": false,
-    "type": "model",
-    "version": "",
-    "description": "",
-    "permissions": [],
-    "conditions": [],
-    "limitations": [],
-    "tags": [
-      "Custom",
-      "HuggingFace",
-      "Proprietary"
-    ],
-    "sources": [
+      },
+      {
+        "name": "Aleph-Alpha/Aleph-Alpha-GermanWeb",
+        "url": "https://huggingface.co/datasets/Aleph-Alpha/Aleph-Alpha-GermanWeb"
+      },
       {
         "name": "Aleph-Alpha/Pharia-1-LLM-7B-control-hf",
         "url": "https://huggingface.co/Aleph-Alpha/Pharia-1-LLM-7B-control-hf"
       }
     ],
     "featured": false,
-    "created_at": "2026-05-12",
+    "created_at": "2026-04-27",
     "proprietary": true
   },
   {
@@ -51127,6 +51623,14 @@
       {
         "name": "github.com",
         "url": "https://github.com/OpenMDW/OpenMDW/blob/main/1.1/LICENSE.OpenMDW-1.1"
+      },
+      {
+        "name": "huggingface.co",
+        "url": "https://huggingface.co/cstr/nemotron-3.5-asr-streaming-GGUF"
+      },
+      {
+        "name": "nvidia.com",
+        "url": "https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-and-model-evaluation-license/"
       }
     ],
     "featured": false,
@@ -51907,6 +52411,32 @@
     "featured": false,
     "proprietary": false,
     "created_at": "2026-05-29"
+  },
+  {
+    "slug": "oracle-free-2021",
+    "title": "Oracle Free License 2021",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "software",
+    "version": "",
+    "description": "Your use of this Program is governed by the Free Use Terms and Conditions set forth below, unless you have received this Program (alone or as part of another Oracle product) under an Oracle license ag",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom"
+    ],
+    "sources": [
+      {
+        "name": "scancode-licensedb.aboutcode.org",
+        "url": "https://scancode-licensedb.aboutcode.org/oracle-free-2021.html"
+      }
+    ],
+    "featured": false,
+    "proprietary": false,
+    "created_at": "2026-06-21"
   },
   {
     "slug": "oracle-gftc-2023-06-12",
@@ -55347,6 +55877,33 @@
     "created_at": "2026-05-29"
   },
   {
+    "slug": "qgi-commercial-model-license-1-0",
+    "title": "QGI Commercial Model License 1.0",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "model",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace"
+    ],
+    "sources": [
+      {
+        "name": "QGI-dev/q-prime",
+        "url": "https://huggingface.co/QGI-dev/q-prime"
+      }
+    ],
+    "featured": false,
+    "created_at": "2026-06-22",
+    "proprietary": false
+  },
+  {
     "slug": "qhull",
     "title": "Qhull License",
     "spdx_id": "Qhull",
@@ -58522,6 +59079,33 @@
     "created_at": "2026-05-29"
   },
   {
+    "slug": "screenpipe-commercial-license",
+    "title": "Screenpipe Commercial License",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "agent",
+    "version": "",
+    "description": "Screenpipe Commercial License  Copyright (c) 2024-2026 Mediar, Inc. (dba Screenpipe). All rights reserved.  1. Definitions  \"Licensed Work\" means the Screenpipe software covered by this license, inclu",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "MCP Server"
+    ],
+    "sources": [
+      {
+        "name": "screenpipe/screenpipe",
+        "url": "https://github.com/screenpipe/screenpipe"
+      }
+    ],
+    "featured": false,
+    "created_at": "2026-06-22",
+    "proprietary": false
+  },
+  {
     "slug": "scribbles",
     "title": "Scribbles Demos Recognizer Notice",
     "spdx_id": "",
@@ -58652,6 +59236,33 @@
     "featured": false,
     "proprietary": true,
     "created_at": "2026-05-29"
+  },
+  {
+    "slug": "seallms-license-agreement",
+    "title": "SeaLLMs License Agreement",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "model",
+    "version": "",
+    "description": "",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "HuggingFace"
+    ],
+    "sources": [
+      {
+        "name": "SeaLLMs/SeaLLM-7B-v2",
+        "url": "https://huggingface.co/SeaLLMs/SeaLLM-7B-v2"
+      }
+    ],
+    "featured": false,
+    "created_at": "2026-06-22",
+    "proprietary": false
   },
   {
     "slug": "seamless-2023",
@@ -59748,6 +60359,32 @@
     "created_at": "2026-05-29"
   },
   {
+    "slug": "skunkworks-varuna-stt",
+    "title": "SkunkWorks Modified MIT License",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "software",
+    "version": "",
+    "description": "SkunkWorks Modified MIT License  Copyright (c) 2026 SkunkWorks Labs  Permission is hereby granted, free of charge, to any person obtaining a copy of this software, model weights, and associated docume",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom"
+    ],
+    "sources": [
+      {
+        "name": "scancode-licensedb.aboutcode.org",
+        "url": "https://scancode-licensedb.aboutcode.org/skunkworks-varuna-stt.html"
+      }
+    ],
+    "featured": false,
+    "proprietary": false,
+    "created_at": "2026-06-21"
+  },
+  {
     "slug": "skywork-open-model-license",
     "title": "Skywork Open Model License",
     "spdx_id": "",
@@ -59882,6 +60519,32 @@
     "featured": false,
     "proprietary": true,
     "created_at": "2026-05-29"
+  },
+  {
+    "slug": "slipnet-sal-2026",
+    "title": "SlipNet Source-Available License 2026",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "software",
+    "version": "",
+    "description": "The SlipNet Source-Available License Copyright © 2026 The SlipNet Project. All Rights Reserved.  1. Grant of License Permission is hereby granted, free of charge, to any person obtaining a copy of thi",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom"
+    ],
+    "sources": [
+      {
+        "name": "scancode-licensedb.aboutcode.org",
+        "url": "https://scancode-licensedb.aboutcode.org/slipnet-sal-2026.html"
+      }
+    ],
+    "featured": false,
+    "proprietary": false,
+    "created_at": "2026-06-21"
   },
   {
     "slug": "slysoft-eula",
@@ -69393,6 +70056,58 @@
     "created_at": "2026-05-29"
   },
   {
+    "slug": "weinbach-non-commercial-1.0",
+    "title": "Weinbach Forking and Attribution License with Commercial Permission Requirement 1.0",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "software",
+    "version": "",
+    "description": "Forking and Attribution License with Commercial Permission Requirement 1.0  Copyright (c) 2026 Max Weinbach  Permission is granted to any person obtaining a copy of this software and any associated do",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom"
+    ],
+    "sources": [
+      {
+        "name": "scancode-licensedb.aboutcode.org",
+        "url": "https://scancode-licensedb.aboutcode.org/weinbach-non-commercial-1.0.html"
+      }
+    ],
+    "featured": false,
+    "proprietary": false,
+    "created_at": "2026-06-21"
+  },
+  {
+    "slug": "wender-media-sal-1.0",
+    "title": "Wender Media Source License, Version 1.0",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "software",
+    "version": "",
+    "description": "Wender Media Source License, Version 1.0 =========================================  SPDX-License-Identifier: LicenseRef-Wender-Media-Source-1.0  Copyright (c) 2007-2026 Arnold Wender · Wender Media Al",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom"
+    ],
+    "sources": [
+      {
+        "name": "scancode-licensedb.aboutcode.org",
+        "url": "https://scancode-licensedb.aboutcode.org/wender-media-sal-1.0.html"
+      }
+    ],
+    "featured": false,
+    "proprietary": false,
+    "created_at": "2026-06-21"
+  },
+  {
     "slug": "ogl-wpd-3.0",
     "title": "Western Power Distribution Open Data Licence v3.0",
     "spdx_id": "",
@@ -69495,6 +70210,33 @@
     "featured": false,
     "proprietary": false,
     "created_at": "2026-05-29"
+  },
+  {
+    "slug": "whitedns-sal-nc-2026",
+    "title": "WhiteDNS Source-Available Proprietary License 2026",
+    "spdx_id": "",
+    "osi_approved": false,
+    "fsf_libre": null,
+    "deprecated": false,
+    "type": "software",
+    "version": "",
+    "description": "WhiteDNS Source-Available Proprietary License  Copyright (c) 2026 WhiteDNS / Pedram Marandi. All rights reserved.  This software is source-available, not open-source.  1. Permission to View and Contri",
+    "permissions": [],
+    "conditions": [],
+    "limitations": [],
+    "tags": [
+      "Custom",
+      "Proprietary"
+    ],
+    "sources": [
+      {
+        "name": "scancode-licensedb.aboutcode.org",
+        "url": "https://scancode-licensedb.aboutcode.org/whitedns-sal-nc-2026.html"
+      }
+    ],
+    "featured": false,
+    "proprietary": true,
+    "created_at": "2026-06-21"
   },
   {
     "slug": "whosonfirst-license",

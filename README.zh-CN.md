@@ -1,6 +1,6 @@
 # LicenseAtlas
 
-LicenseAtlas 是面向软件、数据、AI 模型与 Agent 的许可证探索器，覆盖 **2,604** 个许可证和服务条款——支持搜索、筛选、对比，并提供中英文双语界面。
+LicenseAtlas 是面向软件、数据、AI 模型与 Agent 的许可证探索器，覆盖 **2,615** 个许可证和服务条款——支持搜索、筛选、对比，并提供中英文双语界面。
 
 **在线访问**：[LicenseAtlas](https://morningd.github.io/license.atlas)
 
@@ -17,7 +17,7 @@ LicenseAtlas 是面向软件、数据、AI 模型与 Agent 的许可证探索器
 - **明星项目** — 在部分许可证详情页右侧展示按来源分组的 GitHub、HuggingFace 与 Kaggle 代表项目，并支持增量刷新
 - **双语界面** — 中英文切换，自动检测浏览器语言
 - **暗色模式** — 跟随系统偏好 + 手动切换
-- **静态导出** — 2,604 个预渲染页面，加载极速
+- **静态导出** — 2,623 个预渲染页面，加载极速
 
 ## 技术栈
 
@@ -81,7 +81,7 @@ project-showcase sidecar。上面的局部命令主要用于定向调试或补�
 | OSADL Open Source License Checklists | 121 条检查清单记录，120 个匹配的 LicenseAtlas 页面，并提供由检查清单提取的义务/禁止项、Copyleft/源码披露/专利提示与方向性兼容性摘要 |
 | Project Showcase | 31 个精选许可证的 GitHub 仓库、HuggingFace 模型与 Kaggle 数据集榜单，经标准化后作为详情页右侧 sidecar 展示 |
 
-热度数据来自 HuggingFace Hub（280 万+ 模型）、GitHub（28 种许可证类型）和 Kaggle（通过 Meta-Kaggle 覆盖 71.4 万+ 数据集）。Project Showcase 中 GitHub 按 stars 排序，HuggingFace 按 likes/点赞排序，Kaggle 按 votes 排序；许可证会在 Atlas 聚合计数达标，或 raw 源数据里出现明确热门的 top item 时进入展示。更新流程在源级做增量刷新：GitHub 按 license key 做新鲜度窗口缓存，HuggingFace 用 parquet 指纹门控，Kaggle 用最新 Meta-Kaggle version id 以及缓存的 API 解析 URL/缩略图元数据门控，Atlas 侧同步再做 hash 检测。可用 `npm run update:projects -- --source <github|huggingface|kaggle> --force` 只刷新单个数据源。
+热度数据来自 HuggingFace Hub（280 万+ 模型）、GitHub（28 种许可证类型）和 Kaggle（通过 Meta-Kaggle 覆盖 71.4 万+ 数据集）。许可证卡片上的趋势火花线来自 HuggingFace models parquet 提取的月度 license-trends；GitHub 提供仓库计数和明星项目数据，Kaggle 提供数据集热度。Project Showcase 中 GitHub 按 stars 排序，HuggingFace 按 likes/点赞排序，Kaggle 按 votes 排序；许可证会在 Atlas 聚合计数达标，或 raw 源数据里出现明确热门的 top item 时进入展示。更新流程在源级做增量刷新：GitHub 按 license key 做新鲜度窗口缓存，HuggingFace 用 parquet 指纹门控，Kaggle 用最新 Meta-Kaggle version id 以及缓存的 API 解析 URL/缩略图元数据门控，Atlas 侧同步再做 hash 检测。可用 `npm run update:projects -- --source <github|huggingface|kaggle> --force` 只刷新单个数据源。
 网站页脚会显示最新数据更新时间，取许可证语料、OSI 审查追踪器同步时间、OSADL 检查清单同步时间与 project-showcase 同步时间中的最新者，并与页面浏览量计数同排展示。
 OSI Review Tracker 中的提交许可证原文来自公开 OSI 审查/讨论记录，仅用于研究和审查追踪；版权仍归原作者或许可证维护方所有。
 OSADL 检查清单数据归属 Open Source Automation Development Lab (OSADL) eG，由 OSADL 以 CC-BY-4.0 原始数据形式发布；LicenseAtlas 将其作为信息性合规元数据展示，不构成法律意见。

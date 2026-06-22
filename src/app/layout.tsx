@@ -4,6 +4,7 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { LangProvider } from "@/lib/i18n";
 import { NavProgress } from "@/components/nav-progress";
+import stats from "@/data/stats.json";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -16,10 +17,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteDescription = `Browse and explore ${stats.total} software, data, AI model, agent, and terms licenses, with OSI review tracking, OSADL checklist signals, and popularity trends.`;
+
 export const metadata: Metadata = {
   title: "LicenseAtlas — Software, Data, AI Model, and Agent License Explorer",
-  description:
-    "Browse and explore 2,587+ software, AI model, data, and agent licenses. Including SPDX, OSI, Creative Commons, and more.",
+  description: siteDescription,
   keywords: [
     "license", "open source license", "software license", "SPDX", "OSI", "Creative Commons",
     "MIT", "Apache", "GPL", "BSD", "AI model license", "data license",
@@ -30,8 +32,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://morningd.github.io/license.atlas"),
   openGraph: {
     title: "LicenseAtlas — Software, Data, AI Model, and Agent License Explorer",
-    description:
-      "Browse and explore 2,587+ software, AI model, data, and agent licenses.",
+    description: siteDescription,
     url: "https://morningd.github.io/license.atlas",
     siteName: "LicenseAtlas",
     type: "website",
@@ -41,8 +42,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary",
     title: "LicenseAtlas",
-    description:
-      "Browse and explore 2,587+ software, AI model, data, and agent licenses.",
+    description: siteDescription,
   },
   robots: {
     index: true,
@@ -72,8 +72,7 @@ export default function RootLayout({
                 name: "LicenseAtlas",
                 alternateName: "许可图鉴",
                 url: "https://morningd.github.io/license.atlas",
-                description:
-                  "A comprehensive collection of 2,587+ software, AI model, data, and agent licenses.",
+                description: siteDescription,
                 inLanguage: ["en", "zh"],
                 author: {
                   "@type": "Person",

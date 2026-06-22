@@ -331,14 +331,32 @@ function HomeContent() {
             placeholder={t("search.placeholder")}
             className="min-w-[280px] flex-1 rounded-xl border border-zinc-200/70 bg-white/80 px-4 py-3 text-sm shadow-sm outline-none backdrop-blur focus:border-[#7c3aed] dark:border-zinc-800 dark:bg-zinc-900/70"
           />
-          <select value={typeFilter} onChange={(e) => setTypeFilter(e.target.value)} className="rounded-xl border border-zinc-200/70 bg-white/80 px-3 py-3 text-sm dark:border-zinc-800 dark:bg-zinc-900/70">
-            <option value="">{t("filter.allTypes")}</option>
-            <option value="software">{t("filter.software")}</option>
-            <option value="model">{t("filter.model")}</option>
-            <option value="data">{t("filter.data")}</option>
-            <option value="agent">{t("filter.agent")}</option>
-            <option value="terms">{t("filter.terms")}</option>
-          </select>
+          {[
+            ["", "All"],
+            ["software", t("filter.software")],
+            ["model", t("filter.model")],
+            ["data", t("filter.data")],
+            ["agent", t("filter.agent")],
+          ].map(([value, label]) => {
+            const active = typeFilter === value;
+            const theme = value ? themes[value] : null;
+            return (
+              <button
+                key={value}
+                type="button"
+                onClick={() => setTypeFilter(value)}
+                className={`rounded-full border px-3 py-1.5 text-sm font-medium transition ${
+                  active
+                    ? value
+                      ? `border-transparent shadow-sm ${theme?.badge || ""}`
+                      : "border-zinc-900 bg-zinc-900 text-white shadow-sm dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-950"
+                    : "border-zinc-200 bg-white/80 text-zinc-600 hover:border-zinc-300 hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/70 dark:text-zinc-300 dark:hover:border-zinc-700 dark:hover:bg-zinc-800/70"
+                }`}
+              >
+                {label}
+              </button>
+            );
+          })}
 
           <span className="hidden h-5 w-px bg-zinc-200 dark:bg-zinc-700 sm:block" />
 

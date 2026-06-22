@@ -2,9 +2,11 @@
 // This covers the main license full texts and cleaned metadata, distinct from
 // sidecars such as tracker, OSADL, and project showcase data.
 // Run: node scripts/sync-license-corpus.mjs [--kb-path <path>]
-// New license slugs are blocked by default. After the KB-side dedupe / cleanup /
-// confirmation workflow is complete, pass --allow-new-licenses to sync them.
-import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
+// New hand-discovered license slugs are blocked by default. Trusted structured
+// sources such as ScanCode LicenseDB are allowed after KB clean/dedupe has run.
+// After KB-side dedupe / cleanup / confirmation is complete for other sources,
+// pass --allow-new-licenses or --allow-new-license <slug> to sync them.
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
 import { createHash } from "crypto";
 import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
@@ -12,6 +14,15 @@ import { fileURLToPath } from "url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 const allowNewLicenses = process.argv.includes("--allow-new-licenses");
+const allowedNewSlugs = new Set(
+  process.argv
+    .flatMap((arg, i, arr) => {
+      if (arg === "--allow-new-license" && arr[i + 1] && !arr[i + 1].startsWith("-")) return [arr[i + 1]];
+      if (arg.startsWith("--allow-new-license=")) return [arg.split("=", 2)[1]];
+      return [];
+    })
+    .filter(Boolean),
+);
 
 function resolveKbPath() {
   const flagIdx = process.argv.indexOf("--kb-path");
@@ -31,6 +42,39 @@ function sha1File(...files) {
   const h = createHash("sha1");
   for (const file of files) h.update(readFileSync(file));
   return h.digest("hex").slice(0, 16);
+}
+
+function sha1Text(text) {
+  return createHash("sha1").update(text).digest("hex").slice(0, 16);
+}
+
+function countBy(arr, getKeys) {
+  const out = {};
+  for (const item of arr) {
+    const keys = getKeys(item);
+    for (const key of Array.isArray(keys) ? keys : [keys]) {
+      if (!key) continue;
+      out[key] = (out[key] || 0) + 1;
+    }
+  }
+  return out;
+}
+
+function recomputeStats(licenses, sourceStats) {
+  return {
+    ...sourceStats,
+    total: licenses.length,
+    osi_approved: licenses.filter((l) => l.osi_approved).length,
+    fsf_libre: licenses.filter((l) => l.fsf_libre).length,
+    proprietary: licenses.filter((l) => l.proprietary).length,
+    by_type: countBy(licenses, (l) => l.type || "other"),
+    by_source: countBy(licenses, (l) => (l.sources || []).map((s) => s.name)),
+  };
+}
+
+function isTrustedStructuredNewLicense(license) {
+  const sourceNames = (license.sources || []).map((source) => source.name || "");
+  return sourceNames.some((name) => name === "scancode-licensedb.aboutcode.org");
 }
 
 const KB_ROOT = resolveKbPath();
@@ -64,39 +108,61 @@ if (sourceHash === existingHash) {
   process.exit(0);
 }
 
+mkdirSync(dirname(ATLAS_LICENSES), { recursive: true });
+let licenses = JSON.parse(readFileSync(KB_LICENSES, "utf8"));
+let index = JSON.parse(readFileSync(KB_INDEX, "utf8"));
+let stats = JSON.parse(readFileSync(KB_STATS, "utf8"));
+let effectiveSourceHash = sourceHash;
+
 if (!allowNewLicenses && existsSync(ATLAS_INDEX)) {
-  const sourceIndex = JSON.parse(readFileSync(KB_INDEX, "utf8"));
   const atlasIndex = JSON.parse(readFileSync(ATLAS_INDEX, "utf8"));
   const atlasSlugs = new Set(atlasIndex.map((license) => license.slug));
-  const newLicenses = sourceIndex.filter((license) => !atlasSlugs.has(license.slug));
+  const newLicenses = index.filter((license) => !atlasSlugs.has(license.slug));
+  const trustedNewLicenses = newLicenses.filter(isTrustedStructuredNewLicense);
+  const trustedNewSlugs = new Set(trustedNewLicenses.map((license) => license.slug));
+  const blockedNewLicenses = newLicenses.filter((license) =>
+    !trustedNewSlugs.has(license.slug) && !allowedNewSlugs.has(license.slug)
+  );
 
-  if (newLicenses.length > 0) {
-    console.error(`✗ Refusing to sync ${newLicenses.length} new license slug(s) before review.`);
-    console.error("  Run the KB dedupe / cleanup / confirmation workflow first, then rerun with --allow-new-licenses.");
+  if (blockedNewLicenses.length > 0 && allowedNewSlugs.size === 0) {
+    console.error(`✗ Refusing to sync ${blockedNewLicenses.length} new license slug(s) before confirmation.`);
+    console.error("  Run the KB dedupe + LLM cleanup + confirmation workflow first, then rerun with --allow-new-license <slug> for each confirmed new slug, or --allow-new-licenses after reviewing all.");
     console.error("  New candidates:");
-    for (const license of newLicenses) {
+    for (const license of blockedNewLicenses) {
       const sources = (license.sources || []).map((source) => `${source.name}: ${source.url}`).join(" | ");
       console.error(`  - ${license.slug} :: ${license.title}${sources ? ` (${sources})` : ""}`);
     }
     process.exit(2);
   }
+
+  if (blockedNewLicenses.length > 0 && allowedNewSlugs.size > 0) {
+    const keep = new Set([...atlasSlugs, ...trustedNewSlugs, ...allowedNewSlugs]);
+    const before = licenses.length;
+    licenses = licenses.filter((license) => keep.has(license.slug));
+    index = index.filter((license) => keep.has(license.slug));
+    stats = recomputeStats(licenses, stats);
+    effectiveSourceHash = sha1Text(JSON.stringify({ licenses, index, stats }));
+    console.log(`✓ Allowlisted ${newLicenses.filter((license) => allowedNewSlugs.has(license.slug)).length} confirmed new license slug(s)`);
+    console.log(`  Filtered out ${before - licenses.length} unconfirmed new slug(s) from this sync`);
+  } else if (allowedNewSlugs.size) {
+    console.log(`✓ Allowlisted ${newLicenses.filter((license) => allowedNewSlugs.has(license.slug)).length} confirmed new license slug(s)`);
+  }
+  if (trustedNewLicenses.length) {
+    console.log(`✓ Accepted ${trustedNewLicenses.length} trusted ScanCode new license slug(s) after KB clean/dedupe`);
+  }
 }
 
-mkdirSync(dirname(ATLAS_LICENSES), { recursive: true });
-copyFileSync(KB_LICENSES, ATLAS_LICENSES);
-copyFileSync(KB_INDEX, ATLAS_INDEX);
-copyFileSync(KB_STATS, ATLAS_STATS);
-
-const licenses = JSON.parse(readFileSync(ATLAS_LICENSES, "utf8"));
-const stats = JSON.parse(readFileSync(ATLAS_STATS, "utf8"));
+writeFileSync(ATLAS_LICENSES, JSON.stringify(licenses, null, 2) + "\n");
+writeFileSync(ATLAS_INDEX, JSON.stringify(index, null, 2) + "\n");
+writeFileSync(ATLAS_STATS, JSON.stringify(stats, null, 2) + "\n");
 writeFileSync(
   resolve(ROOT, "src", "data", "license-corpus-meta.json"),
   JSON.stringify({
-    source_hash: sourceHash,
+    source_hash: effectiveSourceHash,
     generated_at: stats.updated || new Date().toISOString().slice(0, 10),
     total: Array.isArray(licenses) ? licenses.length : stats.total,
   }, null, 2),
 );
 
 console.log(`✓ Synced ${Array.isArray(licenses) ? licenses.length : stats.total} licenses -> src/data/licenses*.json + stats.json`);
-console.log(`  source_hash: ${sourceHash}`);
+console.log(`  source_hash: ${effectiveSourceHash}`);

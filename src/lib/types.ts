@@ -46,8 +46,10 @@ export interface ProjectShowcaseItem {
   url: string | null;
   icon_url: string | null;
   rank: number;
+  rank_basis?: string | null;
   metric: {
     stars?: number;
+    trendingScore?: number;
     downloads?: number;
     likes?: number;
     votes?: number;

@@ -1,13 +1,14 @@
 {
-  "source_hash": "fe04df003f2bafe7",
-  "generated_at": "2026-06-21T16:16:46.314Z",
+  "source_hash": "dd407d47c257bbf3",
+  "generated_at": "2026-06-22T07:48:39.787Z",
   "source": "GitHub Search API + HuggingFace Hub + Meta-Kaggle",
   "thresholds": {
     "github_repos": 10000,
     "kaggle_datasets": 1000,
     "hf_popularity_floor": 1000,
     "github_top_stars": 10000,
-    "hf_top_likes": 1000,
+    "hf_top_trending_score": 100,
+    "hf_fallback_top_likes": 1000,
     "kaggle_top_votes": 1000
   },
   "record_count": 31,

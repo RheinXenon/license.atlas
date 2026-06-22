@@ -23,7 +23,8 @@ function compactNumber(value: number) {
 
 function metricLabel(source: string, item: ProjectShowcaseItem, t: (key: string) => string) {
   if (source === "github") return `${compactNumber(item.metric.stars || 0)} ${t("detail.showcaseStars")}`;
-  if (source === "huggingface") return `${compactNumber(item.metric.likes || 0)} ${t("detail.showcaseLikes")}`;
+  if (source === "huggingface" && item.rank_basis === "likes_fallback") return `${compactNumber(item.metric.likes || 0)} ${t("detail.showcaseLikes")}`;
+  if (source === "huggingface") return `${compactNumber(Math.round(item.metric.trendingScore || 0))} ${t("detail.showcaseTrend")}`;
   return `${compactNumber(item.metric.votes || 0)} ${t("detail.showcaseVotes")}`;
 }
 

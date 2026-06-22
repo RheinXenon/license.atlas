@@ -52,10 +52,11 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
   const reviewTracked = !!trackerEntry && hasReviewContent(trackerEntry);
   const osadlEntry = resolveOsadlChecklist(license);
   const showcaseEntry = resolveProjectShowcase(license);
+  const hasShowcase = !!showcaseEntry;
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
-      <div className="gap-10 lg:grid lg:grid-cols-[minmax(0,1fr)_18rem]">
+      <div className={hasShowcase ? "gap-10 lg:grid lg:grid-cols-[minmax(0,1fr)_18rem]" : "mx-auto max-w-4xl"}>
         <div className="min-w-0">
       {/* Nav */}
       <Link
@@ -285,9 +286,11 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
         )}
       </div>
         </div>
-        <div className="mt-8 lg:mt-[7.875rem]">
-          <ProjectShowcaseBlock entry={showcaseEntry} />
-        </div>
+        {hasShowcase && (
+          <div className="mt-8 lg:mt-[7.875rem]">
+            <ProjectShowcaseBlock entry={showcaseEntry} />
+          </div>
+        )}
       </div>
     </div>
   );

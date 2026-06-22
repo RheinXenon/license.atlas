@@ -47,6 +47,9 @@ tracker.
    - Runs `scripts/update-project-showcase.mjs`.
    - Uses GitHub per-license freshness, HuggingFace parquet fingerprint, Kaggle
      Meta-Kaggle version, and Atlas-side hash gates.
+   - Can be refreshed independently with `npm run update:projects`; use
+     `npm run update:projects -- --source huggingface --force` when only the
+     HuggingFace trending-score / likes-fallback ranking needs to be refreshed.
 
 5. **Build verification**
    - Runs `npm run build`, which rebuilds the search index, syncs committed
@@ -161,7 +164,7 @@ Use this template in the final report:
 | Kaggle source | updated / skipped / failed | version / license count | cache version | Note that Kaggle contributes popularity only. |
 | OSI Tracker | updated / skipped / failed | submissions/events/texts | tracker hash or build output | Include `license-review` and `license-discuss` mail windows. |
 | OSADL sidecar | updated / skipped / failed | checklist count/hash | timestamp/hash | Mention checklist timestamp when available. |
-| Popular Projects | updated / skipped / failed | records/hash | source fingerprints | Include GitHub/HF/Kaggle refresh scope. |
+| Popular Projects | updated / skipped / failed | records/hash | source fingerprints | Include GitHub/HF/Kaggle refresh scope and whether HF used `trendingScore` or likes fallback. |
 | Verification | pass / fail / skipped | commands | command output summary | Include build, tests, and browser checks when relevant. |
 
 Rules:

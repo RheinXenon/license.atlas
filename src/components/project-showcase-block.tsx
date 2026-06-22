@@ -59,13 +59,15 @@ function SourceList({ source, items }: { source: string; items: ProjectShowcaseI
           const content = (
             <div className="flex items-center gap-2 rounded-lg px-1 py-0.5 transition-colors hover:bg-white/80 dark:hover:bg-zinc-800/70">
               {item.icon_url ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={item.icon_url}
-                  alt=""
-                  className="h-6 w-6 shrink-0 rounded-md border border-zinc-200 object-cover dark:border-zinc-700"
-                  referrerPolicy="no-referrer"
-                />
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center overflow-hidden rounded-md border border-zinc-200 bg-white p-0.5 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.45)] dark:border-zinc-700 dark:bg-zinc-100">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={item.icon_url}
+                    alt=""
+                    className="h-full w-full object-contain"
+                    referrerPolicy="no-referrer"
+                  />
+                </span>
               ) : (
                 <FallbackIcon label={label} source={source} />
               )}

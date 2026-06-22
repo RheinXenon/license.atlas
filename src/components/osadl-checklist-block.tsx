@@ -527,6 +527,21 @@ function mergeChecklistActions(
   return Array.from(merged.values());
 }
 
+function splitUseCaseParts(useCase: string) {
+  return useCase
+    .split(/\s+(?:OR|AND)\s+/)
+    .map((part) => part.trim())
+    .filter(Boolean);
+}
+
+function actionMatchesUseCase(action: ChecklistDisplayAction, activeUseCase: string) {
+  if (activeUseCase === "all") return true;
+  return action.useCases.some((useCase) => {
+    if (useCase === activeUseCase) return true;
+    return splitUseCaseParts(useCase).includes(activeUseCase);
+  });
+}
+
 function ChecklistActionTree({ entry, lang, labels }: {
   entry: OsadlChecklistEntry;
   lang: Lang;
@@ -542,6 +557,7 @@ function ChecklistActionTree({ entry, lang, labels }: {
     more: (remaining: number) => string;
   };
 }) {
+  const [activeUseCase, setActiveUseCase] = useState("all");
   const actions = mergeChecklistActions(entry.obligations, entry.prohibitions, labels.defaultCondition);
   const groups = new Map<string, ChecklistDisplayAction[]>();
   actions.forEach((action) => {
@@ -611,25 +627,51 @@ function ChecklistActionTree({ entry, lang, labels }: {
                 </span>
               </div>
               <ul className="space-y-0.5">
-                {visible.map((action, idx) => (
-                  <li key={`${condition}-${action.tone}-${action.text}-${idx}`} className="grid grid-cols-[4ch_11ch_minmax(0,1fr)] gap-x-1">
-                    <span className={action.tone === "must" ? "text-emerald-700 dark:text-emerald-300" : "text-rose-700 dark:text-rose-300"}>
-                      | -
-                    </span>
-                    <span className={action.tone === "must" ? "text-emerald-700 dark:text-emerald-300" : "text-rose-700 dark:text-rose-300"}>
-                      [{action.tone === "must" ? labels.must : labels.mustNot}]
-                    </span>{" "}
-                    <span className="font-sans">
-                      <span className="font-medium text-zinc-900 dark:text-zinc-100">{translateOsadlText(action.text, lang, "action", { condition: action.condition })}</span>
-                      {action.useCases.length > 0 && (
-                        <span className="text-xs text-zinc-500 dark:text-zinc-400">
-                          {" "}
-                          ({action.useCases.map((useCase) => translateOsadlText(useCase, lang, "use-case")).join(" / ")})
-                        </span>
-                      )}
-                    </span>
-                  </li>
-                ))}
+                {visible.map((action, idx) => {
+                  const isDimmed = activeUseCase !== "all" && !actionMatchesUseCase(action, activeUseCase);
+                  return (
+                    <li
+                      key={`${condition}-${action.tone}-${action.text}-${idx}`}
+                      className={`grid grid-cols-[4ch_11ch_minmax(0,1fr)] gap-x-1 transition-opacity ${isDimmed ? "opacity-35" : ""}`}
+                    >
+                      <span className={action.tone === "must" ? "text-emerald-700 dark:text-emerald-300" : "text-rose-700 dark:text-rose-300"}>
+                        | -
+                      </span>
+                      <span className={action.tone === "must" ? "text-emerald-700 dark:text-emerald-300" : "text-rose-700 dark:text-rose-300"}>
+                        [{action.tone === "must" ? labels.must : labels.mustNot}]
+                      </span>{" "}
+                      <span className="font-sans">
+                        <span className="font-medium text-zinc-900 dark:text-zinc-100">{translateOsadlText(action.text, lang, "action", { condition: action.condition })}</span>
+                        {action.useCases.length > 0 && (
+                          <span className="text-xs text-zinc-500 dark:text-zinc-400">
+                            {" "}
+                            (
+                            {action.useCases.map((useCase, useCaseIdx) => {
+                              const selected = activeUseCase !== "all" && actionMatchesUseCase({ ...action, useCases: [useCase] }, activeUseCase);
+                              return (
+                                <span key={useCase}>
+                                  {useCaseIdx > 0 && " / "}
+                                  <button
+                                    type="button"
+                                    onClick={() => setActiveUseCase(selected ? "all" : useCase)}
+                                    className={`cursor-pointer rounded px-1 py-0.5 transition-colors ${
+                                      selected
+                                        ? "bg-cyan-100 text-cyan-800 dark:bg-cyan-900/50 dark:text-cyan-200"
+                                        : "hover:bg-zinc-100 hover:text-zinc-900 dark:hover:bg-zinc-800 dark:hover:text-zinc-100"
+                                    }`}
+                                  >
+                                    {translateOsadlText(useCase, lang, "use-case")}
+                                  </button>
+                                </span>
+                              );
+                            })}
+                            )
+                          </span>
+                        )}
+                      </span>
+                    </li>
+                  );
+                })}
               </ul>
               {remaining > 0 && (
                 <p className="mt-1 grid grid-cols-[4ch_minmax(0,1fr)] text-xs font-medium text-zinc-500 dark:text-zinc-400">
@@ -916,7 +958,7 @@ export function OsadlChecklistBlock({ entry, meta }: {
       </div>
 
       {expanded && (
-        <div data-osadl-interactive="true">
+        <div className="cursor-default" data-osadl-interactive="true">
           <div className="mb-5">
             <ChecklistActionTree entry={entry} lang={lang} labels={labels} />
           </div>

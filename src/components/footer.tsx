@@ -48,6 +48,21 @@ export function Footer() {
             </p>
           </div>
         </div>
+        <div className="mt-4 space-y-1 text-center text-xs leading-relaxed text-zinc-400 dark:text-zinc-500 sm:text-left">
+          <p>
+            {t("footer.copyrightPrefix")}{" "}
+            <a
+              href="https://faculty.ecnu.edu.cn/_s37/dmm/main.psp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-zinc-500 underline-offset-2 hover:text-[#7c3aed] hover:underline dark:text-zinc-400 dark:hover:text-[#a78bfa]"
+            >
+              {t("footer.copyrightName")}
+            </a>
+            {t("footer.copyrightSuffix")}
+          </p>
+          <p>{t("footer.licenseNotice")}</p>
+        </div>
       </div>
     </footer>
   );

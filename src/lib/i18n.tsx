@@ -275,6 +275,10 @@ const dict: Record<Lang, Record<string, string>> = {
     "footer.dataUpdatedAt": "Latest Data Update: {date}",
     "footer.views": "views",
     "footer.visitors": "visitors",
+    "footer.copyrightPrefix": "© 2026",
+    "footer.copyrightName": "Moming Duan",
+    "footer.copyrightSuffix": ", ECNU DaSE.",
+    "footer.licenseNotice": "LicenseAtlas site code and original content are licensed under Apache-2.0. Third-party license texts and metadata remain under their original copyrights and licenses.",
 
     // About
     "about.title": "About LicenseAtlas",
@@ -309,6 +313,9 @@ const dict: Record<Lang, Record<string, string>> = {
     "about.osadlRawData": "OSADL raw data ↗",
     "about.osadlProject": "Checklist project ↗",
     "about.osadlCompatibility": "Compatibility notes ↗",
+    "about.disclaimerTitle": "Disclaimer",
+    "about.disclaimerIntro": "LicenseAtlas provides license texts, review records, checklist data, compatibility signals, popularity data, and summaries for research, search, and general reference only. It does not provide legal advice or compliance advice. Rights and obligations should be determined from the original license text and official sources; specific questions about use, distribution, modification, compliance, or disputes should be directed to a qualified legal professional.",
+    "about.disclaimerData": "LicenseAtlas makes reasonable efforts to cite public sources and preserve source links, but does not warrant the completeness, accuracy, timeliness, or fitness for a particular purpose of third-party data, extracted text, summaries, matches, or compatibility signals. Third-party license texts, public review records, OSADL checklist data, and platform metadata remain subject to their original copyrights, licenses, and source terms.",
     "osadl.title": "OSADL Open Source License Checklist",
     "osadl.must": "Must",
     "osadl.mustNot": "Must Not",
@@ -648,6 +655,10 @@ const dict: Record<Lang, Record<string, string>> = {
     "footer.dataUpdatedAt": "最新数据更新时间：{date}",
     "footer.views": "次浏览",
     "footer.visitors": "位访客",
+    "footer.copyrightPrefix": "© 2026",
+    "footer.copyrightName": "段莫名",
+    "footer.copyrightSuffix": "，华东师范大学数据科学与工程学院。",
+    "footer.licenseNotice": "LicenseAtlas 网站代码及原创内容采用 Apache-2.0 许可；第三方许可证文本与元数据版权及许可归原权利人所有。",
 
     // About
     "about.title": "关于许可图鉴（LicenseAtlas）",
@@ -682,6 +693,9 @@ const dict: Record<Lang, Record<string, string>> = {
     "about.osadlRawData": "OSADL 原始数据 ↗",
     "about.osadlProject": "检查清单项目 ↗",
     "about.osadlCompatibility": "兼容性说明 ↗",
+    "about.disclaimerTitle": "免责声明",
+    "about.disclaimerIntro": "LicenseAtlas 提供的许可证文本、审查记录、检查清单、兼容性信号、热度数据与摘要信息仅供研究、检索和一般参考，不构成法律意见或合规建议。许可证权利义务应以原始许可证文本及其官方来源为准；具体使用、分发、修改、合规或争议问题应咨询具备资质的法律专业人士。",
+    "about.disclaimerData": "LicenseAtlas 会尽力引用公开来源并保留来源链接，但不保证第三方数据、自动提取结果、摘要、匹配关系或兼容性信号的完整性、准确性、时效性或适用于特定目的。第三方许可证文本、公开审查记录、OSADL 检查清单及平台元数据仍适用其原始版权、许可证和来源条款。",
     "osadl.title": "OSADL 开源许可证检查清单",
     "osadl.must": "必须",
     "osadl.mustNot": "禁止",

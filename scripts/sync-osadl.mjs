@@ -35,6 +35,7 @@ const KB_MATCH = resolve(KB_DIR, "match-report.json");
 const ATLAS_FULL = resolve(ROOT, "public", "data", "osadl-checklists.json");
 const ATLAS_INDEX = resolve(ROOT, "src", "data", "osadl-checklists-index.json");
 const ATLAS_META = resolve(ROOT, "src", "data", "osadl-meta.json");
+const ATLAS_COVERAGE = resolve(ROOT, "src", "data", "osadl-coverage.json");
 const ATLAS_LICENSES = resolve(ROOT, "src", "data", "licenses-index.json");
 
 const DEPRECATED_SPDX_OSADL_MAP = {
@@ -116,6 +117,46 @@ function compactRecord(record) {
       unknown: 0,
       check_dependency: 0,
     },
+  };
+}
+
+function buildCoverage(bySpdx, meta) {
+  if (!existsSync(ATLAS_LICENSES)) {
+    return {
+      _meta: {
+        generated_at: meta.generated_at,
+        source_hash: meta.source_hash,
+        record_count: meta.record_count,
+        matched_records: meta.match_counts?.matched || 0,
+        matched_slugs: 0,
+        osadl_unmatched_ids: meta.match_counts?.osadl_unmatched_ids || [],
+      },
+      slugs: [],
+    };
+  }
+
+  const osadlSpdx = new Set(Object.keys(bySpdx).map(normKey));
+  const licenses = JSON.parse(readFileSync(ATLAS_LICENSES, "utf8"));
+  const slugs = licenses
+    .filter((license) => {
+      const spdx = normKey(license.spdx_id);
+      const slug = normKey(license.slug);
+      return (spdx && (osadlSpdx.has(spdx) || osadlSpdx.has(DEPRECATED_SPDX_OSADL_MAP[spdx])))
+        || osadlSpdx.has(SCANCODE_SLUG_OSADL_MAP[slug]);
+    })
+    .map((license) => license.slug)
+    .sort((a, b) => a.localeCompare(b));
+
+  return {
+    _meta: {
+      generated_at: meta.generated_at,
+      source_hash: meta.source_hash,
+      record_count: meta.record_count,
+      matched_records: meta.match_counts?.matched || slugs.length,
+      matched_slugs: slugs.length,
+      osadl_unmatched_ids: meta.match_counts?.osadl_unmatched_ids || [],
+    },
+    slugs,
   };
 }
 
@@ -218,13 +259,15 @@ const atlasIndex = {
   _meta: meta,
   by_spdx: bySpdx,
 };
+const coverage = buildCoverage(bySpdx, meta);
 
 mkdirSync(dirname(ATLAS_FULL), { recursive: true });
 mkdirSync(dirname(ATLAS_INDEX), { recursive: true });
 copyFileSync(KB_FULL, ATLAS_FULL);
 writeFileSync(ATLAS_INDEX, JSON.stringify(atlasIndex, null, 2));
 writeFileSync(ATLAS_META, JSON.stringify(meta, null, 2));
+writeFileSync(ATLAS_COVERAGE, JSON.stringify(coverage, null, 2));
 
-console.log(`✓ Synced ${records.length} OSADL checklist records -> public/data/osadl-checklists.json + src/data/osadl-checklists-index.json + src/data/osadl-meta.json`);
+console.log(`✓ Synced ${records.length} OSADL checklist records -> public/data/osadl-checklists.json + src/data/osadl-checklists-index.json + src/data/osadl-meta.json + src/data/osadl-coverage.json`);
 console.log(`  source_hash: ${sourceHash}`);
 console.log(`  matched Atlas SPDX IDs: ${meta.match_counts?.matched || meta.match_counts?.matched_exact || 0}/${records.length}`);

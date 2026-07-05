@@ -108,6 +108,7 @@ const dict: Record<Lang, Record<string, string>> = {
     "review.approvedDate": "Approved Date",
     "review.rejectedDate": "Rejected Date",
     "tag.review-tracked": "Review Tracked",
+    "tag.osadl": "OSADL",
 
     // Home
     "home.subtitle": "A comprehensive collection of {total} software, AI model, data, and agent licenses.",
@@ -158,6 +159,7 @@ const dict: Record<Lang, Record<string, string>> = {
     "tagdesc.osi": "Approved by the Open Source Initiative as meeting the Open Source Definition",
     "tagdesc.fsf": "Classified as a free license by the Free Software Foundation",
     "tagdesc.review-tracked": "Has a public license review record, including submissions, discussions, votes, or final decisions.",
+    "tagdesc.osadl": "Has OSADL Open Source License Checklist compliance metadata",
     "tagdesc.proprietary": "Proprietary license that restricts one or more fundamental usage rights",
     "tagdesc.custom": "Custom license not registered with SPDX or other standard bodies",
     "tagdesc.huggingface": "License found on a HuggingFace Hub model",
@@ -492,6 +494,7 @@ const dict: Record<Lang, Record<string, string>> = {
     "review.approvedDate": "批准日期",
     "review.rejectedDate": "否决日期",
     "tag.review-tracked": "审查记录",
+    "tag.osadl": "OSADL",
 
     // Home
     "home.subtitle": "涵盖 {total} 个软件、AI 模型、数据和智能体许可证的全面集合。",
@@ -542,6 +545,7 @@ const dict: Record<Lang, Record<string, string>> = {
     "tagdesc.osi": "经开放源代码促进会（OSI）批准，符合开源定义",
     "tagdesc.fsf": "被自由软件基金会（FSF）归类为自由许可证",
     "tagdesc.review-tracked": "有公开的许可证审查记录，可能包含提交、讨论、投票或最终决议。",
+    "tagdesc.osadl": "有 OSADL 开源许可证检查清单合规元数据",
     "tagdesc.proprietary": "限制一个或多个基本使用权利的专有许可证",
     "tagdesc.custom": "未在 SPDX 或其他标准机构注册的自定义许可证",
     "tagdesc.huggingface": "来自 HuggingFace Hub 模型的许可证",

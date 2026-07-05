@@ -51,6 +51,12 @@ export const themes: Record<string, BadgeTheme> = {
     tooltip: "bg-green-50 border-green-200 dark:bg-green-950 dark:border-green-800",
     glow: "shadow-[0_0_8px_rgba(61,166,57,0.18)]",
   },
+  osadl: {
+    desc: "Has OSADL Open Source License Checklist compliance metadata.",
+    badge: "bg-cyan-50 text-cyan-700 ring-1 ring-inset ring-cyan-200 dark:bg-cyan-950/35 dark:text-cyan-300 dark:ring-cyan-800/70",
+    tooltip: "bg-cyan-50 border-cyan-200 dark:bg-cyan-950 dark:border-cyan-800",
+    glow: "shadow-[0_0_8px_rgba(6,182,212,0.18)]",
+  },
   "review-approved": {
     desc: "OSI board approved this license.",
     badge: "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300",

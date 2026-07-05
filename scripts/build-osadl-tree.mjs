@@ -4,7 +4,7 @@
 //
 // Usage: node scripts/build-osadl-tree.mjs
 
-import { readFileSync, writeFileSync } from "fs";
+import { existsSync, readFileSync, writeFileSync } from "fs";
 import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
 
@@ -14,8 +14,25 @@ const ROOT = resolve(__dirname, "..");
 const ATLAS_FULL = resolve(ROOT, "public", "data", "osadl-checklists.json");
 const ATLAS_INDEX = resolve(ROOT, "src", "data", "osadl-checklists-index.json");
 const ATLAS_META = resolve(ROOT, "src", "data", "osadl-meta.json");
+const ATLAS_COVERAGE = resolve(ROOT, "src", "data", "osadl-coverage.json");
+const ATLAS_LICENSES = resolve(ROOT, "src", "data", "licenses-index.json");
 
 const INDEX_SCHEMA_VERSION = 3;
+
+const DEPRECATED_SPDX_OSADL_MAP = {
+  "gpl-1.0": "gpl-1.0-only",
+  "gpl-2.0": "gpl-2.0-only",
+  "gpl-3.0": "gpl-3.0-only",
+  "lgpl-2.0": "lgpl-2.0-only",
+  "lgpl-2.1": "lgpl-2.1-only",
+};
+
+const SCANCODE_SLUG_OSADL_MAP = {
+  "bsla-no-advert": "licenseref-scancode-bsla-no-advert",
+  "info-zip-2003-05": "licenseref-scancode-info-zip-2003-05",
+  "ppp": "licenseref-scancode-ppp",
+  "bzip2-libbzip-1.0.5": "bzip2-1.0.5",
+};
 
 function normKey(value) {
   return String(value || "").trim().toLowerCase();
@@ -27,6 +44,34 @@ function capList(values, max) {
 
 function uniqueStrings(values) {
   return [...new Set((values || []).filter(Boolean).map(String))];
+}
+
+function buildCoverage(bySpdx, meta) {
+  const osadlSpdx = new Set(Object.keys(bySpdx).map(normKey));
+  const licenses = existsSync(ATLAS_LICENSES)
+    ? JSON.parse(readFileSync(ATLAS_LICENSES, "utf8"))
+    : [];
+  const slugs = licenses
+    .filter((license) => {
+      const spdx = normKey(license.spdx_id);
+      const slug = normKey(license.slug);
+      return (spdx && (osadlSpdx.has(spdx) || osadlSpdx.has(DEPRECATED_SPDX_OSADL_MAP[spdx])))
+        || osadlSpdx.has(SCANCODE_SLUG_OSADL_MAP[slug]);
+    })
+    .map((license) => license.slug)
+    .sort((a, b) => a.localeCompare(b));
+
+  return {
+    _meta: {
+      generated_at: meta.generated_at,
+      source_hash: meta.source_hash,
+      record_count: meta.record_count,
+      matched_records: meta.match_counts?.matched || slugs.length,
+      matched_slugs: slugs.length,
+      osadl_unmatched_ids: meta.match_counts?.osadl_unmatched_ids || [],
+    },
+    slugs,
+  };
 }
 
 // Parse raw checklist tree structure
@@ -403,6 +448,10 @@ console.log(`Wrote index to ${ATLAS_INDEX}`);
 // Update meta file
 writeFileSync(ATLAS_META, JSON.stringify(meta, null, 2), "utf8");
 console.log(`Updated meta in ${ATLAS_META}`);
+
+const coverage = buildCoverage(bySpdx, meta);
+writeFileSync(ATLAS_COVERAGE, JSON.stringify(coverage, null, 2), "utf8");
+console.log(`Updated coverage in ${ATLAS_COVERAGE}`);
 
 // Stats
 const withEither = compactRecords.filter(

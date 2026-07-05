@@ -10,13 +10,16 @@ import { searchLicenses, preloadIndex } from "@/lib/search";
 import type { SearchGroup, SearchResult } from "@/lib/search";
 import { hasReviewContent, resolveTrackerEntry } from "@/lib/tracker-match";
 import licenses from "@/data/licenses-index.json";
+import osadlCoverage from "@/data/osadl-coverage.json";
 import stats from "@/data/stats.json";
 import type { License } from "@/lib/types";
 
 const PAGE_SIZE = 30;
 const REVIEW_TRACKED_TAG = "Review Tracked";
+const OSADL_TAG = "OSADL";
 const allLicenses = licenses as License[];
 const licenseBySlug = new Map(allLicenses.map((license) => [license.slug, license]));
+const osadlSupportedSlugs = new Set((osadlCoverage as { slugs: string[] }).slugs);
 const reviewTrackedSlugs = new Set(
   allLicenses
     .filter((license) => {
@@ -26,10 +29,10 @@ const reviewTrackedSlugs = new Set(
     .map((license) => license.slug),
 );
 const allTags = Array.from(
-  new Set([...allLicenses.flatMap((l) => l.tags), REVIEW_TRACKED_TAG])
+  new Set([...allLicenses.flatMap((l) => l.tags), OSADL_TAG, REVIEW_TRACKED_TAG])
 ).filter((t) => !["MCP Server", "Agent Framework", "Agent Skill", "LLM Tool", "Proprietary"].includes(t));
 
-const tagOrder = ["Public Domain", "Permissive", "Weak Copyleft", "Copyleft", "Creative Commons", "GNU", "ModelGo", "GNU Nonfree", "Hardware", "Custom", "HuggingFace", "MCP Server", "Agent Framework", "Agent Skill", "LLM Tool", "tl;drLegal Verified", "Review Tracked"];
+const tagOrder = ["Public Domain", "Permissive", "Weak Copyleft", "Copyleft", "Creative Commons", "GNU", "ModelGo", "GNU Nonfree", "Hardware", "Custom", "HuggingFace", "MCP Server", "Agent Framework", "Agent Skill", "LLM Tool", "tl;drLegal Verified", "OSADL", "Review Tracked"];
 allTags.sort((a, b) => {
   const ai = tagOrder.indexOf(a), bi = tagOrder.indexOf(b);
   if (ai !== -1 && bi !== -1) return ai - bi;
@@ -40,6 +43,13 @@ allTags.sort((a, b) => {
 
 function tagThemeKey(tag: string): string {
   return tag.toLowerCase().replace(/ /g, "-").replace(/[^a-z0-9-]/g, "");
+}
+
+function licenseTagsWithSignals(license: Pick<License, "slug" | "tags"> | undefined) {
+  const tags = new Set(license?.tags || []);
+  if (license && osadlSupportedSlugs.has(license.slug)) tags.add(OSADL_TAG);
+  if (license && reviewTrackedSlugs.has(license.slug)) tags.add(REVIEW_TRACKED_TAG);
+  return tags;
 }
 
 const groupTitleKey: Record<string, string> = {
@@ -242,8 +252,7 @@ function HomeContent() {
       }
       if (tagFilter.size > 0) {
         results = results.filter((r) => {
-          const l = allLicenses.find((lic) => lic.slug === r.slug);
-          const tags = new Set([...(l?.tags || []), reviewTrackedSlugs.has(r.slug) ? REVIEW_TRACKED_TAG : ""]);
+          const tags = licenseTagsWithSignals(licenseBySlug.get(r.slug));
           return [...tagFilter].every((tag) => tags.has(tag));
         });
       }
@@ -266,7 +275,7 @@ function HomeContent() {
       if (fsfOnly && !l.fsf_libre) return false;
       if (langFilter && !l.languages?.includes(langFilter)) return false;
       if (tagFilter.size > 0) {
-        const tags = new Set([...l.tags, reviewTrackedSlugs.has(l.slug) ? REVIEW_TRACKED_TAG : ""]);
+        const tags = licenseTagsWithSignals(l);
         if (![...tagFilter].every((tag) => tags.has(tag))) return false;
       }
       return true;
@@ -423,8 +432,15 @@ function HomeContent() {
                   {group.key === "tracker"
                     ? group.results.map((r) => <TrackerSearchCard key={`${group.key}-${r.slug}`} result={r} />)
                     : group.results.map((r) => {
-                      const license = allLicenses.find((l) => l.slug === r.slug);
-                      return license ? <LicenseCard key={r.slug} license={license} reviewTracked={reviewTrackedSlugs.has(license.slug)} /> : null;
+                      const license = licenseBySlug.get(r.slug);
+                      return license ? (
+                        <LicenseCard
+                          key={r.slug}
+                          license={license}
+                          reviewTracked={reviewTrackedSlugs.has(license.slug)}
+                          osadlSupported={osadlSupportedSlugs.has(license.slug)}
+                        />
+                      ) : null;
                     })}
                 </div>
               </div>
@@ -440,7 +456,12 @@ function HomeContent() {
             </div>
             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
               {pageItems.map((license) => (
-                <LicenseCard key={license.slug} license={license} reviewTracked={reviewTrackedSlugs.has(license.slug)} />
+                <LicenseCard
+                  key={license.slug}
+                  license={license}
+                  reviewTracked={reviewTrackedSlugs.has(license.slug)}
+                  osadlSupported={osadlSupportedSlugs.has(license.slug)}
+                />
               ))}
             </div>
             {remainingCount > 0 && (

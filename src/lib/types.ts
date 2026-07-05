@@ -259,6 +259,7 @@ export interface TrackerIndex {
 // Action node: a single obligation or prohibition
 export interface OsadlActionNode {
   text: string;
+  type: 'must' | 'must-not';
   attributes?: string[];
 }
 

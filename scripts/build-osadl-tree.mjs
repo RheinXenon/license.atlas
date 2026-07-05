@@ -179,7 +179,7 @@ function parseActions(actionsObj, isProhibition = false) {
   const actions = [];
 
   if (typeof actionsObj === "string") {
-    actions.push({ text: actionsObj });
+    actions.push({ text: actionsObj, type: isProhibition ? 'must-not' : 'must' });
     return actions;
   }
 
@@ -192,6 +192,7 @@ function parseActions(actionsObj, isProhibition = false) {
 
     const action = {
       text: actionText,
+      type: isProhibition ? 'must-not' : 'must',
       attributes: [],
     };
 
@@ -240,7 +241,7 @@ function countActions(block) {
 
   if (block.then) {
     for (const action of block.then) {
-      if (action.text.startsWith("YOU MUST NOT")) {
+      if (action.type === 'must-not') {
         prohibitions++;
       } else {
         obligations++;
@@ -251,10 +252,22 @@ function countActions(block) {
   if (block.either) {
     for (const eg of block.either) {
       if (eg.common) {
-        obligations += eg.common.length;
+        for (const action of eg.common) {
+          if (action.type === 'must-not') {
+            prohibitions++;
+          } else {
+            obligations++;
+          }
+        }
       }
       for (const option of eg.options) {
-        obligations += option.length;
+        for (const action of option) {
+          if (action.type === 'must-not') {
+            prohibitions++;
+          } else {
+            obligations++;
+          }
+        }
       }
     }
   }

@@ -155,7 +155,7 @@ function parseActions(
 
   if (typeof actionsObj === "string") {
     // Single action as string
-    actions.push({ text: actionsObj });
+    actions.push({ text: actionsObj, type: isProhibition ? 'must-not' : 'must' });
     return actions;
   }
 
@@ -171,6 +171,7 @@ function parseActions(
 
     const action: OsadlActionNode = {
       text: actionText,
+      type: isProhibition ? 'must-not' : 'must',
       attributes: [],
     };
 
@@ -269,7 +270,7 @@ export function flattenConditionBlock(
     for (const action of block.then) {
       flat.push({
         text: action.text,
-        type: action.text.startsWith("YOU MUST NOT") ? "must-not" : "must",
+        type: action.type,
         attributes: action.attributes,
         condition_path: currentPath,
         use_case: useCase,
@@ -287,7 +288,7 @@ export function flattenConditionBlock(
         for (const action of eg.common) {
           flat.push({
             text: action.text,
-            type: "must",
+            type: action.type,
             attributes: action.attributes,
             condition_path: currentPath,
             use_case: useCase,
@@ -302,7 +303,7 @@ export function flattenConditionBlock(
         for (const action of option) {
           flat.push({
             text: action.text,
-            type: "must",
+            type: action.type,
             attributes: action.attributes,
             condition_path: currentPath,
             use_case: useCase,

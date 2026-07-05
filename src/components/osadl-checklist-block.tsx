@@ -4,11 +4,28 @@ import Link from "next/link";
 import { useEffect, useRef, useState, type MouseEvent } from "react";
 import licenses from "@/data/licenses-index.json";
 import { useLang, type Lang } from "@/lib/i18n";
-import { flattenTrees } from "@/lib/osadl-parser";
-import type { License, OsadlChecklistEntry, OsadlConditionBlock, OsadlEitherGroup, OsadlUseCaseTree, OsadlIndexMeta } from "@/lib/types";
+import type { License, OsadlActionNode, OsadlChecklistEntry, OsadlConditionBlock, OsadlEitherGroup, OsadlIndexMeta, OsadlUseCaseTree } from "@/lib/types";
 
 type CompatibilityVerdict = "Yes" | "No" | "Same" | "Unknown" | "Check dependency";
 type CompatibilityPosition = { x: number; y: number; listMaxHeight: number };
+type OsadlActionViewMode = "nested" | "flat";
+
+type OsadlConditionContext = {
+  kind: "condition" | "unless";
+  value: string;
+};
+
+type OsadlChoiceContext =
+  | { kind: "common"; groupIndex: number }
+  | { kind: "option"; groupIndex: number; optionIndex: number };
+
+interface OsadlFlatDisplayRow {
+  key: string;
+  useCase: string;
+  path: OsadlConditionContext[];
+  choice?: OsadlChoiceContext;
+  action: OsadlActionNode;
+}
 
 interface CompatibilityRow {
   target_spdx_id: string;
@@ -109,6 +126,10 @@ const CONDITION_ZH: OsadlTermMap = {
   "ATTRIBUTE Dynamic": "动态署名",
   "Advertisement": "广告",
   "Binary delivery": "二进制分发",
+  "Binary delivery Includes Copyright notices OR Documentation Includes Copyright notices": "二进制分发包含版权声明或文档包含版权声明",
+  "Binary delivery On Customary medium OR Installed": "通过传统介质或已安装的二进制分发",
+  "Binary delivery Via Internet": "通过互联网的二进制分发",
+  "Binary delivery Via peer-to-peer transmission": "通过点对点传输的二进制分发",
   "Combined work With AGPL-3.0-only": "与 AGPL-3.0-only 组合的作品",
   "Combined work With AGPL-3.0-only OR AGPL-3.0-or-later": "与 AGPL-3.0-only 或 AGPL-3.0-or-later 组合的作品",
   "Commercial distribution": "商业分发",
@@ -125,6 +146,7 @@ const CONDITION_ZH: OsadlTermMap = {
   "Interactive AND Reference Legal notices": "交互式使用并引用法律声明",
   "License change": "许可证变更",
   "Modification": "修改",
+  "More than 10 lines of code": "超过 10 行代码",
   "Modification Of Files": "修改文件",
   "Modified library NOT Interoperable": "修改后的库不可互操作",
   "Modified work Is Protocol incompatible": "修改后的作品协议不兼容",
@@ -143,13 +165,91 @@ const CONDITION_ZH: OsadlTermMap = {
   "Software modification": "软件修改",
   "Software modification Of Library": "库的软件修改",
   "Software modification Uses Linked work": "软件修改使用链接作品",
+  "Software modification Was Updated": "软件修改已更新",
   "Source code delivery": "源码分发",
+  "Source code On same server": "源码在同一服务器上",
+  "Source code On other server": "源码在其他服务器上",
   "Source code modification": "源码修改",
   "Substantial work": "实质性作品",
   "Third-party attribution notice In Copyright notices OR Terms of service OR By Reasonable means": "版权声明、服务条款或合理方式中的第三方署名声明",
   "Title": "标题",
   "Use in Product": "在产品中使用",
+  "User product": "用户产品",
   "Work Includes File \"NOTICE\"": "作品包含 NOTICE 文件",
+};
+
+const ATTRIBUTE_ZH: OsadlTermMap = {
+  "Appropriately": "适当",
+  "As Highlighted As Attribution notice For Authorship Of Modification": "与修改作者署名声明同样醒目",
+  "As far as Feasible": "在可行范围内",
+  "Below Copyright notices": "在版权声明下方",
+  "Compatible license": "兼容许可证",
+  "Crediting Initial developer": "署名初始开发者",
+  "Crediting Patent holder AND Trademark holder AND Third-party patents AND Third-party trademarks": "署名专利持有人、商标持有人、第三方专利和第三方商标",
+  "Customary medium": "传统介质",
+  "Customary method": "传统方式",
+  "Delayed delivery Of Linkable work": "延迟提供可链接作品",
+  "Delayed source code delivery": "延迟源码提供",
+  "Delayed source code delivery Of the Library": "延迟提供库的源码",
+  "Documentation of Software modifications": "软件修改文档",
+  "Documented format": "文档化格式",
+  "Duration 12 months": "12 个月",
+  "Duration 3 years": "3 年",
+  "Duration 6 months": "6 个月",
+  "Duration As long as Binary delivery": "二进制分发期间",
+  "Duration As long as distributed": "分发期间",
+  "Duration As long as needed": "需要期间",
+  "Duration As long as product is supported": "产品支持期间",
+  "Duration At least 12 months": "至少 12 个月",
+  "Duration At least 3 years": "至少 3 年",
+  "Easily Viewable": "易于查看",
+  "Effective": "有效",
+  "Equivalent": "等效",
+  "For Debugging Of Modification": "用于调试修改",
+  "For own use": "仅供自用",
+  "Highlighted": "醒目展示",
+  "Human-readable Headers": "人类可读的头部信息",
+  "In Font File": "在字体文件中",
+  "Included In Binary delivery AND Documentation": "包含在二进制分发和文档中",
+  "Included In Binary delivery OR Documentation": "包含在二进制分发或文档中",
+  "Included In Source code": "包含在源码中",
+  "Included in Source code delivery Of the Library": "包含在库的源码分发中",
+  "Including Copyright notices": "包含版权声明",
+  "Including Installation scripts": "包含安装脚本",
+  "Including Tool chain information": "包含工具链信息",
+  "Including Warranty disclaimer": "包含免责声明",
+  "Inform Recipient": "通知接收方",
+  "Interoperability With Modified library": "与修改后的库互操作",
+  "Interoperable With Modified library": "与修改后的库可互操作",
+  "Machine-readable": "机器可读格式",
+  "Machine-readable Metadata fields": "机器可读的元数据字段",
+  "Modification date": "修改日期",
+  "NOT Transferable": "不可转让",
+  "No charge": "不收费",
+  "No charges": "不收费",
+  "No profit": "不得盈利",
+  "Notice Following Copyright notices": "在版权声明之后",
+  "On same server": "在同一服务器上",
+  "Original license": "原许可证",
+  "Original license LGPL-3.0-only": "原许可证 LGPL-3.0-only",
+  "Prejudicial To Original Author's honor and reputation": "损害原作者荣誉和声誉",
+  "Public domain": "公共领域",
+  "Reasonable": "合理",
+  "Same medium": "相同介质",
+  "Separate Text file": "单独的文本文件",
+  "Source code delivery Via Internet": "通过互联网的源码分发",
+  "Stand-alone": "独立",
+  "To Any third party": "向任何第三方",
+  "To Copyright holder Of Original work": "向原作品的版权持有人",
+  "To Restrict Exercise Of Granted rights": "限制行使授予的权利",
+  "Uncombined": "未组合",
+  "Verbatim": "逐字",
+  "Via Internet": "通过互联网",
+  "Viewable": "可查看",
+  "With Source code delivery": "随源码分发",
+  "Within 30 days": "30 天内",
+  "http://www.qhull.org": "http://www.qhull.org",
+  "https://blueoakcouncil.org/license/1.0.0": "https://blueoakcouncil.org/license/1.0.0",
 };
 
 const USE_CASE_ZH: OsadlTermMap = {
@@ -425,8 +525,9 @@ function translateTerm(value: string): string {
     .replace(/\bTo\b/g, "向");
 }
 
-function translateOsadlText(value: string, lang: Lang, kind: "action" | "condition" | "use-case", context?: { condition?: string }) {
+function translateOsadlText(value: string, lang: Lang, kind: "action" | "condition" | "use-case" | "attribute", context?: { condition?: string }) {
   if (lang !== "zh") return value;
+  if (kind === "attribute") return ATTRIBUTE_ZH[value] || translateTerm(value);
   if (kind === "condition") return CONDITION_ZH[value] || translateTerm(value);
   if (kind === "use-case") return USE_CASE_ZH[value] || translateTerm(value);
 
@@ -492,32 +593,110 @@ function InlineStat({ label, value, className, tooltip }: {
   );
 }
 
-function ActionNodeView({ text, attributes, lang, labels }: {
+function buildFlatDisplayRows(trees: OsadlUseCaseTree[]) {
+  const rows: OsadlFlatDisplayRow[] = [];
+
+  function walkBlock(
+    block: OsadlConditionBlock,
+    path: OsadlConditionContext[],
+    useCase: string,
+    keyPrefix: string,
+    conditionKind: OsadlConditionContext["kind"] = "condition",
+  ) {
+    const currentPath = block.condition !== "root"
+      ? [...path, { kind: conditionKind, value: block.condition }]
+      : path;
+
+    block.then?.forEach((action, actionIndex) => {
+      rows.push({
+        key: `${keyPrefix}-then-${actionIndex}`,
+        useCase,
+        path: currentPath,
+        action,
+      });
+    });
+
+    block.either?.forEach((group, groupIndex) => {
+      group.common?.forEach((action, actionIndex) => {
+        rows.push({
+          key: `${keyPrefix}-either-${groupIndex}-common-${actionIndex}`,
+          useCase,
+          path: currentPath,
+          choice: { kind: "common", groupIndex },
+          action,
+        });
+      });
+
+      group.options.forEach((option, optionIndex) => {
+        option.forEach((action, actionIndex) => {
+          rows.push({
+            key: `${keyPrefix}-either-${groupIndex}-option-${optionIndex}-${actionIndex}`,
+            useCase,
+            path: currentPath,
+            choice: { kind: "option", groupIndex, optionIndex: optionIndex + 1 },
+            action,
+          });
+        });
+      });
+    });
+
+    block.children?.forEach((child, childIndex) => {
+      walkBlock(child, currentPath, useCase, `${keyPrefix}-child-${childIndex}`);
+    });
+
+    block.except?.forEach((except, exceptIndex) => {
+      walkBlock(except, currentPath, useCase, `${keyPrefix}-except-${exceptIndex}`, "unless");
+    });
+  }
+
+  trees.forEach((tree, treeIndex) => {
+    walkBlock(tree.root, [], tree.use_case, `tree-${treeIndex}`);
+  });
+
+  return rows;
+}
+
+function ActionToneBadge({ type, labels }: {
+  type: "must" | "must-not";
+  labels: { must: string; mustNot: string };
+}) {
+  return (
+    <span className={`mt-[2px] inline-flex h-4 w-fit items-center rounded px-1.5 text-[10px] font-semibold leading-none ${
+      type === "must"
+        ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300"
+        : "bg-rose-100 text-rose-700 dark:bg-rose-900/50 dark:text-rose-300"
+    }`}>
+      [{type === "must" ? labels.must : labels.mustNot}]
+    </span>
+  );
+}
+
+function ActionNodeView({ text, type, attributes, lang, labels }: {
   text: string;
+  type: 'must' | 'must-not';
   attributes?: string[];
   lang: Lang;
   labels: { must: string; mustNot: string };
 }) {
-  const isMustNot = text.startsWith("YOU MUST NOT");
-  const tone = isMustNot ? "must-not" : "must";
   const displayText = translateOsadlText(text, lang, "action");
 
   return (
-    <li className="flex items-start gap-2">
-      <span className={`mt-0.5 inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold leading-none ${
-        tone === "must"
-          ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300"
-          : "bg-rose-100 text-rose-700 dark:bg-rose-900/50 dark:text-rose-300"
+    <li className="grid grid-cols-[1rem_5rem_minmax(0,1fr)] gap-x-1.5 text-[12px] leading-5">
+      <span className={`pt-px font-mono ${
+        type === "must"
+          ? "text-emerald-700 dark:text-emerald-300"
+          : "text-rose-700 dark:text-rose-300"
       }`}>
-        [{tone === "must" ? labels.must : labels.mustNot}]
+        |
       </span>
-      <span className="flex-1 text-zinc-700 dark:text-zinc-300">
+      <ActionToneBadge type={type} labels={labels} />
+      <span className="min-w-0 font-sans text-[12px] leading-5 text-zinc-700 dark:text-zinc-300">
         {displayText}
         {attributes && attributes.length > 0 && (
-          <span className="ml-2 inline-flex gap-1">
+          <span className="ml-1.5 inline-flex flex-wrap gap-1 align-baseline">
             {attributes.map((attr, i) => (
               <span key={i} className="inline-block rounded-full bg-zinc-100 px-1.5 py-0.5 text-[9px] text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">
-                {attr}
+                {translateOsadlText(attr, lang, "attribute")}
               </span>
             ))}
           </span>
@@ -527,37 +706,71 @@ function ActionNodeView({ text, attributes, lang, labels }: {
   );
 }
 
-function EitherGroupView({ group, lang, labels, depth }: {
+function ActionViewToggle({ value, onChange, labels }: {
+  value: OsadlActionViewMode;
+  onChange: (value: OsadlActionViewMode) => void;
+  labels: { viewMode: string; viewNested: string; viewFlat: string };
+}) {
+  const options: { value: OsadlActionViewMode; label: string }[] = [
+    { value: "nested", label: labels.viewNested },
+    { value: "flat", label: labels.viewFlat },
+  ];
+
+  return (
+    <div
+      className="inline-flex rounded-md border border-zinc-200 bg-zinc-50 p-0.5 text-[11px] dark:border-zinc-800 dark:bg-zinc-900/60"
+      aria-label={labels.viewMode}
+      data-osadl-interactive="true"
+    >
+      {options.map((option) => (
+        <button
+          key={option.value}
+          type="button"
+          onClick={() => onChange(option.value)}
+          aria-pressed={value === option.value}
+          className={`rounded px-2 py-0.5 font-medium leading-4 transition-colors ${
+            value === option.value
+              ? "bg-white text-zinc-900 shadow-sm dark:bg-zinc-800 dark:text-zinc-50"
+              : "text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-100"
+          }`}
+        >
+          {option.label}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+function EitherGroupView({ group, lang, labels }: {
   group: OsadlEitherGroup;
   lang: Lang;
-  labels: { must: string; mustNot: string; or: string };
-  depth: number;
+  labels: { must: string; mustNot: string; or: string; common: string; option: (n: number) => string };
 }) {
   return (
-    <div className="my-2 rounded-lg border border-dashed border-amber-300 bg-amber-50/30 p-3 dark:border-amber-700 dark:bg-amber-950/20">
-      <div className="mb-2 flex items-center gap-2">
+    <div className="my-1.5 rounded-md border border-dashed border-amber-200 bg-amber-50/25 px-2.5 py-2 dark:border-amber-800/70 dark:bg-amber-950/15">
+      <div className="mb-1.5 flex items-center gap-2">
         <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold text-amber-700 dark:bg-amber-900/50 dark:text-amber-300">
           {labels.or}
         </span>
       </div>
 
       {group.common && group.common.length > 0 && (
-        <div className="mb-2">
-          <div className="mb-1 text-[11px] font-medium text-zinc-500 dark:text-zinc-400">Common:</div>
-          <ul className="space-y-1">
+        <div className="mb-1.5">
+          <div className="mb-1 text-[11px] font-medium text-zinc-500 dark:text-zinc-400">{labels.common}:</div>
+          <ul className="space-y-0.5">
             {group.common.map((action, i) => (
-              <ActionNodeView key={i} text={action.text} attributes={action.attributes} lang={lang} labels={labels} />
+              <ActionNodeView key={i} text={action.text} type={action.type} attributes={action.attributes} lang={lang} labels={labels} />
             ))}
           </ul>
         </div>
       )}
 
       {group.options.map((option, optIdx) => (
-        <div key={optIdx} className="mb-2 last:mb-0">
-          <div className="mb-1 text-[11px] font-medium text-zinc-500 dark:text-zinc-400">Option {optIdx + 1}:</div>
-          <ul className="space-y-1">
+        <div key={optIdx} className="mb-1.5 last:mb-0">
+          <div className="mb-1 text-[11px] font-medium text-zinc-500 dark:text-zinc-400">{labels.option(optIdx + 1)}:</div>
+          <ul className="space-y-0.5">
             {option.map((action, i) => (
-              <ActionNodeView key={i} text={action.text} attributes={action.attributes} lang={lang} labels={labels} />
+              <ActionNodeView key={i} text={action.text} type={action.type} attributes={action.attributes} lang={lang} labels={labels} />
             ))}
           </ul>
         </div>
@@ -569,13 +782,38 @@ function EitherGroupView({ group, lang, labels, depth }: {
 function ConditionBlockView({ block, lang, labels, depth = 0, isExcept = false }: {
   block: OsadlConditionBlock;
   lang: Lang;
-  labels: { must: string; mustNot: string; or: string; unless: string };
+  labels: { must: string; mustNot: string; or: string; unless: string; common: string; option: (n: number) => string };
   depth?: number;
   isExcept?: boolean;
 }) {
   const conditionText = block.condition !== "root"
     ? translateOsadlText(block.condition, lang, "condition")
     : null;
+
+  // Calculate stats for this block
+  let blockMustCount = 0;
+  let blockMustNotCount = 0;
+  if (block.then) {
+    block.then.forEach(a => {
+      if (a.type === 'must-not') blockMustNotCount++;
+      else blockMustCount++;
+    });
+  }
+  if (block.either) {
+    block.either.forEach(eg => {
+      if (eg.common) eg.common.forEach(a => {
+        if (a.type === 'must-not') blockMustNotCount++;
+        else blockMustCount++;
+      });
+      eg.options.forEach(opt => opt.forEach(a => {
+        if (a.type === 'must-not') blockMustNotCount++;
+        else blockMustCount++;
+      }));
+    });
+  }
+  const statsText = (blockMustCount > 0 || blockMustNotCount > 0)
+    ? `(${labels.must}: ${blockMustCount}${blockMustNotCount > 0 ? `, ${labels.mustNot}: ${blockMustNotCount}` : ""})`
+    : "";
 
   const hasContent = (block.then && block.then.length > 0)
     || (block.either && block.either.length > 0)
@@ -585,38 +823,43 @@ function ConditionBlockView({ block, lang, labels, depth = 0, isExcept = false }
   if (!hasContent) return null;
 
   return (
-    <div className={`${depth > 0 ? "ml-4 border-l-2 border-zinc-200 pl-3 dark:border-zinc-700" : ""}`}>
+    <div className={`${depth > 0 ? "ml-3 border-l border-zinc-200 pl-2.5 dark:border-zinc-700" : ""}`}>
       {conditionText && (
-        <div className="mb-2 flex items-center gap-2">
+        <div className="mb-1 flex items-baseline gap-1.5">
           {isExcept && (
             <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold text-amber-700 dark:bg-amber-900/50 dark:text-amber-300">
               {labels.unless}
             </span>
           )}
-          <span className="text-sm font-semibold text-zinc-800 dark:text-zinc-200">
+          <span className="font-sans text-[12px] font-semibold leading-5 text-zinc-800 dark:text-zinc-200">
             {conditionText}
+            {statsText && (
+              <span className="ml-1.5 text-[11px] font-normal text-zinc-500 dark:text-zinc-400">
+                {statsText}
+              </span>
+            )}
           </span>
         </div>
       )}
 
       {block.then && block.then.length > 0 && (
-        <ul className="mb-2 space-y-1">
+        <ul className="mb-1.5 space-y-0.5">
           {block.then.map((action, i) => (
-            <ActionNodeView key={i} text={action.text} attributes={action.attributes} lang={lang} labels={labels} />
+            <ActionNodeView key={i} text={action.text} type={action.type} attributes={action.attributes} lang={lang} labels={labels} />
           ))}
         </ul>
       )}
 
       {block.either && block.either.length > 0 && (
-        <div className="mb-2">
+        <div className="mb-1.5">
           {block.either.map((group, i) => (
-            <EitherGroupView key={i} group={group} lang={lang} labels={labels} depth={depth} />
+            <EitherGroupView key={i} group={group} lang={lang} labels={labels} />
           ))}
         </div>
       )}
 
       {block.children && block.children.length > 0 && (
-        <div className="mb-2 space-y-3">
+        <div className="mb-1.5 space-y-1.5">
           {block.children.map((child, i) => (
             <ConditionBlockView key={i} block={child} lang={lang} labels={labels} depth={depth + 1} />
           ))}
@@ -624,13 +867,81 @@ function ConditionBlockView({ block, lang, labels, depth = 0, isExcept = false }
       )}
 
       {block.except && block.except.length > 0 && (
-        <div className="mb-2 space-y-3">
+        <div className="mb-1.5 space-y-1.5">
           {block.except.map((except, i) => (
             <ConditionBlockView key={i} block={except} lang={lang} labels={labels} depth={depth + 1} isExcept />
           ))}
         </div>
       )}
     </div>
+  );
+}
+
+function FlatActionRow({ row, lang, labels }: {
+  row: OsadlFlatDisplayRow;
+  lang: Lang;
+  labels: {
+    must: string;
+    mustNot: string;
+    common: string;
+    option: (n: number) => string;
+    choiceGroup: (n: number) => string;
+    unless: string;
+  };
+}) {
+  const choiceText = row.choice
+    ? `${labels.choiceGroup(row.choice.groupIndex + 1)} · ${
+      row.choice.kind === "common" ? labels.common : labels.option(row.choice.optionIndex)
+    }`
+    : "";
+  const contextTitle = [
+    translateOsadlText(row.useCase, lang, "use-case"),
+    ...row.path.map((part) => {
+      const text = translateOsadlText(part.value, lang, "condition");
+      return part.kind === "unless" ? `${labels.unless} ${text}` : text;
+    }),
+    choiceText,
+  ].filter(Boolean).join(" / ");
+
+  return (
+    <li className="grid gap-x-2 gap-y-0.5 border-t border-zinc-100 py-1 first:border-t-0 dark:border-zinc-800 sm:grid-cols-[minmax(10rem,16rem)_5rem_minmax(0,1fr)]">
+      <div className="flex min-w-0 flex-wrap items-center gap-x-1 gap-y-0.5 text-[11px] leading-4 text-zinc-500 dark:text-zinc-400" title={contextTitle}>
+        <span className="font-medium text-zinc-600 dark:text-zinc-300">
+          {translateOsadlText(row.useCase, lang, "use-case")}
+        </span>
+        {row.path.map((part, index) => (
+          <span key={`${part.kind}-${part.value}-${index}`} className="inline-flex min-w-0 items-center gap-x-1">
+            <span className="text-zinc-300 dark:text-zinc-600">/</span>
+            <span className={part.kind === "unless" ? "text-amber-700 dark:text-amber-300" : ""}>
+              {part.kind === "unless" && `${labels.unless} `}
+              {translateOsadlText(part.value, lang, "condition")}
+            </span>
+          </span>
+        ))}
+        {row.choice && (
+          <span className={`rounded px-1 py-px text-[10px] font-medium leading-3 ${
+            row.choice.kind === "common"
+              ? "bg-zinc-100 text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400"
+              : "bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300"
+          }`}>
+            {choiceText}
+          </span>
+        )}
+      </div>
+      <ActionToneBadge type={row.action.type} labels={labels} />
+      <span className="min-w-0 font-sans text-[12px] leading-5 text-zinc-700 dark:text-zinc-300">
+        {translateOsadlText(row.action.text, lang, "action")}
+        {row.action.attributes && row.action.attributes.length > 0 && (
+          <span className="ml-1.5 inline-flex flex-wrap gap-1 align-baseline">
+            {row.action.attributes.map((attr, i) => (
+              <span key={i} className="inline-block rounded-full bg-zinc-100 px-1.5 py-0.5 text-[9px] text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">
+                {translateOsadlText(attr, lang, "attribute")}
+              </span>
+            ))}
+          </span>
+        )}
+      </span>
+    </li>
   );
 }
 
@@ -648,14 +959,21 @@ function ObligationTreeView({ entry, lang, labels }: {
     noProhibitionsCompact: string;
     or: string;
     unless: string;
+    common: string;
+    option: (n: number) => string;
+    choiceGroup: (n: number) => string;
     more: (remaining: number) => string;
+    viewMode: string;
+    viewNested: string;
+    viewFlat: string;
   };
 }) {
-  const flatActions = flattenTrees(entry.trees);
-  const mustCount = flatActions.filter((a) => a.type === "must").length;
-  const mustNotCount = flatActions.filter((a) => a.type === "must-not").length;
+  const [viewMode, setViewMode] = useState<OsadlActionViewMode>("nested");
+  const flatRows = buildFlatDisplayRows(entry.trees);
+  const mustCount = flatRows.filter((row) => row.action.type === "must").length;
+  const mustNotCount = flatRows.filter((row) => row.action.type === "must-not").length;
 
-  if (flatActions.length === 0) {
+  if (flatRows.length === 0) {
     return (
       <div className="rounded-xl border border-zinc-200/70 bg-white/70 p-4 dark:border-zinc-800/70 dark:bg-zinc-950/30">
         <div className="mb-3 flex flex-wrap items-center gap-2">
@@ -669,8 +987,15 @@ function ObligationTreeView({ entry, lang, labels }: {
 
   return (
     <div className="rounded-xl border border-zinc-200/70 bg-white/70 p-4 dark:border-zinc-800/70 dark:bg-zinc-950/30">
-      <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
-        <h3 className="text-sm font-semibold text-zinc-950 dark:text-zinc-50">{labels.actionsTitle}</h3>
+      <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+        <div className="flex flex-wrap items-center gap-2">
+          <h3 className="text-sm font-semibold text-zinc-950 dark:text-zinc-50">{labels.actionsTitle}</h3>
+          <ActionViewToggle
+            value={viewMode}
+            onChange={setViewMode}
+            labels={{ viewMode: labels.viewMode, viewNested: labels.viewNested, viewFlat: labels.viewFlat }}
+          />
+        </div>
         <div className="flex flex-wrap gap-1.5">
           <span className="rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[11px] font-medium text-emerald-700 dark:border-emerald-900/50 dark:bg-emerald-950/30 dark:text-emerald-300">
             {labels.required}: {mustCount}
@@ -687,16 +1012,57 @@ function ObligationTreeView({ entry, lang, labels }: {
         </div>
       </div>
 
-      <div className="space-y-6">
-        {entry.trees.map((tree, i) => (
-          <div key={i} className="rounded-lg border border-zinc-200/50 bg-zinc-50/30 p-3 dark:border-zinc-700/50 dark:bg-zinc-900/20">
-            <h4 className="mb-3 text-xs font-semibold text-zinc-700 dark:text-zinc-300">
-              {translateOsadlText(tree.use_case, lang, "use-case")}
-            </h4>
-            <ConditionBlockView block={tree.root} lang={lang} labels={labels} />
-          </div>
-        ))}
-      </div>
+      {viewMode === "nested" ? (
+        <div className="space-y-3">
+          {entry.trees.map((tree, i) => {
+            // Calculate stats for this use case tree
+            let treeMustCount = 0;
+            let treeMustNotCount = 0;
+            function countTreeActions(block: OsadlConditionBlock) {
+              if (block.then) {
+                block.then.forEach(a => {
+                  if (a.type === 'must-not') treeMustNotCount++;
+                  else treeMustCount++;
+                });
+              }
+              if (block.either) {
+                block.either.forEach(eg => {
+                  if (eg.common) eg.common.forEach(a => {
+                    if (a.type === 'must-not') treeMustNotCount++;
+                    else treeMustCount++;
+                  });
+                  eg.options.forEach(opt => opt.forEach(a => {
+                    if (a.type === 'must-not') treeMustNotCount++;
+                    else treeMustCount++;
+                  }));
+                });
+              }
+              if (block.children) block.children.forEach(countTreeActions);
+              if (block.except) block.except.forEach(countTreeActions);
+            }
+            countTreeActions(tree.root);
+            const treeStats = (treeMustCount > 0 || treeMustNotCount > 0)
+              ? ` (${labels.must}: ${treeMustCount}${treeMustNotCount > 0 ? `, ${labels.mustNot}: ${treeMustNotCount}` : ""})`
+              : "";
+
+            return (
+              <div key={i} className="border-l border-zinc-200 pl-3 dark:border-zinc-700">
+                <h4 className="mb-1.5 font-sans text-[12px] font-semibold leading-5 text-zinc-700 dark:text-zinc-300">
+                  {translateOsadlText(tree.use_case, lang, "use-case")}
+                  <span className="ml-1.5 text-[11px] font-normal text-zinc-500 dark:text-zinc-400">{treeStats}</span>
+                </h4>
+                <ConditionBlockView block={tree.root} lang={lang} labels={labels} />
+              </div>
+            );
+          })}
+        </div>
+      ) : (
+        <ul className="divide-y-0">
+          {flatRows.map((row) => (
+            <FlatActionRow key={row.key} row={row} lang={lang} labels={labels} />
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
@@ -928,7 +1294,13 @@ export function OsadlChecklistBlock({ entry, meta }: {
     noProhibitionsCompact: t("osadl.noProhibitionsCompact"),
     or: t("osadl.or"),
     unless: t("osadl.unless"),
+    common: t("osadl.common"),
+    option: (n: number) => t("osadl.option", { n }),
+    choiceGroup: (n: number) => t("osadl.choiceGroup", { n }),
     more: (count: number) => t("osadl.more", { count }),
+    viewMode: t("osadl.viewMode"),
+    viewNested: t("osadl.viewNested"),
+    viewFlat: t("osadl.viewFlat"),
   };
   function toggleExpanded() {
     setExpanded((current) => !current);

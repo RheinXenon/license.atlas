@@ -254,13 +254,47 @@ export interface TrackerIndex {
   [spdxOrId: string]: TrackerIndexEntry | TrackerIndexMeta;
 }
 
-// ── OSADL Open Source License Checklists sidecar types ──
-export interface OsadlChecklistAction {
+// ── OSADL Open Source License Checklists types (tree structure) ──
+
+// Action node: a single obligation or prohibition
+export interface OsadlActionNode {
   text: string;
-  use_case: string | null;
-  condition: string | null;
+  attributes?: string[];
 }
 
+// Either/Or group: choose one option from multiple branches
+export interface OsadlEitherGroup {
+  options: OsadlActionNode[][];  // Each option is a set of actions (AND)
+  common?: OsadlActionNode[];    // Actions required regardless of choice
+}
+
+// Condition block: recursive structure for IF/EXCEPT IF nesting
+export interface OsadlConditionBlock {
+  condition: string;
+  then?: OsadlActionNode[];              // Direct actions (AND)
+  either?: OsadlEitherGroup[];          // Choice actions
+  children?: OsadlConditionBlock[];     // Nested IF conditions
+  except?: OsadlConditionBlock[];       // EXCEPT IF branches
+}
+
+// Use case tree: top-level structure for one use case
+export interface OsadlUseCaseTree {
+  use_case: string;
+  root: OsadlConditionBlock;
+}
+
+// Flattened action for display (with path context)
+export interface OsadlFlatAction {
+  text: string;
+  type: 'must' | 'must-not';
+  attributes?: string[];
+  condition_path: string[];  // e.g. ["Software modification", "Modified work Under Original license"]
+  use_case: string;
+  either_group?: number;     // Which either group this belongs to (for grouping)
+  is_common?: boolean;       // Common action in either group
+}
+
+// Entry for a single license
 export interface OsadlChecklistEntry {
   spdx_id: string;
   slug: string;
@@ -275,10 +309,7 @@ export interface OsadlChecklistEntry {
   patent_hints: string | null;
   copyleft_clause: string | null;
   raw_hash: string;
-  use_cases: string[];
-  conditions: string[];
-  obligations: OsadlChecklistAction[];
-  prohibitions: OsadlChecklistAction[];
+  trees: OsadlUseCaseTree[];          // New: structured obligation trees
   compatibility_samples: {
     compatible: string[];
     incompatible: string[];

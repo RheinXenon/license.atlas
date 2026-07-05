@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useEffect, useRef, useState, type MouseEvent } from "react";
 import licenses from "@/data/licenses-index.json";
 import { useLang, type Lang } from "@/lib/i18n";
-import type { License, OsadlChecklistAction, OsadlChecklistEntry, OsadlIndexMeta } from "@/lib/types";
+import { flattenTrees } from "@/lib/osadl-parser";
+import type { License, OsadlChecklistEntry, OsadlConditionBlock, OsadlEitherGroup, OsadlUseCaseTree, OsadlIndexMeta } from "@/lib/types";
 
 type CompatibilityVerdict = "Yes" | "No" | "Same" | "Unknown" | "Check dependency";
 type CompatibilityPosition = { x: number; y: number; listMaxHeight: number };
@@ -20,15 +21,7 @@ interface CompatibilityRecord {
   compatibility?: CompatibilityRow[];
 }
 
-type ChecklistTone = "must" | "must-not";
 type OsadlTermMap = Record<string, string>;
-
-interface ChecklistDisplayAction {
-  text: string;
-  tone: ChecklistTone;
-  condition: string;
-  useCases: string[];
-}
 
 const licenseBySpdx = new Map(
   (licenses as Pick<License, "spdx_id" | "slug" | "title" | "version">[])
@@ -109,6 +102,8 @@ function formatTimestamp(value: string | undefined) {
 }
 
 const CONDITION_ZH: OsadlTermMap = {
+  "root": "通用要求",
+  "unless": "除非",
   "1": "条件 1",
   "2": "条件 2",
   "ATTRIBUTE Dynamic": "动态署名",
@@ -497,52 +492,149 @@ function InlineStat({ label, value, className, tooltip }: {
   );
 }
 
-function mergeChecklistActions(
-  obligations: OsadlChecklistAction[],
-  prohibitions: OsadlChecklistAction[],
-  defaultCondition: string,
-) {
-  const merged = new Map<string, ChecklistDisplayAction>();
+function ActionNodeView({ text, attributes, lang, labels }: {
+  text: string;
+  attributes?: string[];
+  lang: Lang;
+  labels: { must: string; mustNot: string };
+}) {
+  const isMustNot = text.startsWith("YOU MUST NOT");
+  const tone = isMustNot ? "must-not" : "must";
+  const displayText = translateOsadlText(text, lang, "action");
 
-  function add(action: OsadlChecklistAction, tone: ChecklistTone) {
-    const condition = action.condition || defaultCondition;
-    const key = `${tone}\u0000${condition}\u0000${action.text}`;
-    const existing = merged.get(key);
-    if (existing) {
-      if (action.use_case && !existing.useCases.includes(action.use_case)) {
-        existing.useCases.push(action.use_case);
-      }
-      return;
-    }
-    merged.set(key, {
-      text: action.text,
-      tone,
-      condition,
-      useCases: action.use_case ? [action.use_case] : [],
-    });
-  }
-
-  obligations.forEach((action) => add(action, "must"));
-  prohibitions.forEach((action) => add(action, "must-not"));
-  return Array.from(merged.values());
+  return (
+    <li className="flex items-start gap-2">
+      <span className={`mt-0.5 inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold leading-none ${
+        tone === "must"
+          ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300"
+          : "bg-rose-100 text-rose-700 dark:bg-rose-900/50 dark:text-rose-300"
+      }`}>
+        [{tone === "must" ? labels.must : labels.mustNot}]
+      </span>
+      <span className="flex-1 text-zinc-700 dark:text-zinc-300">
+        {displayText}
+        {attributes && attributes.length > 0 && (
+          <span className="ml-2 inline-flex gap-1">
+            {attributes.map((attr, i) => (
+              <span key={i} className="inline-block rounded-full bg-zinc-100 px-1.5 py-0.5 text-[9px] text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">
+                {attr}
+              </span>
+            ))}
+          </span>
+        )}
+      </span>
+    </li>
+  );
 }
 
-function splitUseCaseParts(useCase: string) {
-  return useCase
-    .split(/\s+(?:OR|AND)\s+/)
-    .map((part) => part.trim())
-    .filter(Boolean);
+function EitherGroupView({ group, lang, labels, depth }: {
+  group: OsadlEitherGroup;
+  lang: Lang;
+  labels: { must: string; mustNot: string; or: string };
+  depth: number;
+}) {
+  return (
+    <div className="my-2 rounded-lg border border-dashed border-amber-300 bg-amber-50/30 p-3 dark:border-amber-700 dark:bg-amber-950/20">
+      <div className="mb-2 flex items-center gap-2">
+        <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold text-amber-700 dark:bg-amber-900/50 dark:text-amber-300">
+          {labels.or}
+        </span>
+      </div>
+
+      {group.common && group.common.length > 0 && (
+        <div className="mb-2">
+          <div className="mb-1 text-[11px] font-medium text-zinc-500 dark:text-zinc-400">Common:</div>
+          <ul className="space-y-1">
+            {group.common.map((action, i) => (
+              <ActionNodeView key={i} text={action.text} attributes={action.attributes} lang={lang} labels={labels} />
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {group.options.map((option, optIdx) => (
+        <div key={optIdx} className="mb-2 last:mb-0">
+          <div className="mb-1 text-[11px] font-medium text-zinc-500 dark:text-zinc-400">Option {optIdx + 1}:</div>
+          <ul className="space-y-1">
+            {option.map((action, i) => (
+              <ActionNodeView key={i} text={action.text} attributes={action.attributes} lang={lang} labels={labels} />
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
 }
 
-function actionMatchesUseCase(action: ChecklistDisplayAction, activeUseCase: string) {
-  if (activeUseCase === "all") return true;
-  return action.useCases.some((useCase) => {
-    if (useCase === activeUseCase) return true;
-    return splitUseCaseParts(useCase).includes(activeUseCase);
-  });
+function ConditionBlockView({ block, lang, labels, depth = 0, isExcept = false }: {
+  block: OsadlConditionBlock;
+  lang: Lang;
+  labels: { must: string; mustNot: string; or: string; unless: string };
+  depth?: number;
+  isExcept?: boolean;
+}) {
+  const conditionText = block.condition !== "root"
+    ? translateOsadlText(block.condition, lang, "condition")
+    : null;
+
+  const hasContent = (block.then && block.then.length > 0)
+    || (block.either && block.either.length > 0)
+    || (block.children && block.children.length > 0)
+    || (block.except && block.except.length > 0);
+
+  if (!hasContent) return null;
+
+  return (
+    <div className={`${depth > 0 ? "ml-4 border-l-2 border-zinc-200 pl-3 dark:border-zinc-700" : ""}`}>
+      {conditionText && (
+        <div className="mb-2 flex items-center gap-2">
+          {isExcept && (
+            <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold text-amber-700 dark:bg-amber-900/50 dark:text-amber-300">
+              {labels.unless}
+            </span>
+          )}
+          <span className="text-sm font-semibold text-zinc-800 dark:text-zinc-200">
+            {conditionText}
+          </span>
+        </div>
+      )}
+
+      {block.then && block.then.length > 0 && (
+        <ul className="mb-2 space-y-1">
+          {block.then.map((action, i) => (
+            <ActionNodeView key={i} text={action.text} attributes={action.attributes} lang={lang} labels={labels} />
+          ))}
+        </ul>
+      )}
+
+      {block.either && block.either.length > 0 && (
+        <div className="mb-2">
+          {block.either.map((group, i) => (
+            <EitherGroupView key={i} group={group} lang={lang} labels={labels} depth={depth} />
+          ))}
+        </div>
+      )}
+
+      {block.children && block.children.length > 0 && (
+        <div className="mb-2 space-y-3">
+          {block.children.map((child, i) => (
+            <ConditionBlockView key={i} block={child} lang={lang} labels={labels} depth={depth + 1} />
+          ))}
+        </div>
+      )}
+
+      {block.except && block.except.length > 0 && (
+        <div className="mb-2 space-y-3">
+          {block.except.map((except, i) => (
+            <ConditionBlockView key={i} block={except} lang={lang} labels={labels} depth={depth + 1} isExcept />
+          ))}
+        </div>
+      )}
+    </div>
+  );
 }
 
-function ChecklistActionTree({ entry, lang, labels }: {
+function ObligationTreeView({ entry, lang, labels }: {
   entry: OsadlChecklistEntry;
   lang: Lang;
   labels: {
@@ -554,26 +646,16 @@ function ChecklistActionTree({ entry, lang, labels }: {
     defaultCondition: string;
     noActions: string;
     noProhibitionsCompact: string;
+    or: string;
+    unless: string;
     more: (remaining: number) => string;
   };
 }) {
-  const [activeUseCase, setActiveUseCase] = useState("all");
-  const actions = mergeChecklistActions(entry.obligations, entry.prohibitions, labels.defaultCondition);
-  const groups = new Map<string, ChecklistDisplayAction[]>();
-  actions.forEach((action) => {
-    const list = groups.get(action.condition) || [];
-    list.push(action);
-    groups.set(action.condition, list);
-  });
-  const groupEntries = Array.from(groups.entries()).sort(([a], [b]) => {
-    if (a === labels.defaultCondition) return -1;
-    if (b === labels.defaultCondition) return 1;
-    return a.localeCompare(b);
-  });
-  const displayedMustCount = actions.filter((action) => action.tone === "must").length;
-  const displayedMustNotCount = actions.length - displayedMustCount;
+  const flatActions = flattenTrees(entry.trees);
+  const mustCount = flatActions.filter((a) => a.type === "must").length;
+  const mustNotCount = flatActions.filter((a) => a.type === "must-not").length;
 
-  if (!actions.length) {
+  if (flatActions.length === 0) {
     return (
       <div className="rounded-xl border border-zinc-200/70 bg-white/70 p-4 dark:border-zinc-800/70 dark:bg-zinc-950/30">
         <div className="mb-3 flex flex-wrap items-center gap-2">
@@ -591,11 +673,11 @@ function ChecklistActionTree({ entry, lang, labels }: {
         <h3 className="text-sm font-semibold text-zinc-950 dark:text-zinc-50">{labels.actionsTitle}</h3>
         <div className="flex flex-wrap gap-1.5">
           <span className="rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[11px] font-medium text-emerald-700 dark:border-emerald-900/50 dark:bg-emerald-950/30 dark:text-emerald-300">
-            {labels.required}: {displayedMustCount}
+            {labels.required}: {mustCount}
           </span>
-          {displayedMustNotCount > 0 ? (
+          {mustNotCount > 0 ? (
             <span className="rounded-full border border-rose-200 bg-rose-50 px-2 py-0.5 text-[11px] font-medium text-rose-700 dark:border-rose-900/50 dark:bg-rose-950/30 dark:text-rose-300">
-              {labels.prohibited}: {displayedMustNotCount}
+              {labels.prohibited}: {mustNotCount}
             </span>
           ) : (
             <span className="rounded-full border border-zinc-200 bg-zinc-50 px-2 py-0.5 text-[11px] font-medium text-zinc-500 dark:border-zinc-800 dark:bg-zinc-900/60 dark:text-zinc-400">
@@ -605,83 +687,15 @@ function ChecklistActionTree({ entry, lang, labels }: {
         </div>
       </div>
 
-      <div className="space-y-3 font-mono text-[12px] leading-5 text-zinc-700 dark:text-zinc-300">
-        {groupEntries.map(([condition, group]) => {
-          const visible = group.slice(0, 8);
-          const remaining = group.length - visible.length;
-          const mustCount = group.filter((action) => action.tone === "must").length;
-          const mustNotCount = group.length - mustCount;
-          return (
-            <div key={condition}>
-              <div className="mb-1 grid grid-cols-[4ch_minmax(0,1fr)] text-zinc-900 dark:text-zinc-100">
-                <span>+--</span>
-                <span>
-                  <span className="font-semibold">{translateOsadlText(condition, lang, "condition")}</span>
-                <span className="font-sans text-[11px] text-zinc-500 dark:text-zinc-400">
-                  {" "}
-                  ({[
-                    mustCount > 0 ? `${labels.must}: ${mustCount}` : "",
-                    mustNotCount > 0 ? `${labels.mustNot}: ${mustNotCount}` : "",
-                  ].filter(Boolean).join(", ")})
-                </span>
-                </span>
-              </div>
-              <ul className="space-y-0.5">
-                {visible.map((action, idx) => {
-                  const isDimmed = activeUseCase !== "all" && !actionMatchesUseCase(action, activeUseCase);
-                  return (
-                    <li
-                      key={`${condition}-${action.tone}-${action.text}-${idx}`}
-                      className={`grid grid-cols-[4ch_11ch_minmax(0,1fr)] gap-x-1 transition-opacity ${isDimmed ? "opacity-35" : ""}`}
-                    >
-                      <span className={action.tone === "must" ? "text-emerald-700 dark:text-emerald-300" : "text-rose-700 dark:text-rose-300"}>
-                        | -
-                      </span>
-                      <span className={action.tone === "must" ? "text-emerald-700 dark:text-emerald-300" : "text-rose-700 dark:text-rose-300"}>
-                        [{action.tone === "must" ? labels.must : labels.mustNot}]
-                      </span>{" "}
-                      <span className="font-sans">
-                        <span className="font-medium text-zinc-900 dark:text-zinc-100">{translateOsadlText(action.text, lang, "action", { condition: action.condition })}</span>
-                        {action.useCases.length > 0 && (
-                          <span className="text-xs text-zinc-500 dark:text-zinc-400">
-                            {" "}
-                            (
-                            {action.useCases.map((useCase, useCaseIdx) => {
-                              const selected = activeUseCase !== "all" && actionMatchesUseCase({ ...action, useCases: [useCase] }, activeUseCase);
-                              return (
-                                <span key={useCase}>
-                                  {useCaseIdx > 0 && " / "}
-                                  <button
-                                    type="button"
-                                    onClick={() => setActiveUseCase(selected ? "all" : useCase)}
-                                    className={`cursor-pointer rounded px-1 py-0.5 transition-colors ${
-                                      selected
-                                        ? "bg-cyan-100 text-cyan-800 dark:bg-cyan-900/50 dark:text-cyan-200"
-                                        : "hover:bg-zinc-100 hover:text-zinc-900 dark:hover:bg-zinc-800 dark:hover:text-zinc-100"
-                                    }`}
-                                  >
-                                    {translateOsadlText(useCase, lang, "use-case")}
-                                  </button>
-                                </span>
-                              );
-                            })}
-                            )
-                          </span>
-                        )}
-                      </span>
-                    </li>
-                  );
-                })}
-              </ul>
-              {remaining > 0 && (
-                <p className="mt-1 grid grid-cols-[4ch_minmax(0,1fr)] text-xs font-medium text-zinc-500 dark:text-zinc-400">
-                  <span>|</span>
-                  <span className="font-sans">{labels.more(remaining)}</span>
-                </p>
-              )}
-            </div>
-          );
-        })}
+      <div className="space-y-6">
+        {entry.trees.map((tree, i) => (
+          <div key={i} className="rounded-lg border border-zinc-200/50 bg-zinc-50/30 p-3 dark:border-zinc-700/50 dark:bg-zinc-900/20">
+            <h4 className="mb-3 text-xs font-semibold text-zinc-700 dark:text-zinc-300">
+              {translateOsadlText(tree.use_case, lang, "use-case")}
+            </h4>
+            <ConditionBlockView block={tree.root} lang={lang} labels={labels} />
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -912,6 +926,8 @@ export function OsadlChecklistBlock({ entry, meta }: {
     patentHelp: t("osadl.patentHelp"),
     noActions: t("osadl.noActions"),
     noProhibitionsCompact: t("osadl.noProhibitionsCompact"),
+    or: t("osadl.or"),
+    unless: t("osadl.unless"),
     more: (count: number) => t("osadl.more", { count }),
   };
   function toggleExpanded() {
@@ -960,7 +976,7 @@ export function OsadlChecklistBlock({ entry, meta }: {
       {expanded && (
         <div className="cursor-default" data-osadl-interactive="true">
           <div className="mb-5">
-            <ChecklistActionTree entry={entry} lang={lang} labels={labels} />
+            <ObligationTreeView entry={entry} lang={lang} labels={labels} />
           </div>
 
           <div className="mb-4 rounded-xl border border-zinc-200/70 bg-white/70 p-4 dark:border-zinc-800/70 dark:bg-zinc-950/30">

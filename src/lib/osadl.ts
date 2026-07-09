@@ -1,7 +1,9 @@
 import osadlIndexJson from "@/data/osadl-checklists-index.json";
-import type { License, OsadlChecklistEntry, OsadlIndex, OsadlIndexMeta } from "@/lib/types";
+import generatedOsadlIndexJson from "@/data/generated-osadl-checklists-v34-index.json";
+import type { GeneratedOsadlIndex, License, OsadlChecklistEntry, OsadlIndex, OsadlIndexMeta } from "@/lib/types";
 
 const osadlIndex = osadlIndexJson as OsadlIndex;
+const generatedOsadlIndex = generatedOsadlIndexJson as GeneratedOsadlIndex;
 
 function normSpdx(value: string | undefined) {
   return (value || "").trim().toLowerCase();
@@ -19,16 +21,40 @@ const DEPRECATED_SPDX_OSADL_MAP: Record<string, string> = {
   "lgpl-2.1": "lgpl-2.1-only",
 };
 
-export const osadlMeta: OsadlIndexMeta = osadlIndex._meta;
+export const osadlMeta: OsadlIndexMeta = { ...osadlIndex._meta, source_kind: "official" };
+export const generatedOsadlMeta: OsadlIndexMeta = generatedOsadlIndex._meta;
 
 export function resolveOsadlChecklist(
   license: Pick<License, "spdx_id" | "slug">,
 ): OsadlChecklistEntry | null {
+  const official = resolveOfficialOsadlChecklist(license);
+  if (official) return official;
+  return resolveGeneratedOsadlChecklist(license);
+}
+
+export function resolveOsadlChecklistMeta(entry: OsadlChecklistEntry | null): OsadlIndexMeta {
+  return entry?.source_kind === "generated" ? generatedOsadlMeta : osadlMeta;
+}
+
+function resolveOfficialOsadlChecklist(
+  license: Pick<License, "spdx_id" | "slug">,
+): OsadlChecklistEntry | null {
   const key = normSpdx(license.spdx_id);
   const slug = normSpdx(license.slug);
-  return (key && (osadlIndex.by_spdx[key] || osadlIndex.by_spdx[DEPRECATED_SPDX_OSADL_MAP[key]]))
+  const entry = (key && (osadlIndex.by_spdx[key] || osadlIndex.by_spdx[DEPRECATED_SPDX_OSADL_MAP[key]]))
     || osadlIndex.by_spdx[SCANCODE_SLUG_OSADL_MAP[slug]]
     || null;
+  return entry ? { ...entry, source_kind: "official" } : null;
+}
+
+function resolveGeneratedOsadlChecklist(
+  license: Pick<License, "spdx_id" | "slug">,
+): OsadlChecklistEntry | null {
+  const key = normSpdx(license.spdx_id);
+  const slug = normSpdx(license.slug);
+  const generatedSlug = (key && generatedOsadlIndex.by_spdx[key]) || slug;
+  const entry = generatedSlug ? generatedOsadlIndex.by_slug[generatedSlug] : null;
+  return entry ? { ...entry, source_kind: "generated" } : null;
 }
 
 const SCANCODE_SLUG_OSADL_MAP: Record<string, string> = {

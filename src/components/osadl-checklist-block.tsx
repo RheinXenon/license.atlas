@@ -56,6 +56,14 @@ function osadlDataUrl() {
   return `${basePath}/data/osadl-checklists.json`;
 }
 
+function localDataUrl(path: string | undefined) {
+  if (!path) return "";
+  if (/^https?:\/\//i.test(path)) return path;
+  if (typeof window === "undefined") return path;
+  const basePath = window.location.pathname.startsWith("/license.atlas") ? "/license.atlas" : "";
+  return `${basePath}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
 function compactSearch(value: string | undefined) {
   return (value || "").toLowerCase().replace(/[^a-z0-9]+/g, "");
 }
@@ -1229,8 +1237,16 @@ export function OsadlChecklistBlock({ entry, meta }: {
 
   if (!entry) return null;
   const currentEntry = entry;
+  const isGenerated = entry.source_kind === "generated";
+  const compatibilityTotal = Object.values(entry.compatibility_summary || {}).reduce((sum, value) => sum + value, 0);
+  const showCompatibility = !isGenerated && compatibilityTotal > 0;
+  const sourceHref = isGenerated
+    ? localDataUrl(meta.source_url)
+    : entry.source_urls.txt || entry.source_urls.json || meta.source_url;
+  const licenseTextHref = isGenerated ? entry.source_urls.txt : "";
 
   async function loadCompatibilityRows() {
+    if (isGenerated) return;
     if (compatibilityRows.length || compatibilityLoading) return;
     setCompatibilityLoading(true);
     setCompatibilityError("");
@@ -1270,7 +1286,7 @@ export function OsadlChecklistBlock({ entry, meta }: {
   }
 
   const labels = {
-    title: t("osadl.title"),
+    title: t(isGenerated ? "osadl.generatedTitle" : "osadl.title"),
     must: t("osadl.must"),
     mustNot: t("osadl.mustNot"),
     required: t("osadl.required"),
@@ -1282,7 +1298,7 @@ export function OsadlChecklistBlock({ entry, meta }: {
     sourceDisclosure: t("osadl.sourceDisclosure"),
     patent: t("osadl.patent"),
     raw: t("osadl.raw"),
-    updated: t("osadl.updated"),
+    updated: t(isGenerated ? "osadl.generatedUpdated" : "osadl.updated"),
     source: t("osadl.source"),
     rawData: t("osadl.rawData"),
     project: t("osadl.project"),
@@ -1301,6 +1317,8 @@ export function OsadlChecklistBlock({ entry, meta }: {
     viewMode: t("osadl.viewMode"),
     viewNested: t("osadl.viewNested"),
     viewFlat: t("osadl.viewFlat"),
+    generatedDisclaimer: t("osadl.generatedDisclaimer"),
+    licenseText: t("osadl.licenseText"),
   };
   function toggleExpanded() {
     setExpanded((current) => !current);
@@ -1313,7 +1331,11 @@ export function OsadlChecklistBlock({ entry, meta }: {
 
   return (
     <section
-      className="detail-enter-3 relative z-10 mb-8 cursor-pointer rounded-2xl border border-cyan-200/70 bg-cyan-50/40 p-4 transition-colors hover:border-cyan-300/80 hover:bg-cyan-50/70 focus:outline-none focus:ring-2 focus:ring-cyan-400/40 dark:border-cyan-900/40 dark:bg-cyan-950/10 dark:hover:border-cyan-800/70 dark:hover:bg-cyan-950/20 sm:p-5"
+      className={
+        isGenerated
+          ? "detail-enter-3 relative z-10 mb-8 cursor-pointer rounded-2xl border border-amber-200/80 bg-amber-50/35 p-4 transition-colors hover:border-amber-300/80 hover:bg-amber-50/60 focus:outline-none focus:ring-2 focus:ring-amber-400/40 dark:border-amber-900/50 dark:bg-amber-950/10 dark:hover:border-amber-800/70 dark:hover:bg-amber-950/20 sm:p-5"
+          : "detail-enter-3 relative z-10 mb-8 cursor-pointer rounded-2xl border border-cyan-200/70 bg-cyan-50/40 p-4 transition-colors hover:border-cyan-300/80 hover:bg-cyan-50/70 focus:outline-none focus:ring-2 focus:ring-cyan-400/40 dark:border-cyan-900/40 dark:bg-cyan-950/10 dark:hover:border-cyan-800/70 dark:hover:bg-cyan-950/20 sm:p-5"
+      }
       role="button"
       tabIndex={0}
       aria-expanded={expanded}
@@ -1338,9 +1360,13 @@ export function OsadlChecklistBlock({ entry, meta }: {
           </span>
         </div>
         <div className="flex flex-wrap gap-1.5">
-          <InlineStat label={labels.copyleft} value={translateOsadlValue(entry.copyleft, lang)} className={yesNoTone(entry.copyleft)} tooltip={labels.copyleftHelp} />
-          <InlineStat label={labels.sourceDisclosure} value={translateOsadlValue(entry.source_disclosure, lang)} className={sourceDisclosureTone(entry.source_disclosure)} tooltip={labels.sourceDisclosureHelp} />
-          <InlineStat label={labels.patent} value={translateOsadlValue(entry.patent_hints || "Unknown", lang)} className={patentHintsTone(entry.patent_hints)} tooltip={labels.patentHelp} />
+          {!isGenerated && (
+            <>
+              <InlineStat label={labels.copyleft} value={translateOsadlValue(entry.copyleft, lang)} className={yesNoTone(entry.copyleft)} tooltip={labels.copyleftHelp} />
+              <InlineStat label={labels.sourceDisclosure} value={translateOsadlValue(entry.source_disclosure, lang)} className={sourceDisclosureTone(entry.source_disclosure)} tooltip={labels.sourceDisclosureHelp} />
+              <InlineStat label={labels.patent} value={translateOsadlValue(entry.patent_hints || "Unknown", lang)} className={patentHintsTone(entry.patent_hints)} tooltip={labels.patentHelp} />
+            </>
+          )}
           <InlineStat label={labels.updated} value={formatTimestamp(meta.timestamp)} />
         </div>
       </div>
@@ -1351,41 +1377,55 @@ export function OsadlChecklistBlock({ entry, meta }: {
             <ObligationTreeView entry={entry} lang={lang} labels={labels} />
           </div>
 
-          <div className="mb-4 rounded-xl border border-zinc-200/70 bg-white/70 p-4 dark:border-zinc-800/70 dark:bg-zinc-950/30">
-            <h3 className="mb-3 text-sm font-semibold text-zinc-950 dark:text-zinc-50">
-              {labels.compatibility}
-            </h3>
-            <div
-              ref={compatibilityRef}
-              className="relative w-full"
-            >
-              <CompatibilityBar entry={entry} t={t} onSelect={openCompatibility} />
-              {activeVerdict && (
-                <CompatibilityPopover
-                  rows={compatibilityRows}
-                  verdict={activeVerdict}
-                  position={compatibilityPosition}
-                  query={compatibilityQuery}
-                  loading={compatibilityLoading}
-                  error={compatibilityError}
-                  t={t}
-                  onQuery={setCompatibilityQuery}
-                />
-              )}
+          {showCompatibility && (
+            <div className="mb-4 rounded-xl border border-zinc-200/70 bg-white/70 p-4 dark:border-zinc-800/70 dark:bg-zinc-950/30">
+              <h3 className="mb-3 text-sm font-semibold text-zinc-950 dark:text-zinc-50">
+                {labels.compatibility}
+              </h3>
+              <div
+                ref={compatibilityRef}
+                className="relative w-full"
+              >
+                <CompatibilityBar entry={entry} t={t} onSelect={openCompatibility} />
+                {activeVerdict && (
+                  <CompatibilityPopover
+                    rows={compatibilityRows}
+                    verdict={activeVerdict}
+                    position={compatibilityPosition}
+                    query={compatibilityQuery}
+                    loading={compatibilityLoading}
+                    error={compatibilityError}
+                    t={t}
+                    onQuery={setCompatibilityQuery}
+                  />
+                )}
+              </div>
             </div>
-          </div>
+          )}
 
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-zinc-500 dark:text-zinc-400">
             <span>
               {labels.source}: {meta.source}{" "}
-              <a href={entry.source_urls.txt || entry.source_urls.json || meta.source_url} target="_blank" rel="noopener noreferrer" className="font-medium text-cyan-700 hover:text-cyan-900 dark:text-cyan-300">
+              <a href={sourceHref} target="_blank" rel="noopener noreferrer" className="font-medium text-cyan-700 hover:text-cyan-900 dark:text-cyan-300">
                 {labels.raw} ↗
               </a>
             </span>
-            <a href={meta.source_url} target="_blank" rel="noopener noreferrer" className="font-medium text-cyan-700 hover:text-cyan-900 dark:text-cyan-300">{labels.rawData}</a>
-            <a href={meta.checklist_project_url} target="_blank" rel="noopener noreferrer" className="font-medium text-cyan-700 hover:text-cyan-900 dark:text-cyan-300">{labels.project}</a>
-            <a href={meta.compatibility_notes_url} target="_blank" rel="noopener noreferrer" className="font-medium text-cyan-700 hover:text-cyan-900 dark:text-cyan-300">{labels.compatibilityLink}</a>
+            {isGenerated && licenseTextHref && (
+              <a href={licenseTextHref} target="_blank" rel="noopener noreferrer" className="font-medium text-cyan-700 hover:text-cyan-900 dark:text-cyan-300">{labels.licenseText}</a>
+            )}
+            {!isGenerated && (
+              <>
+                <a href={meta.source_url} target="_blank" rel="noopener noreferrer" className="font-medium text-cyan-700 hover:text-cyan-900 dark:text-cyan-300">{labels.rawData}</a>
+                <a href={meta.checklist_project_url} target="_blank" rel="noopener noreferrer" className="font-medium text-cyan-700 hover:text-cyan-900 dark:text-cyan-300">{labels.project}</a>
+                <a href={meta.compatibility_notes_url} target="_blank" rel="noopener noreferrer" className="font-medium text-cyan-700 hover:text-cyan-900 dark:text-cyan-300">{labels.compatibilityLink}</a>
+              </>
+            )}
           </div>
+          {isGenerated && (
+            <p className="mt-3 max-w-3xl text-xs leading-5 text-amber-700 dark:text-amber-300">
+              {labels.generatedDisclaimer}
+            </p>
+          )}
         </div>
       )}
     </section>

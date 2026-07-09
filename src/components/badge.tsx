@@ -57,6 +57,12 @@ export const themes: Record<string, BadgeTheme> = {
     tooltip: "bg-cyan-50 border-cyan-200 dark:bg-cyan-950 dark:border-cyan-800",
     glow: "shadow-[0_0_8px_rgba(6,182,212,0.18)]",
   },
+  generated: {
+    desc: "LLM-generated OSADL-style checklist. Not official OSADL data.",
+    badge: "bg-amber-50 text-amber-700 ring-1 ring-inset ring-amber-200 dark:bg-amber-950/30 dark:text-amber-300 dark:ring-amber-800/70",
+    tooltip: "bg-amber-50 border-amber-200 dark:bg-amber-950 dark:border-amber-800",
+    glow: "shadow-[0_0_8px_rgba(245,158,11,0.18)]",
+  },
   "review-approved": {
     desc: "OSI board approved this license.",
     badge: "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300",

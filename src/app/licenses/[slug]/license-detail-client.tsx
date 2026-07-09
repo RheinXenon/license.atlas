@@ -7,7 +7,7 @@ import { ProjectShowcaseBlock } from "@/components/project-showcase-block";
 import { LicenseReviewBlock } from "@/components/license-review-block";
 import { OsadlChecklistBlock } from "@/components/osadl-checklist-block";
 import { useLang } from "@/lib/i18n";
-import { osadlMeta, resolveOsadlChecklist } from "@/lib/osadl";
+import { resolveOsadlChecklist, resolveOsadlChecklistMeta } from "@/lib/osadl";
 import { resolveProjectShowcase } from "@/lib/project-showcase";
 import { hasReviewContent, resolveTrackerEntry } from "@/lib/tracker-match";
 import type { License } from "@/lib/types";
@@ -51,6 +51,7 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
   const trackerEntry = resolveTrackerEntry(license);
   const reviewTracked = !!trackerEntry && hasReviewContent(trackerEntry);
   const osadlEntry = resolveOsadlChecklist(license);
+  const osadlEntryMeta = resolveOsadlChecklistMeta(osadlEntry);
   const showcaseEntry = resolveProjectShowcase(license);
   const hasShowcase = !!showcaseEntry;
 
@@ -83,7 +84,14 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
         {/* Badges — Terms entries (type=terms) only show type badge */}
         <div className="mt-4 flex flex-wrap gap-2">
           {license.type === "terms" ? (
-            <Badge variant="type" themeKey="terms">{t("type.terms")}</Badge>
+            <>
+              <Badge variant="type" themeKey="terms">{t("type.terms")}</Badge>
+              {osadlEntry && (
+                <Badge variant="tag" themeKey={osadlEntry.source_kind === "generated" ? "generated" : "osadl"}>
+                  {t(osadlEntry.source_kind === "generated" ? "tag.generated" : "tag.osadl")}
+                </Badge>
+              )}
+            </>
           ) : (
             <>
               <Badge variant="type" themeKey={license.type}>{t(`type.${license.type}`)}</Badge>
@@ -111,6 +119,11 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
                 );
               })}
               {reviewTracked && <Badge variant="tag" themeKey="review-tracked">{t("tag.review-tracked")}</Badge>}
+              {osadlEntry && (
+                <Badge variant="tag" themeKey={osadlEntry.source_kind === "generated" ? "generated" : "osadl"}>
+                  {t(osadlEntry.source_kind === "generated" ? "tag.generated" : "tag.osadl")}
+                </Badge>
+              )}
             </>
           )}
         </div>
@@ -182,7 +195,7 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
       <LicenseReviewBlock license={license} />
 
       {/* OSADL Open Source License Checklist */}
-      <OsadlChecklistBlock entry={osadlEntry} meta={osadlMeta} />
+      <OsadlChecklistBlock entry={osadlEntry} meta={osadlEntryMeta} />
 
       {/* License Text */}
       {license.body && (

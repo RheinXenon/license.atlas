@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/build-search-index.mjs && node scripts/sync-tracker.mjs && node scripts/sync-osadl.mjs && node scripts/sync-project-showcase.mjs && NEXT_PRIVATE_BUILD_WORKER=0 next build --webpack",
+    "build": "node scripts/build-search-index.mjs && node scripts/sync-tracker.mjs && node scripts/sync-osadl.mjs && node scripts/sync-project-showcase.mjs && node scripts/next-build.mjs",
     "build:search": "node scripts/build-search-index.mjs",
     "update:data": "node scripts/update-data.mjs",
     "sync:licenses": "node scripts/sync-license-corpus.mjs",

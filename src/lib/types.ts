@@ -303,6 +303,7 @@ export interface OsadlChecklistEntry {
     json?: string;
     json_opt?: string;
     txt?: string;
+    atlas_sources?: { name: string; url: string }[];
   };
   has_raw_txt: boolean;
   copyleft: string;
@@ -329,6 +330,17 @@ export interface OsadlChecklistEntry {
     unknown: number;
     check_dependency: number;
   };
+  source_kind?: "official" | "generated";
+  generation?: {
+    valid?: boolean;
+    model?: string;
+    prompt_version?: string;
+    revision_prompt_version?: string | null;
+    created_at?: string;
+    completed_at?: string;
+    license_text_sha256?: string;
+    validation?: unknown;
+  };
 }
 
 export interface OsadlIndexMeta {
@@ -336,6 +348,7 @@ export interface OsadlIndexMeta {
   index_schema_version: number;
   generated_at: string;
   source: string;
+  source_kind?: "official" | "generated";
   source_url: string;
   checklist_project_url: string;
   compatibility_notes_url: string;
@@ -362,4 +375,10 @@ export interface OsadlIndexMeta {
 export interface OsadlIndex {
   _meta: OsadlIndexMeta;
   by_spdx: Record<string, OsadlChecklistEntry>;
+}
+
+export interface GeneratedOsadlIndex {
+  _meta: OsadlIndexMeta;
+  by_spdx: Record<string, string>;
+  by_slug: Record<string, OsadlChecklistEntry>;
 }

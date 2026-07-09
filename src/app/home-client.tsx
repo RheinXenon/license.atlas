@@ -11,15 +11,18 @@ import type { SearchGroup, SearchResult } from "@/lib/search";
 import { hasReviewContent, resolveTrackerEntry } from "@/lib/tracker-match";
 import licenses from "@/data/licenses-index.json";
 import osadlCoverage from "@/data/osadl-coverage.json";
+import generatedOsadlCoverage from "@/data/generated-osadl-coverage.json";
 import stats from "@/data/stats.json";
 import type { License } from "@/lib/types";
 
 const PAGE_SIZE = 30;
 const REVIEW_TRACKED_TAG = "Review Tracked";
 const OSADL_TAG = "OSADL";
+const GENERATED_OSADL_TAG = "OSADL Generated";
 const allLicenses = licenses as License[];
 const licenseBySlug = new Map(allLicenses.map((license) => [license.slug, license]));
 const osadlSupportedSlugs = new Set((osadlCoverage as { slugs: string[] }).slugs);
+const generatedOsadlSupportedSlugs = new Set((generatedOsadlCoverage as { slugs: string[] }).slugs);
 const reviewTrackedSlugs = new Set(
   allLicenses
     .filter((license) => {
@@ -29,10 +32,10 @@ const reviewTrackedSlugs = new Set(
     .map((license) => license.slug),
 );
 const allTags = Array.from(
-  new Set([...allLicenses.flatMap((l) => l.tags), OSADL_TAG, REVIEW_TRACKED_TAG])
+  new Set([...allLicenses.flatMap((l) => l.tags), OSADL_TAG, GENERATED_OSADL_TAG, REVIEW_TRACKED_TAG])
 ).filter((t) => !["MCP Server", "Agent Framework", "Agent Skill", "LLM Tool", "Proprietary"].includes(t));
 
-const tagOrder = ["Public Domain", "Permissive", "Weak Copyleft", "Copyleft", "Creative Commons", "GNU", "ModelGo", "GNU Nonfree", "Hardware", "Custom", "HuggingFace", "MCP Server", "Agent Framework", "Agent Skill", "LLM Tool", "tl;drLegal Verified", "OSADL", "Review Tracked"];
+const tagOrder = ["Public Domain", "Permissive", "Weak Copyleft", "Copyleft", "Creative Commons", "GNU", "ModelGo", "GNU Nonfree", "Hardware", "Custom", "HuggingFace", "MCP Server", "Agent Framework", "Agent Skill", "LLM Tool", "tl;drLegal Verified", OSADL_TAG, GENERATED_OSADL_TAG, REVIEW_TRACKED_TAG];
 allTags.sort((a, b) => {
   const ai = tagOrder.indexOf(a), bi = tagOrder.indexOf(b);
   if (ai !== -1 && bi !== -1) return ai - bi;
@@ -42,12 +45,28 @@ allTags.sort((a, b) => {
 });
 
 function tagThemeKey(tag: string): string {
+  if (tag === GENERATED_OSADL_TAG) return "generated";
   return tag.toLowerCase().replace(/ /g, "-").replace(/[^a-z0-9-]/g, "");
+}
+
+function tagLabel(tag: string, t: (key: string) => string): string {
+  const tagKey = `tag.${tagThemeKey(tag)}`;
+  const translated = t(tagKey);
+  return translated !== tagKey ? translated : tag;
+}
+
+function resolveHomeOsadlKind(license: Pick<License, "slug"> | undefined): "official" | "generated" | null {
+  if (!license) return null;
+  if (osadlSupportedSlugs.has(license.slug)) return "official";
+  if (generatedOsadlSupportedSlugs.has(license.slug)) return "generated";
+  return null;
 }
 
 function licenseTagsWithSignals(license: Pick<License, "slug" | "tags"> | undefined) {
   const tags = new Set(license?.tags || []);
-  if (license && osadlSupportedSlugs.has(license.slug)) tags.add(OSADL_TAG);
+  const osadlKind = resolveHomeOsadlKind(license);
+  if (osadlKind === "official") tags.add(OSADL_TAG);
+  if (osadlKind === "generated") tags.add(GENERATED_OSADL_TAG);
   if (license && reviewTrackedSlugs.has(license.slug)) tags.add(REVIEW_TRACKED_TAG);
   return tags;
 }
@@ -413,7 +432,7 @@ function HomeContent() {
                 })}
                 className={`rounded-full border px-3 py-1 text-xs font-medium transition ${active ? theme.badge : "border-zinc-200 bg-white text-zinc-600 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300"}`}
               >
-                {tag}
+                {tagLabel(tag, t)}
               </button>
             );
           })}
@@ -438,7 +457,7 @@ function HomeContent() {
                           key={r.slug}
                           license={license}
                           reviewTracked={reviewTrackedSlugs.has(license.slug)}
-                          osadlSupported={osadlSupportedSlugs.has(license.slug)}
+                          osadlKind={resolveHomeOsadlKind(license)}
                         />
                       ) : null;
                     })}
@@ -460,7 +479,7 @@ function HomeContent() {
                   key={license.slug}
                   license={license}
                   reviewTracked={reviewTrackedSlugs.has(license.slug)}
-                  osadlSupported={osadlSupportedSlugs.has(license.slug)}
+                  osadlKind={resolveHomeOsadlKind(license)}
                 />
               ))}
             </div>

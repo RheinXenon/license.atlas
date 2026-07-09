@@ -109,7 +109,7 @@ const dict: Record<Lang, Record<string, string>> = {
     "review.rejectedDate": "Rejected Date",
     "tag.review-tracked": "Review Tracked",
     "tag.osadl": "OSADL",
-    "tag.generated": "OSADL(Generated)",
+    "tag.generated": "OSADL (Generated)",
 
     // Home
     "home.subtitle": "A comprehensive collection of {total} software, AI model, data, and agent licenses.",
@@ -501,7 +501,7 @@ const dict: Record<Lang, Record<string, string>> = {
     "review.rejectedDate": "否决日期",
     "tag.review-tracked": "审查记录",
     "tag.osadl": "OSADL",
-    "tag.generated": "OSADL(生成)",
+    "tag.generated": "OSADL（生成）",
 
     // Home
     "home.subtitle": "涵盖 {total} 个软件、AI 模型、数据和智能体许可证的全面集合。",

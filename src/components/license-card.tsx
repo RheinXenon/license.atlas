@@ -8,7 +8,7 @@ import type { License } from "@/lib/types";
 interface LicenseCardProps {
   license: Pick<License, "slug" | "title" | "spdx_id" | "type" | "osi_approved" | "fsf_libre" | "fsf_tags" | "tags" | "description" | "trend">;
   reviewTracked?: boolean;
-  osadlSupported?: boolean;
+  osadlKind?: "official" | "generated" | null;
 }
 
 function Sparkline({ data }: { data: number[] }) {
@@ -58,7 +58,7 @@ function Sparkline({ data }: { data: number[] }) {
   );
 }
 
-export function LicenseCard({ license, reviewTracked = false, osadlSupported = false }: LicenseCardProps) {
+export function LicenseCard({ license, reviewTracked = false, osadlKind = null }: LicenseCardProps) {
   const { t } = useLang();
 
   return (
@@ -103,7 +103,11 @@ export function LicenseCard({ license, reviewTracked = false, osadlSupported = f
           return <Badge key={tag} variant={tag === "tl;drLegal Verified" ? "verified" : "tag"} themeKey={tag}>{translated}</Badge>;
         })}
         {reviewTracked && <Badge variant="tag" themeKey="review-tracked">{t("tag.review-tracked")}</Badge>}
-        {osadlSupported && <Badge variant="tag" themeKey="osadl">{t("tag.osadl")}</Badge>}
+        {osadlKind && (
+          <Badge variant="tag" themeKey={osadlKind === "generated" ? "generated" : "osadl"}>
+            {t(osadlKind === "generated" ? "tag.generated" : "tag.osadl")}
+          </Badge>
+        )}
       </div>
     </Link>
   );

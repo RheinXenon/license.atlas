@@ -12,6 +12,7 @@ import { hasReviewContent, resolveTrackerEntry } from "@/lib/tracker-match";
 import licenses from "@/data/licenses-index.json";
 import osadlCoverage from "@/data/osadl-coverage.json";
 import generatedOsadlCoverage from "@/data/generated-osadl-coverage.json";
+import modelGeneratedOsadlCoverage from "@/data/model-generated-osadl-coverage.json";
 import stats from "@/data/stats.json";
 import type { License } from "@/lib/types";
 
@@ -19,10 +20,12 @@ const PAGE_SIZE = 30;
 const REVIEW_TRACKED_TAG = "Review Tracked";
 const OSADL_TAG = "OSADL";
 const GENERATED_OSADL_TAG = "OSADL Generated";
+const MODEL_GENERATED_TAG = "Model Generated";
 const allLicenses = licenses as License[];
 const licenseBySlug = new Map(allLicenses.map((license) => [license.slug, license]));
 const osadlSupportedSlugs = new Set((osadlCoverage as { slugs: string[] }).slugs);
 const generatedOsadlSupportedSlugs = new Set((generatedOsadlCoverage as { slugs: string[] }).slugs);
+const modelGeneratedOsadlSupportedSlugs = new Set((modelGeneratedOsadlCoverage as { slugs: string[] }).slugs);
 const reviewTrackedSlugs = new Set(
   allLicenses
     .filter((license) => {
@@ -32,10 +35,10 @@ const reviewTrackedSlugs = new Set(
     .map((license) => license.slug),
 );
 const allTags = Array.from(
-  new Set([...allLicenses.flatMap((l) => l.tags), OSADL_TAG, GENERATED_OSADL_TAG, REVIEW_TRACKED_TAG])
+  new Set([...allLicenses.flatMap((l) => l.tags), OSADL_TAG, GENERATED_OSADL_TAG, MODEL_GENERATED_TAG, REVIEW_TRACKED_TAG])
 ).filter((t) => !["MCP Server", "Agent Framework", "Agent Skill", "LLM Tool", "Proprietary"].includes(t));
 
-const tagOrder = ["Public Domain", "Permissive", "Weak Copyleft", "Copyleft", "Creative Commons", "GNU", "ModelGo", "GNU Nonfree", "Hardware", "Custom", "HuggingFace", "MCP Server", "Agent Framework", "Agent Skill", "LLM Tool", "tl;drLegal Verified", OSADL_TAG, GENERATED_OSADL_TAG, REVIEW_TRACKED_TAG];
+const tagOrder = ["Public Domain", "Permissive", "Weak Copyleft", "Copyleft", "Creative Commons", "GNU", "ModelGo", "GNU Nonfree", "Hardware", "Custom", "HuggingFace", "MCP Server", "Agent Framework", "Agent Skill", "LLM Tool", "tl;drLegal Verified", OSADL_TAG, GENERATED_OSADL_TAG, MODEL_GENERATED_TAG, REVIEW_TRACKED_TAG];
 allTags.sort((a, b) => {
   const ai = tagOrder.indexOf(a), bi = tagOrder.indexOf(b);
   if (ai !== -1 && bi !== -1) return ai - bi;
@@ -46,6 +49,7 @@ allTags.sort((a, b) => {
 
 function tagThemeKey(tag: string): string {
   if (tag === GENERATED_OSADL_TAG) return "generated";
+  if (tag === MODEL_GENERATED_TAG) return "model-generated";
   return tag.toLowerCase().replace(/ /g, "-").replace(/[^a-z0-9-]/g, "");
 }
 
@@ -55,10 +59,11 @@ function tagLabel(tag: string, t: (key: string) => string): string {
   return translated !== tagKey ? translated : tag;
 }
 
-function resolveHomeOsadlKind(license: Pick<License, "slug"> | undefined): "official" | "generated" | null {
+function resolveHomeOsadlKind(license: Pick<License, "slug"> | undefined): "official" | "generated" | "model-generated" | null {
   if (!license) return null;
   if (osadlSupportedSlugs.has(license.slug)) return "official";
   if (generatedOsadlSupportedSlugs.has(license.slug)) return "generated";
+  if (modelGeneratedOsadlSupportedSlugs.has(license.slug)) return "model-generated";
   return null;
 }
 
@@ -67,6 +72,7 @@ function licenseTagsWithSignals(license: Pick<License, "slug" | "tags"> | undefi
   const osadlKind = resolveHomeOsadlKind(license);
   if (osadlKind === "official") tags.add(OSADL_TAG);
   if (osadlKind === "generated") tags.add(GENERATED_OSADL_TAG);
+  if (osadlKind === "model-generated") tags.add(MODEL_GENERATED_TAG);
   if (license && reviewTrackedSlugs.has(license.slug)) tags.add(REVIEW_TRACKED_TAG);
   return tags;
 }

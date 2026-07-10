@@ -261,6 +261,7 @@ export interface OsadlActionNode {
   text: string;
   type: 'must' | 'must-not';
   attributes?: string[];
+  use_restrictions?: string[];
 }
 
 // Either/Or group: choose one option from multiple branches
@@ -289,6 +290,7 @@ export interface OsadlFlatAction {
   text: string;
   type: 'must' | 'must-not';
   attributes?: string[];
+  use_restrictions?: string[];
   condition_path: string[];  // e.g. ["Software modification", "Modified work Under Original license"]
   use_case: string;
   either_group?: number;     // Which either group this belongs to (for grouping)
@@ -322,6 +324,8 @@ export interface OsadlChecklistEntry {
     conditions: number;
     obligations: number;
     prohibitions: number;
+    attributes?: number;
+    use_restrictions?: number;
   };
   compatibility_summary: {
     yes: number;
@@ -331,6 +335,7 @@ export interface OsadlChecklistEntry {
     check_dependency: number;
   };
   source_kind?: "official" | "generated";
+  domain?: "software" | "model";
   generation?: {
     valid?: boolean;
     model?: string;
@@ -349,6 +354,7 @@ export interface OsadlIndexMeta {
   generated_at: string;
   source: string;
   source_kind?: "official" | "generated";
+  domain?: "software" | "model";
   source_url: string;
   checklist_project_url: string;
   compatibility_notes_url: string;

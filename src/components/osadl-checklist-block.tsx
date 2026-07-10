@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { createContext, useContext, useEffect, useRef, useState, type MouseEvent } from "react";
 import licenses from "@/data/licenses-index.json";
-import { useLang, type Lang } from "@/lib/i18n";
+import { translateModelOsadlTerm, useLang, type Lang } from "@/lib/i18n";
 import type { License, OsadlActionNode, OsadlChecklistEntry, OsadlConditionBlock, OsadlEitherGroup, OsadlIndexMeta, OsadlLinkFile, OsadlUseCaseTree } from "@/lib/types";
 
 // ── Link/hover context ────────────────────────────────────────────────────────
@@ -22,6 +22,8 @@ const OsadlLinkContext = createContext<OsadlLinkCtx>({
   sourceNavigationEnabled: true,
   licenseBody: "",
 });
+
+const OsadlDomainContext = createContext<"software" | "model">("software");
 
 /** Build the node_key string matching the experiment's make_node_key(). */
 function makeNodeKey(kind: string, path: string[]): string {
@@ -555,7 +557,8 @@ function translateTerm(value: string): string {
     .replace(/\bTo\b/g, "向");
 }
 
-function translateOsadlText(value: string, lang: Lang, kind: "action" | "condition" | "use-case" | "attribute", context?: { condition?: string }) {
+function translateOsadlText(value: string, lang: Lang, kind: "action" | "condition" | "use-case" | "attribute", context?: { condition?: string }, modelGenerated = false) {
+  if (modelGenerated) return translateModelOsadlTerm(lang, value);
   if (lang !== "zh") return value;
   if (kind === "attribute") return ATTRIBUTE_ZH[value] || translateTerm(value);
   if (kind === "condition") return CONDITION_ZH[value] || translateTerm(value);
@@ -701,16 +704,40 @@ function ActionToneBadge({ type, labels }: {
   );
 }
 
-function ActionNodeView({ text, type, attributes, lang, labels, nodeKey }: {
+function UseRestrictionBadges({ restrictions, lang }: {
+  restrictions?: string[];
+  lang: Lang;
+}) {
+  if (!restrictions?.length) return null;
+  return (
+    <span className="mt-1 flex flex-wrap items-center gap-1">
+      <span className="mr-0.5 text-[10px] font-medium text-rose-600 dark:text-rose-300">
+        {translateModelOsadlTerm(lang, "USE RESTRICTION")}:
+      </span>
+      {restrictions.map((restriction) => (
+        <span
+          key={restriction}
+          className="inline-flex rounded-full border border-rose-200 bg-rose-50 px-1.5 py-0.5 text-[9px] leading-4 text-rose-700 dark:border-rose-900/60 dark:bg-rose-950/30 dark:text-rose-300"
+        >
+          {translateModelOsadlTerm(lang, restriction)}
+        </span>
+      ))}
+    </span>
+  );
+}
+
+function ActionNodeView({ text, type, attributes, useRestrictions, lang, labels, nodeKey }: {
   text: string;
   type: 'must' | 'must-not';
   attributes?: string[];
+  useRestrictions?: string[];
   lang: Lang;
   labels: { must: string; mustNot: string };
   nodeKey?: string;
 }) {
   const { linkData, onNodeClick, sourceNavigationEnabled, licenseBody } = useContext(OsadlLinkContext);
-  const displayText = translateOsadlText(text, lang, "action");
+  const modelGenerated = useContext(OsadlDomainContext) === "model";
+  const displayText = translateOsadlText(text, lang, "action", undefined, modelGenerated);
 
   const hasLinks = !!(nodeKey && linkData?.node_links[nodeKey]?.length);
   const canNavigate = hasLinks && sourceNavigationEnabled;
@@ -748,11 +775,12 @@ function ActionNodeView({ text, type, attributes, lang, labels, nodeKey }: {
           <span className="ml-1.5 inline-flex flex-wrap gap-1 align-baseline">
             {attributes.map((attr, i) => (
               <span key={i} className="inline-block rounded-full bg-zinc-100 px-1.5 py-0.5 text-[9px] text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">
-                {translateOsadlText(attr, lang, "attribute")}
+                {translateOsadlText(attr, lang, "attribute", undefined, modelGenerated)}
               </span>
             ))}
           </span>
         )}
+        <UseRestrictionBadges restrictions={useRestrictions} lang={lang} />
       </span>
 
       {/* Custom tooltip — only rendered when node has link data */}
@@ -855,7 +883,7 @@ function EitherGroupView({ group, lang, labels, nodePath, groupIdx }: {
                 ? makeNodeKey(action.type === "must" ? "action_must" : "action_must_not", actionPath)
                 : undefined;
               return (
-                <ActionNodeView key={i} text={action.text} type={action.type} attributes={action.attributes} lang={lang} labels={labels} nodeKey={nodeKey} />
+                <ActionNodeView key={i} text={action.text} type={action.type} attributes={action.attributes} useRestrictions={action.use_restrictions} lang={lang} labels={labels} nodeKey={nodeKey} />
               );
             })}
           </ul>
@@ -874,7 +902,7 @@ function EitherGroupView({ group, lang, labels, nodePath, groupIdx }: {
                 ? makeNodeKey(action.type === "must" ? "action_must" : "action_must_not", optPath)
                 : undefined;
               return (
-                <ActionNodeView key={i} text={action.text} type={action.type} attributes={action.attributes} lang={lang} labels={labels} nodeKey={nodeKey} />
+                <ActionNodeView key={i} text={action.text} type={action.type} attributes={action.attributes} useRestrictions={action.use_restrictions} lang={lang} labels={labels} nodeKey={nodeKey} />
               );
             })}
           </ul>
@@ -893,8 +921,9 @@ function ConditionBlockView({ block, lang, labels, depth = 0, isExcept = false, 
   /** Accumulated path from the use-case root to this block (for node_key generation). */
   nodePath?: string[];
 }) {
+  const modelGenerated = useContext(OsadlDomainContext) === "model";
   const conditionText = block.condition !== "root"
-    ? translateOsadlText(block.condition, lang, "condition")
+    ? translateOsadlText(block.condition, lang, "condition", undefined, modelGenerated)
     : null;
 
   // The path segment this block contributes when entering children.
@@ -969,7 +998,7 @@ function ConditionBlockView({ block, lang, labels, depth = 0, isExcept = false, 
               : undefined;
             const nodeKey = actionPath ? makeNodeKey(kind, actionPath) : undefined;
             return (
-              <ActionNodeView key={i} text={action.text} type={action.type} attributes={action.attributes} lang={lang} labels={labels} nodeKey={nodeKey} />
+              <ActionNodeView key={i} text={action.text} type={action.type} attributes={action.attributes} useRestrictions={action.use_restrictions} lang={lang} labels={labels} nodeKey={nodeKey} />
             );
           })}
         </ul>
@@ -1014,15 +1043,16 @@ function FlatActionRow({ row, lang, labels }: {
     unless: string;
   };
 }) {
+  const modelGenerated = useContext(OsadlDomainContext) === "model";
   const choiceText = row.choice
     ? `${labels.choiceGroup(row.choice.groupIndex + 1)} · ${
       row.choice.kind === "common" ? labels.common : labels.option(row.choice.optionIndex)
     }`
     : "";
   const contextTitle = [
-    translateOsadlText(row.useCase, lang, "use-case"),
+    translateOsadlText(row.useCase, lang, "use-case", undefined, modelGenerated),
     ...row.path.map((part) => {
-      const text = translateOsadlText(part.value, lang, "condition");
+      const text = translateOsadlText(part.value, lang, "condition", undefined, modelGenerated);
       return part.kind === "unless" ? `${labels.unless} ${text}` : text;
     }),
     choiceText,
@@ -1032,14 +1062,14 @@ function FlatActionRow({ row, lang, labels }: {
     <li className="grid gap-x-2 gap-y-0.5 border-t border-zinc-100 py-1 first:border-t-0 dark:border-zinc-800 sm:grid-cols-[minmax(10rem,16rem)_5rem_minmax(0,1fr)]">
       <div className="flex min-w-0 flex-wrap items-center gap-x-1 gap-y-0.5 text-[11px] leading-4 text-zinc-500 dark:text-zinc-400" title={contextTitle}>
         <span className="font-medium text-zinc-600 dark:text-zinc-300">
-          {translateOsadlText(row.useCase, lang, "use-case")}
+          {translateOsadlText(row.useCase, lang, "use-case", undefined, modelGenerated)}
         </span>
         {row.path.map((part, index) => (
           <span key={`${part.kind}-${part.value}-${index}`} className="inline-flex min-w-0 items-center gap-x-1">
             <span className="text-zinc-300 dark:text-zinc-600">/</span>
             <span className={part.kind === "unless" ? "text-amber-700 dark:text-amber-300" : ""}>
               {part.kind === "unless" && `${labels.unless} `}
-              {translateOsadlText(part.value, lang, "condition")}
+              {translateOsadlText(part.value, lang, "condition", undefined, modelGenerated)}
             </span>
           </span>
         ))}
@@ -1055,16 +1085,17 @@ function FlatActionRow({ row, lang, labels }: {
       </div>
       <ActionToneBadge type={row.action.type} labels={labels} />
       <span className="min-w-0 font-sans text-[12px] leading-5 text-zinc-700 dark:text-zinc-300">
-        {translateOsadlText(row.action.text, lang, "action")}
+        {translateOsadlText(row.action.text, lang, "action", undefined, modelGenerated)}
         {row.action.attributes && row.action.attributes.length > 0 && (
           <span className="ml-1.5 inline-flex flex-wrap gap-1 align-baseline">
             {row.action.attributes.map((attr, i) => (
               <span key={i} className="inline-block rounded-full bg-zinc-100 px-1.5 py-0.5 text-[9px] text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">
-                {translateOsadlText(attr, lang, "attribute")}
+                {translateOsadlText(attr, lang, "attribute", undefined, modelGenerated)}
               </span>
             ))}
           </span>
         )}
+        <UseRestrictionBadges restrictions={row.action.use_restrictions} lang={lang} />
       </span>
     </li>
   );
@@ -1091,6 +1122,7 @@ function ObligationTreeView({ entry, lang, labels, linkData, onNodeClick, licens
     viewMode: string;
     viewNested: string;
     viewFlat: string;
+    useRestrictions: string;
   };
   linkData?: OsadlLinkFile | null;
   onNodeClick?: (key: string) => void;
@@ -1101,6 +1133,10 @@ function ObligationTreeView({ entry, lang, labels, linkData, onNodeClick, licens
   const flatRows = buildFlatDisplayRows(entry.trees);
   const mustCount = flatRows.filter((row) => row.action.type === "must").length;
   const mustNotCount = flatRows.filter((row) => row.action.type === "must-not").length;
+  const useRestrictionCount = flatRows.reduce(
+    (count, row) => count + (row.action.use_restrictions?.length || 0),
+    0,
+  );
 
   const ctxValue: OsadlLinkCtx = {
     linkData: linkData ?? null,
@@ -1111,6 +1147,7 @@ function ObligationTreeView({ entry, lang, labels, linkData, onNodeClick, licens
 
   if (flatRows.length === 0) {
     return (
+      <OsadlDomainContext.Provider value={entry.domain === "model" ? "model" : "software"}>
       <OsadlLinkContext.Provider value={ctxValue}>
         <div className="rounded-xl border border-zinc-200/70 bg-white/70 p-4 dark:border-zinc-800/70 dark:bg-zinc-950/30">
           <div className="mb-3 flex flex-wrap items-center gap-2">
@@ -1120,10 +1157,12 @@ function ObligationTreeView({ entry, lang, labels, linkData, onNodeClick, licens
           <p className="text-sm text-zinc-500 dark:text-zinc-400">{labels.noActions}</p>
         </div>
       </OsadlLinkContext.Provider>
+      </OsadlDomainContext.Provider>
     );
   }
 
   return (
+    <OsadlDomainContext.Provider value={entry.domain === "model" ? "model" : "software"}>
     <OsadlLinkContext.Provider value={ctxValue}>
     <div className="rounded-xl border border-zinc-200/70 bg-white/70 p-4 dark:border-zinc-800/70 dark:bg-zinc-950/30">
       <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
@@ -1146,6 +1185,11 @@ function ObligationTreeView({ entry, lang, labels, linkData, onNodeClick, licens
           ) : (
             <span className="rounded-full border border-zinc-200 bg-zinc-50 px-2 py-0.5 text-[11px] font-medium text-zinc-500 dark:border-zinc-800 dark:bg-zinc-900/60 dark:text-zinc-400">
               {labels.noProhibitionsCompact}
+            </span>
+          )}
+          {useRestrictionCount > 0 && (
+            <span className="rounded-full border border-rose-200 bg-rose-50 px-2 py-0.5 text-[11px] font-medium text-rose-700 dark:border-rose-900/50 dark:bg-rose-950/30 dark:text-rose-300">
+              {labels.useRestrictions}: {useRestrictionCount}
             </span>
           )}
         </div>
@@ -1187,7 +1231,7 @@ function ObligationTreeView({ entry, lang, labels, linkData, onNodeClick, licens
             return (
               <div key={i} className="border-l border-zinc-200 pl-3 dark:border-zinc-700">
                 <h4 className="mb-1.5 font-sans text-[12px] font-semibold leading-5 text-zinc-700 dark:text-zinc-300">
-                  {translateOsadlText(tree.use_case, lang, "use-case")}
+                  {translateOsadlText(tree.use_case, lang, "use-case", undefined, entry.domain === "model")}
                   <span className="ml-1.5 text-[11px] font-normal text-zinc-500 dark:text-zinc-400">{treeStats}</span>
                 </h4>
                 <ConditionBlockView
@@ -1209,6 +1253,7 @@ function ObligationTreeView({ entry, lang, labels, linkData, onNodeClick, licens
       )}
     </div>
     </OsadlLinkContext.Provider>
+    </OsadlDomainContext.Provider>
   );
 }
 
@@ -1380,6 +1425,7 @@ export function OsadlChecklistBlock({ entry, meta, linkData, onNodeClick, licens
   if (!entry) return null;
   const currentEntry = entry;
   const isGenerated = entry.source_kind === "generated";
+  const isModelGenerated = isGenerated && entry.domain === "model";
   const compatibilityTotal = Object.values(entry.compatibility_summary || {}).reduce((sum, value) => sum + value, 0);
   const showCompatibility = !isGenerated && compatibilityTotal > 0;
   const sourceHref = isGenerated
@@ -1428,7 +1474,7 @@ export function OsadlChecklistBlock({ entry, meta, linkData, onNodeClick, licens
   }
 
   const labels = {
-    title: t(isGenerated ? "osadl.generatedTitle" : "osadl.title"),
+    title: t(isModelGenerated ? "osadl.modelGeneratedTitle" : isGenerated ? "osadl.generatedTitle" : "osadl.title"),
     must: t("osadl.must"),
     mustNot: t("osadl.mustNot"),
     required: t("osadl.required"),
@@ -1459,7 +1505,8 @@ export function OsadlChecklistBlock({ entry, meta, linkData, onNodeClick, licens
     viewMode: t("osadl.viewMode"),
     viewNested: t("osadl.viewNested"),
     viewFlat: t("osadl.viewFlat"),
-    generatedDisclaimer: t("osadl.generatedDisclaimer"),
+    useRestrictions: t("osadl.useRestrictions"),
+    generatedDisclaimer: t(isModelGenerated ? "osadl.modelGeneratedDisclaimer" : "osadl.generatedDisclaimer"),
     licenseText: t("osadl.licenseText"),
   };
   function toggleExpanded() {
@@ -1474,7 +1521,9 @@ export function OsadlChecklistBlock({ entry, meta, linkData, onNodeClick, licens
   return (
     <section
       className={
-        isGenerated
+        isModelGenerated
+          ? "detail-enter-3 relative z-10 mb-8 cursor-pointer rounded-2xl border border-sky-200/80 bg-sky-50/35 p-4 transition-colors hover:border-sky-300/80 hover:bg-sky-50/60 focus:outline-none focus:ring-2 focus:ring-sky-400/40 dark:border-sky-900/50 dark:bg-sky-950/10 dark:hover:border-sky-800/70 dark:hover:bg-sky-950/20 sm:p-5"
+          : isGenerated
           ? "detail-enter-3 relative z-10 mb-8 cursor-pointer rounded-2xl border border-amber-200/80 bg-amber-50/35 p-4 transition-colors hover:border-amber-300/80 hover:bg-amber-50/60 focus:outline-none focus:ring-2 focus:ring-amber-400/40 dark:border-amber-900/50 dark:bg-amber-950/10 dark:hover:border-amber-800/70 dark:hover:bg-amber-950/20 sm:p-5"
           : "detail-enter-3 relative z-10 mb-8 cursor-pointer rounded-2xl border border-cyan-200/70 bg-cyan-50/40 p-4 transition-colors hover:border-cyan-300/80 hover:bg-cyan-50/70 focus:outline-none focus:ring-2 focus:ring-cyan-400/40 dark:border-cyan-900/40 dark:bg-cyan-950/10 dark:hover:border-cyan-800/70 dark:hover:bg-cyan-950/20 sm:p-5"
       }
@@ -1572,7 +1621,7 @@ export function OsadlChecklistBlock({ entry, meta, linkData, onNodeClick, licens
             )}
           </div>
           {isGenerated && (
-            <p className="mt-3 max-w-3xl text-xs leading-5 text-amber-700 dark:text-amber-300">
+            <p className={`mt-3 max-w-3xl text-xs leading-5 ${isModelGenerated ? "text-sky-700 dark:text-sky-300" : "text-amber-700 dark:text-amber-300"}`}>
               {labels.generatedDisclaimer}
             </p>
           )}

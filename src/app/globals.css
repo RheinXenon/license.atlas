@@ -187,6 +187,40 @@ body {
   100% { background: transparent; }
 }
 .tracker-flash { animation: trackerFlash 1.7s ease; }
+
+/* A selected OSADL source stays softly highlighted after one locating flash. */
+@keyframes osadlSourceFlash {
+  0% { background-color: rgba(253, 230, 138, 0.55); }
+  35% { background-color: rgba(251, 191, 36, 0.52); }
+  70% { background-color: rgba(253, 230, 138, 0.82); }
+  100% { background-color: rgba(254, 243, 199, 0.78); }
+}
+
+.osadl-source-highlight {
+  background-color: rgba(254, 243, 199, 0.78);
+  border-radius: 0.2rem;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.osadl-source-highlight-flash {
+  animation: osadlSourceFlash 1.15s ease-out;
+}
+
+.dark .osadl-source-highlight {
+  background-color: rgba(120, 53, 15, 0.42);
+}
+
+@keyframes osadlSourceFlashDark {
+  0% { background-color: rgba(120, 53, 15, 0.35); }
+  35% { background-color: rgba(217, 119, 6, 0.55); }
+  70% { background-color: rgba(146, 64, 14, 0.62); }
+  100% { background-color: rgba(120, 53, 15, 0.42); }
+}
+
+.dark .osadl-source-highlight-flash {
+  animation-name: osadlSourceFlashDark;
+}
 .timeline-strip .tl-node { display: inline-flex; align-items: center; gap: 3px; padding: 2px 8px;
   border-radius: 4px; background: rgba(124,58,237,0.06); font-size: 12px; cursor: pointer; margin-right: 2px; }
 .timeline-strip .tl-node.submission { background: rgba(16,185,129,0.1); }

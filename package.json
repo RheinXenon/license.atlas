@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/build-generated-osadl-coverage.mjs && node scripts/build-search-index.mjs && node scripts/sync-tracker.mjs && node scripts/sync-osadl.mjs && node scripts/sync-project-showcase.mjs && node scripts/next-build.mjs",
+    "build": "node scripts/build-osadl-links.mjs --ensure && node scripts/build-generated-osadl-coverage.mjs && node scripts/build-search-index.mjs && node scripts/sync-tracker.mjs && node scripts/sync-osadl.mjs && node scripts/sync-project-showcase.mjs && next build",
+    "build:osadl-links": "node scripts/build-osadl-links.mjs",
     "build:search": "node scripts/build-search-index.mjs",
     "build:generated-osadl-coverage": "node scripts/build-generated-osadl-coverage.mjs",
     "update:data": "node scripts/update-data.mjs",

@@ -4155,9 +4155,12 @@
       "raw_hash": "f88a79bba84355f0ef2cb728d7e07f86e314cd47a8f7df92cd68824284de8ca8",
       "checklist": {
         "USE CASE": {
-          "Source code delivery OR Binary delivery": {
+          "Work Delivery": {
+            "YOU MUST": {
+              "Forward Copyright notice": {}
+            },
             "IF": {
-              "Software modification": {
+              "Modification": {
                 "YOU MUST": {
                   "Provide Modification notice": {
                     "ATTRIBUTE": {
@@ -4166,16 +4169,13 @@
                   }
                 }
               }
-            },
-            "YOU MUST": {
-              "Forward Copyright notice": {}
             }
           }
         }
       },
       "trees": [
         {
-          "use_case": "Source code delivery OR Binary delivery",
+          "use_case": "Work Delivery",
           "root": {
             "condition": "root",
             "then": [
@@ -4186,7 +4186,7 @@
             ],
             "children": [
               {
-                "condition": "Software modification",
+                "condition": "Modification",
                 "then": [
                   {
                     "text": "Provide Modification notice",
@@ -14722,7 +14722,10 @@
       "raw_hash": "6bdbe44d0ddf048e2be0514a8efdb4d4a40607b9141acfbe3928f77ff6f10706",
       "checklist": {
         "USE CASE": {
-          "Source code delivery OR Binary delivery": {
+          "Work Delivery": {
+            "YOU MUST NOT": {
+              "Use": {}
+            },
             "IF": {
               "Original work": {
                 "YOU MUST NOT": {
@@ -14740,9 +14743,15 @@
       },
       "trees": [
         {
-          "use_case": "Source code delivery OR Binary delivery",
+          "use_case": "Work Delivery",
           "root": {
             "condition": "root",
+            "then": [
+              {
+                "text": "Use",
+                "type": "must-not"
+              }
+            ],
             "children": [
               {
                 "condition": "Original work",
@@ -23140,17 +23149,17 @@
       "raw_hash": "e97c3d65dbaa6cf882e618865981ce499f593e8234f48775ed54855752aaeb4d",
       "checklist": {
         "USE CASE": {
-          "Source code delivery OR Binary delivery": {
+          "Work Delivery": {
             "YOU MUST NOT": {
               "Modify License text": {},
-              "Modify Copyright notices": {}
+              "Use": {}
             }
           }
         }
       },
       "trees": [
         {
-          "use_case": "Source code delivery OR Binary delivery",
+          "use_case": "Work Delivery",
           "root": {
             "condition": "root",
             "then": [
@@ -23159,7 +23168,7 @@
                 "type": "must-not"
               },
               {
-                "text": "Modify Copyright notices",
+                "text": "Use",
                 "type": "must-not"
               }
             ]
@@ -31022,29 +31031,22 @@
       "raw_hash": "bd430a2476ed88820caa9a1fc7268e6dce438ccdebc0e5b38175076e53dc749c",
       "checklist": {
         "USE CASE": {
-          "Work Delivery": {
+          "Source code delivery OR Binary delivery": {
             "YOU MUST": {
-              "Search License acceptance": {
-                "ATTRIBUTE": {
-                  "Reasonable": {}
-                }
-              }
+              "Search License acceptance": {}
             }
           }
         }
       },
       "trees": [
         {
-          "use_case": "Work Delivery",
+          "use_case": "Source code delivery OR Binary delivery",
           "root": {
             "condition": "root",
             "then": [
               {
                 "text": "Search License acceptance",
-                "type": "must",
-                "attributes": [
-                  "Reasonable"
-                ]
+                "type": "must"
               }
             ]
           }
@@ -31114,12 +31116,7 @@
       "raw_hash": "74fac461d11df1eb23346bea3192736fac614581eae97e6343e34a1e70ee56ba",
       "checklist": {
         "USE CASE": {
-          "Source code delivery": {
-            "YOU MUST NOT": {
-              "Use": {}
-            }
-          },
-          "Binary delivery": {
+          "Work Delivery": {
             "YOU MUST NOT": {
               "Use": {}
             }
@@ -31128,19 +31125,7 @@
       },
       "trees": [
         {
-          "use_case": "Source code delivery",
-          "root": {
-            "condition": "root",
-            "then": [
-              {
-                "text": "Use",
-                "type": "must-not"
-              }
-            ]
-          }
-        },
-        {
-          "use_case": "Binary delivery",
+          "use_case": "Work Delivery",
           "root": {
             "condition": "root",
             "then": [
@@ -75548,11 +75533,11 @@
           "Work Delivery": {
             "YOU MUST": {
               "Forward Copyright notices": {},
-              "Provide License text": {}
+              "Forward License text": {}
             },
             "YOU MUST NOT": {
               "Modify Copyright notices": {},
-              "Misrepresent Authorship": {}
+              "Modify License text": {}
             }
           }
         }
@@ -75568,7 +75553,7 @@
                 "type": "must"
               },
               {
-                "text": "Provide License text",
+                "text": "Forward License text",
                 "type": "must"
               },
               {
@@ -75576,7 +75561,7 @@
                 "type": "must-not"
               },
               {
-                "text": "Misrepresent Authorship",
+                "text": "Modify License text",
                 "type": "must-not"
               }
             ]
@@ -79402,12 +79387,8 @@
         "USE CASE": {
           "Source code delivery OR Binary delivery": {},
           "Work Delivery": {
-            "IF": {
-              "Documentation": {
-                "YOU MUST": {
-                  "Reference License text": {}
-                }
-              }
+            "YOU MUST": {
+              "Provide Attribution notice": {}
             }
           }
         }
@@ -79423,15 +79404,10 @@
           "use_case": "Work Delivery",
           "root": {
             "condition": "root",
-            "children": [
+            "then": [
               {
-                "condition": "Documentation",
-                "then": [
-                  {
-                    "text": "Reference License text",
-                    "type": "must"
-                  }
-                ]
+                "text": "Provide Attribution notice",
+                "type": "must"
               }
             ]
           }
@@ -92576,7 +92552,7 @@
       "raw_hash": "ca3477d4afc0c3f57acdca8f4b7469d91653ae96a3b0f9755756e49a2a096b82",
       "checklist": {
         "USE CASE": {
-          "Source code delivery OR Binary delivery": {
+          "Source code delivery OR Binary delivery OR Network service": {
             "YOU MUST NOT": {
               "Promote": {},
               "Misrepresent Authorship": {}
@@ -92586,7 +92562,7 @@
       },
       "trees": [
         {
-          "use_case": "Source code delivery OR Binary delivery",
+          "use_case": "Source code delivery OR Binary delivery OR Network service",
           "root": {
             "condition": "root",
             "then": [
@@ -93321,11 +93297,7 @@
         "USE CASE": {
           "Source code delivery OR Binary delivery": {
             "YOU MUST": {
-              "Provide License notices": {
-                "ATTRIBUTE": {
-                  "Included In Binary delivery AND Documentation": {}
-                }
-              }
+              "Provide License notices": {}
             }
           }
         }
@@ -93338,10 +93310,7 @@
             "then": [
               {
                 "text": "Provide License notices",
-                "type": "must",
-                "attributes": [
-                  "Included In Binary delivery AND Documentation"
-                ]
+                "type": "must"
               }
             ]
           }
@@ -103953,7 +103922,7 @@
       "raw_hash": "49f952bbf71ab30278881629bfc8efb14e317306a186d23b0c682f92bd4435f9",
       "checklist": {
         "USE CASE": {
-          "Source code delivery OR Binary delivery": {
+          "Binary delivery": {
             "YOU MUST": {
               "Provide Legal notices": {}
             }
@@ -103962,7 +103931,7 @@
       },
       "trees": [
         {
-          "use_case": "Source code delivery OR Binary delivery",
+          "use_case": "Binary delivery",
           "root": {
             "condition": "root",
             "then": [
@@ -104298,9 +104267,9 @@
       "raw_hash": "d515f322d5894ab9e15811464257178cae275dbca596eca318638c1e54e03712",
       "checklist": {
         "USE CASE": {
-          "Binary delivery": {
+          "Network service": {
             "YOU MUST NOT": {
-              "Modify Copyright notices": {},
+              "Use": {},
               "Modify Legal notices": {},
               "Sublicense": {}
             }
@@ -104309,12 +104278,12 @@
       },
       "trees": [
         {
-          "use_case": "Binary delivery",
+          "use_case": "Network service",
           "root": {
             "condition": "root",
             "then": [
               {
-                "text": "Modify Copyright notices",
+                "text": "Use",
                 "type": "must-not"
               },
               {
@@ -123207,25 +123176,21 @@
       "raw_hash": "0cdbcc3b85c0c1e56ce5c8f82ae31dda5a3c3ed36a27b15aea935acf85fbccfc",
       "checklist": {
         "USE CASE": {
-          "Source code delivery OR Binary delivery": {
-            "IF": {
-              "Original work": {
-                "YOU MUST NOT": {
-                  "Modify Copyright notices": {},
-                  "Modify License text": {}
-                }
-              }
-            },
+          "Work Delivery": {
             "YOU MUST": {
               "Forward Copyright notices": {},
               "Forward License text": {}
+            },
+            "YOU MUST NOT": {
+              "Modify Copyright notices": {},
+              "Modify License text": {}
             }
           }
         }
       },
       "trees": [
         {
-          "use_case": "Source code delivery OR Binary delivery",
+          "use_case": "Work Delivery",
           "root": {
             "condition": "root",
             "then": [
@@ -123236,21 +123201,14 @@
               {
                 "text": "Forward License text",
                 "type": "must"
-              }
-            ],
-            "children": [
+              },
               {
-                "condition": "Original work",
-                "then": [
-                  {
-                    "text": "Modify Copyright notices",
-                    "type": "must-not"
-                  },
-                  {
-                    "text": "Modify License text",
-                    "type": "must-not"
-                  }
-                ]
+                "text": "Modify Copyright notices",
+                "type": "must-not"
+              },
+              {
+                "text": "Modify License text",
+                "type": "must-not"
               }
             ]
           }
@@ -123766,7 +123724,7 @@
         "USE CASE": {
           "Source code delivery OR Binary delivery": {
             "YOU MUST": {
-              "Provide License text": {}
+              "Forward Copyright notices": {}
             }
           }
         }
@@ -123778,7 +123736,7 @@
             "condition": "root",
             "then": [
               {
-                "text": "Provide License text",
+                "text": "Forward Copyright notices",
                 "type": "must"
               }
             ]
@@ -152625,7 +152583,7 @@
         "USE CASE": {
           "Binary delivery": {
             "YOU MUST": {
-              "Forward License text": {}
+              "Search License acceptance": {}
             }
           }
         }
@@ -152637,7 +152595,7 @@
             "condition": "root",
             "then": [
               {
-                "text": "Forward License text",
+                "text": "Search License acceptance",
                 "type": "must"
               }
             ]
@@ -186556,29 +186514,21 @@
       "raw_hash": "cf6a8e1853de2e5b63d16fc0419c2c06775583557683e55d2f1b79e5b13aff76",
       "checklist": {
         "USE CASE": {
-          "Source code delivery": {
+          "Work Delivery": {
             "YOU MUST": {
               "Forward Copyright notices": {},
               "Forward License notice": {}
             },
             "YOU MUST NOT": {
-              "Modify Copyright notices": {}
-            }
-          },
-          "Binary delivery": {
-            "YOU MUST": {
-              "Forward Copyright notices": {},
-              "Forward License notice": {}
-            },
-            "YOU MUST NOT": {
-              "Modify Copyright notices": {}
+              "Modify Copyright notices": {},
+              "Modify License notice": {}
             }
           }
         }
       },
       "trees": [
         {
-          "use_case": "Source code delivery",
+          "use_case": "Work Delivery",
           "root": {
             "condition": "root",
             "then": [
@@ -186593,25 +186543,9 @@
               {
                 "text": "Modify Copyright notices",
                 "type": "must-not"
-              }
-            ]
-          }
-        },
-        {
-          "use_case": "Binary delivery",
-          "root": {
-            "condition": "root",
-            "then": [
-              {
-                "text": "Forward Copyright notices",
-                "type": "must"
               },
               {
-                "text": "Forward License notice",
-                "type": "must"
-              },
-              {
-                "text": "Modify Copyright notices",
+                "text": "Modify License notice",
                 "type": "must-not"
               }
             ]
@@ -204568,7 +204502,7 @@
       "raw_hash": "f65bc786cdf58a96388535a3793f10169fb5bf2eb5725a222ee9d1784cea9a33",
       "checklist": {
         "USE CASE": {
-          "Source code delivery OR Binary delivery": {
+          "Binary delivery": {
             "IF": {
               "Software modification": {
                 "YOU MUST NOT": {
@@ -204576,11 +204510,20 @@
                 }
               }
             },
+            "YOU MUST NOT": {
+              "Sublicense": {},
+              "Use": {
+                "ATTRIBUTE": {
+                  "No profit": {}
+                }
+              }
+            }
+          },
+          "Network service": {
             "YOU MUST": {
               "Indemnify Original authors": {}
             },
             "YOU MUST NOT": {
-              "Sublicense": {},
               "Use": {
                 "ATTRIBUTE": {
                   "No profit": {}
@@ -204592,14 +204535,10 @@
       },
       "trees": [
         {
-          "use_case": "Source code delivery OR Binary delivery",
+          "use_case": "Binary delivery",
           "root": {
             "condition": "root",
             "then": [
-              {
-                "text": "Indemnify Original authors",
-                "type": "must"
-              },
               {
                 "text": "Sublicense",
                 "type": "must-not"
@@ -204620,6 +204559,25 @@
                     "text": "Use",
                     "type": "must-not"
                   }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "use_case": "Network service",
+          "root": {
+            "condition": "root",
+            "then": [
+              {
+                "text": "Indemnify Original authors",
+                "type": "must"
+              },
+              {
+                "text": "Use",
+                "type": "must-not",
+                "attributes": [
+                  "No profit"
                 ]
               }
             ]
@@ -224608,15 +224566,15 @@
       "checklist": {
         "USE CASE": {
           "Source code delivery OR Binary delivery": {
+            "YOU MUST": {
+              "Provide Attribution notice": {}
+            },
             "IF": {
-              "Software modification": {
+              "Modification": {
                 "YOU MUST": {
-                  "Provide Modification notice": {}
+                  "Provide Attribution notice": {}
                 }
               }
-            },
-            "YOU MUST": {
-              "Forward Copyright notices": {}
             }
           }
         }
@@ -224628,16 +224586,16 @@
             "condition": "root",
             "then": [
               {
-                "text": "Forward Copyright notices",
+                "text": "Provide Attribution notice",
                 "type": "must"
               }
             ],
             "children": [
               {
-                "condition": "Software modification",
+                "condition": "Modification",
                 "then": [
                   {
-                    "text": "Provide Modification notice",
+                    "text": "Provide Attribution notice",
                     "type": "must"
                   }
                 ]
@@ -232822,11 +232780,15 @@
         "USE CASE": {
           "Source code delivery OR Binary delivery": {},
           "Work Delivery": {
-            "YOU MUST": {
-              "Forward Copyright notices": {}
-            },
-            "YOU MUST NOT": {
-              "Modify Copyright notices": {}
+            "IF": {
+              "Documentation": {
+                "YOU MUST": {
+                  "Forward Copyright notices": {}
+                },
+                "YOU MUST NOT": {
+                  "Modify Copyright notices": {}
+                }
+              }
             }
           }
         }
@@ -232842,14 +232804,19 @@
           "use_case": "Work Delivery",
           "root": {
             "condition": "root",
-            "then": [
+            "children": [
               {
-                "text": "Forward Copyright notices",
-                "type": "must"
-              },
-              {
-                "text": "Modify Copyright notices",
-                "type": "must-not"
+                "condition": "Documentation",
+                "then": [
+                  {
+                    "text": "Forward Copyright notices",
+                    "type": "must"
+                  },
+                  {
+                    "text": "Modify Copyright notices",
+                    "type": "must-not"
+                  }
+                ]
               }
             ]
           }
@@ -234197,19 +234164,19 @@
       "raw_hash": "670ba79ce3ff65c1186aa96227f5729ad1930ee30ea9f0914ff93b0016cbe0bd",
       "checklist": {
         "USE CASE": {
-          "Source code delivery OR Binary delivery OR Network service": {
+          "Work Delivery": {
             "YOU MUST NOT": {
               "Use": {}
             },
             "EXCEPT IF": {
-              "Provided By Copyright holder": {}
+              "Notice From Copyright holder": {}
             }
           }
         }
       },
       "trees": [
         {
-          "use_case": "Source code delivery OR Binary delivery OR Network service",
+          "use_case": "Work Delivery",
           "root": {
             "condition": "root",
             "then": [
@@ -234220,7 +234187,7 @@
             ],
             "except": [
               {
-                "condition": "Provided By Copyright holder"
+                "condition": "Notice From Copyright holder"
               }
             ]
           }
@@ -266631,25 +266598,21 @@
       "raw_hash": "3f23999ea9ac641a314ec8e52475fd362a998aa02fbf0db439b10ee4f3dead42",
       "checklist": {
         "USE CASE": {
-          "Source code delivery OR Binary delivery": {
-            "IF": {
-              "Modification": {
-                "YOU MUST NOT": {
-                  "Modify Copyright notices": {},
-                  "Modify License text": {}
-                }
-              }
-            },
+          "Work Delivery": {
             "YOU MUST": {
               "Forward Copyright notices": {},
               "Forward License text": {}
+            },
+            "YOU MUST NOT": {
+              "Modify Copyright notices": {},
+              "Modify License text": {}
             }
           }
         }
       },
       "trees": [
         {
-          "use_case": "Source code delivery OR Binary delivery",
+          "use_case": "Work Delivery",
           "root": {
             "condition": "root",
             "then": [
@@ -266660,21 +266623,14 @@
               {
                 "text": "Forward License text",
                 "type": "must"
-              }
-            ],
-            "children": [
+              },
               {
-                "condition": "Modification",
-                "then": [
-                  {
-                    "text": "Modify Copyright notices",
-                    "type": "must-not"
-                  },
-                  {
-                    "text": "Modify License text",
-                    "type": "must-not"
-                  }
-                ]
+                "text": "Modify Copyright notices",
+                "type": "must-not"
+              },
+              {
+                "text": "Modify License text",
+                "type": "must-not"
               }
             ]
           }
@@ -270910,9 +270866,12 @@
       "checklist": {
         "USE CASE": {
           "Binary delivery": {
-            "YOU MUST": {
-              "Forward Copyright notice": {},
-              "Forward License text": {}
+            "IF": {
+              "Original work": {
+                "YOU MUST": {
+                  "Forward Copyright notice": {}
+                }
+              }
             }
           }
         }
@@ -270922,14 +270881,15 @@
           "use_case": "Binary delivery",
           "root": {
             "condition": "root",
-            "then": [
+            "children": [
               {
-                "text": "Forward Copyright notice",
-                "type": "must"
-              },
-              {
-                "text": "Forward License text",
-                "type": "must"
+                "condition": "Original work",
+                "then": [
+                  {
+                    "text": "Forward Copyright notice",
+                    "type": "must"
+                  }
+                ]
               }
             ]
           }
@@ -284569,7 +284529,7 @@
       "raw_hash": "b17ea7dbe5d81d00fbee691542fabef2a96a7c392482b0d1c06c0efaf3e8363d",
       "checklist": {
         "USE CASE": {
-          "Source code delivery OR Binary delivery OR Network service": {
+          "Network service": {
             "YOU MUST": {
               "Provide License notice": {},
               "Indemnify Other contributors": {}
@@ -284582,7 +284542,7 @@
       },
       "trees": [
         {
-          "use_case": "Source code delivery OR Binary delivery OR Network service",
+          "use_case": "Network service",
           "root": {
             "condition": "root",
             "then": [

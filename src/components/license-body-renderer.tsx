@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import type { OsadlSourceHighlight } from "@/lib/types";
 
 function stripMdEscapes(text: string): string {
   return text.replace(/\\([.!)(*_#[\]`~>|])/g, "$1");
@@ -36,14 +37,57 @@ function renderInline(text: string, baseKey: number): React.ReactNode[] {
   return parts;
 }
 
-export function LicenseBody({ text }: { text: string }) {
-  const cleaned = stripMdEscapes(text);
+function lineIntersectsHighlight(
+  lineStart: number,
+  lineEnd: number,
+  highlight: OsadlSourceHighlight | null,
+): boolean {
+  return !!highlight && lineStart < highlight.endChar && lineEnd > highlight.startChar;
+}
 
-  const lines = cleaned.split("\n");
+export function LicenseBody({
+  text,
+  highlight = null,
+}: {
+  text: string;
+  highlight?: OsadlSourceHighlight | null;
+}) {
+  const [flashingActivationId, setFlashingActivationId] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (!highlight) {
+      setFlashingActivationId(null);
+      return;
+    }
+    setFlashingActivationId(highlight.activationId);
+    const timer = window.setTimeout(() => setFlashingActivationId(null), 1200);
+    return () => window.clearTimeout(timer);
+  }, [highlight]);
+
+  const rawLines = text.split("\n");
   const elements: React.ReactNode[] = [];
+  let lineStart = 0;
+  let targetAttached = false;
 
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
+  for (let i = 0; i < rawLines.length; i++) {
+    const rawLine = rawLines[i];
+    const lineEnd = lineStart + rawLine.length;
+    const line = stripMdEscapes(rawLine);
+    const isHighlighted = lineIntersectsHighlight(lineStart, lineEnd, highlight);
+    const isFlashing = isHighlighted && flashingActivationId === highlight?.activationId;
+    const attachTarget = isHighlighted && !targetAttached;
+    if (attachTarget) targetAttached = true;
+
+    const sourceAttributes = attachTarget && highlight
+      ? {
+          "data-osadl-source-start": String(highlight.startChar),
+          "data-osadl-source-clause": highlight.clauseId,
+        }
+      : {};
+    const highlightClass = isHighlighted
+      ? `osadl-source-highlight${isFlashing ? " osadl-source-highlight-flash" : ""}`
+      : "";
+
     const headingMatch = line.match(/^(#{1,3})\s+(.*)/);
     if (headingMatch) {
       const level = headingMatch[1].length;
@@ -54,20 +98,29 @@ export function LicenseBody({ text }: { text: string }) {
           Tag,
           {
             key: `h${i}`,
-            className:
-              "font-bold text-zinc-950 dark:text-zinc-50 mt-4 first:mt-0",
+            className: `font-bold text-zinc-950 dark:text-zinc-50 mt-4 first:mt-0${highlightClass ? ` ${highlightClass}` : ""}`,
+            ...sourceAttributes,
           },
           renderInline(rest, i)
         )
       );
     } else {
       elements.push(
-        React.createElement("span", { key: `l${i}` }, renderInline(line, i))
+        React.createElement(
+          "span",
+          {
+            key: `l${i}`,
+            className: highlightClass || undefined,
+            ...sourceAttributes,
+          },
+          renderInline(line, i)
+        )
       );
     }
-    if (i < lines.length - 1) {
+    if (i < rawLines.length - 1) {
       elements.push("\n");
     }
+    lineStart = lineEnd + 1;
   }
 
   return (

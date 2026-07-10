@@ -48,7 +48,7 @@ const LANG_NAMES: Record<string, string> = {
 
 interface CcLangNavProps {
   bodies: { lang: string; body: string }[];
-  onSelect: (body: string) => void;
+  onSelect: (body: string, lang: string) => void;
 }
 
 export function CcLangNav({ bodies, onSelect }: CcLangNavProps) {
@@ -67,7 +67,7 @@ export function CcLangNav({ bodies, onSelect }: CcLangNavProps) {
           onClick={() => {
             setActive(lang);
             const entry = bodies.find((b) => b.lang === lang);
-            if (entry) onSelect(entry.body);
+            if (entry) onSelect(entry.body, entry.lang);
           }}
           className={`rounded-md px-2.5 py-1 text-xs font-medium transition-all duration-200 ${
             active === lang

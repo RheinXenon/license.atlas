@@ -4,11 +4,14 @@ import { useState, useCallback, useEffect } from "react";
 import { CcLangNav } from "@/components/cc-family-nav";
 import { LicenseBody } from "./license-body-renderer";
 import { useLang } from "@/lib/i18n";
+import type { OsadlSourceHighlight } from "@/lib/types";
 
 interface LicenseBodySectionProps {
   slug: string;
   body: string;
   hasBodies?: boolean;
+  highlight?: OsadlSourceHighlight | null;
+  onLanguageChange?: (lang: string) => void;
 }
 
 function CopyButton({ text }: { text: string }) {
@@ -45,7 +48,13 @@ function CopyButton({ text }: { text: string }) {
 
 const bodyCache = new Map<string, { lang: string; body: string }[]>();
 
-export function LicenseBodySection({ slug, body, hasBodies }: LicenseBodySectionProps) {
+export function LicenseBodySection({
+  slug,
+  body,
+  hasBodies,
+  highlight,
+  onLanguageChange,
+}: LicenseBodySectionProps) {
   const { t } = useLang();
   const [activeBody, setActiveBody] = useState(body);
   const [bodies, setBodies] = useState<{ lang: string; body: string }[] | null>(null);
@@ -57,7 +66,6 @@ export function LicenseBodySection({ slug, body, hasBodies }: LicenseBodySection
     fetch(`${window.location.origin}/license.atlas/data/cc-bodies/${slug}.json`)
       .then((r) => r.json())
       .then((data) => {
-        // Prepend English (the page's default body) so language switcher includes it
         const allBodies = [{ lang: "en", body }, ...data];
         bodyCache.set(slug, allBodies);
         setBodies(allBodies);
@@ -74,10 +82,16 @@ export function LicenseBodySection({ slug, body, hasBodies }: LicenseBodySection
         <CopyButton text={activeBody} />
       </div>
       {bodies && bodies.length > 1 && (
-        <CcLangNav bodies={bodies} onSelect={setActiveBody} />
+        <CcLangNav
+          bodies={bodies}
+          onSelect={(selectedBody, selectedLanguage) => {
+            setActiveBody(selectedBody);
+            onLanguageChange?.(selectedLanguage);
+          }}
+        />
       )}
       <div className="overflow-x-auto rounded-2xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900">
-        <LicenseBody text={activeBody} />
+        <LicenseBody text={activeBody} highlight={highlight} />
       </div>
     </div>
   );

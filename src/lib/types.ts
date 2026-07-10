@@ -382,3 +382,44 @@ export interface GeneratedOsadlIndex {
   by_spdx: Record<string, string>;
   by_slug: Record<string, OsadlChecklistEntry>;
 }
+
+// ── OSADL clause-linking types ───────────────────────────────────────────────
+
+/** One clause span that a node_key maps to. */
+export interface OsadlNodeLink {
+  clauseId: string;
+  startChar: number;
+  endChar: number;
+  /** direct = explicitly cited; context = surrounding paragraph; inferred = approximate */
+  support: "direct" | "context" | "inferred";
+}
+
+/** All clause-link data for one license. */
+export interface OsadlLinkFile {
+  slug: string;
+  source_kind: "generated" | "official";
+  /** node_key → list of clause spans */
+  node_links: Record<string, OsadlNodeLink[]>;
+  /** All clause spans in order, used to build reverse index */
+  clause_spans: { id: string; startChar: number; endChar: number }[];
+}
+
+/** Build-time index used to select one license's clause-link data by slug. */
+export interface OsadlLinksIndex {
+  _meta: {
+    generated_at: string;
+    record_count: number;
+    generated_count: number;
+    official_count: number;
+  };
+  by_slug: Record<string, OsadlLinkFile>;
+}
+
+/** A highlight region in the raw license text. */
+export interface OsadlSourceHighlight {
+  startChar: number;
+  endChar: number;
+  clauseId: string;
+  /** Changes on every click so the same target can replay its locating flash. */
+  activationId: number;
+}

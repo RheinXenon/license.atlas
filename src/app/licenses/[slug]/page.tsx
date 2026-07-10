@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { LicenseDetailClient } from "./license-detail-client";
+import osadlLinksIndexJson from "@/data/generated-osadl-links-v1.json";
 import licenses from "@/data/licenses.json";
-import type { License } from "@/lib/types";
+import { resolveOsadlChecklist, resolveOsadlChecklistMeta } from "@/lib/osadl";
+import type { License, OsadlLinksIndex } from "@/lib/types";
 
 const allLicenses = licenses as License[];
+const osadlLinksIndex = osadlLinksIndexJson as OsadlLinksIndex;
 const slugMap = new Map(
   allLicenses.map((l, i) => [l.slug, { license: l, index: i }])
 );
@@ -96,6 +99,9 @@ export default async function LicenseDetailPage({
   const { license, index } = entry;
   const prev = index > 0 ? allLicenses[index - 1] : null;
   const next = index < allLicenses.length - 1 ? allLicenses[index + 1] : null;
+  const osadlEntry = resolveOsadlChecklist(license);
+  const osadlEntryMeta = resolveOsadlChecklistMeta(osadlEntry);
+  const linkData = osadlLinksIndex.by_slug[license.slug] ?? null;
   const canonicalUrl = `${BASE_URL}/licenses/${license.slug}`;
   const licenseJsonLd = {
     "@context": "https://schema.org",
@@ -134,6 +140,9 @@ export default async function LicenseDetailPage({
         license={license}
         prev={prev ? { slug: prev.slug, title: prev.title } : null}
         next={next ? { slug: next.slug, title: next.title } : null}
+        osadlEntry={osadlEntry}
+        osadlEntryMeta={osadlEntryMeta}
+        linkData={linkData}
       />
     </>
   );

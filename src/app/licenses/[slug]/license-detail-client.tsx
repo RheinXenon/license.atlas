@@ -1,16 +1,23 @@
 "use client";
 
 import Link from "next/link";
+import { useCallback, useRef, useState } from "react";
 import { Badge } from "@/components/badge";
 import { LicenseBodySection } from "@/components/license-body-section";
 import { ProjectShowcaseBlock } from "@/components/project-showcase-block";
 import { LicenseReviewBlock } from "@/components/license-review-block";
 import { OsadlChecklistBlock } from "@/components/osadl-checklist-block";
 import { useLang } from "@/lib/i18n";
-import { resolveOsadlChecklist, resolveOsadlChecklistMeta } from "@/lib/osadl";
+import { resolveFirstOsadlSource } from "@/lib/osadl-links";
 import { resolveProjectShowcase } from "@/lib/project-showcase";
 import { hasReviewContent, resolveTrackerEntry } from "@/lib/tracker-match";
-import type { License } from "@/lib/types";
+import type {
+  License,
+  OsadlChecklistEntry,
+  OsadlIndexMeta,
+  OsadlLinkFile,
+  OsadlSourceHighlight,
+} from "@/lib/types";
 
 const LANG_NAMES_EN: Record<string, string> = {
   en: "English", zh: "Chinese", "zh-hans": "Chinese (Simplified)", "zh-hant": "Chinese (Traditional)",
@@ -21,7 +28,6 @@ const LANG_NAMES_EN: Record<string, string> = {
   ro: "Romanian", hu: "Hungarian", uk: "Ukrainian", et: "Estonian", lv: "Latvian",
   lt: "Lithuanian", id: "Indonesian", eu: "Basque", fy: "Frisian", mi: "Maori",
 };
-
 const LANG_NAMES_ZH: Record<string, string> = {
   en: "英语", zh: "中文", "zh-hans": "简体中文", "zh-hant": "繁体中文",
   ja: "日语", ko: "韩语", ar: "阿拉伯语", de: "德语", es: "西班牙语", fr: "法语",
@@ -44,26 +50,59 @@ interface Props {
   license: License;
   prev: { slug: string; title: string } | null;
   next: { slug: string; title: string } | null;
+  osadlEntry: OsadlChecklistEntry | null;
+  osadlEntryMeta: OsadlIndexMeta;
+  linkData: OsadlLinkFile | null;
 }
 
-export function LicenseDetailClient({ license, prev, next }: Props) {
+export function LicenseDetailClient({
+  license,
+  prev,
+  next,
+  osadlEntry,
+  osadlEntryMeta,
+  linkData,
+}: Props) {
   const { t, lang } = useLang();
   const trackerEntry = resolveTrackerEntry(license);
   const reviewTracked = !!trackerEntry && hasReviewContent(trackerEntry);
-  const osadlEntry = resolveOsadlChecklist(license);
-  const osadlEntryMeta = resolveOsadlChecklistMeta(osadlEntry);
   const showcaseEntry = resolveProjectShowcase(license);
   const hasShowcase = !!showcaseEntry;
+  const [activeBodyLanguage, setActiveBodyLanguage] = useState("en");
+  const [sourceHighlight, setSourceHighlight] = useState<OsadlSourceHighlight | null>(null);
+  const activationIdRef = useRef(0);
+  const bodyRef = useRef<HTMLDivElement>(null);
+
+  const handleNodeClick = useCallback((key: string) => {
+    if (!linkData || activeBodyLanguage !== "en") return;
+    const first = resolveFirstOsadlSource(linkData, key);
+    if (!first) return;
+    activationIdRef.current += 1;
+    setSourceHighlight({
+      clauseId: first.clauseId,
+      startChar: first.startChar,
+      endChar: first.endChar,
+      activationId: activationIdRef.current,
+    });
+    requestAnimationFrame(() => {
+      const el = bodyRef.current?.querySelector<HTMLElement>(
+        `[data-osadl-source-start="${first.startChar}"]`,
+      );
+      el?.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  }, [activeBodyLanguage, linkData]);
+
+  const handleBodyLanguageChange = useCallback((language: string) => {
+    setActiveBodyLanguage(language);
+    if (language !== "en") setSourceHighlight(null);
+  }, []);
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
       <div className={hasShowcase ? "gap-10 lg:grid lg:grid-cols-[minmax(0,1fr)_18rem]" : "mx-auto max-w-4xl"}>
         <div className="min-w-0">
       {/* Nav */}
-      <Link
-        href="/"
-        className="detail-enter mb-6 inline-flex items-center gap-1 text-sm text-zinc-500 hover:text-[#7c3aed] dark:hover:text-[#a78bfa]"
-      >
+      <Link href="/" className="detail-enter mb-6 inline-flex items-center gap-1 text-sm text-zinc-500 hover:text-[#7c3aed] dark:hover:text-[#a78bfa]">
         &larr; {t("detail.allLicenses")}
       </Link>
 
@@ -73,15 +112,9 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
           {license.title}
         </h1>
         <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-zinc-500">
-          {license.spdx_id && (
-            <span className="font-mono">SPDX ID: {license.spdx_id}</span>
-          )}
-          {license.created_at && (
-            <span>{t("detail.added", { date: license.created_at })}</span>
-          )}
+          {license.spdx_id && <span className="font-mono">SPDX ID: {license.spdx_id}</span>}
+          {license.created_at && <span>{t("detail.added", { date: license.created_at })}</span>}
         </div>
-
-        {/* Badges — Terms entries (type=terms) only show type badge */}
         <div className="mt-4 flex flex-wrap gap-2">
           {license.type === "terms" ? (
             <>
@@ -109,11 +142,7 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
                 const tagKey = `tag.${tag.toLowerCase().replace(/ /g, "-").replace(/[^a-z0-9-]/g, "")}`;
                 const translated = t(tagKey) !== tagKey ? t(tagKey) : tag;
                 return (
-                  <Badge
-                    key={tag}
-                    variant={tag === "tl;drLegal Verified" ? "verified" : "tag"}
-                    themeKey={tag}
-                  >
+                  <Badge key={tag} variant={tag === "tl;drLegal Verified" ? "verified" : "tag"} themeKey={tag}>
                     {translated}
                   </Badge>
                 );
@@ -130,46 +159,29 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
       </div>
 
       {/* Permissions / Conditions / Limitations */}
-      {(license.permissions.length > 0 ||
-        license.conditions.length > 0 ||
-        license.limitations.length > 0) && (
+      {(license.permissions.length > 0 || license.conditions.length > 0 || license.limitations.length > 0) && (
         <div className="detail-enter-2 relative z-40 mb-8 flex flex-wrap gap-6">
           {license.permissions.length > 0 && (
             <div>
-              <p className="mb-2 text-xs font-medium uppercase tracking-wider text-zinc-400">
-                {t("detail.permissions")}
-              </p>
+              <p className="mb-2 text-xs font-medium uppercase tracking-wider text-zinc-400">{t("detail.permissions")}</p>
               <div className="flex flex-wrap gap-1.5">
-                {license.permissions.map((p) => {
-                  const pKey = `perm.${p}`;
-                  return <Badge key={p} variant="permission">{t(pKey) !== pKey ? t(pKey) : p}</Badge>;
-                })}
+                {license.permissions.map((p) => { const k = `perm.${p}`; return <Badge key={p} variant="permission">{t(k) !== k ? t(k) : p}</Badge>; })}
               </div>
             </div>
           )}
           {license.conditions.length > 0 && (
             <div>
-              <p className="mb-2 text-xs font-medium uppercase tracking-wider text-zinc-400">
-                {t("detail.conditions")}
-              </p>
+              <p className="mb-2 text-xs font-medium uppercase tracking-wider text-zinc-400">{t("detail.conditions")}</p>
               <div className="flex flex-wrap gap-1.5">
-                {license.conditions.map((c) => {
-                  const cKey = `cond.${c}`;
-                  return <Badge key={c} variant="condition">{t(cKey) !== cKey ? t(cKey) : c}</Badge>;
-                })}
+                {license.conditions.map((c) => { const k = `cond.${c}`; return <Badge key={c} variant="condition">{t(k) !== k ? t(k) : c}</Badge>; })}
               </div>
             </div>
           )}
           {license.limitations.length > 0 && (
             <div>
-              <p className="mb-2 text-xs font-medium uppercase tracking-wider text-zinc-400">
-                {t("detail.limitations")}
-              </p>
+              <p className="mb-2 text-xs font-medium uppercase tracking-wider text-zinc-400">{t("detail.limitations")}</p>
               <div className="flex flex-wrap gap-1.5">
-                {license.limitations.map((l) => {
-                  const lKey = `limit.${l}`;
-                  return <Badge key={l} variant="limitation">{t(lKey) !== lKey ? t(lKey) : l}</Badge>;
-                })}
+                {license.limitations.map((l) => { const k = `limit.${l}`; return <Badge key={l} variant="limitation">{t(k) !== k ? t(k) : l}</Badge>; })}
               </div>
             </div>
           )}
@@ -179,11 +191,11 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
       {/* Blue Oak Rating */}
       {license.blueoak_tier && (
         <div className="detail-enter-2 relative z-30 mb-8">
-          <p className="mb-2 text-xs font-medium uppercase tracking-wider text-zinc-400">
-            {t("detail.blueOakRating")}
-          </p>
+          <p className="mb-2 text-xs font-medium uppercase tracking-wider text-zinc-400">{t("detail.blueOakRating")}</p>
           <div className="flex items-center gap-3">
-            <Badge variant="blue-oak" themeKey={license.blueoak_tier}>{t(`bo.${license.blueoak_tier.toLowerCase()}`) !== `bo.${license.blueoak_tier.toLowerCase()}` ? t(`bo.${license.blueoak_tier.toLowerCase()}`) : license.blueoak_tier}</Badge>
+            <Badge variant="blue-oak" themeKey={license.blueoak_tier}>
+              {t(`bo.${license.blueoak_tier.toLowerCase()}`) !== `bo.${license.blueoak_tier.toLowerCase()}` ? t(`bo.${license.blueoak_tier.toLowerCase()}`) : license.blueoak_tier}
+            </Badge>
             <span className="text-sm text-zinc-500 dark:text-zinc-400">
               {t(`detail.blueOak.${license.blueoak_tier.toLowerCase()}`)}
             </span>
@@ -191,38 +203,42 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
         </div>
       )}
 
-      {/* OSI License Review (only for licenses reviewed by OSI) */}
+      {/* OSI License Review */}
       <LicenseReviewBlock license={license} />
 
-      {/* OSADL Open Source License Checklist */}
-      <OsadlChecklistBlock entry={osadlEntry} meta={osadlEntryMeta} />
+      {/* OSADL Checklist */}
+      <OsadlChecklistBlock
+        entry={osadlEntry}
+        meta={osadlEntryMeta}
+        linkData={linkData}
+        onNodeClick={handleNodeClick}
+        licenseBody={license.body}
+        sourceNavigationEnabled={activeBodyLanguage === "en"}
+      />
 
       {/* License Text */}
       {license.body && (
-        <div className="detail-enter-3">
-          <LicenseBodySection slug={license.slug} body={license.body} hasBodies={!!license.languages && license.languages.length > 1} />
+        <div className="detail-enter-3" ref={bodyRef}>
+          <LicenseBodySection
+            slug={license.slug}
+            body={license.body}
+            hasBodies={!!license.languages && license.languages.length > 1}
+            highlight={sourceHighlight}
+            onLanguageChange={handleBodyLanguageChange}
+          />
         </div>
       )}
 
       {/* Sources */}
       {license.sources.length > 0 && (
         <div className="detail-enter-4 mb-8">
-          <h2 className="mb-4 text-lg font-semibold text-zinc-950 dark:text-zinc-50">
-            {t("detail.sources")}
-          </h2>
+          <h2 className="mb-4 text-lg font-semibold text-zinc-950 dark:text-zinc-50">{t("detail.sources")}</h2>
           <div className="flex flex-wrap gap-2">
             {license.sources.map((s, i) => (
-              <a
-                key={`${s.name}-${i}`}
-                href={s.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={
-                  s.merged
-                    ? "rounded-xl border border-dashed border-zinc-300 bg-zinc-50 px-3 py-1.5 text-sm text-zinc-400 transition-colors hover:border-violet-300 hover:text-[#7c3aed] dark:border-zinc-600 dark:bg-zinc-800/50 dark:text-zinc-500 dark:hover:border-violet-700 dark:hover:text-[#a78bfa]"
-                    : "rounded-xl border border-zinc-200 px-3 py-1.5 text-sm text-zinc-600 transition-colors hover:border-violet-300 hover:text-[#7c3aed] dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-violet-700 dark:hover:text-[#a78bfa]"
-                }
-              >
+              <a key={`${s.name}-${i}`} href={s.url} target="_blank" rel="noopener noreferrer"
+                className={s.merged
+                  ? "rounded-xl border border-dashed border-zinc-300 bg-zinc-50 px-3 py-1.5 text-sm text-zinc-400 transition-colors hover:border-violet-300 hover:text-[#7c3aed] dark:border-zinc-600 dark:bg-zinc-800/50 dark:text-zinc-500 dark:hover:border-violet-700 dark:hover:text-[#a78bfa]"
+                  : "rounded-xl border border-zinc-200 px-3 py-1.5 text-sm text-zinc-600 transition-colors hover:border-violet-300 hover:text-[#7c3aed] dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-violet-700 dark:hover:text-[#a78bfa]"}>
                 {s.name} ↗
               </a>
             ))}
@@ -233,30 +249,18 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
       {/* Terms */}
       {license.terms && license.terms.length > 0 && (
         <div className="detail-enter-4 mb-8">
-          <h2 className="mb-4 text-lg font-semibold text-zinc-950 dark:text-zinc-50">
-            {t("detail.terms")}
-          </h2>
+          <h2 className="mb-4 text-lg font-semibold text-zinc-950 dark:text-zinc-50">{t("detail.terms")}</h2>
           <div className="flex flex-wrap gap-2">
-            {license.terms.map((term, i) => (
-              term.slug ? (
-                <Link
-                  key={`${term.name}-${i}`}
-                  href={`/licenses/${term.slug}`}
-                  className="rounded-xl border border-zinc-200 px-3 py-1.5 text-sm text-zinc-600 transition-colors hover:border-violet-300 hover:text-[#7c3aed] dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-violet-700 dark:hover:text-[#a78bfa]"
-                >
-                  {term.name}
-                </Link>
-              ) : (
-                <a
-                  key={`${term.name}-${i}`}
-                  href={term.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-xl border border-zinc-200 px-3 py-1.5 text-sm text-zinc-600 transition-colors hover:border-violet-300 hover:text-[#7c3aed] dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-violet-700 dark:hover:text-[#a78bfa]"
-                >
-                  {term.name} ↗
-                </a>
-              )
+            {license.terms.map((term, i) => term.slug ? (
+              <Link key={`${term.name}-${i}`} href={`/licenses/${term.slug}`}
+                className="rounded-xl border border-zinc-200 px-3 py-1.5 text-sm text-zinc-600 transition-colors hover:border-violet-300 hover:text-[#7c3aed] dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-violet-700 dark:hover:text-[#a78bfa]">
+                {term.name}
+              </Link>
+            ) : (
+              <a key={`${term.name}-${i}`} href={term.url} target="_blank" rel="noopener noreferrer"
+                className="rounded-xl border border-zinc-200 px-3 py-1.5 text-sm text-zinc-600 transition-colors hover:border-violet-300 hover:text-[#7c3aed] dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-violet-700 dark:hover:text-[#a78bfa]">
+                {term.name} ↗
+              </a>
             ))}
           </div>
         </div>
@@ -264,12 +268,9 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
 
       {/* Report Issue */}
       <div className="detail-enter-4 mb-8 flex justify-end">
-        <a
-          href={`https://github.com/morningD/license.atlas/issues/new?template=license-feedback.yml&labels=license-feedback&title=${encodeURIComponent(`[Feedback] ${license.title}`)}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-2 text-sm font-medium text-zinc-600 transition-colors hover:border-violet-300 hover:text-[#7c3aed] dark:border-zinc-700 dark:bg-zinc-800/50 dark:text-zinc-400 dark:hover:border-violet-700 dark:hover:text-[#a78bfa]"
-        >
+        <a href={`https://github.com/morningD/license.atlas/issues/new?template=license-feedback.yml&labels=license-feedback&title=${encodeURIComponent(`[Feedback] ${license.title}`)}`}
+          target="_blank" rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-2 text-sm font-medium text-zinc-600 transition-colors hover:border-violet-300 hover:text-[#7c3aed] dark:border-zinc-700 dark:bg-zinc-800/50 dark:text-zinc-400 dark:hover:border-violet-700 dark:hover:text-[#a78bfa]">
           <span className="text-[1.5em] leading-none">🙌</span>
           {t("detail.reportIssue")}
         </a>
@@ -278,25 +279,15 @@ export function LicenseDetailClient({ license, prev, next }: Props) {
       {/* Prev/Next */}
       <div className="detail-enter-4 flex items-center justify-between border-t border-zinc-200 pt-6 dark:border-zinc-800">
         {prev ? (
-          <Link
-            href={`/licenses/${prev.slug}`}
-            className="max-w-[45%] truncate text-sm text-zinc-500 hover:text-[#7c3aed] dark:hover:text-[#a78bfa]"
-          >
+          <Link href={`/licenses/${prev.slug}`} className="max-w-[45%] truncate text-sm text-zinc-500 hover:text-[#7c3aed] dark:hover:text-[#a78bfa]">
             &larr; {prev.title}
           </Link>
-        ) : (
-          <span />
-        )}
+        ) : <span />}
         {next ? (
-          <Link
-            href={`/licenses/${next.slug}`}
-            className="max-w-[45%] truncate text-right text-sm text-zinc-500 hover:text-[#7c3aed] dark:hover:text-[#a78bfa]"
-          >
+          <Link href={`/licenses/${next.slug}`} className="max-w-[45%] truncate text-right text-sm text-zinc-500 hover:text-[#7c3aed] dark:hover:text-[#a78bfa]">
             {next.title} &rarr;
           </Link>
-        ) : (
-          <span />
-        )}
+        ) : <span />}
       </div>
         </div>
         {hasShowcase && (

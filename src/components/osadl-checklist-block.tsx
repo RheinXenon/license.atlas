@@ -1,10 +1,32 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState, type MouseEvent } from "react";
+import { createContext, useContext, useEffect, useRef, useState, type MouseEvent } from "react";
 import licenses from "@/data/licenses-index.json";
 import { useLang, type Lang } from "@/lib/i18n";
-import type { License, OsadlActionNode, OsadlChecklistEntry, OsadlConditionBlock, OsadlEitherGroup, OsadlIndexMeta, OsadlUseCaseTree } from "@/lib/types";
+import type { License, OsadlActionNode, OsadlChecklistEntry, OsadlConditionBlock, OsadlEitherGroup, OsadlIndexMeta, OsadlLinkFile, OsadlUseCaseTree } from "@/lib/types";
+
+// ── Link/hover context ────────────────────────────────────────────────────────
+
+interface OsadlLinkCtx {
+  linkData: OsadlLinkFile | null;
+  onNodeClick: (key: string) => void;
+  sourceNavigationEnabled: boolean;
+  /** Raw license body text for clause preview in tooltips. */
+  licenseBody: string;
+}
+
+const OsadlLinkContext = createContext<OsadlLinkCtx>({
+  linkData: null,
+  onNodeClick: () => {},
+  sourceNavigationEnabled: true,
+  licenseBody: "",
+});
+
+/** Build the node_key string matching the experiment's make_node_key(). */
+function makeNodeKey(kind: string, path: string[]): string {
+  return `${kind}::${path.join(" / ")}`;
+}
 
 type CompatibilityVerdict = "Yes" | "No" | "Same" | "Unknown" | "Check dependency";
 type CompatibilityPosition = { x: number; y: number; listMaxHeight: number };
@@ -679,24 +701,46 @@ function ActionToneBadge({ type, labels }: {
   );
 }
 
-function ActionNodeView({ text, type, attributes, lang, labels }: {
+function ActionNodeView({ text, type, attributes, lang, labels, nodeKey }: {
   text: string;
   type: 'must' | 'must-not';
   attributes?: string[];
   lang: Lang;
   labels: { must: string; mustNot: string };
+  nodeKey?: string;
 }) {
+  const { linkData, onNodeClick, sourceNavigationEnabled, licenseBody } = useContext(OsadlLinkContext);
   const displayText = translateOsadlText(text, lang, "action");
 
+  const hasLinks = !!(nodeKey && linkData?.node_links[nodeKey]?.length);
+  const canNavigate = hasLinks && sourceNavigationEnabled;
+
+  // Build clause preview for tooltip
+  const clausePreview = (() => {
+    if (!hasLinks || !nodeKey || !licenseBody) return "";
+    const spans = linkData!.node_links[nodeKey];
+    if (!spans?.length) return "";
+    const first = spans.reduce((min, s) => s.startChar < min.startChar ? s : min);
+    return licenseBody.slice(first.startChar, first.endChar).replace(/\s+/g, " ").trim().slice(0, 220);
+  })();
+
   return (
-    <li className="grid grid-cols-[1rem_5rem_minmax(0,1fr)] gap-x-1.5 text-[12px] leading-5">
-      <span className={`pt-px font-mono ${
-        type === "must"
-          ? "text-emerald-700 dark:text-emerald-300"
-          : "text-rose-700 dark:text-rose-300"
-      }`}>
-        |
-      </span>
+    <li
+      className={`group/action relative grid grid-cols-[1rem_5rem_minmax(0,1fr)] gap-x-1.5 rounded text-[12px] leading-5 transition-colors ${
+        hasLinks
+          ? `${canNavigate ? "cursor-pointer " : ""}-mx-1 px-1 hover:bg-zinc-50 dark:hover:bg-zinc-800/50`
+          : ""
+      }`}
+      role={canNavigate ? "button" : undefined}
+      tabIndex={canNavigate ? 0 : undefined}
+      onClick={() => nodeKey && canNavigate && onNodeClick(nodeKey)}
+      onKeyDown={(event) => {
+        if (!nodeKey || !canNavigate || (event.key !== "Enter" && event.key !== " ")) return;
+        event.preventDefault();
+        onNodeClick(nodeKey);
+      }}
+    >
+      <span className={`pt-px font-mono ${type === "must" ? "text-emerald-700 dark:text-emerald-300" : "text-rose-700 dark:text-rose-300"}`}>|</span>
       <ActionToneBadge type={type} labels={labels} />
       <span className="min-w-0 font-sans text-[12px] leading-5 text-zinc-700 dark:text-zinc-300">
         {displayText}
@@ -710,6 +754,35 @@ function ActionNodeView({ text, type, attributes, lang, labels }: {
           </span>
         )}
       </span>
+
+      {/* Custom tooltip — only rendered when node has link data */}
+      {hasLinks && (
+        <div className="
+          pointer-events-none absolute bottom-full left-6 z-[300] mb-1.5
+          hidden w-72 max-w-[calc(100vw-2rem)]
+          rounded-xl border border-zinc-200 bg-white shadow-xl
+          group-hover/action:block
+          dark:border-zinc-700 dark:bg-zinc-900
+        ">
+          {clausePreview && (
+            <>
+              <div className={canNavigate ? "border-b border-zinc-100 px-3 py-2 dark:border-zinc-800" : "px-3 py-2"}>
+                <p className="mb-0.5 text-[10px] font-medium uppercase tracking-wide text-zinc-400 dark:text-zinc-500">原文片段</p>
+                <p className="line-clamp-2 font-mono text-[11px] leading-relaxed text-zinc-700 dark:text-zinc-300">
+                  {clausePreview}
+                </p>
+              </div>
+            </>
+          )}
+          {canNavigate && (
+            <div className="px-3 py-2">
+              <p className="text-[11px] font-semibold text-amber-600 dark:text-amber-400">
+                点击跳转到原文出处 →
+              </p>
+            </div>
+          )}
+        </div>
+      )}
     </li>
   );
 }
@@ -749,11 +822,19 @@ function ActionViewToggle({ value, onChange, labels }: {
   );
 }
 
-function EitherGroupView({ group, lang, labels }: {
+function EitherGroupView({ group, lang, labels, nodePath, groupIdx }: {
   group: OsadlEitherGroup;
   lang: Lang;
   labels: { must: string; mustNot: string; or: string; common: string; option: (n: number) => string };
+  /** Current accumulated path from the tree root to this block. */
+  nodePath?: string[];
+  groupIdx?: number;
 }) {
+  // Best-effort EITHER path: "EITHER / {groupIdx+1}"
+  const eitherBase = nodePath
+    ? [...nodePath, "EITHER", String((groupIdx ?? 0) + 1)]
+    : undefined;
+
   return (
     <div className="my-1.5 rounded-md border border-dashed border-amber-200 bg-amber-50/25 px-2.5 py-2 dark:border-amber-800/70 dark:bg-amber-950/15">
       <div className="mb-1.5 flex items-center gap-2">
@@ -766,9 +847,17 @@ function EitherGroupView({ group, lang, labels }: {
         <div className="mb-1.5">
           <div className="mb-1 text-[11px] font-medium text-zinc-500 dark:text-zinc-400">{labels.common}:</div>
           <ul className="space-y-0.5">
-            {group.common.map((action, i) => (
-              <ActionNodeView key={i} text={action.text} type={action.type} attributes={action.attributes} lang={lang} labels={labels} />
-            ))}
+            {group.common.map((action, i) => {
+              const actionPath = eitherBase
+                ? [...eitherBase, action.type === "must" ? "YOU MUST" : "YOU MUST NOT", action.text]
+                : undefined;
+              const nodeKey = actionPath
+                ? makeNodeKey(action.type === "must" ? "action_must" : "action_must_not", actionPath)
+                : undefined;
+              return (
+                <ActionNodeView key={i} text={action.text} type={action.type} attributes={action.attributes} lang={lang} labels={labels} nodeKey={nodeKey} />
+              );
+            })}
           </ul>
         </div>
       )}
@@ -777,9 +866,17 @@ function EitherGroupView({ group, lang, labels }: {
         <div key={optIdx} className="mb-1.5 last:mb-0">
           <div className="mb-1 text-[11px] font-medium text-zinc-500 dark:text-zinc-400">{labels.option(optIdx + 1)}:</div>
           <ul className="space-y-0.5">
-            {option.map((action, i) => (
-              <ActionNodeView key={i} text={action.text} type={action.type} attributes={action.attributes} lang={lang} labels={labels} />
-            ))}
+            {option.map((action, i) => {
+              const optPath = eitherBase
+                ? [...eitherBase, "OR", String(optIdx + 1), action.type === "must" ? "YOU MUST" : "YOU MUST NOT", action.text]
+                : undefined;
+              const nodeKey = optPath
+                ? makeNodeKey(action.type === "must" ? "action_must" : "action_must_not", optPath)
+                : undefined;
+              return (
+                <ActionNodeView key={i} text={action.text} type={action.type} attributes={action.attributes} lang={lang} labels={labels} nodeKey={nodeKey} />
+              );
+            })}
           </ul>
         </div>
       ))}
@@ -787,16 +884,28 @@ function EitherGroupView({ group, lang, labels }: {
   );
 }
 
-function ConditionBlockView({ block, lang, labels, depth = 0, isExcept = false }: {
+function ConditionBlockView({ block, lang, labels, depth = 0, isExcept = false, nodePath = [] }: {
   block: OsadlConditionBlock;
   lang: Lang;
   labels: { must: string; mustNot: string; or: string; unless: string; common: string; option: (n: number) => string };
   depth?: number;
   isExcept?: boolean;
+  /** Accumulated path from the use-case root to this block (for node_key generation). */
+  nodePath?: string[];
 }) {
   const conditionText = block.condition !== "root"
     ? translateOsadlText(block.condition, lang, "condition")
     : null;
+
+  // The path segment this block contributes when entering children.
+  // e.g. parent passed ["USE CASE", "Source code delivery"] and this block's
+  // condition is "Modification" under IF → currentPath becomes
+  // ["USE CASE", "Source code delivery", "IF", "Modification"]
+  const operator = isExcept ? "EXCEPT IF" : "IF";
+  const currentPath: string[] =
+    block.condition !== "root" && nodePath.length > 0
+      ? [...nodePath, operator, block.condition]
+      : nodePath;
 
   // Calculate stats for this block
   let blockMustCount = 0;
@@ -852,16 +961,24 @@ function ConditionBlockView({ block, lang, labels, depth = 0, isExcept = false }
 
       {block.then && block.then.length > 0 && (
         <ul className="mb-1.5 space-y-0.5">
-          {block.then.map((action, i) => (
-            <ActionNodeView key={i} text={action.text} type={action.type} attributes={action.attributes} lang={lang} labels={labels} />
-          ))}
+          {block.then.map((action, i) => {
+            const mustKey = action.type === "must" ? "YOU MUST" : "YOU MUST NOT";
+            const kind = action.type === "must" ? "action_must" : "action_must_not";
+            const actionPath = currentPath.length > 0
+              ? [...currentPath, mustKey, action.text]
+              : undefined;
+            const nodeKey = actionPath ? makeNodeKey(kind, actionPath) : undefined;
+            return (
+              <ActionNodeView key={i} text={action.text} type={action.type} attributes={action.attributes} lang={lang} labels={labels} nodeKey={nodeKey} />
+            );
+          })}
         </ul>
       )}
 
       {block.either && block.either.length > 0 && (
         <div className="mb-1.5">
           {block.either.map((group, i) => (
-            <EitherGroupView key={i} group={group} lang={lang} labels={labels} />
+            <EitherGroupView key={i} group={group} lang={lang} labels={labels} nodePath={currentPath} groupIdx={i} />
           ))}
         </div>
       )}
@@ -869,7 +986,7 @@ function ConditionBlockView({ block, lang, labels, depth = 0, isExcept = false }
       {block.children && block.children.length > 0 && (
         <div className="mb-1.5 space-y-1.5">
           {block.children.map((child, i) => (
-            <ConditionBlockView key={i} block={child} lang={lang} labels={labels} depth={depth + 1} />
+            <ConditionBlockView key={i} block={child} lang={lang} labels={labels} depth={depth + 1} nodePath={currentPath} />
           ))}
         </div>
       )}
@@ -877,7 +994,7 @@ function ConditionBlockView({ block, lang, labels, depth = 0, isExcept = false }
       {block.except && block.except.length > 0 && (
         <div className="mb-1.5 space-y-1.5">
           {block.except.map((except, i) => (
-            <ConditionBlockView key={i} block={except} lang={lang} labels={labels} depth={depth + 1} isExcept />
+            <ConditionBlockView key={i} block={except} lang={lang} labels={labels} depth={depth + 1} isExcept nodePath={currentPath} />
           ))}
         </div>
       )}
@@ -953,7 +1070,7 @@ function FlatActionRow({ row, lang, labels }: {
   );
 }
 
-function ObligationTreeView({ entry, lang, labels }: {
+function ObligationTreeView({ entry, lang, labels, linkData, onNodeClick, licenseBody, sourceNavigationEnabled }: {
   entry: OsadlChecklistEntry;
   lang: Lang;
   labels: {
@@ -975,25 +1092,39 @@ function ObligationTreeView({ entry, lang, labels }: {
     viewNested: string;
     viewFlat: string;
   };
+  linkData?: OsadlLinkFile | null;
+  onNodeClick?: (key: string) => void;
+  licenseBody?: string;
+  sourceNavigationEnabled?: boolean;
 }) {
   const [viewMode, setViewMode] = useState<OsadlActionViewMode>("nested");
   const flatRows = buildFlatDisplayRows(entry.trees);
   const mustCount = flatRows.filter((row) => row.action.type === "must").length;
   const mustNotCount = flatRows.filter((row) => row.action.type === "must-not").length;
 
+  const ctxValue: OsadlLinkCtx = {
+    linkData: linkData ?? null,
+    onNodeClick: onNodeClick ?? (() => {}),
+    sourceNavigationEnabled: sourceNavigationEnabled ?? true,
+    licenseBody: licenseBody ?? "",
+  };
+
   if (flatRows.length === 0) {
     return (
-      <div className="rounded-xl border border-zinc-200/70 bg-white/70 p-4 dark:border-zinc-800/70 dark:bg-zinc-950/30">
-        <div className="mb-3 flex flex-wrap items-center gap-2">
-          <h3 className="text-sm font-semibold text-zinc-950 dark:text-zinc-50">{labels.actionsTitle}</h3>
-          <span className="rounded-full border border-zinc-200 bg-zinc-50 px-2 py-0.5 text-[11px] font-medium text-zinc-500 dark:border-zinc-800 dark:bg-zinc-900/60 dark:text-zinc-400">0</span>
+      <OsadlLinkContext.Provider value={ctxValue}>
+        <div className="rounded-xl border border-zinc-200/70 bg-white/70 p-4 dark:border-zinc-800/70 dark:bg-zinc-950/30">
+          <div className="mb-3 flex flex-wrap items-center gap-2">
+            <h3 className="text-sm font-semibold text-zinc-950 dark:text-zinc-50">{labels.actionsTitle}</h3>
+            <span className="rounded-full border border-zinc-200 bg-zinc-50 px-2 py-0.5 text-[11px] font-medium text-zinc-500 dark:border-zinc-800 dark:bg-zinc-900/60 dark:text-zinc-400">0</span>
+          </div>
+          <p className="text-sm text-zinc-500 dark:text-zinc-400">{labels.noActions}</p>
         </div>
-        <p className="text-sm text-zinc-500 dark:text-zinc-400">{labels.noActions}</p>
-      </div>
+      </OsadlLinkContext.Provider>
     );
   }
 
   return (
+    <OsadlLinkContext.Provider value={ctxValue}>
     <div className="rounded-xl border border-zinc-200/70 bg-white/70 p-4 dark:border-zinc-800/70 dark:bg-zinc-950/30">
       <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
         <div className="flex flex-wrap items-center gap-2">
@@ -1059,7 +1190,12 @@ function ObligationTreeView({ entry, lang, labels }: {
                   {translateOsadlText(tree.use_case, lang, "use-case")}
                   <span className="ml-1.5 text-[11px] font-normal text-zinc-500 dark:text-zinc-400">{treeStats}</span>
                 </h4>
-                <ConditionBlockView block={tree.root} lang={lang} labels={labels} />
+                <ConditionBlockView
+                  block={tree.root}
+                  lang={lang}
+                  labels={labels}
+                  nodePath={["USE CASE", tree.use_case]}
+                />
               </div>
             );
           })}
@@ -1072,6 +1208,7 @@ function ObligationTreeView({ entry, lang, labels }: {
         </ul>
       )}
     </div>
+    </OsadlLinkContext.Provider>
   );
 }
 
@@ -1210,9 +1347,14 @@ function CompatibilityPopover({
   );
 }
 
-export function OsadlChecklistBlock({ entry, meta }: {
+export function OsadlChecklistBlock({ entry, meta, linkData, onNodeClick, licenseBody, sourceNavigationEnabled }: {
   entry: OsadlChecklistEntry | null;
   meta: OsadlIndexMeta;
+  linkData?: OsadlLinkFile | null;
+  onNodeClick?: (key: string) => void;
+  /** Raw license body text — used to generate clause previews in tooltips. */
+  licenseBody?: string;
+  sourceNavigationEnabled?: boolean;
 }) {
   const { lang, t } = useLang();
   const [expanded, setExpanded] = useState(false);
@@ -1374,7 +1516,15 @@ export function OsadlChecklistBlock({ entry, meta }: {
       {expanded && (
         <div className="cursor-default" data-osadl-interactive="true">
           <div className="mb-5">
-            <ObligationTreeView entry={entry} lang={lang} labels={labels} />
+            <ObligationTreeView
+              entry={entry}
+              lang={lang}
+              labels={labels}
+              linkData={linkData}
+              onNodeClick={onNodeClick}
+              licenseBody={licenseBody}
+              sourceNavigationEnabled={sourceNavigationEnabled}
+            />
           </div>
 
           {showCompatibility && (

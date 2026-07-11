@@ -53,6 +53,7 @@ interface Props {
   osadlEntry: OsadlChecklistEntry | null;
   osadlEntryMeta: OsadlIndexMeta;
   linkData: OsadlLinkFile | null;
+  licenseBody: string;
 }
 
 export function LicenseDetailClient({
@@ -62,6 +63,7 @@ export function LicenseDetailClient({
   osadlEntry,
   osadlEntryMeta,
   linkData,
+  licenseBody,
 }: Props) {
   const { t, lang } = useLang();
   const trackerEntry = resolveTrackerEntry(license);
@@ -212,16 +214,16 @@ export function LicenseDetailClient({
         meta={osadlEntryMeta}
         linkData={linkData}
         onNodeClick={handleNodeClick}
-        licenseBody={license.body}
+        licenseBody={licenseBody}
         sourceNavigationEnabled={activeBodyLanguage === "en"}
       />
 
       {/* License Text */}
-      {license.body && (
+      {licenseBody && (
         <div className="detail-enter-3" ref={bodyRef}>
           <LicenseBodySection
             slug={license.slug}
-            body={license.body}
+            body={licenseBody}
             hasBodies={!!license.languages && license.languages.length > 1}
             highlight={sourceHighlight}
             onLanguageChange={handleBodyLanguageChange}

@@ -4,6 +4,7 @@ import { LicenseDetailClient } from "./license-detail-client";
 import osadlLinksIndexJson from "@/data/generated-osadl-links-v1.json";
 import licenses from "@/data/licenses.json";
 import { resolveOsadlChecklist, resolveOsadlChecklistMeta } from "@/lib/osadl";
+import { resolveOsadlSourceContext } from "@/lib/osadl-links";
 import type { License, OsadlLinksIndex } from "@/lib/types";
 
 const allLicenses = licenses as License[];
@@ -101,7 +102,12 @@ export default async function LicenseDetailPage({
   const next = index < allLicenses.length - 1 ? allLicenses[index + 1] : null;
   const osadlEntry = resolveOsadlChecklist(license);
   const osadlEntryMeta = resolveOsadlChecklistMeta(osadlEntry);
-  const linkData = osadlLinksIndex.by_slug[license.slug] ?? null;
+  const sourceContext = resolveOsadlSourceContext(
+    license,
+    osadlEntry,
+    osadlLinksIndex,
+    (sourceSlug) => slugMap.get(sourceSlug)?.license,
+  );
   const canonicalUrl = `${BASE_URL}/licenses/${license.slug}`;
   const licenseJsonLd = {
     "@context": "https://schema.org",
@@ -142,7 +148,8 @@ export default async function LicenseDetailPage({
         next={next ? { slug: next.slug, title: next.title } : null}
         osadlEntry={osadlEntry}
         osadlEntryMeta={osadlEntryMeta}
-        linkData={linkData}
+        linkData={sourceContext.linkData}
+        licenseBody={sourceContext.licenseBody}
       />
     </>
   );
